@@ -308,30 +308,20 @@
 
     <distributionManagement>
         <!-- OpenDayLight Released artifact -->
-       <!-- <repository>
+        <repository>
             <id>opendaylight-release</id>
             <url>${nexusproxy}/repositories/opendaylight.release/</url>
-        </repository> -->
+        </repository>
         <!-- OpenDayLight Snapshot artifact -->
-      <!--  <snapshotRepository>
+        <snapshotRepository>
             <id>opendaylight-snapshot</id>
             <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
         </snapshotRepository>
         <site>
             <id>${project.artifactId}-site</id>
             <url>./</url>
-        </site> -->
+        </site>
 
-       <!-- OpenDayLight Released artifact -->
-    <repository>
-      <id>onep</id>
-      <url>${onefw.nexusproxy}/repositories/onep/</url>
-    </repository>
-    <!-- OpenDayLight Snapshot artifact -->
-    <snapshotRepository>
-      <id>onep-snapshots</id>
-      <url>${onefw.nexusproxy}/repositories/onep-snapshots</url>
-    </snapshotRepository> 
     </distributionManagement>
 
     <build>
