@@ -10,7 +10,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>odl-root-parent</artifactId>
-    <groupId>org.opendaylight.odl</groupId>
+    <groupId>org.opendaylight.odlparent</groupId>
     <version>1.4.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <prerequisites>
