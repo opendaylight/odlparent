@@ -22,7 +22,6 @@
         <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
         <nexus.repository.release>opendaylight.release</nexus.repository.release>
         <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
-        <onefw.nexusproxy>http://maven.cisco.com:8081/nexus/content</onefw.nexusproxy>
         <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
         <osgi.core.version>5.0.0</osgi.core.version>
         <!-- Java Versions -->
@@ -32,7 +31,7 @@
         <!-- Build Plugin Versions -->
         <maven.bundle.version>2.4.0</maven.bundle.version>
         <maven.jar.version>2.3.2</maven.jar.version>
-        <maven.javadoc.version>2.9.1</maven.javadoc.version>
+        <!--<maven.javadoc.version>2.9.1</maven.javadoc.version>-->
         <maven.release.version>2.4.2</maven.release.version>
         <maven.source.version>2.2.1</maven.source.version>
         <maven.surefire.version>2.16</maven.surefire.version>
@@ -56,13 +55,13 @@
         <junit.version>4.11</junit.version>
     </properties>
 
+
     <scm>
-        <connection>scm:git:ssh://sbejgam@codehub-one-fw-review.cisco.com:29418/onfw-odl-root-parent.git</connection>
-        <developerConnection>scm:git:ssh://sbejgam@codehub-one-fw-review.cisco.com:29418/onfw-odl-root-parent.git</developerConnection>
-        <url>https://wiki.opendaylight.org/view/YANG_Tools:Main</url>
+        <connection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</connection>
+        <developerConnection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</developerConnection>
+        <url>https://wiki.opendaylight.org/view/BGP_LS_PCEP:Main</url>
         <tag>HEAD</tag>
     </scm>
-
 
     <pluginRepositories>
         <!-- OpenDayLight Repo Mirror -->
@@ -120,32 +119,6 @@
                 <enabled>false</enabled>
             </releases>
         </repository>
-             <!-- One-FW Released artifact -->
-      <!--<repository>-->
-        <!--<id>onep</id>-->
-        <!--<name>onefw-release</name>-->
-        <!--<url>${onefw.nexusproxy}/repositories/onep/</url>-->
-      <!--</repository>-->
-      <!--&lt;!&ndash; One-FW Snapshot artifact &ndash;&gt;-->
-      <!--<repository>-->
-        <!--<id>onep-snapshots</id>-->
-        <!--<name>onefw-snapshots</name>-->
-        <!--<url>${onefw.nexusproxy}/repositories/onep-snapshots/</url>-->
-      <!--</repository>-->
-      <!--&lt;!&ndash; One-FW thirdparty artifacts &ndash;&gt;-->
-      <!--<repository>-->
-        <!--<id>onep-thirdparty</id>-->
-        <!--<name>onefw-thirdpartys</name>-->
-        <!--<url>${onefw.nexusproxy}/repositories/onep-thirdparty/</url>-->
-      <!--</repository>-->
-      <!--&lt;!&ndash; This is required to get the grapevine services sdk&ndash;&gt;-->
-      <!--<repository>-->
-          <!--<id>grapevine-snapshots</id>-->
-          <!--<url>http://sdndev-bld-01:8081/nexus/content/repositories/grapevine-snapshots</url>-->
-          <!--<releases>-->
-              <!--<enabled>true</enabled>-->
-          <!--</releases>-->
-      <!--</repository>-->
 
     </repositories>
 
@@ -328,70 +301,6 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>${maven.jar.version}</version>
-                    <!--<configuration>-->
-                        <!--<archive>-->
-                            <!--&lt;!&ndash; Bundle OSGi Manifest created by maven-bundle-plugin-->
-                                <!--into jar file &ndash;&gt;-->
-                            <!--<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>-->
-                        <!--</archive>-->
-                    <!--</configuration>-->
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>maven-bundle-plugin</artifactId>
-                    <version>${maven.bundle.version}</version>
-                    <extensions>true</extensions>
-                    <!--<executions>-->
-                        <!--<execution>-->
-                            <!--<id>bundle-manifest</id>-->
-                            <!--<phase>process-classes</phase>-->
-                            <!--<goals>-->
-                                <!--<goal>manifest</goal>-->
-                            <!--</goals>-->
-                        <!--</execution>-->
-                    <!--</executions>-->
-                    <configuration>
-                        <instructions>
-                            <Bundle-Name>${project.groupId}.${project.artifactId}</Bundle-Name>
-                            <!--
-                                                        <Export-Package>*</Export-Package>
-                            -->
-                        </instructions>
-                    </configuration>
-                </plugin>
-                <!--<plugin>-->
-                    <!--<groupId>org.eclipse.xtend</groupId>-->
-                    <!--<artifactId>xtend-maven-plugin</artifactId>-->
-                    <!--<version>${xtend.version}</version>-->
-                    <!--<executions>-->
-                        <!--<execution>-->
-                            <!--<goals>-->
-                                <!--<goal>compile</goal>-->
-                            <!--</goals>-->
-                            <!--<configuration>-->
-                                <!--<outputDirectory>${basedir}/src/main/xtend-gen</outputDirectory>-->
-                            <!--</configuration>-->
-                        <!--</execution>-->
-                    <!--</executions>-->
-                <!--</plugin>-->
-                <!--<plugin>-->
-                    <!--<artifactId>maven-clean-plugin</artifactId>-->
-                    <!--<version>${maven.clean.plugin.version}</version>-->
-                    <!--<configuration>-->
-                        <!--<filesets>-->
-                            <!--<fileset>-->
-                                <!--<directory>${basedir}/src/main/xtend-gen</directory>-->
-                                <!--<includes>-->
-                                    <!--<include>**</include>-->
-                                <!--</includes>-->
-                            <!--</fileset>-->
-                        <!--</filesets>-->
-                    <!--</configuration>-->
-                <!--</plugin>-->
-                <plugin>
                     <groupId>org.eclipse.m2e</groupId>
                     <artifactId>lifecycle-mapping</artifactId>
                     <version>1.0.0</version>
@@ -415,28 +324,28 @@
                         </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven.javadoc.version}</version>
-                    <configuration>
-                        <stylesheetfile>stylesheet.css</stylesheetfile>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>attach-javadocs</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <goals>
-                                <goal>aggregate</goal>
-                            </goals>
-                            <phase>site</phase>
-                        </execution>
-                    </executions>
-                </plugin>
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+                    <!--<version>${maven.javadoc.version}</version>-->
+                    <!--<configuration>-->
+                        <!--<stylesheetfile>stylesheet.css</stylesheetfile>-->
+                    <!--</configuration>-->
+                    <!--<executions>-->
+                        <!--<execution>-->
+                            <!--<id>attach-javadocs</id>-->
+                            <!--<goals>-->
+                                <!--<goal>jar</goal>-->
+                            <!--</goals>-->
+                        <!--</execution>-->
+                        <!--<execution>-->
+                            <!--<goals>-->
+                                <!--<goal>aggregate</goal>-->
+                            <!--</goals>-->
+                            <!--<phase>site</phase>-->
+                        <!--</execution>-->
+                    <!--</executions>-->
+                <!--</plugin>-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
@@ -451,14 +360,6 @@
             </plugins>
         </pluginManagement>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
