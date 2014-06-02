@@ -19,7 +19,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <nexusproxy>http://nexus01.dfw.opendaylight.org:8081/nexus/content</nexusproxy>
+        <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
         <nexus.repository.release>opendaylight.release</nexus.repository.release>
         <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
         <onefw.nexusproxy>http://maven.cisco.com:8081/nexus/content</onefw.nexusproxy>
