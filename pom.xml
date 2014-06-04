@@ -22,7 +22,6 @@
         <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
         <nexus.repository.release>opendaylight.release</nexus.repository.release>
         <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
-        <onefw.nexusproxy>http://maven.cisco.com:8081/nexus/content</onefw.nexusproxy>
         <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
         <osgi.core.version>5.0.0</osgi.core.version>
         <!-- Java Versions -->
@@ -32,7 +31,7 @@
         <!-- Build Plugin Versions -->
         <maven.bundle.version>2.4.0</maven.bundle.version>
         <maven.jar.version>2.3.2</maven.jar.version>
-        <maven.javadoc.version>2.9.1</maven.javadoc.version>
+        <!--<maven.javadoc.version>2.9.1</maven.javadoc.version>-->
         <maven.release.version>2.4.2</maven.release.version>
         <maven.source.version>2.2.1</maven.source.version>
         <maven.surefire.version>2.16</maven.surefire.version>
@@ -57,10 +56,10 @@
     </properties>
 
     <scm>
-        <connection>scm:git:ssh://sbejgam@codehub-one-fw-review.cisco.com:29418/onfw-odl-root-parent.git</connection>
-        <developerConnection>scm:git:ssh://sbejgam@codehub-one-fw-review.cisco.com:29418/onfw-odl-root-parent.git</developerConnection>
-        <url>https://wiki.opendaylight.org/view/YANG_Tools:Main</url>
+        <connection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</connection>
+        <developerConnection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</developerConnection>
         <tag>HEAD</tag>
+        <url>https://wiki.opendaylight.org/view/OpenDaylight_Controller:Main</url>
     </scm>
 
 
@@ -69,7 +68,7 @@
         <pluginRepository>
             <id>opendaylight-mirror</id>
             <name>opendaylight-mirror</name>
-            <url>${nexusproxy}/groups/public/</url>
+            <url>http://nexus.opendaylight.org/content/groups/public/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -83,7 +82,7 @@
         <pluginRepository>
             <id>opendaylight-snapshot</id>
             <name>opendaylight-snapshot</name>
-            <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
+            <url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -98,7 +97,7 @@
         <repository>
             <id>opendaylight-mirror</id>
             <name>opendaylight-mirror</name>
-            <url>${nexusproxy}/groups/public/</url>
+            <url>http://nexus.opendaylight.org/content/groups/public/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -112,7 +111,7 @@
         <repository>
             <id>opendaylight-snapshot</id>
             <name>opendaylight-snapshot</name>
-            <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
+            <url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -310,12 +309,12 @@
         <!-- OpenDayLight Released artifact -->
         <repository>
             <id>opendaylight-release</id>
-            <url>${nexusproxy}/repositories/opendaylight.release/</url>
+            <url>http://nexus.opendaylight.org/content/repositories/opendaylight.release/</url>
         </repository>
         <!-- OpenDayLight Snapshot artifact -->
         <snapshotRepository>
             <id>opendaylight-snapshot</id>
-            <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
+            <url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
         </snapshotRepository>
         <site>
             <id>${project.artifactId}-site</id>
@@ -331,35 +330,12 @@
                     <!--<groupId>org.apache.maven.plugins</groupId>-->
                     <!--<artifactId>maven-jar-plugin</artifactId>-->
                     <!--<version>${maven.jar.version}</version>-->
-                    <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<archive>&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash; Bundle OSGi Manifest created by maven-bundle-plugin&ndash;&gt;-->
-                                <!--&lt;!&ndash;into jar file &ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</archive>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
-                <!--</plugin>-->
-                <!--<plugin>-->
-                    <!--<groupId>org.apache.felix</groupId>-->
-                    <!--<artifactId>maven-bundle-plugin</artifactId>-->
-                    <!--<version>${maven.bundle.version}</version>-->
-                    <!--<extensions>true</extensions>-->
-                    <!--&lt;!&ndash;<executions>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<execution>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<id>bundle-manifest</id>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<phase>process-classes</phase>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<goals>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<goal>manifest</goal>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</goals>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</execution>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</executions>&ndash;&gt;-->
                     <!--<configuration>-->
                         <!--<instructions>-->
                             <!--<Bundle-Name>${project.groupId}.${project.artifactId}</Bundle-Name>-->
                             <!--&lt;!&ndash;-->
                                                         <!--<Export-Package>*</Export-Package>-->
                             <!--&ndash;&gt;-->
-                        <!--</instructions>-->
                     <!--</configuration>-->
                 <!--</plugin>-->
                 <!--<plugin>-->
@@ -415,28 +391,28 @@
                         </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven.javadoc.version}</version>
-                    <configuration>
-                        <stylesheetfile>stylesheet.css</stylesheetfile>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>attach-javadocs</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <goals>
-                                <goal>aggregate</goal>
-                            </goals>
-                            <phase>site</phase>
-                        </execution>
-                    </executions>
-                </plugin>
+                <!--<plugin>-->
+                    <!--<groupId>org.apache.maven.plugins</groupId>-->
+                    <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+                    <!--<version>${maven.javadoc.version}</version>-->
+                    <!--<configuration>-->
+                        <!--<stylesheetfile>stylesheet.css</stylesheetfile>-->
+                    <!--</configuration>-->
+                    <!--<executions>-->
+                        <!--<execution>-->
+                            <!--<id>attach-javadocs</id>-->
+                            <!--<goals>-->
+                                <!--<goal>jar</goal>-->
+                            <!--</goals>-->
+                        <!--</execution>-->
+                        <!--<execution>-->
+                            <!--<goals>-->
+                                <!--<goal>aggregate</goal>-->
+                            <!--</goals>-->
+                            <!--<phase>site</phase>-->
+                        <!--</execution>-->
+                    <!--</executions>-->
+                <!--</plugin>-->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
