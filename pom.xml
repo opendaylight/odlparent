@@ -300,30 +300,7 @@
     <build>
         <pluginManagement>
             <plugins>
-                <!--<plugin>-->
-                    <!--&lt;!&ndash;<configuration>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<archive>&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash; Bundle OSGi Manifest created by maven-bundle-plugin&ndash;&gt;-->
-                                <!--&lt;!&ndash;into jar file &ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</archive>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</configuration>&ndash;&gt;-->
-                <!--</plugin>-->
-                <!--<plugin>-->
-                    <!--<groupId>org.apache.felix</groupId>-->
-                    <!--<artifactId>maven-bundle-plugin</artifactId>-->
-                    <!--<version>${maven.bundle.version}</version>-->
-                    <!--<extensions>true</extensions>-->
-                    <!--&lt;!&ndash;<executions>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<execution>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<id>bundle-manifest</id>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<phase>process-classes</phase>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<goals>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<goal>manifest</goal>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</goals>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</execution>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</executions>&ndash;&gt;-->
-                        <!--</instructions>-->
+                <plugin>
                     <groupId>org.eclipse.m2e</groupId>
                     <artifactId>lifecycle-mapping</artifactId>
                     <version>1.0.0</version>
