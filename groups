@@ -1,6 +1,7 @@
 # UUID                                  	Group Name
 #
 289a8bcc4635f6962c8c8cc0130df56e59c9c15a	Non-Interactive odlparent users
+c9025ab9ddc1e3171919e085449f22c54f8f7b54	GitHub Replication
 global:Anonymous-Users                  	Anonymous Users
 global:Registered-Users                 	Registered Users
 ldap:cn=gerrit-odlparent-committers,ou=Groups,dc=opendaylight,dc=org	ldap/gerrit-odlparent-committers
