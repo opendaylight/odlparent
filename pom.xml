@@ -157,7 +157,7 @@
         <pluginRepository>
             <id>opendaylight-mirror</id>
             <name>opendaylight-mirror</name>
-            <url>http://nexus.opendaylight.org/content/groups/public/</url>
+            <url>${nexusproxy}/groups/public/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -171,7 +171,7 @@
         <pluginRepository>
             <id>opendaylight-snapshot</id>
             <name>opendaylight-snapshot</name>
-            <url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
+            <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -948,14 +948,7 @@
         </dependencies>
     </dependencyManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-        </dependency>
-    </dependencies>
-
-    <distributionManagement>
+  s  <distributionManagement>
         <!-- OpenDayLight Released artifact -->
         <repository>
             <id>opendaylight-release</id>
@@ -1015,13 +1008,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>flatten-maven-plugin</artifactId>
-                <version>1.0.0-beta-2</version>
-            </plugin>
-        </plugins>
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>flatten-maven-plugin</artifactId>-->
+                <!--<version>1.0.0-beta-2</version>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
 
     </build>
 
