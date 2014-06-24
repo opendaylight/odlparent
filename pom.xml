@@ -19,7 +19,7 @@
 
     <properties>
 
-        <!--<nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>-->
+        <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
         <nexus.repository.release>opendaylight.release</nexus.repository.release>
         <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
         <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
@@ -186,7 +186,7 @@
         <repository>
             <id>opendaylight-mirror</id>
             <name>opendaylight-mirror</name>
-            <url>http://nexus.opendaylight.org/content/groups/public/</url>
+            <url>${nexusproxy}/groups/public/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -200,7 +200,7 @@
         <repository>
             <id>opendaylight-snapshot</id>
             <name>opendaylight-snapshot</name>
-            <url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
+            <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
@@ -1015,6 +1015,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>1.0.0-beta-2</version>
+            </plugin>
+        </plugins>
 
     </build>
 
