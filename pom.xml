@@ -73,6 +73,7 @@
         <geminiweb.version>2.2.0.RELEASE</geminiweb.version>
         <gson.version>2.2.4</gson.version>
         <guava.version>14.0.1</guava.version>
+        <txw2.version>20110809</txw2.version>
 
         <jackson.version>2.3.2</jackson.version>
         <jacoco.version>0.6.2.201302030002</jacoco.version>
@@ -300,6 +301,11 @@
                 <artifactId>org.osgi.core</artifactId>
                 <version>${osgi.core.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.txw2</groupId>
+                <artifactId>txw2</artifactId>
+                <version>${txw2.version}</version>
             </dependency>
 
             <dependency>
