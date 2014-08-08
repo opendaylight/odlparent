@@ -94,6 +94,9 @@
     <java.version.target>1.7</java.version.target>
     <javassist.version>3.17.1-GA</javassist.version>
     <javax.annotation.version>1.2</javax.annotation.version>
+
+    <jaxrs-api.version>3.0.4.Final</jaxrs-api.version>
+
     <!-- Third party version -->
     <jersey-servlet.version>1.17</jersey-servlet.version>
     <jersey.version>1.17</jersey.version>
@@ -288,6 +291,13 @@
         <artifactId>jackson-datatype-json-org</artifactId>
         <version>${jackson.version}</version>
       </dependency>
+
+      <dependency>
+          <groupId>org.jboss.resteasy</groupId>
+          <artifactId>jaxrs-api</artifactId>
+          <version>${jaxrs-api.version}</version>
+      </dependency>
+
       <dependency>
         <groupId>com.fasterxml.jackson.jaxrs</groupId>
         <artifactId>jackson-jaxrs-base</artifactId>
