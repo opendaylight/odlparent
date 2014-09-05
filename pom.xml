@@ -92,7 +92,7 @@
     <jar.plugin.version>2.4</jar.plugin.version>
     <java.version.source>1.7</java.version.source>
     <java.version.target>1.7</java.version.target>
-    <javassist.version>3.17.1-GA</javassist.version>
+    <javassist.version>3.18.2-GA</javassist.version>
     <javax.annotation.version>1.2</javax.annotation.version>
 
     <jaxrs-api.version>3.0.4.Final</jaxrs-api.version>
