@@ -71,7 +71,7 @@
     <commons.net.version>3.0.1</commons.net.version>
     <compiler.version>2.3.2</compiler.version>
     <corsfilter.version>7.0.42</corsfilter.version>
-    <ctrie.version>0.2.0</ctrie.version>
+    <ctrie.version>0.2.23</ctrie.version>
     <eclipse.persistence.version>2.5.0</eclipse.persistence.version>
     <!-- enforcer version -->
     <enforcer.version>1.3.1</enforcer.version>
