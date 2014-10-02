@@ -11,7 +11,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>odlparent</artifactId>
-  <version>1.4.2-Helium</version>
+  <version>1.4.3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <prerequisites>
     <maven>3.0.4</maven>
