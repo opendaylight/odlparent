@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8cc1f7_07d115fb",
+        "filename": "features-parent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1840
+      },
+      "writtenOn": "2014-10-17T15:28:34Z",
+      "side": 1,
+      "message": "Robert - is there a reason why we shouldn\u0027t just invoke these in the build section in this pom.xml file? There doesn\u0027t appear to be anything to configure or modify based on the feature so we could simplify derived poms further by invoking these by default.\n\nIf the idea is that we let people who derive choose if these want these invoked because someone may not want them invoked then it would be really helpful to have comments in here that 1) describe what each plugin does and 2) how someone should choose if they need it or not.\n\nI think some ( like maven-surefire-plugin) should always run right because that is our test framework?",
+      "revId": "6225abddbb73f01f803a84f716f873c147d2c764",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
