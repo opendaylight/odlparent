@@ -16,6 +16,24 @@
       "revId": "6225abddbb73f01f803a84f716f873c147d2c764",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8cc1f7_bc25baac",
+        "filename": "features-parent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2014-11-12T09:47:41Z",
+      "side": 1,
+      "message": "The reason why it\u0027s not directly in this artifacts build section is that it does not include a feature file -- I try adding one just to make sure the build completes. The plugins inter-operate to extract the dependency information and to package the features.",
+      "parentUuid": "ba8cc1f7_07d115fb",
+      "revId": "6225abddbb73f01f803a84f716f873c147d2c764",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
