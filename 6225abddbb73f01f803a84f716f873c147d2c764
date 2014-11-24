@@ -34,6 +34,42 @@
       "revId": "6225abddbb73f01f803a84f716f873c147d2c764",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_e6c74663",
+        "filename": "features-parent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2014-11-24T17:32:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba8cc1f7_07d115fb",
+      "revId": "6225abddbb73f01f803a84f716f873c147d2c764",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a91bd0f_46cb9272",
+        "filename": "features-parent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2014-11-24T17:32:49Z",
+      "side": 1,
+      "message": "Fixed by moving the build section directly here, so users don\u0027t have to do anything.",
+      "parentUuid": "ba8cc1f7_bc25baac",
+      "revId": "6225abddbb73f01f803a84f716f873c147d2c764",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
