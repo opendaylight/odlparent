@@ -141,6 +141,13 @@
     <txw2.version>20110809</txw2.version>
     <url.version>1.5.0</url.version>
     <virgo.version>3.6.0.RELEASE</virgo.version>
+
+    <!-- Default Sonar configuration -->
+    <sonar-jacoco-listeners.version>2.4</sonar-jacoco-listeners.version>
+    <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+    <sonar.jacoco.reportPath>target/code-coverage/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.jacoco.itReportPath>target/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
+    <sonar.profile>Sonar way with Findbugs</sonar.profile>
   </properties>
 
   <dependencyManagement>
