@@ -60,6 +60,7 @@
     <maven.bundle.version>2.4.0</maven.bundle.version>
     <maven.clean.plugin.version>2.5</maven.clean.plugin.version>
     <maven.compile.plugin.version>2.5.1</maven.compile.plugin.version>
+    <maven.depends.version>1.2</maven.depends.version>
     <maven.jar.version>2.3.2</maven.jar.version> <!-- FIXME: bump to 2.4 -->
     <maven.javadoc.version>2.9.1</maven.javadoc.version>
     <maven.release.version>2.4.2</maven.release.version>
@@ -955,6 +956,20 @@
           <groupId>org.apache.karaf.tooling</groupId>
           <artifactId>karaf-maven-plugin</artifactId>
           <version>${karaf.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.servicemix.tooling</groupId>
+          <artifactId>depends-maven-plugin</artifactId>
+          <version>${maven.depends.version}</version>
+          <executions>
+            <execution>
+              <id>generate-depends-file</id>
+              <goals>
+                <goal>generate-depends-file</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
 
         <plugin>
