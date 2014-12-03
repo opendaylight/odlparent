@@ -41,6 +41,8 @@
     </distributionManagement>
 
     <modules>
+        <module>bundle-parent</module>
+        <module>features-test</module>
         <module>odlparent</module>
     </modules>
 </project>
