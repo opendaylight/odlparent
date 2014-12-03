@@ -72,6 +72,7 @@
     <checkstyle.version>2.13</checkstyle.version>
     <compiler.version>2.3.2</compiler.version> <!-- FIXME: should become ${maven.compile.plugin.version} -->
     <enforcer.version>1.3.1</enforcer.version>
+    <paxexam.plugin.version>1.2.4</paxexam.plugin.version> <!-- FIXME: this is latest version of paxexam plugin -->
     <enunciate.version>1.28</enunciate.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <exam.version>3.0.0</exam.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <failsafe.version>2.18</failsafe.version>
@@ -1034,7 +1035,7 @@
         <plugin>
           <groupId>org.ops4j.pax.exam</groupId>
           <artifactId>maven-paxexam-plugin</artifactId>
-          <version>${exam.version}</version>
+          <version>${paxexam.plugin.version}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.felix</groupId>
