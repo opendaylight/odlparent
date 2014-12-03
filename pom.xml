@@ -23,6 +23,10 @@
         <tag>HEAD</tag>
         <url>https://wiki.opendaylight.org/view/OpenDaylight_Controller:Main</url>
     </scm>
+    <properties>
+      <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
+    </properties>
+
     <distributionManagement>
         <!-- OpenDayLight Released artifact -->
         <repository>
