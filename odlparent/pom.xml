@@ -1037,12 +1037,6 @@
           <artifactId>maven-paxexam-plugin</artifactId>
           <version>${paxexam.plugin.version}</version>
         </plugin>
-        <plugin>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>maven-bundle-plugin</artifactId>
-          <version>${maven.bundle.version}</version>
-          <extensions>true</extensions>
-        </plugin>
       </plugins>
     </pluginManagement>
   </build>
