@@ -120,7 +120,7 @@
     <netty.version>4.0.23.Final</netty.version>
     <osgi.compendium.version>5.0.0</osgi.compendium.version>
     <osgi.core.version>5.0.0</osgi.core.version>
-    <org.json.version>20080701</org.json.version>
+    <org.json.version>20131018</org.json.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <projectinfo>2.6</projectinfo>
