@@ -1,0 +1,8 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+1: Thanh Ha <thanh.ha@linuxfoundation.org>
+Code-Review+2: Chris Wright <chrisw@redhat.com>
+Submitted-by: Chris Wright <chrisw@redhat.com>
+Submitted-at: Tue, 23 Dec 2014 23:54:51 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/13611
+Project: odlparent
+Branch: refs/heads/master
