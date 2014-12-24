@@ -1,0 +1,11 @@
+Verified+1: jenkins-odlparent <jenkins-odlparent@opendaylight.org>
+Code-Review+1: Robert Varga <nite@hq.sk>
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+1: Thanh Ha <thanh.ha@linuxfoundation.org>
+Code-Review+1: Hideyuki Tai <Hideyuki.Tai@necam.com>
+Code-Review+2: Vaishali Mithbaokar <vmithbao@cisco.com>
+Submitted-by: Vaishali Mithbaokar <vmithbao@cisco.com>
+Submitted-at: Wed, 24 Dec 2014 00:57:39 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/13415
+Project: odlparent
+Branch: refs/heads/master
