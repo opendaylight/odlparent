@@ -21,7 +21,7 @@
     <connection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</connection>
     <developerConnection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</developerConnection>
     <tag>HEAD</tag>
-    <url>https://wiki.opendaylight.org/view/OpenDaylight_Controller:Main</url>
+    <url>https://wiki.opendaylight.org/view/ODL_Root_Parent:Main</url>
   </scm>
   <distributionManagement>
     <!-- OpenDayLight Released artifact -->
