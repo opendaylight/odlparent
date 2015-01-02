@@ -73,10 +73,10 @@
                                 <language>groovy</language>
                                 <script>
                                     /**
-                                     * Placeholder, which is used in src/feature/features.xml
+                                     * Placeholder, which is used in src/features/features.xml
                                      * to mark version which should be inserted from dependencies.
                                      * Currently works only for bundle and configfile tags
-                                     * with mvn: url schema, and needs to be used 
+                                     * with mvn: url schema, and needs to be used
                                      * as third component of schema.
                                      * eg. mvn:group/artefact/{{VERSION}}
                                      */
@@ -86,7 +86,7 @@
                                      * This will be processed by this script.
                                      *
                                      */
-                                    def featureFilePath = "src/main/feature/features.xml"
+                                    def featureFilePath = "src/main/features/features.xml"
                                     // Contains mapping of groupID:artefactID to versoin
                                     def versionMap = new HashMap();
                                     /* Loads transitive dependency list generated from
@@ -244,6 +244,44 @@
                             <dependency>org.opendaylight.odlparent:features-test</dependency>
                         </dependenciesToScan>
                     </configuration>
+                </plugin>
+                <!-- Ignore/Execute plugin execution -->
+                <plugin>
+                  <groupId>org.eclipse.m2e</groupId>
+                  <artifactId>lifecycle-mapping</artifactId>
+                  <version>1.0.0</version>
+                  <configuration>
+                    <lifecycleMappingMetadata>
+                      <pluginExecutions>
+                        <pluginExecution>
+                          <pluginExecutionFilter>
+                            <groupId>com.alexecollins.maven.plugin</groupId>
+                            <artifactId>script-maven-plugin</artifactId>
+                            <versionRange>[0.0,)</versionRange>
+                            <goals>
+                              <goal>execute</goal>
+                            </goals>
+                          </pluginExecutionFilter>
+                          <action>
+                            <ignore/>
+                          </action>
+                        </pluginExecution>
+                        <pluginExecution>
+                          <pluginExecutionFilter>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-dependency-plugin</artifactId>
+                            <versionRange>[0.0,)</versionRange>
+                            <goals>
+                              <goal>resolve</goal>
+                            </goals>
+                          </pluginExecutionFilter>
+                          <action>
+                            <ignore/>
+                          </action>
+                        </pluginExecution>
+                     </pluginExecutions>
+                   </lifecycleMappingMetadata>
+                  </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
