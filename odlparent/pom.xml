@@ -91,6 +91,7 @@
          has 2.4.3. Long-term goal is to get rid of xtend completely.
          -->
     <xtend.version>2.4.3</xtend.version>
+    <odl.checkstyle.version>0.0.1-SNAPSHOT</odl.checkstyle.version>
 
     <!-- Supporting Libraries -->
     <aopalliance.version>1.0.0</aopalliance.version>
@@ -900,6 +901,26 @@
         <plugin>
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>${checkstyle.version}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.opendaylight.odlparent</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>${odl.checkstyle.version}</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <configLocation>odl_checks.xml</configLocation>
+	    <failsOnError>true</failsOnError>
+	    <consoleOutput>true</consoleOutput>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>check</goal>
+              </goals>
+              <phase>process-sources</phase>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>

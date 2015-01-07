@@ -27,6 +27,7 @@
 
     <modules>
         <module>bundle-parent</module>
+	<module>checkstyle</module>
         <module>features-parent</module>
         <module>features-test</module>
         <module>odlparent</module>
