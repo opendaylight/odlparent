@@ -16,6 +16,24 @@
       "revId": "60a2acc6eb33c043166e5139baf44f8b2a18c126",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a96c907_666229da",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 913,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-01-08T14:39:40Z",
+      "side": 1,
+      "message": "\u003cfailsOnError\u003e is a boolean property so only accepts true|false\n\nWith that said however, none of the odl_checks.xml checks have any setting listed at \"error\" level so this setting is with the provided odl_checks.xml file basically does nothing. (all checks are defaulted at \"warn\" level inside the odl_checks.xml file)\n\nI\u0027ll change this to \"false\" just in case someone accidently sneaks in an \"error\" status.",
+      "parentUuid": "7a96c907_8b55001f",
+      "revId": "60a2acc6eb33c043166e5139baf44f8b2a18c126",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
