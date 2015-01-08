@@ -216,5 +216,11 @@
     <!--
         <module name="SingleLineJavadoc"/>
     -->
+
+    </module>
+
+    <module name="RegexpHeader">
+        <property name="headerFile" value="${checkstyle.header.file}"/>
+        <property name="multiLines" value="2, 10"/>
     </module>
 </module>
