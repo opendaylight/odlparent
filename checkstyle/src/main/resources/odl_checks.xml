@@ -216,5 +216,11 @@
     <!-- Not yet supported https://jira.codehaus.org/browse/MCHECKSTYLE-261
         <module name="SingleLineJavadoc"/>
     -->
+
+    </module>
+
+    <module name="RegexpHeader">
+        <property name="headerFile" value="${checkstyle.header.file}"/>
+        <property name="multiLines" value="2"/>
     </module>
 </module>
