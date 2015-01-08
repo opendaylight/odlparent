@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a96c907_269c21c0",
+        "filename": "checkstyle/src/main/resources/odl_checks.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-01-08T14:44:14Z",
+      "side": 1,
+      "message": "To be clear this is the line of code that sets the severity to warning for all \"modules\" below.\n\nUnless we override the severity of warning to \"error\" the \u003cfailsOnError\u003e parameter will have no effect.",
+      "revId": "60a2acc6eb33c043166e5139baf44f8b2a18c126",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a96c907_8b55001f",
         "filename": "odlparent/pom.xml",
         "patchSetId": 4
