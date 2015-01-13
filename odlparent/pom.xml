@@ -79,7 +79,7 @@
     <gmaven.plugin.version>1.0</gmaven.plugin.version>
     <jacoco.version>0.7.2.201409121644</jacoco.version>
     <jar.plugin.version>2.5</jar.plugin.version> <!-- FIXME: should become ${maven.jar.version} -->
-    <karaf.version>3.0.2</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
+    <karaf.version>3.0.1</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <projectinfo>2.6</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>2.3.2</releaseplugin.version> <!-- FIXME: should become ${maven.release.version} -->

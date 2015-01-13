@@ -56,7 +56,7 @@ public class SingleFeatureTest {
     /*
      * Default values for karaf distro version, type, groupId, and artifactId
      */
-    private static final String KARAF_DISTRO_VERSION = "3.0.2";
+    private static final String KARAF_DISTRO_VERSION = "3.0.1";
     private static final String KARAF_DISTRO_TYPE = "zip";
     private static final String KARAF_DISTRO_ARTIFACTID = "apache-karaf";
     private static final String KARAF_DISTRO_GROUPID = "org.apache.karaf";
