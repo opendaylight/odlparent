@@ -14,9 +14,7 @@
   <artifactId>odlparent</artifactId>
   <version>1.5.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <prerequisites>
-    <maven>3.0.4</maven>
-  </prerequisites>
+
   <scm>
     <connection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</connection>
     <developerConnection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</developerConnection>
