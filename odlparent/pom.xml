@@ -60,6 +60,8 @@
     <maven.bundle.version>2.5.3</maven.bundle.version>
     <maven.clean.plugin.version>2.6.1</maven.clean.plugin.version>
     <maven.compile.plugin.version>3.2</maven.compile.plugin.version>
+    <maven.install.plugin.version>2.5.2</maven.install.plugin.version>
+    <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
     <maven.depends.version>1.2</maven.depends.version>
     <maven.jar.version>2.3.2</maven.jar.version> <!-- FIXME: bump to 2.4 -->
     <maven.javadoc.version>2.10.1</maven.javadoc.version>
@@ -925,6 +927,14 @@
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>${maven.clean.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>${maven.install.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>${maven.deploy.plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
