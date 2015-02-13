@@ -63,7 +63,7 @@
     <maven.install.plugin.version>2.5.2</maven.install.plugin.version>
     <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
     <maven.depends.version>1.2</maven.depends.version>
-    <maven.jar.version>2.3.2</maven.jar.version> <!-- FIXME: bump to 2.4 -->
+    <maven.jar.version>2.5</maven.jar.version>
     <maven.javadoc.version>2.10.1</maven.javadoc.version>
     <maven.release.version>2.5.1</maven.release.version>
     <maven.source.version>2.4</maven.source.version>
@@ -80,7 +80,7 @@
     <failsafe.version>2.18</failsafe.version>
     <gmaven.plugin.version>1.0</gmaven.plugin.version>
     <jacoco.version>0.7.2.201409121644</jacoco.version>
-    <jar.plugin.version>2.5</jar.plugin.version> <!-- FIXME: should become ${maven.jar.version} -->
+    <jar.plugin.version>${maven.jar.version}</jar.plugin.version>
     <karaf.version>3.0.1</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <projectinfo>2.6</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
