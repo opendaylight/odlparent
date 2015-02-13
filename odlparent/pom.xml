@@ -86,13 +86,6 @@
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>2.3.2</releaseplugin.version> <!-- FIXME: should become ${maven.release.version} -->
     <siteplugin>3.4</siteplugin>
-    <!--
-         This needs to remain exported, as we use it for dependencies, too.
-         We cannot bump it freely, as this version is tied to
-         org.opendaylight.yangtools.thirdparty/xtend-lib-osgi, which only
-         has 2.4.3. Long-term goal is to get rid of xtend completely.
-         -->
-    <xtend.version>2.4.3</xtend.version>
     <odl.checkstyle.version>0.0.1-SNAPSHOT</odl.checkstyle.version>
 
     <!-- Supporting Libraries -->
