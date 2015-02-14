@@ -84,6 +84,7 @@
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
     <siteplugin>3.4</siteplugin>
+    <xtend.version>2.7.3</xtend.version>
     <odl.checkstyle.version>0.0.1-SNAPSHOT</odl.checkstyle.version>
 
     <!-- Supporting Libraries -->
