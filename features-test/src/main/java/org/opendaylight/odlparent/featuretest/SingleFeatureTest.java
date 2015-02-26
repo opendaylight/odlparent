@@ -22,9 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import javax.inject.Inject;
-
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
@@ -44,6 +42,7 @@ import org.slf4j.LoggerFactory;
 public class SingleFeatureTest {
     private static final String MAVEN_REPO_LOCAL = "maven.repo.local";
     private static final String ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY = "org.ops4j.pax.url.mvn.localRepository";
+    private static final String ORG_OPS4J_PAX_URL_MVN_REPOSITORIES = "org.ops4j.pax.url.mvn.repositories";
     private static final String ETC_ORG_OPS4J_PAX_URL_MVN_CFG = "etc/org.ops4j.pax.url.mvn.cfg";
     private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST = "log4j.logger.org.opendaylight.odlparent.featuretest";
     private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
@@ -70,6 +69,21 @@ public class SingleFeatureTest {
     private static final String KARAF_DISTRO_GROUPID_PROP = "karaf.distro.groupId";
 
 
+    /**
+     * List of karaf 3.0.2 default maven repositories with snapshot repositories excluded.
+     *
+     * Unfortunately this must be hard-coded since declarative model which uses Options,
+     * does not allow us to read value, parse it (properties has allways
+     * problems with lists) and construct replacement string which does
+     * not contains snapshots.
+     *
+     */
+    private static final String EXTERNAL_DEFAULT_REPOSITORIES = "http://repo1.maven.org/maven2@id=central, " +
+    "http://repository.springsource.com/maven/bundles/release@id=spring.ebr.release, " +
+    "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, " +
+    "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
+
+
    @Inject
    private FeaturesService featuresService;
 
@@ -82,10 +96,46 @@ public class SingleFeatureTest {
              logLevel(LogLevel.WARN),
              mvnLocalRepoOption(),
              editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG,LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,LogLevel.INFO.name()),
+             /*
+              *
+              * Disables external snapshot repositories.
+              *
+              * Pax URL and Karaf by default always search for new version of snapshots
+              * in all snapshots repository, even if that snapshots does not belong to that
+              * repository and maven is invoked even with -nsu (no snapshot update)
+              * or offline mode.
+              *
+              * This is also true for OpenDaylight snapshot artefacts - pax url tries
+              * to resolve them from third-party repositories, even if they are not present
+              * there - this increases time which takes for features to install.
+              *
+              * For more complex projects this actually means several HTTP GETs for each
+              * snapshot bundle referenced, even if the bundle is already present
+              * in local maven repository.
+              *
+              * In order to speed-up installation and remove unnecessary network traffic,
+              * which fails for obvious reasons, external snapshot repositories are
+              * removed.
+              *
+              *
+              */
+             disableExternalSnapshotRepositories(),
              CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP).value(System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP)),
              CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP).value(System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP)),
              CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP).value(System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
        };
+    }
+
+    /**
+     *
+     * Disables snapshot repositories, which are enabled by default in karaf distribution.
+     *
+     *
+     *
+     * @return Edit Configuration option which removes external snapshot repositories.
+     */
+    private static Option disableExternalSnapshotRepositories() {
+        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_REPOSITORIES,EXTERNAL_DEFAULT_REPOSITORIES);
     }
 
     protected Option mvnLocalRepoOption() {
