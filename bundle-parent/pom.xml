@@ -22,6 +22,12 @@
     <packaging>pom</packaging>
 
     <build>
+        <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+        </plugin>
+        <plugin>
+            <artifactId>maven-source-plugin</artifactId>
+        </plugin>
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
