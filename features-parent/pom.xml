@@ -33,6 +33,7 @@
 
     <properties>
         <features.file>features.xml</features.file>
+        <skip.karaf.featureTest>false</skip.karaf.featureTest>
     </properties>
 
     <build>
@@ -240,6 +241,7 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <configuration>
+                        <skip>${skip.karaf.featureTest}</skip>
                         <dependenciesToScan>
                             <dependency>org.opendaylight.odlparent:features-test</dependency>
                         </dependenciesToScan>
