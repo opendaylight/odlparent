@@ -30,10 +30,10 @@ import com.google.common.base.Preconditions;
 
 public class PerFeatureRunner extends Runner {
     private static final Logger LOG = LoggerFactory.getLogger(PerFeatureRunner.class);
+    private final String featureVersion;
+    private final String featureName;
     final PaxExam delegate;
     final URL repoURL;
-    final private String featureName;
-    final private String featureVersion;
 
     public PerFeatureRunner(final URL repoURL, final String featureName, final String featureVersion, final Class<?> testClass) throws InitializationError {
         Preconditions.checkNotNull(repoURL);
