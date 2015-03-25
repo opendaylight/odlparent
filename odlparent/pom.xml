@@ -90,7 +90,7 @@
     <aopalliance.version>1.0.0</aopalliance.version>
     <aries.util.version>1.1.0</aries.util.version>
     <asm.version>4.1</asm.version>
-    <bouncycastle.version>1.50</bouncycastle.version>
+    <bouncycastle.version>1.52</bouncycastle.version>
     <commons.codec.version>1.8</commons.codec.version>
     <commons.fileupload.version>1.2.2</commons.fileupload.version>
     <commons.io.version>2.4</commons.io.version>
