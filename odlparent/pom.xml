@@ -99,7 +99,7 @@
     <commons.net.version>3.0.1</commons.net.version>
     <corsfilter.version>7.0.42</corsfilter.version>
     <ctrie.version>0.2.23</ctrie.version>
-    <eclipse.persistence.version>2.5.0</eclipse.persistence.version>
+    <eclipse.persistence.version>2.5.2</eclipse.persistence.version>
     <feature.transaction.version>1.0.1</feature.transaction.version>
     <felix.dependencymanager.shell.version>3.0.1</felix.dependencymanager.shell.version>
     <felix.dependencymanager.version>3.1.0</felix.dependencymanager.version>
