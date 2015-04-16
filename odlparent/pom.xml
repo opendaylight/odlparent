@@ -12,7 +12,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>odlparent</artifactId>
-  <version>1.5.0-SNAPSHOT</version>
+  <version>1.6.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <scm>
@@ -84,7 +84,7 @@
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
     <siteplugin>3.4</siteplugin>
-    <odl.checkstyle.version>0.0.1-SNAPSHOT</odl.checkstyle.version>
+    <odl.checkstyle.version>0.1.0-SNAPSHOT</odl.checkstyle.version>
 
     <!-- Supporting Libraries -->
     <aopalliance.version>1.0.0</aopalliance.version>
