@@ -12,13 +12,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-
 import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
+import org.apache.karaf.features.internal.model.JaxbUtil;
 import org.apache.karaf.tooling.url.CustomBundleURLStreamHandlerFactory;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
@@ -43,16 +40,16 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     public PerRepoTestRunner(final Class<?> testClass) throws InitializationError {
         super(testClass);
         try {
-            URL repoURL = getClass().getClassLoader().getResource(FEATURES_FILENAME);
-            boolean recursive = Boolean.getBoolean(REPO_RECURSE);
+            final URL repoURL = getClass().getClassLoader().getResource(FEATURES_FILENAME);
+            final boolean recursive = Boolean.getBoolean(REPO_RECURSE);
             LOG.info("Creating test runners for repoURL {} recursive {}",repoURL,recursive);
             children.addAll(runnersFromRepoURL(repoURL,testClass,recursive));
-        } catch (Exception e) {
+        } catch (final Exception e) {
             throw new InitializationError(e);
         }
     }
 
-    protected List<PerFeatureRunner> runnersFromRepoURL(final URL repoURL,final Class<?> testClass,boolean recursive) throws JAXBException, IOException, InitializationError {
+    protected List<PerFeatureRunner> runnersFromRepoURL(final URL repoURL,final Class<?> testClass,final boolean recursive) throws JAXBException, IOException, InitializationError {
         if(recursive) {
             return recursiveRunnersFromRepoURL(repoURL,testClass);
         } else {
@@ -61,18 +58,18 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     }
 
     protected List<PerFeatureRunner> runnersFromRepoURL(final URL repoURL,final Class<?> testClass) throws JAXBException, IOException, InitializationError {
-        List<PerFeatureRunner> runners = new ArrayList<PerFeatureRunner>();
-        Features features = getFeatures(repoURL);
+        final List<PerFeatureRunner> runners = new ArrayList<PerFeatureRunner>();
+        final Features features = getFeatures(repoURL);
         runners.addAll(runnersFromFeatures(repoURL,features,testClass));
         return runners;
     }
 
     protected List<PerFeatureRunner> recursiveRunnersFromRepoURL(final URL repoURL,final Class<?> testClass) throws JAXBException, IOException, InitializationError {
-        List<PerFeatureRunner> runners = new ArrayList<PerFeatureRunner>();
-        Features features = getFeatures(repoURL);
+        final List<PerFeatureRunner> runners = new ArrayList<PerFeatureRunner>();
+        final Features features = getFeatures(repoURL);
         runners.addAll(runnersFromRepoURL(repoURL,testClass));
-        for(String repoString: features.getRepository()) {
-            URL subRepoURL = new URL(repoString);
+        for(final String repoString: features.getRepository()) {
+            final URL subRepoURL = new URL(repoString);
             runners.addAll(recursiveRunnersFromRepoURL(subRepoURL,testClass));
         }
         return runners;
@@ -95,12 +92,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
      */
     protected Features getFeatures(final URL repoURL) throws JAXBException,
             IOException {
-        JAXBContext context;
-        context = JAXBContext.newInstance(Features.class);
-        Unmarshaller unmarshaller = context.createUnmarshaller();
-        Object obj = unmarshaller.unmarshal(repoURL.openStream());
-        Features features =(Features)  obj;
-        return features;
+        return JaxbUtil.unmarshal(repoURL.openStream(), false);
     }
 
     @Override
@@ -114,7 +106,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     }
 
     @Override
-    protected void runChild(PerFeatureRunner child, RunNotifier notifier) {
+    protected void runChild(final PerFeatureRunner child, final RunNotifier notifier) {
         LOG.info("About to run test for {}",child.repoURL);
         child.run(notifier);
     }
