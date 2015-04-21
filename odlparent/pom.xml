@@ -914,6 +914,7 @@
           </dependencies>
           <configuration>
             <configLocation>odl_checks.xml</configLocation>
+            <excludes>org/opendaylight/yang/gen/**,**/config/yang/**</excludes>
             <failsOnError>false</failsOnError>
             <consoleOutput>true</consoleOutput>
           </configuration>
