@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aa0d159_dba50cb6",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-05-04T14:25:35Z",
+      "side": 1,
+      "message": "Small nit about trailing whitespace.",
+      "revId": "cd70e64b31bbba5f1cf858b7308ddcd4f3ae11a0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
