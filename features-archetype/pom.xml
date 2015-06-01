@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.opendaylight.odlparent</groupId>
+  <artifactId>features-archetype</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>maven-archetype</packaging>
+
+  <name>${artifactId}</name>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>2.2</version>
+      </extension>
+    </extensions>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-archetype-plugin</artifactId>
+          <version>2.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <scm>
+    <connection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git/features-parent/features-example</connection>
+    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git/features-parent/features-example</developerConnection>
+    <url>https://wiki.opendaylight.org/view/ODL_Root_Parent:Main/features-parent/features-example</url>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>opendaylight-release</id>
+      <url>http://nexus.opendaylight.org/content/repositories/opendaylight.release/</url>
+    </repository>
+    <snapshotRepository>
+      <id>opendaylight-snapshot</id>
+      <url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
+    </snapshotRepository>
+    <site>
+      <id>features-parent-site</id>
+      <url>./features-parent/</url>
+    </site>
+  </distributionManagement>
+</project>
