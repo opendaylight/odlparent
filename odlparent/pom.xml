@@ -85,6 +85,7 @@
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
     <siteplugin>3.4</siteplugin>
     <odl.checkstyle.version>0.1.0-SNAPSHOT</odl.checkstyle.version>
+    <jetty.version>8.1.14.v20131031</jetty.version>
 
     <!-- Supporting Libraries -->
     <aopalliance.version>1.0.0</aopalliance.version>
@@ -835,6 +836,11 @@
         <artifactId>xmlunit</artifactId>
         <version>1.5</version>
         <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-servlets</artifactId>
+        <version>${jetty.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
