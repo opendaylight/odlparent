@@ -6,6 +6,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.maven.plugin.logging.Log;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
@@ -36,11 +37,14 @@ public class AetherUtil {
 
     protected File localRepository;
 
-    public AetherUtil(RepositorySystem repoSystem,RepositorySystemSession repoSession,List<RemoteRepository> remoteRepos, File localRepository) {
+    protected Log log;
+
+    public AetherUtil(RepositorySystem repoSystem,RepositorySystemSession repoSession,List<RemoteRepository> remoteRepos, File localRepository,Log log) {
         this.repoSystem = repoSystem;
         this.repoSession = repoSession;
         this.remoteRepos = remoteRepos;
         this.localRepository = localRepository;
+        this.log = log;
     }
 
     public Set<Artifact> resolveDependencies(List<Dependency>dependencies,DependencyFilter filter) throws DependencyResolutionException {
@@ -56,21 +60,30 @@ public class AetherUtil {
         return artifacts;
     }
 
-    public Artifact resolveArtifact(Artifact artifact) throws ArtifactResolutionException {
+    public Artifact resolveArtifact(Artifact artifact) {
         ArtifactRequest request = new ArtifactRequest(artifact, remoteRepos,null);
-        ArtifactResult result = repoSystem.resolveArtifact(repoSession, request);
+        ArtifactResult result;
+        try {
+            result = repoSystem.resolveArtifact(repoSession, request);
+        } catch (ArtifactResolutionException e) {
+            log.warn("Unable to resolve artifact: " + e.getMessage());
+            return null;
+        }
         return result.getArtifact();
     }
 
-    public Artifact resolveArtifact(String coord) throws ArtifactResolutionException {
+    public Artifact resolveArtifact(String coord) {
         DefaultArtifact artifact = new DefaultArtifact(coord);
         return resolveArtifact(artifact);
     }
 
-    public Set<Artifact> resolveArtifacts(Set<String> coords) throws ArtifactResolutionException {
+    public Set<Artifact> resolveArtifacts(Set<String> coords) {
         Set<Artifact> result = new LinkedHashSet<Artifact>();
         for(String coord: coords) {
-            result.add(resolveArtifact(coord));
+            Artifact artifact = resolveArtifact(coord);
+            if (artifact != null) {
+                result.add(artifact);
+            }
         }
         return result;
     }
