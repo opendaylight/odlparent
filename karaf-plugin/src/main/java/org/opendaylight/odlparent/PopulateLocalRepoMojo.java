@@ -19,43 +19,25 @@ package org.opendaylight.odlparent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.net.MalformedURLException;
+import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
-import org.apache.karaf.features.internal.model.Bundle;
-import org.apache.karaf.features.internal.model.ConfigFile;
-import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
-import org.apache.karaf.features.internal.model.JaxbUtil;
 import org.apache.karaf.tooling.url.CustomBundleURLStreamHandlerFactory;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.project.MavenProject;
-import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.artifact.Artifact;
-import org.eclipse.aether.artifact.DefaultArtifact;
-import org.eclipse.aether.artifact.DefaultArtifactType;
-import org.eclipse.aether.collection.CollectRequest;
-import org.eclipse.aether.collection.DependencyCollectionException;
-import org.eclipse.aether.graph.Dependency;
-import org.eclipse.aether.installation.InstallRequest;
-import org.eclipse.aether.installation.InstallationException;
-import org.eclipse.aether.repository.LocalRepository;
-import org.eclipse.aether.repository.LocalRepositoryManager;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
-import org.eclipse.aether.resolution.ArtifactResult;
-import org.eclipse.aether.resolution.DependencyRequest;
-import org.eclipse.aether.resolution.DependencyResolutionException;
-import org.eclipse.aether.resolution.DependencyResult;
-import org.ops4j.pax.url.mvn.Parser;
 
 /**
  * @goal populate-local-repo
@@ -107,9 +89,10 @@ public class PopulateLocalRepoMojo
     private AetherUtil aetherUtil;
 
     public void execute() throws MojoExecutionException, MojoFailureException {
-        aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos,localRepo);
+
+        aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos,localRepo,getLog());
         try {
-            Set<Artifact> featureArtifacts = new LinkedHashSet<Artifact>();
+            Set<Artifact> featureArtifacts = readFeatureCfg();
             featureArtifacts.addAll(aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
                     new KarafFeaturesDependencyFilter()));
             Set<Features> features = FeatureUtil.readFeatures(featureArtifacts);
@@ -129,5 +112,25 @@ public class PopulateLocalRepoMojo
         } catch (Exception e) {
             throw new MojoExecutionException("Failure: ", e);
         }
+    }
+
+    private Set<Artifact> readFeatureCfg() throws ArtifactResolutionException {
+        Set<Artifact> artifacts = new LinkedHashSet<Artifact>();
+        File file = new File(localRepo.getParentFile().toString() + "/etc/org.apache.karaf.features.cfg");
+        Properties prop = new Properties();
+        try {
+            prop.load(new FileInputStream(file));
+            String featuresRepositories = prop.getProperty("featuresRepositories");
+            List<String> result = Arrays.asList(featuresRepositories.split(","));
+            for(String mvnUrl: result) {
+                artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(mvnUrl))));
+            }
+        } catch (FileNotFoundException e) {
+            getLog().info("Could not find properties file: " + file.getAbsolutePath());
+        } catch (IOException e) {
+            getLog().info("Could not read properties file: " + file.getAbsolutePath());
+        }
+
+        return artifacts;
     }
 }
