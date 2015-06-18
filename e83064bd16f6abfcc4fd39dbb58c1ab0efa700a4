@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a7fa997_47c70e46",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/AetherUtil.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 9
+      },
+      "writtenOn": "2015-06-18T01:01:30Z",
+      "side": 1,
+      "message": "Its simply being passed in from the Mojo to the utility class.",
+      "parentUuid": "7a7fa997_e7ac1a8f",
+      "revId": "e83064bd16f6abfcc4fd39dbb58c1ab0efa700a4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a7fa997_07aa7670",
         "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/AetherUtil.java",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-18T00:57:42Z",
       "side": 1,
       "message": "This loses the stack trace and chained exceptions, aka clues to what went wrong.",
+      "revId": "e83064bd16f6abfcc4fd39dbb58c1ab0efa700a4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a7fa997_87b526cf",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/AetherUtil.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 9
+      },
+      "writtenOn": "2015-06-18T01:01:30Z",
+      "side": 1,
+      "message": "The stack trace for this particular kind of problem is not really a big deal... the root issue is the artifact itself is unresolvable... and the message provides all the data to go figure out *why*",
+      "parentUuid": "7a7fa997_07aa7670",
       "revId": "e83064bd16f6abfcc4fd39dbb58c1ab0efa700a4",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
