@@ -139,15 +139,19 @@
                                         throw new IllegalArgumentException("Feature dependency $groupId:$artifactId is not dependecy of project.")
                                     }
 
-
-                                    def updateMavenDependency  = { dep ->
-                                       def mvnUrl = dep.text()
-                                       if(mvnUrl.startsWith("mvn:")) {
-                                         def components =  mvnUrl.substring(4).split("/")
-                                         if(components[2] == versionPlaceholder) {
-                                         dep.value = updatedURLFromProject(components)
-                                         }
-                                       }
+                                    def updateMavenDependency = { dep ->
+                                        def mvnUrl = dep.text()
+                                        if (mvnUrl.startsWith("mvn:")) {
+                                            def components =  mvnUrl.substring(4).split("/")
+                                            if (components[2] == versionPlaceholder) {
+                                                dep.value = updatedURLFromProject(components)
+                                            }
+                                        } else if (mvnUrl.startsWith("wrap:mvn:")) {
+                                            def components =  mvnUrl.substring(9).split("/")
+                                            if (components[2] == versionPlaceholder) {
+                                                dep.value = "wrap:" + updatedURLFromProject(components)
+                                            }
+                                        }
                                     }
 
                                     def featureFile = new File(project.basedir,featureFilePath)
