@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>1.5.0-Lithium</version>
+        <version>1.5.1-SNAPSHOT</version>
         <relativePath>../odlparent</relativePath>
     </parent>
 
