@@ -97,20 +97,13 @@
                                     def dependencies = new File(project.build.directory,"dependencies.txt")
                                     dependencies.eachLine {
                                         def cmps = it.trim().split(":")
-                                        // Depends on number of components:
-                                        //  - groupId
-                                        //  - artifactId
-                                        //  - Type
-                                        //  - Qualifier (optional)
-                                        //  - Version
-                                        //  - Scope
-                                        if(cmps.length > 4) {
+                                        // 0 - groupId
+                                        // 1 - artifactId
+                                        // 2 - Type
+                                        // 3 - Version
+                                        if(cmps.length >= 4) {
                                             def id = cmps[0] + ":" + cmps[1]
-                                            if(cmps.length == 6) {
-                                                versionMap[id] = cmps[4]
-                                            } else if(cmps.length == 5) {
-                                                versionMap[id] = cmps[3]
-                                            }
+                                            versionMap[id] = cmps[3]
                                         }
                                     }
 
