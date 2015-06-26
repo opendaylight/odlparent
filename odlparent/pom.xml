@@ -135,7 +135,7 @@
     <osgi.compendium.version>5.0.0</osgi.compendium.version>
     <osgi.core.version>5.0.0</osgi.core.version>
     <org.json.version>20131018</org.json.version>
-    <slf4j.version>1.7.2</slf4j.version>
+    <slf4j.version>1.7.7</slf4j.version>
     <spifly.version>1.0.0</spifly.version>
     <spring-osgi.version>1.2.1</spring-osgi.version>
     <spring-security-karaf.version>3.1.4.RELEASE</spring-security-karaf.version>
