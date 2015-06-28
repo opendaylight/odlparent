@@ -1,0 +1,7 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+2: Vaishali Mithbaokar <vmithbao@cisco.com>
+Submitted-by: Vaishali Mithbaokar <vmithbao@cisco.com>
+Submitted-at: Sun, 28 Jun 2015 16:20:55 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/23442
+Project: odlparent
+Branch: refs/heads/stable/lithium
