@@ -7,7 +7,6 @@
  */
 package org.opendaylight.odlparent.featuretest;
 
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -24,13 +23,11 @@ import org.junit.runners.model.InitializationError;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
-
 public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     private static final String REPO_RECURSE = "repo.recurse";
     private static final Logger LOG = LoggerFactory.getLogger(PerRepoTestRunner.class);
     private static final String FEATURES_FILENAME = "features.xml";
-    protected final List<PerFeatureRunner> children = new ArrayList<PerFeatureRunner>();
+    private final List<PerFeatureRunner> children = new ArrayList<>();
 
     static {
         // Static initialization, as we may be invoked multiple times
@@ -58,14 +55,14 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     }
 
     protected List<PerFeatureRunner> runnersFromRepoURL(final URL repoURL,final Class<?> testClass) throws JAXBException, IOException, InitializationError {
-        final List<PerFeatureRunner> runners = new ArrayList<PerFeatureRunner>();
+        final List<PerFeatureRunner> runners = new ArrayList<>();
         final Features features = getFeatures(repoURL);
         runners.addAll(runnersFromFeatures(repoURL,features,testClass));
         return runners;
     }
 
     protected List<PerFeatureRunner> recursiveRunnersFromRepoURL(final URL repoURL,final Class<?> testClass) throws JAXBException, IOException, InitializationError {
-        final List<PerFeatureRunner> runners = new ArrayList<PerFeatureRunner>();
+        final List<PerFeatureRunner> runners = new ArrayList<>();
         final Features features = getFeatures(repoURL);
         runners.addAll(runnersFromRepoURL(repoURL,testClass));
         for(final String repoString: features.getRepository()) {
@@ -107,7 +104,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
 
     @Override
     protected void runChild(final PerFeatureRunner child, final RunNotifier notifier) {
-        LOG.info("About to run test for {}",child.repoURL);
+        LOG.info("About to run test for {}", child.getRepoURL());
         child.run(notifier);
     }
 
@@ -116,9 +113,6 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
      */
     @Override
     public int testCount() {
-        return super.testCount()*children.size();
+        return super.testCount() * children.size();
     }
-
-
-
 }

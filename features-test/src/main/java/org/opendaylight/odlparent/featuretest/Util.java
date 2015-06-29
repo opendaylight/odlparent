@@ -10,23 +10,22 @@ package org.opendaylight.odlparent.featuretest;
 import java.lang.annotation.Annotation;
 import java.net.URL;
 import java.util.Collection;
-
 import org.junit.runner.Description;
 
 public final class Util {
 
     private  Util() {
-        // Noop constructure
+        // Noop constructor
     }
 
-    /*
+    /**
      * Convert a Description to a Description that includes information about repoURL, featureName, and featureVersion
      *
      * This is done so that when a test fails, we can get information about which repoURL, featureName, and featureVersion
      * can come back with the Failure.
      */
-
-    public static final Description convertDescription(URL repoURL, String featureName, String featureVersion,Description description) {
+    public static final Description convertDescription(final URL repoURL, final String featureName,
+            final String featureVersion, final Description description) {
         String delegateDisplayName = description.getDisplayName();
         delegateDisplayName = delegateDisplayName + "[repoUrl: " + repoURL+ ", Feature: " + featureName + " " +featureVersion + "]";
         Collection<Annotation> annotations = description.getAnnotations();
