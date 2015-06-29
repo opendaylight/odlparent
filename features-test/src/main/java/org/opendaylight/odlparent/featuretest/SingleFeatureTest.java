@@ -13,11 +13,9 @@ import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.configureConsole;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.editConfigurationFilePut;
-//import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.debugConfiguration;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
@@ -142,7 +140,7 @@ public class SingleFeatureTest {
         String mvnRepoLocal = System.getProperty(MAVEN_REPO_LOCAL, "");
         LOG.info("mvnLocalRepo \"{}\"",mvnRepoLocal);
         Option option =
-                editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG,ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY,mvnRepoLocal);
+                editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG,ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY, mvnRepoLocal);
         return option;
     }
 
@@ -151,7 +149,7 @@ public class SingleFeatureTest {
         String artifactId = System.getProperty(KARAF_DISTRO_ARTIFACTID_PROP,KARAF_DISTRO_ARTIFACTID);
         String version = System.getProperty(KARAF_DISTRO_VERSION_PROP,KARAF_DISTRO_VERSION);
         String type = System.getProperty(KARAF_DISTRO_TYPE_PROP,KARAF_DISTRO_TYPE);
-        LOG.info("Using karaf distro {} {} {} {}",groupId,artifactId,version,type);
+        LOG.info("Using karaf distro {} {} {} {}", groupId, artifactId, version, type);
         return karafDistributionConfiguration()
                 .frameworkUrl(
                         maven()
@@ -164,11 +162,11 @@ public class SingleFeatureTest {
                .useDeployFolder(false);
     }
 
-    private URI getRepoURI() throws URISyntaxException {
+    private static URI getRepoURI() throws URISyntaxException {
         return new URI(getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP));
     }
 
-    private String getFeatureName() {
+    private static String getFeatureName() {
         return getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP);
     }
 
@@ -176,21 +174,21 @@ public class SingleFeatureTest {
         return getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP);
     }
 
-    private String getProperty(final String propName) {
+    private static String getProperty(final String propName) {
         String prop = System.getProperty(propName);
-        Assert.assertTrue("Missing property :" +propName, prop!=null);
+        Assert.assertTrue("Missing property :" + propName, prop!=null);
         return prop;
     }
 
     private void checkRepository(final URI repoURI) {
         Repository repo = null;
-        for(Repository r: featuresService.listRepositories()) {
-            if(r.getURI().equals(repoURI)){
+        for (Repository r : featuresService.listRepositories()) {
+            if (r.getURI().equals(repoURI)) {
                 repo = r;
                 break;
             }
         }
-        Assert.assertNotNull("Repository not found: " + repoURI,repo);
+        Assert.assertNotNull("Repository not found: " + repoURI, repo);
     }
 
     @Before
@@ -203,11 +201,11 @@ public class SingleFeatureTest {
 
     @Test
     public void installFeature() throws Exception {
-      LOG.info("Attempting to install feature {} {}", getFeatureName(),getFeatureVersion());
-      featuresService.installFeature(getFeatureName(), getFeatureVersion());
-      Feature f = featuresService.getFeature(getFeatureName(), getFeatureVersion());
-      Assert.assertNotNull("Attempt to get feature "+ getFeatureName() + " " + getFeatureVersion() + "resulted in null" , f);
-      Assert.assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(),featuresService.isInstalled(f));
-      LOG.info("Successfull installed feature {} {}", getFeatureName(),getFeatureVersion());
+        LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
+        featuresService.installFeature(getFeatureName(), getFeatureVersion());
+        Feature f = featuresService.getFeature(getFeatureName(), getFeatureVersion());
+        Assert.assertNotNull("Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null", f);
+        Assert.assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(), featuresService.isInstalled(f));
+        LOG.info("Successfull installed feature {} {}", getFeatureName(), getFeatureVersion());
     }
 }
