@@ -7,8 +7,8 @@
  */
 package org.opendaylight.odlparent.featuretest;
 
+import com.google.common.base.Preconditions;
 import java.net.URL;
-
 import org.junit.runner.Description;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
@@ -16,23 +16,17 @@ import org.junit.runner.notification.RunListener;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runner.notification.StoppedByUserException;
 
-import com.google.common.base.Preconditions;
-
 public class PerFeatureRunNotifier extends RunNotifier {
     private final RunNotifier delegate;
     private final URL repoURL;
     private final String featureName;
-    private  final String featureVersion;
+    private final String featureVersion;
 
     public PerFeatureRunNotifier(final URL repoURL, final String featureName, final String featureVersion,final RunNotifier delegate) {
-        Preconditions.checkNotNull(repoURL);
-        Preconditions.checkNotNull(featureName);
-        Preconditions.checkNotNull(featureVersion);
-        Preconditions.checkNotNull(delegate);
-        this.delegate = delegate;
-        this.repoURL = repoURL;
-        this.featureName = featureName;
-        this.featureVersion = featureVersion;
+        this.repoURL = Preconditions.checkNotNull(repoURL);
+        this.featureName = Preconditions.checkNotNull(featureName);
+        this.featureVersion = Preconditions.checkNotNull(featureVersion);
+        this.delegate = Preconditions.checkNotNull(delegate);
     }
 
     private Failure convertFailure(final Failure failure) {
@@ -44,7 +38,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see org.junit.runner.notification.RunNotifier#addListener(org.junit.runner.notification.RunListener)
      */
     @Override
-    public void addListener(RunListener listener) {
+    public void addListener(final RunListener listener) {
         delegate.addListener(listener);
     }
 
@@ -53,7 +47,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see org.junit.runner.notification.RunNotifier#removeListener(org.junit.runner.notification.RunListener)
      */
     @Override
-    public void removeListener(RunListener listener) {
+    public void removeListener(final RunListener listener) {
         delegate.removeListener(listener);
     }
 
@@ -71,7 +65,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see org.junit.runner.notification.RunNotifier#fireTestRunStarted(org.junit.runner.Description)
      */
     @Override
-    public void fireTestRunStarted(Description description) {
+    public void fireTestRunStarted(final Description description) {
         delegate.fireTestRunStarted(Util.convertDescription(repoURL,featureName,featureVersion,description));
     }
 
@@ -80,7 +74,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see org.junit.runner.notification.RunNotifier#fireTestRunFinished(org.junit.runner.Result)
      */
     @Override
-    public void fireTestRunFinished(Result result) {
+    public void fireTestRunFinished(final Result result) {
         delegate.fireTestRunFinished(result);
     }
 
@@ -90,7 +84,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see org.junit.runner.notification.RunNotifier#fireTestStarted(org.junit.runner.Description)
      */
     @Override
-    public void fireTestStarted(Description description)
+    public void fireTestStarted(final Description description)
             throws StoppedByUserException {
         delegate.fireTestStarted(Util.convertDescription(repoURL,featureName,featureVersion,description));
     }
@@ -101,7 +95,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(final Object obj) {
         return delegate.equals(obj);
     }
 
@@ -110,7 +104,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see org.junit.runner.notification.RunNotifier#fireTestFailure(org.junit.runner.notification.Failure)
      */
     @Override
-    public void fireTestFailure(Failure failure) {
+    public void fireTestFailure(final Failure failure) {
         delegate.fireTestFailure(convertFailure(failure));
     }
 
@@ -119,7 +113,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see org.junit.runner.notification.RunNotifier#fireTestAssumptionFailed(org.junit.runner.notification.Failure)
      */
     @Override
-    public void fireTestAssumptionFailed(Failure failure) {
+    public void fireTestAssumptionFailed(final Failure failure) {
         delegate.fireTestAssumptionFailed(convertFailure(failure));
     }
 
@@ -128,7 +122,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see org.junit.runner.notification.RunNotifier#fireTestIgnored(org.junit.runner.Description)
      */
     @Override
-    public void fireTestIgnored(Description description) {
+    public void fireTestIgnored(final Description description) {
         delegate.fireTestIgnored(Util.convertDescription(repoURL,featureName,featureVersion,description));
     }
 
@@ -137,7 +131,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see org.junit.runner.notification.RunNotifier#fireTestFinished(org.junit.runner.Description)
      */
     @Override
-    public void fireTestFinished(Description description) {
+    public void fireTestFinished(final Description description) {
         delegate.fireTestFinished(Util.convertDescription(repoURL,featureName,featureVersion,description));
     }
 
@@ -155,7 +149,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @see org.junit.runner.notification.RunNotifier#addFirstListener(org.junit.runner.notification.RunListener)
      */
     @Override
-    public void addFirstListener(RunListener listener) {
+    public void addFirstListener(final RunListener listener) {
         delegate.addFirstListener(listener);
     }
 
@@ -167,6 +161,4 @@ public class PerFeatureRunNotifier extends RunNotifier {
     public String toString() {
         return delegate.toString();
     }
-
-
 }
