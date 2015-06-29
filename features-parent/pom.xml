@@ -157,6 +157,9 @@
                                     def featureFile = new File(project.basedir,featureFilePath)
                                     def root = new XmlParser().parse(featureFile)
 
+                                    println "[INFO] Updating repository declarations"
+                                    root.repository.each updateMavenDependency
+
                                     root.feature.each { feature ->
                                         println "[INFO] Processing feature: ${feature.@name}"
                                         feature.bundle.each updateMavenDependency
