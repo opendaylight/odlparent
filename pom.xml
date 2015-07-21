@@ -23,13 +23,17 @@
     </scm>
 
     <modules>
+        <!-- odlparent tools -->
+        <module>checkstyle</module>
+        <module>license</module>
+
+        <!-- odlparent core -->
         <module>bundle-parent</module>
-	<module>checkstyle</module>
         <module>features-parent</module>
         <module>features-test</module>
         <module>odlparent</module>
-    <module>karaf-plugin</module>
-  </modules>
+        <module>karaf-plugin</module>
+    </modules>
 
     <build>
         <plugins>
