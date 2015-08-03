@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a7ca5a3_0f3e19b9",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-08-03T14:31:49Z",
+      "side": 1,
+      "message": "Trailing whitespace",
+      "revId": "5cc8f90d1e454a8b96ddd6429ba7eedbbd8b16e4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a7ca5a3_af4a8553",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-08-03T14:31:49Z",
+      "side": 1,
+      "message": "Can you line this up at the same indent level as the jersey versions below?",
+      "revId": "5cc8f90d1e454a8b96ddd6429ba7eedbbd8b16e4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a7ca5a3_cf47c14a",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-08-03T14:31:49Z",
+      "side": 1,
+      "message": "please use 2 space indents instead of tabs here.",
+      "revId": "5cc8f90d1e454a8b96ddd6429ba7eedbbd8b16e4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a7ca5a3_6f746d9c",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-08-03T14:31:49Z",
+      "side": 1,
+      "message": "please use 2 space indents instead of tabs here.",
+      "revId": "5cc8f90d1e454a8b96ddd6429ba7eedbbd8b16e4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a7ca5a3_8f79c995",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-08-03T14:31:49Z",
+      "side": 1,
+      "message": "please use 2 space indents instead of tabs here.",
+      "revId": "5cc8f90d1e454a8b96ddd6429ba7eedbbd8b16e4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a7ca5a3_2f6e75ca",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-08-03T14:31:49Z",
+      "side": 1,
+      "message": "Please line this up at the same indent level as \u003cdependency\u003e below.",
+      "revId": "5cc8f90d1e454a8b96ddd6429ba7eedbbd8b16e4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a7ca5a3_ef671de9",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-08-03T14:31:49Z",
+      "side": 1,
+      "message": "Please line this up at the same indent level as \u003cdependency\u003e below.",
+      "revId": "5cc8f90d1e454a8b96ddd6429ba7eedbbd8b16e4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a7ca5a3_4f73b1b1",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-08-03T14:31:49Z",
+      "side": 1,
+      "message": "please use 2 space indents instead of tabs here.",
+      "revId": "5cc8f90d1e454a8b96ddd6429ba7eedbbd8b16e4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
