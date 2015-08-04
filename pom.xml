@@ -15,6 +15,14 @@
     <name>odlparent</name> <!-- Used by Sonar to set project name -->
     <packaging>pom</packaging>
 
+    <properties>
+        <maven.version>3.1.1</maven.version>
+    </properties>
+
+    <prerequisites>
+        <maven>${maven.version}</maven>
+    </prerequisites>
+
     <scm>
         <connection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</connection>
         <developerConnection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</developerConnection>
