@@ -27,7 +27,6 @@
         <relativePath>../odlparent</relativePath>
     </parent>
 
-    <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>features-parent</artifactId>
     <packaging>pom</packaging>
 
