@@ -81,7 +81,7 @@
 
     <!-- Maven plugin versions, in random formats -->
     <bundle.plugin.version>${maven.bundle.version}</bundle.plugin.version>
-    <checkstyle.version>2.15</checkstyle.version>
+    <checkstyle.version>2.16</checkstyle.version>
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
     <enforcer.version>1.3.1</enforcer.version>
     <paxexam.plugin.version>1.2.4</paxexam.plugin.version> <!-- FIXME: this is latest version of paxexam plugin -->
@@ -932,11 +932,24 @@
           </dependencies>
           <configuration>
             <configLocation>odl_checks.xml</configLocation>
+            <!-- <sourceDirectory> is needed so that checkstyle ignores the
+                 generated sources directory -->
+            <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
             <excludes>org/opendaylight/yang/gen/**,**/config/yang/**</excludes>
             <failsOnError>false</failsOnError>
             <consoleOutput>true</consoleOutput>
           </configuration>
           <executions>
+            <execution>
+              <id>check-license</id>
+              <goals>
+                <goal>check</goal>
+              </goals>
+              <phase>validate</phase>
+              <configuration>
+                <configLocation>check-license.xml</configLocation>
+              </configuration>
+            </execution>
             <execution>
               <goals>
                 <goal>check</goal>
