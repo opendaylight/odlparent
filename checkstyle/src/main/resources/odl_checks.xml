@@ -196,11 +196,5 @@
              value="Method name ''{0}'' must match pattern ''{1}''."/>
         </module>
         <module name="SingleLineJavadoc"/>
-
-    </module>
-
-    <module name="RegexpHeader">
-        <property name="headerFile" value="${checkstyle.header.file}"/>
-        <property name="multiLines" value="2"/>
     </module>
 </module>
