@@ -932,11 +932,40 @@
           </dependencies>
           <configuration>
             <configLocation>odl_checks.xml</configLocation>
-            <excludes>org/opendaylight/yang/gen/**,**/config/yang/**</excludes>
+            <!-- <sourceDirectory> is needed so that checkstyle ignores the
+                 generated sources directory -->
+            <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+            <excludes>
+              org/opendaylight/yang/gen/**,
+              **/config/yang/**,
+              **/protobuff/messages/**,
+              **/thrift/gen/*.java
+            </excludes>
             <failsOnError>false</failsOnError>
             <consoleOutput>true</consoleOutput>
           </configuration>
           <executions>
+            <execution>
+              <id>check-license</id>
+              <goals>
+                <goal>check</goal>
+              </goals>
+              <phase>process-sources</phase>
+              <configuration>
+                <configLocation>check-license.xml</configLocation>
+                <includeResources>false</includeResources>
+                <includeTestResources>false</includeTestResources>
+                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                <excludes>
+                  org/opendaylight/yang/gen/**,
+                  **/config/yang/**,
+                  **/protobuff/messages/**,
+                  **/thrift/gen/*.java
+                </excludes>
+                <failsOnError>false</failsOnError>
+                <consoleOutput>true</consoleOutput>
+              </configuration>
+            </execution>
             <execution>
               <goals>
                 <goal>check</goal>
