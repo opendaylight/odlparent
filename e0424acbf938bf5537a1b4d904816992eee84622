@@ -16,6 +16,24 @@
       "revId": "e0424acbf938bf5537a1b4d904816992eee84622",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_082297b9",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-08-10T14:48:44Z",
+      "side": 1,
+      "message": "In fact this change will actually break builds. If you notice in the root pom.xml we purposely do not publish that pom publicly. It\u0027s meant purely as a pom to initiate a odlparent build and not to be released.",
+      "parentUuid": "3a79b1b5_283bd3ec",
+      "revId": "e0424acbf938bf5537a1b4d904816992eee84622",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
