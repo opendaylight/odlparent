@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a79b1b5_c88fbfcb",
+        "filename": "checkstyle/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-08-10T14:24:06Z",
+      "side": 1,
+      "message": "That\u0027s leftovers from previous patch sets, I\u0027ll remove it.",
+      "parentUuid": "3a79b1b5_68c78b13",
+      "revId": "bb227df96141c6bb98c5b86195c086b938b7a1f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_88cc6737",
         "filename": "odlparent/pom.xml",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-10T14:11:35Z",
       "side": 1,
       "message": "This isn\u0027t needed. It\u0027s confusing but this section actually does not enforce versions in Maven as the documentation says it should.\n\nThe Maven Enforcer plugin at the bottom of the file enforces this so I\u0027d recommend removing this section so that we don\u0027t have to update the version in 2 places. (Unless we can make it a variable that will update both places at once)",
+      "revId": "bb227df96141c6bb98c5b86195c086b938b7a1f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_088617ba",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-08-10T14:24:06Z",
+      "side": 1,
+      "message": "It avoids the version plugins complaining, that\u0027s all. It should be a variable, yes, let me look into that...",
+      "parentUuid": "3a79b1b5_88cc6737",
       "revId": "bb227df96141c6bb98c5b86195c086b938b7a1f6",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
