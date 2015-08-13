@@ -63,6 +63,7 @@
     <maven.depends.version>1.2</maven.depends.version>
     <maven.jar.version>2.5</maven.jar.version>
     <maven.javadoc.version>2.10.1</maven.javadoc.version>
+    <maven.plugin.version>3.3</maven.plugin.version>
     <maven.release.version>2.5.1</maven.release.version>
     <maven.source.version>2.4</maven.source.version>
     <maven.surefire.version>2.18</maven.surefire.version>
