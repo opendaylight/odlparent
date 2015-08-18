@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a79b1b5_86444175",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-08-18T14:19:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a79b1b5_86e8c17d",
+      "revId": "8174b3e7dcdcb1c64767059e9410b36afbd11176",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_46db89ed",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-18T14:00:10Z",
       "side": 1,
       "message": "No need to add \"While I\u0027m at it\" to commit message. Commit messages should be concise and to the point when possible.",
+      "revId": "8174b3e7dcdcb1c64767059e9410b36afbd11176",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_a6493d8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-08-18T14:19:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a79b1b5_46db89ed",
       "revId": "8174b3e7dcdcb1c64767059e9410b36afbd11176",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
