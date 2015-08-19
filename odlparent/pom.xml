@@ -108,6 +108,7 @@
     <felix.dependencymanager.version>3.1.0</felix.dependencymanager.version>
     <felix.fileinstall.version>3.1.6</felix.fileinstall.version>
     <felix.webconsole.version>4.2.0</felix.webconsole.version>
+    <findsecbugs.plugin.version>1.4.0</findsecbugs.plugin.version>
     <geminiweb.version>2.2.0.RELEASE</geminiweb.version>
     <groovy.version>2.1.6</groovy.version>
     <gson.version>2.2.4</gson.version>
@@ -191,6 +192,12 @@
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
         <version>${slf4j.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
+        <version>1.2.1</version>
         <scope>test</scope>
       </dependency>
       <!-- Supporting Libraries -->
@@ -1188,11 +1195,20 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
         <configuration>
           <effort>Max</effort>
           <threshold>Low</threshold>
           <goal>site</goal>
+          <failOnError>false</failOnError>
+          <xmlOutput>true</xmlOutput>
+          <plugins>
+              <plugin>
+                  <groupId>com.h3xstream.findsecbugs</groupId>
+                  <artifactId>findsecbugs-plugin</artifactId>
+                  <version>1.4.0</version>
+              </plugin>
+          </plugins>
         </configuration>
       </plugin>
       <plugin>
