@@ -102,12 +102,15 @@
     <commons.net.version>3.0.1</commons.net.version>
     <corsfilter.version>7.0.42</corsfilter.version>
     <ctrie.version>0.2.23</ctrie.version>
+    <dependency.check.maven.version>1.2.1</dependency.check.maven.version>
     <eclipse.persistence.version>2.5.2</eclipse.persistence.version>
     <feature.transaction.version>1.0.1</feature.transaction.version>
     <felix.dependencymanager.shell.version>3.0.1</felix.dependencymanager.shell.version>
     <felix.dependencymanager.version>3.1.0</felix.dependencymanager.version>
     <felix.fileinstall.version>3.1.6</felix.fileinstall.version>
     <felix.webconsole.version>4.2.0</felix.webconsole.version>
+    <findbugs.maven.plugin.version>3.0.1</findbugs.maven.plugin.version>
+    <findsecbugs.plugin.version>1.4.0</findsecbugs.plugin.version>
     <geminiweb.version>2.2.0.RELEASE</geminiweb.version>
     <groovy.version>2.1.6</groovy.version>
     <gson.version>2.2.4</gson.version>
@@ -191,6 +194,12 @@
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
         <version>${slf4j.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
+        <version>${dependency.check.maven.version}</version>
         <scope>test</scope>
       </dependency>
       <!-- Supporting Libraries -->
