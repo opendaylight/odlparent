@@ -3,6 +3,23 @@
 
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>checkstyle</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.2-IT</version>
+
+  <distributionManagement>
+    <!-- Inocybe Released artifact -->
+    <repository>
+      <id>inocybe-release</id>
+      <url>http://repo.inocybe.com/repository/ext-release-local</url>
+    </repository>
+    <!-- Inocybe Snapshot artifact -->
+    <snapshotRepository>
+      <id>inocybe-snapshot</id>
+      <url>http://repo.inocybe.com/repository/ext-snapshot-local</url>
+    </snapshotRepository>
+    <site>
+      <id>${project.artifactId}-site</id>
+      <url>./</url>
+    </site>
+  </distributionManagement>
 </project>
 

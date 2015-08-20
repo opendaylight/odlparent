@@ -11,13 +11,13 @@
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-aggregator</artifactId>
-    <version>1.5.1-SNAPSHOT</version>
+    <version>1.5.1-IT</version>
     <name>odlparent</name> <!-- Used by Sonar to set project name -->
     <packaging>pom</packaging>
 
     <scm>
-        <connection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</connection>
-        <developerConnection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</developerConnection>
+        <connection>scm:git:ssh://review.inocybe.com:29418/odl/odlparent.git</connection>
+        <developerConnection>scm:git:ssh://review.inocybe.com:29418/odl/odlparent.git</developerConnection>
         <tag>HEAD</tag>
         <url>https://wiki.opendaylight.org/view/ODL_Root_Parent:Main</url>
     </scm>

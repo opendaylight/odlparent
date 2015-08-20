@@ -12,25 +12,25 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>odlparent</artifactId>
-  <version>1.5.1-SNAPSHOT</version>
+  <version>1.5.1-IT</version>
   <packaging>pom</packaging>
 
   <scm>
-    <connection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</connection>
-    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</developerConnection>
+    <connection>scm:git:ssh://review.inocybe.com:29418/odl/odlparent.git</connection>
+    <developerConnection>scm:git:ssh://review.inocybe.com:29418/odl/odlparent.git</developerConnection>
     <tag>HEAD</tag>
     <url>https://wiki.opendaylight.org/view/ODL_Root_Parent:Main</url>
   </scm>
   <distributionManagement>
     <!-- OpenDayLight Released artifact -->
     <repository>
-      <id>opendaylight-release</id>
-      <url>${nexusproxy}/repositories/opendaylight.release/</url>
+      <id>inocybe-release</id>
+      <url>${nexusproxy}/ext-release-local/</url>
     </repository>
     <!-- OpenDayLight Snapshot artifact -->
     <snapshotRepository>
-      <id>opendaylight-snapshot</id>
-      <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
+      <id>inocybe-snapshots</id>
+      <url>${nexusproxy}/ext-snapshot-local/</url>
     </snapshotRepository>
     <site>
       <id>${project.artifactId}-site</id>
@@ -38,10 +38,10 @@
     </site>
   </distributionManagement>
   <properties>
-    <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
-    <nexus.repository.release>opendaylight.release</nexus.repository.release>
-    <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
-    <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
+    <nexusproxy>http://repo.inocybe.com/repository</nexusproxy>
+    <nexus.repository.release>ext-release-local</nexus.repository.release>
+    <nexus.repository.snapshot>ext-snapshot-local</nexus.repository.snapshot>
+    <nexus.repository.snapshot>ext-snapshot-local</nexus.repository.snapshot>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -85,7 +85,7 @@
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
     <siteplugin>3.4</siteplugin>
-    <odl.checkstyle.version>0.0.2-SNAPSHOT</odl.checkstyle.version>
+    <odl.checkstyle.version>0.0.2-IT</odl.checkstyle.version>
     <jetty.version>8.1.14.v20131031</jetty.version>
 
     <!-- Supporting Libraries -->
@@ -855,9 +855,9 @@
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-      <id>opendaylight-mirror</id>
-      <name>opendaylight-mirror</name>
-      <url>${nexusproxy}/groups/public/</url>
+      <id>inocybe-release</id>
+      <name>inocybe-release</name>
+      <url>${nexusproxy}/ext-release-local/</url>
     </repository>
     <!-- OpenDayLight Snapshot artifact -->
     <repository>
@@ -867,9 +867,9 @@
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
-      <id>opendaylight-snapshot</id>
-      <name>opendaylight-snapshot</name>
-      <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
+      <id>inocybe-snapshots</id>
+      <name>inocybe-snapshots</name>
+      <url>${nexusproxy}/ext-snapshot-local/</url>
     </repository>
   </repositories>
   <pluginRepositories>
@@ -882,9 +882,9 @@
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-      <id>opendaylight-mirror</id>
-      <name>opendaylight-mirror</name>
-      <url>${nexusproxy}/groups/public/</url>
+      <id>inocybe-release</id>
+      <name>inocybe-release</name>
+      <url>${nexusproxy}/ext-release-local/</url>
     </pluginRepository>
     <!-- OpenDayLight Snapshot artifact -->
     <pluginRepository>
@@ -894,9 +894,9 @@
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
-      <id>opendaylight-snapshot</id>
-      <name>opendaylight-snapshot</name>
-      <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
+      <id>inocybe-snapshots</id>
+      <name>inocybe-snapshots</name>
+      <url>${nexusproxy}/ext-snapshot-local/</url>
     </pluginRepository>
   </pluginRepositories>
 
