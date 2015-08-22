@@ -1,0 +1,7 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+2: Thanh Ha <thanh.ha@linuxfoundation.org>
+Submitted-by: Thanh Ha <thanh.ha@linuxfoundation.org>
+Submitted-at: Sat, 22 Aug 2015 03:11:59 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/25658
+Project: odlparent
+Branch: refs/heads/stable/lithium
