@@ -12,7 +12,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>odlparent</artifactId>
-  <version>1.5.1-Lithium-SR1</version>
+  <version>1.5.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <scm>
@@ -86,7 +86,7 @@
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
     <siteplugin>3.4</siteplugin>
-    <odl.checkstyle.version>0.0.2-Lithium-SR1</odl.checkstyle.version>
+    <odl.checkstyle.version>0.0.3-SNAPSHOT</odl.checkstyle.version>
     <jetty.version>8.1.14.v20131031</jetty.version>
 
     <!-- Supporting Libraries -->
