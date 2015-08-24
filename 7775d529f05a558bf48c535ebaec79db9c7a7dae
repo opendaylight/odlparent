@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a79b1b5_2dee5789",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-08-24T16:53:21Z",
+      "side": 1,
+      "message": "Commit messages should be in present tense and imperative style. The first line should be a quick summary of your change followed by details. I\u0027d write this message as:\n\n Move dependency-check to odlparent\n\n This change was triggered from feedback from:\n   git.opendaylight.org/gerrit/24627\n\n Change-Id: Idead68dbab00a8dfae26f831818b105c31ad5a09\n Signed-off-by: William Tung-Mao Wu \u003cwilliam.tm.wu@gmail.com\u003e\n\nFor examples on how to write good commit messages see: \nhttps://wiki.openstack.org/wiki/GitCommitMessages\n\nAlso your commit name should state your full name. I highly recommend configuring your git name via the command:\n\n git config --global user.name \"William Tung-Mao Wu\"",
+      "revId": "7775d529f05a558bf48c535ebaec79db9c7a7dae",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
