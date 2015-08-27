@@ -145,7 +145,7 @@
     <junit.version>4.11</junit.version>
     <logback.version>1.0.9</logback.version>
     <mockito.version>1.9.5</mockito.version>
-    <netty.version>4.0.26.Final</netty.version>
+    <netty.version>4.0.30.Final</netty.version>
     <osgi.compendium.version>5.0.0</osgi.compendium.version>
     <osgi.core.version>5.0.0</osgi.core.version>
     <org.json.version>20131018</org.json.version>
