@@ -84,7 +84,7 @@
     <!-- Used in affinity, controller, nemo, opendove, snmp4sdn -->
     <enunciate.version>1.31</enunciate.version>
     <!-- Used in affinity, coretutorials, netide -->
-    <exam.version>4.4.0</exam.version>
+    <exam.version>4.9.1</exam.version>
     <!-- Used in affinity, controller, neutron, of-config; see also snmp4sdn -->
     <!-- Later versions break tests in downstream projects -->
     <failsafe.version>2.18.1</failsafe.version>
@@ -101,7 +101,7 @@
     <jacoco.version>0.7.2.201409121644</jacoco.version>
     <!-- Used in aaa, controller, coretutorials, integration/distribution, l2switch, lacp, lispflowmapping, netide,
          nic, openflowplugin, ovsdb, persistence, sfc, snbi, snmp4sdn?, sxp, topoprocessing, unimgr, vtn -->
-    <karaf.version>3.0.8</karaf.version>
+    <karaf.version>4.0.5</karaf.version>
     <!-- Used in lispflowmapping, snmp4sdn, vtn -->
     <projectinfo>2.8.1</projectinfo>
     <!-- Used in of-config; see also snmp4sdn -->
@@ -1295,7 +1295,8 @@
                 <excludes>
                   org/opendaylight/yang/gen/**,
                   **/protobuff/messages/**,
-                  **/thrift/gen/*.java
+                  **/thrift/gen/*.java,
+                  **/CustomBundleURLStreamHandlerFactory.java
                 </excludes>
                 <failsOnError>false</failsOnError>
                 <consoleOutput>true</consoleOutput>

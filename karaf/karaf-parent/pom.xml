@@ -21,12 +21,6 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
   <properties>
     <branding.version>1.8.0-SNAPSHOT</branding.version>
     <karaf.localFeature>standard</karaf.localFeature>
-    <!--  Karaf Maven plugin 3.0.3 reinstalls already installed
-          boot features to container, which could be observed
-          in huge logs and seems like loop in build, even if it
-          is not.
-     -->
-    <karaf.maven.version>3.0.1</karaf.maven.version>
     <karaf.archiveTarGz>true</karaf.archiveTarGz>
     <karaf.archiveZip>true</karaf.archiveZip>
   </properties>
@@ -68,13 +62,6 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
       <version>${karaf.version}</version>
       <type>xml</type>
       <classifier>features</classifier>
-      <scope>runtime</scope>
-    </dependency>
-    <!-- karaf region dependency -->
-    <dependency>
-      <groupId>org.apache.karaf.region</groupId>
-      <artifactId>org.apache.karaf.region.persist</artifactId>
-      <version>${karaf.version}</version>
       <scope>runtime</scope>
     </dependency>
     <!-- ODL Branding -->
@@ -208,7 +195,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
         <plugin>
           <groupId>org.apache.karaf.tooling</groupId>
           <artifactId>karaf-maven-plugin</artifactId>
-          <version>${karaf.maven.version}</version>
+          <version>${karaf.version}</version>
           <extensions>true</extensions>
           <configuration>
             <startupFeatures>

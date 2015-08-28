@@ -232,7 +232,7 @@ public final class FeatureUtil {
     public static Features readFeature(Artifact artifact) throws FileNotFoundException {
         File file = artifact.getFile();
         FileInputStream stream = new FileInputStream(file);
-        Features result = JaxbUtil.unmarshal(stream, false);
+        Features result = JaxbUtil.unmarshal(file.toURI().toString(), stream, false);
         LOG.trace("readFeature({}) returns {} without resolving first", artifact, result.getName());
         return result;
     }
