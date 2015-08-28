@@ -129,12 +129,9 @@ public class FeatureUtil {
     }
 
     public static Features readFeature(Artifact artifact) throws FileNotFoundException {
-        Features result;
         File file = artifact.getFile();
         FileInputStream stream = new FileInputStream(file);
-        Features features = JaxbUtil.unmarshal(stream, false);
-        result = features;
-        return result;
+        return JaxbUtil.unmarshal(file.toURI().toString(), stream, false);
     }
 
     public static Features readFeature(AetherUtil aetherUtil,String coords) throws ArtifactResolutionException, FileNotFoundException {
