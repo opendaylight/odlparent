@@ -15,7 +15,6 @@ import javax.xml.bind.JAXBException;
 import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.features.internal.model.JaxbUtil;
-import org.apache.karaf.tooling.url.CustomBundleURLStreamHandlerFactory;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.ParentRunner;
@@ -89,7 +88,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
      */
     protected Features getFeatures(final URL repoURL) throws JAXBException,
             IOException {
-        return JaxbUtil.unmarshal(repoURL.openStream(), false);
+        return JaxbUtil.unmarshal(repoURL.toExternalForm(), false);
     }
 
     @Override
