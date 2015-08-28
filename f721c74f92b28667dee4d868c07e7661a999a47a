@@ -51,6 +51,24 @@
       "revId": "f721c74f92b28667dee4d868c07e7661a999a47a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_f6149ff6",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-08-28T08:28:55Z",
+      "side": 1,
+      "message": "Would it make sense then to produce patches for downstream projects *removing* the references to variables defined here (where possible)?",
+      "parentUuid": "3a79b1b5_56b9d32c",
+      "revId": "f721c74f92b28667dee4d868c07e7661a999a47a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
