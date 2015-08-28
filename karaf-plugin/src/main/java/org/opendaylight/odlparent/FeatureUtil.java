@@ -219,7 +219,7 @@ public final class FeatureUtil {
     public static Features readFeature(Artifact artifact) throws FileNotFoundException {
         File file = artifact.getFile();
         FileInputStream stream = new FileInputStream(file);
-        return JaxbUtil.unmarshal(stream, false);
+        return JaxbUtil.unmarshal(file.toURI().toString(), stream, false);
     }
 
     /**

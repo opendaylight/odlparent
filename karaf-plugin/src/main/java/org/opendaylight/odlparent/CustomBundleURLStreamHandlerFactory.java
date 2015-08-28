@@ -1,6 +1,4 @@
-/*
- * The NOTICE file referred to in the license statement below is available
- * as Karaf-NOTICE at the root of this project.
+/**
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -17,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.opendaylight.odlparent.featuretest;
+package org.opendaylight.odlparent;
 
 import java.net.URLStreamHandler;
 import java.net.URLStreamHandlerFactory;
@@ -34,7 +32,6 @@ public class CustomBundleURLStreamHandlerFactory implements URLStreamHandlerFact
     private static final String SPRING_URI_PREFIX = "spring";
     private static final String BLUEPRINT_URI_PREFIX = "blueprint";
 
-    @Override
     public URLStreamHandler createURLStreamHandler(String protocol) {
         switch (protocol) {
             case MVN_URI_PREFIX:
