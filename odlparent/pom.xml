@@ -12,7 +12,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>odlparent</artifactId>
-  <version>1.6.0-SNAPSHOT</version>
+  <version>1.6.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <licenses>
@@ -95,13 +95,13 @@
          http://jira.xwiki.org/browse/XCOMMONS-821 -->
     <jacoco.version>0.7.4.201502262128</jacoco.version>
     <jar.plugin.version>${maven.jar.version}</jar.plugin.version>
-    <karaf.version>3.0.3</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
+    <karaf.version>4.0.1</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <projectinfo>2.6</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
     <siteplugin>3.4</siteplugin>
-    <odl.checkstyle.version>0.1.0-SNAPSHOT</odl.checkstyle.version>
-    <odl.license.version>0.0.1-SNAPSHOT</odl.license.version>
+    <odl.checkstyle.version>0.1.1-SNAPSHOT</odl.checkstyle.version>
+    <odl.license.version>0.0.2-SNAPSHOT</odl.license.version>
     <jetty.version>8.1.14.v20131031</jetty.version>
 
     <!-- Supporting Libraries -->
@@ -1016,7 +1016,8 @@
                   org/opendaylight/yang/gen/**,
                   **/config/yang/**,
                   **/protobuff/messages/**,
-                  **/thrift/gen/*.java
+                  **/thrift/gen/*.java,
+                  **/CustomBundleURLStreamHandlerFactory.java
                 </excludes>
                 <failsOnError>false</failsOnError>
                 <consoleOutput>true</consoleOutput>
@@ -1114,7 +1115,7 @@
                   <artifactItem>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>odl-license</artifactId>
-                    <version>0.0.1-SNAPSHOT</version>
+                    <version>0.0.2-SNAPSHOT</version>
                   </artifactItem>
                 </artifactItems>
                 <outputDirectory>${project.build.outputDirectory}</outputDirectory>
