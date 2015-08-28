@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a79b1b5_b6ace7ee",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-08-28T07:56:04Z",
+      "side": 1,
+      "message": "please do no proliferate properties -- since this is used only in prerequisites, it is fine to hard-code it there.",
+      "revId": "f721c74f92b28667dee4d868c07e7661a999a47a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_56b9d32c",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-08-28T07:56:04Z",
+      "side": 1,
+      "message": "same thing, we are actively trying to get rid of properties, as plugin versions should be propagated from pluginManagement. Same for dependencies (via dependencyManagement).",
+      "revId": "f721c74f92b28667dee4d868c07e7661a999a47a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
