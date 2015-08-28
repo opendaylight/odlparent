@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a79b1b5_b648672e",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-08-28T08:14:46Z",
+      "side": 1,
+      "message": "The value is also used in the enforcer plugin. The general argument makes sense though, I\u0027ll avoid adding new properties... (In other large-scale Maven projects I\u0027ve worked on, we actually used \"runtime\" POMs to set up dependency- and plugin-management, so we could use properties but they weren\u0027t inherited.)",
+      "parentUuid": "3a79b1b5_b6ace7ee",
+      "revId": "f721c74f92b28667dee4d868c07e7661a999a47a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_56b9d32c",
         "filename": "odlparent/pom.xml",
         "patchSetId": 8
