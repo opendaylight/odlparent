@@ -10,9 +10,8 @@ package org.opendaylight.odlparent.featuretest;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
-
+import com.google.common.base.Preconditions;
 import java.net.URL;
-
 import org.junit.runner.Description;
 import org.junit.runner.Runner;
 import org.junit.runner.manipulation.Filter;
@@ -24,43 +23,36 @@ import org.ops4j.pax.exam.junit.PaxExam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.base.Preconditions;
-
-
-
 public class PerFeatureRunner extends Runner {
     private static final Logger LOG = LoggerFactory.getLogger(PerFeatureRunner.class);
     private final String featureVersion;
     private final String featureName;
-    final PaxExam delegate;
-    final URL repoURL;
+    private final PaxExam delegate;
+    private final URL repoURL;
 
     public PerFeatureRunner(final URL repoURL, final String featureName, final String featureVersion, final Class<?> testClass) throws InitializationError {
-        Preconditions.checkNotNull(repoURL);
-        Preconditions.checkNotNull(featureName);
-        Preconditions.checkNotNull(featureVersion);
-        Preconditions.checkNotNull(testClass);
+        this.repoURL = Preconditions.checkNotNull(repoURL);
+        this.featureName = Preconditions.checkNotNull(featureName);
+        this.featureVersion = Preconditions.checkNotNull(featureVersion);
+
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP, repoURL.toString());
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP, featureName);
-        System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP,featureVersion);
-        this.delegate = new PaxExam(testClass);
-        this.featureName = featureName;
-        this.featureVersion = featureVersion;
-        this.repoURL = repoURL;
+        System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP, featureVersion);
+        this.delegate = new PaxExam(Preconditions.checkNotNull(testClass));
     }
 
     @Override
     public Description getDescription() {
-        return Util.convertDescription(repoURL,featureName,featureVersion,delegate.getDescription());
+        return Util.convertDescription(repoURL, featureName, featureVersion,delegate.getDescription());
     }
 
     @Override
-    public void run(RunNotifier notifier) {
+    public void run(final RunNotifier notifier) {
         LOG.info("About to run test for feature: {} {}", featureName, featureVersion);
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP, repoURL.toString());
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP, featureName);
-        System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP,featureVersion);
-        delegate.run(new PerFeatureRunNotifier(repoURL,featureName, featureVersion,notifier));
+        System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP, featureVersion);
+        delegate.run(new PerFeatureRunNotifier(repoURL, featureName, featureVersion, notifier));
     }
 
     /**
@@ -77,7 +69,7 @@ public class PerFeatureRunner extends Runner {
      * @throws NoTestsRemainException
      * @see org.ops4j.pax.exam.junit.PaxExam#filter(org.junit.runner.manipulation.Filter)
      */
-    public void filter(Filter filter) throws NoTestsRemainException {
+    public void filter(final Filter filter) throws NoTestsRemainException {
         delegate.filter(filter);
     }
 
@@ -85,7 +77,7 @@ public class PerFeatureRunner extends Runner {
      * @param sorter
      * @see org.ops4j.pax.exam.junit.PaxExam#sort(org.junit.runner.manipulation.Sorter)
      */
-    public void sort(Sorter sorter) {
+    public void sort(final Sorter sorter) {
         delegate.sort(sorter);
     }
 
@@ -93,6 +85,7 @@ public class PerFeatureRunner extends Runner {
      * @return
      * @see java.lang.Object#toString()
      */
+    @Override
     public String toString() {
         return delegate.toString();
     }
@@ -117,7 +110,4 @@ public class PerFeatureRunner extends Runner {
     public String getFeatureVersion() {
         return featureVersion;
     }
-
-
-
 }
