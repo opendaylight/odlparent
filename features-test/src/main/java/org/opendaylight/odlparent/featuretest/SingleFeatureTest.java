@@ -184,11 +184,15 @@ public class SingleFeatureTest {
 
     private void checkRepository(final URI repoURI) {
         Repository repo = null;
-        for(Repository r: featuresService.listRepositories()) {
-            if(r.getURI().equals(repoURI)){
-                repo = r;
-                break;
+        try {
+            for(Repository r: featuresService.listRepositories()) {
+                if(r.getURI().equals(repoURI)){
+                    repo = r;
+                    break;
+                }
             }
+        } catch (Exception e) {
+            Assert.fail("Error listing repositories: " + e.getMessage());
         }
         Assert.assertNotNull("Repository not found: " + repoURI,repo);
     }
