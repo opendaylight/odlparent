@@ -28,7 +28,6 @@ import java.util.Properties;
 import java.util.Set;
 
 import org.apache.karaf.features.internal.model.Features;
-import org.apache.karaf.tooling.url.CustomBundleURLStreamHandlerFactory;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;

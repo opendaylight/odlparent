@@ -73,6 +73,7 @@
               <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
               <excludes>
                 <!-- Skip Apache Licensed files -->
+                org/opendaylight/odlparent/CustomBundleURLStreamHandlerFactory.java,
                 org/opendaylight/odlparent/PopulateLocalRepoMojo.java
               </excludes>
               <failsOnError>false</failsOnError>
