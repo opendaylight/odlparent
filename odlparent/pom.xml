@@ -91,7 +91,7 @@
     <exam.version>4.4.0</exam.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <failsafe.version>2.18</failsafe.version>
     <gmaven.plugin.version>1.0</gmaven.plugin.version>
-    <jacoco.version>0.7.2.201409121644</jacoco.version>
+    <jacoco.version>0.7.4.201502262128</jacoco.version>
     <jar.plugin.version>${maven.jar.version}</jar.plugin.version>
     <karaf.version>3.0.3</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <projectinfo>2.6</projectinfo>
