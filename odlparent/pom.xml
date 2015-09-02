@@ -167,6 +167,9 @@
     <jsr305.api.version>2.0.3</jsr305.api.version>
     <jsr311.api.version>1.1.1</jsr311.api.version>
     <jsr311.v2.api.version>2.0</jsr311.v2.api.version>
+    <!-- Need to stick to JUnit 4.11 until
+         https://github.com/jayway/powermock/issues/560 is fixed (either in
+         PowerMock or with a new JUnit release) -->
     <junit.version>4.11</junit.version>
     <logback.version>1.0.9</logback.version>
     <mockito.version>1.9.5</mockito.version>
@@ -908,7 +911,7 @@
       <dependency>
         <groupId>xmlunit</groupId>
         <artifactId>xmlunit</artifactId>
-        <version>1.5</version>
+        <version>1.6</version>
         <scope>test</scope>
       </dependency>
       <dependency>
