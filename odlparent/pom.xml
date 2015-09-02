@@ -99,7 +99,7 @@
     <enforcer.version>1.4</enforcer.version>
     <paxexam.plugin.version>1.2.4</paxexam.plugin.version> <!-- FIXME: this is latest version of paxexam plugin -->
     <enunciate.version>1.30.1</enunciate.version> <!-- Needs to remain exported, as its used for dependencies, too -->
-    <exam.version>4.4.0</exam.version> <!-- Needs to remain exported, as its used for dependencies, too -->
+    <exam.version>4.6.0</exam.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <failsafe.version>2.18.1</failsafe.version>
     <gmaven.plugin.version>1.0</gmaven.plugin.version>
     <jacoco.version>0.7.2.201409121644</jacoco.version>
@@ -182,7 +182,7 @@
     <spring-security.version>3.2.8.RELEASE</spring-security.version>
     <spring.version>3.2.14.RELEASE</spring.version>
     <txw2.version>20110809</txw2.version>
-    <url.version>1.5.0</url.version>
+    <url.version>2.4.1</url.version>
     <virgo.version>3.6.0.RELEASE</virgo.version>
 
     <!-- Default Sonar configuration -->
