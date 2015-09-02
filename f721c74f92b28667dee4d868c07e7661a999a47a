@@ -104,6 +104,24 @@
       "revId": "f721c74f92b28667dee4d868c07e7661a999a47a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_11f83e48",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-09-02T13:53:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a79b1b5_76b72887",
+      "revId": "f721c74f92b28667dee4d868c07e7661a999a47a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
