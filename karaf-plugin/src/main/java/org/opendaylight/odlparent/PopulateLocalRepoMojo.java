@@ -53,7 +53,13 @@ public class PopulateLocalRepoMojo
 
     static {
         // Static initialization, as we may be invoked multiple times
-        URL.setURLStreamHandlerFactory(new CustomBundleUrlStreamHandlerFactory());
+        // karaf-maven-plugin defines its own URLStreamHandlerFactory for install-kars, so we may find a factory
+        // already defined (but it handles "mvn:" and "wrap:mvn:" so we should be OK)
+        try {
+            URL.setURLStreamHandlerFactory(new CustomBundleUrlStreamHandlerFactory());
+        } catch (Error e) {
+            LOG.warn("populate-local-repo: URL factory is already defined");
+        }
     }
 
     /**
