@@ -78,7 +78,7 @@
     -->
     <jacoco.version>0.7.2.201409121644</jacoco.version>
     <jar.plugin.version>${maven.jar.version}</jar.plugin.version>
-    <karaf.version>3.0.3</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
+    <karaf.version>3.0.4</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <projectinfo>2.8.1</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
@@ -139,6 +139,7 @@
     <!-- Used by bgpcep, netconf, ovsdb, sxp; see also opendove, toolkit -->
     <netty.version>4.0.33.Final</netty.version>
     <!-- Used by alto, controller, neutron, sfc, snbi; see also dlux, toolkit, tsdr -->
+    <!-- osgi.core.version 6.0.0 needs Karaf 4.0.1 and changes the feature model -->
     <osgi.core.version>5.0.0</osgi.core.version>
     <!-- Used by openflowjava, persistence, sfc, snmp4sdn, sxp; see also affinity, toolkit -->
     <slf4j.version>1.7.12</slf4j.version>
