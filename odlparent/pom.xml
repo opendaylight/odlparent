@@ -100,7 +100,7 @@
          http://jira.xwiki.org/browse/XCOMMONS-821 -->
     <jacoco.version>0.7.4.201502262128</jacoco.version>
     <jar.plugin.version>${maven.jar.version}</jar.plugin.version>
-    <karaf.version>3.0.3</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
+    <karaf.version>3.0.4</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <projectinfo>2.6</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
@@ -166,6 +166,8 @@
     <mockito.version>1.9.5</mockito.version>
     <netty.version>4.0.30.Final</netty.version>
     <osgi.compendium.version>5.0.0</osgi.compendium.version>
+    <!-- osgi.core.version 6.0.0 needs Karaf 4.0.1 and changes the feature
+         model -->
     <osgi.core.version>5.0.0</osgi.core.version>
     <slf4j.version>1.7.12</slf4j.version>
     <spifly.version>1.0.0</spifly.version>
