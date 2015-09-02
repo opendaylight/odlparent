@@ -86,6 +86,24 @@
       "revId": "f721c74f92b28667dee4d868c07e7661a999a47a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_76b72887",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-09-02T07:45:02Z",
+      "side": 1,
+      "message": "OK. Could you add a reference to the bug in your patch, so we know what to track?",
+      "parentUuid": "3a79b1b5_4bfe093a",
+      "revId": "f721c74f92b28667dee4d868c07e7661a999a47a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
