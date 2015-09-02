@@ -105,10 +105,10 @@
     <ctrie.version>0.2.23</ctrie.version>
     <eclipse.persistence.version>2.6.0</eclipse.persistence.version>
     <feature.transaction.version>1.0.1</feature.transaction.version>
-    <felix.dependencymanager.shell.version>3.0.1</felix.dependencymanager.shell.version>
-    <felix.dependencymanager.version>3.1.0</felix.dependencymanager.version>
-    <felix.fileinstall.version>3.1.6</felix.fileinstall.version>
-    <felix.webconsole.version>4.2.0</felix.webconsole.version>
+    <felix.dependencymanager.shell.version>4.0.2</felix.dependencymanager.shell.version>
+    <felix.dependencymanager.version>4.1.0</felix.dependencymanager.version>
+    <felix.fileinstall.version>3.5.0</felix.fileinstall.version>
+    <felix.webconsole.version>4.2.10</felix.webconsole.version>
     <geminiweb.version>2.2.0.RELEASE</geminiweb.version>
     <groovy.version>2.1.6</groovy.version>
     <gson.version>2.3.1</gson.version>
