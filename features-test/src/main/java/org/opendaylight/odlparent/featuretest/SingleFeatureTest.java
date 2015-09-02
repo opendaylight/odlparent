@@ -58,7 +58,7 @@ public class SingleFeatureTest {
     /*
      * Default values for karaf distro version, type, groupId, and artifactId
      */
-    private static final String KARAF_DISTRO_VERSION = "3.0.2";
+    private static final String KARAF_DISTRO_VERSION = "3.0.4";
     private static final String KARAF_DISTRO_TYPE = "zip";
     private static final String KARAF_DISTRO_ARTIFACTID = "apache-karaf";
     private static final String KARAF_DISTRO_GROUPID = "org.apache.karaf";
@@ -73,7 +73,7 @@ public class SingleFeatureTest {
 
 
     /**
-     * <p>List of karaf 3.0.2 default maven repositories with snapshot repositories excluded.</p>
+     * <p>List of karaf 3.0.4 default maven repositories with snapshot repositories excluded.</p>
      * <p>Unfortunately this must be hard-coded since declarative model which uses Options,
      * does not allow us to read value, parse it (properties has allways
      * problems with lists) and construct replacement string which does
