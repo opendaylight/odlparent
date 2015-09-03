@@ -99,6 +99,7 @@
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
     <siteplugin>3.4</siteplugin>
     <odl.checkstyle.version>0.1.0-SNAPSHOT</odl.checkstyle.version>
+    <odl.license.version>0.0.1-SNAPSHOT</odl.license.version>
     <jetty.version>8.1.14.v20131031</jetty.version>
 
     <!-- Supporting Libraries -->
@@ -974,6 +975,11 @@
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
               <version>${odl.checkstyle.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.opendaylight.odlparent</groupId>
+              <artifactId>odl-license</artifactId>
+              <version>${odl.license.version}</version>
             </dependency>
           </dependencies>
           <configuration>
