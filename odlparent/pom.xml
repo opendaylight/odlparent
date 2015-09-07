@@ -70,15 +70,10 @@
     <maven.bundle.version>2.5.3</maven.bundle.version>
     <maven.clean.plugin.version>2.6.1</maven.clean.plugin.version>
     <maven.compile.plugin.version>3.2</maven.compile.plugin.version>
-    <maven.install.plugin.version>2.5.2</maven.install.plugin.version>
-    <maven.dependency.plugin.version>2.10</maven.dependency.plugin.version>
-    <maven.depends.version>1.2</maven.depends.version>
-    <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
     <maven.jar.version>2.5</maven.jar.version>
     <maven.javadoc.version>2.10.1</maven.javadoc.version>
     <maven.plugin.version>3.3</maven.plugin.version>
     <maven.release.version>2.5.1</maven.release.version>
-    <maven.source.version>2.4</maven.source.version>
     <maven.surefire.version>2.18</maven.surefire.version>
 
     <!-- Maven plugin versions, in random formats -->
@@ -86,7 +81,6 @@
     <checkstyle.version>2.15</checkstyle.version>
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
     <enforcer.version>1.3.1</enforcer.version>
-    <paxexam.plugin.version>1.2.4</paxexam.plugin.version> <!-- FIXME: this is latest version of paxexam plugin -->
     <enunciate.version>1.28</enunciate.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <exam.version>4.4.0</exam.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <failsafe.version>2.18</failsafe.version>
@@ -99,10 +93,7 @@
     <projectinfo>2.6</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
-    <siteplugin>3.4</siteplugin>
     <odl.checkstyle.version>0.1.0-SNAPSHOT</odl.checkstyle.version>
-    <odl.license.version>0.0.1-SNAPSHOT</odl.license.version>
-    <jetty.version>8.1.14.v20131031</jetty.version>
 
     <!-- Supporting Libraries -->
     <aopalliance.version>1.0.0</aopalliance.version>
@@ -903,7 +894,7 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-servlets</artifactId>
-        <version>${jetty.version}</version>
+        <version>8.1.14.v20131031</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -983,7 +974,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>odl-license</artifactId>
-              <version>${odl.license.version}</version>
+              <version>0.0.1-SNAPSHOT</version>
             </dependency>
           </dependencies>
           <configuration>
@@ -1036,11 +1027,11 @@
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
-          <version>${maven.install.plugin.version}</version>
+          <version>2.5.2</version>
         </plugin>
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>${maven.deploy.plugin.version}</version>
+          <version>2.8.2</version>
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -1103,7 +1094,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>${maven.dependency.plugin.version}</version>
+          <version>2.10</version>
           <executions>
             <execution>
               <id>unpack-license</id>
@@ -1140,11 +1131,11 @@
         </plugin>
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
-          <version>${siteplugin}</version>
+          <version>3.4</version>
         </plugin>
         <plugin>
           <artifactId>maven-source-plugin</artifactId>
-          <version>${maven.source.version}</version>
+          <version>2.4</version>
           <executions>
             <execution>
               <id>attach-sources</id>
@@ -1176,7 +1167,7 @@
         <plugin>
           <groupId>org.apache.servicemix.tooling</groupId>
           <artifactId>depends-maven-plugin</artifactId>
-          <version>${maven.depends.version}</version>
+          <version>1.2</version>
           <executions>
             <execution>
               <id>generate-depends-file</id>
@@ -1278,7 +1269,7 @@
         <plugin>
           <groupId>org.ops4j.pax.exam</groupId>
           <artifactId>maven-paxexam-plugin</artifactId>
-          <version>${paxexam.plugin.version}</version>
+          <version>1.2.4</version>
         </plugin>
       </plugins>
     </pluginManagement>
