@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a79b1b5_a29330f9",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-09-07T15:56:26Z",
+      "side": 0,
+      "message": "odl.checkstyle.version is used downstream by reservation.",
+      "revId": "3203d6382b17e701cbce8c02f07f7d571222c9b4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
