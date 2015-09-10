@@ -8,24 +8,18 @@
  and is available at http://www.eclipse.org/legal/epl-v10.html
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>odlparent-lite</artifactId>
+    <version>1.6.0-SNAPSHOT</version>
+    <relativePath>../odlparent-lite</relativePath>
+  </parent>
+
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>odlparent</artifactId>
-  <version>1.6.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-
-  <licenses>
-    <license>
-      <name>Eclipse Public License v1.0</name>
-      <url>http://www.eclipse.org/legal/epl-v10.html</url>
-    </license>
-  </licenses>
-
-  <organization>
-    <name>OpenDaylight</name>
-    <url>http://www.opendaylight.org</url>
-  </organization>
 
   <scm>
     <connection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</connection>
@@ -33,26 +27,9 @@
     <tag>HEAD</tag>
     <url>https://wiki.opendaylight.org/view/ODL_Root_Parent:Main</url>
   </scm>
-  <distributionManagement>
-    <!-- OpenDayLight Released artifact -->
-    <repository>
-      <id>opendaylight-release</id>
-      <url>${nexusproxy}/repositories/opendaylight.release/</url>
-    </repository>
-    <!-- OpenDayLight Snapshot artifact -->
-    <snapshotRepository>
-      <id>opendaylight-snapshot</id>
-      <url>${nexusproxy}/repositories/opendaylight.snapshot/</url>
-    </snapshotRepository>
-    <site>
-      <id>${project.artifactId}-site</id>
-      <url>./</url>
-    </site>
-  </distributionManagement>
+
   <properties>
-    <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
     <nexus.repository.release>opendaylight.release</nexus.repository.release>
-    <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
     <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
