@@ -6,8 +6,14 @@
  terms of the Eclipse Public License v1.0 which accompanies this distribution,
  and is available at http://www.eclipse.org/legal/epl-v10.html
 --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>odlparent-minimal</artifactId>
+        <version>1.6.0-SNAPSHOT</version>
+        <relativePath>odlparent-minimal</relativePath>
+    </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-aggregator</artifactId>
@@ -32,6 +38,7 @@
         <module>features-parent</module>
         <module>features-test</module>
         <module>odlparent</module>
+        <module>odlparent-minimal</module>
         <module>karaf-plugin</module>
     </modules>
 
