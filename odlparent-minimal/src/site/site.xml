@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="releng/builder">
+    <bannerLeft>
+        <name>OpenDaylight</name>
+        <src>https://www.opendaylight.org/sites/all/themes/odl2/logo.png</src>
+        <href>https://www.opendaylight.org/</href>
+        <width>457</width>
+    </bannerLeft>
+
+    <body>
+        <menu ref="parent" inherit="bottom" />
+        <menu ref="reports" inherit="bottom" />
+        <menu ref="modules" inherit="bottom" />
+    </body>
+
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.4</version>
+    </skin>
+</project>
