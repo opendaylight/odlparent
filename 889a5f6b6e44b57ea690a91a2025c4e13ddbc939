@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a79b1b5_2af04466",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-09-14T11:45:39Z",
+      "side": 1,
+      "message": "can you add a comment pointing out that this is not something code artifacts should use?",
+      "revId": "889a5f6b6e44b57ea690a91a2025c4e13ddbc939",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
