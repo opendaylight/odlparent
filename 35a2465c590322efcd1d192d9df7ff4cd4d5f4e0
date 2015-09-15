@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a79b1b5_ec5904ff",
+        "filename": "karaf-plugin/pom.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-09-15T14:52:44Z",
+      "side": 1,
+      "message": "The changes from maven-plugin-api 3.0.3 to 3.3.3 are just documentation improvements, bug fixes, and code clean-up. Upgrading the dependency doesn\u0027t change the Maven dependency of the resulting plugin.\n\n    git clone git://git.apache.org/maven.git\n    cd maven/maven-plugin-api\n    git diff maven-3.0.3 -- .",
+      "parentUuid": "3a79b1b5_ec582434",
+      "revId": "35a2465c590322efcd1d192d9df7ff4cd4d5f4e0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a79b1b5_2c761ca5",
         "filename": "odlparent/pom.xml",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-15T14:03:26Z",
       "side": 1,
       "message": "prerequisites is defunct as of maven 3. The mechanics of this should be such that we force a 3.0+ here (to stop ancient mavens) and keep the real version in enforcer plugin configuration.\n\nThat way we do not introduce a magic property.",
+      "revId": "35a2465c590322efcd1d192d9df7ff4cd4d5f4e0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_0c5d60e9",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-09-15T14:52:44Z",
+      "side": 1,
+      "message": "That makes sense, thanks, I\u0027ll update the patch.",
+      "parentUuid": "3a79b1b5_2c761ca5",
       "revId": "35a2465c590322efcd1d192d9df7ff4cd4d5f4e0",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
