@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a79b1b5_ec582434",
+        "filename": "karaf-plugin/pom.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-09-15T14:03:26Z",
+      "side": 1,
+      "message": "Do we need this update? Will it not break with maven-3.1.1 at runtime?",
+      "revId": "35a2465c590322efcd1d192d9df7ff4cd4d5f4e0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a79b1b5_2c761ca5",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-09-15T14:03:26Z",
+      "side": 1,
+      "message": "prerequisites is defunct as of maven 3. The mechanics of this should be such that we force a 3.0+ here (to stop ancient mavens) and keep the real version in enforcer plugin configuration.\n\nThat way we do not introduce a magic property.",
+      "revId": "35a2465c590322efcd1d192d9df7ff4cd4d5f4e0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
