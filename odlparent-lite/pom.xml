@@ -23,22 +23,124 @@
   <licenses>
     <license>
       <name>Eclipse Public License v1.0</name>
-      <url>http://www.eclipse.org/legal/epl-v10.html</url>
+      <url>https://www.eclipse.org/legal/epl-v10.html</url>
     </license>
   </licenses>
 
   <organization>
     <name>OpenDaylight</name>
-    <url>http://www.opendaylight.org</url>
+    <url>https://www.opendaylight.org</url>
   </organization>
+
+  <issueManagement>
+    <system>Bugzilla</system>
+    <url>https://bugs.opendaylight.org/</url>
+  </issueManagement>
+
+  <ciManagement>
+    <system>Jenkins</system>
+    <url>https://jenkins.opendaylight.org/releng/</url>
+  </ciManagement>
 
   <properties>
     <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
-    <nexus.site.url>./</nexus.site.url>
+
+    <!-- Variables required for Maven Site generation -->
+    <nexus.site.url>file:${user.dir}/target/staged-site</nexus.site.url>
+    <odl.site.url>https://nexus.opendaylight.org/content/sites/site/</odl.site.url>
+    <stream>latest</stream><!-- CI should pass in -Dstream={stream} -->
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.4</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>2.8.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.10.3</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <profiles>
+    <profile>
+      <!--
+          This profile is to ensure we only build javadocs reports
+          when we plan to deploy Maven site for our project.
+
+          It activates by checking for the existance of deploy-site.xml in the
+          user's current working directory. (Intent is that this is run from
+          the Project root directory)
+      -->
+      <id>maven-site</id>
+      <activation>
+        <file>
+          <exists>${user.dir}/deploy-site.xml</exists>
+        </file>
+      </activation>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+
+            <executions>
+              <execution>
+                <id>generate-site</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>site</goal>
+                  <goal>attach-descriptor</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-project-info-reports-plugin</artifactId>
+            <configuration>
+              <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>javadoc</report>
+                  <report>test-javadoc</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+        </plugins>
+      </reporting>
+    </profile>
+  </profiles>
+
+
+  <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
 
   <distributionManagement>
     <repository>
@@ -51,7 +153,7 @@
     </snapshotRepository>
     <site>
       <id>opendaylight-site</id>
-      <url>${nexus.site.url}</url>
+      <url>${nexus.site.url}/${project.artifactId}/</url>
     </site>
   </distributionManagement>
 </project>

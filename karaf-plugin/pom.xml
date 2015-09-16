@@ -12,9 +12,6 @@
 
   <name>karaf-plugin Maven Plugin</name>
 
-  <!-- FIXME change it to the project's website -->
-  <url>http://maven.apache.org</url>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -124,4 +121,20 @@
       </build>
     </profile>
   </profiles>
+
+  <!--
+    Maven Site Configuration
+
+    The following configuration is necessary for maven-site-plugin to
+    correctly identify the correct deployment path for OpenDaylight Maven
+    sites.
+  -->
+  <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
+
+  <distributionManagement>
+    <site>
+      <id>opendaylight-site</id>
+      <url>${nexus.site.url}/${project.artifactId}/</url>
+    </site>
+  </distributionManagement>
 </project>
