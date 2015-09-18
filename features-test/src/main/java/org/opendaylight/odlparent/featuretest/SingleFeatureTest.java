@@ -199,7 +199,8 @@ public class SingleFeatureTest {
         LOG.info("Successfully loaded repository {}", getRepoURI());
     }
 
-    @Test
+    // Give it 5 minutes max as we've seen feature install hang on jenkins.
+    @Test(timeout=300000)
     public void installFeature() throws Exception {
         LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
         featuresService.installFeature(getFeatureName(), getFeatureVersion());
