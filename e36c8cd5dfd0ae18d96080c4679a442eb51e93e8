@@ -1,0 +1,8 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+1: Vaishali Mithbaokar <vmithbao@cisco.com>
+Code-Review+2: Robert Varga <nite@hq.sk>
+Submitted-by: Robert Varga <nite@hq.sk>
+Submitted-at: Fri, 18 Sep 2015 07:22:35 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/19363
+Project: odlparent
+Branch: refs/heads/master
