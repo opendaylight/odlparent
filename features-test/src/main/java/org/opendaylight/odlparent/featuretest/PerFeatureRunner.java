@@ -56,7 +56,7 @@ public class PerFeatureRunner extends Runner {
     }
 
     /**
-     * @return
+     * @return test count, int value
      * @see org.junit.runner.Runner#testCount()
      */
     @Override
@@ -65,8 +65,8 @@ public class PerFeatureRunner extends Runner {
     }
 
     /**
-     * @param filter
-     * @throws NoTestsRemainException
+     * @param filter, Filter instance
+     * @throws NoTestsRemainException if filtering fails.
      * @see org.ops4j.pax.exam.junit.PaxExam#filter(org.junit.runner.manipulation.Filter)
      */
     public void filter(final Filter filter) throws NoTestsRemainException {
@@ -74,7 +74,7 @@ public class PerFeatureRunner extends Runner {
     }
 
     /**
-     * @param sorter
+     * @param sorter, Sorter instance
      * @see org.ops4j.pax.exam.junit.PaxExam#sort(org.junit.runner.manipulation.Sorter)
      */
     public void sort(final Sorter sorter) {
@@ -82,7 +82,7 @@ public class PerFeatureRunner extends Runner {
     }
 
     /**
-     * @return
+     * @return string value of the delegate.
      * @see java.lang.Object#toString()
      */
     @Override
