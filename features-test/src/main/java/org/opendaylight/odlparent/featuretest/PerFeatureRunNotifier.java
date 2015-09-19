@@ -34,7 +34,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param listener
+     * @param listener RunListener instance
      * @see org.junit.runner.notification.RunNotifier#addListener(org.junit.runner.notification.RunListener)
      */
     @Override
@@ -43,7 +43,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param listener
+     * @param listener RunListener instance
      * @see org.junit.runner.notification.RunNotifier#removeListener(org.junit.runner.notification.RunListener)
      */
     @Override
@@ -52,7 +52,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @return
+     * @return the hashCode of the delegate
      * @see java.lang.Object#hashCode()
      */
     @Override
@@ -61,7 +61,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param description
+     * @param description Description instance
      * @see org.junit.runner.notification.RunNotifier#fireTestRunStarted(org.junit.runner.Description)
      */
     @Override
@@ -70,7 +70,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param result
+     * @param result Result instance
      * @see org.junit.runner.notification.RunNotifier#fireTestRunFinished(org.junit.runner.Result)
      */
     @Override
@@ -79,8 +79,8 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param description
-     * @throws StoppedByUserException
+     * @param description Description instance
+     * @throws StoppedByUserException throws this exception, if the fireTest is stopped by user.
      * @see org.junit.runner.notification.RunNotifier#fireTestStarted(org.junit.runner.Description)
      */
     @Override
@@ -90,8 +90,8 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param obj
-     * @return
+     * @param obj a generic Object instance
+     * @return true, if equals
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
@@ -100,7 +100,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param failure
+     * @param failure Failure instance
      * @see org.junit.runner.notification.RunNotifier#fireTestFailure(org.junit.runner.notification.Failure)
      */
     @Override
@@ -109,7 +109,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param failure
+     * @param failure Failure instance
      * @see org.junit.runner.notification.RunNotifier#fireTestAssumptionFailed(org.junit.runner.notification.Failure)
      */
     @Override
@@ -118,7 +118,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param description
+     * @param description Description instance
      * @see org.junit.runner.notification.RunNotifier#fireTestIgnored(org.junit.runner.Description)
      */
     @Override
@@ -127,7 +127,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param description
+     * @param description Description instance
      * @see org.junit.runner.notification.RunNotifier#fireTestFinished(org.junit.runner.Description)
      */
     @Override
@@ -145,7 +145,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @param listener
+     * @param listener RunListener instance
      * @see org.junit.runner.notification.RunNotifier#addFirstListener(org.junit.runner.notification.RunListener)
      */
     @Override
@@ -154,7 +154,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @return
+     * @return value of the delegate as a String.
      * @see java.lang.Object#toString()
      */
     @Override

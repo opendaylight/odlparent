@@ -82,10 +82,10 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     }
 
     /**
-     * @param repoURL
-     * @return
-     * @throws JAXBException
-     * @throws IOException
+     * @param repoURL url of the repo
+     * @return features
+     * @throws JAXBException exception during unmarshalling.
+     * @throws IOException IOException in getting the features.
      */
     protected Features getFeatures(final URL repoURL) throws JAXBException,
             IOException {

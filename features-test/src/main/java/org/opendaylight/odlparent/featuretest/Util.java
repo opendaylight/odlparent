@@ -23,6 +23,12 @@ public final class Util {
      *
      * This is done so that when a test fails, we can get information about which repoURL, featureName, and featureVersion
      * can come back with the Failure.
+     *
+     * @param repoURL, URL of the repository.
+     * @param featureName the name of the feature.
+     * @param featureVersion the version of the feature.
+     * @param description original description of the feature.
+     * @return the final description of the feature with the information of repoUrl, featureName, and featureVersion included.
      */
     public static final Description convertDescription(final URL repoURL, final String featureName,
             final String featureVersion, final Description description) {
