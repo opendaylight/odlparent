@@ -193,6 +193,12 @@
         <version>${slf4j.version}</version>
         <scope>test</scope>
       </dependency>
+      <dependency>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
+        <version>1.2.1</version>
+        <scope>test</scope>
+      </dependency>
       <!-- Supporting Libraries -->
       <dependency>
         <groupId>org.slf4j</groupId>
@@ -1188,7 +1194,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
         <configuration>
           <effort>Max</effort>
           <threshold>Low</threshold>
