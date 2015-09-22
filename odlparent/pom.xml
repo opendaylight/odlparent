@@ -63,7 +63,8 @@
     <maven.plugin.version>3.4</maven.plugin.version>
     <maven.release.version>2.5.2</maven.release.version>
     <maven.surefire.version>2.18.1</maven.surefire.version>
-
+    <maven.dependency.version>2.10</maven.dependency.version>
+ 
     <!-- Maven plugin versions, in random formats -->
     <bundle.plugin.version>${maven.bundle.version}</bundle.plugin.version>
     <checkstyle.version>2.16</checkstyle.version>
@@ -1021,7 +1022,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.10</version>
+          <version>${maven.dependency.version}</version>
           <executions>
             <execution>
               <id>unpack-license</id>
