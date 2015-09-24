@@ -28,13 +28,6 @@
     <url>https://wiki.opendaylight.org/view/ODL_Root_Parent:Main</url>
   </scm>
 
-  <prerequisites>
-    <!-- This is only used to prevent building with Maven < 3 and to appease
-         maven-dependency-plugin; our real Maven requirement is enforced by
-         the enforcer plugin. -->
-    <maven>3.0.5</maven>
-  </prerequisites>
-
   <!-- Variables should only be used where genuinely useful (to avoid
        repetition); in general versions should be specified in the
        corresponding dependencyManagement or pluginManagement element, not as
@@ -55,11 +48,12 @@
 
     <!-- Maven plugin versions, in the 'canonical' format -->
     <maven.antrun.plugin.version>1.8</maven.antrun.plugin.version>
+    <maven.build.helper.plugin.version>1.9.1</maven.build.helper.plugin.version>
     <maven.bundle.version>2.5.4</maven.bundle.version>
-    <maven.clean.plugin.version>2.6.1</maven.clean.plugin.version>
-    <maven.compile.plugin.version>3.3</maven.compile.plugin.version>
-    <maven.jar.version>2.6</maven.jar.version>
-    <maven.javadoc.version>2.10.3</maven.javadoc.version>
+    <maven.dependency.plugin.version>2.10</maven.dependency.plugin.version>
+    <maven.invoker.plugin.version>2.0.0</maven.invoker.plugin.version>
+    <maven.jar.version>${maven.jar.plugin.version}</maven.jar.version>
+    <maven.javadoc.version>${maven.javadoc.plugin.version}</maven.javadoc.version>
     <maven.plugin.version>3.4</maven.plugin.version>
     <maven.release.version>2.5.2</maven.release.version>
     <maven.surefire.version>2.18.1</maven.surefire.version>
@@ -68,7 +62,7 @@
     <bundle.plugin.version>${maven.bundle.version}</bundle.plugin.version>
     <checkstyle.version>2.16</checkstyle.version>
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
-    <enforcer.version>1.4</enforcer.version>
+    <enforcer.version>1.4.1</enforcer.version>
     <enunciate.version>1.30.1</enunciate.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <exam.version>4.4.0</exam.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <failsafe.version>2.18.1</failsafe.version>
@@ -85,7 +79,7 @@
     <jacoco.version>0.7.2.201409121644</jacoco.version>
     <jar.plugin.version>${maven.jar.version}</jar.plugin.version>
     <karaf.version>3.0.3</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
-    <projectinfo>2.6</projectinfo>
+    <projectinfo>${maven.project.info.reports.plugin.version}</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
     <odl.checkstyle.version>0.1.0-SNAPSHOT</odl.checkstyle.version>
@@ -966,18 +960,6 @@
           </executions>
         </plugin>
         <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>${maven.clean.plugin.version}</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
-        <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven.compile.plugin.version}</version>
         </plugin>
@@ -990,38 +972,16 @@
           <version>${failsafe.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-invoker-plugin</artifactId>
-          <version>2.0.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>${jar.plugin.version}</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${maven.javadoc.version}</version>
-          <configuration>
-            <!-- Keep things quiet except for warnings/errors -->
-            <quiet>true</quiet>
-          </configuration>
-          <executions>
-            <execution>
-              <id>attach-javadocs</id>
-              <goals>
-                <goal>jar</goal>
-              </goals>
-            </execution>
-          </executions>
+          <version>${maven.invoker.plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
           <version>${maven.release.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.10</version>
+          <version>${maven.dependency.plugin.version}</version>
           <executions>
             <execution>
               <id>unpack-license</id>
@@ -1043,14 +1003,13 @@
         </plugin>
 
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-plugin-plugin</artifactId>
           <version>${maven.plugin.version}</version>
         </plugin>
 
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>2.7</version>
+          <version>${maven.resources.plugin.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-shade-plugin</artifactId>
@@ -1118,7 +1077,12 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.9.1</version>
+          <version>${maven.build.helper.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>3.0.2</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -1148,7 +1112,6 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <versionRange>[1.0.0,)</versionRange>
                     <goals>
@@ -1161,7 +1124,6 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <versionRange>[2.0.0,)</versionRange>
                     <goals>
@@ -1174,7 +1136,6 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <versionRange>[2.10,)</versionRange>
                     <goals>
@@ -1216,7 +1177,6 @@
 
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
@@ -1235,19 +1195,15 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
       </plugin>
 
@@ -1294,7 +1250,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.1</version>
         <configuration>
           <effort>Max</effort>
           <threshold>Low</threshold>
