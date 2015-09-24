@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_4135c144",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-09-24T16:59:15Z",
+      "side": 1,
+      "message": "I\u0027m not sure I agree with putting all these variables here. odlparent-lite is not meant to be used by projects.\n\nIt\u0027s only here to solve small edge cases such as all the \"project-artifacts\" bundles failing to upload to Nexus because they do not have \u003cdistributionManagement\u003e declared. The reason that maven-site related config made it here is because we want those modules to also be listed in maven-site output.\n\nI worry that putting variables here will slowly make this \"lite\" object no longer lite and folks start to try to use this as their code parents.\n\nThe goal with the lite object is to have just enough configuration that it generates a maven-site artifact as well as provides the \u003cdistributionManagement\u003e section for artifact poms.",
+      "revId": "6acb8d00d851bdae5ab102a8784c958acd74b696",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
