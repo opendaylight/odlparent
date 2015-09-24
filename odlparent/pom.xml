@@ -941,7 +941,7 @@
               <goals>
                 <goal>check</goal>
               </goals>
-              <phase>process-sources</phase>
+              <phase>validate</phase>
               <configuration>
                 <configLocation>check-license.xml</configLocation>
                 <includeResources>false</includeResources>
@@ -961,7 +961,7 @@
               <goals>
                 <goal>check</goal>
               </goals>
-              <phase>process-sources</phase>
+              <phase>validate</phase>
             </execution>
           </executions>
         </plugin>
