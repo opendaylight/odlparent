@@ -5,13 +5,16 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
+
 package org.opendaylight.odlparent.featuretest;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.xml.bind.JAXBException;
+
 import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.features.internal.model.JaxbUtil;
@@ -34,62 +37,73 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
         URL.setURLStreamHandlerFactory(new CustomBundleURLStreamHandlerFactory());
     }
 
+    /**
+     * Create a runner.
+     *
+     * @param testClass The test class.
+     * @throws InitializationError if an error occurs.
+     */
     public PerRepoTestRunner(final Class<?> testClass) throws InitializationError {
         super(testClass);
         try {
-            final URL repoURL = getClass().getClassLoader().getResource(FEATURES_FILENAME);
+            final URL repoUrl = getClass().getClassLoader().getResource(FEATURES_FILENAME);
             final boolean recursive = Boolean.getBoolean(REPO_RECURSE);
-            LOG.info("Creating test runners for repoURL {} recursive {}",repoURL,recursive);
-            children.addAll(runnersFromRepoURL(repoURL,testClass,recursive));
+            LOG.info("Creating test runners for repoUrl {} recursive {}", repoUrl, recursive);
+            children.addAll(runnersFromRepoUrl(repoUrl, testClass, recursive));
         } catch (final Exception e) {
             throw new InitializationError(e);
         }
     }
 
-    protected List<PerFeatureRunner> runnersFromRepoURL(final URL repoURL,final Class<?> testClass,final boolean recursive) throws JAXBException, IOException, InitializationError {
-        if(recursive) {
-            return recursiveRunnersFromRepoURL(repoURL,testClass);
+    protected List<PerFeatureRunner> runnersFromRepoUrl(
+            final URL repoUrl, final Class<?> testClass, final boolean recursive)
+            throws JAXBException, IOException, InitializationError {
+        if (recursive) {
+            return recursiveRunnersFromRepoUrl(repoUrl, testClass);
         } else {
-            return runnersFromRepoURL(repoURL,testClass);
+            return runnersFromRepoUrl(repoUrl, testClass);
         }
     }
 
-    protected List<PerFeatureRunner> runnersFromRepoURL(final URL repoURL,final Class<?> testClass) throws JAXBException, IOException, InitializationError {
+    protected List<PerFeatureRunner> runnersFromRepoUrl(final URL repoUrl, final Class<?> testClass)
+            throws JAXBException, IOException, InitializationError {
         final List<PerFeatureRunner> runners = new ArrayList<>();
-        final Features features = getFeatures(repoURL);
-        runners.addAll(runnersFromFeatures(repoURL,features,testClass));
+        final Features features = getFeatures(repoUrl);
+        runners.addAll(runnersFromFeatures(repoUrl, features, testClass));
         return runners;
     }
 
-    protected List<PerFeatureRunner> recursiveRunnersFromRepoURL(final URL repoURL,final Class<?> testClass) throws JAXBException, IOException, InitializationError {
+    protected List<PerFeatureRunner> recursiveRunnersFromRepoUrl(final URL repoUrl, final Class<?> testClass)
+            throws JAXBException, IOException, InitializationError {
         final List<PerFeatureRunner> runners = new ArrayList<>();
-        final Features features = getFeatures(repoURL);
-        runners.addAll(runnersFromRepoURL(repoURL,testClass));
-        for(final String repoString: features.getRepository()) {
-            final URL subRepoURL = new URL(repoString);
-            runners.addAll(recursiveRunnersFromRepoURL(subRepoURL,testClass));
+        final Features features = getFeatures(repoUrl);
+        runners.addAll(runnersFromRepoUrl(repoUrl, testClass));
+        for (final String repoString : features.getRepository()) {
+            final URL subRepoUrl = new URL(repoString);
+            runners.addAll(recursiveRunnersFromRepoUrl(subRepoUrl, testClass));
         }
         return runners;
     }
 
-    protected List<PerFeatureRunner> runnersFromFeatures(final URL repoURL, final Features features,final Class<?> testClass) throws InitializationError {
+    protected List<PerFeatureRunner> runnersFromFeatures(
+            final URL repoUrl, final Features features, final Class<?> testClass) throws InitializationError {
         final List<PerFeatureRunner> runners = new ArrayList<>();
         final List<Feature> featureList = features.getFeature();
-        for(final Feature f : featureList) {
-            runners.add(new PerFeatureRunner(repoURL, f.getName(), f.getVersion(),testClass));
+        for (final Feature f : featureList) {
+            runners.add(new PerFeatureRunner(repoUrl, f.getName(), f.getVersion(), testClass));
         }
         return runners;
     }
 
     /**
-     * @param repoURL url of the repo
+     * @param repoUrl url of the repo
      * @return features
      * @throws JAXBException exception during unmarshalling.
      * @throws IOException IOException in getting the features.
      */
-    protected Features getFeatures(final URL repoURL) throws JAXBException,
+    protected Features getFeatures(final URL repoUrl) throws JAXBException,
             IOException {
-        return JaxbUtil.unmarshal(repoURL.openStream(), false);
+        return JaxbUtil.unmarshal(repoUrl.openStream(), false);
     }
 
     @Override
@@ -104,7 +118,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
 
     @Override
     protected void runChild(final PerFeatureRunner child, final RunNotifier notifier) {
-        LOG.info("About to run test for {}", child.getRepoURL());
+        LOG.info("About to run test for {}", child.getRepoUrl());
         child.run(notifier);
     }
 

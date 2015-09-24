@@ -1,14 +1,4 @@
 /*
- * Copyright (c) 2015 Cisco Systems, Inc. and others.  All rights reserved.
- *
- * This program and the accompanying materials are made available under the
- * terms of the Eclipse Public License v1.0 which accompanies this distribution,
- * and is available at http://www.eclipse.org/legal/epl-v10.html
- */
-
-package org.opendaylight.odlparent;
-
-/*
  * Copyright 2001-2005 The Apache Software Foundation.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,6 +13,8 @@ package org.opendaylight.odlparent;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+package org.opendaylight.odlparent;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -48,11 +40,13 @@ import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
 
 /**
+ * Mojo populating the local repository by delegating to Aether.
+ *
  * @goal populate-local-repo
  * @phase prepare-package
  */
 public class PopulateLocalRepoMojo
-    extends AbstractMojo {
+        extends AbstractMojo {
 
     static {
         // Static initialization, as we may be invoked multiple times
@@ -60,6 +54,8 @@ public class PopulateLocalRepoMojo
     }
 
     /**
+     * The Maven project being built.
+     *
      * @component
      * @required
      * @readonly
@@ -90,31 +86,36 @@ public class PopulateLocalRepoMojo
     private List<RemoteRepository> remoteRepos;
 
     /**
+     * The local repository to use for the resolution of plugins and their dependencies.
+     *
      * @parameter
      */
     private File localRepo;
 
     private AetherUtil aetherUtil;
 
+    @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
 
-        aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos,localRepo,getLog());
+        aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos, localRepo, getLog());
         try {
             Set<Artifact> featureArtifacts = readFeatureCfg();
-            featureArtifacts.addAll(aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
-                    new KarafFeaturesDependencyFilter()));
+            featureArtifacts.addAll(
+                    aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
+                            new KarafFeaturesDependencyFilter()));
             Set<Features> features = FeatureUtil.readFeatures(featureArtifacts);
-            features.addAll(FeatureUtil.findAllFeaturesRecursively(aetherUtil, features, FeatureUtil.featuresRepositoryToCoords(features)));
-            for(Features feature: features) {
+            features.addAll(FeatureUtil.findAllFeaturesRecursively(aetherUtil, features,
+                    FeatureUtil.featuresRepositoryToCoords(features)));
+            for (Features feature : features) {
                 getLog().info("Features Repos  discovered recursively: " + feature.getName());
             }
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
             artifacts.addAll(featureArtifacts);
 
-            for(Artifact artifact: artifacts) {
+            for (Artifact artifact : artifacts) {
                 getLog().info("Artifacts to be installed: " + artifact.toString());
             }
-            if(localRepo != null) {
+            if (localRepo != null) {
                 aetherUtil.installArtifacts(artifacts);
             }
         } catch (Exception e) {
@@ -123,14 +124,14 @@ public class PopulateLocalRepoMojo
     }
 
     private Set<Artifact> readFeatureCfg() throws ArtifactResolutionException {
-        Set<Artifact> artifacts = new LinkedHashSet<Artifact>();
+        Set<Artifact> artifacts = new LinkedHashSet<>();
         File file = new File(localRepo.getParentFile().toString() + "/etc/org.apache.karaf.features.cfg");
         Properties prop = new Properties();
         try {
             prop.load(new FileInputStream(file));
             String featuresRepositories = prop.getProperty("featuresRepositories");
             List<String> result = Arrays.asList(featuresRepositories.split(","));
-            for(String mvnUrl: result) {
+            for (String mvnUrl : result) {
                 artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(mvnUrl))));
             }
         } catch (FileNotFoundException e) {

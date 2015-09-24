@@ -5,6 +5,7 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
+
 package org.opendaylight.odlparent.featuretest;
 
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
@@ -16,11 +17,14 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.editConfi
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+
 import javax.inject.Inject;
+
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
@@ -42,7 +46,8 @@ public class SingleFeatureTest {
     private static final String ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY = "org.ops4j.pax.url.mvn.localRepository";
     private static final String ORG_OPS4J_PAX_URL_MVN_REPOSITORIES = "org.ops4j.pax.url.mvn.repositories";
     private static final String ETC_ORG_OPS4J_PAX_URL_MVN_CFG = "etc/org.ops4j.pax.url.mvn.cfg";
-    private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST = "log4j.logger.org.opendaylight.odlparent.featuretest";
+    private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
+            "log4j.logger.org.opendaylight.odlparent.featuretest";
     private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
 
     /*
@@ -68,32 +73,37 @@ public class SingleFeatureTest {
 
 
     /**
-     * List of karaf 3.0.2 default maven repositories with snapshot repositories excluded.
-     *
-     * Unfortunately this must be hard-coded since declarative model which uses Options,
+     * <p>List of karaf 3.0.2 default maven repositories with snapshot repositories excluded.</p>
+     * <p>Unfortunately this must be hard-coded since declarative model which uses Options,
      * does not allow us to read value, parse it (properties has allways
      * problems with lists) and construct replacement string which does
-     * not contains snapshots.
-     *
+     * not contains snapshots.</p>
      */
-    private static final String EXTERNAL_DEFAULT_REPOSITORIES = "http://repo1.maven.org/maven2@id=central, " +
-    "http://repository.springsource.com/maven/bundles/release@id=spring.ebr.release, " +
-    "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, " +
-    "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
+    private static final String EXTERNAL_DEFAULT_REPOSITORIES = "http://repo1.maven.org/maven2@id=central, "
+            + "http://repository.springsource.com/maven/bundles/release@id=spring.ebr.release, "
+            + "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, "
+            + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
 
 
-   @Inject
-   private FeaturesService featuresService;
+    @Inject
+    private FeaturesService featuresService;
 
+    /**
+     * Returns the required configuration.
+     *
+     * @return The Pax Exam configuration.
+     * @throws IOException if an error occurs.
+     */
     @Configuration
     public Option[] config() throws IOException {
-       return new Option[] {
-             getKarafDistroOption(),
-             keepRuntimeFolder(),
-             configureConsole().ignoreLocalConsole(),
-             logLevel(LogLevel.WARN),
-             mvnLocalRepoOption(),
-             editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG,LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,LogLevel.INFO.name()),
+        return new Option[] {
+                getKarafDistroOption(),
+                keepRuntimeFolder(),
+                configureConsole().ignoreLocalConsole(),
+                logLevel(LogLevel.WARN),
+                mvnLocalRepoOption(),
+                editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
+                        LogLevel.INFO.name()),
              /*
               *
               * Disables external snapshot repositories.
@@ -117,38 +127,38 @@ public class SingleFeatureTest {
               *
               *
               */
-             disableExternalSnapshotRepositories(),
-             CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP).value(System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP)),
-             CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP).value(System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP)),
-             CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP).value(System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
-       };
+                disableExternalSnapshotRepositories(),
+                CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP).value(
+                        System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP)),
+                CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP).value(
+                        System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP)),
+                CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP).value(
+                        System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
+        };
     }
 
     /**
-     *
      * Disables snapshot repositories, which are enabled by default in karaf distribution.
-     *
-     *
      *
      * @return Edit Configuration option which removes external snapshot repositories.
      */
     private static Option disableExternalSnapshotRepositories() {
-        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_REPOSITORIES,EXTERNAL_DEFAULT_REPOSITORIES);
+        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_REPOSITORIES,
+                EXTERNAL_DEFAULT_REPOSITORIES);
     }
 
     protected Option mvnLocalRepoOption() {
         String mvnRepoLocal = System.getProperty(MAVEN_REPO_LOCAL, "");
-        LOG.info("mvnLocalRepo \"{}\"",mvnRepoLocal);
-        Option option =
-                editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG,ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY, mvnRepoLocal);
-        return option;
+        LOG.info("mvnLocalRepo \"{}\"", mvnRepoLocal);
+        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY,
+                mvnRepoLocal);
     }
 
     protected Option getKarafDistroOption() {
-        String groupId = System.getProperty(KARAF_DISTRO_GROUPID_PROP,KARAF_DISTRO_GROUPID);
-        String artifactId = System.getProperty(KARAF_DISTRO_ARTIFACTID_PROP,KARAF_DISTRO_ARTIFACTID);
-        String version = System.getProperty(KARAF_DISTRO_VERSION_PROP,KARAF_DISTRO_VERSION);
-        String type = System.getProperty(KARAF_DISTRO_TYPE_PROP,KARAF_DISTRO_TYPE);
+        String groupId = System.getProperty(KARAF_DISTRO_GROUPID_PROP, KARAF_DISTRO_GROUPID);
+        String artifactId = System.getProperty(KARAF_DISTRO_ARTIFACTID_PROP, KARAF_DISTRO_ARTIFACTID);
+        String version = System.getProperty(KARAF_DISTRO_VERSION_PROP, KARAF_DISTRO_VERSION);
+        String type = System.getProperty(KARAF_DISTRO_TYPE_PROP, KARAF_DISTRO_TYPE);
         LOG.info("Using karaf distro {} {} {} {}", groupId, artifactId, version, type);
         return karafDistributionConfiguration()
                 .frameworkUrl(
@@ -157,12 +167,12 @@ public class SingleFeatureTest {
                                 .artifactId(artifactId)
                                 .type(type)
                                 .version(version))
-               .name("OpenDaylight")
-               .unpackDirectory(new File("target/pax"))
-               .useDeployFolder(false);
+                .name("OpenDaylight")
+                .unpackDirectory(new File("target/pax"))
+                .useDeployFolder(false);
     }
 
-    private static URI getRepoURI() throws URISyntaxException {
+    private static URI getRepoUri() throws URISyntaxException {
         return new URI(getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP));
     }
 
@@ -176,37 +186,45 @@ public class SingleFeatureTest {
 
     private static String getProperty(final String propName) {
         String prop = System.getProperty(propName);
-        Assert.assertTrue("Missing property :" + propName, prop!=null);
+        Assert.assertTrue("Missing property :" + propName, prop != null);
         return prop;
     }
 
-    private void checkRepository(final URI repoURI) {
+    private void checkRepository(final URI repoUri) {
         Repository repo = null;
         for (Repository r : featuresService.listRepositories()) {
-            if (r.getURI().equals(repoURI)) {
+            if (r.getURI().equals(repoUri)) {
                 repo = r;
                 break;
             }
         }
-        Assert.assertNotNull("Repository not found: " + repoURI, repo);
+        Assert.assertNotNull("Repository not found: " + repoUri, repo);
     }
 
+    /**
+     * Sets the repository up.
+     *
+     * @throws Exception if an error occurs.
+     */
     @Before
     public void installRepo() throws Exception {
-        LOG.info("Attempting to add repository {}", getRepoURI());
-        featuresService.addRepository(getRepoURI());
-        checkRepository(getRepoURI());
-        LOG.info("Successfully loaded repository {}", getRepoURI());
+        final URI repoUri = getRepoUri();
+        LOG.info("Attempting to add repository {}", repoUri);
+        featuresService.addRepository(repoUri);
+        checkRepository(repoUri);
+        LOG.info("Successfully loaded repository {}", repoUri);
     }
 
     // Give it 5 minutes max as we've seen feature install hang on jenkins.
-    @Test(timeout=300000)
+    @Test(timeout = 300000)
     public void installFeature() throws Exception {
         LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
         featuresService.installFeature(getFeatureName(), getFeatureVersion());
-        Feature f = featuresService.getFeature(getFeatureName(), getFeatureVersion());
-        Assert.assertNotNull("Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null", f);
-        Assert.assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(), featuresService.isInstalled(f));
+        Feature feature = featuresService.getFeature(getFeatureName(), getFeatureVersion());
+        Assert.assertNotNull(
+                "Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null", feature);
+        Assert.assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(),
+                featuresService.isInstalled(feature));
         LOG.info("Successfull installed feature {} {}", getFeatureName(), getFeatureVersion());
     }
 }

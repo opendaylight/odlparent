@@ -5,10 +5,12 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
+
 package org.opendaylight.odlparent.featuretest;
 
-import com.google.common.base.Preconditions;
 import java.net.URL;
+
+import com.google.common.base.Preconditions;
 import org.junit.runner.Description;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
@@ -18,19 +20,29 @@ import org.junit.runner.notification.StoppedByUserException;
 
 public class PerFeatureRunNotifier extends RunNotifier {
     private final RunNotifier delegate;
-    private final URL repoURL;
+    private final URL repoUrl;
     private final String featureName;
     private final String featureVersion;
 
-    public PerFeatureRunNotifier(final URL repoURL, final String featureName, final String featureVersion,final RunNotifier delegate) {
-        this.repoURL = Preconditions.checkNotNull(repoURL);
+    /**
+     * Create a delegating notifier.
+     *
+     * @param repoUrl The repository URL.
+     * @param featureName The feature name.
+     * @param featureVersion The feature version.
+     * @param delegate The notification delegate.
+     */
+    public PerFeatureRunNotifier(
+            final URL repoUrl, final String featureName, final String featureVersion, final RunNotifier delegate) {
+        this.repoUrl = Preconditions.checkNotNull(repoUrl);
         this.featureName = Preconditions.checkNotNull(featureName);
         this.featureVersion = Preconditions.checkNotNull(featureVersion);
         this.delegate = Preconditions.checkNotNull(delegate);
     }
 
     private Failure convertFailure(final Failure failure) {
-        return new Failure(Util.convertDescription(repoURL,featureName,featureVersion,failure.getDescription()),failure.getException());
+        return new Failure(Util.convertDescription(repoUrl, featureName, featureVersion, failure.getDescription()),
+                failure.getException());
     }
 
     /**
@@ -52,7 +64,8 @@ public class PerFeatureRunNotifier extends RunNotifier {
     }
 
     /**
-     * @return the hashCode of the delegate
+     * Calculates the hash code (delegated).
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override
@@ -66,7 +79,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      */
     @Override
     public void fireTestRunStarted(final Description description) {
-        delegate.fireTestRunStarted(Util.convertDescription(repoURL,featureName,featureVersion,description));
+        delegate.fireTestRunStarted(Util.convertDescription(repoUrl, featureName, featureVersion, description));
     }
 
     /**
@@ -86,7 +99,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
     @Override
     public void fireTestStarted(final Description description)
             throws StoppedByUserException {
-        delegate.fireTestStarted(Util.convertDescription(repoURL,featureName,featureVersion,description));
+        delegate.fireTestStarted(Util.convertDescription(repoUrl, featureName, featureVersion, description));
     }
 
     /**
@@ -123,7 +136,7 @@ public class PerFeatureRunNotifier extends RunNotifier {
      */
     @Override
     public void fireTestIgnored(final Description description) {
-        delegate.fireTestIgnored(Util.convertDescription(repoURL,featureName,featureVersion,description));
+        delegate.fireTestIgnored(Util.convertDescription(repoUrl, featureName, featureVersion, description));
     }
 
     /**
@@ -132,11 +145,10 @@ public class PerFeatureRunNotifier extends RunNotifier {
      */
     @Override
     public void fireTestFinished(final Description description) {
-        delegate.fireTestFinished(Util.convertDescription(repoURL,featureName,featureVersion,description));
+        delegate.fireTestFinished(Util.convertDescription(repoUrl, featureName, featureVersion, description));
     }
 
     /**
-     *
      * @see org.junit.runner.notification.RunNotifier#pleaseStop()
      */
     @Override

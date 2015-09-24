@@ -23,8 +23,8 @@ import org.eclipse.aether.artifact.DefaultArtifact;
 import org.eclipse.aether.collection.CollectRequest;
 import org.eclipse.aether.graph.Dependency;
 import org.eclipse.aether.graph.DependencyFilter;
-import org.eclipse.aether.installation.InstallRequest;
 import org.eclipse.aether.installation.InstallationException;
+import org.eclipse.aether.installation.InstallRequest;
 import org.eclipse.aether.repository.LocalRepository;
 import org.eclipse.aether.repository.LocalRepositoryManager;
 import org.eclipse.aether.repository.RemoteRepository;
@@ -47,7 +47,18 @@ public class AetherUtil {
 
     protected Log log;
 
-    public AetherUtil(RepositorySystem repoSystem,RepositorySystemSession repoSession,List<RemoteRepository> remoteRepos, File localRepository,Log log) {
+    /**
+     * Create an instance for the given repositories.
+     *
+     * @param repoSystem The repository system.
+     * @param repoSession The repository session.
+     * @param remoteRepos The remote repositories.
+     * @param localRepository The local repository.
+     * @param log The log.
+     */
+    public AetherUtil(
+            RepositorySystem repoSystem, RepositorySystemSession repoSession, List<RemoteRepository> remoteRepos,
+            File localRepository, Log log) {
         this.repoSystem = repoSystem;
         this.repoSession = repoSession;
         this.remoteRepos = remoteRepos;
@@ -55,21 +66,36 @@ public class AetherUtil {
         this.log = log;
     }
 
-    public Set<Artifact> resolveDependencies(List<Dependency>dependencies,DependencyFilter filter) throws DependencyResolutionException {
+    /**
+     * Resolves the given dependencies.
+     *
+     * @param dependencies The dependencies.
+     * @param filter The dependency filter.
+     * @return The corresponding artifacts.
+     * @throws DependencyResolutionException if an error occurs.
+     */
+    public Set<Artifact> resolveDependencies(List<Dependency> dependencies, DependencyFilter filter)
+            throws DependencyResolutionException {
         Set<Artifact> artifacts = new LinkedHashSet<Artifact>();
         CollectRequest collectRequest = new CollectRequest();
         collectRequest.setDependencies(dependencies);
         collectRequest.setRepositories(remoteRepos);
-        DependencyRequest request = new DependencyRequest(collectRequest,filter);
+        DependencyRequest request = new DependencyRequest(collectRequest, filter);
         DependencyResult results = repoSystem.resolveDependencies(repoSession, request);
-        for(ArtifactResult artifactResult: results.getArtifactResults()) {
+        for (ArtifactResult artifactResult : results.getArtifactResults()) {
             artifacts.add(artifactResult.getArtifact());
         }
         return artifacts;
     }
 
+    /**
+     * Resolves the given artifact.
+     *
+     * @param artifact The artifact.
+     * @return The resolved artifact, or {@code null} if it can't be resolved.
+     */
     public Artifact resolveArtifact(Artifact artifact) {
-        ArtifactRequest request = new ArtifactRequest(artifact, remoteRepos,null);
+        ArtifactRequest request = new ArtifactRequest(artifact, remoteRepos, null);
         ArtifactResult result;
         try {
             result = repoSystem.resolveArtifact(repoSession, request);
@@ -80,14 +106,26 @@ public class AetherUtil {
         return result.getArtifact();
     }
 
+    /**
+     * Resolves the given coordinates.
+     *
+     * @param coord The coordinates to resolve.
+     * @return The resolved artifact, or {@code null} if the coordinates can't be resolved.
+     */
     public Artifact resolveArtifact(String coord) {
         DefaultArtifact artifact = new DefaultArtifact(coord);
         return resolveArtifact(artifact);
     }
 
+    /**
+     * Resolves the given coordinates.
+     *
+     * @param coords The set of coordinates to resolve.
+     * @return The resolved artifacts. Unresolvable coordinates are skipped without error.
+     */
     public Set<Artifact> resolveArtifacts(Set<String> coords) {
         Set<Artifact> result = new LinkedHashSet<Artifact>();
-        for(String coord: coords) {
+        for (String coord : coords) {
             Artifact artifact = resolveArtifact(coord);
             if (artifact != null) {
                 result.add(artifact);
@@ -96,27 +134,44 @@ public class AetherUtil {
         return result;
     }
 
+    /**
+     * Converts the given artifact coordinates to a {@link Dependency} instance.
+     *
+     * @param coord The coordinates.
+     * @return The dependency.
+     */
     public Dependency toDependency(String coord) {
         Artifact artifact = new DefaultArtifact(coord);
-        Dependency dependency = new Dependency(artifact, null);
-        return dependency;
+        return new Dependency(artifact, null);
     }
 
+    /**
+     * Converts the given list of artifact coordinates to dependencies.
+     *
+     * @param coords The list of coordinates.
+     * @return The corresponding dependencies.
+     */
     public List<Dependency> toDependencies(List<String> coords) {
         List<Dependency> result = new ArrayList<Dependency>();
-        for(String coord: coords) {
+        for (String coord : coords) {
             result.add(toDependency(coord));
         }
         return result;
     }
 
+    /**
+     * Installs the given artifacts.
+     *
+     * @param artifacts The artifacts to install.
+     * @throws InstallationException if an error occurs.
+     */
     public void installArtifacts(Set<Artifact> artifacts) throws InstallationException {
         LocalRepository localRepo = new LocalRepository(localRepository);
         LocalRepositoryManager localManager = repoSystem.newLocalRepositoryManager(repoSession, localRepo);
         DefaultRepositorySystemSession localSession = new DefaultRepositorySystemSession();
         localSession.setLocalRepositoryManager(localManager);
         InstallRequest installRequest = new InstallRequest();
-        for(Artifact featureArtifact : artifacts) {
+        for (Artifact featureArtifact : artifacts) {
             installRequest.addArtifact(featureArtifact);
         }
         repoSystem.install(localSession, installRequest);
