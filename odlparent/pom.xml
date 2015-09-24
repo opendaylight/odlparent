@@ -28,17 +28,11 @@
     <url>https://wiki.opendaylight.org/view/ODL_Root_Parent:Main</url>
   </scm>
 
-  <prerequisites>
-    <!-- This is only used to prevent building with Maven < 3 and to appease
-         maven-dependency-plugin; our real Maven requirement is enforced by
-         the enforcer plugin. -->
-    <maven>3.0.5</maven>
-  </prerequisites>
-
   <!-- Variables should only be used where genuinely useful (to avoid
        repetition); in general versions should be specified in the
        corresponding dependencyManagement or pluginManagement element, not as
-       a variable. -->
+       a variable. Duplication within odlparent doesn't count if it can be
+       managed using maven-versions-plugin. -->
   <properties>
     <nexus.repository.release>opendaylight.release</nexus.repository.release>
     <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
@@ -68,7 +62,7 @@
     <bundle.plugin.version>${maven.bundle.version}</bundle.plugin.version>
     <checkstyle.version>2.16</checkstyle.version>
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
-    <enforcer.version>1.4</enforcer.version>
+    <enforcer.version>1.4.1</enforcer.version>
     <enunciate.version>1.31</enunciate.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <exam.version>4.4.0</exam.version> <!-- Needs to remain exported, as its used for dependencies, too -->
     <failsafe.version>2.18.1</failsafe.version>
@@ -85,7 +79,7 @@
     <jacoco.version>0.7.2.201409121644</jacoco.version>
     <jar.plugin.version>${maven.jar.version}</jar.plugin.version>
     <karaf.version>3.0.3</karaf.version> <!-- Needs to remain exported, as its used for dependencies, too -->
-    <projectinfo>2.6</projectinfo>
+    <projectinfo>2.8.1</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
     <odl.checkstyle.version>0.1.0-SNAPSHOT</odl.checkstyle.version>
@@ -973,18 +967,6 @@
           </executions>
         </plugin>
         <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>${maven.clean.plugin.version}</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-install-plugin</artifactId>
-          <version>2.5.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.8.2</version>
-        </plugin>
-        <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven.compile.plugin.version}</version>
         </plugin>
@@ -997,36 +979,18 @@
           <version>${failsafe.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-invoker-plugin</artifactId>
           <version>2.0.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>${jar.plugin.version}</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${maven.javadoc.version}</version>
-          <configuration>
-            <!-- Keep things quiet except for warnings/errors -->
-            <quiet>true</quiet>
-          </configuration>
-          <executions>
-            <execution>
-              <id>attach-javadocs</id>
-              <goals>
-                <goal>jar</goal>
-              </goals>
-            </execution>
-          </executions>
+          <version>${maven.jar.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
           <version>${maven.release.version}</version>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
           <version>2.10</version>
           <executions>
@@ -1050,7 +1014,6 @@
         </plugin>
 
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-plugin-plugin</artifactId>
           <version>${maven.plugin.version}</version>
         </plugin>
@@ -1101,7 +1064,7 @@
         <plugin>
           <groupId>org.apache.servicemix.tooling</groupId>
           <artifactId>depends-maven-plugin</artifactId>
-          <version>1.2</version>
+          <version>1.3</version>
           <executions>
             <execution>
               <id>generate-depends-file</id>
@@ -1134,6 +1097,11 @@
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
           <artifactId>properties-maven-plugin</artifactId>
           <version>${propertymavenplugin.version}</version>
         </plugin>
@@ -1160,7 +1128,6 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <versionRange>[1.0.0,)</versionRange>
                     <goals>
@@ -1173,7 +1140,6 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <versionRange>[2.0.0,)</versionRange>
                     <goals>
@@ -1186,7 +1152,6 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
                     <versionRange>[2.10,)</versionRange>
                     <goals>
@@ -1241,7 +1206,6 @@
 
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
@@ -1260,19 +1224,15 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
       </plugin>
 
@@ -1319,7 +1279,6 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>findbugs-maven-plugin</artifactId>
-        <version>3.0.1</version>
         <configuration>
           <effort>Max</effort>
           <threshold>Low</threshold>
