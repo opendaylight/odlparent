@@ -16,6 +16,24 @@
       "revId": "6acb8d00d851bdae5ab102a8784c958acd74b696",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_6149dd8a",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-09-24T17:55:27Z",
+      "side": 1,
+      "message": "+1. I certainly prefer we do not introduce the properties here (even at the cost of having duplication in this project).",
+      "parentUuid": "1a76adc5_4135c144",
+      "revId": "6acb8d00d851bdae5ab102a8784c958acd74b696",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
