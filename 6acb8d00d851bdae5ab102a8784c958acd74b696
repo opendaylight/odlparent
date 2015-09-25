@@ -34,6 +34,24 @@
       "revId": "6acb8d00d851bdae5ab102a8784c958acd74b696",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_8888d9e8",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-09-25T07:12:05Z",
+      "side": 1,
+      "message": "I thought this would be controversial ;-). I\u0027ll move everything back down then!",
+      "parentUuid": "1a76adc5_6149dd8a",
+      "revId": "6acb8d00d851bdae5ab102a8784c958acd74b696",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
