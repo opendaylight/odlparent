@@ -15,16 +15,21 @@ import org.eclipse.aether.graph.DependencyNode;
 
 public class KarafFeaturesDependencyFilter implements DependencyFilter {
 
+    /**
+     * Accepts only Karaf features.
+     *
+     * @param node The dependency node.
+     * @param parents The parents (ignored).
+     * @return {@code true} if the dependency is a Karaf feature, {@code false} otherwise.
+     */
+    @Override
     public boolean accept(DependencyNode node, List<DependencyNode> parents) {
-        if(node != null
+        return node != null
                 && node.getArtifact() != null
                 && node.getDependency() != null
                 && node.getDependency().getScope() != null
                 && node.getArtifact().getClassifier().equals("features")
-                && node.getArtifact().getExtension().equals("xml")) {
-            return true;
-        }
-        return false;
+                && node.getArtifact().getExtension().equals("xml");
     }
 
 }

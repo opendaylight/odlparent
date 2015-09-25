@@ -5,17 +5,22 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
+
 package org.opendaylight.odlparent.featuretest;
 
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
-import com.google.common.base.Preconditions;
+
 import java.net.URL;
+
+import com.google.common.base.Preconditions;
 import org.junit.runner.Description;
 import org.junit.runner.Runner;
 import org.junit.runner.manipulation.Filter;
+import org.junit.runner.manipulation.Filterable;
 import org.junit.runner.manipulation.NoTestsRemainException;
+import org.junit.runner.manipulation.Sortable;
 import org.junit.runner.manipulation.Sorter;
 import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.model.InitializationError;
@@ -23,19 +28,30 @@ import org.ops4j.pax.exam.junit.PaxExam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class PerFeatureRunner extends Runner {
+public class PerFeatureRunner extends Runner implements Filterable, Sortable {
     private static final Logger LOG = LoggerFactory.getLogger(PerFeatureRunner.class);
     private final String featureVersion;
     private final String featureName;
     private final PaxExam delegate;
-    private final URL repoURL;
+    private final URL repoUrl;
 
-    public PerFeatureRunner(final URL repoURL, final String featureName, final String featureVersion, final Class<?> testClass) throws InitializationError {
-        this.repoURL = Preconditions.checkNotNull(repoURL);
+    /**
+     * Create a runner.
+     *
+     * @param repoUrl        The repository URL.
+     * @param featureName    The feature name.
+     * @param featureVersion The feature version.
+     * @param testClass      The test class.
+     * @throws InitializationError if an error occurs.
+     */
+    public PerFeatureRunner(
+            final URL repoUrl, final String featureName, final String featureVersion, final Class<?> testClass)
+            throws InitializationError {
+        this.repoUrl = Preconditions.checkNotNull(repoUrl);
         this.featureName = Preconditions.checkNotNull(featureName);
         this.featureVersion = Preconditions.checkNotNull(featureVersion);
 
-        System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP, repoURL.toString());
+        System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP, repoUrl.toString());
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP, featureName);
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP, featureVersion);
         this.delegate = new PaxExam(Preconditions.checkNotNull(testClass));
@@ -43,46 +59,36 @@ public class PerFeatureRunner extends Runner {
 
     @Override
     public Description getDescription() {
-        return Util.convertDescription(repoURL, featureName, featureVersion,delegate.getDescription());
+        return Util.convertDescription(repoUrl, featureName, featureVersion, delegate.getDescription());
     }
 
     @Override
     public void run(final RunNotifier notifier) {
         LOG.info("About to run test for feature: {} {}", featureName, featureVersion);
-        System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP, repoURL.toString());
+        System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP, repoUrl.toString());
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP, featureName);
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP, featureVersion);
-        delegate.run(new PerFeatureRunNotifier(repoURL, featureName, featureVersion, notifier));
+        delegate.run(new PerFeatureRunNotifier(repoUrl, featureName, featureVersion, notifier));
     }
 
-    /**
-     * @return test count, int value
-     * @see org.junit.runner.Runner#testCount()
-     */
     @Override
     public int testCount() {
         return delegate.testCount();
     }
 
-    /**
-     * @param filter, Filter instance
-     * @throws NoTestsRemainException if filtering fails.
-     * @see org.ops4j.pax.exam.junit.PaxExam#filter(org.junit.runner.manipulation.Filter)
-     */
+    @Override
     public void filter(final Filter filter) throws NoTestsRemainException {
         delegate.filter(filter);
     }
 
-    /**
-     * @param sorter, Sorter instance
-     * @see org.ops4j.pax.exam.junit.PaxExam#sort(org.junit.runner.manipulation.Sorter)
-     */
+    @Override
     public void sort(final Sorter sorter) {
         delegate.sort(sorter);
     }
 
     /**
-     * @return string value of the delegate.
+     * Delegated implementation of {@link #toString()}.
+     *
      * @see java.lang.Object#toString()
      */
     @Override
@@ -91,21 +97,27 @@ public class PerFeatureRunner extends Runner {
     }
 
     /**
-     * @return the repoURL
+     * Returns the repository URL.
+     *
+     * @return The repository URL.
      */
-    public URL getRepoURL() {
-        return repoURL;
+    public URL getRepoUrl() {
+        return repoUrl;
     }
 
     /**
-     * @return the featureName
+     * Returns the feature name.
+     *
+     * @return The feature name.
      */
     public String getFeatureName() {
         return featureName;
     }
 
     /**
-     * @return the featureVersion
+     * Returns the feature version.
+     *
+     * @return The feature version.
      */
     public String getFeatureVersion() {
         return featureVersion;

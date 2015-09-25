@@ -5,6 +5,7 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
+
 package org.opendaylight.odlparent.featuretest;
 
 public final class Constants {
@@ -17,6 +18,8 @@ public final class Constants {
      * Named of System Properties we need to set in PerFeatureRunner and read in SingleFeatureTest
      */
     public static final String ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP = "org.opendaylight.featuretest.uri";
-    public static final String ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP = "org.opendaylight.featuretest.featurename";
-    public static final String ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP = "org.opendaylight.featuretest.featureversion";
+    public static final String ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP =
+            "org.opendaylight.featuretest.featurename";
+    public static final String ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP =
+            "org.opendaylight.featuretest.featureversion";
 }
