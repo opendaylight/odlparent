@@ -128,7 +128,7 @@
             <executions>
               <execution>
                 <id>generate-site</id>
-                <phase>package</phase>
+                <phase>install</phase>
                 <goals>
                   <goal>site</goal>
                   <goal>attach-descriptor</goal>
