@@ -135,7 +135,7 @@
                                             args[2] = dependencyVersion
                                             return "mvn:" + args.join("/")
                                         }
-                                        throw new IllegalArgumentException("Feature dependency $groupId:$artifactId is not dependecy of project.")
+                                        throw new IllegalArgumentException("Feature dependency $groupId:$artifactId is not a dependency of the project.")
                                     }
 
                                     def updateMavenDependency = { dep ->
