@@ -55,7 +55,7 @@
 
     <!-- Maven plugin versions, in the 'canonical' format -->
     <maven.antrun.plugin.version>1.8</maven.antrun.plugin.version>
-    <maven.bundle.version>2.5.4</maven.bundle.version>
+    <maven.bundle.version>3.0.0</maven.bundle.version>
     <maven.clean.plugin.version>2.6.1</maven.clean.plugin.version>
     <maven.compile.plugin.version>3.3</maven.compile.plugin.version>
     <maven.jar.version>2.6</maven.jar.version>
