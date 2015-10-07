@@ -103,7 +103,9 @@
     <commons.net.version>3.3</commons.net.version>
     <corsfilter.version>7.0.42</corsfilter.version>
     <ctrie.version>0.2.23</ctrie.version>
-    <eclipse.persistence.version>2.6.0</eclipse.persistence.version>
+    <!-- To upgrade to 2.6.0, we need to ensure all downstreams pull in javax.validation first
+         http://stackoverflow.com/questions/28568154/how-to-get-eclipselink-2-6-0-m3-working-with-jersey-1-18-3 -->
+    <eclipse.persistence.version>2.5.2</eclipse.persistence.version>
     <feature.transaction.version>1.0.1</feature.transaction.version>
     <felix.dependencymanager.shell.version>3.0.1</felix.dependencymanager.shell.version>
     <felix.dependencymanager.version>3.1.0</felix.dependencymanager.version>
