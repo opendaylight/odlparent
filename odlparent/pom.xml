@@ -130,7 +130,7 @@
     <leveldb.version>0.7</leveldb.version>
 
     <!-- Default Sonar configuration -->
-    <sonar-jacoco-listeners.version>2.4</sonar-jacoco-listeners.version>
+    <sonar-jacoco-listeners.version>3.2</sonar-jacoco-listeners.version>
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
     <sonar.jacoco.reportPath>target/code-coverage/jacoco.exec</sonar.jacoco.reportPath>
     <sonar.jacoco.itReportPath>target/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
