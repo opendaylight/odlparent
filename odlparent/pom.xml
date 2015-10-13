@@ -145,7 +145,7 @@
     <!-- Used in integration/distribution; see also affinity, snmp4sdn, toolkit, tsdr, ttp -->
     <spring.version>3.2.14.RELEASE</spring.version>
     <!-- Used in odlparent only; see also affinity, snmp4sdn -->
-    <url.version>1.5.0</url.version>
+    <url.version>2.4.5</url.version>
 
     <!-- Default Sonar configuration -->
     <sonar-jacoco-listeners.version>2.4</sonar-jacoco-listeners.version>
