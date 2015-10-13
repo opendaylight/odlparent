@@ -75,6 +75,10 @@
             <artifactId>karaf-maven-plugin</artifactId>
             <version>${karaf.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

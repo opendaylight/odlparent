@@ -25,7 +25,7 @@ import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.features.internal.model.JaxbUtil;
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
-import org.ops4j.pax.url.mvn.Parser;
+import org.ops4j.pax.url.mvn.internal.Parser;
 
 public class FeatureUtil {
 
