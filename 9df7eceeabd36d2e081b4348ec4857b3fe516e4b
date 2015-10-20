@@ -34,6 +34,24 @@
       "revId": "9df7eceeabd36d2e081b4348ec4857b3fe516e4b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad0f9df_c04f7c91",
+        "filename": "checkstyle/src/main/resources/odl_checks.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2015-10-20T21:28:26Z",
+      "side": 1,
+      "message": "using checkstyle.checker.severity does work. I will submit an amended patch",
+      "parentUuid": "1a76adc5_5d47a61d",
+      "revId": "9df7eceeabd36d2e081b4348ec4857b3fe516e4b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
