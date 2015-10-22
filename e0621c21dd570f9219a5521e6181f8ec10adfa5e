@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad0f9df_5a44d773",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2015-10-22T16:30:13Z",
+      "side": 1,
+      "message": "This comment should be updated to reflect 2.22.",
+      "revId": "e0621c21dd570f9219a5521e6181f8ec10adfa5e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
