@@ -91,77 +91,67 @@
     <odl.checkstyle.version>0.1.0-SNAPSHOT</odl.checkstyle.version>
 
     <!-- Supporting Libraries -->
-    <aopalliance.version>1.0.0</aopalliance.version>
-    <aries.util.version>1.1.0</aries.util.version>
-    <asm.version>4.1</asm.version>
+    <!-- Used by controller, netconf -->
     <bouncycastle.version>1.52</bouncycastle.version>
+    <!-- Used by aaa, vtn -->
     <commons.codec.version>1.10</commons.codec.version>
-    <commons.fileupload.version>1.3.1</commons.fileupload.version>
-    <commons.io.version>2.4</commons.io.version>
+    <!-- Used by netconf, ovsdb -->
     <commons.lang3.version>3.4</commons.lang3.version>
+    <!-- Used by sfc, snmp4sdn; see also affinity, toolkit -->
     <commons.lang.version>2.6</commons.lang.version>
+    <!-- Used by neutron; see also controller, vtn -->
     <commons.net.version>3.3</commons.net.version>
-    <corsfilter.version>7.0.42</corsfilter.version>
-    <ctrie.version>0.2.23</ctrie.version>
     <!-- To upgrade to 2.6.0, we need to ensure all downstreams pull in javax.validation first
          http://stackoverflow.com/questions/28568154/how-to-get-eclipselink-2-6-0-m3-working-with-jersey-1-18-3 -->
+    <!-- Used by neutron -->
     <eclipse.persistence.version>2.5.2</eclipse.persistence.version>
-    <feature.transaction.version>1.0.1</feature.transaction.version>
-    <felix.dependencymanager.shell.version>3.0.1</felix.dependencymanager.shell.version>
+    <!-- Used by aaa -->
     <felix.dependencymanager.version>3.1.0</felix.dependencymanager.version>
-    <felix.fileinstall.version>3.1.6</felix.fileinstall.version>
-    <felix.webconsole.version>4.2.0</felix.webconsole.version>
-    <geminiweb.version>2.2.0.RELEASE</geminiweb.version>
-    <groovy.version>2.1.6</groovy.version>
+    <!-- Used by lacp, netconf, ovsdb, sfc, toolkit; see also vtn -->
     <gson.version>2.3.1</gson.version>
+    <!-- Used by aaa, dlux, persistence, snmp4sdn, sxp -->
     <guava.version>18.0</guava.version>
+    <!-- Used by lispflowmapping, sxp, vtn/manager -->
     <hamcrest.version>1.3</hamcrest.version>
+    <!-- Used by aaa, alto, netconf, ovsdb, sfc; see also affinity, defense4all, integration/distribution, snmp4sdn, toolkit, ttp -->
     <jackson.version>2.3.2</jackson.version>
+    <!-- Used by snmp4sdn, yangtools -->
     <javassist.version>3.20.0-GA</javassist.version>
-    <javax.annotation.version>1.2</javax.annotation.version>
-    <jaxrs-api.version>3.0.4.Final</jaxrs-api.version>
 
     <!-- FIXME remove all dependencies for jersey 1.17 after migration all projects -->
-    <jersey-servlet.version>1.17</jersey-servlet.version>
+    <!-- Used by aaa, alto, netconf, neutron, sfc; see also affinity, defense4all, snmp4sdn, toolkit -->
     <jersey.version>1.17</jersey.version>
+    <!-- Used by sfc -->
     <jersey.client.version>1.17</jersey.client.version>
-    <jersey.server.version>1.17</jersey.server.version>
-    <jersey-servlet.version>1.17</jersey-servlet.version>
 
     <!-- New packages for jersey migration 1.17 to 2.8 -->
-    <javax.annotation.version>1.2</javax.annotation.version>
-    <javax.ws.rs-api.version>2.0.1</javax.ws.rs-api.version>
-    <jersey2.version>2.8</jersey2.version>
-    <javax.servlet.api.version>3.0.1</javax.servlet.api.version>
     <!-- appache.geronimo.bundle for DocGen -->
+    <!-- Used by aaa, iotdm, netconf, ovsdb, sfc -->
     <org.json.version>20131018</org.json.version>
-    <apache.geronimo.version>20090211_1</apache.geronimo.version>
 
-    <jersey2.publisher.version>4.0</jersey2.publisher.version>
+    <!-- Used by sfc -->
     <jettison.version>1.3.7</jettison.version>
-    <jolokia.version>1.3.1</jolokia.version>
-    <jsonassert.version>1.2.3</jsonassert.version>
+    <!-- Used by persistence -->
     <jsr305.api.version>3.0.0</jsr305.api.version>
-    <jsr311.api.version>1.1.1</jsr311.api.version>
-    <jsr311.v2.api.version>2.0</jsr311.v2.api.version>
     <!-- Need to stick to JUnit 4.11 until
          https://github.com/jayway/powermock/issues/560 is fixed (either in
          PowerMock or with a new JUnit release) -->
+    <!-- Used everywhere -->
     <junit.version>4.11</junit.version>
+    <!-- Used by coretutorials, sfc, snmp4sdn, sxp; see also affinity, toolkit -->
     <logback.version>1.1.3</logback.version>
+    <!-- Used by nic, sfc, sxp, tsdr -->
     <mockito.version>1.9.5</mockito.version>
+    <!-- Used by bgpcep, netconf, ovsdb, sxp; see also opendove, toolkit -->
     <netty.version>4.0.30.Final</netty.version>
-    <osgi.compendium.version>5.0.0</osgi.compendium.version>
+    <!-- Used by alto, controller, neutron, sfc, snbi; see also dlux, toolkit, tsdr -->
     <osgi.core.version>5.0.0</osgi.core.version>
+    <!-- Used by openflowjava, persistence, sfc, snmp4sdn, sxp; see also affinity, toolkit -->
     <slf4j.version>1.7.12</slf4j.version>
-    <spifly.version>1.0.0</spifly.version>
-    <spring-osgi.version>1.2.1</spring-osgi.version>
-    <spring-security-karaf.version>3.2.8.RELEASE</spring-security-karaf.version>
-    <spring-security.version>3.2.8.RELEASE</spring-security.version>
+    <!-- Used in integration/distribution; see also affinity, snmp4sdn, toolkit, tsdr, ttp -->
     <spring.version>3.2.14.RELEASE</spring.version>
-    <txw2.version>20110809</txw2.version>
+    <!-- Used in odlparent only; see also affinity, snmp4sdn -->
     <url.version>1.5.0</url.version>
-    <virgo.version>3.6.0.RELEASE</virgo.version>
 
     <!-- Default Sonar configuration -->
     <sonar-jacoco-listeners.version>2.4</sonar-jacoco-listeners.version>
@@ -184,7 +174,7 @@
       <dependency>
          <groupId>org.skyscreamer</groupId>
          <artifactId>jsonassert</artifactId>
-         <version>${jsonassert.version}</version>
+         <version>1.2.3</version>
          <scope>test</scope>
       </dependency>
       <dependency>
@@ -271,29 +261,29 @@
       <dependency>
         <groupId>javax.ws.rs</groupId>
         <artifactId>javax.ws.rs-api</artifactId>
-        <version>${javax.ws.rs-api.version}</version>
+        <version>2.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.glassfish.jersey.bundles.repackaged</groupId>
         <artifactId>jersey-guava</artifactId>
-        <version>${jersey2.version}</version>
+        <version>2.8</version>
       </dependency>
       <dependency>
         <groupId>com.eclipsesource.jaxrs</groupId>
         <artifactId>jersey-all</artifactId>
-        <version>${jersey2.version}</version>
+        <version>2.8</version>
       </dependency>
 
       <!-- servlet 3.x support -->
       <dependency>
         <groupId>org.glassfish.jersey.containers</groupId>
         <artifactId>jersey-container-servlet</artifactId>
-        <version>${jersey2.version}</version>
+        <version>2.8</version>
       </dependency>
       <dependency>
         <groupId>org.apache.geronimo.bundles</groupId>
         <artifactId>json</artifactId>
-        <version>${apache.geronimo.version}</version>
+        <version>20090211_1</version>
       </dependency>
       <!-- FIXME : remove all dependencies for jersey 1.7 -->
       <dependency>
@@ -314,7 +304,7 @@
       <dependency>
         <groupId>org.opendaylight.controller.thirdparty</groupId>
         <artifactId>com.sun.jersey.jersey-servlet</artifactId>
-        <version>${jersey-servlet.version}</version>
+        <version>1.17</version>
       </dependency>
 
       <!-- Plugin integration -->
@@ -352,7 +342,7 @@
       <dependency>
           <groupId>org.jboss.resteasy</groupId>
           <artifactId>jaxrs-api</artifactId>
-          <version>${jaxrs-api.version}</version>
+          <version>3.0.4.Final</version>
       </dependency>
 
       <dependency>
@@ -373,12 +363,12 @@
       <dependency>
         <groupId>com.sun.xml.txw2</groupId>
         <artifactId>txw2</artifactId>
-        <version>${txw2.version}</version>
+        <version>20110809</version>
       </dependency>
       <dependency>
         <groupId>com.github.romix</groupId>
         <artifactId>java-concurrent-hash-trie-map</artifactId>
-        <version>${ctrie.version}</version>
+        <version>0.2.23</version>
       </dependency>
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
@@ -393,12 +383,12 @@
       <dependency>
         <groupId>commons-fileupload</groupId>
         <artifactId>commons-fileupload</artifactId>
-        <version>${commons.fileupload.version}</version>
+        <version>1.3.1</version>
       </dependency>
       <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
-        <version>${commons.io.version}</version>
+        <version>2.4</version>
       </dependency>
       <dependency>
         <groupId>commons-net</groupId>
@@ -479,52 +469,52 @@
       <dependency>
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.gemini.web.core</artifactId>
-        <version>${geminiweb.version}</version>
+        <version>2.2.0.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.gemini.web.extender</artifactId>
-        <version>${geminiweb.version}</version>
+        <version>2.2.0.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.gemini.web.tomcat</artifactId>
-        <version>${geminiweb.version}</version>
+        <version>2.2.0.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.virgo.kernel.equinox.extensions</artifactId>
-        <version>${virgo.version}</version>
+        <version>3.6.0.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.virgo.util.common</artifactId>
-        <version>${virgo.version}</version>
+        <version>3.6.0.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.virgo.util.io</artifactId>
-        <version>${virgo.version}</version>
+        <version>3.6.0.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.virgo.util.math</artifactId>
-        <version>${virgo.version}</version>
+        <version>3.6.0.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.virgo.util.osgi</artifactId>
-        <version>${virgo.version}</version>
+        <version>3.6.0.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.virgo.util.osgi.manifest</artifactId>
-        <version>${virgo.version}</version>
+        <version>3.6.0.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.virgo.util.parser.manifest</artifactId>
-        <version>${virgo.version}</version>
+        <version>3.6.0.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
@@ -560,7 +550,7 @@
       <dependency>
         <groupId>javax.ws.rs</groupId>
         <artifactId>jsr311-api</artifactId>
-        <version>${jsr311.api.version}</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>orbit</groupId>
@@ -590,7 +580,7 @@
       <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
-        <version>${javax.servlet.api.version}</version>
+        <version>3.0.1</version>
       </dependency>
       <dependency>
         <groupId>orbit</groupId>
@@ -655,7 +645,7 @@
       <dependency>
         <groupId>org.aopalliance</groupId>
         <artifactId>com.springsource.org.aopalliance</artifactId>
-        <version>${aopalliance.version}</version>
+        <version>1.0.0</version>
       </dependency>
       <dependency>
         <groupId>org.apache.felix</groupId>
@@ -665,18 +655,18 @@
       <dependency>
         <groupId>org.apache.felix</groupId>
         <artifactId>org.apache.felix.dependencymanager.shell</artifactId>
-        <version>${felix.dependencymanager.shell.version}</version>
+        <version>3.0.1</version>
       </dependency>
       <dependency>
         <groupId>org.apache.felix</groupId>
         <artifactId>org.apache.felix.fileinstall</artifactId>
-        <version>${felix.fileinstall.version}</version>
+        <version>3.1.6</version>
       </dependency>
       <!-- felix webconsole -->
       <dependency>
         <groupId>org.apache.felix</groupId>
         <artifactId>org.apache.felix.webconsole</artifactId>
-        <version>${felix.webconsole.version}</version>
+        <version>4.2.0</version>
         <!-- the all bundle includes all the necessary plugins -->
         <classifier>all</classifier>
       </dependency>
@@ -739,7 +729,7 @@
       <dependency>
         <groupId>org.jolokia</groupId>
         <artifactId>jolokia-osgi</artifactId>
-        <version>${jolokia.version}</version>
+        <version>1.3.1</version>
       </dependency>
       <dependency>
         <groupId>org.json</groupId>
@@ -749,7 +739,7 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.compendium</artifactId>
-        <version>${osgi.compendium.version}</version>
+        <version>5.0.0</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -808,22 +798,22 @@
       <dependency>
         <groupId>org.springframework.security</groupId>
         <artifactId>spring-security-config</artifactId>
-        <version>${spring-security.version}</version>
+        <version>3.2.8.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>org.springframework.security</groupId>
         <artifactId>spring-security-core</artifactId>
-        <version>${spring-security.version}</version>
+        <version>3.2.8.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>org.springframework.security</groupId>
         <artifactId>spring-security-taglibs</artifactId>
-        <version>${spring-security.version}</version>
+        <version>3.2.8.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>org.springframework.security</groupId>
         <artifactId>spring-security-web</artifactId>
-        <version>${spring-security.version}</version>
+        <version>3.2.8.RELEASE</version>
       </dependency>
       <dependency>
         <groupId>virgomirror</groupId>
@@ -872,7 +862,7 @@
       <dependency>
         <groupId>org.springframework.osgi</groupId>
         <artifactId>spring-osgi-mock</artifactId>
-        <version>${spring-osgi.version}</version>
+        <version>1.2.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
