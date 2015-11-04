@@ -143,7 +143,7 @@
     <!-- Used by nic, sfc, sxp, tsdr -->
     <mockito.version>1.9.5</mockito.version>
     <!-- Used by bgpcep, netconf, ovsdb, sxp; see also opendove, toolkit -->
-    <netty.version>4.0.30.Final</netty.version>
+    <netty.version>4.0.33.Final</netty.version>
     <!-- Used by alto, controller, neutron, sfc, snbi; see also dlux, toolkit, tsdr -->
     <osgi.core.version>5.0.0</osgi.core.version>
     <!-- Used by openflowjava, persistence, sfc, snmp4sdn, sxp; see also affinity, toolkit -->
