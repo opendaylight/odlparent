@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bada0100_dc8f6acb",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-11-05T21:49:18Z",
+      "side": 1,
+      "message": "we are trying to get rid of properties, please inline the version into the declaration below",
+      "revId": "c83320536292d35aa094ac0946065d43053037f7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
