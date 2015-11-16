@@ -243,6 +243,11 @@
         <version>${guava.version}</version>
       </dependency>
       <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>3.2.1</version>
+      </dependency>
+      <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
         <version>${commons.lang3.version}</version>
@@ -515,6 +520,11 @@
         <groupId>geminiweb</groupId>
         <artifactId>org.eclipse.virgo.util.parser.manifest</artifactId>
         <version>3.6.0.RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-all</artifactId>
+        <version>${netty.version}</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
