@@ -92,7 +92,7 @@
 
     <!-- Supporting Libraries -->
     <!-- Used by controller, netconf -->
-    <bouncycastle.version>1.52</bouncycastle.version>
+    <bouncycastle.version>1.53</bouncycastle.version>
     <!-- Used by aaa, vtn -->
     <commons.codec.version>1.10</commons.codec.version>
     <!-- Used by netconf, ovsdb -->
