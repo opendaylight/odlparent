@@ -132,7 +132,7 @@
     <!-- Used by sfc -->
     <jettison.version>1.3.7</jettison.version>
     <!-- Used by persistence -->
-    <jsr305.api.version>3.0.0</jsr305.api.version>
+    <jsr305.api.version>3.0.1</jsr305.api.version>
     <!-- Need to stick to JUnit 4.11 until
          https://github.com/jayway/powermock/issues/560 is fixed (either in
          PowerMock or with a new JUnit release) -->
