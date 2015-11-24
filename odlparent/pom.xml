@@ -696,6 +696,11 @@
         <version>${enunciate.version}</version>
       </dependency>
       <dependency>
+        <groupId>com.webcohesion.enunciate</groupId>
+        <artifactId>enunciate-core-annotations</artifactId>
+        <version>2.1.1</version>
+      </dependency>
+      <dependency>
         <groupId>org.codehaus.jettison</groupId>
         <artifactId>jettison</artifactId>
         <version>${jettison.version}</version>
@@ -1101,6 +1106,11 @@
           <groupId>org.codehaus.enunciate</groupId>
           <artifactId>maven-enunciate-plugin</artifactId>
           <version>${enunciate.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>com.webcohesion.enunciate</groupId>
+          <artifactId>enunciate-maven-plugin</artifactId>
+          <version>2.1.1</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.groovy.maven</groupId>
