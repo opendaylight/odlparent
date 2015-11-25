@@ -37,6 +37,7 @@
         <module>bundle-parent</module>
         <module>features-parent</module>
         <module>features-test</module>
+        <module>features-odlparent</module>
         <module>odlparent</module>
         <module>odlparent-lite</module>
         <module>karaf-plugin</module>
