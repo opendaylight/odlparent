@@ -15,6 +15,7 @@
     <artifactId>features-odlparent</artifactId>
 
     <dependencies>
+        <!-- odl-netty -->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-buffer</artifactId>
@@ -34,6 +35,12 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-handler</artifactId>
+        </dependency>
+
+        <!-- odl-guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
         </dependency>
     </dependencies>
 </project>
