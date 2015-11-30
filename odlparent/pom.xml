@@ -311,6 +311,16 @@
         <artifactId>com.sun.jersey.jersey-servlet</artifactId>
         <version>1.17</version>
       </dependency>
+      <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-core</artifactId>
+        <version>1.2.3</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-web</artifactId>
+        <version>1.2.3</version>
+      </dependency>
 
       <!-- Plugin integration -->
       <dependency>
