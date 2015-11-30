@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aaae553_6246cf25",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-11-30T20:44:06Z",
+      "side": 1,
+      "message": "no new properties please, just inline them in the declaration",
+      "revId": "a114506b3ee18ac36e8362c9a9e61e79186745cd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
