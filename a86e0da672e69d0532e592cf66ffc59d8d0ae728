@@ -16,6 +16,24 @@
       "revId": "a86e0da672e69d0532e592cf66ffc59d8d0ae728",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aaae553_da6c5139",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2015-11-30T02:05:16Z",
+      "side": 1,
+      "message": "They shouldn\u0027t but looks like Stephen\u0027s trying to consolidate similar sections into one pom. Considering this is getting pulled into a \u003cpluginManagement\u003e section it shouldn\u0027t force the dependency on a project unless they declare it so I feel this is a safe change.",
+      "parentUuid": "9ab8dda7_d6c3ca88",
+      "revId": "a86e0da672e69d0532e592cf66ffc59d8d0ae728",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
