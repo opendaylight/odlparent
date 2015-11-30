@@ -129,6 +129,9 @@
     <!-- Used by aaa, iotdm, netconf, ovsdb, sfc -->
     <org.json.version>20131018</org.json.version>
 
+    <!-- Used by aaa, netconf -->
+    <apache.shiro.version>1.2.3</apache.shiro.version>
+
     <!-- Used by sfc -->
     <jettison.version>1.3.7</jettison.version>
     <!-- Used by persistence -->
@@ -310,6 +313,16 @@
         <groupId>org.opendaylight.controller.thirdparty</groupId>
         <artifactId>com.sun.jersey.jersey-servlet</artifactId>
         <version>1.17</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-core</artifactId>
+        <version>${apache.shiro.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.shiro</groupId>
+        <artifactId>shiro-web</artifactId>
+        <version>${apache.shiro.version}</version>
       </dependency>
 
       <!-- Plugin integration -->
