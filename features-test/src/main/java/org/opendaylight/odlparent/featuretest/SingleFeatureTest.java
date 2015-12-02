@@ -20,8 +20,10 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Properties;
 
 import javax.inject.Inject;
 
@@ -56,9 +58,8 @@ public class SingleFeatureTest {
     private static final String ORG_OPS4J_PAX_LOGGING_CFG = "etc/org.ops4j.pax.logging.cfg";
 
     /*
-     * Default values for karaf distro version, type, groupId, and artifactId
+     * Default values for karaf distro type, groupId, and artifactId
      */
-    private static final String KARAF_DISTRO_VERSION = "3.0.2";
     private static final String KARAF_DISTRO_TYPE = "zip";
     private static final String KARAF_DISTRO_ARTIFACTID = "apache-karaf";
     private static final String KARAF_DISTRO_GROUPID = "org.apache.karaf";
@@ -71,13 +72,18 @@ public class SingleFeatureTest {
     private static final String KARAF_DISTRO_ARTIFACTID_PROP = "karaf.distro.artifactId";
     private static final String KARAF_DISTRO_GROUPID_PROP = "karaf.distro.groupId";
 
+    /**
+     * Property file used to store the Karaf distribution version
+     */
+    private static final String PROPERTIES_FILENAME = "singlefeaturetest.properties";
 
     /**
-     * <p>List of karaf 3.0.2 default maven repositories with snapshot repositories excluded.</p>
+     * <p>List of Karaf 3.0.4 default maven repositories with snapshot repositories excluded.</p>
      * <p>Unfortunately this must be hard-coded since declarative model which uses Options,
      * does not allow us to read value, parse it (properties has allways
      * problems with lists) and construct replacement string which does
      * not contains snapshots.</p>
+     * <p>When updating Karaf, check this against org.ops4j.pax.url.mvn.cfg in the Karaf distribution.</p>
      */
     private static final String EXTERNAL_DEFAULT_REPOSITORIES = "http://repo1.maven.org/maven2@id=central, "
             + "http://repository.springsource.com/maven/bundles/release@id=spring.ebr.release, "
@@ -157,8 +163,20 @@ public class SingleFeatureTest {
     protected Option getKarafDistroOption() {
         String groupId = System.getProperty(KARAF_DISTRO_GROUPID_PROP, KARAF_DISTRO_GROUPID);
         String artifactId = System.getProperty(KARAF_DISTRO_ARTIFACTID_PROP, KARAF_DISTRO_ARTIFACTID);
-        String version = System.getProperty(KARAF_DISTRO_VERSION_PROP, KARAF_DISTRO_VERSION);
+        String version = System.getProperty(KARAF_DISTRO_VERSION_PROP);
         String type = System.getProperty(KARAF_DISTRO_TYPE_PROP, KARAF_DISTRO_TYPE);
+        if (version == null) {
+            // We use a properties file to retrieve ${karaf.version}, instead of .versionAsInProject()
+            // This avoids forcing all users to depend on Karaf in their POMs
+            Properties singleFeatureTestProps = new Properties();
+            try (InputStream singleFeatureTestInputStream = Thread.currentThread().getContextClassLoader()
+                    .getResourceAsStream(PROPERTIES_FILENAME)) {
+                singleFeatureTestProps.load(singleFeatureTestInputStream);
+            } catch (IOException e) {
+                LOG.error("Unable to load singlefeaturetest.properties to determine the Karaf version", e);
+            }
+            version = singleFeatureTestProps.getProperty(KARAF_DISTRO_VERSION_PROP);
+        }
         LOG.info("Using karaf distro {} {} {} {}", groupId, artifactId, version, type);
         return karafDistributionConfiguration()
                 .frameworkUrl(
