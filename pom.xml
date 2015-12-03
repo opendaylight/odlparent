@@ -11,7 +11,7 @@
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-aggregator</artifactId>
-    <version>1.5.3-SNAPSHOT</version>
+    <version>1.5.3-Lithium-SR3</version>
     <name>odlparent</name> <!-- Used by Sonar to set project name -->
     <packaging>pom</packaging>
 
