@@ -3,6 +3,6 @@
 
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>checkstyle</artifactId>
-  <version>0.0.4-Lithium-SR3</version>
+  <version>0.0.5-SNAPSHOT</version>
 </project>
 
