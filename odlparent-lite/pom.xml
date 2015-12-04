@@ -52,9 +52,39 @@
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <!--
+      Allows one to override the default build directory
+
+      Typically Maven will build in $project/target by default this variable
+      will allow you override this setting in your local ~/.m2/settings.xml
+      file to point to another directory.
+
+      One example use of this is if your /tmp is ramdrive it might be useful
+      to direct build output to take advantage of your ramdrive.
+
+      For example:
+
+        <profiles>
+          <profile>
+            <id>inject-ramdrive-directory</id>
+            <properties>
+              <my.build.directory>/tmp/maven-build-targets/${project.groupId}-${project.artifactId}/target</my.build.directory>
+            </properties>
+          </profile>
+        </profiles>
+
+        <activeProfiles>
+          <activeProfile>inject-ramdrive-directory</activeProfile>
+        </activeProfiles>
+    -->
+    <my.build.directory>target</my.build.directory>
   </properties>
 
   <build>
+    <!-- See explaination above for ${my.build.directory} -->
+    <directory>${my.build.directory}</directory>
+
     <pluginManagement>
       <plugins>
         <plugin>
