@@ -38,6 +38,7 @@ import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
+import org.ops4j.pax.exam.options.extra.VMOption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -103,6 +104,9 @@ public class SingleFeatureTest {
     @Configuration
     public Option[] config() throws IOException {
         return new Option[] {
+                // TODO: Find a way to inherit memory limits from Maven options.
+                new VMOption("-Xmx2g"),
+                new VMOption("-XX:MaxPermSize=512m"),
                 getKarafDistroOption(),
                 keepRuntimeFolder(),
                 configureConsole().ignoreLocalConsole(),
