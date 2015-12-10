@@ -8,6 +8,7 @@
         <bundle>mvn:io.netty/netty-common/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-transport/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-codec/{{VERSION}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-http/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-handler/{{VERSION}}</bundle>
     </feature>
     <feature name="odl-guava" description="OpenDaylight :: Guava" version="${guava.version}">
