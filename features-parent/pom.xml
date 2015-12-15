@@ -140,15 +140,20 @@
 
                                     def updateMavenDependency = { dep ->
                                         def mvnUrl = dep.text()
+                                        def prefix = ""
+                                        if (mvnUrl.startsWith("wrap:")) {
+                                            prefix = "wrap:"
+                                            mvnUrl = mvnUrl.substring(5)
+                                        }
                                         if (mvnUrl.startsWith("mvn:")) {
                                             def components =  mvnUrl.substring(4).split("/")
-                                            if (components[2] == versionPlaceholder) {
-                                                dep.value = updatedURLFromProject(components)
-                                            }
-                                        } else if (mvnUrl.startsWith("wrap:mvn:")) {
-                                            def components =  mvnUrl.substring(9).split("/")
-                                            if (components[2] == versionPlaceholder) {
-                                                dep.value = "wrap:" + updatedURLFromProject(components)
+                                            if (components[2].startsWith(versionPlaceholder)) {
+                                                def suffix = "";
+                                                if (components[2].length() > versionPlaceholder.length()) {
+                                                    suffix = components[2].substring(versionPlaceholder.length())
+                                                    components[2] = versionPlaceholder
+                                                }
+                                                dep.value = prefix + updatedURLFromProject(components) + suffix
                                             }
                                         }
                                     }
