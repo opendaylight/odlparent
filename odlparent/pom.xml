@@ -990,7 +990,6 @@
             <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
             <excludes>
               org/opendaylight/yang/gen/**,
-              **/config/yang/**,
               **/protobuff/messages/**,
               **/thrift/gen/*.java
             </excludes>
@@ -1011,7 +1010,6 @@
                 <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
                 <excludes>
                   org/opendaylight/yang/gen/**,
-                  **/config/yang/**,
                   **/protobuff/messages/**,
                   **/thrift/gen/*.java
                 </excludes>
