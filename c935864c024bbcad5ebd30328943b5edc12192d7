@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa4ed85_73ce875c",
+        "filename": "features-parent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-12-17T13:28:03Z",
+      "side": 1,
+      "message": ".startsWith() is applied to components[2], so it won\u0027t see anything beyond the next \u0027/\u0027. In the example above, it would get {{VERSION}}foo, foo would be pulled out as suffix, {{VERSION}} would be replaced and foo appended to the result.",
+      "parentUuid": "1aa4ed85_33000faa",
+      "revId": "c935864c024bbcad5ebd30328943b5edc12192d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa4ed85_b32b9f2f",
         "filename": "features-parent/pom.xml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-17T12:54:21Z",
       "side": 1,
       "message": "components is the result of String.split(), so the extra components should be extra items in the array, right?",
+      "revId": "c935864c024bbcad5ebd30328943b5edc12192d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa4ed85_13f2b39a",
+        "filename": "features-parent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2015-12-17T13:28:03Z",
+      "side": 1,
+      "message": "I added this specifically to support\n\n    \u003cbundle\u003ewrap:mvn:com.google.protobuf/protobuf-java/{{VERSION}}$overwrite\u003dmerge\u0026amp;DynamicImport-Package\u003dorg.opendaylight.controller.protobuff.messages.*;org.opendaylight.controller.cluster.raft.protobuff.client.messages.*\u003c/bundle\u003e\n\nwhere there\u0027s information following the version number, before the next slash (or the end of the bundle descriptor). The extra information is in components[2] along with the version information.",
+      "parentUuid": "1aa4ed85_b32b9f2f",
       "revId": "c935864c024bbcad5ebd30328943b5edc12192d7",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
