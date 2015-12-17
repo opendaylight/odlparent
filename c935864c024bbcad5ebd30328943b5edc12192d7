@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa4ed85_33000faa",
+        "filename": "features-parent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-12-17T12:54:21Z",
+      "side": 1,
+      "message": ".startsWith() will catch things like:\n\n/{{VERSION}}foo/features/xml\n\nwhich is probably not what we want",
+      "revId": "c935864c024bbcad5ebd30328943b5edc12192d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa4ed85_b32b9f2f",
+        "filename": "features-parent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2015-12-17T12:54:21Z",
+      "side": 1,
+      "message": "components is the result of String.split(), so the extra components should be extra items in the array, right?",
+      "revId": "c935864c024bbcad5ebd30328943b5edc12192d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
