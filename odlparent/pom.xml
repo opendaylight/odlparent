@@ -1110,6 +1110,9 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven.surefire.version}</version>
+          <configuration>
+            <redirectTestOutputToFile>true</redirectTestOutputToFile>
+          </configuration>
         </plugin>
 
         <!-- Third-party plugins, grouped by groupId, alpha-sorted by artifactId -->
