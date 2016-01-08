@@ -27,7 +27,6 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 import org.apache.karaf.features.internal.model.Features;
-import org.apache.karaf.tooling.url.CustomBundleURLStreamHandlerFactory;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -39,6 +38,7 @@ import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.opendaylight.odlparent.featuretest.CustomBundleURLStreamHandlerFactory;
 
 /**
  * Mojo populating the local repository by delegating to Aether.
@@ -46,8 +46,7 @@ import org.slf4j.LoggerFactory;
  * @goal populate-local-repo
  * @phase prepare-package
  */
-public class PopulateLocalRepoMojo
-        extends AbstractMojo {
+public class PopulateLocalRepoMojo extends AbstractMojo {
     private static final Logger LOG = LoggerFactory.getLogger(PopulateLocalRepoMojo.class);
 
     static {
