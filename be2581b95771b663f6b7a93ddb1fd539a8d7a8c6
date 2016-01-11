@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "da33351e_8ab0eaf5",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/CustomBundleURLStreamHandlerFactory.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-01-11T10:12:37Z",
+      "side": 1,
+      "message": "Possibly, renamed as Karaf-NOTICE and with a clarifying comment above this section. (This file is already referenced by karaf-plugin/src/it/settings.xml...)",
+      "parentUuid": "da33351e_5537acb0",
+      "range": {
+        "startLine": 3,
+        "startChar": 44,
+        "endLine": 3,
+        "endChar": 55
+      },
+      "revId": "be2581b95771b663f6b7a93ddb1fd539a8d7a8c6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da33351e_353ca893",
         "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/CustomBundleURLStreamHandlerFactory.java",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2016-01-08T17:05:54Z",
       "side": 1,
       "message": "This is compatible with other licenses used by ODL, right?",
+      "range": {
+        "startLine": 5,
+        "startChar": 47,
+        "endLine": 5,
+        "endChar": 74
+      },
+      "revId": "be2581b95771b663f6b7a93ddb1fd539a8d7a8c6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da33351e_ea7b7627",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/CustomBundleURLStreamHandlerFactory.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-01-11T10:12:37Z",
+      "side": 1,
+      "message": "Yes, the Apache Software License version 2.0 is compatible with the Eclipse Public License version 1.0. Eclipse itself ships ASL-2.0-licensed code alongside its EPL-1.0 codebase.",
+      "parentUuid": "da33351e_353ca893",
       "range": {
         "startLine": 5,
         "startChar": 47,
