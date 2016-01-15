@@ -48,8 +48,8 @@
 
     <!-- Java Versions -->
     <!-- FIXME: confirm these two are picked by maven-compiler-plugin -->
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <java.version.source>${maven.compiler.source}</java.version.source>
     <java.version.target>${maven.compiler.target}</java.version.target>
 
@@ -1016,6 +1016,10 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven.compile.plugin.version}</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-enforcer-plugin</artifactId>
