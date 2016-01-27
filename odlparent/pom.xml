@@ -489,14 +489,22 @@
       </dependency>
       <dependency>
         <groupId>equinoxSDK381</groupId>
-        <artifactId>org.eclipse.osgi</artifactId>
-        <version>3.8.1.v20120830-144521</version>
-      </dependency>
-      <dependency>
-        <groupId>equinoxSDK381</groupId>
         <artifactId>org.eclipse.osgi.services</artifactId>
         <version>3.3.100.v20120522-1822</version>
       </dependency>
+
+      <dependency>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>org.eclipse.osgi</artifactId>
+        <version>3.9.1.v20130814-1242</version>
+      </dependency>
+      <!-- FIXME: remove once all users migrate to org.eclipse.tycho -->
+      <dependency>
+        <groupId>equinoxSDK381</groupId>
+        <artifactId>org.eclipse.osgi</artifactId>
+        <version>3.8.1.v20120830-144521</version>
+      </dependency>
+
       <!-- Gemini Web -->
       <dependency>
         <groupId>geminiweb</groupId>
