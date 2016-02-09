@@ -16,7 +16,6 @@ import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.notification.RunNotifier;
-import org.junit.runner.notification.StoppedByUserException;
 
 public class PerFeatureRunNotifier extends RunNotifier {
     private final RunNotifier delegate;
@@ -93,12 +92,11 @@ public class PerFeatureRunNotifier extends RunNotifier {
 
     /**
      * @param description Description instance
-     * @throws StoppedByUserException throws this exception, if the fireTest is stopped by user.
+     * @throws org.junit.runner.notification.StoppedByUserException if the fireTest is stopped by user.
      * @see org.junit.runner.notification.RunNotifier#fireTestStarted(org.junit.runner.Description)
      */
     @Override
-    public void fireTestStarted(final Description description)
-            throws StoppedByUserException {
+    public void fireTestStarted(final Description description) {
         delegate.fireTestStarted(Util.convertDescription(repoUrl, featureName, featureVersion, description));
     }
 
