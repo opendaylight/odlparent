@@ -26,7 +26,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
-
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.tooling.url.CustomBundleURLStreamHandlerFactory;
 import org.apache.maven.plugin.AbstractMojo;
@@ -38,6 +37,8 @@ import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Mojo populating the local repository by delegating to Aether.
@@ -47,6 +48,7 @@ import org.eclipse.aether.resolution.ArtifactResolutionException;
  */
 public class PopulateLocalRepoMojo
         extends AbstractMojo {
+    private static final Logger LOG = LoggerFactory.getLogger(PopulateLocalRepoMojo.class);
 
     static {
         // Static initialization, as we may be invoked multiple times
@@ -97,7 +99,7 @@ public class PopulateLocalRepoMojo
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
 
-        aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos, localRepo, getLog());
+        aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos, localRepo);
         try {
             Set<Artifact> featureArtifacts = readFeatureCfg();
             featureArtifacts.addAll(
@@ -107,19 +109,19 @@ public class PopulateLocalRepoMojo
             features.addAll(FeatureUtil.findAllFeaturesRecursively(aetherUtil, features,
                     FeatureUtil.featuresRepositoryToCoords(features)));
             for (Features feature : features) {
-                getLog().info("Features Repos  discovered recursively: " + feature.getName());
+                LOG.info("Features Repos  discovered recursively: {}", feature.getName());
             }
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
             artifacts.addAll(featureArtifacts);
 
             for (Artifact artifact : artifacts) {
-                getLog().info("Artifacts to be installed: " + artifact.toString());
+                LOG.info("Artifacts to be installed: {}", artifact.toString());
             }
             if (localRepo != null) {
                 aetherUtil.installArtifacts(artifacts);
             }
         } catch (Exception e) {
-            throw new MojoExecutionException("Failure: ", e);
+            throw new MojoExecutionException("Failed to execute", e);
         }
     }
 
@@ -135,9 +137,9 @@ public class PopulateLocalRepoMojo
                 artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(mvnUrl))));
             }
         } catch (FileNotFoundException e) {
-            getLog().info("Could not find properties file: " + file.getAbsolutePath());
+            LOG.info("Could not find properties file: {}", file.getAbsolutePath(), e);
         } catch (IOException e) {
-            getLog().info("Could not read properties file: " + file.getAbsolutePath());
+            LOG.info("Could not read properties file: {}", file.getAbsolutePath(), e);
         }
 
         return artifacts;

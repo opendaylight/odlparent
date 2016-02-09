@@ -14,7 +14,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.maven.plugin.logging.Log;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
@@ -34,9 +33,11 @@ import org.eclipse.aether.resolution.ArtifactResult;
 import org.eclipse.aether.resolution.DependencyRequest;
 import org.eclipse.aether.resolution.DependencyResolutionException;
 import org.eclipse.aether.resolution.DependencyResult;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AetherUtil {
-
+    private static final Logger LOG = LoggerFactory.getLogger(AetherUtil.class);
     private RepositorySystem repoSystem;
 
     private RepositorySystemSession repoSession;
@@ -45,8 +46,6 @@ public class AetherUtil {
 
     protected File localRepository;
 
-    protected Log log;
-
     /**
      * Create an instance for the given repositories.
      *
@@ -54,16 +53,14 @@ public class AetherUtil {
      * @param repoSession The repository session.
      * @param remoteRepos The remote repositories.
      * @param localRepository The local repository.
-     * @param log The log.
      */
     public AetherUtil(
             RepositorySystem repoSystem, RepositorySystemSession repoSession, List<RemoteRepository> remoteRepos,
-            File localRepository, Log log) {
+            File localRepository) {
         this.repoSystem = repoSystem;
         this.repoSession = repoSession;
         this.remoteRepos = remoteRepos;
         this.localRepository = localRepository;
-        this.log = log;
     }
 
     /**
@@ -100,7 +97,7 @@ public class AetherUtil {
         try {
             result = repoSystem.resolveArtifact(repoSession, request);
         } catch (ArtifactResolutionException e) {
-            log.warn("Unable to resolve artifact: " + e.getMessage());
+            LOG.warn("Unable to resolve artifact: {}", e.getMessage(), e);
             return null;
         }
         return result.getArtifact();
