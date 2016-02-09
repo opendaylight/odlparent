@@ -15,7 +15,10 @@ import org.eclipse.aether.artifact.DefaultArtifact;
 import org.eclipse.aether.artifact.DefaultArtifactType;
 import org.eclipse.aether.graph.Dependency;
 
-public class MvnToAetherMapper {
+public final class MvnToAetherMapper {
+    private MvnToAetherMapper() {
+        throw new UnsupportedOperationException();
+    }
 
     /**
      * Converts a Maven model dependency to an Aether dependency.
