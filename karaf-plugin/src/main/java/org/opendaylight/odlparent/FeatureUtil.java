@@ -27,7 +27,10 @@ import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.ops4j.pax.url.mvn.Parser;
 
-public class FeatureUtil {
+public final class FeatureUtil {
+    private FeatureUtil() {
+        throw new UnsuportedOperationException();
+    }
 
     /**
      * Converts the given list of URLs to artifact coordinates.
@@ -199,7 +202,7 @@ public class FeatureUtil {
      * @throws FileNotFoundException if a file is missing.
      */
     public static Set<Features> readFeatures(Set<Artifact> featureArtifacts) throws FileNotFoundException {
-        LinkedHashSet<Features> result = new LinkedHashSet<>();
+        Set<Features> result = new LinkedHashSet<>();
         for (Artifact artifact : featureArtifacts) {
             result.add(readFeature(artifact));
         }
