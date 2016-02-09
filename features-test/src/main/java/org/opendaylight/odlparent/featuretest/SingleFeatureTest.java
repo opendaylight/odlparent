@@ -19,25 +19,23 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRunti
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Properties;
-
 import javax.inject.Inject;
-
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.Test;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
-import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
+import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.options.extra.VMOption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
