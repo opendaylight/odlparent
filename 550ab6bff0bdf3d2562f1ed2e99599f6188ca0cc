@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_3f6ffefe",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/AetherUtil.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-02-09T15:51:20Z",
+      "side": 1,
+      "message": "SLF4J will log the exception\u0027s message itself, won\u0027t it?\n\n    LOG.warn(\"Unable to resolve artifact\", e);",
+      "revId": "550ab6bff0bdf3d2562f1ed2e99599f6188ca0cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
