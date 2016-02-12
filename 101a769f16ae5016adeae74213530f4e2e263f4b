@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_6e16ecf2",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/CustomBundleURLStreamHandlerFactory.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-02-12T11:56:28Z",
+      "side": 1,
+      "message": "missing @Override perhaps?",
+      "revId": "101a769f16ae5016adeae74213530f4e2e263f4b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
