@@ -11,13 +11,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-lite</artifactId>
-        <version>1.6.0-SNAPSHOT</version>
+        <version>1.6.0-Beryllium</version>
         <relativePath>odlparent-lite</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-aggregator</artifactId>
-    <version>1.6.0-SNAPSHOT</version>
+    <version>1.6.0-Beryllium</version>
     <name>odlparent</name> <!-- Used by Sonar to set project name -->
     <packaging>pom</packaging>
 

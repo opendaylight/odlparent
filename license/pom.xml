@@ -4,13 +4,13 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>1.6.0-SNAPSHOT</version>
+    <version>1.6.0-Beryllium</version>
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>odl-license</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1-Beryllium</version>
 
   <!--
     Maven Site Configuration
