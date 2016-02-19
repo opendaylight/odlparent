@@ -184,6 +184,13 @@
             <configuration>
               <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
             </configuration>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>index</report>
+                </reports>
+              </reportSet>
+            </reportSets>
           </plugin>
           <plugin>
             <artifactId>maven-javadoc-plugin</artifactId>
