@@ -135,7 +135,7 @@
     <!-- Used by coretutorials, sfc, snmp4sdn, sxp; see also affinity, toolkit -->
     <logback.version>1.1.3</logback.version>
     <!-- Used by nic, sfc, sxp, tsdr -->
-    <mockito.version>1.9.5</mockito.version>
+    <mockito.version>1.10.19</mockito.version>
     <!-- Used by bgpcep, netconf, ovsdb, sxp; see also opendove, toolkit -->
     <netty.version>4.0.33.Final</netty.version>
     <!-- Used by alto, controller, neutron, sfc, snbi; see also dlux, toolkit, tsdr -->
