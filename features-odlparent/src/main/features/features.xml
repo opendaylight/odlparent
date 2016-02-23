@@ -14,7 +14,7 @@
     <feature name="odl-guava" description="OpenDaylight :: Guava" version="${guava.version}">
         <bundle>mvn:com.google.guava/guava/{{VERSION}}</bundle>
     </feature>
-    <feature name="odl-lmax" description="OpenDaylight :: LMAX Disruptor" version="3.3.4">
+    <feature name="odl-lmax" description="OpenDaylight :: LMAX Disruptor" version="3.3.2">
         <bundle>mvn:com.lmax/disruptor/{{VERSION}}</bundle>
     </feature>
 </features>
