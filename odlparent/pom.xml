@@ -85,8 +85,8 @@
     <odl.checkstyle.version>0.2.0-SNAPSHOT</odl.checkstyle.version>
 
     <!-- Supporting Libraries -->
-    <!-- Used by controller, netconf -->
-    <bouncycastle.version>1.53</bouncycastle.version>
+    <!-- Used by controller -->
+    <bouncycastle.version>1.54</bouncycastle.version>
     <!-- Used by aaa, vtn -->
     <commons.codec.version>1.10</commons.codec.version>
     <!-- Used by netconf, ovsdb -->
