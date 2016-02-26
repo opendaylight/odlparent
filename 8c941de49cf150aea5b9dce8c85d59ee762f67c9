@@ -69,6 +69,24 @@
       "revId": "8c941de49cf150aea5b9dce8c85d59ee762f67c9",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_a6d45dbd",
+        "filename": "features-akka/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-02-26T16:50:05Z",
+      "side": 1,
+      "message": "Ah yes, so presumably the aim here is to ensure we use the latest release in the Netty 3.x series for features-akka, which makes sense.",
+      "parentUuid": "9a3d3df0_869dd9be",
+      "revId": "8c941de49cf150aea5b9dce8c85d59ee762f67c9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
