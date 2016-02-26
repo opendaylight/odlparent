@@ -2,8 +2,7 @@
 <features name="odlparent-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
-    <feature name="odl-netty" description="OpenDaylight :: Netty"
-             version='${netty.version}'>
+    <feature name="odl-netty" description="OpenDaylight :: Netty" version="4.0.33.Final">
         <bundle>mvn:io.netty/netty-buffer/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-common/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-transport/{{VERSION}}</bundle>

@@ -72,7 +72,6 @@
         <dependency>
             <groupId>org.ops4j.pax.url</groupId>
             <artifactId>pax-url-wrap</artifactId>
-            <version>${url.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
