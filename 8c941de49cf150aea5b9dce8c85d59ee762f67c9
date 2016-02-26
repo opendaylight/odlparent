@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_4660f1ce",
+        "filename": "features-akka/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-02-26T14:36:16Z",
+      "side": 1,
+      "message": "OK - didn\u0027t know that. I had copied this from controller.",
+      "parentUuid": "9a3d3df0_667b758c",
+      "revId": "8c941de49cf150aea5b9dce8c85d59ee762f67c9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_c66c01d3",
         "filename": "features-akka/pom.xml",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-26T14:15:54Z",
       "side": 1,
       "message": "Any chance this could be dropped, and Netty 4 used instead?",
+      "revId": "8c941de49cf150aea5b9dce8c85d59ee762f67c9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_869dd9be",
+        "filename": "features-akka/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-02-26T14:36:16Z",
+      "side": 1,
+      "message": "I don\u0027t think so - akka expects this artifact version",
+      "parentUuid": "9a3d3df0_c66c01d3",
       "revId": "8c941de49cf150aea5b9dce8c85d59ee762f67c9",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
