@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a3d3df0_52f0ac90",
+        "filename": "features-akka/src/main/features/features.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-02-26T12:53:35Z",
+      "side": 1,
+      "message": "yes. I copied this file from the controller.",
+      "parentUuid": "9a3d3df0_174d763e",
+      "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a3d3df0_57537ee1",
         "filename": "odlparent/pom.xml",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-26T08:24:08Z",
       "side": 1,
       "message": "I\u0027m wondering whether it would be better to add most of these to features-akka\u0027s POM instead... (Ideally we\u0027d need some way of creating an OSGi feature and then telling Maven to just use that for compile and runtime dependencies!)",
+      "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_720b308e",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 928,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-02-26T12:53:35Z",
+      "side": 1,
+      "message": "These dependencies are used in code bundles as well. I copied them from the controller\u0027s root pom.",
+      "parentUuid": "9a3d3df0_57537ee1",
       "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -81,6 +117,24 @@
       "writtenOn": "2016-02-26T08:24:08Z",
       "side": 1,
       "message": "... and again.",
+      "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_f2f6208e",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-02-26T12:53:35Z",
+      "side": 1,
+      "message": "Again these were copied directly from the controller\u0027s pom so why are they wrong?",
+      "parentUuid": "9a3d3df0_7765e2b3",
       "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
