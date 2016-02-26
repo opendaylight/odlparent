@@ -138,6 +138,24 @@
       "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_665415ff",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-02-26T14:16:02Z",
+      "side": 1,
+      "message": "When properties are added to odlparent, they tend to be used in downstream projects instead of dependency management or features-parent. (See for instance centinel or iotdm in recent history.) We\u0027re trying to reduce the number of properties exported by odlparent, so I\u0027d rather avoid adding more if at all possible... See also the comment just above the properties section in this POM.",
+      "parentUuid": "9a3d3df0_f2f6208e",
+      "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
