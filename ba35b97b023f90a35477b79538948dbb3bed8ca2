@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a3d3df0_174d763e",
+        "filename": "features-akka/src/main/features/features.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-02-26T08:24:08Z",
+      "side": 1,
+      "message": "It\u0027s probably safer to use the ${leveldb.version} property here (and throughout this file instead of 0.7).",
+      "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_57537ee1",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 928,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-02-26T08:24:08Z",
+      "side": 1,
+      "message": "I\u0027m wondering whether it would be better to add most of these to features-akka\u0027s POM instead... (Ideally we\u0027d need some way of creating an OSGi feature and then telling Maven to just use that for compile and runtime dependencies!)",
+      "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_37507ad3",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-02-26T08:24:08Z",
+      "side": 1,
+      "message": "Please use the version directly here instead of adding a property.",
+      "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_976066a6",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 981,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-02-26T08:24:08Z",
+      "side": 1,
+      "message": "As above...",
+      "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a3d3df0_7765e2b3",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 986,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-02-26T08:24:08Z",
+      "side": 1,
+      "message": "... and again.",
+      "revId": "ba35b97b023f90a35477b79538948dbb3bed8ca2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
