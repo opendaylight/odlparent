@@ -3,6 +3,7 @@
     <body>
         <menu name="Overview">
             <item name="Javadocs" href="apidocs/index.html" />
+            <item name="Maven Site" href="maven-site.html" />
         </menu>
     </body>
 </project>
