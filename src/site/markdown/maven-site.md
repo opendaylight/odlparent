@@ -6,6 +6,7 @@ page will describe how to generate a Maven site for your ODL project.
 * [Enable Maven Site generation](#enable_site)
 * [Fix site urls](#fix_site_urls)
 * [Customize project site](#customize_site)
+* [Aggregating Java apidocs](#aggregate_apidocs)
 
 ## <a name="enable_site">Enabling Maven Site generation</a>
 
