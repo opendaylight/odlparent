@@ -13,6 +13,7 @@
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-artifacts</artifactId>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <dependencyManagement>
         <dependencies>

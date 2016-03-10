@@ -10,7 +10,7 @@
   <artifactId>karaf-plugin</artifactId>
   <packaging>maven-plugin</packaging>
 
-  <name>karaf-plugin Maven Plugin</name>
+  <name>ODL :: odlparent :: ${project.artifactId}</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

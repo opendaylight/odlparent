@@ -29,6 +29,7 @@
 
     <artifactId>features-parent</artifactId>
     <packaging>pom</packaging>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <properties>
         <features.file>features.xml</features.file>
