@@ -7,6 +7,7 @@ page will describe how to generate a Maven site for your ODL project.
 * [Fix site urls](#fix_site_urls)
 * [Customize project site](#customize_site)
 * [Aggregating Java apidocs](#aggregate_apidocs)
+* [Local Site Generation](#local_site_gen)
 
 ## <a name="enable_site">Enabling Maven Site generation</a>
 
@@ -163,3 +164,12 @@ section of the project root pom.
         </build>
       </profile>
     </profiles>
+
+## <a name="local_site_gen">Local Site Generation</a>
+
+To test Maven Site Generation locally you can run a build and then deploy a
+staging site locally and view it with your webbrowser.
+
+    mvn clean install
+    mvn site:deploy -Dstream=boron
+    firefox target/staged-site/index.html
