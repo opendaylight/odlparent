@@ -132,8 +132,8 @@
          PowerMock or with a new JUnit release) -->
     <!-- Used everywhere -->
     <junit.version>4.11</junit.version>
-    <!-- Used by sfc, snmp4sdn; see also affinity, toolkit -->
-    <logback.version>1.1.5</logback.version>
+    <!-- Used by coretutorials, sfc, snmp4sdn, sxp; see also affinity, toolkit -->
+    <logback.version>1.1.3</logback.version>
     <!-- Used by nic, sfc, sxp, tsdr -->
     <mockito.version>1.10.19</mockito.version>
     <!-- Used by bgpcep, netconf, ovsdb, sxp; see also opendove, toolkit -->
