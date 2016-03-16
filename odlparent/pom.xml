@@ -116,13 +116,13 @@
     <!-- Used by nic, persistence, tsdr; see also nemo -->
     <junit.version>4.11</junit.version>
     <!-- Used by snmp4sdn; see also affinity, toolkit -->
-    <logback.version>1.1.3</logback.version>
+    <logback.version>1.1.6</logback.version>
     <!-- Used by nic, tsdr -->
     <mockito.version>1.10.19</mockito.version>
     <!-- Used by alto, controller, didm, snbi; see also centinel, dlux, toolkit, tsdr -->
     <osgi.core.version>5.0.0</osgi.core.version>
     <!-- Used by persistence, snmp4sdn; see also affinity, toolkit -->
-    <slf4j.version>1.7.12</slf4j.version>
+    <slf4j.version>1.7.19</slf4j.version>
 
     <akka.version>2.4.1</akka.version>
     <scala.version>2.11</scala.version>
