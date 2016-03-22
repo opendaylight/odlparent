@@ -150,6 +150,7 @@
       </dependency>
 
       <!-- Testing Dependencies -->
+      <!-- JUnit, Hamcrest, Mockito and PowerMock need to be kept in sync -->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
@@ -893,6 +894,7 @@
       </dependency>
 
       <!-- Configuration library -->
+      <!-- This needs to be kept in sync with the version used by akka -->
       <dependency>
         <groupId>com.typesafe</groupId>
         <artifactId>config</artifactId>
