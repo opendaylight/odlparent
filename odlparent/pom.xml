@@ -100,7 +100,7 @@
 
     <!-- Used by centinel -->
     <!-- Removed in centinel: https://git.opendaylight.org/gerrit/38139 -->
-    <org.json.version>20131018</org.json.version>
+    <org.json.version>20090211</org.json.version>
 
     <!-- Used by centinel -->
     <!-- Removed in centinel: https://git.opendaylight.org/gerrit/38139 -->
@@ -1429,27 +1429,31 @@
             </execution>
           </executions>
         </plugin>
+
+        <plugin>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>enforce-maven</id>
+              <configuration>
+                <rules>
+                  <requireMavenVersion>
+                    <version>3.1.1</version>
+                  </requireMavenVersion>
+                </rules>
+              </configuration>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
 
     <plugins>
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>enforce-maven</id>
-            <configuration>
-              <rules>
-                <requireMavenVersion>
-                  <version>3.1.1</version>
-                </requireMavenVersion>
-              </rules>
-            </configuration>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -1491,6 +1495,50 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <!-- Enforcer profile to check banned dependencies -->
+      <!-- autorelease can't build with this enabled -->
+      <id>enforcedeps</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <artifactId>maven-enforcer-plugin</artifactId>
+              <executions>
+                <execution>
+                  <id>enforce-banned-dependencies</id>
+                  <configuration>
+                    <rules>
+                      <bannedDependencies>
+                        <searchTransitive>true</searchTransitive>
+                        <excludes>
+                          <exclude>org.json:json</exclude>
+                        </excludes>
+                        <includes>
+                          <!-- Versions after 20090211 use the non-free "do no evil" license -->
+                          <!-- See https://wiki.debian.org/qa.debian.org/jsonevil for details -->
+                          <include>org.json:json:[20090211]</include>
+                        </includes>
+                      </bannedDependencies>
+                    </rules>
+                    <fail>true</fail>
+                  </configuration>
+                  <goals>
+                    <goal>enforce</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+  </profiles>
 
   <reporting>
     <plugins>
