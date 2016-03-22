@@ -836,7 +836,7 @@
       <dependency>
         <groupId>org.ow2.asm</groupId>
         <artifactId>asm-all</artifactId>
-        <version>5.0.4</version>
+        <version>5.1</version>
       </dependency>
       <!-- Visual VM hook -->
       <dependency>
