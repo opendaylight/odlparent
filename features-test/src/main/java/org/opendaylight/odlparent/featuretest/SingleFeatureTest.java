@@ -12,30 +12,36 @@ import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
 import static org.ops4j.pax.exam.CoreOptions.maven;
+import static org.ops4j.pax.exam.CoreOptions.when;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.configureConsole;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.editConfigurationFilePut;
+import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
-
 import java.io.File;
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import javax.inject.Inject;
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
+import org.apache.karaf.features.internal.model.Features;
+import org.apache.karaf.features.internal.model.JaxbUtil;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.runner.RunWith;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
-import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
 import org.ops4j.pax.exam.Option;
+import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
 import org.ops4j.pax.exam.options.extra.VMOption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,6 +53,8 @@ public class SingleFeatureTest {
     private static final String ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY = "org.ops4j.pax.url.mvn.localRepository";
     private static final String ORG_OPS4J_PAX_URL_MVN_REPOSITORIES = "org.ops4j.pax.url.mvn.repositories";
     private static final String ETC_ORG_OPS4J_PAX_URL_MVN_CFG = "etc/org.ops4j.pax.url.mvn.cfg";
+    private static final String ETC_ORG_OPS4J_PAX_LOGGING_CFG = "etc/org.ops4j.pax.logging.cfg";
+    private static final String KEEP_UNPACK_DIRECTORY_PROP = "karaf.keep.unpack";
     private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
             "log4j.logger.org.opendaylight.odlparent.featuretest";
     private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
@@ -93,6 +101,8 @@ public class SingleFeatureTest {
     @Inject
     private FeaturesService featuresService;
 
+    private String karafVersion;
+
     /**
      * Returns the required configuration.
      *
@@ -106,12 +116,14 @@ public class SingleFeatureTest {
                 new VMOption("-Xmx2g"),
                 new VMOption("-XX:MaxPermSize=512m"),
                 getKarafDistroOption(),
-                keepRuntimeFolder(),
+                when(Boolean.getBoolean(KEEP_UNPACK_DIRECTORY_PROP)).useOptions(keepRuntimeFolder()),
                 configureConsole().ignoreLocalConsole(),
                 logLevel(LogLevel.WARN),
                 mvnLocalRepoOption(),
+                standardKarafFeatures(),
                 editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
                         LogLevel.INFO.name()),
+                editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
              /*
               *
               * Disables external snapshot repositories.
@@ -145,6 +157,42 @@ public class SingleFeatureTest {
         };
     }
 
+    private Option standardKarafFeatures() {
+        String url = maven().groupId("org.apache.karaf.features").artifactId("standard").
+                classifier("features").type("xml").version(getKarafVersion()).getURL();;
+        try {
+            Features features = JaxbUtil.unmarshal(new URL(url).openStream(), false);
+            List<String> featureNames = new ArrayList<>();
+            for(Feature f: features.getFeature()) {
+                featureNames.add(f.getName());
+            }
+
+            return features(url, featureNames.toArray(new String[featureNames.size()]));
+        } catch(Exception e) {
+            throw new RuntimeException("Could not obtain features from URL " + url, e);
+        }
+    }
+
+    private String getKarafVersion() {
+        if(karafVersion == null) {
+            karafVersion = System.getProperty(KARAF_DISTRO_VERSION_PROP);
+            if(karafVersion == null) {
+                // We use a properties file to retrieve ${karaf.version}, instead of .versionAsInProject()
+                // This avoids forcing all users to depend on Karaf in their POMs
+                Properties singleFeatureTestProps = new Properties();
+                try (InputStream singleFeatureTestInputStream = Thread.currentThread().getContextClassLoader()
+                        .getResourceAsStream(PROPERTIES_FILENAME)) {
+                    singleFeatureTestProps.load(singleFeatureTestInputStream);
+                } catch (IOException e) {
+                    LOG.error("Unable to load {} to determine the Karaf version", PROPERTIES_FILENAME, e);
+                }
+                karafVersion = singleFeatureTestProps.getProperty(KARAF_DISTRO_VERSION_PROP);
+            }
+        }
+
+        return karafVersion;
+    }
+
     /**
      * Disables snapshot repositories, which are enabled by default in karaf distribution.
      *
@@ -165,28 +213,15 @@ public class SingleFeatureTest {
     protected Option getKarafDistroOption() {
         String groupId = System.getProperty(KARAF_DISTRO_GROUPID_PROP, KARAF_DISTRO_GROUPID);
         String artifactId = System.getProperty(KARAF_DISTRO_ARTIFACTID_PROP, KARAF_DISTRO_ARTIFACTID);
-        String version = System.getProperty(KARAF_DISTRO_VERSION_PROP);
         String type = System.getProperty(KARAF_DISTRO_TYPE_PROP, KARAF_DISTRO_TYPE);
-        if (version == null) {
-            // We use a properties file to retrieve ${karaf.version}, instead of .versionAsInProject()
-            // This avoids forcing all users to depend on Karaf in their POMs
-            Properties singleFeatureTestProps = new Properties();
-            try (InputStream singleFeatureTestInputStream = Thread.currentThread().getContextClassLoader()
-                    .getResourceAsStream(PROPERTIES_FILENAME)) {
-                singleFeatureTestProps.load(singleFeatureTestInputStream);
-            } catch (IOException e) {
-                LOG.error("Unable to load {} to determine the Karaf version", PROPERTIES_FILENAME, e);
-            }
-            version = singleFeatureTestProps.getProperty(KARAF_DISTRO_VERSION_PROP);
-        }
-        LOG.info("Using karaf distro {} {} {} {}", groupId, artifactId, version, type);
+        LOG.info("Using karaf distro {} {} {} {}", groupId, artifactId, karafVersion, type);
         return karafDistributionConfiguration()
                 .frameworkUrl(
                         maven()
                                 .groupId(groupId)
                                 .artifactId(artifactId)
                                 .type(type)
-                                .version(version))
+                                .version(getKarafVersion()))
                 .name("OpenDaylight")
                 .unpackDirectory(new File("target/pax"))
                 .useDeployFolder(false);
