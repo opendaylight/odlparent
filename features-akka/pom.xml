@@ -26,6 +26,10 @@
         <artifactId>scala-reflect</artifactId>
       </dependency>
       <dependency>
+        <groupId>org.scala-lang.modules</groupId>
+        <artifactId>scala-java8-compat_${scala.version}</artifactId>
+      </dependency>
+      <dependency>
         <groupId>com.typesafe</groupId>
         <artifactId>config</artifactId>
       </dependency>
