@@ -16,6 +16,24 @@
       "revId": "42be6e34ce445d2cf5438e9229c0bada8a728ad6",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3f45e8_4b2b8482",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-03-25T19:07:40Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "5a3f45e8_10908deb",
+      "revId": "42be6e34ce445d2cf5438e9229c0bada8a728ad6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
