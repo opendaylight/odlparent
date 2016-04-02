@@ -582,37 +582,43 @@
         <groupId>io.netty</groupId>
         <artifactId>netty-all</artifactId>
         <!-- If these are updated, the version in features.xml needs to be changed too -->
-        <version>4.0.33.Final</version>
+        <version>4.0.36.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-buffer</artifactId>
-        <version>4.0.33.Final</version>
+        <version>4.0.36.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec</artifactId>
-        <version>4.0.33.Final</version>
+        <version>4.0.36.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http</artifactId>
-        <version>4.0.33.Final</version>
+        <version>4.0.36.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-common</artifactId>
-        <version>4.0.33.Final</version>
+        <version>4.0.36.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-handler</artifactId>
-        <version>4.0.33.Final</version>
+        <version>4.0.36.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-transport</artifactId>
-        <version>4.0.33.Final</version>
+        <version>4.0.36.Final</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-transport-native-epoll</artifactId>
+        <version>4.0.36.Final</version>
+        <classifier>${os.detected.classifier}</classifier>
       </dependency>
       <dependency>
         <groupId>javax.ws.rs</groupId>
@@ -1062,6 +1068,14 @@
   </dependencyManagement>
 
   <build>
+    <extensions>
+      <extension>
+        <groupId>kr.motd.maven</groupId>
+        <artifactId>os-maven-plugin</artifactId>
+        <version>1.5.0.Final</version>
+      </extension>
+    </extensions>
+
     <pluginManagement>
       <plugins>
         <!-- Official maven plugins, alpha-sorted by artifactId.
