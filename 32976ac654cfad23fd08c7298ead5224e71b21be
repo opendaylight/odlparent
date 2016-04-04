@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a4c51b2_f73b5036",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-04-04T07:36:45Z",
+      "side": 1,
+      "message": "Please don\u0027t re-introduce a variable for this, we\u0027re trying to get rid of them as far as possible.",
+      "revId": "32976ac654cfad23fd08c7298ead5224e71b21be",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a4c51b2_374658c0",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-04-04T07:36:45Z",
+      "side": 1,
+      "message": "Please use os-maven-plugin for this, we need to support building on platforms other than Linux x86_64 (even though this currently involves building netty-transport-native-epoll). See http://netty.io/wiki/native-transports.html for details.",
+      "revId": "32976ac654cfad23fd08c7298ead5224e71b21be",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
