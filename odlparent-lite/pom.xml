@@ -51,7 +51,7 @@
   </prerequisites>
 
   <properties>
-    <nexusproxy>http://nexus.opendaylight.org/content</nexusproxy>
+    <nexusproxy>https://nexus.opendaylight.org/content</nexusproxy>
 
     <!-- Variables required for Maven Site generation -->
     <nexus.site.url>file:${user.dir}/target/staged-site</nexus.site.url>
