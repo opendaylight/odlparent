@@ -22,6 +22,30 @@
       "revId": "d37c2cfbb84aa26e5a0cd4d48794fb364a0ed6de",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a4c51b2_1a41b839",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-04-06T17:12:37Z",
+      "side": 1,
+      "message": "Let me rebase this patch against your patch. We do want it against odlparent-lite for none code files this configuration won\u0027t do anything anyway but since we have the maven-javadoc-plugin reporting configuration here already it\u0027d be better to have the activation here.",
+      "parentUuid": "3a4c51b2_7a527c14",
+      "range": {
+        "startLine": 208,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 84
+      },
+      "revId": "d37c2cfbb84aa26e5a0cd4d48794fb364a0ed6de",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
