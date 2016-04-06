@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a4c51b2_bf7236e3",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1418,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-04-06T16:03:04Z",
+      "side": 1,
+      "message": "I think this configuration is supposed to go in the \u003creporting\u003e section of the pom according to the docs:\n\nhttps://maven.apache.org/plugins/maven-javadoc-plugin/examples/links-configuration.html",
+      "revId": "030c7813fd7cf00175e877cb92738efff63dd06a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
