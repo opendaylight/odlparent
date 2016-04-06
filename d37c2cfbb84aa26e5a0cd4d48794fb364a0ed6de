@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a4c51b2_7a527c14",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-04-06T17:03:11Z",
+      "side": 1,
+      "message": "These are not right, as they do not point to the right versions. I have submitted an equivalent patch (which makes this change in odlparent).\n\nAlso, do we want to have javadoc in odlparent-lite? I thought it was for non-code artifacts...",
+      "range": {
+        "startLine": 208,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 84
+      },
+      "revId": "d37c2cfbb84aa26e5a0cd4d48794fb364a0ed6de",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
