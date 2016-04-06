@@ -1475,9 +1475,17 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <configuration>
           <links>
+            <!-- 3rdparty -->
             <link>https://doc.akka.io/japi/akka/${akka.version}/</link>
             <link>https://google.github.io/guava/releases/${guava.version}/api/docs/</link>
             <link>https://netty.io/4.0/api/</link>
+
+            <!-- OpenDaylight Projects -->
+            <link>https://nexus.opendaylight.org/content/sites/site/org.opendaylight.bgpcep/${stream}/apidocs/</link>
+            <link>https://nexus.opendaylight.org/content/sites/site/org.opendaylight.lispflowmapping/${stream}/apidocs/</link>
+            <link>https://nexus.opendaylight.org/content/sites/site/org.opendaylight.mdsal/${stream}/apidocs/</link>
+            <link>https://nexus.opendaylight.org/content/sites/site/org.opendaylight.odlparent/${stream}/apidocs/</link>
+            <link>https://nexus.opendaylight.org/content/sites/site/org.opendaylight.yangtools/${stream}/apidocs/</link>
           </links>
         </configuration>
     </plugins>
