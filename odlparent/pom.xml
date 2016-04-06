@@ -1409,6 +1409,13 @@
       </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <links>
+            <link>https://doc.akka.io/japi/akka/${akka.version}/</link>
+            <link>https://google.github.io/guava/releases/${guava.version}/api/docs/</link>
+            <link>https://netty.io/4.0/api/</link>
+          </links>
+        </configuration>
       </plugin>
 
       <!-- Jacoco / Sonar -->
