@@ -18,7 +18,7 @@
         <repository>
           <id>opendaylight-mirror</id>
           <name>opendaylight-mirror</name>
-          <url>http://nexus.opendaylight.org/content/repositories/public/</url>
+          <url>https://nexus.opendaylight.org/content/repositories/public/</url>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>never</updatePolicy>
@@ -32,7 +32,7 @@
         <pluginRepository>
           <id>opendaylight-mirror</id>
           <name>opendaylight-mirror</name>
-          <url>http://nexus.opendaylight.org/content/repositories/public/</url>
+          <url>https://nexus.opendaylight.org/content/repositories/public/</url>
           <releases>
             <enabled>true</enabled>
             <updatePolicy>never</updatePolicy>
@@ -50,7 +50,7 @@
         <repository>
           <id>opendaylight-snapshot</id>
           <name>opendaylight-snapshot</name>
-          <url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
+          <url>https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
           <releases>
             <enabled>false</enabled>
           </releases>
@@ -63,7 +63,7 @@
         <pluginRepository>
           <id>opendaylight-snapshot</id>
           <name>opendaylight-snapshot</name>
-          <url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
+          <url>https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
           <releases>
             <enabled>false</enabled>
           </releases>
