@@ -20,23 +20,23 @@
     <feature name="odl-akka-scala" description="Scala Runtime for OpenDaylight" version="${scala.version}">
         <bundle>mvn:org.scala-lang/scala-library/{{VERSION}}</bundle>
         <bundle>mvn:org.scala-lang/scala-reflect/{{VERSION}}</bundle>
-        <bundle>mvn:org.scala-lang.modules/scala-java8-compat_2.11/{{VERSION}}</bundle>
+        <bundle>mvn:org.scala-lang.modules/scala-java8-compat_${scala.version}/{{VERSION}}</bundle>
     </feature>
     <feature name="odl-akka-system" description="Akka Actor Framework System Bundles" version="${akka.version}">
         <feature version="${scala.version}">odl-akka-scala</feature>
         <bundle>mvn:com.typesafe/config/{{VERSION}}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-actor_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-slf4j_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-osgi_${scala.version}/${akka.version}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-actor_${scala.version}/{{VERSION}}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-slf4j_${scala.version}/{{VERSION}}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-osgi_${scala.version}/{{VERSION}}</bundle>
     </feature>
     <feature name="odl-akka-clustering" description="Akka Clustering" version="${akka.version}">
         <feature version="${akka.version}">odl-akka-system</feature>
         <bundle>wrap:mvn:org.uncommons.maths/uncommons-maths/{{VERSION}}</bundle>
         <bundle>mvn:com.google.protobuf/protobuf-java/{{VERSION}}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-protobuf_${scala.version}/${akka.version}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-protobuf_${scala.version}/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty/{{VERSION}}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-remote_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-cluster_${scala.version}/${akka.version}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-remote_${scala.version}/{{VERSION}}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-cluster_${scala.version}/{{VERSION}}</bundle>
     </feature>
     <feature name='odl-akka-leveldb' description='LevelDB' version='${leveldb.version}'>
         <bundle>wrap:mvn:org.iq80.leveldb/leveldb/{{VERSION}}</bundle>
@@ -45,8 +45,8 @@
     <feature name='odl-akka-persistence' description='Akka Persistence' version="${akka.version}">
         <feature version='${leveldb.version}'>odl-akka-leveldb</feature>
         <feature version="${akka.version}">odl-akka-system</feature>
-        <bundle>mvn:com.typesafe.akka/akka-protobuf_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-persistence_${scala.version}/${akka.version}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-protobuf_${scala.version}/{{VERSION}}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-persistence_${scala.version}/{{VERSION}}</bundle>
         <bundle>wrap:mvn:com.google.protobuf/protobuf-java/{{VERSION}}$overwrite=merge&amp;DynamicImport-Package=org.opendaylight.controller.protobuff.messages.*;org.opendaylight.controller.cluster.raft.protobuff.client.messages.*</bundle>
     </feature>
 </features>
