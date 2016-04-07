@@ -147,7 +147,20 @@
                                             prefix = "wrap:"
                                             mvnUrl = mvnUrl.substring(5)
                                         }
-                                        if (mvnUrl.startsWith("mvn:")) {
+                                        if (mvnUrl.startsWith("mvn:") &amp;&amp; mvnUrl.indexOf(versionPlaceholder) >= 0) {
+                                            // Process property place-holders
+                                            def dollarIndex;
+                                            while ((dollarIndex = mvnUrl.indexOf("\${")) >= 0) {
+                                                def closingBrace = mvnUrl.indexOf("}", dollarIndex);
+                                                if (closingBrace > dollarIndex) {
+                                                    def propKey = mvnUrl.substring(dollarIndex + 2, closingBrace);
+                                                    def propVal = project.properties[propKey];
+                                                    mvnUrl = mvnUrl.replace("\${${propKey}}", propVal);
+                                                } else {
+                                                    println "[WARN] Malformed Maven URL: ${mvnUrl}";
+                                                    break;
+                                                }
+                                            }
                                             def components =  mvnUrl.substring(4).split("/")
                                             if (components[2].startsWith(versionPlaceholder)) {
                                                 def suffix = "";
