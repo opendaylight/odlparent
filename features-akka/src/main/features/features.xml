@@ -20,6 +20,7 @@
     <feature name="odl-akka-scala" description="Scala Runtime for OpenDaylight" version="${scala.version}">
         <bundle>mvn:org.scala-lang/scala-library/{{VERSION}}</bundle>
         <bundle>mvn:org.scala-lang/scala-reflect/{{VERSION}}</bundle>
+        <bundle>mvn:org.scala-lang.modules/scala-java8-compat_2.11/{{VERSION}}</bundle>
     </feature>
     <feature name="odl-akka-system" description="Akka Actor Framework System Bundles" version="${akka.version}">
         <feature version="${scala.version}">odl-akka-scala</feature>
