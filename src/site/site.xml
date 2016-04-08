@@ -4,6 +4,7 @@
         <menu name="Overview">
             <item name="Javadocs" href="apidocs/index.html" />
             <item name="Maven Site" href="maven-site.html" />
+            <item name="Using Asciidoc in Maven Site" href="asciidoc-in-site.html" />
         </menu>
     </body>
 </project>
