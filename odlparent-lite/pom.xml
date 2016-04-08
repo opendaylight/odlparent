@@ -124,6 +124,15 @@
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
           <version>3.4</version>
+          <configuration>
+            <asciidoc>
+              <attributes>
+                <icons>font</icons>
+                <source-highlighter>coderay</source-highlighter>
+                <coderay-css>style</coderay-css>
+              </attributes>
+            </asciidoc>
+          </configuration>
           <dependencies>
             <dependency>
               <groupId>org.asciidoctor</groupId>
