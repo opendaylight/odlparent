@@ -165,6 +165,24 @@ section of the project root pom.
       </profile>
     </profiles>
 
+Also once you have the configuration to generate apidocs you will also want to
+create a site.xml to add a menu item in Maven Sites linking back to the apidocs.
+
+Create the file src/site/site.xml in the root of your project with the following
+contents:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <project name="PROJECT">
+        <body>
+            <menu name="Overview">
+                <item name="Javadocs" href="apidocs/index.html" />
+            </menu>
+        </body>
+    </project>
+
+Replace PROJECT with the name of your project for example "odlparent" or
+"controller" etc...
+
 ## <a name="local_site_gen">Local Site Generation</a>
 
 To test Maven Site Generation locally you can run a build and then deploy a
