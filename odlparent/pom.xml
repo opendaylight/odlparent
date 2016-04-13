@@ -90,8 +90,6 @@
     <bouncycastle.version>1.54</bouncycastle.version>
     <!-- To upgrade to 2.6.0, we need to ensure all downstreams pull in javax.validation first
          http://stackoverflow.com/questions/28568154/how-to-get-eclipselink-2-6-0-m3-working-with-jersey-1-18-3 -->
-    <!-- Used by neutron -->
-    <eclipse.persistence.version>2.5.2</eclipse.persistence.version>
     <!-- Used by persistence, snmp4sdn; see also didm -->
     <guava.version>18.0</guava.version>
     <!-- Used by alto; see also affinity, defense4all, integration/distribution, snmp4sdn, toolkit, ttp -->
@@ -771,17 +769,17 @@
       <dependency>
         <groupId>org.eclipse.persistence</groupId>
         <artifactId>org.eclipse.persistence.antlr</artifactId>
-        <version>${eclipse.persistence.version}</version>
+        <version>2.5.2</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.persistence</groupId>
         <artifactId>org.eclipse.persistence.core</artifactId>
-        <version>${eclipse.persistence.version}</version>
+        <version>2.5.2</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.persistence</groupId>
         <artifactId>org.eclipse.persistence.moxy</artifactId>
-        <version>${eclipse.persistence.version}</version>
+        <version>2.5.2</version>
       </dependency>
       <dependency>
         <groupId>javax.validation</groupId>
