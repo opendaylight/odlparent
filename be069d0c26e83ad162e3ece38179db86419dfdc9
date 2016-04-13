@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a494da4_dd675ee9",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2016-04-13T12:50:41Z",
+      "side": 1,
+      "message": "Yeah this isn\u0027t polished yet;  I was just trying to see if it works.  Looks like I completely missed that comment;  it is still early in the morning new england time :).",
+      "parentUuid": "1a494da4_1d4b865a",
+      "revId": "be069d0c26e83ad162e3ece38179db86419dfdc9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a494da4_5d74ee9b",
         "filename": "odlparent/pom.xml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-04-13T12:48:00Z",
       "side": 1,
       "message": "My crystal ball tells me that this property is no longer used outside of odlparent, so it should be dropped (and the versions defined directly in dependency management below).",
+      "revId": "be069d0c26e83ad162e3ece38179db86419dfdc9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_7d73aab1",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2016-04-13T12:50:41Z",
+      "side": 1,
+      "message": "I am repulling to autorelease to ensure;  I had a change to remove the property but hadn\u0027t pushed yet for fear a downstream consumer did :).",
+      "parentUuid": "1a494da4_5d74ee9b",
       "revId": "be069d0c26e83ad162e3ece38179db86419dfdc9",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
