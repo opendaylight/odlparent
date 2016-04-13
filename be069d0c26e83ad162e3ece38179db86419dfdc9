@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a494da4_1d4b865a",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-04-13T12:48:00Z",
+      "side": 1,
+      "message": "This comment should be removed too. (Or turned into a somewhere around the definition of the dependency itself in dependency management, that javax.validation is needed...)",
+      "revId": "be069d0c26e83ad162e3ece38179db86419dfdc9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a494da4_5d74ee9b",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-04-13T12:48:00Z",
+      "side": 1,
+      "message": "My crystal ball tells me that this property is no longer used outside of odlparent, so it should be dropped (and the versions defined directly in dependency management below).",
+      "revId": "be069d0c26e83ad162e3ece38179db86419dfdc9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
