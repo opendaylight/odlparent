@@ -9,6 +9,7 @@
         <bundle>mvn:io.netty/netty-codec/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-codec-http/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-handler/{{VERSION}}</bundle>
+        <bundle>wrap:mvn:io.netty/netty-transport-native-epoll/{{VERSION}}/jar/${os.detected.classifier}</bundle>
     </feature>
     <feature name="odl-guava" description="OpenDaylight :: Guava" version="${guava.version}">
         <bundle>mvn:com.google.guava/guava/{{VERSION}}</bundle>
