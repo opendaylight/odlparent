@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a494da4_698f6c24",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-04-14T15:14:25Z",
+      "side": 1,
+      "message": "We use 2 spaces in this file instead of tabs. Can this patch be resubmitted with 2 space indents so that it stays consistent?",
+      "revId": "2034301c80decd5df94e9a7516529f5b90b0a8bf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
