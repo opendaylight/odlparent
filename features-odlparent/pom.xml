@@ -41,10 +41,12 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-handler</artifactId>
         </dependency>
+        <!-- Here we need to depend on all available native epoll implementations; we can't limit ourselves to the build
+        platform and we can't require the build platform to have an implementation (e.g. OS X) -->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
-            <classifier>${os.detected.classifier}</classifier>
+            <classifier>linux-x86_64</classifier>
         </dependency>
 
         <!-- odl-guava -->
