@@ -64,7 +64,6 @@
     <plugins>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>${checkstyle.version}</version>
         <executions>
           <execution>
             <id>check-license</id>
@@ -89,7 +88,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-plugin-plugin</artifactId>
-        <version>${maven.plugin.version}</version>
         <configuration>
           <goalPrefix>karaf-plugin</goalPrefix>
           <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
