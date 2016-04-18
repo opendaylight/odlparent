@@ -8,7 +8,6 @@
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
-  <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>odl-license</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
