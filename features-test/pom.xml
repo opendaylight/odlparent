@@ -94,7 +94,6 @@
             </plugin>
             <plugin>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle.version}</version>
                 <executions>
                     <execution>
                         <id>check-license</id>
