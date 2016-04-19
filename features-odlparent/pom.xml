@@ -11,7 +11,6 @@
         <relativePath>../features-parent/pom.xml</relativePath>
     </parent>
 
-    <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>features-odlparent</artifactId>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
