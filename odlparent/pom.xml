@@ -732,6 +732,11 @@
         <artifactId>org.apache.felix.fileinstall</artifactId>
         <version>3.1.6</version>
       </dependency>
+      <dependency>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>org.apache.felix.metatype</artifactId>
+        <version>1.1.2</version>
+      </dependency>
       <!-- felix webconsole -->
       <dependency>
         <groupId>org.apache.felix</groupId>
