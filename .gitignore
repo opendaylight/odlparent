@@ -16,6 +16,8 @@ local.properties
 .project
 .classpath
 
+.checkstyle
+
 # External tool builders
 .externalToolBuilders/
 
