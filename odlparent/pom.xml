@@ -60,7 +60,13 @@
 
     <!-- Maven plugin versions, in random formats -->
     <bundle.plugin.version>${maven.bundle.version}</bundle.plugin.version>
-    <checkstyle.version>2.16</checkstyle.version>
+    <!-- Checkstyle 6.2 is the same as what the previous version 2.15 of maven-checkstyle-plugin used -->
+    <checkstyle.runtime.version>6.16</checkstyle.runtime.version>
+    <!-- TODO rename checkstyle.version to checkstyle.maven.plugin.version,
+         or just remove it, incl. all usages of it in a number of pom.xml; because normally,
+         as maven-checkstyle-plugin is in pluginManagement, this should not have to be repeated. -->
+    <checkstyle.version>2.17</checkstyle.version>
+    <odl.checkstyle.version>0.2.0-SNAPSHOT</odl.checkstyle.version>
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
     <enforcer.version>1.4.1</enforcer.version>
     <enunciate.version>1.31</enunciate.version> <!-- Needs to remain exported, as its used for dependencies, too -->
@@ -82,7 +88,6 @@
     <projectinfo>2.8.1</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
-    <odl.checkstyle.version>0.2.0-SNAPSHOT</odl.checkstyle.version>
 
     <!-- Supporting Libraries -->
     <!-- Used by controller -->
@@ -114,6 +119,17 @@
         <version>1.7.0-SNAPSHOT</version>
         <scope>import</scope>
         <type>pom</type>
+      </dependency>
+
+      <!-- Build tool dependencies (normally not here in <dependencies>,
+           but in a <dependency> in <pluginManagement> but for Checkstyle this
+           is required so that we can share the same version of Checkstyle
+           for both the Maven plugin below as well as  for custom Checkstyle
+           check rule projects, such as yangtools' checkstyle-logging) -->
+      <dependency>
+        <groupId>com.puppycrawl.tools</groupId>
+        <artifactId>checkstyle</artifactId>
+        <version>${checkstyle.runtime.version}</version>
       </dependency>
 
       <!-- Testing Dependencies -->
@@ -1092,6 +1108,11 @@
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>${checkstyle.version}</version>
           <dependencies>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>${checkstyle.runtime.version}</version>
+            </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
