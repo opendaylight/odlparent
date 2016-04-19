@@ -1336,7 +1336,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <execute/>
+                    <ignore/>
                   </action>
                 </pluginExecution>
                 <pluginExecution>
