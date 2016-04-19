@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa57193c_2190ed94",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-04-19T14:29:41Z",
+      "side": 1,
+      "message": "I think a better summary line would be:\n\n    \"Bump checkstyle version to 6.17\"\n\nA good commit message should be written in present-tense, imperative-style and explain what and why something is changed and should not have the part of the body of the message in the summary line.\n\nSee: http://chris.beams.io/posts/git-commit/",
+      "revId": "747801b89d20b5462a9cb32d66e2fa08525ca59e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
