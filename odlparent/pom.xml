@@ -65,7 +65,7 @@
     <!-- TODO rename checkstyle.version to checkstyle.maven.plugin.version,
          or just remove it, incl. all usages of it in a number of pom.xml; because normally,
          as maven-checkstyle-plugin is in pluginManagement, this should not have to be repeated. -->
-    <checkstyle.version>2.16</checkstyle.version>
+    <checkstyle.version>2.17</checkstyle.version>
     <odl.checkstyle.version>0.2.0-SNAPSHOT</odl.checkstyle.version>
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
     <enforcer.version>1.4.1</enforcer.version>
