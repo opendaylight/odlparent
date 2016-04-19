@@ -61,6 +61,7 @@
 
     <!-- Maven plugin versions, in random formats -->
     <bundle.plugin.version>${maven.bundle.version}</bundle.plugin.version>
+    <checkstyle.runtime.version>6.17</checkstyle.runtime.version>
     <checkstyle.version>2.16</checkstyle.version>
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
     <enforcer.version>1.4.1</enforcer.version>
@@ -1081,6 +1082,11 @@
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>${checkstyle.version}</version>
           <dependencies>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>${checkstyle.runtime.version}</version>
+            </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
