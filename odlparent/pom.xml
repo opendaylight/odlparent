@@ -1082,6 +1082,11 @@
           <version>${checkstyle.version}</version>
           <dependencies>
             <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>6.17</version>
+            </dependency>
+            <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
               <version>${odl.checkstyle.version}</version>
