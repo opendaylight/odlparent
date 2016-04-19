@@ -91,7 +91,7 @@
         <artifactId>maven-plugin-plugin</artifactId>
         <version>${maven.plugin.version}</version>
         <configuration>
-          <goalPrefix>karaf-plugin</goalPrefix>
+          <goalPrefix>karaf</goalPrefix>
           <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
         </configuration>
         <executions>
