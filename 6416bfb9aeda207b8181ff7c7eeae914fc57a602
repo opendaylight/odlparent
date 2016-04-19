@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa57193c_f4d7d8eb",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-04-19T11:47:02Z",
+      "side": 1,
+      "message": "We\u0027re trying to avoid introducing new properties, relying on dependency/plugin management instead...",
+      "revId": "6416bfb9aeda207b8181ff7c7eeae914fc57a602",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
