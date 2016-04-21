@@ -1129,6 +1129,7 @@
               <phase>process-sources</phase>
               <configuration>
                 <configLocation>check-license.xml</configLocation>
+                <headerLocation>EPL-LICENSE.regexp.txt</headerLocation>
                 <includeResources>false</includeResources>
                 <includeTestResources>false</includeTestResources>
                 <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
