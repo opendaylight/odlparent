@@ -96,7 +96,7 @@
 
     <!-- FIXME remove all dependencies for jersey 1.17 after migration all projects -->
     <!-- Used by alto, centinel, tsdr; see also affinity, defense4all, nemo, snmp4sdn, toolkit -->
-    <jersey.version>1.19.1</jersey.version>
+    <jersey.version>1.17</jersey.version>
 
     <!-- Used by centinel -->
     <org.json.version>20131018</org.json.version>
