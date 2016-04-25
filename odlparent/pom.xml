@@ -110,8 +110,6 @@
          PowerMock or with a new JUnit release) -->
     <!-- Used by nic, persistence, tsdr; see also nemo -->
     <junit.version>4.11</junit.version>
-    <!-- Used by snmp4sdn; see also affinity, toolkit -->
-    <logback.version>1.1.3</logback.version>
     <!-- Used by nic, tsdr -->
     <mockito.version>1.10.19</mockito.version>
     <!-- Used by alto, controller, didm, snbi; see also centinel, dlux, toolkit, tsdr -->
@@ -247,12 +245,12 @@
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-core</artifactId>
-        <version>${logback.version}</version>
+        <version>1.1.3</version>
       </dependency>
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>${logback.version}</version>
+        <version>1.1.3</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
