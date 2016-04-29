@@ -33,7 +33,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
 
     static {
         // Static initialization, as we may be invoked multiple times
-        URL.setURLStreamHandlerFactory(new CustomBundleURLStreamHandlerFactory());
+        URL.setURLStreamHandlerFactory(new CustomBundleUrlStreamHandlerFactory());
     }
 
     /**

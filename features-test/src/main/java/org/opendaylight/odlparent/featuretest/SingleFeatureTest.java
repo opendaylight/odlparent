@@ -19,16 +19,19 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
+
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+
 import javax.inject.Inject;
+
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
@@ -45,7 +48,6 @@ import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
 import org.ops4j.pax.exam.options.extra.VMOption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 @RunWith(PerRepoTestRunner.class)
 public class SingleFeatureTest {
@@ -80,7 +82,7 @@ public class SingleFeatureTest {
     private static final String KARAF_DISTRO_GROUPID_PROP = "karaf.distro.groupId";
 
     /**
-     * Property file used to store the Karaf distribution version
+     * Property file used to store the Karaf distribution version.
      */
     private static final String PROPERTIES_FILENAME = "singlefeaturetest.properties";
 
@@ -113,18 +115,18 @@ public class SingleFeatureTest {
     @Configuration
     public Option[] config() throws IOException {
         return new Option[] {
-                // TODO: Find a way to inherit memory limits from Maven options.
-                new VMOption("-Xmx2g"),
-                new VMOption("-XX:MaxPermSize=512m"),
-                getKarafDistroOption(),
-                when(Boolean.getBoolean(KEEP_UNPACK_DIRECTORY_PROP)).useOptions(keepRuntimeFolder()),
-                configureConsole().ignoreLocalConsole(),
-                logLevel(LogLevel.WARN),
-                mvnLocalRepoOption(),
-                standardKarafFeatures(),
-                editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
-                        LogLevel.INFO.name()),
-                editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
+            // TODO: Find a way to inherit memory limits from Maven options.
+            new VMOption("-Xmx2g"),
+            new VMOption("-XX:MaxPermSize=512m"),
+            getKarafDistroOption(),
+            when(Boolean.getBoolean(KEEP_UNPACK_DIRECTORY_PROP)).useOptions(keepRuntimeFolder()),
+            configureConsole().ignoreLocalConsole(),
+            logLevel(LogLevel.WARN),
+            mvnLocalRepoOption(),
+            standardKarafFeatures(),
+            editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
+                    LogLevel.INFO.name()),
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
              /*
               *
               * Disables external snapshot repositories.
@@ -148,34 +150,34 @@ public class SingleFeatureTest {
               *
               *
               */
-                disableExternalSnapshotRepositories(),
-                CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP).value(
-                        System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP)),
-                CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP).value(
-                        System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP)),
-                CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP).value(
-                        System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
+            disableExternalSnapshotRepositories(),
+            CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP).value(
+                    System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP)),
+            CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP).value(
+                    System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP)),
+            CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP).value(
+                    System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
         };
     }
 
     private Option standardKarafFeatures() {
-        String url = maven().groupId("org.apache.karaf.features").artifactId("standard").
-                classifier("features").type("xml").version(getKarafVersion()).getURL();
+        String url = maven().groupId("org.apache.karaf.features").artifactId("standard").classifier("features").type(
+                "xml").version(getKarafVersion()).getURL();
         try {
             Features features = JaxbUtil.unmarshal(new URL(url).openStream(), false);
             List<String> featureNames = new ArrayList<>();
-            for(Feature f: features.getFeature()) {
+            for (Feature f : features.getFeature()) {
                 featureNames.add(f.getName());
             }
 
             return features(url, featureNames.toArray(new String[featureNames.size()]));
-        } catch(Exception e) {
+        } catch (Exception e) {
             throw new RuntimeException("Could not obtain features from URL " + url, e);
         }
     }
 
     private String getKarafVersion() {
-        if(karafVersion == null) {
+        if (karafVersion == null) {
             // We use a properties file to retrieve ${karaf.version}, instead of .versionAsInProject()
             // This avoids forcing all users to depend on Karaf in their POMs
             Properties singleFeatureTestProps = new Properties();
@@ -196,12 +198,13 @@ public class SingleFeatureTest {
     }
 
     private String getKarafDistroVersion() {
-        if(karafDistroVersion == null) {
+        if (karafDistroVersion == null) {
             karafDistroVersion = System.getProperty(KARAF_DISTRO_VERSION_PROP);
-            if(karafDistroVersion == null) {
+            if (karafDistroVersion == null) {
                 karafDistroVersion = getKarafVersion();
             } else {
-                LOG.info("Retrieved karafDistroVersion {} from system property {}", karafVersion, KARAF_DISTRO_VERSION_PROP);
+                LOG.info("Retrieved karafDistroVersion {} from system property {}", karafVersion,
+                        KARAF_DISTRO_VERSION_PROP);
             }
         }
 

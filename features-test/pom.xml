@@ -109,7 +109,7 @@
                             <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
                             <excludes>
                                 <!-- Skip Apache Licensed files -->
-                                org/opendaylight/odlparent/featuretest/CustomBundleURLStreamHandlerFactory.java
+                                org/opendaylight/odlparent/featuretest/CustomBundleUrlStreamHandlerFactory.java
                             </excludes>
                             <failsOnError>false</failsOnError>
                             <consoleOutput>true</consoleOutput>
