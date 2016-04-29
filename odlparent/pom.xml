@@ -87,36 +87,42 @@
     <!-- Supporting Libraries -->
     <!-- Used by controller -->
     <bouncycastle.version>1.54</bouncycastle.version>
-    <!-- Used by persistence, snmp4sdn; see also didm -->
+    <!-- Used by persistence; see also didm -->
+    <!-- Removed in didm: https://git.opendaylight.org/gerrit/38218 -->
+    <!-- Removed in persistence: https://git.opendaylight.org/gerrit/31285 -->
     <guava.version>18.0</guava.version>
-    <!-- Used by alto; see also affinity, defense4all, integration/distribution, snmp4sdn, toolkit, ttp -->
-    <jackson.version>2.3.2</jackson.version>
-    <!-- Used by snmp4sdn -->
-    <javassist.version>3.20.0-GA</javassist.version>
 
     <!-- FIXME remove all dependencies for jersey 1.17 after migration all projects -->
-    <!-- Used by alto, centinel, tsdr; see also affinity, defense4all, nemo, snmp4sdn, toolkit -->
+    <!-- Used by centinel, tsdr; see also affinity, defense4all, nemo, snmp4sdn, toolkit -->
+    <!-- Removed in centinel: https://git.opendaylight.org/gerrit/38139 -->
+    <!-- Removed in tsdr: https://git.opendaylight.org/gerrit/38140 -->
     <jersey.version>1.17</jersey.version>
 
     <!-- Used by centinel -->
+    <!-- Removed in centinel: https://git.opendaylight.org/gerrit/38139 -->
     <org.json.version>20131018</org.json.version>
 
     <!-- Used by centinel -->
+    <!-- Removed in centinel: https://git.opendaylight.org/gerrit/38139 -->
     <jettison.version>1.3.7</jettison.version>
     <!-- Used by persistence -->
+    <!-- Removed in persistence: https://git.opendaylight.org/gerrit/31285 -->
     <jsr305.api.version>3.0.0</jsr305.api.version>
     <!-- Need to stick to JUnit 4.11 until
          https://github.com/jayway/powermock/issues/560 is fixed (either in
          PowerMock or with a new JUnit release) -->
-    <!-- Used by nic, persistence, tsdr; see also nemo -->
+    <!-- Used by persistence, tsdr; see also nemo -->
+    <!-- Removed in persistence: https://git.opendaylight.org/gerrit/31285 -->
+    <!-- Removed in tsdr: https://git.opendaylight.org/gerrit/38140 -->
     <junit.version>4.11</junit.version>
-    <!-- Used by snmp4sdn; see also affinity, toolkit -->
-    <logback.version>1.1.3</logback.version>
-    <!-- Used by nic, tsdr -->
+    <!-- Used by tsdr -->
+    <!-- Removed in tsdr: https://git.opendaylight.org/gerrit/38140 -->
     <mockito.version>1.10.19</mockito.version>
-    <!-- Used by alto, controller, didm, snbi; see also centinel, dlux, toolkit, tsdr -->
+    <!-- Used by controller, didm, snbi; see also centinel, dlux, toolkit -->
+    <!-- Removed in didm: https://git.opendaylight.org/gerrit/38218 -->
     <osgi.core.version>5.0.0</osgi.core.version>
-    <!-- Used by persistence, snmp4sdn; see also affinity, toolkit -->
+    <!-- Used by persistence; see also affinity, toolkit -->
+    <!-- Removed in persistence: https://git.opendaylight.org/gerrit/31285 -->
     <slf4j.version>1.7.12</slf4j.version>
 
     <akka.version>2.4.4</akka.version>
@@ -247,12 +253,12 @@
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-core</artifactId>
-        <version>${logback.version}</version>
+        <version>1.1.3</version>
       </dependency>
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>${logback.version}</version>
+        <version>1.1.3</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
@@ -307,7 +313,7 @@
         <artifactId>json</artifactId>
         <version>20090211_1</version>
       </dependency>
-      <!-- FIXME : remove all dependencies for jersey 1.7 -->
+      <!-- FIXME : remove all dependencies for jersey 1.17 -->
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-core</artifactId>
@@ -337,7 +343,7 @@
       <dependency>
         <groupId>com.sun.jersey.jersey-test-framework</groupId>
         <artifactId>jersey-test-framework-inmemory</artifactId>
-        <version>1.17</version>
+        <version>${jersey.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -348,7 +354,7 @@
       <dependency>
         <groupId>org.opendaylight.controller.thirdparty</groupId>
         <artifactId>com.sun.jersey.jersey-servlet</artifactId>
-        <version>1.17</version>
+        <version>${jersey.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.shiro</groupId>
@@ -380,22 +386,22 @@
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-annotations</artifactId>
-        <version>${jackson.version}</version>
+        <version>2.3.2</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
-        <version>${jackson.version}</version>
+        <version>2.3.2</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>${jackson.version}</version>
+        <version>2.3.2</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.datatype</groupId>
         <artifactId>jackson-datatype-json-org</artifactId>
-        <version>${jackson.version}</version>
+        <version>2.3.2</version>
       </dependency>
       <!-- TODO do we really need resteasy ? -->
       <dependency>
@@ -407,17 +413,17 @@
       <dependency>
         <groupId>com.fasterxml.jackson.jaxrs</groupId>
         <artifactId>jackson-jaxrs-base</artifactId>
-        <version>${jackson.version}</version>
+        <version>2.3.2</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.jaxrs</groupId>
         <artifactId>jackson-jaxrs-json-provider</artifactId>
-        <version>${jackson.version}</version>
+        <version>2.3.2</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.module</groupId>
         <artifactId>jackson-module-jaxb-annotations</artifactId>
-        <version>${jackson.version}</version>
+        <version>2.3.2</version>
       </dependency>
       <dependency>
         <groupId>com.sun.xml.txw2</groupId>
@@ -813,7 +819,7 @@
       <dependency>
         <groupId>org.javassist</groupId>
         <artifactId>javassist</artifactId>
-        <version>${javassist.version}</version>
+        <version>3.20.0-GA</version>
       </dependency>
       <dependency>
         <groupId>org.jboss.spec.javax.transaction</groupId>
