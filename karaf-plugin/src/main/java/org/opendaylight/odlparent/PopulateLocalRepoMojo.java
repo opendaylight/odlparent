@@ -26,6 +26,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
+
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -36,7 +37,7 @@ import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
-import org.opendaylight.odlparent.featuretest.CustomBundleURLStreamHandlerFactory;
+import org.opendaylight.odlparent.featuretest.CustomBundleUrlStreamHandlerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,7 +53,7 @@ public class PopulateLocalRepoMojo
 
     static {
         // Static initialization, as we may be invoked multiple times
-        URL.setURLStreamHandlerFactory(new CustomBundleURLStreamHandlerFactory());
+        URL.setURLStreamHandlerFactory(new CustomBundleUrlStreamHandlerFactory());
     }
 
     /**

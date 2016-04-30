@@ -2,7 +2,7 @@
  * The NOTICE file referred to in the license statement below is available
  * as Karaf-NOTICE at the root of this project.
  */
-/**
+/*
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -18,6 +18,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.opendaylight.odlparent.featuretest;
 
 import java.net.URLStreamHandler;
@@ -27,7 +28,7 @@ import org.apache.karaf.deployer.blueprint.BlueprintURLHandler;
 import org.apache.karaf.deployer.features.FeatureURLHandler;
 import org.apache.karaf.deployer.spring.SpringURLHandler;
 
-public class CustomBundleURLStreamHandlerFactory implements URLStreamHandlerFactory {
+public class CustomBundleUrlStreamHandlerFactory implements URLStreamHandlerFactory {
 
     private static final String MVN_URI_PREFIX = "mvn";
     private static final String WRAP_URI_PREFIX = "wrap";
