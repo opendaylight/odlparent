@@ -87,16 +87,9 @@
     <!-- Supporting Libraries -->
     <!-- Used by controller -->
     <bouncycastle.version>1.54</bouncycastle.version>
-    <!-- Used by persistence; see also didm -->
-    <!-- Removed in didm: https://git.opendaylight.org/gerrit/38218 -->
+    <!-- Used by persistence -->
     <!-- Removed in persistence: https://git.opendaylight.org/gerrit/31285 -->
     <guava.version>18.0</guava.version>
-
-    <!-- FIXME remove all dependencies for jersey 1.17 after migration all projects -->
-    <!-- Used by centinel, tsdr; see also affinity, defense4all, nemo, snmp4sdn, toolkit -->
-    <!-- Removed in centinel: https://git.opendaylight.org/gerrit/38139 -->
-    <!-- Removed in tsdr: https://git.opendaylight.org/gerrit/38140 -->
-    <jersey.version>1.17</jersey.version>
 
     <!-- Used by centinel -->
     <!-- Removed in centinel: https://git.opendaylight.org/gerrit/38139 -->
@@ -111,15 +104,10 @@
     <!-- Need to stick to JUnit 4.11 until
          https://github.com/jayway/powermock/issues/560 is fixed (either in
          PowerMock or with a new JUnit release) -->
-    <!-- Used by persistence, tsdr; see also nemo -->
+    <!-- Used by persistence; see also nemo -->
     <!-- Removed in persistence: https://git.opendaylight.org/gerrit/31285 -->
-    <!-- Removed in tsdr: https://git.opendaylight.org/gerrit/38140 -->
     <junit.version>4.11</junit.version>
-    <!-- Used by tsdr -->
-    <!-- Removed in tsdr: https://git.opendaylight.org/gerrit/38140 -->
-    <mockito.version>1.10.19</mockito.version>
-    <!-- Used by controller, didm, snbi; see also centinel, dlux, toolkit -->
-    <!-- Removed in didm: https://git.opendaylight.org/gerrit/38218 -->
+    <!-- Used by controller, snbi; see also centinel, dlux, toolkit -->
     <osgi.core.version>5.0.0</osgi.core.version>
     <!-- Used by persistence; see also affinity, toolkit -->
     <!-- Removed in persistence: https://git.opendaylight.org/gerrit/31285 -->
@@ -173,13 +161,13 @@
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-all</artifactId>
-        <version>${mockito.version}</version>
+        <version>1.10.19</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
-        <version>${mockito.version}</version>
+        <version>1.10.19</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -317,44 +305,44 @@
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-core</artifactId>
-        <version>${jersey.version}</version>
+        <version>1.17</version>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-json</artifactId>
-        <version>${jersey.version}</version>
+        <version>1.17</version>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-server</artifactId>
-        <version>${jersey.version}</version>
+        <version>1.17</version>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-servlet</artifactId>
-        <version>${jersey.version}</version>
+        <version>1.17</version>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey.jersey-test-framework</groupId>
         <artifactId>jersey-test-framework-grizzly2</artifactId>
-        <version>${jersey.version}</version>
+        <version>1.17</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey.jersey-test-framework</groupId>
         <artifactId>jersey-test-framework-inmemory</artifactId>
-        <version>${jersey.version}</version>
+        <version>1.17</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-client</artifactId>
-        <version>${jersey.version}</version>
+        <version>1.17</version>
       </dependency>
       <dependency>
         <groupId>org.opendaylight.controller.thirdparty</groupId>
         <artifactId>com.sun.jersey.jersey-servlet</artifactId>
-        <version>${jersey.version}</version>
+        <version>1.17</version>
       </dependency>
       <dependency>
         <groupId>org.apache.shiro</groupId>
