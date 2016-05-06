@@ -48,12 +48,6 @@
             <classifier>linux-x86_64</classifier>
         </dependency>
 
-        <!-- odl-guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
-
         <!-- odl-lmax -->
         <dependency>
             <groupId>com.lmax</groupId>

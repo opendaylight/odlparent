@@ -2,6 +2,7 @@
 <features name="odlparent-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
+    <!-- See also the links defined for our Maven site in the root POM (maven-javadoc-plugin) -->
     <feature name="odl-netty" description="OpenDaylight :: Netty" version="4.0.36.Final">
         <bundle>mvn:io.netty/netty-buffer/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-common/{{VERSION}}</bundle>
@@ -13,8 +14,11 @@
         platform and we can't require the build platform to have an implementation (e.g. OS X) -->
         <bundle>wrap:mvn:io.netty/netty-transport-native-epoll/{{VERSION}}/jar/linux-x86_64</bundle>
     </feature>
-    <feature name="odl-guava" description="OpenDaylight :: Guava" version="${guava.version}">
-        <bundle>mvn:com.google.guava/guava/{{VERSION}}</bundle>
+    <feature name="odl-guava" description="OpenDaylight :: Guava" version="18.0">
+        <bundle>mvn:com.google.guava/guava/18.0</bundle>
+    </feature>
+    <feature name="odl-guava" description="OpenDaylight :: Guava" version="19.0">
+        <bundle>mvn:com.google.guava/guava/19.0</bundle>
     </feature>
     <feature name="odl-lmax" description="OpenDaylight :: LMAX Disruptor" version="3.3.4">
         <bundle>mvn:com.lmax/disruptor/{{VERSION}}</bundle>
