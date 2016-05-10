@@ -6,38 +6,26 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>karaf-features-parent</artifactId>
+        <artifactId>karaf-feature-parent</artifactId>
         <version>1.7.0-SNAPSHOT</version>
-        <relativePath>../karaf-features-parent</relativePath>
+        <relativePath>../karaf-feature-parent</relativePath>
     </parent>
 
-    <artifactId>features-odlparent</artifactId>
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>odl-akka-leveldb</artifactId>
+    <version>0.7</version>
     <packaging>feature</packaging>
-    <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <name>LevelDB</name>
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-netty</artifactId>
-            <version>4.0.36.Final</version>
-            <classifier>features</classifier>
-            <type>xml</type>
+            <groupId>org.iq80.leveldb</groupId>
+            <artifactId>leveldb</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-guava</artifactId>
-            <version>18</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-lmax</artifactId>
-            <version>3.3.4</version>
-            <classifier>features</classifier>
-            <type>xml</type>
+            <groupId>org.fusesource.leveldbjni</groupId>
+            <artifactId>leveldbjni-all</artifactId>
         </dependency>
     </dependencies>
 
