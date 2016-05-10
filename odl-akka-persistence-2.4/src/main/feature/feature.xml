@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.1" name="odl-akka-persistence-2.4">
+    <feature name="odl-akka-persistence-2.4">
+        <!-- TODO Handle the version here -->
+        <bundle>wrap:mvn:com.google.protobuf/protobuf-java/2.5.0$overwrite=merge&amp;DynamicImport-Package=org.opendaylight.controller.protobuff.messages.*;org.opendaylight.controller.cluster.raft.protobuff.client.messages.*</bundle>
+    </feature>
+</features>
