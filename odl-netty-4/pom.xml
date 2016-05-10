@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>single-feature-parent</artifactId>
+        <version>1.8.0-SNAPSHOT</version>
+        <relativePath>../single-feature-parent</relativePath>
+    </parent>
+
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>odl-netty-4</artifactId>
+    <version>1.8.0-SNAPSHOT</version>
+    <packaging>feature</packaging>
+
+    <name>OpenDaylight :: Netty</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-buffer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec-http</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-handler</artifactId>
+        </dependency>
+        <!-- Here we need to depend on all available native epoll implementations; we can't limit ourselves to the build
+        platform and we can't require the build platform to have an implementation (e.g. OS X) -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-epoll</artifactId>
+            <classifier>linux-x86_64</classifier>
+        </dependency>
+    </dependencies>
+
+    <!--
+        Maven Site Configuration
+
+        The following configuration is necessary for maven-site-plugin to
+        correctly identify the correct deployment path for OpenDaylight Maven
+        sites.
+    -->
+    <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
+
+    <distributionManagement>
+        <site>
+            <id>opendaylight-site</id>
+            <url>${nexus.site.url}/${project.artifactId}/</url>
+        </site>
+    </distributionManagement>
+
+</project>

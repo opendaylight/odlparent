@@ -6,58 +6,71 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>features-parent</artifactId>
+        <artifactId>feature-repo-parent</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../features-parent/pom.xml</relativePath>
+        <relativePath>../feature-repo-parent</relativePath>
     </parent>
 
     <artifactId>features-odlparent</artifactId>
+    <packaging>feature</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <dependencies>
-        <!-- odl-netty -->
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-buffer</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-transport</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-codec</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-codec-http</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-handler</artifactId>
-        </dependency>
-        <!-- Here we need to depend on all available native epoll implementations; we can't limit ourselves to the build
-        platform and we can't require the build platform to have an implementation (e.g. OS X) -->
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-transport-native-epoll</artifactId>
-            <classifier>linux-x86_64</classifier>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-netty-4</artifactId>
+            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
         </dependency>
 
-        <!-- odl-lmax -->
         <dependency>
-            <groupId>com.lmax</groupId>
-            <artifactId>disruptor</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-guava-18</artifactId>
+            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
         </dependency>
 
-        <!-- odl-triemap -->
         <dependency>
-            <groupId>com.github.romix</groupId>
-            <artifactId>java-concurrent-hash-trie-map</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-guava-19</artifactId>
+            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-lmax-3</artifactId>
+            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>odl-triemap-0.2</artifactId>
+            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
         </dependency>
     </dependencies>
+
+    <!--
+        Maven Site Configuration
+
+        The following configuration is necessary for maven-site-plugin to
+        correctly identify the correct deployment path for OpenDaylight Maven
+        sites.
+    -->
+    <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
+
+    <distributionManagement>
+        <site>
+            <id>opendaylight-site</id>
+            <url>${nexus.site.url}/${project.artifactId}/</url>
+        </site>
+    </distributionManagement>
+
 </project>

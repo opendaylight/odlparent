@@ -34,14 +34,27 @@
         <!-- odlparent core -->
         <module>bundle-parent</module>
         <module>features-parent</module>
-        <module>features-test</module>
-        <module>features-odlparent</module>
         <module>features-akka</module>
-        <module>odlparent-artifacts</module>
-        <module>odlparent</module>
-        <module>odlparent-lite</module>
+        <module>features-odlparent</module>
+        <module>features-test</module>
         <module>karaf</module>
+        <module>single-feature-parent</module>
+        <module>feature-repo-parent</module>
         <module>karaf-plugin</module>
+        <module>odl-akka-all</module>
+        <module>odl-akka-clustering-2.4</module>
+        <module>odl-akka-leveldb-0.7</module>
+        <module>odl-akka-persistence-2.4</module>
+        <module>odl-akka-scala-2.11</module>
+        <module>odl-akka-system-2.4</module>
+        <module>odl-guava-18</module>
+        <module>odl-guava-19</module>
+        <module>odl-lmax-3</module>
+        <module>odl-netty-4</module>
+        <module>odl-triemap-0.2</module>
+        <module>odlparent</module>
+        <module>odlparent-artifacts</module>
+        <module>odlparent-lite</module>
     </modules>
 
     <build>
