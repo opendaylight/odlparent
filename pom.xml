@@ -30,18 +30,36 @@
         <!-- odlparent tools -->
         <module>checkstyle</module>
         <module>license</module>
-
-        <!-- odlparent core -->
-        <module>bundle-parent</module>
-        <module>features-parent</module>
         <module>features-test</module>
-        <module>features-odlparent</module>
-        <module>features-akka</module>
-        <module>odlparent-artifacts</module>
-        <module>odlparent</module>
-        <module>odlparent-lite</module>
+
+        <!-- Karaf integration -->
         <module>karaf</module>
         <module>karaf-plugin</module>
+
+        <!-- Parent POMs -->
+        <module>bundle-parent</module>
+        <module>features-parent</module>
+        <module>single-feature-parent</module>
+        <module>feature-repo-parent</module>
+        <module>odlparent</module>
+        <module>odlparent-lite</module>
+
+        <!-- Features -->
+        <module>features-akka</module>
+        <module>features/odl-akka-all</module>
+        <module>features/odl-akka-clustering-2.4</module>
+        <module>features/odl-akka-leveldb-0.7</module>
+        <module>features/odl-akka-persistence-2.4</module>
+        <module>features/odl-akka-scala-2.11</module>
+        <module>features/odl-akka-system-2.4</module>
+        <module>features-odlparent</module>
+        <module>features/odl-guava-18</module>
+        <module>features/odl-lmax-3</module>
+        <module>features/odl-netty-4</module>
+        <module>features/odl-triemap-0.2</module>
+
+        <!-- Artifacts -->
+        <module>odlparent-artifacts</module>
     </modules>
 
     <build>
