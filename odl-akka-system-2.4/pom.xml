@@ -6,54 +6,47 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>karaf-features-parent</artifactId>
+        <artifactId>karaf-feature-parent</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../karaf-features-parent</relativePath>
+        <relativePath>../karaf-feature-parent</relativePath>
     </parent>
 
-    <artifactId>features-odlparent</artifactId>
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>odl-akka-system-2.4</artifactId>
+    <version>1.8.0-SNAPSHOT</version>
     <packaging>feature</packaging>
-    <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <name>Akka Actor Framework System Bundles</name>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-netty-4</artifactId>
+            <artifactId>odl-akka-scala-${scala.version}</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
-
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-guava-18</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-guava-19</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_${scala.version}</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-lmax-3</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-slf4j_${scala.version}</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
-
         <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-triemap-0.2</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-osgi_${scala.version}</artifactId>
         </dependency>
     </dependencies>
 
