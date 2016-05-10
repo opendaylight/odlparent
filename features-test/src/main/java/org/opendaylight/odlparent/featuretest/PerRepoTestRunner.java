@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     private static final String REPO_RECURSE = "repo.recurse";
     private static final Logger LOG = LoggerFactory.getLogger(PerRepoTestRunner.class);
-    private static final String FEATURES_FILENAME = "features.xml";
+    private static final String[] FEATURES_FILENAMES = new String[] { "features.xml", "feature.xml" };
     private final List<PerFeatureRunner> children = new ArrayList<>();
 
     static {
@@ -45,10 +45,14 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     public PerRepoTestRunner(final Class<?> testClass) throws InitializationError {
         super(testClass);
         try {
-            final URL repoUrl = getClass().getClassLoader().getResource(FEATURES_FILENAME);
-            final boolean recursive = Boolean.getBoolean(REPO_RECURSE);
-            LOG.info("Creating test runners for repoUrl {} recursive {}", repoUrl, recursive);
-            children.addAll(runnersFromRepoUrl(repoUrl, testClass, recursive));
+            for (String filename : FEATURES_FILENAMES) {
+                final URL repoUrl = getClass().getClassLoader().getResource(filename);
+                if (repoUrl != null) {
+                    final boolean recursive = Boolean.getBoolean(REPO_RECURSE);
+                    LOG.info("Creating test runners for repoUrl {} recursive {}", repoUrl, recursive);
+                    children.addAll(runnersFromRepoUrl(repoUrl, testClass, recursive));
+                }
+            }
         } catch (final Exception e) {
             throw new InitializationError(e);
         }
