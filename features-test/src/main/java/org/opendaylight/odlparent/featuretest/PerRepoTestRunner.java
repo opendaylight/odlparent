@@ -28,7 +28,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     private static final Logger LOG = LoggerFactory.getLogger(PerRepoTestRunner.class);
 
     private static final String REPO_RECURSE = "repo.recurse";
-    private static final String FEATURES_FILENAME = "features.xml";
+    private static final String[] FEATURES_FILENAMES = new String[] { "features.xml", "feature.xml" };
 
     private static boolean isURLStreamHandlerFactorySet = false;
     // Do NOT static { URL.setURLStreamHandlerFactory(new CustomBundleUrlStreamHandlerFactory()); }
@@ -50,13 +50,15 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
         super(testClass);
         setURLStreamHandlerFactory();
         try {
-            final URL featuresXmlUrl = getClass().getClassLoader().getResource(FEATURES_FILENAME);
-            final boolean recursive = Boolean.getBoolean(REPO_RECURSE);
-            LOG.info("Creating test runners for {}, recursive {}", featuresXmlUrl, recursive);
-            if (featuresXmlUrl != null) {
-                children.addAll(runnersFromRepoUrl(featuresXmlUrl, testClass, recursive));
-            } else {
-                LOG.error("getClass().getClassLoader().getResource(" + FEATURES_FILENAME + ") returned null");
+            for (String filename : FEATURES_FILENAMES) {
+                final URL repoUrl = getClass().getClassLoader().getResource(filename);
+                if (repoUrl != null) {
+                    final boolean recursive = Boolean.getBoolean(REPO_RECURSE);
+                    LOG.info("Creating test runners for repoUrl {} recursive {}", repoUrl, recursive);
+                    children.addAll(runnersFromRepoUrl(repoUrl, testClass, recursive));
+                } else {
+                    LOG.error("getClass().getClassLoader().getResource(\"{}\") returned null", filename);
+                }
             }
         } catch (final IOException | JAXBException e) {
             throw new InitializationError(e);
