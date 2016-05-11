@@ -4,13 +4,13 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>1.6.2-Beryllium-SR2</version>
+    <version>1.6.3-SNAPSHOT</version>
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>checkstyle</artifactId>
-  <version>0.1.2-Beryllium-SR2</version>
+  <version>0.1.3-SNAPSHOT</version>
 
   <!--
     Maven Site Configuration

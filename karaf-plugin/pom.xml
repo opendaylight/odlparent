@@ -4,7 +4,7 @@
   <parent>
     <artifactId>odlparent</artifactId>
     <groupId>org.opendaylight.odlparent</groupId>
-    <version>1.6.2-Beryllium-SR2</version>
+    <version>1.6.3-SNAPSHOT</version>
     <relativePath>../odlparent/</relativePath>
   </parent>
   <artifactId>karaf-plugin</artifactId>
