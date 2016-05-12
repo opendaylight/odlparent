@@ -5,7 +5,7 @@
 
 <!--
 
-    Checkstyle configuration that checks the Google coding conventions from:
+    ODL Checkstyle configuration, originally based on the the Google coding conventions from:
 
     -  Google Java Style
        https://google-styleguide.googlecode.com/svn-history/r130/trunk/javaguide.html
@@ -185,6 +185,8 @@
         </module>
         <module name="JavadocMethod">
             <property name="scope" value="public"/>
+            <property name="tokens" value="METHOD_DEF"/> <!-- JavaDoc on constructors is optional -->
+            <property name="allowMissingPropertyJavadoc" value="true" /> <!-- JavaDoc on STRICT (!) getters and setters is optional -->
             <property name="allowMissingParamTags" value="true"/>
             <property name="allowMissingThrowsTags" value="true"/>
             <property name="allowMissingReturnTag" value="true"/>
