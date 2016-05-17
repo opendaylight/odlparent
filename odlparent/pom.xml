@@ -61,7 +61,7 @@
     <!-- Maven plugin versions, in random formats -->
     <bundle.plugin.version>${maven.bundle.version}</bundle.plugin.version>
     <!-- Checkstyle 6.2 is the same as what the previous version 2.15 of maven-checkstyle-plugin used -->
-    <checkstyle.runtime.version>6.2</checkstyle.runtime.version>
+    <checkstyle.runtime.version>6.16</checkstyle.runtime.version>
     <!-- TODO rename checkstyle.version to checkstyle.maven.plugin.version,
          or just remove it, incl. all usages of it in a number of pom.xml; because normally,
          as maven-checkstyle-plugin is in pluginManagement, this should not have to be repeated. -->
