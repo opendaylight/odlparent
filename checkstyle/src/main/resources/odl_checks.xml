@@ -127,6 +127,11 @@
             <message key="name.invalidPattern"
              value="Class type name ''{0}'' must match pattern ''{1}''."/>
         </module>
+        <module name="MethodName">
+            <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+            <message key="name.invalidPattern"
+             value="Method name ''{0}'' must match pattern ''{1}''."/>
+        </module>
         <module name="MethodTypeParameterName">
             <property name="format" value="(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[T]$)"/>
             <message key="name.invalidPattern"
@@ -195,11 +200,6 @@
             <property name="minLineCount" value="2"/>
             <property name="allowedAnnotations" value="Override, Test"/>
             <property name="allowThrowsTagsForSubclasses" value="true"/>
-        </module>
-        <module name="MethodName">
-            <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
-            <message key="name.invalidPattern"
-             value="Method name ''{0}'' must match pattern ''{1}''."/>
         </module>
         <module name="SingleLineJavadoc"/>
     </module>
