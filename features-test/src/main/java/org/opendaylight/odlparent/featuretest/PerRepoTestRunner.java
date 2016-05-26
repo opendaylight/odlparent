@@ -12,9 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.bind.JAXBException;
-
 import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.features.internal.model.JaxbUtil;
@@ -114,14 +112,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
         return runners;
     }
 
-    /**
-     * @param repoUrl url of the repo
-     * @return features
-     * @throws JAXBException exception during unmarshalling.
-     * @throws IOException IOException in getting the features.
-     */
-    protected Features getFeatures(final URL repoUrl) throws JAXBException,
-            IOException {
+    protected Features getFeatures(final URL repoUrl) throws JAXBException, IOException {
         return JaxbUtil.unmarshal(repoUrl.openStream(), false);
     }
 
