@@ -12,9 +12,8 @@ import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
 
-import java.net.URL;
-
 import com.google.common.base.Preconditions;
+import java.net.URL;
 import org.junit.runner.Description;
 import org.junit.runner.Runner;
 import org.junit.runner.manipulation.Filter;
