@@ -21,8 +21,8 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRunti
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
 
 import java.io.File;
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;

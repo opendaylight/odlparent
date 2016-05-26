@@ -14,7 +14,6 @@ import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_
 
 import java.net.URL;
 
-import com.google.common.base.Preconditions;
 import org.junit.runner.Description;
 import org.junit.runner.Runner;
 import org.junit.runner.manipulation.Filter;
@@ -27,6 +26,8 @@ import org.junit.runners.model.InitializationError;
 import org.ops4j.pax.exam.junit.PaxExam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.google.common.base.Preconditions;
 
 public class PerFeatureRunner extends Runner implements Filterable, Sortable {
     private static final Logger LOG = LoggerFactory.getLogger(PerFeatureRunner.class);
