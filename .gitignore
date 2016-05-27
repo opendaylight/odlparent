@@ -18,6 +18,9 @@ local.properties
 
 .checkstyle
 
+# https://github.com/jbosstools/m2e-apt
+.factorypath
+
 # External tool builders
 .externalToolBuilders/
 
@@ -30,7 +33,7 @@ local.properties
 # PDT-specific
 .buildpath
 
-# sbteclipse plugin 
+# sbteclipse plugin
 .target
 
 # TeXlipse plugin
