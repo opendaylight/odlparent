@@ -26,15 +26,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
+
     private static final String REPO_RECURSE = "repo.recurse";
     private static final Logger LOG = LoggerFactory.getLogger(PerRepoTestRunner.class);
     private static final String FEATURES_FILENAME = "features.xml";
+
+    private static boolean isURLStreamHandlerFactorySet = false;
+    // Do NOT static { URL.setURLStreamHandlerFactory(new CustomBundleUrlStreamHandlerFactory()); }
+    // This is VERY BAD practice, because it leads to VERY HARD TO TRACK errors in case ANYTHING
+    // goes wrong in this.  For example, we had a case where (following an upgrade of PAX Exam)
+    // a dependency was missing.  This appeared as a confusing error because the root cause
+    // of static initialization errors is typically lost in Java; so best is NOT to use it!
+    // ("NoClassDefFoundError: Could not initialize class ...PerRepoTestRunner")
+
     private final List<PerFeatureRunner> children = new ArrayList<>();
 
-    static {
-        // Static initialization, as we may be invoked multiple times
-        URL.setURLStreamHandlerFactory(new CustomBundleUrlStreamHandlerFactory());
-    }
 
     /**
      * Create a runner.
@@ -44,6 +50,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
      */
     public PerRepoTestRunner(final Class<?> testClass) throws InitializationError {
         super(testClass);
+        setURLStreamHandlerFactory();
         try {
             final URL repoUrl = getClass().getClassLoader().getResource(FEATURES_FILENAME);
             final boolean recursive = Boolean.getBoolean(REPO_RECURSE);
@@ -51,6 +58,20 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
             children.addAll(runnersFromRepoUrl(repoUrl, testClass, recursive));
         } catch (final Exception e) {
             throw new InitializationError(e);
+        }
+    }
+
+    // see doc on isURLStreamHandlerFactorySet for why we do NOT want to do this in a static block
+    protected final void setURLStreamHandlerFactory() {
+        if (!isURLStreamHandlerFactorySet) {
+            try {
+                URL.setURLStreamHandlerFactory(new CustomBundleUrlStreamHandlerFactory());
+                isURLStreamHandlerFactorySet = true;
+            } catch (Error e) {
+                LOG.warn("Failed to setURLStreamHandlerFactory to CustomBundleUrlStreamHandlerFactory "
+                        + "(depending on which is already set, this may or may not actually be a problem"
+                        + "; e.g. Karaf 4 already registers the neccessary handlers, so OK to ignore)", e);
+            }
         }
     }
 
