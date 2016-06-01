@@ -23,6 +23,15 @@
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <dependencies>
+        <dependency>
+            <!-- This is required because we otherwise get
+                 java.lang.ClassNotFoundException: org.osgi.service.url.AbstractURLStreamHandlerService
+                 from org.opendaylight.odlparent.featuretest.CustomBundleUrlStreamHandlerFactory
+              -->
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <scope>compile</scope>
+        </dependency>
         <!-- Dependencies for pax exam karaf container -->
         <dependency>
             <groupId>org.ops4j.pax.exam</groupId>
