@@ -52,6 +52,24 @@
       "revId": "93b198897c9127a3f0ca7849c3781c2a7c653489",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da5c1566_f6aeb9e6",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/PerRepoTestRunner.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-06-01T15:20:38Z",
+      "side": 1,
+      "message": "Oh I see what you mean.. so how about something like this then?",
+      "parentUuid": "da5c1566_f63999d9",
+      "revId": "93b198897c9127a3f0ca7849c3781c2a7c653489",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
