@@ -16,6 +16,24 @@
       "revId": "93b198897c9127a3f0ca7849c3781c2a7c653489",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da5c1566_b609e12e",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/PerRepoTestRunner.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-06-01T14:59:36Z",
+      "side": 1,
+      "message": "did you see the !isURLStreamHandlerFactorySet? That should normally avoid setURLStreamHandlerFactory to have already been called, no? If an Error is still thrown, it would propagate upwards, and should normally be logged by the caller. Before this change that would get lost because it was in a static, but with this change, I had seen an Error being properly propagated during development of this e.g. like this (due to an initial mistake I made; below does not appear anymore now of course), and therefore I would think catch Error is not necessary in this case:\n\njava.lang.Error: factory already defined\n\tat java.net.URL.setURLStreamHandlerFactory(URL.java:1112)\n\tat org.opendaylight.odlparent.featuretest.PerRepoTestRunner.setURLStreamHandlerFactory(PerRepoTestRunner.java:65)\n\tat org.opendaylight.odlparent.featuretest.PerRepoTestRunner.\u003cinit\u003e(PerRepoTestRunner.java:51)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:29)\n\tat org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:21)\n\tat org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)\n\tat org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:26)\n\tat org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:59)\n\tat org.junit.internal.requests.ClassRequest.getRunner(ClassRequest.java:26)\n\tat org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:283)\n\tat org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:173)\n\tat org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)\n\tat org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:128)\n\tat org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:203)\n\tat org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:155)\n\tat org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)",
+      "parentUuid": "da5c1566_db0bde29",
+      "revId": "93b198897c9127a3f0ca7849c3781c2a7c653489",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
