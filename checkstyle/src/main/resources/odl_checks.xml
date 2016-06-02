@@ -176,9 +176,8 @@
         <module name="UnusedImports"/>
         <module name="CustomImportOrder">
             <property name="thirdPartyPackageRegExp" value=".*"/>
-            <property name="specialImportsRegExp" value="^com.*"/>
             <property name="sortImportsInGroupAlphabetically" value="true"/>
-            <property name="customImportOrderRules" value="STATIC###STANDARD_JAVA_PACKAGE###THIRD_PARTY_PACKAGE###SPECIAL_IMPORTS"/>
+            <property name="customImportOrderRules" value="STATIC###THIRD_PARTY_PACKAGE"/>
         </module>
         <module name="RedundantImport"/>
         <module name="MethodParamPad"/>
