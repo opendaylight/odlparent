@@ -22,6 +22,30 @@
       "revId": "681d0b652c767209c9f9b3a05977ae0da107be91",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da5c1566_dbe3d503",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/PerRepoTestRunner.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-06-02T21:15:23Z",
+      "side": 1,
+      "message": "No this is not an @Override, I just made it a separate method for code clarity only, instead of inline in constructor.  Are you saying that this would be better design being a final?  You got it - done.  OK?",
+      "parentUuid": "da5c1566_872624b9",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 13
+      },
+      "revId": "681d0b652c767209c9f9b3a05977ae0da107be91",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
