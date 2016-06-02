@@ -22,6 +22,30 @@
       "revId": "5eec80ebbcd412d152007f245def1b57c87a0d6e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da5c1566_3b62d1d8",
+        "filename": "checkstyle/src/main/resources/odl_checks.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-06-02T20:01:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da5c1566_2eee1b23",
+      "range": {
+        "startLine": 201,
+        "startChar": 13,
+        "endLine": 201,
+        "endChar": 20
+      },
+      "revId": "5eec80ebbcd412d152007f245def1b57c87a0d6e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
