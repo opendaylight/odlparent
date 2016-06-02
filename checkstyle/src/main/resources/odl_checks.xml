@@ -220,5 +220,8 @@
             <property name="allowThrowsTagsForSubclasses" value="true"/>
         </module>
         <module name="SingleLineJavadoc"/>
+       <module name="UpperEll"/>
+       <module name="EmptyStatement"/>
+       <module name="EqualsHashCode"/>
     </module>
 </module>
