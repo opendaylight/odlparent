@@ -3,13 +3,14 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
     <!-- See also the links defined for our Maven site in the root POM (maven-javadoc-plugin) -->
-    <feature name="odl-netty" description="OpenDaylight :: Netty" version="4.0.36.Final">
+    <feature name="odl-netty" description="OpenDaylight :: Netty" version="4.1.1.Final">
         <bundle>mvn:io.netty/netty-buffer/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-common/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-transport/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-codec/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-codec-http/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-handler/{{VERSION}}</bundle>
+        <bundle>mvn:io.netty/netty-resolver/{{VERSION}}</bundle>
         <!-- Here we need to wrap all available native epoll implementations; we can't limit ourselves to the build
         platform and we can't require the build platform to have an implementation (e.g. OS X) -->
         <bundle>wrap:mvn:io.netty/netty-transport-native-epoll/{{VERSION}}/jar/linux-x86_64</bundle>
