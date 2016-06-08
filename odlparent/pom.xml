@@ -143,7 +143,7 @@
     <!-- Used by nic, sfc, sxp, tsdr -->
     <mockito.version>1.9.5</mockito.version>
     <!-- Used by bgpcep, netconf, ovsdb, sxp; see also opendove, toolkit -->
-    <netty.version>4.0.33.Final</netty.version>
+    <netty.version>4.0.37.Final</netty.version>
     <!-- Used by alto, controller, neutron, sfc, snbi; see also dlux, toolkit, tsdr -->
     <osgi.core.version>5.0.0</osgi.core.version>
     <!-- Used by openflowjava, persistence, sfc, snmp4sdn, sxp; see also affinity, toolkit -->
@@ -599,7 +599,7 @@
         <groupId>io.netty</groupId>
         <artifactId>netty-transport-native-epoll</artifactId>
         <classifier>linux-x86_64</classifier>
-        <version>4.0.36.Final</version>
+        <version>4.0.37.Final</version>
       </dependency>
       <dependency>
         <groupId>javax.ws.rs</groupId>
