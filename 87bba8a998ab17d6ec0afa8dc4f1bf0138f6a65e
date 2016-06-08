@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da5c1566_742f25a2",
+        "filename": "features-odlparent/src/main/features/features.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 866
+      },
+      "writtenOn": "2016-06-08T07:39:44Z",
+      "side": 1,
+      "message": "Wrapping should not be needed, as the jar induces a manifest now.",
+      "range": {
+        "startLine": 15,
+        "startChar": 8,
+        "endLine": 15,
+        "endChar": 100
+      },
+      "revId": "87bba8a998ab17d6ec0afa8dc4f1bf0138f6a65e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
