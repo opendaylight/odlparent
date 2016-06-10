@@ -226,7 +226,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>1.9.1</version>
+                    <version>1.10</version>
                     <executions>
                         <execution>
                         <phase>generate-resources</phase>
@@ -260,7 +260,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>2.7</version>
+                    <version>3.0.1</version>
                     <executions>
                         <execution>
                             <id>filter</id>
