@@ -33,6 +33,24 @@
       "revId": "c1de04017eb2dfa806cc01a946613d16ba5d9ae7",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_ac087b2e",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2016-06-13T16:15:08Z",
+      "side": 1,
+      "message": "would this keep a karaf distro from being pushed to the local m2? The use case I am thinking of is:\n- make changes to impl, want to build quickly\n- start integration test - which expects to use the just built karaf distro.",
+      "parentUuid": "ba51214e_ac735be6",
+      "revId": "c1de04017eb2dfa806cc01a946613d16ba5d9ae7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
