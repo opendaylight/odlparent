@@ -195,6 +195,35 @@
 
   <profiles>
     <profile>
+        <!-- q = http://memory-alpha.wikia.com/wiki/Q
+
+             The Quick profile is used during incremental local development, when you want to "just get that JAR built",
+             which is very handy e.g. for fast hot reloading cycles in Karaf with bundle watch.  It (intentionally!) skips
+             tests, quality checks etc. which are great and useful to run before finally submitting changes to Gerrit, and
+             which all must run on Gerrit, but which are overhead during ongoing fast iterative local development.
+
+             Note that the idea here is that your IDE will already have run quality checks such as e.g. Checkstyle
+             while you typed the code anyway.  Similarly, if you wrote a test, you'll probably already have compiled and run it
+             from your IDE, so when you want the OSGi bundle JAR for Karaf, ASAP, you typically don't want all that to run again.
+          -->
+        <id>q</id>
+        <properties>
+            <skipTests>true</skipTests>
+            <skipIT>true</skipIT>
+            <skipITs>true</skipITs>
+            <maven.test.skip>true</maven.test.skip>
+            <skip.karaf.featureTest>true</skip.karaf.featureTest>
+            <jacoco.skip>true</jacoco.skip>
+            <maven.javadoc.skip>true</maven.javadoc.skip>
+            <maven.source.skip>true</maven.source.skip>
+            <checkstyle.skip>true</checkstyle.skip>
+            <findbugs.skip>true</findbugs.skip>
+            <maven.site.skip>true</maven.site.skip>
+            <invoker.skip>true</invoker.skip>
+            <enforcer.skip>true</enforcer.skip>
+        </properties>
+    </profile>
+    <profile>
       <!--
           This profile is to ensure we only build javadocs reports
           when we plan to deploy Maven site for our project.
