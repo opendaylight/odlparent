@@ -41,6 +41,8 @@ import org.opendaylight.odlparent.featuretest.CustomBundleUrlStreamHandlerFactor
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+// TODO: Use org.apache.maven.plugin.annotations.* to allow more flexibility for non-ODL consumers.
+
 /**
  * Mojo populating the local repository by delegating to Aether.
  *
@@ -89,7 +91,7 @@ public class PopulateLocalRepoMojo
     /**
      * The project's remote repositories to use for the resolution of plugins and their dependencies.
      *
-     * @parameter default-value="${project.remotePluginRepositories}"
+     * @parameter default-value="${project.remoteProjectRepositories}"
      * @readonly
      */
     private List<RemoteRepository> remoteRepos;
