@@ -72,7 +72,7 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.karaf.tooling</groupId>
+                <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>@pom.version@</version>
                 <extensions>true</extensions>

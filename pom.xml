@@ -41,6 +41,7 @@
         <module>odlparent</module>
         <module>odlparent-lite</module>
         <module>karaf-plugin</module>
+        <module>karaf-maven-plugin</module>
     </modules>
 
     <build>
@@ -80,6 +81,9 @@
                                     <goal>aggregate</goal>
                                 </goals>
                                 <phase>package</phase>
+                                <configuration>
+                                    <excludePackageNames>org.apache.*</excludePackageNames>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>

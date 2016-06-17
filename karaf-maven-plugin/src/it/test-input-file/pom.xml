@@ -45,7 +45,7 @@
                 <extensions>true</extensions>
             </plugin>
             <plugin>
-                <groupId>org.apache.karaf.tooling</groupId>
+                <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>@pom.version@</version>
                 <executions>

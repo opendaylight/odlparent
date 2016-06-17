@@ -24,17 +24,30 @@
     <parent>
         <groupId>org.apache.karaf.tooling</groupId>
         <artifactId>tooling</artifactId>
-        <version>3.0.7</version>
-        <relativePath>../pom.xml</relativePath>
+        <version>3.0.6</version>
+        <relativePath/>
     </parent>
 
+    <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>karaf-maven-plugin</artifactId>
+    <version>1.7.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
-    <name>Apache Karaf :: Tooling :: Maven Karaf Plugin</name>
+    <name>ODL :: odlparent :: Maven Karaf Plugin</name>
 
     <properties>
         <appendedResourcesDirectory>${basedir}/../../etc/appended-resources</appendedResourcesDirectory>
+        <karaf.version>3.0.6</karaf.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.karaf</groupId>
+                <artifactId>org.apache.karaf.util</artifactId>
+                <version>${karaf.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
 
@@ -116,6 +129,7 @@
         <dependency>
             <groupId>org.apache.karaf.features</groupId>
             <artifactId>org.apache.karaf.features.core</artifactId>
+            <version>${karaf.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>org.apache.karaf.shell.console</artifactId>
@@ -135,22 +149,27 @@
         <dependency>
             <groupId>org.apache.karaf.deployer</groupId>
             <artifactId>org.apache.karaf.deployer.spring</artifactId>
+            <version>${karaf.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.karaf.deployer</groupId>
             <artifactId>org.apache.karaf.deployer.blueprint</artifactId>
+            <version>${karaf.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.karaf.deployer</groupId>
             <artifactId>org.apache.karaf.deployer.features</artifactId>
+            <version>${karaf.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.karaf.deployer</groupId>
             <artifactId>org.apache.karaf.deployer.kar</artifactId>
+            <version>${karaf.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.karaf.kar</groupId>
             <artifactId>org.apache.karaf.kar.core</artifactId>
+            <version>${karaf.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -159,6 +178,7 @@
         <dependency>
           <groupId>org.apache.karaf.shell</groupId>
           <artifactId>org.apache.karaf.shell.console</artifactId>
+            <version>${karaf.version}</version>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
