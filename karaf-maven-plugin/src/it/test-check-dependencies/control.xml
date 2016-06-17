@@ -28,4 +28,8 @@
         <bundle>mvn:test/dependency-module-a/1.0-SNAPSHOT</bundle>
         <bundle>mvn:test/dependency-module-b/1.0-SNAPSHOT</bundle>
     </feature>
+    <feature description="check-dependencies-features" version="1.0-SNAPSHOT" name="check-dependencies-features">
+        <feature version="1.0-SNAPSHOT">dependency-module-c</feature>
+        <feature version="1.0-SNAPSHOT">dependency-module-d</feature>
+    </feature>
 </features>
