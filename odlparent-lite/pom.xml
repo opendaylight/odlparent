@@ -195,7 +195,8 @@
 
   <profiles>
     <profile>
-        <!-- q = http://memory-alpha.wikia.com/wiki/Q
+        <!-- http://blog2.vorburger.ch/2016/06/improve-maven-build-speed-with-q.html
+             q = http://memory-alpha.wikia.com/wiki/Q ;)
 
              The Quick profile is used during incremental local development, when you want to "just get that JAR built",
              which is very handy e.g. for fast hot reloading cycles in Karaf with bundle watch.  It (intentionally!) skips
@@ -222,6 +223,38 @@
             <invoker.skip>true</invoker.skip>
             <enforcer.skip>true</enforcer.skip>
         </properties>
+    </profile>
+    <profile>
+      <!-- http://blog2.vorburger.ch/2016/06/maven-install-into-additional.html
+           mvn [-o -Pq] install -DaddInstallRepositoryPath=.../karaf/system is used in development to directly
+           install artifacts such as bundles and KARs not just into the global shared ~/.m2/repository
+           but also into the isolated Maven repo of a Karaf distribution.
+       -->
+      <activation>
+        <property>
+          <name>addInstallRepositoryPath</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-install-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>additional-install</id>
+                <phase>install</phase>
+                <goals>
+                  <goal>install-file</goal>
+                </goals>
+                <configuration>
+                  <file>${project.build.directory}/${project.build.finalName}.jar</file>
+                  <localRepositoryPath>${addInstallRepositoryPath}</localRepositoryPath>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
     <profile>
       <!--
