@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba51214e_dac74111",
+        "filename": "checkstyle/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-06-19T13:31:49Z",
+      "side": 1,
+      "message": "It\u0027s very strange that org.opendaylight.odlparent:checkstyle even needs any plugins, as it\u0027s ONLY a src/main/resources/*.xml JAR, without code.  But I suspect that the plugins listed here are still needed to build the JAR.  Instead of duplicating versions here, wouldn\u0027t it be better to just use odlparent instead of odlparent-lite as parent?",
+      "revId": "78541be35148499b907a26803f66f8fe50d72838",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_bacc0d37",
+        "filename": "license/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-06-19T13:31:49Z",
+      "side": 1,
+      "message": "same comment as for Checkstyle - could we avoid having to repeat (and maintain) these here?",
+      "revId": "78541be35148499b907a26803f66f8fe50d72838",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba51214e_fad685c4",
+        "filename": "odlparent-artifacts/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-06-19T13:31:49Z",
+      "side": 1,
+      "message": "shame that we have to repeat these here... you don\u0027t think e.g. moving \u003cproperties\u003e  \u003cmaven.jar.version\u003e \u0026 Co. up from odlparent into odlparent-lite so that they can be used here would make sense?",
+      "revId": "78541be35148499b907a26803f66f8fe50d72838",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
