@@ -1,0 +1,7 @@
+Code-Review+2: Thanh Ha <thanh.ha@linuxfoundation.org>
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Submitted-by: Stephen Kitt <skitt@redhat.com>
+Submitted-at: Fri, 24 Jun 2016 14:11:20 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/40813
+Project: odlparent
+Branch: refs/heads/stable/beryllium
