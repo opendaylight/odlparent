@@ -101,7 +101,7 @@
     <jacoco.version>0.7.2.201409121644</jacoco.version>
     <!-- Used in aaa, controller, coretutorials, integration/distribution, l2switch, lacp, lispflowmapping, netide,
          nic, openflowplugin, ovsdb, persistence, sfc, snbi, snmp4sdn?, sxp, topoprocessing, unimgr, vtn -->
-    <karaf.version>3.0.6</karaf.version>
+    <karaf.version>3.0.7</karaf.version>
     <!-- Used in lispflowmapping, snmp4sdn, vtn -->
     <projectinfo>2.8.1</projectinfo>
     <!-- Used in of-config; see also snmp4sdn -->
