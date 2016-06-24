@@ -85,7 +85,7 @@
     <jar.plugin.version>${maven.jar.version}</jar.plugin.version>
     <!-- Used in aaa, controller, coretutorials, integration/distribution, l2switch, lacp, lispflowmapping, netide,
          nic, openflowplugin, ovsdb, persistence, sfc, snbi, snmp4sdn?, sxp, topoprocessing, unimgr, vtn -->
-    <karaf.version>3.0.6</karaf.version>
+    <karaf.version>3.0.7</karaf.version>
     <projectinfo>2.8.1</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
