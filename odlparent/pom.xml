@@ -1214,6 +1214,9 @@
             <!-- <sourceDirectory> is needed so that checkstyle ignores the
                  generated sources directory -->
             <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+            <includeResources>true</includeResources>
+            <includeTestSourceDirectory>true</includeTestSourceDirectory>
+            <includeTestResources>true</includeTestResources>
             <excludes>
               org/opendaylight/yang/gen/**,
               **/protobuff/messages/**,
