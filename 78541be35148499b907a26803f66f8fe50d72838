@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a561d44_051df1bd",
+        "filename": "checkstyle/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-06-29T09:58:43Z",
+      "side": 1,
+      "message": "OK. Let\u0027s merge this then!",
+      "parentUuid": "ba51214e_03bcb468",
+      "revId": "78541be35148499b907a26803f66f8fe50d72838",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba51214e_bacc0d37",
         "filename": "license/pom.xml",
         "patchSetId": 3
