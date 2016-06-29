@@ -1195,6 +1195,11 @@
               <artifactId>odl-license</artifactId>
               <version>0.1.0-SNAPSHOT</version>
             </dependency>
+            <dependency>
+              <groupId>com.github.sevntu.checkstyle</groupId>
+              <artifactId>sevntu-checkstyle-maven-plugin</artifactId>
+              <version>1.21.0</version>
+            </dependency>
           </dependencies>
           <configuration>
             <configLocation>odl_checks.xml</configLocation>
@@ -1636,4 +1641,5 @@
       <url>${nexus.site.url}/${project.artifactId}/</url>
     </site>
   </distributionManagement>
+
 </project>
