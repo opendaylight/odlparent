@@ -228,6 +228,17 @@
         <module name="SingleLineJavadoc"/>
         <module name="UpperEll"/>
         <module name="EmptyStatement"/>
+        <module name="MagicNumber"/>
+
+        <!-- Checks for common coding Anti-Patterns (not formatting etc.) -->
         <module name="EqualsHashCode"/>
+        <module name="HiddenField">
+            <property name="ignoreConstructorParameter" />
+            <property name="ignoreSetter" value="true" />
+            <property name="setterCanReturnItsClass" value="true" />
+        </module>
+        <module name="InnerAssignment"/>
+        <module name="HideUtilityClassConstructor"/>
+
     </module>
 </module>
