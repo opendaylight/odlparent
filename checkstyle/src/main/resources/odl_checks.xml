@@ -79,6 +79,7 @@
         <module name="FallThrough"/>
         <module name="UpperEll"/>
         <module name="ModifierOrder"/>
+        <module name="RedundantModifier"/>
         <module name="EmptyLineSeparator">
             <property name="allowNoEmptyLineBetweenFields" value="true"/>
             <!-- No PACKAGE_DEF token, as we like our license header to be glue to "package" statement, to save 1 line screen space -->
