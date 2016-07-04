@@ -202,14 +202,18 @@
             <property name="tagOrder" value="@param, @return, @throws, @deprecated"/>
             <property name="target" value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF, VARIABLE_DEF"/>
         </module>
+<!-- Uncommenting this would JavaDoc mandatory
+     on all public methods, constructors and annotations, but not on all simple getters and setters (optional);
+     and on all public annotation types (refine "token" to make it on all public classes).
+
         <module name="JavadocType">
             <property name="scope" value="public"/>
             <property name="tokens" value="ANNOTATION_DEF"/>
         </module>
         <module name="JavadocMethod">
             <property name="scope" value="public"/>
-            <property name="tokens" value="ANNOTATION_FIELD_DEF"/> <!-- JavaDoc on Annotation Field mandatory, on methods (incl. public) & constructors it's currently optional -->
-            <property name="allowMissingPropertyJavadoc" value="true" /> <!-- JavaDoc on STRICT (!) getters and setters is optional -->
+            <property name="tokens" value="METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF"/>
+            <property name="allowMissingPropertyJavadoc" value="true" />
             <property name="allowMissingParamTags" value="true"/>
             <property name="allowMissingThrowsTags" value="true"/>
             <property name="allowMissingReturnTag" value="true"/>
@@ -217,6 +221,7 @@
             <property name="allowedAnnotations" value="Override, Test"/>
             <property name="allowThrowsTagsForSubclasses" value="true"/>
         </module>
+  -->
         <module name="JavadocStyle">
             <!-- Do NOT 'scope' this one; any JavaDoc (public/protected/private) IFF present, should be style checked. -->
             <property name="checkEmptyJavadoc" value="true" />
