@@ -51,6 +51,10 @@ import org.slf4j.LoggerFactory;
 
 @RunWith(PerRepoTestRunner.class)
 public class SingleFeatureTest {
+
+    private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
+
+    private static final long TEN_MIN_IN_MS = 600000;
     private static final String MAVEN_REPO_LOCAL = "maven.repo.local";
     private static final String ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY = "org.ops4j.pax.url.mvn.localRepository";
     private static final String ORG_OPS4J_PAX_URL_MVN_REPOSITORIES = "org.ops4j.pax.url.mvn.repositories";
@@ -59,7 +63,6 @@ public class SingleFeatureTest {
     private static final String KEEP_UNPACK_DIRECTORY_PROP = "karaf.keep.unpack";
     private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
             "log4j.logger.org.opendaylight.odlparent.featuretest";
-    private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
 
     /*
      * File name to add our logging config property too.
@@ -289,7 +292,8 @@ public class SingleFeatureTest {
     }
 
     // Give it 10 minutes max as we've seen feature install hang on jenkins.
-    @Test(timeout = 600000)
+    @Test(timeout = TEN_MIN_IN_MS)
+    // Give it 5 minutes max as we've seen feature install hang on jenkins.
     public void installFeature() throws Exception {
         LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
         featuresService.installFeature(getFeatureName(), getFeatureVersion());
