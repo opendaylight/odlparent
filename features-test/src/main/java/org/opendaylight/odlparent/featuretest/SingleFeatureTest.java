@@ -160,7 +160,7 @@ public class SingleFeatureTest {
         };
     }
 
-    private Option standardKarafFeatures() {
+    private Option standardKarafFeatures() throws IOException {
         String url = maven().groupId("org.apache.karaf.features").artifactId("standard").classifier("features").type(
                 "xml").version(getKarafVersion()).getURL();
         try {
@@ -171,8 +171,8 @@ public class SingleFeatureTest {
             }
 
             return features(url, featureNames.toArray(new String[featureNames.size()]));
-        } catch (Exception e) {
-            throw new RuntimeException("Could not obtain features from URL " + url, e);
+        } catch (IOException e) {
+            throw new IOException("Could not obtain features from URL: " + url, e);
         }
     }
 
