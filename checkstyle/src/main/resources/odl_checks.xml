@@ -134,6 +134,7 @@
             <message key="name.invalidPattern"
              value="Method type name ''{0}'' must match pattern ''{1}''."/>
         </module>
+        <module name="ConstantName" />
         <module name="NoFinalizer"/>
         <module name="GenericWhitespace">
             <message key="ws.followed"
