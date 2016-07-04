@@ -25,8 +25,9 @@ import org.slf4j.LoggerFactory;
 
 public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
 
-    private static final String REPO_RECURSE = "repo.recurse";
     private static final Logger LOG = LoggerFactory.getLogger(PerRepoTestRunner.class);
+
+    private static final String REPO_RECURSE = "repo.recurse";
     private static final String FEATURES_FILENAME = "features.xml";
 
     private static boolean isURLStreamHandlerFactorySet = false;
@@ -52,12 +53,18 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
             final URL repoUrl = getClass().getClassLoader().getResource(FEATURES_FILENAME);
             final boolean recursive = Boolean.getBoolean(REPO_RECURSE);
             LOG.info("Creating test runners for repoUrl {} recursive {}", repoUrl, recursive);
-            children.addAll(runnersFromRepoUrl(repoUrl, testClass, recursive));
-        } catch (final Exception e) {
+            if (repoUrl != null) {
+                children.addAll(runnersFromRepoUrl(repoUrl, testClass, recursive));
+            } else {
+                LOG.error("getClass().getClassLoader().getResource(" + FEATURES_FILENAME + ") returned null");
+            }
+        } catch (final IOException | JAXBException e) {
             throw new InitializationError(e);
         }
     }
 
+    // We have to exceptionally suppress IllegalCatch just because URL.setURLStreamHandlerFactory stupidly throws Error
+    @SuppressWarnings("checkstyle:IllegalCatch")
     // see doc on isURLStreamHandlerFactorySet for why we do NOT want to do this in a static block
     private static synchronized void setURLStreamHandlerFactory() {
         if (!isURLStreamHandlerFactorySet) {
