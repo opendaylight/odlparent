@@ -49,10 +49,10 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
         super(testClass);
         setURLStreamHandlerFactory();
         try {
-            final URL repoUrl = getClass().getClassLoader().getResource(FEATURES_FILENAME);
+            final URL featuresXmlUrl = getClass().getClassLoader().getResource(FEATURES_FILENAME);
             final boolean recursive = Boolean.getBoolean(REPO_RECURSE);
-            LOG.info("Creating test runners for repoUrl {} recursive {}", repoUrl, recursive);
-            children.addAll(runnersFromRepoUrl(repoUrl, testClass, recursive));
+            LOG.info("Creating test runners for {}, recursive {}", featuresXmlUrl, recursive);
+            children.addAll(runnersFromRepoUrl(featuresXmlUrl, testClass, recursive));
         } catch (final Exception e) {
             throw new InitializationError(e);
         }
@@ -127,8 +127,10 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     }
 
     @Override
+    @SuppressWarnings("checkstyle:RegexpSinglelineJava")
     protected void runChild(final PerFeatureRunner child, final RunNotifier notifier) {
-        LOG.info("About to run test for {}", child.getRepoUrl());
+        LOG.info("[LOG] About to run test: {}", child.getDescription());
+        System.out.println("[sys.out] About to run test: " + child.getDescription());
         child.run(notifier);
     }
 
