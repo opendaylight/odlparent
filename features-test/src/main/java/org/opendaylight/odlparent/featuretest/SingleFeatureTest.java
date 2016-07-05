@@ -51,12 +51,15 @@ import org.slf4j.LoggerFactory;
 
 @RunWith(PerRepoTestRunner.class)
 public class SingleFeatureTest {
+
     private static final String MAVEN_REPO_LOCAL = "maven.repo.local";
     private static final String ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY = "org.ops4j.pax.url.mvn.localRepository";
     private static final String ORG_OPS4J_PAX_URL_MVN_REPOSITORIES = "org.ops4j.pax.url.mvn.repositories";
     private static final String ETC_ORG_OPS4J_PAX_URL_MVN_CFG = "etc/org.ops4j.pax.url.mvn.cfg";
     private static final String ETC_ORG_OPS4J_PAX_LOGGING_CFG = "etc/org.ops4j.pax.logging.cfg";
     private static final String KEEP_UNPACK_DIRECTORY_PROP = "karaf.keep.unpack";
+    private static final String PROFILE_PROP = "karaf.featureTest.profile";
+
     private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
             "log4j.logger.org.opendaylight.odlparent.featuretest";
     private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
@@ -118,6 +121,12 @@ public class SingleFeatureTest {
             // TODO: Find a way to inherit memory limits from Maven options.
             new VMOption("-Xmx2g"),
             new VMOption("-XX:MaxPermSize=512m"),
+            when(Boolean.getBoolean(PROFILE_PROP)).useOptions(
+                new VMOption("-XX:+UnlockCommercialFeatures"),
+                new VMOption("-XX:+FlightRecorder"),
+                new VMOption("-XX:FlightRecorderOptions=defaultrecording=true,dumponexit=true,dumponexitpath="
+                               + getNewJFRFile())
+            ),
             getKarafDistroOption(),
             when(Boolean.getBoolean(KEEP_UNPACK_DIRECTORY_PROP)).useOptions(keepRuntimeFolder()),
             configureConsole().ignoreLocalConsole(),
@@ -158,6 +167,10 @@ public class SingleFeatureTest {
             CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP).value(
                     System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
         };
+    }
+
+    private String getNewJFRFile() throws IOException {
+        return File.createTempFile("SingleFeatureTest-Karaf-JavaFlightRecorder", ".jfr").getAbsolutePath();
     }
 
     private Option standardKarafFeatures() throws IOException {
