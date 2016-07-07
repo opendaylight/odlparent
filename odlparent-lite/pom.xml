@@ -235,6 +235,8 @@
             <maven.source.skip>true</maven.source.skip>
             <checkstyle.skip>true</checkstyle.skip>
             <findbugs.skip>true</findbugs.skip>
+            <pmd.skip>true</pmd.skip>
+            <cpd.skip>true</cpd.skip>
             <maven.site.skip>true</maven.site.skip>
             <invoker.skip>true</invoker.skip>
             <enforcer.skip>true</enforcer.skip>
