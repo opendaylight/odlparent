@@ -1124,6 +1124,29 @@
         <artifactId>org.apache.aries.blueprint.core</artifactId>
         <version>1.4.2</version>
       </dependency>
+
+      <!-- Xtend http://xtend-lang.org
+           NOTE: When you increase the version here,
+           then remember to also increase it for the
+           xtend-maven-plugin below! (We don't want to
+           use a Maven property, in order not to "leak" that.)
+       -->
+      <dependency>
+          <groupId>org.eclipse.xtend</groupId>
+          <artifactId>org.eclipse.xtend.lib</artifactId>
+          <version>2.9.2</version>
+      </dependency>
+      <dependency>
+          <groupId>org.eclipse.xtend</groupId>
+          <artifactId>org.eclipse.xtend.lib.macro</artifactId>
+          <version>2.9.2</version>
+      </dependency>
+      <dependency>
+          <groupId>org.eclipse.xtext</groupId>
+          <artifactId>org.eclipse.xtext.xbase.lib</artifactId>
+          <version>2.9.2</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
@@ -1339,7 +1362,24 @@
           <artifactId>properties-maven-plugin</artifactId>
           <version>${propertymavenplugin.version}</version>
         </plugin>
-
+        <plugin>
+          <groupId>org.eclipse.xtend</groupId>
+          <artifactId>xtend-maven-plugin</artifactId>
+          <!-- NOTE: This version MUST be kept in sync with the Xtend version in <dependencyManagement> -->
+          <version>2.9.2</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>compile</goal>
+                <goal>testCompile</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>${project.build.directory}/generated-sources/xtend/main</outputDirectory>
+                <testOutputDirectory>${project.build.directory}/generated-sources/xtend/test</testOutputDirectory>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
           <artifactId>lifecycle-mapping</artifactId>
