@@ -227,7 +227,6 @@
              value="Method name ''{0}'' must match pattern ''{1}''."/>
         </module>
         <module name="SingleLineJavadoc"/>
-        <module name="UpperEll"/>
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
 
