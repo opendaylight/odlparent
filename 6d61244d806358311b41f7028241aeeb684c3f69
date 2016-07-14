@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_2630b69d",
+        "filename": "features-odlparent/src/main/features/features.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2016-07-14T14:52:11Z",
+      "side": 1,
+      "message": "If 4.0.x stays in the features, it should likely be bumped to 4.0.38 too.",
+      "revId": "6d61244d806358311b41f7028241aeeb684c3f69",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
