@@ -3,7 +3,7 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
     <!-- See also the links defined for our Maven site in the root POM (maven-javadoc-plugin) -->
-    <feature name="odl-netty" description="OpenDaylight :: Netty" version="4.0.37.Final">
+    <feature name="odl-netty" description="OpenDaylight :: Netty" version="4.0.40.Final">
         <bundle>mvn:io.netty/netty-buffer/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-common/{{VERSION}}</bundle>
         <bundle>mvn:io.netty/netty-transport/{{VERSION}}</bundle>
