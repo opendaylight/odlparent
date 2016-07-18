@@ -128,8 +128,6 @@
     <sonar.jacoco.itReportPath>target/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
     <!-- Note: This list should match jacoco-maven-plugin's exclusion list below -->
     <sonar.exclusions>**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**</sonar.exclusions>
-
-    <pmd.cpd.fail>false</pmd.cpd.fail>
   </properties>
 
   <dependencyManagement>
@@ -1241,30 +1239,6 @@
             </execution>
           </executions>
         </plugin>
-
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.6</version>
-          <executions>
-            <execution>
-              <id>cpd</id>
-              <phase>process-sources</phase>
-              <goals>
-                <goal>cpd-check</goal>
-              </goals>
-              <configuration>
-                  <failOnViolation>${pmd.cpd.fail}</failOnViolation>
-                  <!-- 100 "tokens" here correspond to approx. 5-10 lines of code -->
-                  <minimumTokens>101</minimumTokens>
-                  <printFailingErrors>true</printFailingErrors>
-                  <excludeRoots>${basedir}/target/generated-sources/mdsal-binding</excludeRoots>
-                  <linkXRef>false</linkXRef>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>${maven.compile.plugin.version}</version>
@@ -1565,9 +1539,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <artifactId>maven-pmd-plugin</artifactId>
       </plugin>
       <plugin>
         <artifactId>maven-source-plugin</artifactId>
