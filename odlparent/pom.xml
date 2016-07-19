@@ -201,6 +201,12 @@
         <scope>test</scope>
       </dependency>
       <dependency>
+        <groupId>com.google.truth</groupId>
+        <artifactId>truth</artifactId>
+        <version>0.28</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
         <groupId>org.powermock</groupId>
         <artifactId>powermock-api-mockito</artifactId>
         <version>1.6.4</version>
