@@ -21,6 +21,13 @@
   <packaging>pom</packaging>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
 
+  <!-- Sufficient Metadata for Maven Central Repository deployment
+       These are default, some of which project inheriting from this POM may override (but don't have to, typically)
+       see http://central.sonatype.org/pages/requirements.html
+   -->
+  <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
+  <description>OpenDaylight is leading the transformation to Open Software Defined Networking (SDN). For more information, please see https://www.opendaylight.org</description>
+
   <licenses>
     <license>
       <name>Eclipse Public License v1.0</name>
@@ -42,6 +49,19 @@
     <system>Jenkins</system>
     <url>https://jenkins.opendaylight.org/releng/</url>
   </ciManagement>
+
+  <scm>
+    <url>https://git.opendaylight.org/gerrit/</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>*</id>
+      <name>Please consult the PROJECT_INFO.yaml, README* and/or CONTRIBUTORS which should be included with this JAR</name>
+      <url>https://www.opendaylight.org</url>
+      <email>helpdesk@opendaylight.org</email>
+    </developer>
+  </developers>
 
   <prerequisites>
     <!-- This is only used to prevent building with Maven < 3 and to appease
@@ -339,9 +359,6 @@
       </reporting>
     </profile>
   </profiles>
-
-
-  <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
 
   <distributionManagement>
     <repository>
