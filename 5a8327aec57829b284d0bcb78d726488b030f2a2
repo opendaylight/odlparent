@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_ba07a41b",
+        "filename": "features-odlparent/src/main/features/features.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 556
+      },
+      "writtenOn": "2016-07-19T10:01:12Z",
+      "side": 1,
+      "message": "Is this name the same as by 4.0.37 feature by purpose?",
+      "range": {
+        "startLine": 17,
+        "startChar": 18,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "5a8327aec57829b284d0bcb78d726488b030f2a2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
