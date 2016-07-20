@@ -116,8 +116,8 @@ public class SingleFeatureTest {
     public Option[] config() throws IOException {
         return new Option[] {
             // TODO: Find a way to inherit memory limits from Maven options.
-            new VMOption("-Xmx2g"),
-            new VMOption("-XX:MaxPermSize=512m"),
+            new VMOption("-Xmx=3g"),
+            new VMOption("-XX:+HeapDumpOnOutOfMemoryError"),
             getKarafDistroOption(),
             when(Boolean.getBoolean(KEEP_UNPACK_DIRECTORY_PROP)).useOptions(keepRuntimeFolder()),
             configureConsole().ignoreLocalConsole(),
