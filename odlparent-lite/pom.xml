@@ -226,9 +226,11 @@
         <id>q</id>
         <properties>
             <skipTests>true</skipTests>
+            <!-- But NOT <maven.test.skip>true, as that's for compiling, not running, tests;
+                 and that's usually quick.  Skipping test compilation with -Pq with maven.test.skip would be
+                 particularly confusing when used in a project with maven-jar-plugin <goal>test-jar, so don't.)  -->
             <skipIT>true</skipIT>
             <skipITs>true</skipITs>
-            <maven.test.skip>true</maven.test.skip>
             <skip.karaf.featureTest>true</skip.karaf.featureTest>
             <jacoco.skip>true</jacoco.skip>
             <maven.javadoc.skip>true</maven.javadoc.skip>
