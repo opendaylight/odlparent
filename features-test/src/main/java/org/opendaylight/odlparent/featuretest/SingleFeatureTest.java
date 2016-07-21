@@ -27,6 +27,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Properties;
 
@@ -305,7 +306,7 @@ public class SingleFeatureTest {
     @Test(timeout = 600000)
     public void installFeature() throws Exception {
         LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
-        featuresService.installFeature(getFeatureName(), getFeatureVersion());
+        featuresService.installFeature(getFeatureName(), getFeatureVersion(), EnumSet.of(FeaturesService.Option.NoCleanIfFailure));
         Feature feature = featuresService.getFeature(getFeatureName(), getFeatureVersion());
         Assert.assertNotNull(
                 "Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null", feature);
