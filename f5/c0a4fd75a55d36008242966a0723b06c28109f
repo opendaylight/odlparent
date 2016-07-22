@@ -1,0 +1,9 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+1: Michael Vorburger <vorburger@redhat.com>
+Code-Review+1: Sam Hague <shague@redhat.com>
+Code-Review+2: Robert Varga <nite@hq.sk>
+Submitted-by: Robert Varga <nite@hq.sk>
+Submitted-at: Fri, 22 Jul 2016 13:53:30 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/41289
+Project: odlparent
+Branch: refs/heads/master
