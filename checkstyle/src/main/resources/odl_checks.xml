@@ -237,10 +237,7 @@
 
         <!-- Checks for Exception Handling Anti-Patterns -->
         <module name="IllegalCatch"/>
-        <!-- IllegalThrows does not seems to work.. :( -->
-        <module name="IllegalThrows">
-            <property name="ignoreOverriddenMethods" value="false"/>
-        </module>
+        <module name="IllegalThrows" />
         <module name="MutableException"/>
         <!-- TODO Once new remote repo to proxy for sevntu has be added to nexus.opendaylight.org ,
              (waiting for ticket #24830 with helpdesk@opendaylight.org), and https://git.opendaylight.org/gerrit/#/c/41075/
