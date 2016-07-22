@@ -40,6 +40,7 @@
         <module>odlparent-artifacts</module>
         <module>odlparent</module>
         <module>odlparent-lite</module>
+        <module>karaf</module>
         <module>karaf-plugin</module>
     </modules>
 
