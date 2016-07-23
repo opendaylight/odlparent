@@ -1236,7 +1236,7 @@
                 <configLocation>check-license.xml</configLocation>
                 <headerLocation>EPL-LICENSE.regexp.txt</headerLocation>
                 <includeResources>false</includeResources>
-                <includeTestSourceDirectory>false</includeTestSourceDirectory>
+                <includeTestSourceDirectory>true</includeTestSourceDirectory>
                 <includeTestResources>false</includeTestResources>
                 <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
                 <excludes>
