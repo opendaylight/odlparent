@@ -16,6 +16,24 @@
       "revId": "8adaab95ccc8c1ada387d3ac62ccea1e7e0ce28e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_95e52f3a",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1586,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-07-25T21:41:35Z",
+      "side": 1,
+      "message": "\u003e Trailing space. \n\nfixed - tx.\n\n\u003e  We should have a basic checkstyle for pom files as well.\n\nhttps://issues.apache.org/jira/browse/MCHECKSTYLE-328 ... perhaps YOU would like to make a contribution to maven-checkstyle-plugin? ;-)",
+      "parentUuid": "9a561d44_335d6348",
+      "revId": "8adaab95ccc8c1ada387d3ac62ccea1e7e0ce28e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
