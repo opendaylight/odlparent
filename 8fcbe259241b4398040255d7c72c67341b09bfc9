@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_3b488886",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-07-27T14:37:17Z",
+      "side": 1,
+      "message": "I\u0027d prefer if comment messages described what\u0027s being changed without putting in personal clever comments. IMO the purpose of commit messages are to help the reviewer (and the debugger, people often forget git log is extremely useful in debugging sessions if messages are properly written!).\n\nWhile comments like this are quirky and fun, if we ever had to use git shortlog to try to debug something a shortlog of \"Let\u0027s dagger something? ;-)\" is not helpful in troubleshooting. If you want t o write this kind of comment I\u0027d recommend leaving it as a Gerrit comment rather than a commit message.\n\n\nIf it helps I typically follow the advice on this page:\n\nhttp://chris.beams.io/posts/git-commit/",
+      "revId": "8fcbe259241b4398040255d7c72c67341b09bfc9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
