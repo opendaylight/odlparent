@@ -17,6 +17,15 @@
   <artifactId>opendaylight-karaf-resources</artifactId>
   <description>Resources for opendaylight-karaf</description>
   <packaging>jar</packaging>
+  <properties>
+    <!-- These are used in the instance script and need to be kept in sync with Karaf's definitions -->
+    <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
+    <aries.blueprint.cm.version>1.0.8</aries.blueprint.cm.version>
+    <aries.blueprint.core.version>1.6.1</aries.blueprint.core.version>
+    <felix.framework.version>4.2.1</felix.framework.version>
+    <jline.version>2.13</jline.version>
+    <pax.logging.version>1.8.4</pax.logging.version>
+  </properties>
   <build>
     <resources>
       <resource>
