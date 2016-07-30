@@ -23,4 +23,7 @@
     <feature name="odl-lmax" description="OpenDaylight :: LMAX Disruptor" version="3.3.4">
         <bundle>mvn:com.lmax/disruptor/{{VERSION}}</bundle>
     </feature>
+    <feature name="odl-triemap" description="OpenDaylight :: Concurrent Trie HashMap" version="0.2.23">
+        <bundle>mvn:com.github.romix/java-concurrent-hash-trie-map/{{VERSION}}</bundle>
+    </feature>
 </features>
