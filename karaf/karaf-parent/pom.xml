@@ -91,11 +91,6 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
       <artifactId>opendaylight-karaf-resources</artifactId>
       <version>${karaf.resources.version}</version>
     </dependency>
-    <dependency>
-      <groupId>org.opendaylight.odlparent</groupId>
-      <artifactId>karaf.branding</artifactId>
-      <version>${branding.version}</version>
-    </dependency>
 
     <!-- Aries Proxy 1.0.5 contains important bug fixes -->
     <!-- Once we upgrade to a version of Karaf which has at least 1.0.5, this can be removed -->
