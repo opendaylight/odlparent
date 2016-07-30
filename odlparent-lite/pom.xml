@@ -17,7 +17,7 @@
 
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>odlparent-lite</artifactId>
-  <version>1.6.3-SNAPSHOT</version>
+  <version>1.6.3-Beryllium-SR3</version>
   <packaging>pom</packaging>
 
   <licenses>
