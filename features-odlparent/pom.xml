@@ -53,5 +53,11 @@
             <groupId>com.lmax</groupId>
             <artifactId>disruptor</artifactId>
         </dependency>
+
+        <!-- odl-triemap -->
+        <dependency>
+            <groupId>com.github.romix</groupId>
+            <artifactId>java-concurrent-hash-trie-map</artifactId>
+        </dependency>
     </dependencies>
 </project>
