@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a561d44_f1529fdc",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/AetherUtil.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-07-31T13:12:14Z",
+      "side": 1,
+      "message": "Wording of this message is appropriate for .trace(), not for .debug(), https://wiki.opendaylight.org/view/BestPractices/Logging_Best_Practices#DEBUG",
+      "range": {
+        "startLine": 85,
+        "startChar": 18,
+        "endLine": 85,
+        "endChar": 54
+      },
+      "revId": "83f95e57878ae8cefd97ed15497b0ef6090be4c5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_d14f9b32",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/FeatureUtil.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-07-31T13:12:14Z",
+      "side": 1,
+      "message": "kill these lines, please",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 0
+      },
+      "revId": "83f95e57878ae8cefd97ed15497b0ef6090be4c5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_116593b4",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-07-31T13:12:14Z",
+      "side": 1,
+      "message": "this should be internal to FeatureUtil, e.g. provide a findAllFeaturesRecursively() without the set argument.",
+      "range": {
+        "startLine": 118,
+        "startChar": 89,
+        "endLine": 118,
+        "endChar": 116
+      },
+      "revId": "83f95e57878ae8cefd97ed15497b0ef6090be4c5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
