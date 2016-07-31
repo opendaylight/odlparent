@@ -82,6 +82,7 @@ public class AetherUtil {
         for (ArtifactResult artifactResult : results.getArtifactResults()) {
             artifacts.add(artifactResult.getArtifact());
         }
+        LOG.debug("resolveDependencies({}) returns {}", dependencies, artifacts);
         return artifacts;
     }
 
@@ -100,6 +101,7 @@ public class AetherUtil {
             LOG.warn("Unable to resolve artifact: {}", e.getMessage(), e);
             return null;
         }
+        LOG.debug("resolveArtifacts({}) returns {}", artifact, result.getArtifact());
         return result.getArtifact();
     }
 
@@ -128,6 +130,7 @@ public class AetherUtil {
                 result.add(artifact);
             }
         }
+        LOG.trace("resolveArtifacts({}) returns {}", coords, result);
         return result;
     }
 
@@ -153,6 +156,7 @@ public class AetherUtil {
         for (String coord : coords) {
             result.add(toDependency(coord));
         }
+        LOG.debug("toDependencies({}) returns {}", coords, result);
         return result;
     }
 
