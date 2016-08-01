@@ -48,6 +48,40 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_592527aa",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/FeatureUtil.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-08-01T08:13:24Z",
+      "side": 1,
+      "message": "s/resoluting/resolving/ ;-)",
+      "revId": "83f95e57878ae8cefd97ed15497b0ef6090be4c5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b939dbda",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/FeatureUtil.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-08-01T08:13:24Z",
+      "side": 1,
+      "message": "As above.",
+      "revId": "83f95e57878ae8cefd97ed15497b0ef6090be4c5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a561d44_116593b4",
         "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
         "patchSetId": 1
