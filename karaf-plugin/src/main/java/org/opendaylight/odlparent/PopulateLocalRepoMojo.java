@@ -26,7 +26,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
-
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -115,16 +114,17 @@ public class PopulateLocalRepoMojo
                     aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
                             new KarafFeaturesDependencyFilter()));
             Set<Features> features = FeatureUtil.readFeatures(featureArtifacts);
-            features.addAll(FeatureUtil.findAllFeaturesRecursively(aetherUtil, features,
-                    FeatureUtil.featuresRepositoryToCoords(features)));
+            // Do not provide FeatureUtil.featuresRepositoryToCoords(features)) as existingCoords
+            // to findAllFeaturesRecursively, as those coords are not resolved yet, and it would lead to Bug 6187.
+            features.addAll(FeatureUtil.findAllFeaturesRecursively(aetherUtil, features));
             for (Features feature : features) {
-                LOG.info("Features Repos  discovered recursively: {}", feature.getName());
+                LOG.info("Feature repository discovered recursively: {}", feature.getName());
             }
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
             artifacts.addAll(featureArtifacts);
 
             for (Artifact artifact : artifacts) {
-                LOG.info("Artifacts to be installed: {}", artifact.toString());
+                LOG.debug("Artifact to be installed: {}", artifact.toString());
             }
             if (localRepo != null) {
                 aetherUtil.installArtifacts(artifacts);
