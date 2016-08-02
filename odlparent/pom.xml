@@ -1162,6 +1162,13 @@
           <version>2.9.2</version>
       </dependency>
 
+      <!-- Karaf console support -->
+      <dependency>
+        <groupId>org.apache.karaf.shell</groupId>
+        <artifactId>org.apache.karaf.shell.console</artifactId>
+        <version>${karaf.version}</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
