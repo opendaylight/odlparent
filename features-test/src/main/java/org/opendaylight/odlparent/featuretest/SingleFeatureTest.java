@@ -121,7 +121,6 @@ public class SingleFeatureTest {
         return new Option[] {
             // TODO: Find a way to inherit memory limits from Maven options.
             new VMOption("-Xmx2g"),
-            new VMOption("-XX:MaxPermSize=512m"),
             when(Boolean.getBoolean(PROFILE_PROP)).useOptions(
                 new VMOption("-XX:+UnlockCommercialFeatures"),
                 new VMOption("-XX:+FlightRecorder"),
