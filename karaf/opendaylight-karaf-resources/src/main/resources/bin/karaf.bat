@@ -220,7 +220,7 @@ if not exist "%JAVA_HOME%\bin\server\jvm.dll" (
     )
 )
 
-set DEFAULT_JAVA_OPTS=%JAVA_MODE% -Xms%JAVA_MIN_MEM% -Xmx%JAVA_MAX_MEM% -Dderby.system.home="%KARAF_DATA%\derby" -Dderby.storage.fileSyncTransactionLog=true -Dcom.sun.management.jmxremote  -XX:+UnlockDiagnosticVMOptions -XX:+UnsyncloadClass
+set DEFAULT_JAVA_OPTS=%JAVA_MODE% -Xms%JAVA_MIN_MEM% -Xmx%JAVA_MAX_MEM% -Dcom.sun.management.jmxremote  -XX:+UnlockDiagnosticVMOptions -XX:+UnsyncloadClass
 
 if not "%ODL_JAVA_SECURITY_PROPERTIES%" == "" (
     set DEFAULT_JAVA_OPTS=-Djava.security.properties="%ODL_JAVA_SECURITY_PROPERTIES%" %DEFAULT_JAVA_OPTS%
@@ -237,6 +237,7 @@ if "%EXTRA_JAVA_OPTS%" == "" goto :KARAF_EXTRA_JAVA_OPTS_END
 if "%KARAF_DEBUG%" == "" goto :KARAF_DEBUG_END
     if "%1" == "stop" goto :KARAF_DEBUG_END
     if "%1" == "client" goto :KARAF_DEBUG_END
+    if "%1" == "status" goto :KARAF_DEBUG_END
     rem Use the defaults if JAVA_DEBUG_OPTS was not set
     if "%JAVA_DEBUG_OPTS%" == "" set JAVA_DEBUG_OPTS=%DEFAULT_JAVA_DEBUG_OPTS%
 
