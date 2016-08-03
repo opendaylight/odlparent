@@ -53,6 +53,11 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
             <groupId>org.apache.aries.proxy</groupId>
             <artifactId>org.apache.aries.proxy.impl</artifactId>
           </exclusion>
+          <!-- We provide a newer version of Mina -->
+          <exclusion>
+            <groupId>org.apache.mina</groupId>
+            <artifactId>mina-core</artifactId>
+          </exclusion>
         </exclusions>
       </dependency>
     </dependencies>
@@ -98,6 +103,18 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
       <groupId>org.apache.aries.proxy</groupId>
       <artifactId>org.apache.aries.proxy.impl</artifactId>
       <version>1.0.5</version>
+    </dependency>
+
+    <!-- Overridden sshd and Mina -->
+    <dependency>
+      <groupId>org.apache.mina</groupId>
+      <artifactId>mina-core</artifactId>
+      <version>2.0.13</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.sshd</groupId>
+      <artifactId>sshd-core</artifactId>
+      <version>1.2.0</version>
     </dependency>
   </dependencies>
   <build>
@@ -360,6 +377,11 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
                   <!-- Remove this once Karaf provides a new-enough version of Aries Proxy -->
                   <replace dir="${project.build.directory}/assembly/etc" token="org.apache.aries.proxy.impl/1.0.4"
                            value="org.apache.aries.proxy.impl/1.0.5">
+                    <include name="startup.properties"/>
+                  </replace>
+                  <!-- Remove this once Karaf provides a new-enough version of sshd-core -->
+                  <replace dir="${project.build.directory}/assembly/etc" token="org.apache.sshd/sshd-core/0.14.0"
+                           value="org.apache.sshd/sshd-core/1.2.0">
                     <include name="startup.properties"/>
                   </replace>
 
