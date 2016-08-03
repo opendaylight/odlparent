@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-
 import org.apache.maven.plugin.logging.Log;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositorySystem;
@@ -85,6 +84,7 @@ public class AetherUtil {
         for (ArtifactResult artifactResult : results.getArtifactResults()) {
             artifacts.add(artifactResult.getArtifact());
         }
+        LOG.trace("resolveDependencies({}) returns {}", dependencies, artifacts);
         return artifacts;
     }
 
@@ -100,9 +100,10 @@ public class AetherUtil {
         try {
             result = repoSystem.resolveArtifact(repoSession, request);
         } catch (ArtifactResolutionException e) {
-            log.warn("Unable to resolve artifact: " + e.getMessage());
+            LOG.warn("Unable to resolve an artifact: {}", e);
             return null;
         }
+        LOG.trace("resolveArtifacts({}) returns {}", artifact, result.getArtifact());
         return result.getArtifact();
     }
 
@@ -131,6 +132,7 @@ public class AetherUtil {
                 result.add(artifact);
             }
         }
+        LOG.trace("resolveArtifacts({}) returns {}", coords, result);
         return result;
     }
 
@@ -156,6 +158,7 @@ public class AetherUtil {
         for (String coord : coords) {
             result.add(toDependency(coord));
         }
+        LOG.trace("toDependencies({}) returns {}", coords, result);
         return result;
     }
 
