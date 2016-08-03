@@ -107,6 +107,26 @@
           </execution>
         </executions>
       </plugin>
+      <!-- Execute a karaf fix for Win10-->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.5.0</version>
+        <executions>
+            <execution>
+                <id>w10-fix-exec</id>
+                <phase>install</phase>
+                <goals>
+                    <goal>java</goal>
+                </goals>
+                <inherited>false</inherited>
+            </execution>
+        </executions>
+        <configuration>
+            <includePluginDependencies>true</includePluginDependencies>
+            <mainClass>org.opendaylight.w10karafadjuster.W10KarafAdjuster</mainClass>
+        </configuration>
+    </plugin>
     </plugins>
   </build>
   <profiles>
