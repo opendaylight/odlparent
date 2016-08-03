@@ -26,7 +26,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
-
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -38,6 +37,8 @@ import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.opendaylight.odlparent.featuretest.CustomBundleURLStreamHandlerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Mojo populating the local repository by delegating to Aether.
@@ -45,8 +46,8 @@ import org.opendaylight.odlparent.featuretest.CustomBundleURLStreamHandlerFactor
  * @goal populate-local-repo
  * @phase prepare-package
  */
-public class PopulateLocalRepoMojo
-        extends AbstractMojo {
+public class PopulateLocalRepoMojo extends AbstractMojo {
+    private static final Logger LOG = LoggerFactory.getLogger(PopulateLocalRepoMojo.class);
 
     static {
         // Static initialization, as we may be invoked multiple times
@@ -104,16 +105,17 @@ public class PopulateLocalRepoMojo
                     aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
                             new KarafFeaturesDependencyFilter()));
             Set<Features> features = FeatureUtil.readFeatures(featureArtifacts);
-            features.addAll(FeatureUtil.findAllFeaturesRecursively(aetherUtil, features,
-                    FeatureUtil.featuresRepositoryToCoords(features)));
+            // Do not provide FeatureUtil.featuresRepositoryToCoords(features)) as existingCoords
+            // to findAllFeaturesRecursively, as those coords are not resolved yet, and it would lead to Bug 6187.
+            features.addAll(FeatureUtil.findAllFeaturesRecursively(aetherUtil, features));
             for (Features feature : features) {
-                getLog().info("Features Repos  discovered recursively: " + feature.getName());
+                LOG.info("Feature repository discovered recursively: {}", feature.getName());
             }
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
             artifacts.addAll(featureArtifacts);
 
             for (Artifact artifact : artifacts) {
-                getLog().info("Artifacts to be installed: " + artifact.toString());
+                LOG.debug("Artifact to be installed: {}", artifact.toString());
             }
             if (localRepo != null) {
                 aetherUtil.installArtifacts(artifacts);
