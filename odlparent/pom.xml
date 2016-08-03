@@ -1273,7 +1273,7 @@
                 <minimumTokens>101</minimumTokens>
                 <printFailingErrors>true</printFailingErrors>
                 <excludeRoots>
-                  <excludeRoot>${basedir}/target/generated-sources/mdsal-binding</excludeRoot>
+                  <excludeRoot>${basedir}/target/generated-sources</excludeRoot>
                 </excludeRoots>
                 <linkXRef>false</linkXRef>
               </configuration>
