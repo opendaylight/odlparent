@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 #    Licensed to the Apache Software Foundation (ASF) under one or more
 #    contributor license agreements.  See the NOTICE file distributed with
@@ -36,7 +36,7 @@ PROGNAME=$(basename "$REALNAME")
 #
 # Sourcing environment settings for karaf similar to tomcats setenv
 #
-KARAF_SCRIPT="instance"
+KARAF_SCRIPT="client"
 export KARAF_SCRIPT
 if [ -f "$DIRNAME/setenv" ]; then
   . "$DIRNAME/setenv"
@@ -99,7 +99,7 @@ unlimitFD() {
     # Increase the maximum file descriptors if we can
     if [ "$os400" = "false" ] && [ "$cygwin" = "false" ]; then
         MAX_FD_LIMIT=`ulimit -H -n`
-        if [ "$MAX_FD_LIMIT" != 'unlimited' ]; then
+        if [ "$MAX_FD_LIMIT" != 'unlimited' ]; then 
             if [ $? -eq 0 ]; then
                 if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ]; then
                     # use the system max
@@ -122,7 +122,7 @@ locateHome() {
     if [ "x$KARAF_HOME" != "x" ]; then
         warn "Ignoring predefined value for KARAF_HOME"
     fi
-
+    
     # In POSIX shells, CDPATH may cause cd to write to stdout
     (unset CDPATH) >/dev/null 2>&1 && unset CDPATH
 
@@ -242,28 +242,6 @@ detectJVM() {
    # echo "JVM vendor is $JVM_VENDOR"
 }
 
-setupDebugOptions() {
-    if [ "x$JAVA_OPTS" = "x" ]; then
-        JAVA_OPTS="$DEFAULT_JAVA_OPTS"
-    fi
-    export JAVA_OPTS
-
-    if [ "x$EXTRA_JAVA_OPTS" != "x" ]; then
-        JAVA_OPTS="$JAVA_OPTS $EXTRA_JAVA_OPTS"
-    fi
-
-    # Set Debug options if enabled
-    if [ "x$KARAF_DEBUG" != "x" ]; then
-        # Use the defaults if JAVA_DEBUG_OPTS was not set
-        if [ "x$JAVA_DEBUG_OPTS" = "x" ]; then
-            JAVA_DEBUG_OPTS="$DEFAULT_JAVA_DEBUG_OPTS"
-        fi
-
-        JAVA_OPTS="$JAVA_DEBUG_OPTS $JAVA_OPTS"
-        warn "Enabling Java debug options: $JAVA_DEBUG_OPTS"
-    fi
-}
-
 setupDefaults() {
     DEFAULT_JAVA_OPTS="-Xms$JAVA_MIN_MEM -Xmx$JAVA_MAX_MEM "
 
@@ -291,34 +269,13 @@ setupDefaults() {
         fi
     fi
 
-    # Add default security file option
-    if [ "x$ODL_JAVA_SECURITY_PROPERTIES" != "x" ]; then
-        DEFAULT_JAVA_OPTS="-Djava.security.properties="${ODL_JAVA_SECURITY_PROPERTIES}" $DEFAULT_JAVA_OPTS"
-    else
-        DEFAULT_JAVA_OPTS="-Djava.security.properties="${KARAF_ETC}/odl.java.security" $DEFAULT_JAVA_OPTS"
-    fi
-
     # Add the jars in the lib dir
-    for file in "$KARAF_HOME"/lib/*.jar
-    do
-        if [ -z "$CLASSPATH" ]; then
-            CLASSPATH="$file"
-        else
-            CLASSPATH="$CLASSPATH:$file"
-        fi
-    done
+    CLASSPATH="$KARAF_HOME/lib/bin/karaf-client.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/sshd/sshd-core/${sshd.version}/sshd-core-${sshd.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/mina/mina-core/${mina.version}/mina-core-${mina.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/jline/jline/${jline.version}/jline-${jline.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/slf4j/slf4j-api/${slf4j.version}/slf4j-api-${slf4j.version}.jar"
 
-    DEFAULT_JAVA_DEBUG_PORT="5005"
-    if [ "x$JAVA_DEBUG_PORT" = "x" ]; then
-        JAVA_DEBUG_PORT="$DEFAULT_JAVA_DEBUG_PORT"
-    fi
-    DEFAULT_JAVA_DEBUG_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=$JAVA_DEBUG_PORT"
-
-    ##
-    ## TODO: Move to conf/profiler/yourkit.{sh|cmd}
-    ##
-    # Uncomment to enable YourKit profiling
-    #DEFAULT_JAVA_DEBUG_OPTS="-Xrunyjpagent"
 }
 
 init() {
@@ -352,26 +309,21 @@ init() {
     # Setup default options
     setupDefaults
 
-    # Install debug options
-    setupDebugOptions
-
 }
 
 run() {
-
-    CLASSPATH="${KARAF_HOME}/system/org/apache/karaf/instance/org.apache.karaf.instance.command/${karaf.version}/org.apache.karaf.instance.command-${karaf.version}.jar:${KARAF_HOME}/system/org/apache/karaf/instance/org.apache.karaf.instance.core/${karaf.version}/org.apache.karaf.instance.core-${karaf.version}.jar:${KARAF_HOME}/system/org/apache/karaf/shell/org.apache.karaf.shell.console/${karaf.version}/org.apache.karaf.shell.console-${karaf.version}.jar:${KARAF_HOME}/system/org/apache/karaf/shell/org.apache.karaf.shell.table/${karaf.version}/org.apache.karaf.shell.table-${karaf.version}.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.api/${aries.blueprint.api.version}/org.apache.aries.blueprint.api-${aries.blueprint.api.version}.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.core/${aries.blueprint.core.version}/org.apache.aries.blueprint.core-${aries.blueprint.core.version}.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.cm/${aries.blueprint.cm.version}/org.apache.aries.blueprint.cm-${aries.blueprint.cm.version}.jar:${KARAF_HOME}/system/org/ops4j/pax/logging/pax-logging-api/${pax.logging.version}/pax-logging-api-${pax.logging.version}.jar:${KARAF_HOME}/system/org/apache/felix/org.apache.felix.framework/${felix.framework.version}/org.apache.felix.framework-${felix.framework.version}.jar:${KARAF_HOME}/system/jline/jline/${jline.version}/jline-${jline.version}.jar:$CLASSPATH"
 
     if $cygwin; then
         KARAF_HOME=`cygpath --path --windows "$KARAF_HOME"`
         KARAF_BASE=`cygpath --path --windows "$KARAF_BASE"`
         KARAF_DATA=`cygpath --path --windows "$KARAF_DATA"`
         KARAF_ETC=`cygpath --path --windows "$KARAF_ETC"`
-        if [ ! -z "$CLASSPATH" ]; then
+        if [ ! -z "$CLASSPATH" ]; then
             CLASSPATH=`cygpath --path --windows "$CLASSPATH"`
         fi
     fi
 
-    exec "$JAVA" $JAVA_OPTS -Dkaraf.instances="${KARAF_HOME}/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" org.apache.karaf.instance.main.Execute "$@"
+    exec "$JAVA" $JAVA_OPTS -Dkaraf.instances="${KARAF_HOME}/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" org.apache.karaf.client.Main "$@"
 }
 
 main() {
