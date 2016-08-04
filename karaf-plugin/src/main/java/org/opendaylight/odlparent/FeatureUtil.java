@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+
 import org.apache.karaf.features.internal.model.Bundle;
 import org.apache.karaf.features.internal.model.ConfigFile;
 import org.apache.karaf.features.internal.model.Feature;
@@ -25,12 +26,8 @@ import org.apache.karaf.features.internal.model.JaxbUtil;
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.ops4j.pax.url.mvn.internal.Parser;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public final class FeatureUtil {
-    private static final Logger LOG = LoggerFactory.getLogger(FeatureUtil.class);
-
     private FeatureUtil() {
         throw new UnsupportedOperationException();
     }
@@ -47,7 +44,6 @@ public final class FeatureUtil {
         for (URL url : urls) {
             result.add(toCoord(url));
         }
-        LOG.trace("toCoord({}) returns {}", urls, result);
         return result;
     }
 
@@ -70,7 +66,6 @@ public final class FeatureUtil {
             coord = coord + ":" + parser.getClassifier();
         }
         coord = coord + ":" + parser.getVersion().replaceAll("\\$.*$", "");
-        LOG.trace("toCoord({}) returns {}", url, coord);
         return coord;
     }
 
@@ -86,7 +81,6 @@ public final class FeatureUtil {
         for (String url : repository) {
             result.add(toCoord(new URL(url)));
         }
-        LOG.trace("mvnUrlsToCoord({}) returns {}", repository, result);
         return result;
     }
 
@@ -113,7 +107,6 @@ public final class FeatureUtil {
         for (Features feature : features) {
             result.addAll(featuresRepositoryToCoords(feature));
         }
-        LOG.trace("featuresRepositoryToCoords({}) returns {}", features, result);
         return result;
     }
 
@@ -132,7 +125,6 @@ public final class FeatureUtil {
         if (feature.getConfigfile() != null) {
             result.addAll(configFilesToCoords(feature.getConfigfile()));
         }
-        LOG.trace("featureToCoords({}) returns {}", feature.getName(), result);
         return result;
     }
 
@@ -148,7 +140,6 @@ public final class FeatureUtil {
         for (ConfigFile configFile : configfiles) {
             result.add(toCoord(new URL(configFile.getLocation())));
         }
-        LOG.trace("configFilesToCoords({}) returns {}", configfiles, result);
         return result;
     }
 
@@ -164,7 +155,6 @@ public final class FeatureUtil {
         for (Bundle bundle : bundles) {
             result.add(toCoord(new URL(bundle.getLocation())));
         }
-        LOG.trace("bundlesToCoords({}) returns {}", bundles, result);
         return result;
     }
 
@@ -185,7 +175,6 @@ public final class FeatureUtil {
                 result.addAll(featureToCoords(feature));
             }
         }
-        LOG.trace("featuresToCoords({}) returns {}", features.getName(), result);
         return result;
     }
 
@@ -202,7 +191,6 @@ public final class FeatureUtil {
         for (Features feature : features) {
             result.addAll(featuresToCoords(feature));
         }
-        LOG.trace("featuresToCoords({}) returns {}", features, result);
         return result;
     }
 
@@ -218,7 +206,6 @@ public final class FeatureUtil {
         for (Artifact artifact : featureArtifacts) {
             result.add(readFeature(artifact));
         }
-        LOG.trace("readFeatures({}) returns {}", featureArtifacts, result);
         return result;
     }
 
@@ -232,9 +219,7 @@ public final class FeatureUtil {
     public static Features readFeature(Artifact artifact) throws FileNotFoundException {
         File file = artifact.getFile();
         FileInputStream stream = new FileInputStream(file);
-        Features result = JaxbUtil.unmarshal(stream, false);
-        LOG.trace("readFeature({}) returns {} without resolving first", artifact, result.getName());
-        return result;
+        return JaxbUtil.unmarshal(stream, false);
     }
 
     /**
@@ -249,9 +234,7 @@ public final class FeatureUtil {
     public static Features readFeature(AetherUtil aetherUtil, String coords)
             throws ArtifactResolutionException, FileNotFoundException {
         Artifact artifact = aetherUtil.resolveArtifact(coords);
-        Features result = readFeature(artifact);
-        LOG.trace("readFeature({}) returns {} after resolving first", coords, result.getName());
-        return result;
+        return readFeature(artifact);
     }
 
     /**
@@ -268,21 +251,15 @@ public final class FeatureUtil {
     public static Set<Features> findAllFeaturesRecursively(
             AetherUtil aetherUtil, Features features, Set<String> existingCoords)
             throws MalformedURLException, FileNotFoundException, ArtifactResolutionException {
-        LOG.debug("findAllFeaturesRecursively({}) starts", features.getName());
-        LOG.trace("findAllFeaturesRecursively knows about these coords: {}", existingCoords);
         Set<Features> result = new LinkedHashSet<>();
         Set<String> coords = FeatureUtil.featuresRepositoryToCoords(features);
         for (String coord : coords) {
             if (!existingCoords.contains(coord)) {
-                LOG.trace("findAllFeaturesRecursively() going to add {}", coord);
                 existingCoords.add(coord);
                 Features feature = FeatureUtil.readFeature(aetherUtil, coord);
                 result.add(feature);
-                LOG.debug("findAllFeaturesRecursively() added {}", coord);
                 result.addAll(findAllFeaturesRecursively(aetherUtil, FeatureUtil.readFeature(aetherUtil, coord),
                         existingCoords));
-            } else {
-                LOG.trace("findAllFeaturesRecursively() skips known {}", coord);
             }
         }
         return result;
@@ -307,21 +284,6 @@ public final class FeatureUtil {
             result.addAll(findAllFeaturesRecursively(aetherUtil, feature, existingCoords));
         }
         return result;
-    }
-
-    /**
-     * Unmarshals all the features (including known ones) starting from the given features.
-     *
-     * @param aetherUtil The Aether resolver.
-     * @param features The starting features.
-     * @return The features.
-     * @throws MalformedURLException if a URL is malformed.
-     * @throws FileNotFoundException if a file is missing.
-     * @throws ArtifactResolutionException if artifact coordinates can't be resolved.
-     */
-    public static Set<Features> findAllFeaturesRecursively(AetherUtil aetherUtil, Set<Features> features)
-            throws MalformedURLException, FileNotFoundException, ArtifactResolutionException {
-        return findAllFeaturesRecursively(aetherUtil, features, new LinkedHashSet<String>());
     }
 
 }

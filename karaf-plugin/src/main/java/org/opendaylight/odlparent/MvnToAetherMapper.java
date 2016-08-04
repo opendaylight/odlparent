@@ -10,6 +10,7 @@ package org.opendaylight.odlparent;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.eclipse.aether.artifact.DefaultArtifact;
 import org.eclipse.aether.artifact.DefaultArtifactType;
 import org.eclipse.aether.graph.Dependency;

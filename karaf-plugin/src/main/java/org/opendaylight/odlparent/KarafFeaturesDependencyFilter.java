@@ -9,6 +9,7 @@
 package org.opendaylight.odlparent;
 
 import java.util.List;
+
 import org.eclipse.aether.graph.DependencyFilter;
 import org.eclipse.aether.graph.DependencyNode;
 
