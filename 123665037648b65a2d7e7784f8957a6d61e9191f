@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_a09fba5e",
+        "filename": "karaf/karaf-branding/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-08-05T16:43:58Z",
+      "side": 1,
+      "message": "Should be odlparent-lite",
+      "revId": "123665037648b65a2d7e7784f8957a6d61e9191f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
