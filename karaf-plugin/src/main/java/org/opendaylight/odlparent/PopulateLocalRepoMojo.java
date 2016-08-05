@@ -22,10 +22,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
+
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -100,6 +102,8 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
 
         aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos, localRepo, getLog());
         try {
+            Set<Artifact> startupArtifacts = readStartupProperties();
+            aetherUtil.installArtifacts(startupArtifacts);
             Set<Artifact> featureArtifacts = readFeatureCfg();
             featureArtifacts.addAll(
                     aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
@@ -140,6 +144,27 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             getLog().info("Could not find properties file: " + file.getAbsolutePath());
         } catch (IOException e) {
             getLog().info("Could not read properties file: " + file.getAbsolutePath());
+        }
+
+        return artifacts;
+    }
+
+    private Set<Artifact> readStartupProperties() throws ArtifactResolutionException {
+        Set<Artifact> artifacts = new LinkedHashSet<>();
+        File file = new File(localRepo.getParentFile().toString() + "/etc/startup.properties");
+        Properties prop = new Properties();
+        try {
+            prop.load(new FileInputStream(file));
+            Enumeration<Object> mvnUrls = prop.keys();
+            while(mvnUrls.hasMoreElements()) {
+                String mvnUrl = (String)mvnUrls.nextElement();
+                Artifact artifact = aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(mvnUrl)));
+                artifacts.add(artifact);
+            }
+        } catch (FileNotFoundException e) {
+            LOG.info("Could not find properties file: {}", file.getAbsolutePath(), e);
+        } catch (IOException e) {
+            LOG.info("Could not read properties file: {}", file.getAbsolutePath(), e);
         }
 
         return artifacts;
