@@ -1273,6 +1273,10 @@
                 <minimumTokens>101</minimumTokens>
                 <printFailingErrors>true</printFailingErrors>
                 <excludeRoots>
+                  <!-- FIXME: this is a layering violation, but CPD is brain-damaged and does
+                              not understand path prefixes nor wildcards. Details are available
+                              at http://stackoverflow.com/questions/15647771/pmd-exclude-not-working
+                   -->
                   <excludeRoot>${basedir}/target/generated-sources/mdsal-binding</excludeRoot>
                 </excludeRoots>
                 <linkXRef>false</linkXRef>
