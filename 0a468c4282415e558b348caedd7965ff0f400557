@@ -16,6 +16,24 @@
       "revId": "0a468c4282415e558b348caedd7965ff0f400557",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_e074129e",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1282,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-08-05T15:39:40Z",
+      "side": 1,
+      "message": "I don\u0027t know if it has value including it here ... merges on lists don\u0027t work with maven, so this will get replaced by config-parent and binding-parent...",
+      "parentUuid": "7a6b29fe_7d038f0f",
+      "revId": "0a468c4282415e558b348caedd7965ff0f400557",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
