@@ -37,6 +37,7 @@
         <module>features-test</module>
         <module>features-odlparent</module>
         <module>features-akka</module>
+        <module>features-aries</module>
         <module>odlparent-artifacts</module>
         <module>odlparent</module>
         <module>odlparent-lite</module>
