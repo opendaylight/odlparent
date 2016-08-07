@@ -306,7 +306,7 @@ public class SingleFeatureTest {
     public void installFeature() throws Exception {
         LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
         featuresService.installFeature(getFeatureName(), getFeatureVersion(),
-                EnumSet.of(FeaturesService.Option.NoCleanIfFailure));
+                EnumSet.of(FeaturesService.Option.NoCleanIfFailure, FeaturesService.Option.PrintExecptionPerFeature));
         Feature feature = featuresService.getFeature(getFeatureName(), getFeatureVersion());
         Assert.assertNotNull(
                 "Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null", feature);
