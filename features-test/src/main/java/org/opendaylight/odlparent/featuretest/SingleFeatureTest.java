@@ -354,9 +354,8 @@ public class SingleFeatureTest {
             installFeature();
         } catch (Throwable t) {
             LOG.error("installFeature() failed", t);
-            // as of 2017.03.20, this re-throw seems to have no effect,
+            // Do not "throw t", because as of 2017.03.20, a re-throw seems to have no effect,
             // the exception gets lost in space, swallowed somewhere! :(
-            throw t;
         }
     }
 
