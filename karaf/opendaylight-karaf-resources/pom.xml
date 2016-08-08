@@ -13,6 +13,7 @@
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
     <version>1.7.0-SNAPSHOT</version>
+    <relativePath>../../odlparent</relativePath>
   </parent>
   <artifactId>opendaylight-karaf-resources</artifactId>
   <description>Resources for opendaylight-karaf</description>
