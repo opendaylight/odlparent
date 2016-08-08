@@ -235,6 +235,8 @@
         <module name="SingleLineJavadoc"/>
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
+        <module name="FinalClass"/>
+        <module name="HideUtilityClassConstructor"/>
 
         <!-- Checks for Exception Handling Anti-Patterns -->
         <module name="IllegalCatch"/>
