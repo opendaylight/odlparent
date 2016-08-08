@@ -16,6 +16,24 @@
       "revId": "123665037648b65a2d7e7784f8957a6d61e9191f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b4937cf9",
+        "filename": "karaf/karaf-branding/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-08-08T10:06:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6b29fe_a09fba5e",
+      "revId": "123665037648b65a2d7e7784f8957a6d61e9191f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
