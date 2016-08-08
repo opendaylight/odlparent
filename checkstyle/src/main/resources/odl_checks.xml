@@ -240,19 +240,8 @@
         <module name="IllegalCatch"/>
         <module name="IllegalThrows" />
         <module name="MutableException"/>
-        <!-- TODO Once new remote repo to proxy for sevntu has be added to nexus.opendaylight.org ,
-             (waiting for ticket #24830 with helpdesk@opendaylight.org), and https://git.opendaylight.org/gerrit/#/c/41075/
-             has been merged, then add the following additional Exception Handling Anti-Patterns related checks here:
-
-        <module name="AvoidHidingCauseExceptionCheck" />
-  ??
         <module name="com.github.sevntu.checkstyle.checks.coding.AvoidHidingCauseExceptionCheck" />
-
-        <module name="EitherLogOrThrowCheck" />
-  ??
         <module name="com.github.sevntu.checkstyle.checks.coding.EitherLogOrThrowCheck" />
-
-          -->
 
         <!-- Checks for API conventions and the like -->
         <module name="com.github.sevntu.checkstyle.checks.coding.ForbidCertainImportsCheck">
