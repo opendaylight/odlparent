@@ -240,6 +240,7 @@
         <module name="IllegalCatch"/>
         <module name="IllegalThrows" />
         <module name="MutableException"/>
+        <module name="ThrowsCount"/>
         <!-- TODO Once new remote repo to proxy for sevntu has be added to nexus.opendaylight.org ,
              (waiting for ticket #24830 with helpdesk@opendaylight.org), and https://git.opendaylight.org/gerrit/#/c/41075/
              has been merged, then add the following additional Exception Handling Anti-Patterns related checks here:
