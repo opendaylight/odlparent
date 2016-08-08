@@ -235,6 +235,7 @@
         <module name="SingleLineJavadoc"/>
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
+        <module name="VisibilityModifier"/>
 
         <!-- Checks for Exception Handling Anti-Patterns -->
         <module name="IllegalCatch"/>
