@@ -20,6 +20,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
 
   <properties>
     <branding.version>1.8.0-SNAPSHOT</branding.version>
+    <karaf.plugin.version>1.8.0-SNAPSHOT</karaf.plugin.version>
     <karaf.localFeature>standard</karaf.localFeature>
     <!--  Karaf Maven plugin 3.0.3 reinstalls already installed
           boot features to container, which could be observed
@@ -393,7 +394,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
         <plugin>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>karaf-plugin</artifactId>
-            <version>1.8.0-SNAPSHOT</version>
+            <version>${karaf.plugin.version}</version>
             <executions>
                 <execution>
                     <id>populate-local-repo</id>
