@@ -22,6 +22,30 @@
       "revId": "7b6b657fddf48bf8f06501ca114a4abb4034a13c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_9558d033",
+        "filename": "karaf/karaf-parent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2016-08-15T17:15:29Z",
+      "side": 1,
+      "message": "thanks Vratko.",
+      "parentUuid": "7a6b29fe_1535e0d9",
+      "range": {
+        "startLine": 396,
+        "startChar": 23,
+        "endLine": 396,
+        "endChar": 24
+      },
+      "revId": "7b6b657fddf48bf8f06501ca114a4abb4034a13c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
