@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_72a9cade",
+        "filename": "karaf/opendaylight-karaf-empty/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-08-15T14:57:58Z",
+      "side": 1,
+      "message": "odlparent",
+      "range": {
+        "startLine": 26,
+        "startChar": 59,
+        "endLine": 26,
+        "endChar": 69
+      },
+      "revId": "bfb224c7ab72b67667dcf67cc2f62f1f938902c5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b2aa42d0",
+        "filename": "karaf/opendaylight-karaf-empty/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-08-15T14:57:58Z",
+      "side": 1,
+      "message": "odlparent",
+      "range": {
+        "startLine": 27,
+        "startChar": 66,
+        "endLine": 27,
+        "endChar": 76
+      },
+      "revId": "bfb224c7ab72b67667dcf67cc2f62f1f938902c5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_f2b4ba36",
+        "filename": "karaf/opendaylight-karaf-empty/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-08-15T14:57:58Z",
+      "side": 1,
+      "message": "https://git.opendaylight.org/gerrit/gitweb?p\u003dodlparent.git;a\u003dtree;f\u003dkaraf/opendaylight-karaf-empty;hb\u003dHEAD",
+      "range": {
+        "startLine": 29,
+        "startChar": 9,
+        "endLine": 29,
+        "endChar": 72
+      },
+      "revId": "bfb224c7ab72b67667dcf67cc2f62f1f938902c5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
