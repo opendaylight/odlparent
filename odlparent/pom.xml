@@ -1162,6 +1162,13 @@
           <version>2.9.2</version>
       </dependency>
 
+      <!-- Annotations -->
+      <dependency>
+        <groupId>javax.inject</groupId>
+        <artifactId>javax.inject</artifactId>
+        <version>1</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
@@ -1178,6 +1185,14 @@
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>jsr305</artifactId>
       <scope>provided</scope>
+    </dependency>
+
+    <!-- Enable injection annotations everywhere -->
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <!-- The annotations have runtime retention so they need to appear in bundle dependencies -->
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 
@@ -1378,6 +1393,34 @@
         </plugin>
 
         <!-- Third-party plugins, grouped by groupId, alpha-sorted by artifactId -->
+        <plugin>
+          <!-- Support Blueprint XML construction using annotations -->
+          <groupId>org.apache.aries.blueprint</groupId>
+          <artifactId>blueprint-maven-plugin</artifactId>
+          <version>1.4.0</version>
+          <configuration>
+            <scanPaths>
+              <scanPath>org.opendaylight</scanPath>
+            </scanPaths>
+          </configuration>
+          <dependencies>
+            <dependency>
+              <!-- See https://issues.apache.org/jira/browse/ARIES-1596 -->
+              <!-- This shouldn't be necessary with plugin version 1.5.0 -->
+              <groupId>org.apache.xbean</groupId>
+              <artifactId>xbean-finder-shaded</artifactId>
+              <version>4.5</version>
+            </dependency>
+          </dependencies>
+          <executions>
+            <execution>
+              <goals>
+                <goal>blueprint-generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
