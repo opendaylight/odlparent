@@ -226,6 +226,16 @@
         <module name="JavadocStyle">
             <!-- Do NOT 'scope' this one; any JavaDoc (public/protected/private) IFF present, should be style checked. -->
             <property name="checkEmptyJavadoc" value="true" />
+            <!-- All except PACKAGE_DEF, due to a Checkstyle particularity (bug?):
+                 For all tokens, JavadocStyle checks JavaDoc compliance IFF present;
+                 only for package-info.java this ENFORCES that there is a JavaDoc
+                 in each package-info.java.  We believe this to be a bug because
+                 JavadocPackage seems to be inteded for enforcement.  Therefore,
+                 in line with not enforcing JavaDoc everywhere, just checking when
+                 it's present, we must therefore customize the tokens list here.
+                 see https://github.com/checkstyle/checkstyle/issues/3416
+             -->
+            <property name="tokens" value="ANNOTATION_DEF, ANNOTATION_FIELD_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, METHOD_DEF, VARIABLE_DEF"/>
         </module>
         <module name="MethodName">
             <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
