@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_87bcc2dd",
+        "filename": "features-akka/src/main/feature/feature.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-09-08T18:02:37Z",
+      "side": 1,
+      "message": "Why is this file still needed?",
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_c7b23a05",
+        "filename": "karaf-feature-parent/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-09-08T18:02:37Z",
+      "side": 1,
+      "message": "single-feature-parent?",
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_a7b73ef4",
+        "filename": "karaf-features-parent/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-09-08T18:02:37Z",
+      "side": 1,
+      "message": "feature-repo-parent",
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_07d0b21d",
+        "filename": "odl-akka-persistence-2.4/src/main/feature/feature.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-09-08T18:02:37Z",
+      "side": 1,
+      "message": "Contrary to the other feature.xml files, I understand why this is still here.",
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}

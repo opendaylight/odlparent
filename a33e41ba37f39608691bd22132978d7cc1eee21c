@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_67c1a653",
+        "filename": "features-odlparent/src/main/feature/feature.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-09-08T18:02:37Z",
+      "side": 0,
+      "message": "Why is this file still needed?",
+      "revId": "a33e41ba37f39608691bd22132978d7cc1eee21c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
