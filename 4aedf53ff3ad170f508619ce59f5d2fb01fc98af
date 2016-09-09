@@ -37,6 +37,29 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_ed111753",
+        "filename": "features-akka/src/main/feature/feature.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-09-09T08:36:41Z",
+      "side": 1,
+      "message": "Oh, this is the attribute that cannot be set via pom.xml, right?\nIn that case it would be nice to see \"Additional features with non-standard (upstream) versions, now deprecated.\" and \"TODO: After projects are migrated away, delete there features and re-introduce them with Odlparent related semantic versions.\" comments around line 13.",
+      "range": {
+        "startLine": 14,
+        "startChar": 80,
+        "endLine": 14,
+        "endChar": 105
+      },
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_c7b23a05",
         "filename": "karaf-feature-parent/pom.xml",
         "patchSetId": 6
