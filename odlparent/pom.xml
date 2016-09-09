@@ -297,6 +297,13 @@
         <scope>test</scope>
       </dependency>
       <dependency>
+        <groupId>com.mycila.guice.extensions</groupId>
+        <!-- This transitively pulls com.google.inject:guice along -->
+        <artifactId>mycila-guice-jsr250</artifactId>
+        <version>4.0.rc1</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
         <version>3.4</version>
