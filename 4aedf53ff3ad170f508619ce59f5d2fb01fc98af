@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_b2477e76",
+        "filename": "features-akka/src/main/feature/feature.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-09-09T07:37:48Z",
+      "side": 1,
+      "message": "Only for backwards compatibility (it provides the old odl-akka features with non-snapshot versions). It\u0027s not needed for the new-style features.\n\nSee the comment on line 13 ;-).",
+      "parentUuid": "7a6b29fe_87bcc2dd",
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_c7b23a05",
         "filename": "karaf-feature-parent/pom.xml",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_f25c564d",
+        "filename": "karaf-feature-parent/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-09-09T07:37:48Z",
+      "side": 1,
+      "message": "I like that, thanks!",
+      "parentUuid": "7a6b29fe_c7b23a05",
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_a7b73ef4",
         "filename": "karaf-features-parent/pom.xml",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2016-09-08T18:02:37Z",
       "side": 1,
       "message": "feature-repo-parent",
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_5256ea2a",
+        "filename": "karaf-features-parent/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-09-09T07:37:48Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "7a6b29fe_a7b73ef4",
       "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false

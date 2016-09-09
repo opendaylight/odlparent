@@ -16,6 +16,24 @@
       "revId": "a33e41ba37f39608691bd22132978d7cc1eee21c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_1260f2ff",
+        "filename": "features-odlparent/src/main/feature/feature.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-09-09T07:37:48Z",
+      "side": 0,
+      "message": "Only for backwards compatibility (it provides the old odlparent features with non-snapshot versions). It\u0027s not needed for the new-style features.\n\nSee the comment on line 5 ;-).",
+      "parentUuid": "7a6b29fe_67c1a653",
+      "revId": "a33e41ba37f39608691bd22132978d7cc1eee21c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
