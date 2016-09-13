@@ -60,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_04b9c514",
+        "filename": "features-akka/src/main/feature/feature.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-09-13T12:09:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6b29fe_ed111753",
+      "range": {
+        "startLine": 14,
+        "startChar": 80,
+        "endLine": 14,
+        "endChar": 105
+      },
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_c7b23a05",
         "filename": "karaf-feature-parent/pom.xml",
         "patchSetId": 6
@@ -95,6 +119,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_443e1d8d",
+        "filename": "karaf-feature-parent/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-09-13T12:09:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a6b29fe_c7b23a05",
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_a7b73ef4",
         "filename": "karaf-features-parent/pom.xml",
         "patchSetId": 6
@@ -123,6 +165,24 @@
       "writtenOn": "2016-09-09T07:37:48Z",
       "side": 1,
       "message": "+1",
+      "parentUuid": "7a6b29fe_a7b73ef4",
+      "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_a43f3186",
+        "filename": "karaf-features-parent/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-09-13T12:09:36Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "7a6b29fe_a7b73ef4",
       "revId": "4aedf53ff3ad170f508619ce59f5d2fb01fc98af",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
