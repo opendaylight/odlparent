@@ -346,17 +346,6 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
               </goals>
               <configuration>
                 <target>
-                  <chmod perm="755">
-                    <fileset dir="${project.build.directory}/assembly/bin">
-                      <include name="karaf"/>
-                      <include name="instance"/>
-                      <include name="start"/>
-                      <include name="stop"/>
-                      <include name="status"/>
-                      <include name="client"/>
-                      <include name="shell"/>
-                    </fileset>
-                  </chmod>
                   <!-- Remove this once Karaf provides a new-enough version of Aries Proxy -->
                   <replace dir="${project.build.directory}/assembly/etc" token="org.apache.aries.proxy.impl/1.0.4"
                            value="org.apache.aries.proxy.impl/1.0.5">
