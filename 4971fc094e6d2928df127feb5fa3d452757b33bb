@@ -22,6 +22,30 @@
       "revId": "4971fc094e6d2928df127feb5fa3d452757b33bb",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_4883cbcb",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1195,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-09-15T17:17:58Z",
+      "side": 1,
+      "message": "Yeah, so what - is that a big problem? @Inject seems like a VERY fundamentaly API, to me. But wWould you +1 it if javax.inject was only a dependencyManagement but not a default \u003cdependencies\u003e?",
+      "parentUuid": "7a6b29fe_e80a9788",
+      "range": {
+        "startLine": 1195,
+        "startChar": 14,
+        "endLine": 1195,
+        "endChar": 20
+      },
+      "revId": "4971fc094e6d2928df127feb5fa3d452757b33bb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
