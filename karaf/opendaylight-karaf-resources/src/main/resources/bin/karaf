@@ -440,7 +440,14 @@ run() {
     fi
     cd "$KARAF_BASE"
 
-    exec "$JAVA" $JAVA_OPTS -Djava.endorsed.dirs="${JAVA_ENDORSED_DIRS}" -Djava.ext.dirs="${JAVA_EXT_DIRS}" -Dkaraf.instances="${KARAF_HOME}/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.data="$KARAF_DATA" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" $MAIN "$@"
+    # Use /dev/urandom to avoid blocking on /dev/random
+    # See http://www.2uo.de/myths-about-urandom/ to understand why this is safe (as long as your VM provisioning seeds
+    # the PRNG)
+    # The /dev/./urandom workaround is necessary because of https://bugs.openjdk.java.net/browse/JDK-6202721
+    NON_BLOCKING_PRNG=
+    [ -c /dev/urandom -a -r /dev/urandom ] && NON_BLOCKING_PRNG=-Djava.security.egd=file:/dev/./urandom
+
+    exec "$JAVA" $JAVA_OPTS "${NON_BLOCKING_PRNG}" -Djava.endorsed.dirs="${JAVA_ENDORSED_DIRS}" -Djava.ext.dirs="${JAVA_EXT_DIRS}" -Dkaraf.instances="${KARAF_HOME}/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.data="$KARAF_DATA" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" $MAIN "$@"
 }
 
 main() {
