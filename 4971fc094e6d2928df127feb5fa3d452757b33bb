@@ -46,6 +46,30 @@
       "revId": "4971fc094e6d2928df127feb5fa3d452757b33bb",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_6b231ebd",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1195,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-09-16T13:34:17Z",
+      "side": 1,
+      "message": "I\u0027ve removed the dependency.",
+      "parentUuid": "7a6b29fe_4883cbcb",
+      "range": {
+        "startLine": 1195,
+        "startChar": 14,
+        "endLine": 1195,
+        "endChar": 20
+      },
+      "revId": "4971fc094e6d2928df127feb5fa3d452757b33bb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
