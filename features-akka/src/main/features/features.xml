@@ -38,6 +38,11 @@
         <bundle>mvn:com.typesafe.akka/akka-remote_${scala.version}/{{VERSION}}</bundle>
         <bundle>mvn:com.typesafe.akka/akka-cluster_${scala.version}/{{VERSION}}</bundle>
     </feature>
+    <feature name='odl-akka-leveldb' description='LevelDB' version='0.7'>
+        <!-- This version is deprecated and provided for transitional purposes only -->
+        <bundle>wrap:mvn:org.iq80.leveldb/leveldb/0.7</bundle>
+        <bundle>mvn:org.fusesource.leveldbjni/leveldbjni-all/{{VERSION}}</bundle>
+    </feature>
     <feature name='odl-akka-leveldb' description='LevelDB' version='${leveldb.version}'>
         <bundle>wrap:mvn:org.iq80.leveldb/leveldb/{{VERSION}}</bundle>
         <bundle>mvn:org.fusesource.leveldbjni/leveldbjni-all/{{VERSION}}</bundle>
