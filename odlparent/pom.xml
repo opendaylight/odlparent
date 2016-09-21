@@ -119,7 +119,7 @@
     <akka.version>2.4.7</akka.version>
     <scala.version>2.11</scala.version>
     <scala.micro.version>8</scala.micro.version>
-    <leveldb.version>0.7</leveldb.version>
+    <leveldb.version>0.9</leveldb.version>
 
     <!-- Default Sonar configuration -->
     <sonar-jacoco-listeners.version>2.4</sonar-jacoco-listeners.version>
