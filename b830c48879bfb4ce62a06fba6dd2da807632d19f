@@ -16,6 +16,24 @@
       "revId": "b830c48879bfb4ce62a06fba6dd2da807632d19f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_21292ce6",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/resources/bin/karaf",
+        "patchSetId": 1
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2016-09-22T15:50:44Z",
+      "side": 1,
+      "message": "This gets ignored;  I point you to this discussion http://stackoverflow.com/questions/137212/how-to-solve-performance-problem-with-java-securerandom.",
+      "parentUuid": "7a6b29fe_7f23d8bc",
+      "revId": "b830c48879bfb4ce62a06fba6dd2da807632d19f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
