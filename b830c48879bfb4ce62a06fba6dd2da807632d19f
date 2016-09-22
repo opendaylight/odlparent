@@ -34,6 +34,24 @@
       "revId": "b830c48879bfb4ce62a06fba6dd2da807632d19f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_4148a8b2",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/resources/bin/karaf",
+        "patchSetId": 1
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-09-22T15:54:44Z",
+      "side": 1,
+      "message": "Thanks for the reference!",
+      "parentUuid": "7a6b29fe_21292ce6",
+      "revId": "b830c48879bfb4ce62a06fba6dd2da807632d19f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
