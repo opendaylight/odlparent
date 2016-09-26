@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_c8d054cb",
+        "filename": "karaf/karaf-parent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-09-26T11:35:43Z",
+      "side": 1,
+      "message": "odlparent:odlparent defines ${karaf.version}.\n\nBut when I tried something like this last time, I run into an issue with lispflowmapping:distribution-karaf entering seemingly neverending (maybe only very long) cycle outputting lots of INFO messages.",
+      "range": {
+        "startLine": 205,
+        "startChar": 19,
+        "endLine": 205,
+        "endChar": 24
+      },
+      "revId": "80b21ae6be8483cb35430c66e78cb117461bf7d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
