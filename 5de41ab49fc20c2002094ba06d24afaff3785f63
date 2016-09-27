@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_06523834",
+        "filename": "karaf/karaf-parent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-09-27T22:17:26Z",
+      "side": 1,
+      "message": "Nice catch! This comment should be in the commit message, I don\u0027t think we need it in the POM itself (and it\u0027s odlparent that enforces the Maven version).",
+      "revId": "5de41ab49fc20c2002094ba06d24afaff3785f63",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
