@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_c06ae818",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/resources/bin/karaf",
+        "patchSetId": 4
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-09-27T10:00:27Z",
+      "side": 1,
+      "message": "Without braces (or perhaps with double braces).\n\nWith braces, it attempts to substitute value available when building distribution, possibly only keeping the dollar string if it does not exist during the build.\n\nMotivation: https://git.opendaylight.org/gerrit/43633\nFix: https://git.opendaylight.org/gerrit/46216",
+      "range": {
+        "startLine": 450,
+        "startChar": 30,
+        "endLine": 450,
+        "endChar": 31
+      },
+      "revId": "5cf814103135126f84b69b1134daae0c0fc3330b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
