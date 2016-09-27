@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_20fbdc47",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/resources/bin/instance",
+        "patchSetId": 1
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-09-27T10:05:50Z",
+      "side": 1,
+      "message": "This is different in making lib jars (from lines 305-307) take precedence. Hopefully that does not break anything.",
+      "range": {
+        "startLine": 362,
+        "startChar": 15,
+        "endLine": 362,
+        "endChar": 26
+      },
+      "revId": "606e398cb82e1c46b0b4a6de08603f20d80b61fb",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
