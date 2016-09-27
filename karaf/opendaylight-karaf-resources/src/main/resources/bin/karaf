@@ -62,7 +62,7 @@ if [ "x$1" != "x" ]; then
 fi
 
 warn() {
-    echo "${PROGNAME}: $*"
+    echo "$PROGNAME: $*"
 }
 
 die() {
@@ -167,7 +167,7 @@ locateEtc() {
 
 setupNativePath() {
     # Support for loading native libraries
-    LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:$KARAF_BASE/lib:$KARAF_HOME/lib"
+    LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$KARAF_BASE/lib:$KARAF_HOME/lib"
 
     # For Cygwin, set PATH from LD_LIBRARY_PATH
     if $cygwin; then
@@ -179,22 +179,22 @@ setupNativePath() {
 }
 
 pathCanonical() {
-    dst="${1}"
-    while [ -h "${dst}" ] ; do
-        ls=`ls -ld "${dst}"`
+    dst="$1"
+    while [ -h "$dst" ] ; do
+        ls=`ls -ld "$dst"`
         link=`expr "$ls" : '.*-> \(.*\)$'`
         if expr "$link" : '/.*' > /dev/null; then
             dst="$link"
         else
-            dst="`dirname "${dst}"`/$link"
+            dst="`dirname "$dst"`/$link"
         fi
     done
-    bas=`basename "${dst}"`
-    dir=`dirname "${dst}"`
+    bas=`basename "$dst"`
+    dir=`dirname "$dst"`
     if [ "$bas" != "$dir" ]; then
       dst="`pathCanonical "$dir"`/$bas"
     fi
-    echo "${dst}" | sed -e 's#//#/#g' -e 's#/./#/#g' -e 's#/[^/]*/../#/#g'
+    echo "$dst" | sed -e 's#//#/#g' -e 's#/./#/#g' -e 's#/[^/]*/../#/#g'
 }
 
 locateJava() {
@@ -316,9 +316,9 @@ setupDefaults() {
 
     # Add default security file option
     if [ "x$ODL_JAVA_SECURITY_PROPERTIES" != "x" ]; then
-        DEFAULT_JAVA_OPTS="-Djava.security.properties="${ODL_JAVA_SECURITY_PROPERTIES}" $DEFAULT_JAVA_OPTS"
+        DEFAULT_JAVA_OPTS="-Djava.security.properties="$ODL_JAVA_SECURITY_PROPERTIES" $DEFAULT_JAVA_OPTS"
     else
-        DEFAULT_JAVA_OPTS="-Djava.security.properties="${KARAF_ETC}/odl.java.security" $DEFAULT_JAVA_OPTS"
+        DEFAULT_JAVA_OPTS="-Djava.security.properties="$KARAF_ETC/odl.java.security" $DEFAULT_JAVA_OPTS"
     fi
 
     # Add the jars in the lib dir
@@ -424,8 +424,8 @@ run() {
         esac
     done
 
-    JAVA_ENDORSED_DIRS="$JAVA_HOME/jre/lib/endorsed:$JAVA_HOME/lib/endorsed:${KARAF_HOME}/lib/endorsed"
-    JAVA_EXT_DIRS="$JAVA_HOME/jre/lib/ext:$JAVA_HOME/lib/ext:${KARAF_HOME}/lib/ext"
+    JAVA_ENDORSED_DIRS="$JAVA_HOME/jre/lib/endorsed:$JAVA_HOME/lib/endorsed:$KARAF_HOME/lib/endorsed"
+    JAVA_EXT_DIRS="$JAVA_HOME/jre/lib/ext:$JAVA_HOME/lib/ext:$KARAF_HOME/lib/ext"
     if $cygwin; then
         KARAF_HOME=`cygpath --path --windows "$KARAF_HOME"`
         KARAF_BASE=`cygpath --path --windows "$KARAF_BASE"`
@@ -447,7 +447,7 @@ run() {
     NON_BLOCKING_PRNG=
     [ -c /dev/urandom -a -r /dev/urandom ] && NON_BLOCKING_PRNG=-Djava.security.egd=file:/dev/./urandom
 
-    exec "$JAVA" $JAVA_OPTS "${NON_BLOCKING_PRNG}" -Djava.endorsed.dirs="${JAVA_ENDORSED_DIRS}" -Djava.ext.dirs="${JAVA_EXT_DIRS}" -Dkaraf.instances="${KARAF_HOME}/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.data="$KARAF_DATA" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" $MAIN "$@"
+    exec "$JAVA" $JAVA_OPTS "$NON_BLOCKING_PRNG" -Djava.endorsed.dirs="$JAVA_ENDORSED_DIRS" -Djava.ext.dirs="$JAVA_EXT_DIRS" -Dkaraf.instances="$KARAF_HOME/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.data="$KARAF_DATA" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" $MAIN "$@"
 }
 
 main() {

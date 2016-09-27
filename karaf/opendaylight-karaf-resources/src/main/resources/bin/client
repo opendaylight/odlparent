@@ -55,7 +55,7 @@ if [ "x$JAVA_MAX_MEM" = "x" ]; then
 fi
 
 warn() {
-    echo "${PROGNAME}: $*"
+    echo "$PROGNAME: $*"
 }
 
 die() {
@@ -164,7 +164,7 @@ locateEtc() {
 
 setupNativePath() {
     # Support for loading native libraries
-    LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:$KARAF_BASE/lib:$KARAF_HOME/lib"
+    LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$KARAF_BASE/lib:$KARAF_HOME/lib"
 
     # For Cygwin, set PATH from LD_LIBRARY_PATH
     if $cygwin; then
@@ -176,22 +176,22 @@ setupNativePath() {
 }
 
 pathCanonical() {
-    dst="${1}"
-    while [ -h "${dst}" ] ; do
-        ls=`ls -ld "${dst}"`
+    dst="$1"
+    while [ -h "$dst" ] ; do
+        ls=`ls -ld "$dst"`
         link=`expr "$ls" : '.*-> \(.*\)$'`
         if expr "$link" : '/.*' > /dev/null; then
             dst="$link"
         else
-            dst="`dirname "${dst}"`/$link"
+            dst="`dirname "$dst"`/$link"
         fi
     done
-    bas=`basename "${dst}"`
-    dir=`dirname "${dst}"`
+    bas=`basename "$dst"`
+    dir=`dirname "$dst"`
     if [ "$bas" != "$dir" ]; then
         dst="`pathCanonical "$dir"`/$bas"
     fi
-    echo "${dst}" | sed -e 's#//#/#g' -e 's#/./#/#g' -e 's#/[^/]*/../#/#g'
+    echo "$dst" | sed -e 's#//#/#g' -e 's#/./#/#g' -e 's#/[^/]*/../#/#g'
 }
 
 locateJava() {
@@ -323,7 +323,7 @@ run() {
         fi
     fi
 
-    exec "$JAVA" $JAVA_OPTS -Dkaraf.instances="${KARAF_HOME}/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" org.apache.karaf.client.Main "$@"
+    exec "$JAVA" $JAVA_OPTS -Dkaraf.instances="$KARAF_HOME/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" org.apache.karaf.client.Main "$@"
 }
 
 main() {

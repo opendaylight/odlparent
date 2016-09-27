@@ -55,7 +55,7 @@ if [ "x$JAVA_MAX_MEM" = "x" ]; then
 fi
 
 warn() {
-    echo "${PROGNAME}: $*"
+    echo "$PROGNAME: $*"
 }
 
 die() {
@@ -164,7 +164,7 @@ locateEtc() {
 
 setupNativePath() {
     # Support for loading native libraries
-    LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:$KARAF_BASE/lib:$KARAF_HOME/lib"
+    LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$KARAF_BASE/lib:$KARAF_HOME/lib"
 
     # For Cygwin, set PATH from LD_LIBRARY_PATH
     if $cygwin; then
@@ -176,22 +176,22 @@ setupNativePath() {
 }
 
 pathCanonical() {
-    dst="${1}"
-    while [ -h "${dst}" ] ; do
-        ls=`ls -ld "${dst}"`
+    dst="$1"
+    while [ -h "$dst" ] ; do
+        ls=`ls -ld "$dst"`
         link=`expr "$ls" : '.*-> \(.*\)$'`
         if expr "$link" : '/.*' > /dev/null; then
             dst="$link"
         else
-            dst="`dirname "${dst}"`/$link"
+            dst="`dirname "$dst"`/$link"
         fi
     done
-    bas=`basename "${dst}"`
-    dir=`dirname "${dst}"`
+    bas=`basename "$dst"`
+    dir=`dirname "$dst"`
     if [ "$bas" != "$dir" ]; then
         dst="`pathCanonical "$dir"`/$bas"
     fi
-    echo "${dst}" | sed -e 's#//#/#g' -e 's#/./#/#g' -e 's#/[^/]*/../#/#g'
+    echo "$dst" | sed -e 's#//#/#g' -e 's#/./#/#g' -e 's#/[^/]*/../#/#g'
 }
 
 locateJava() {
@@ -293,9 +293,9 @@ setupDefaults() {
 
     # Add default security file option
     if [ "x$ODL_JAVA_SECURITY_PROPERTIES" != "x" ]; then
-        DEFAULT_JAVA_OPTS="-Djava.security.properties="${ODL_JAVA_SECURITY_PROPERTIES}" $DEFAULT_JAVA_OPTS"
+        DEFAULT_JAVA_OPTS="-Djava.security.properties="$ODL_JAVA_SECURITY_PROPERTIES" $DEFAULT_JAVA_OPTS"
     else
-        DEFAULT_JAVA_OPTS="-Djava.security.properties="${KARAF_ETC}/odl.java.security" $DEFAULT_JAVA_OPTS"
+        DEFAULT_JAVA_OPTS="-Djava.security.properties="$KARAF_ETC/odl.java.security" $DEFAULT_JAVA_OPTS"
     fi
 
     # Add the jars in the lib dir
@@ -359,7 +359,16 @@ init() {
 
 run() {
 
-    CLASSPATH="${KARAF_HOME}/system/org/apache/karaf/instance/org.apache.karaf.instance.command/${karaf.version}/org.apache.karaf.instance.command-${karaf.version}.jar:${KARAF_HOME}/system/org/apache/karaf/instance/org.apache.karaf.instance.core/${karaf.version}/org.apache.karaf.instance.core-${karaf.version}.jar:${KARAF_HOME}/system/org/apache/karaf/shell/org.apache.karaf.shell.console/${karaf.version}/org.apache.karaf.shell.console-${karaf.version}.jar:${KARAF_HOME}/system/org/apache/karaf/shell/org.apache.karaf.shell.table/${karaf.version}/org.apache.karaf.shell.table-${karaf.version}.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.api/${aries.blueprint.api.version}/org.apache.aries.blueprint.api-${aries.blueprint.api.version}.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.core/${aries.blueprint.core.version}/org.apache.aries.blueprint.core-${aries.blueprint.core.version}.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.cm/${aries.blueprint.cm.version}/org.apache.aries.blueprint.cm-${aries.blueprint.cm.version}.jar:${KARAF_HOME}/system/org/ops4j/pax/logging/pax-logging-api/${pax.logging.version}/pax-logging-api-${pax.logging.version}.jar:${KARAF_HOME}/system/org/apache/felix/org.apache.felix.framework/${felix.framework.version}/org.apache.felix.framework-${felix.framework.version}.jar:${KARAF_HOME}/system/jline/jline/${jline.version}/jline-${jline.version}.jar:$CLASSPATH"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/karaf/instance/org.apache.karaf.instance.command/${karaf.version}/org.apache.karaf.instance.command-${karaf.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/karaf/instance/org.apache.karaf.instance.core/${karaf.version}/org.apache.karaf.instance.core-${karaf.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/karaf/shell/org.apache.karaf.shell.console/${karaf.version}/org.apache.karaf.shell.console-${karaf.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/karaf/shell/org.apache.karaf.shell.table/${karaf.version}/org.apache.karaf.shell.table-${karaf.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/aries/blueprint/org.apache.aries.blueprint.api/${aries.blueprint.api.version}/org.apache.aries.blueprint.api-${aries.blueprint.api.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/aries/blueprint/org.apache.aries.blueprint.core/${aries.blueprint.core.version}/org.apache.aries.blueprint.core-${aries.blueprint.core.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/aries/blueprint/org.apache.aries.blueprint.cm/${aries.blueprint.cm.version}/org.apache.aries.blueprint.cm-${aries.blueprint.cm.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/ops4j/pax/logging/pax-logging-api/${pax.logging.version}/pax-logging-api-${pax.logging.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/felix/org.apache.felix.framework/${felix.framework.version}/org.apache.felix.framework-${felix.framework.version}.jar"
+    CLASSPATH="$CLASSPATH:$KARAF_HOME/system/jline/jline/${jline.version}/jline-${jline.version}.jar"
 
     if $cygwin; then
         KARAF_HOME=`cygpath --path --windows "$KARAF_HOME"`
@@ -371,7 +380,7 @@ run() {
         fi
     fi
 
-    exec "$JAVA" $JAVA_OPTS -Dkaraf.instances="${KARAF_HOME}/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" org.apache.karaf.instance.main.Execute "$@"
+    exec "$JAVA" $JAVA_OPTS -Dkaraf.instances="$KARAF_HOME/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" org.apache.karaf.instance.main.Execute "$@"
 }
 
 main() {
