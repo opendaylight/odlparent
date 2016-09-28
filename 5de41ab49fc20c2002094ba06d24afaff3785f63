@@ -16,6 +16,24 @@
       "revId": "5de41ab49fc20c2002094ba06d24afaff3785f63",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_29762706",
+        "filename": "karaf/karaf-parent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-09-28T09:36:27Z",
+      "side": 1,
+      "message": "Right, as it comments on the difference from the previous commit, not on the new commit itself.",
+      "parentUuid": "7a6b29fe_06523834",
+      "revId": "5de41ab49fc20c2002094ba06d24afaff3785f63",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
