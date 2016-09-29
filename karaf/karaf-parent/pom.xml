@@ -455,4 +455,33 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     </plugins>
   </build>
 
+  <profiles>
+    <profile>
+      <id>karaf_dev</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>home-repo</id>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target>
+                    <replace file="${project.build.directory}/assembly/etc/org.ops4j.pax.url.mvn.cfg"
+                             token="org.ops4j.pax.url.mvn.localRepository="
+                             value="#org.ops4j.pax.url.mvn.localRepository="/>
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
