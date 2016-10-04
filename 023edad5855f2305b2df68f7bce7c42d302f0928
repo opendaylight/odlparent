@@ -22,6 +22,30 @@
       "revId": "023edad5855f2305b2df68f7bce7c42d302f0928",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_d0dbc47b",
+        "filename": "pom.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-04T16:23:37Z",
+      "side": 1,
+      "message": "I\u0027m not sure either way — as long as the number of features doesn\u0027t grow too much, the current list is readable enough, and we can see all the modules without digging around multiple POMs.",
+      "parentUuid": "7a6b29fe_a5fd283e",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 49,
+        "endChar": 16
+      },
+      "revId": "023edad5855f2305b2df68f7bce7c42d302f0928",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
