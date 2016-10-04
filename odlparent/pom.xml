@@ -1785,12 +1785,12 @@
               <goal>run</goal>
             </goals>
             <configuration>
-              <tasks>
+              <target>
                 <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
                 <move file="${basedir}/target/generated-resources/OSGI-INF/blueprint/autowire.xml"
                       todir="${basedir}/target/generated-resources/org/opendaylight/blueprint"
                       failonerror="false" quiet="true" />
-              </tasks>
+              </target>
             </configuration>
           </execution>
           <execution>
@@ -1800,12 +1800,12 @@
               <goal>run</goal>
             </goals>
             <configuration>
-              <tasks>
+              <target>
                 <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
                 <move file="${basedir}/target/generated-resources/OSGI-INF/blueprint/autowire.xml"
                       todir="${basedir}/target/generated-resources/org/opendaylight/blueprint"
                       failonerror="false" quiet="true" />
-              </tasks>
+              </target>
             </configuration>
           </execution>
         </executions>
