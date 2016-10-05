@@ -59,6 +59,13 @@
                     <outputDirectory>target/classes/lib/ext</outputDirectory>
                     <destFileName>bcprov-jdk15on-${bouncycastle.version}.jar</destFileName>
                 </artifactItem>
+                <artifactItem>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcpkix-jdk15on</artifactId>
+                    <version>${bouncycastle.version}</version>
+                    <outputDirectory>target/classes/lib/ext</outputDirectory>
+                    <destFileName>bcpkix-jdk15on-${bouncycastle.version}.jar</destFileName>
+                </artifactItem>
               </artifactItems>
             </configuration>
           </execution>
