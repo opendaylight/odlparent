@@ -70,6 +70,30 @@
       "revId": "023edad5855f2305b2df68f7bce7c42d302f0928",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_f3a52748",
+        "filename": "pom.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-10-05T13:15:47Z",
+      "side": 1,
+      "message": "I think we should have a features-aggregator. It makes things more modular and we can actually rebuild a subset of the project easily.",
+      "parentUuid": "7a6b29fe_705c70ee",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 49,
+        "endChar": 16
+      },
+      "revId": "023edad5855f2305b2df68f7bce7c42d302f0928",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
