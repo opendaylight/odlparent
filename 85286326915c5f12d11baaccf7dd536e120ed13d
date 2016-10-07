@@ -16,6 +16,24 @@
       "revId": "85286326915c5f12d11baaccf7dd536e120ed13d",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_bec9abae",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-07T15:26:13Z",
+      "side": 1,
+      "message": "Good to know, thanks. We still have a lot of people using Eclipse without your setup though! Is there any way to commit this stuff as project settings in Eclipse-specific files?",
+      "parentUuid": "7a6b29fe_9ea94fe2",
+      "revId": "85286326915c5f12d11baaccf7dd536e120ed13d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
