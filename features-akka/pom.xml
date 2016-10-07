@@ -28,8 +28,24 @@
         <artifactId>scala-java8-compat_${scala.version}</artifactId>
       </dependency>
       <dependency>
+        <groupId>org.scala-lang.modules</groupId>
+        <artifactId>scala-parser-combinators_${scala.version}</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.reactivestreams</groupId>
+        <artifactId>reactive-streams</artifactId>
+      </dependency>
+      <dependency>
         <groupId>com.typesafe</groupId>
         <artifactId>config</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.typesafe</groupId>
+        <artifactId>ssl-config-akka_${scala.version}</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.typesafe</groupId>
+        <artifactId>ssl-config-core_${scala.version}</artifactId>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
@@ -37,11 +53,7 @@
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-slf4j_${scala.version}</artifactId>
-      </dependency>
-      <dependency>
-        <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-protobuf_${scala.version}</artifactId>
+        <artifactId>akka-osgi_${scala.version}</artifactId>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
@@ -49,7 +61,15 @@
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-osgi_${scala.version}</artifactId>
+        <artifactId>akka-protobuf_${scala.version}</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.typesafe.akka</groupId>
+        <artifactId>akka-slf4j_${scala.version}</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>com.typesafe.akka</groupId>
+        <artifactId>akka-stream_${scala.version}</artifactId>
       </dependency>
       <dependency>
         <groupId>org.uncommons.maths</groupId>
@@ -89,6 +109,18 @@
       <dependency>
         <groupId>org.fusesource.leveldbjni</groupId>
         <artifactId>leveldbjni-all</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>io.aeron</groupId>
+        <artifactId>aeron-client</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>io.aeron</groupId>
+        <artifactId>aeron-driver</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.agrona</groupId>
+        <artifactId>Agrona</artifactId>
       </dependency>
   </dependencies>
 </project>
