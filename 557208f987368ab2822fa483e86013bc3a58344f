@@ -22,6 +22,24 @@
       "revId": "557208f987368ab2822fa483e86013bc3a58344f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_b35724ca",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1594,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2016-10-07T12:45:56Z",
+      "side": 1,
+      "message": "There are some Maven plugins which have good integration with Eclipse, but others cause errors (red X-es) to show up, and that\u0027s annoying, because you want to be able to see only real problem with your code/build. This settings means that Eclipse will not try to download some integration helper, and will just ignore it.",
+      "parentUuid": "7a6b29fe_f3499c33",
+      "revId": "557208f987368ab2822fa483e86013bc3a58344f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
