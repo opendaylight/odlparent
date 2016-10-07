@@ -12,6 +12,7 @@
     </parent>
 
     <artifactId>odlparent-artifacts</artifactId>
+    <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <dependencyManagement>
