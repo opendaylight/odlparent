@@ -59,7 +59,7 @@
     <!-- Used in mdsal, yangtools -->
     <maven.jar.version>3.0.0</maven.jar.version>
     <!-- Used in controller, coretutorials, mdsal, snbi, yangtools -->
-    <maven.javadoc.version>2.10.3</maven.javadoc.version>
+    <maven.javadoc.version>2.10.4</maven.javadoc.version>
     <!-- Used in snmp -->
     <maven.plugin.version>3.4</maven.plugin.version>
     <!-- Used in neutron, of-config, tsdr, yangtools -->
