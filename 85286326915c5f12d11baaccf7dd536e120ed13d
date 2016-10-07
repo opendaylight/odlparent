@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_9ea94fe2",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-10-07T15:17:09Z",
+      "side": 1,
+      "message": "Stephen FYI all these M2E lifecycleMappingMetadata should technically not be needed anymore in here (with https://github.com/vorburger/opendaylight-eclipse-setup) - I\u0027m configuring these mappings directly in (Eclipse) IDE default workspace preferences instead now, that works much better than these in the pom.xml.  (I haven\u0027t fully tested removing them all, of course; just in the past had removed some which were causing issues, and instead configure them in https://github.com/vorburger/opendaylight-eclipse-setup/blob/master/org.opendaylight.projects.setup#L1171; it now works as-is, so this just FYI.)",
+      "revId": "85286326915c5f12d11baaccf7dd536e120ed13d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
