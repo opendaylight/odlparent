@@ -25,6 +25,7 @@
         <bundle>mvn:org.scala-lang/scala-library/${scala.version}.${scala.micro.version}</bundle>
         <bundle>mvn:org.scala-lang/scala-reflect/${scala.version}.${scala.micro.version}</bundle>
         <bundle>mvn:org.scala-lang.modules/scala-java8-compat_${scala.version}/0.7.0</bundle>
+        <bundle>mvn:org.scala-lang.modules/scala-parser-combinators_${scala.version}/{{VERSION}}</bundle>
     </feature>
     <feature name="odl-akka-system" description="Akka Actor Framework System Bundles" version="${akka.version}">
         <feature version="${scala.version}">odl-akka-scala</feature>
@@ -35,12 +36,19 @@
     </feature>
     <feature name="odl-akka-clustering" description="Akka Clustering" version="${akka.version}">
         <feature version="${akka.version}">odl-akka-system</feature>
-        <bundle>wrap:mvn:org.uncommons.maths/uncommons-maths/1.2.2a</bundle>
-        <bundle>mvn:com.google.protobuf/protobuf-java/2.5.0</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-protobuf_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:io.netty/netty/3.10.6.Final</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-remote_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-cluster_${scala.version}/${akka.version}</bundle>
+        <bundle>wrap:mvn:org.uncommons.maths/uncommons-maths/{{VERSION}}</bundle>
+        <bundle>mvn:com.google.protobuf/protobuf-java/{{VERSION}}</bundle>
+        <bundle>mvn:com.typesafe/ssl-config-akka_${scala.version}/{{VERSION}}</bundle>
+        <bundle>mvn:com.typesafe/ssl-config-core_${scala.version}/{{VERSION}}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-cluster_${scala.version}/{{VERSION}}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-protobuf_${scala.version}/{{VERSION}}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-remote_${scala.version}/{{VERSION}}</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-stream_${scala.version}/{{VERSION}}</bundle>
+        <bundle>wrap:mvn:org.agrona/Agrona/{{VERSION}}</bundle>
+        <bundle>wrap:mvn:io.aeron/aeron-client/{{VERSION}}</bundle>
+        <bundle>wrap:mvn:io.aeron/aeron-driver/{{VERSION}}</bundle>
+        <bundle>mvn:io.netty/netty/{{VERSION}}</bundle>
+        <bundle>mvn:org.reactivestreams/reactive-streams/{{VERSION}}</bundle>
     </feature>
     <feature name='odl-akka-leveldb' description='LevelDB' version='${leveldb.version}'>
         <bundle>wrap:mvn:org.iq80.leveldb/leveldb/${leveldb.version}</bundle>
