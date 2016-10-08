@@ -32,6 +32,7 @@
         <module>odl-akka-leveldb-0.7</module>
         <module>odl-akka-persistence-2.4</module>
         <module>odl-akka-scala-2.11</module>
+        <module>odl-akka-scala-2.12</module>
         <module>odl-akka-system-2.4</module>
 
         <!-- General features -->
