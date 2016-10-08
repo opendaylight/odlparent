@@ -28,7 +28,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-scala-${scala.version}</artifactId>
+            <artifactId>odl-akka-scala-2.11</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
@@ -39,11 +39,13 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_${scala.version}</artifactId>
+            <artifactId>akka-actor_2.11</artifactId>
+            <version>${akka.version}</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-slf4j_${scala.version}</artifactId>
+            <artifactId>akka-slf4j_2.11</artifactId>
+            <version>${akka.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>
@@ -53,7 +55,8 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-osgi_${scala.version}</artifactId>
+            <artifactId>akka-osgi_2.11</artifactId>
+            <version>${akka.version}</version>
         </dependency>
     </dependencies>
 
