@@ -109,8 +109,8 @@
     <osgi.core.version>5.0.0</osgi.core.version>
 
     <akka.version>2.4.16</akka.version>
-    <scala.version>2.11</scala.version>
-    <scala.micro.version>8</scala.micro.version>
+    <scala.version>2.12</scala.version>
+    <scala.micro.version>1</scala.micro.version>
     <leveldb.version>0.7</leveldb.version>
 
     <!-- Default Sonar configuration -->
