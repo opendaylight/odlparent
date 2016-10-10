@@ -79,8 +79,6 @@
     <odl.checkstyle.version>0.3.0-SNAPSHOT</odl.checkstyle.version>
     <!-- Used in snmp4sdn; see also toolkit -->
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
-    <!-- Used in controller, l2switch, netide, openflowjava, openflowplugin, snbi, tsdr, ttp; see also toolkit -->
-    <enforcer.version>1.4.1</enforcer.version>
     <!-- Used in affinity, controller, nemo, opendove, snmp4sdn -->
     <enunciate.version>1.31</enunciate.version>
     <!-- Used in affinity, coretutorials, netide -->
@@ -1343,10 +1341,6 @@
               <arg>-parameters</arg>
             </compilerArgs>
           </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <version>${enforcer.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-failsafe-plugin</artifactId>

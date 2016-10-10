@@ -80,6 +80,9 @@
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <!-- Used in controller, l2switch, netide, openflowjava, openflowplugin, snbi, tsdr, ttp; see also toolkit -->
+    <enforcer.version>1.4.1</enforcer.version>
   </properties>
 
   <build>
@@ -144,6 +147,10 @@
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
           <version>2.5.3</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>${enforcer.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-site-plugin</artifactId>
