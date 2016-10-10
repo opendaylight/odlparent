@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_cba3044e",
+        "filename": "feature-repo-parent/pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-10-10T08:16:06Z",
+      "side": 1,
+      "message": "Without single-feature-parent, features-test will not be executed.\n\nDependency features are probably already tested, but src/main/feature/feature.xml is not.",
+      "range": {
+        "startLine": 28,
+        "startChar": 20,
+        "endLine": 28,
+        "endChar": 29
+      },
+      "revId": "6a064eb0bf1afb699359070803fca1ee612b4ec9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
