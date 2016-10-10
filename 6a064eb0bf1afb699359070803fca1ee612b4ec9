@@ -22,6 +22,30 @@
       "revId": "6a064eb0bf1afb699359070803fca1ee612b4ec9",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_c15be32c",
+        "filename": "feature-repo-parent/pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-10T15:19:14Z",
+      "side": 1,
+      "message": "Indeed, so I\u0027ve switched it round, now feature-repo-parent runs the tests.",
+      "parentUuid": "7a6b29fe_cba3044e",
+      "range": {
+        "startLine": 28,
+        "startChar": 20,
+        "endLine": 28,
+        "endChar": 29
+      },
+      "revId": "6a064eb0bf1afb699359070803fca1ee612b4ec9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
