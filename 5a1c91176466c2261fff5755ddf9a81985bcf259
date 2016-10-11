@@ -22,6 +22,30 @@
       "revId": "5a1c91176466c2261fff5755ddf9a81985bcf259",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_64ac9d8d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-11T09:49:24Z",
+      "side": 1,
+      "message": "[0] is included in [2], it\u0027s not supposed to be in [1]. [2] does get tested as a result of this change.\n\nI think what we need to ensure is that we test the features that are defined by the projects in their roadmaps. Typically those are the features that are in projects\u0027 feature repositories. (And if they\u0027re not, I\u0027d argue that\u0027s a bug!)\n\nSome projects have feature repositories which take 30 min to run through SingleFeatureTest; I can imagine quite a few developers being rather annoyed if we introduce double testing as a result of this change!\n\n[2] https://git.opendaylight.org/gerrit/#/c/38638/13/common/features/features-yangtools/pom.xml",
+      "parentUuid": "7a6b29fe_44ed21ef",
+      "range": {
+        "startLine": 26,
+        "startChar": 20,
+        "endLine": 27,
+        "endChar": 17
+      },
+      "revId": "5a1c91176466c2261fff5755ddf9a81985bcf259",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
