@@ -46,6 +46,30 @@
       "revId": "5a1c91176466c2261fff5755ddf9a81985bcf259",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_7f86ea66",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-10-11T13:01:59Z",
+      "side": 1,
+      "message": "Oh, I just assumed that [2] collects old-style features only, and I did not double-check that.\nIs there a reason why [1] cannot act both as a repo definition and as an aggregator for single feature modules?\n\nIf the project layout guide is updated in the sense that single feature poms are always in a subdirectory of the directory where the repo pom is, we can start saying that the repos are public APIs but the single features are implementation details.\n\nThis way Integration/Distribution committers can verify no single feature was added directly, and we can start skipping feature tests for single features.\n\nEven in this case I would like to see comments in single-feature-parent explicitly stating that SingleFeatureTest is skipped on this level by default (we could add a profile which does not skip it, to help with debugging) and that no single feature is to be considered public outside its enclosing repo.",
+      "parentUuid": "7a6b29fe_64ac9d8d",
+      "range": {
+        "startLine": 26,
+        "startChar": 20,
+        "endLine": 27,
+        "endChar": 17
+      },
+      "revId": "5a1c91176466c2261fff5755ddf9a81985bcf259",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
