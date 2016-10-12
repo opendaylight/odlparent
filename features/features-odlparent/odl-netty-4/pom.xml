@@ -15,28 +15,47 @@
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../../single-feature-parent</relativePath>
+        <relativePath>../../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl-akka-scala-2.11</artifactId>
+    <artifactId>odl-netty-4</artifactId>
     <version>1.8.0-SNAPSHOT</version>
     <packaging>feature</packaging>
 
-    <name>Scala Runtime for OpenDaylight</name>
+    <name>OpenDaylight :: Netty</name>
 
     <dependencies>
         <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-library</artifactId>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-buffer</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.scala-lang</groupId>
-            <artifactId>scala-reflect</artifactId>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-common</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.scala-lang.modules</groupId>
-            <artifactId>scala-java8-compat_${scala.version}</artifactId>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec-http</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-handler</artifactId>
+        </dependency>
+        <!-- Here we need to depend on all available native epoll implementations; we can't limit ourselves to the build
+        platform and we can't require the build platform to have an implementation (e.g. OS X) -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-epoll</artifactId>
+            <classifier>linux-x86_64</classifier>
         </dependency>
     </dependencies>
 

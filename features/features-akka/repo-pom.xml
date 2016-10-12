@@ -13,22 +13,28 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>single-feature-parent</artifactId>
+        <artifactId>feature-repo-parent</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../../single-feature-parent</relativePath>
+        <relativePath>../../feature-repo-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl-akka-all</artifactId>
+    <artifactId>features-akka</artifactId>
     <version>1.8.0-SNAPSHOT</version>
     <packaging>feature</packaging>
-
-    <name>OpenDaylight :: Akka :: All</name>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-scala-2.11</artifactId>
+            <artifactId>odl-akka-all</artifactId>
+            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-akka-scala-${scala.version}</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
