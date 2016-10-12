@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Copyright © 2016 Red Hat, Inc. and others.  All rights reserved.
+ Copyright © 2016 Cisco Systems, Inc. and others.  All rights reserved.
 
  This program and the accompanying materials are made available under the
  terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -13,63 +14,41 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>feature-repo-parent</artifactId>
+        <artifactId>odlparent-lite</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../../feature-repo-parent</relativePath>
+        <relativePath>../../odlparent-lite</relativePath>
     </parent>
 
-    <artifactId>features-odlparent</artifactId>
-    <packaging>feature</packaging>
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>features-odlparent-aggregator</artifactId>
+    <version>1.8.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
-    <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-netty-4</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
+    <modules>
+        <!-- General odlparent single features -->
+        <module>odl-guava-18</module>
+        <module>odl-lmax-3</module>
+        <module>odl-netty-4</module>
+        <module>odl-triemap-0.2</module>
+        <!-- Aggregator pom cannot package feature repo itself, so a separate pom file is needed. -->
+        <module>repo-pom.xml</module>
+    </modules>
 
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-guava-18</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-lmax-3</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-
-        <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-triemap-0.2</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-    </dependencies>
-
-    <!--
-        Maven Site Configuration
-
-        The following configuration is necessary for maven-site-plugin to
-        correctly identify the correct deployment path for OpenDaylight Maven
-        sites.
-    -->
-    <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
-
-    <distributionManagement>
-        <site>
-            <id>opendaylight-site</id>
-            <url>${nexus.site.url}/${project.artifactId}/</url>
-        </site>
-    </distributionManagement>
-
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

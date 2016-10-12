@@ -15,45 +15,24 @@
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../../single-feature-parent</relativePath>
+        <relativePath>../../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl-akka-system-2.4</artifactId>
+    <artifactId>odl-akka-leveldb-0.7</artifactId>
     <version>1.8.0-SNAPSHOT</version>
     <packaging>feature</packaging>
 
-    <name>Akka Actor Framework System Bundles</name>
+    <name>LevelDB</name>
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-scala-${scala.version}</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
+            <groupId>org.iq80.leveldb</groupId>
+            <artifactId>leveldb</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.typesafe</groupId>
-            <artifactId>config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_${scala.version}</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-slf4j_${scala.version}</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-osgi_${scala.version}</artifactId>
+            <groupId>org.fusesource.leveldbjni</groupId>
+            <artifactId>leveldbjni-all</artifactId>
         </dependency>
     </dependencies>
 

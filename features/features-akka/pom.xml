@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Copyright © 2016 Red Hat, Inc. and others.  All rights reserved.
+ Copyright © 2016 Cisco Systems, Inc. and others.  All rights reserved.
 
  This program and the accompanying materials are made available under the
  terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -13,74 +14,43 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>feature-repo-parent</artifactId>
+        <artifactId>odlparent-lite</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../../feature-repo-parent</relativePath>
+        <relativePath>../../odlparent-lite</relativePath>
     </parent>
 
-    <artifactId>features-akka</artifactId>
-    <packaging>feature</packaging>
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>features-akka-aggregator</artifactId>
+    <version>1.8.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
-    <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-all</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-scala-${scala.version}</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-system-2.4</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-clustering-2.4</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-leveldb-0.7</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-persistence-2.4</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-    </dependencies>
+    <modules>
+        <!-- Akka single features -->
+        <module>odl-akka-all</module>
+        <module>odl-akka-clustering-2.4</module>
+        <module>odl-akka-leveldb-0.7</module>
+        <module>odl-akka-persistence-2.4</module>
+        <module>odl-akka-scala-2.11</module>
+        <module>odl-akka-system-2.4</module>
+        <!-- Aggregator pom cannot package feature repo itself, so a separate pom file is needed. -->
+        <module>repo-pom.xml</module>
+    </modules>
 
-    <!--
-        Maven Site Configuration
-
-        The following configuration is necessary for maven-site-plugin to
-        correctly identify the correct deployment path for OpenDaylight Maven
-        sites.
-    -->
-    <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
-
-    <distributionManagement>
-        <site>
-            <id>opendaylight-site</id>
-            <url>${nexus.site.url}/${project.artifactId}/</url>
-        </site>
-    </distributionManagement>
-
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
