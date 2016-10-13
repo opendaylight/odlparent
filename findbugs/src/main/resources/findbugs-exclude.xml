@@ -1,0 +1,12 @@
+<FindBugsFilter>
+  <Match>
+    <Package name="~.*protobuff\.messages.*" />
+  </Match>
+
+  <Match>
+    <Or>
+      <!-- Anonymous inner classes are very common in ODL. -->
+      <Bug pattern="SIC_INNER_SHOULD_BE_STATIC_ANON" />
+    </Or>
+  </Match>
+</FindBugsFilter>
