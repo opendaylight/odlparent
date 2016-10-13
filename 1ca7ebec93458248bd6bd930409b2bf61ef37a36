@@ -46,6 +46,30 @@
       "revId": "1ca7ebec93458248bd6bd930409b2bf61ef37a36",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_4f78912b",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1871,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-13T19:37:45Z",
+      "side": 1,
+      "message": "This is in the reporting section. I\u0027m not really familiar with this and how it relates to the pluginManagement section. Maybe a maven expert (Stephen) can comment.",
+      "parentUuid": "7a6b29fe_0fb059f3",
+      "range": {
+        "startLine": 1863,
+        "startChar": 0,
+        "endLine": 1871,
+        "endChar": 15
+      },
+      "revId": "1ca7ebec93458248bd6bd930409b2bf61ef37a36",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
