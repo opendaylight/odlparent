@@ -30,6 +30,7 @@
         <!-- odlparent tools -->
         <module>checkstyle</module>
         <module>license</module>
+        <module>findbugs</module>
 
         <!-- odlparent core -->
         <module>bundle-parent</module>
