@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_cfa5c1b6",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1871,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2016-10-13T19:30:03Z",
+      "side": 1,
+      "message": "Looks like there are already some configuration bits here",
+      "range": {
+        "startLine": 1863,
+        "startChar": 0,
+        "endLine": 1871,
+        "endChar": 15
+      },
+      "revId": "1ca7ebec93458248bd6bd930409b2bf61ef37a36",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
