@@ -1213,6 +1213,12 @@
       <scope>provided</scope>
     </dependency>
 
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <scope>test</scope>
+    </dependency>
+
     <!-- Enable JSR-305 annotations everywhere -->
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
