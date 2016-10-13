@@ -1,0 +1,19 @@
+<FindBugsFilter>
+  <Match>
+    <Package name="~.*protobuff\.messages.*" />
+  </Match>
+
+  <Match>
+    <Or>
+      <!-- Anonymous inner classes are very common in ODL. -->
+      <Bug pattern="SIC_INNER_SHOULD_BE_STATIC_ANON" />
+
+      <!-- Malicious code vulnerability category. Detects passing and returning
+           mutable data like arrays. Unfortunately this is commonly done with
+           arrays, specifically byte[], to avoid copying the data which can
+           be inefficient. -->
+      <Bug pattern="EI_EXPOSE_REP" />
+      <Bug pattern="EI_EXPOSE_REP2" />
+    </Or>
+  </Match>
+</FindBugsFilter>
