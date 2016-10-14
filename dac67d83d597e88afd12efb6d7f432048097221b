@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a6b29fe_21aba9d7",
+        "filename": "feature-repo-parent/pom.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2016-10-14T00:52:44Z",
+      "side": 1,
+      "message": "We probably want to find a way to standardize this across projects in the future.",
+      "range": {
+        "startLine": 85,
+        "startChar": 25,
+        "endLine": 85,
+        "endChar": 30
+      },
+      "revId": "dac67d83d597e88afd12efb6d7f432048097221b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
