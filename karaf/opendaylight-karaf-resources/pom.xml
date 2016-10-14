@@ -25,7 +25,7 @@
     <aries.blueprint.core.version>1.6.1</aries.blueprint.core.version>
     <felix.framework.version>4.2.1</felix.framework.version>
     <jline.version>2.13</jline.version>
-    <mina.version>2.0.7</mina.version>
+    <mina.version>2.0.15</mina.version>
     <pax.logging.version>1.8.4</pax.logging.version>
     <slf4j.version>1.7.12</slf4j.version>
     <sshd.version>0.14.0</sshd.version>
