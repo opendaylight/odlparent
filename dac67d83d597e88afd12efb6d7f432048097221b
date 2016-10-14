@@ -22,6 +22,30 @@
       "revId": "dac67d83d597e88afd12efb6d7f432048097221b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_445d1348",
+        "filename": "feature-repo-parent/pom.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-10-14T10:00:42Z",
+      "side": 1,
+      "message": "It is already standardized [0]. But universally used, as sometimes an earlier version is needed as a workaround [1].\n\nIn this Change, it would be better to drop the version element, I think.\n\n[0] https://git.opendaylight.org/gerrit/gitweb?p\u003dodlparent.git;a\u003dblob;f\u003dodlparent/pom.xml;h\u003db3d92566a661bee3e3b54f9457c0bf6bc9556d5e;hb\u003drefs/heads/master#l1462\n[1] https://git.opendaylight.org/gerrit/gitweb?p\u003dodlparent.git;a\u003dblob;f\u003dkaraf/karaf-parent/pom.xml;h\u003d79aeb253672023581ea04d5de22fba37f9f86854;hb\u003drefs/heads/master#l24",
+      "parentUuid": "7a6b29fe_21aba9d7",
+      "range": {
+        "startLine": 85,
+        "startChar": 25,
+        "endLine": 85,
+        "endChar": 30
+      },
+      "revId": "dac67d83d597e88afd12efb6d7f432048097221b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
