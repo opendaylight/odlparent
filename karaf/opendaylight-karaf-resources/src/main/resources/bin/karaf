@@ -447,7 +447,9 @@ run() {
     NON_BLOCKING_PRNG=
     [ -c /dev/urandom -a -r /dev/urandom ] && NON_BLOCKING_PRNG=-Djava.security.egd=file:/dev/./urandom
 
-    exec "$JAVA" $JAVA_OPTS "${NON_BLOCKING_PRNG}" -Djava.endorsed.dirs="${JAVA_ENDORSED_DIRS}" -Djava.ext.dirs="${JAVA_EXT_DIRS}" -Dkaraf.instances="${KARAF_HOME}/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.data="$KARAF_DATA" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS -classpath "$CLASSPATH" $MAIN "$@"
+    # Using command line arguments as java arguments (as opposed to arguments for $MAIN).
+    # FIXME: Document this in User Guide.
+    exec "$JAVA" $JAVA_OPTS "${NON_BLOCKING_PRNG}" -Djava.endorsed.dirs="${JAVA_ENDORSED_DIRS}" -Djava.ext.dirs="${JAVA_EXT_DIRS}" -Dkaraf.instances="${KARAF_HOME}/instances" -Dkaraf.home="$KARAF_HOME" -Dkaraf.base="$KARAF_BASE" -Dkaraf.data="$KARAF_DATA" -Dkaraf.etc="$KARAF_ETC" -Djava.io.tmpdir="$KARAF_DATA/tmp" -Djava.util.logging.config.file="$KARAF_BASE/etc/java.util.logging.properties" $KARAF_OPTS $OPTS "$@" -classpath "$CLASSPATH" $MAIN
 }
 
 main() {
