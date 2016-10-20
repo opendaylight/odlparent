@@ -124,8 +124,8 @@
     <!-- Default Sonar configuration -->
     <sonar-jacoco-listeners.version>2.4</sonar-jacoco-listeners.version>
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-    <sonar.jacoco.reportPath>target/code-coverage/jacoco.exec</sonar.jacoco.reportPath>
-    <sonar.jacoco.itReportPath>target/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
+    <sonar.jacoco.reportPath>${project.build.directory}/code-coverage/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.jacoco.itReportPath>${project.build.directory}/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
     <!-- Note: This list should match jacoco-maven-plugin's exclusion list below -->
     <sonar.exclusions>**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**</sonar.exclusions>
 
@@ -1332,7 +1332,7 @@
                               Hence people introducing new generated sources have to include
                               PMD config too.
                    -->
-                  <excludeRoot>${basedir}/target/generated-sources</excludeRoot>
+                  <excludeRoot>${project.build.directory}/generated-sources</excludeRoot>
                 </excludeRoots>
                 <linkXRef>false</linkXRef>
               </configuration>
@@ -1786,8 +1786,8 @@
             <configuration>
               <target>
                 <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
-                <move file="${basedir}/target/generated-resources/OSGI-INF/blueprint/autowire.xml"
-                      todir="${basedir}/target/generated-resources/org/opendaylight/blueprint"
+                <move file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
+                      todir="${project.build.directory}/generated-resources/org/opendaylight/blueprint"
                       failonerror="false" quiet="true" />
               </target>
             </configuration>
@@ -1801,8 +1801,8 @@
             <configuration>
               <target>
                 <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
-                <move file="${basedir}/target/generated-resources/OSGI-INF/blueprint/autowire.xml"
-                      todir="${basedir}/target/generated-resources/org/opendaylight/blueprint"
+                <move file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
+                      todir="${project.build.directory}/generated-resources/org/opendaylight/blueprint"
                       failonerror="false" quiet="true" />
               </target>
             </configuration>
