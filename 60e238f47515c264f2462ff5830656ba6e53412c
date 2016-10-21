@@ -194,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_b4bcf56d",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-21T19:46:31Z",
+      "side": 1,
+      "message": "From what you\u0027re saying it will require some effort to find and change downstream projects. Do you know the scope of this work? I really would like to enable findbugs in the CDS-related projects ASAP so I can move onto other stuff. This just adds annotations to the pluginManagement section which I don\u0027t believe hurts anything as downstream projects still have to include it as a dependency where needed. I have done so in one project where I needed to use SuppressFBWarning and have not seen any issues with building due to pulling in both annotations and jsr305 dependencies. Therefore I propose to keep this as is and let subsequent patches fix/replace jsr305 as you propose as we don\u0027t know how long it will take for that effort.",
+      "parentUuid": "7a6b29fe_14684920",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_be5a1628",
         "filename": "odlparent/pom.xml",
         "patchSetId": 8
