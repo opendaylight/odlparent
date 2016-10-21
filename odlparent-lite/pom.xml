@@ -256,6 +256,18 @@
                 <requireMavenVersion>
                   <version>[3.3.9,)</version>
                 </requireMavenVersion>
+                <bannedDependencies>
+                  <excludes>
+                    <!-- https://github.com/facebook/facebook-oss-pom/blob/master/pom.xml#L331-L336 -->
+                    <!-- Clashes with com.google.code.findbugs:annotations and having both jars -->
+                    <!-- as a dependency then clashes with the dependency checker (because it   -->
+                    <!-- is not very good at handling annotations). Use the annotations jar     -->
+                    <!-- instead which has all jsr305 annotations and the additional findbugs   -->
+                    <!-- stuff. -->
+                    <exclude>com.google.code.findbugs:jsr305</exclude>
+                    <exclude>net.jcip:jcip-annotations</exclude>
+                  </excludes>
+                </bannedDependencies>
               </rules>
             </configuration>
             <goals>
