@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_9415799d",
+        "filename": "findbugs/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-21T18:21:10Z",
+      "side": 1,
+      "message": "Doesn\u0027t matter to me either way.",
+      "parentUuid": "7a6b29fe_9b8f6c23",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_5bdb141b",
         "filename": "findbugs/pom.xml",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_7449bdcf",
+        "filename": "findbugs/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-21T18:21:10Z",
+      "side": 1,
+      "message": "Copied from checkstyle. It doesn\u0027t matter to me what version number is chosen - whatever you guys decide.",
+      "parentUuid": "7a6b29fe_5bdb141b",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_3b9a986e",
         "filename": "findbugs/pom.xml",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2016-10-21T12:21:16Z",
       "side": 1,
       "message": "IMHO all these are already defined in odlparent (but not odlparent-lite), and I think it\u0027s Bad Idea to duplicate that here... I\u0027ve noticed that you\u0027ve used odlparent-lite as the \u003cparent\u003e of this pom.xml - was there a strong reason for that?  If I were you, EITHER I would simply change this to have odlparent as \u003cparent\u003e here, and remove this.  OR if your choice of parent is intentional, because this artifact is only configuration, not code, which makes sense to me, and you feel strongly about this, then I would propose (in a separate pre-req. Gerrit perhaps) to move some of this pluginManagement from odlparent to odlparent-lite, keep your parent here as-is, but still remove your pluginManagement here. Makes sense?",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_544481b6",
+        "filename": "findbugs/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-21T18:21:10Z",
+      "side": 1,
+      "message": "Again, was copied from checkstyle project. Not sure if this is needed and doesn\u0027t matter to me either way - I\u0027m just trying to get findbugs enabled. I\u0027m not sure I follow what you\u0027re saying here so please feel free to push a patch set with how you think it should be.",
+      "parentUuid": "7a6b29fe_3b9a986e",
       "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_34262517",
+        "filename": "findbugs/src/main/resources/findbugs-exclude.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-21T18:21:10Z",
+      "side": 1,
+      "message": "I can remove the exclusion here and suppress where appropriate. There are 2 places where it will need to be suppressed otherwise we will have grossly inefficient code having to copy large byte[] in and out for simple DTOs.",
+      "parentUuid": "7a6b29fe_9bb64cdb",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_fb1f806e",
         "filename": "odlparent/pom.xml",
         "patchSetId": 8
@@ -98,6 +170,24 @@
       "writtenOn": "2016-10-21T12:21:16Z",
       "side": 1,
       "message": "-1 NOK!  see e.g. https://github.com/rholder/guava-retrying/issues/33 and https://github.com/facebook/facebook-oss-pom/blob/master/pom.xml#L331-L336 .. explicitly declaring BOTH com.google.code.findbugs:jsr305 (declared just above) AND com.google.code.findbugs:annotations (intro. here) is bad.  This is because \":annotations is a superset of :jsr305\".  What\u0027s confusing is that the :annotations both transitively depends on (with obviously its own different version than the one we declare, so if we put this 3.0.1 and that 3.0.0 it\u0027s asking for trouble) AS WELL AS includes the same types as are in :jsr305, and net.jcip.annotations.. this is a bit of a mess how they made this... ;-) How about we try to REPLACE :jsr305 with :annotations, in a separate pre-req. Gerrit to this?  I\u0027ll have a go at it in https://git.opendaylight.org/gerrit/#/c/47337/.  It will require adaptions in projects.  In the mean time, I would suggest to completely remove this from here, and start with just com.google.code.findbugs:jsr305 annotations, which we have already.",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_14684920",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-21T18:21:10Z",
+      "side": 1,
+      "message": "I need to use the SuppressFBWarning annotation which is defined in :annotations.",
+      "parentUuid": "7a6b29fe_fb1f806e",
       "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -155,6 +245,24 @@
     },
     {
       "key": {
+        "uuid": "7a6b29fe_f4830dca",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1505,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-21T18:21:10Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "7a6b29fe_9b12ccb2",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_3b4458b6",
         "filename": "odlparent/pom.xml",
         "patchSetId": 8
@@ -166,6 +274,24 @@
       "writtenOn": "2016-10-21T12:21:16Z",
       "side": 1,
       "message": "we should have this as a configurable property? Something like \u003cfailOnError\u003e${findbugs.enforced}, which you set to \u003cproperties\u003e\u003cfindbugs.enforced\u003efalse by default earlier above, but let project override?  We would then document this on https://wiki.opendaylight.org/view/BestPractices/Coding_Guidelines#FindBugs, just started a new (for now almost empty) section there - similar to the guidance I\u0027ve written up for Checkstyle, which folks seem to find useful.",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a6b29fe_d486d1da",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1523,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-21T18:21:10Z",
+      "side": 1,
+      "message": "same as checkstyle - projects override to true if they want.",
+      "parentUuid": "7a6b29fe_3b4458b6",
       "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
