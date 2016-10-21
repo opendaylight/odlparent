@@ -1807,6 +1807,104 @@
     </plugins>
   </build>
 
+  <profiles>
+    <profile>
+      <id>ecj</id>
+      <activation>
+        <property>
+          <name>m2e.version</name>
+        </property>
+      </activation>
+<!-- TODO Implement that this is activate IFF a project has a <property><ecj>true AND m2e.version (OR -Pecj)
+      Apparently multiple properties, which I can't even figure out how to declare yet, are OR'd?
+      BUT apparently there is an AND?  And even if there isn't, there is a not (via !ecj), so..
+        see http://jira.codehaus.org/browse/MNG-3328
+        and http://jira.codehaus.org/browse/MNG-4565
+        from http://stackoverflow.com/questions/4629140/maven-profile-activation-with-multiple-conditions
+      <activation>
+        <property>
+          <name>ecj</name>
+        </property>
+      </activation>
+ -->
+      <properties>
+        <ecj.null-analysis-ecj-settings.version>1.8.0-SNAPSHOT</ecj.null-analysis-ecj-settings.version>
+        <ecj.ch.vorburger.null.eea.version>1.0.0-SNAPSHOT</ecj.ch.vorburger.null.eea.version>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>unpack-jdt-ecj-settings</id>
+                <phase>initialize</phase>
+                <goals>
+                  <goal>unpack</goal>
+                </goals>
+                <configuration>
+                  <artifactItems>
+                    <artifactItem>
+                      <!-- NB: This dependency is, intentionally, duplicated below
+                           (this one is for CLI mvn; the other one is for M2E IDE) -->
+                      <groupId>org.opendaylight.odlparent</groupId>
+                      <artifactId>null-analysis-ecj-settings</artifactId>
+                      <version>${ecj.null-analysis-ecj-settings.version}</version>
+                      <overWrite>false</overWrite>
+                      <outputDirectory>${project.build.directory}</outputDirectory>
+                      <excludes>META-INF/**</excludes>
+                    </artifactItem>
+                  </artifactItems>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <showWarnings>true</showWarnings>
+              <compilerId>jdt</compilerId>
+              <compilerArguments>
+                  <annotationpath>CLASSPATH</annotationpath>
+                  <properties>${project.build.directory}/org.eclipse.jdt.core.prefs</properties>
+              </compilerArguments>
+            </configuration>
+            <dependencies>
+              <dependency>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-compiler-jdt</artifactId>
+                <version>0.26.0</version>
+              </dependency>
+              <dependency>
+                <!-- NB: This dependency is, intentionally, duplicated above
+                     (other one is for CLI mvn; this one is read by eclipse-external-annotations-m2e-plugin
+                     in-IDE to configure the Project Properties via JDT) -->
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>null-analysis-ecj-settings</artifactId>
+                <version>${ecj.null-analysis-ecj-settings.version}</version>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+      <dependencies>
+        <dependency>
+          <groupId>ch.vorburger.null.eea</groupId>
+          <artifactId>jdk-eea</artifactId>
+          <version>${ecj.ch.vorburger.null.eea.version}</version>
+          <scope>provided</scope>
+        </dependency>
+        <dependency>
+          <groupId>ch.vorburger.null.eea</groupId>
+          <artifactId>slf4j-api-eea</artifactId>
+          <version>${ecj.ch.vorburger.null.eea.version}</version>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+
   <reporting>
     <plugins>
       <plugin>
