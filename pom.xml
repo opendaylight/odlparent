@@ -30,6 +30,7 @@
         <!-- odlparent tools -->
         <module>checkstyle</module>
         <module>findbugs</module>
+        <module>null-analysis-ecj-settings</module>
         <module>license</module>
 
         <module>bundles-test-lib</module>
