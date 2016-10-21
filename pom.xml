@@ -29,6 +29,7 @@
     <modules>
         <!-- odlparent tools -->
         <module>checkstyle</module>
+        <module>null-analysis-ecj-settings</module>
         <module>license</module>
         <module>features-test</module>
 
