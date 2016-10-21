@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>1.6.4-SNAPSHOT</version>
+    <version>1.6.4-Beryllium-SR4</version>
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
@@ -88,7 +88,7 @@
     <projectinfo>2.6</projectinfo>
     <propertymavenplugin.version>1.0-alpha-2</propertymavenplugin.version>
     <releaseplugin.version>${maven.release.version}</releaseplugin.version>
-    <odl.checkstyle.version>0.1.4-SNAPSHOT</odl.checkstyle.version>
+    <odl.checkstyle.version>0.1.4-Beryllium-SR4</odl.checkstyle.version>
 
     <!-- Supporting Libraries -->
     <!-- Used by controller, netconf -->
@@ -168,7 +168,7 @@
       <dependency>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-artifacts</artifactId>
-        <version>1.6.4-SNAPSHOT</version>
+        <version>1.6.4-Beryllium-SR4</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -979,7 +979,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>odl-license</artifactId>
-              <version>0.0.5-SNAPSHOT</version>
+              <version>0.0.5-Beryllium-SR4</version>
             </dependency>
           </dependencies>
           <configuration>
@@ -1093,7 +1093,7 @@
                   <artifactItem>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>odl-license</artifactId>
-                    <version>0.0.5-SNAPSHOT</version>
+                    <version>0.0.5-Beryllium-SR4</version>
                   </artifactItem>
                 </artifactItems>
                 <outputDirectory>${project.build.outputDirectory}</outputDirectory>
