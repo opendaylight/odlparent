@@ -479,6 +479,25 @@
         <version>3.0.0</version>
       </dependency>
       <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>annotations</artifactId>
+        <version>3.0.0</version>
+        <exclusions>
+          <!-- We'd like (have) to eventually exclude :jsr305 here as well, because
+               the types of this artifact are already shaded inside the :annotations artifact.
+               This state is a temporary solution to allow all projects to gradually switch over
+               switch their <dependency><groupId>com.google.code.findbugs from
+               <artifactId>jsr305 to <artifactId>annotations in all pom.xml.
+               The target solution is https://git.opendaylight.org/gerrit/#/c/47337/
+            -->
+          <exclusion>
+            <groupId>net.jcip</groupId>
+            <!-- The types of this artifact are already shaded inside the :annotations artifact -->
+            <artifactId>jcip-annotations</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
         <version>2.7</version>
@@ -1220,6 +1239,12 @@
     </dependency>
 
     <!-- Enable JSR-305 annotations everywhere -->
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>annotations</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <!-- See note above; having both :jsr305 and :annotations here is an intermediate step -->
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>jsr305</artifactId>
