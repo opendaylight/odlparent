@@ -1445,6 +1445,7 @@
           <version>${maven.surefire.version}</version>
           <configuration>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
+            <trimStackTrace>false</trimStackTrace>
           </configuration>
         </plugin>
 
