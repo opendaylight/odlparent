@@ -212,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "5a682502_98f5f9cd",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-10-23T15:21:23Z",
+      "side": 1,
+      "message": "That\u0027s actually for me.  FYI I went back and forth a bit about this, and the comment above didn\u0027t reflect the conclusion.. I\u0027ve, meanwhile, after posting above, realized that we\u0027ll need to go about this in two steps; thus my proposed https://git.opendaylight.org/gerrit/#/c/47357/ and then https://git.opendaylight.org/gerrit/#/c/47337/ - I think we\u0027re actually on the same page here now.  Sorry for any confusion caused on this particular point.",
+      "parentUuid": "7a6b29fe_b4bcf56d",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_be5a1628",
         "filename": "odlparent/pom.xml",
         "patchSetId": 8
