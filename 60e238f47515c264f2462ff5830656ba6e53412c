@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "5a682502_2a63a3b2",
+        "filename": "findbugs/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-24T19:31:48Z",
+      "side": 1,
+      "message": "Removed the local version so it picks up 1.8.0-SNAPSHOT - I assume this is what you want.",
+      "parentUuid": "5a682502_84b470f3",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_3b9a986e",
         "filename": "findbugs/pom.xml",
         "patchSetId": 8
@@ -231,6 +249,24 @@
     },
     {
       "key": {
+        "uuid": "5a682502_8a58f7fb",
+        "filename": "findbugs/src/main/resources/findbugs-exclude.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-24T19:31:48Z",
+      "side": 1,
+      "message": "I removed these 2 exclusions.",
+      "parentUuid": "5a682502_44a1b8a8",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_fb1f806e",
         "filename": "odlparent/pom.xml",
         "patchSetId": 8
@@ -332,6 +368,24 @@
       "side": 1,
       "message": "I\u0027ve already merged Michael\u0027s patch adding annotations so this is no longer needed.",
       "parentUuid": "5a682502_3b2c9f4a",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_6a5d9be9",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-24T19:31:48Z",
+      "side": 1,
+      "message": "cool - I removed it.",
+      "parentUuid": "5a682502_a491ac54",
       "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
