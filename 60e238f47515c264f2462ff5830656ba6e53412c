@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a682502_84dd9045",
+        "filename": "findbugs/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-24T15:00:35Z",
+      "side": 1,
+      "message": "I\u0027m not sure there\u0027s enough to warrant adding subdirectories yet... We can re-visit things later!",
+      "parentUuid": "7a6b29fe_9b8f6c23",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_5bdb141b",
         "filename": "findbugs/pom.xml",
         "patchSetId": 8
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "5a682502_84b470f3",
+        "filename": "findbugs/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-24T15:00:35Z",
+      "side": 1,
+      "message": "I\u0027d rather have a single version for all odlparent artifacts, 1.8.0-SNAPSHOT currently. (So we should check the impact and bump the other versions...) But it\u0027s not urgent, we can change it later.",
+      "parentUuid": "7a6b29fe_7449bdcf",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_3b9a986e",
         "filename": "findbugs/pom.xml",
         "patchSetId": 8
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "Again, was copied from checkstyle project. Not sure if this is needed and doesn\u0027t matter to me either way - I\u0027m just trying to get findbugs enabled. I\u0027m not sure I follow what you\u0027re saying here so please feel free to push a patch set with how you think it should be.",
       "parentUuid": "7a6b29fe_3b9a986e",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_04c86073",
+        "filename": "findbugs/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-24T15:00:35Z",
+      "side": 1,
+      "message": "Let\u0027s fix this up in a follow-up patch instead.",
+      "parentUuid": "7a6b29fe_544481b6",
       "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -153,6 +207,24 @@
       "side": 1,
       "message": "I can remove the exclusion here and suppress where appropriate. There are 2 places where it will need to be suppressed otherwise we will have grossly inefficient code having to copy large byte[] in and out for simple DTOs.",
       "parentUuid": "7a6b29fe_9bb64cdb",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_44a1b8a8",
+        "filename": "findbugs/src/main/resources/findbugs-exclude.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-24T15:00:35Z",
+      "side": 1,
+      "message": "Yes, I\u0027d prefer removing the exclusions.",
+      "parentUuid": "7a6b29fe_34262517",
       "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
@@ -242,6 +314,24 @@
       "side": 1,
       "message": "I\u0027m not clear on your conclusion re: my comment. You\u0027re proposal is fine for longer term but I believe this patch can move forward as is as I outlined in my comment so I don\u0027t have to wait possibly weeks for findbugs support. Do you agree? Stephen?",
       "parentUuid": "5a682502_98f5f9cd",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a682502_a491ac54",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-24T15:00:35Z",
+      "side": 1,
+      "message": "I\u0027ve already merged Michael\u0027s patch adding annotations so this is no longer needed.",
+      "parentUuid": "5a682502_3b2c9f4a",
       "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
