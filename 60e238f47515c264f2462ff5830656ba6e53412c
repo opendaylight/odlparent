@@ -230,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "5a682502_3b2c9f4a",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2016-10-24T00:34:56Z",
+      "side": 1,
+      "message": "I\u0027m not clear on your conclusion re: my comment. You\u0027re proposal is fine for longer term but I believe this patch can move forward as is as I outlined in my comment so I don\u0027t have to wait possibly weeks for findbugs support. Do you agree? Stephen?",
+      "parentUuid": "5a682502_98f5f9cd",
+      "revId": "60e238f47515c264f2462ff5830656ba6e53412c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a6b29fe_be5a1628",
         "filename": "odlparent/pom.xml",
         "patchSetId": 8
