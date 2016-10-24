@@ -51,7 +51,7 @@
     <!-- Used in controller -->
     <maven.antrun.plugin.version>1.8</maven.antrun.plugin.version>
     <!-- Used in controller, didm, neutron, openflowplugin, persistence; see also affinity -->
-    <maven.bundle.version>3.0.1</maven.bundle.version>
+    <maven.bundle.version>3.2.0</maven.bundle.version>
     <!-- Used in sxp -->
     <maven.clean.plugin.version>2.6.1</maven.clean.plugin.version>
     <!-- Used in controller, didm, l2switch, lacp, persistence; see also toolkit, tsdr, ttp -->
