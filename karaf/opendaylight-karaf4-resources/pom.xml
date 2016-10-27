@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2014 Cisco Systems, Inc. and others.  All rights reserved.
+
+ This program and the accompanying materials are made available under the
+ terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ and is available at http://www.eclipse.org/legal/epl-v10.html
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>odlparent</artifactId>
+    <version>1.8.0-SNAPSHOT</version>
+    <relativePath>../../odlparent</relativePath>
+  </parent>
+  <artifactId>opendaylight-karaf4-resources</artifactId>
+  <description>Resources for opendaylight-karaf</description>
+  <packaging>jar</packaging>
+  <properties>
+    <!-- These are used in the instance script and need to be kept in sync with Karaf's definitions -->
+    <aries.blueprint.api.version>1.0.1</aries.blueprint.api.version>
+    <aries.blueprint.cm.version>1.0.8</aries.blueprint.cm.version>
+    <aries.blueprint.core.version>1.6.1</aries.blueprint.core.version>
+    <felix.framework.version>4.2.1</felix.framework.version>
+    <jline.version>2.13</jline.version>
+    <mina.version>2.0.7</mina.version>
+    <pax.logging.version>1.8.4</pax.logging.version>
+    <slf4j.version>1.7.12</slf4j.version>
+    <sshd.version>0.14.0</sshd.version>
+  </properties>
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy</id>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <!-- here the phase you need -->
+            <phase>generate-resources</phase>
+            <configuration>
+              <artifactItems>
+                  <!-- Needs to be copied to lib/ext in order to start bouncy provider for mina sshd -->
+                <artifactItem>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcprov-jdk15on</artifactId>
+                    <version>${bouncycastle.version}</version>
+                    <outputDirectory>target/classes/lib/ext</outputDirectory>
+                    <destFileName>bcprov-jdk15on-${bouncycastle.version}.jar</destFileName>
+                </artifactItem>
+                <artifactItem>
+                    <groupId>org.bouncycastle</groupId>
+                    <artifactId>bcpkix-jdk15on</artifactId>
+                    <version>${bouncycastle.version}</version>
+                    <outputDirectory>target/classes/lib/ext</outputDirectory>
+                    <destFileName>bcpkix-jdk15on-${bouncycastle.version}.jar</destFileName>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-artifacts</id>
+            <goals>
+              <goal>attach-artifact</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <artifacts>
+                <artifact>
+                  <file>src/main/assembly/etc/org.ops4j.pax.url.mvn.cfg</file>
+                  <type>properties</type>
+                  <classifier>config</classifier>
+                </artifact>
+              </artifacts>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
