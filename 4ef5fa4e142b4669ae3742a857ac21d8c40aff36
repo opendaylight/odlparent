@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_9b44cc75",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-10-27T17:10:26Z",
+      "side": 1,
+      "message": "Should we define ${karaf4.version} in odlparent:odlparent?",
+      "range": {
+        "startLine": 24,
+        "startChar": 25,
+        "endLine": 24,
+        "endChar": 30
+      },
+      "revId": "4ef5fa4e142b4669ae3742a857ac21d8c40aff36",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
