@@ -16,6 +16,10 @@
     <version>1.8.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <odlparent.version>1.8.0-SNAPSHOT</odlparent.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -75,6 +79,22 @@
             <type>xml</type>
             <scope>runtime</scope>
         </dependency>
+        <!-- Don't use ${project.version} here, properties are evaluated in the context
+             of child projects -->
+        <!-- ODL Branding -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>karaf.branding</artifactId>
+            <version>${odlparent.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- ODL configuration -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>opendaylight-karaf4-resources</artifactId>
+            <version>${odlparent.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -97,6 +117,106 @@
                 <configuration>
                     <skip>true</skip>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.opendaylight.odlparent</groupId>
+                                    <artifactId>karaf.branding</artifactId>
+                                    <version>${odlparent.version}</version>
+                                    <outputDirectory>target/assembly/lib</outputDirectory>
+                                    <destFileName>karaf.branding-${odlparent.version}.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unpack-karaf-resources</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/assembly</outputDirectory>
+                            <groupId>org.opendaylight.odlparent</groupId>
+                            <includeArtifactIds>opendaylight-karaf4-resources</includeArtifactIds>
+                            <excludes>META-INF\/**</excludes>
+                            <excludeTransitive>true</excludeTransitive>
+                            <ignorePermissions>false</ignorePermissions>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>org.ops4j.pax.url.mvn.cfg</id>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.opendaylight.odlparent</groupId>
+                                    <artifactId>opendaylight-karaf4-resources</artifactId>
+                                    <type>properties</type>
+                                    <classifier>config</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}/assembly/etc/</outputDirectory>
+                                    <destFileName>org.ops4j.pax.url.mvn.cfg</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                            <overWriteReleases>true</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>patch-karaf-scripts</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <!-- Patches only work with LF line endings from ant -->
+                                <fixcrlf srcdir="${project.build.directory}/assembly/bin"
+                                         includes="*.bat" eol="lf"/>
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-instance.patch"
+                                       originalfile="${project.build.directory}/assembly/bin/instance"
+                                       failonerror="true"/>
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-instance.bat.patch"
+                                       originalfile="${project.build.directory}/assembly/bin/instance.bat"
+                                       failonerror="true" ignorewhitespace="true"/>
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-karaf.patch"
+                                       originalfile="${project.build.directory}/assembly/bin/karaf"
+                                       failonerror="true"/>
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-karaf.bat.patch"
+                                       originalfile="${project.build.directory}/assembly/bin/karaf.bat"
+                                       failonerror="true"/>
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-setenv.patch"
+                                       originalfile="${project.build.directory}/assembly/bin/setenv"
+                                       failonerror="true"/>
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-setenv.bat.patch"
+                                       originalfile="${project.build.directory}/assembly/bin/setenv.bat"
+                                       failonerror="true"/>
+                                <fixcrlf srcdir="${project.build.directory}/assembly/bin"
+                                         includes="*.bat" eol="crlf"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
