@@ -1,0 +1,22 @@
+--- bin/instance	2016-10-27 13:42:15.992274993 +0200
++++ bin/instance	2016-10-27 15:30:39.991304221 +0200
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/bash
+ #
+ #    Licensed to the Apache Software Foundation (ASF) under one or more
+ #    contributor license agreements.  See the NOTICE file distributed with
+@@ -291,6 +291,13 @@
+         fi
+     fi
+ 
++    # Add default security file option
++    if [ "x$ODL_JAVA_SECURITY_PROPERTIES" != "x" ]; then
++        DEFAULT_JAVA_OPTS="-Djava.security.properties=${ODL_JAVA_SECURITY_PROPERTIES} $DEFAULT_JAVA_OPTS"
++    else
++        DEFAULT_JAVA_OPTS="-Djava.security.properties=${KARAF_ETC}/odl.java.security $DEFAULT_JAVA_OPTS"
++    fi
++
+     # Setup classpath
+     CLASSPATH="$KARAF_HOME/system/org/apache/karaf/instance/org.apache.karaf.instance.core/4.0.7/org.apache.karaf.instance.core-4.0.7.jar"
+     CLASSPATH="$CLASSPATH:$KARAF_HOME/system/org/apache/karaf/shell/org.apache.karaf.shell.core/4.0.7/org.apache.karaf.shell.core-4.0.7.jar"
