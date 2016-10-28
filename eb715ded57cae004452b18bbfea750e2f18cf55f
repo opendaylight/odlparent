@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_2ff1f2cd",
+        "filename": "karaf/opendaylight-karaf4-resources/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-10-28T13:55:00Z",
+      "side": 1,
+      "message": "I see odlparent:odlparent refers to a different version [0].\nShould we define these properties in odlparent:odlparent to have single source of truth?\n\n[0] https://git.opendaylight.org/gerrit/gitweb?p\u003dodlparent.git;a\u003dblob;f\u003dodlparent/pom.xml;h\u003d6dd4d224f735d01f10ad6b39a078588759d7dfee;hb\u003drefs/heads/master#l1163",
+      "range": {
+        "startLine": 25,
+        "startChar": 34,
+        "endLine": 25,
+        "endChar": 39
+      },
+      "revId": "eb715ded57cae004452b18bbfea750e2f18cf55f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_2fc8d273",
+        "filename": "karaf/opendaylight-karaf4-resources/src/main/resources/patches/karaf-karaf.patch",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-10-28T13:55:00Z",
+      "side": 1,
+      "message": "Use 4 spaces instead of tab.",
+      "range": {
+        "startLine": 54,
+        "startChar": 1,
+        "endLine": 54,
+        "endChar": 2
+      },
+      "revId": "eb715ded57cae004452b18bbfea750e2f18cf55f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_4fa6eec2",
+        "filename": "karaf/opendaylight-karaf4-resources/src/main/resources/patches/karaf-setenv.patch",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-10-28T13:55:00Z",
+      "side": 1,
+      "message": "Not sure about this, as Java 8 ignores perm mem.\nI guess we can keep this for now, to avoid more edits on bin/karaf.",
+      "range": {
+        "startLine": 9,
+        "startChar": 12,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "eb715ded57cae004452b18bbfea750e2f18cf55f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_afab4288",
+        "filename": "karaf/opendaylight-karaf4-resources/src/main/resources/version.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-10-28T13:55:00Z",
+      "side": 1,
+      "message": "Lets delete this file. It is outdated, and only relevant for the controller project distribution.",
+      "revId": "eb715ded57cae004452b18bbfea750e2f18cf55f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
