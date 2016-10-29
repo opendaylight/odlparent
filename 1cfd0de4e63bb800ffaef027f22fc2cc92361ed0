@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_85a46558",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1244,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-10-29T17:42:35Z",
+      "side": 1,
+      "message": "The current carbon controller merge downloads the artifact, but the autorelease job does not (any idea why?), resulting in https://bugs.opendaylight.org/show_bug.cgi?id\u003d7053",
+      "revId": "1cfd0de4e63bb800ffaef027f22fc2cc92361ed0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
