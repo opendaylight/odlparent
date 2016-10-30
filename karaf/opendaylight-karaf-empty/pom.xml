@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>karaf-parent</artifactId>
-    <version>1.7.1-SNAPSHOT</version>
+    <version>1.7.1-Boron-SR1</version>
     <relativePath>../karaf-parent</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
