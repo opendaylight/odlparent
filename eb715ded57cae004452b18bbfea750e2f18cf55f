@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_6c63f1b1",
+        "filename": "karaf/opendaylight-karaf4-resources/src/main/resources/patches/karaf-karaf.patch",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-31T17:02:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_2fc8d273",
+      "range": {
+        "startLine": 54,
+        "startChar": 1,
+        "endLine": 54,
+        "endChar": 2
+      },
+      "revId": "eb715ded57cae004452b18bbfea750e2f18cf55f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_4fa6eec2",
         "filename": "karaf/opendaylight-karaf4-resources/src/main/resources/patches/karaf-setenv.patch",
         "patchSetId": 1
@@ -130,6 +154,24 @@
       "writtenOn": "2016-10-28T13:55:00Z",
       "side": 1,
       "message": "Lets delete this file. It is outdated, and only relevant for the controller project distribution.",
+      "revId": "eb715ded57cae004452b18bbfea750e2f18cf55f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_cc5845fd",
+        "filename": "karaf/opendaylight-karaf4-resources/src/main/resources/version.properties",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-31T17:02:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a65312a_afab4288",
       "revId": "eb715ded57cae004452b18bbfea750e2f18cf55f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
