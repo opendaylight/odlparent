@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3a65312a_699ac315",
+        "filename": "karaf/opendaylight-karaf4-resources/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-31T15:19:25Z",
+      "side": 1,
+      "message": "All these properties are actually obsolete now that we patch instance instead of copying it.",
+      "parentUuid": "3a65312a_2ff1f2cd",
+      "range": {
+        "startLine": 25,
+        "startChar": 34,
+        "endLine": 25,
+        "endChar": 39
+      },
+      "revId": "eb715ded57cae004452b18bbfea750e2f18cf55f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a65312a_2fc8d273",
         "filename": "karaf/opendaylight-karaf4-resources/src/main/resources/patches/karaf-karaf.patch",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2016-10-28T13:55:00Z",
       "side": 1,
       "message": "Not sure about this, as Java 8 ignores perm mem.\nI guess we can keep this for now, to avoid more edits on bin/karaf.",
+      "range": {
+        "startLine": 9,
+        "startChar": 12,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "eb715ded57cae004452b18bbfea750e2f18cf55f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_c99f9702",
+        "filename": "karaf/opendaylight-karaf4-resources/src/main/resources/patches/karaf-setenv.patch",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-10-31T15:19:25Z",
+      "side": 1,
+      "message": "Yes, I\u0027m trying to minimize the number of changes compared to what we currently have, to reduce the number of moving parts. Once we\u0027ve got something working on Karaf 4, we can clean things up (before merging hopefully).",
+      "parentUuid": "3a65312a_4fa6eec2",
       "range": {
         "startLine": 9,
         "startChar": 12,
