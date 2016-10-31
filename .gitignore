@@ -73,5 +73,5 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 
 # maven
-target
-
+target/
+target-ide/
