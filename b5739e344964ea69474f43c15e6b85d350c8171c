@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_8da644c0",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 3675
+      },
+      "writtenOn": "2016-11-02T17:11:37Z",
+      "side": 1,
+      "message": "I\u0027m wondering if this shouldn\u0027t be update to 3.0.1 as well. We\u0027re seeing some wiring issue with javax.annotation.\n\nSee https://jenkins.opendaylight.org/releng/job/yangtools-merge-carbon/org.opendaylight.yangtools$features-yangtools/91/testReport/junit/installFeature(org.opendaylight.odlparent.featuretest.SingleFeatureTest)[repoUrl_%20file__w_workspace_yangtools-merge-carbon_common_features_target_classes_features.xml,%20Feature_%20odl-yangtools-yang-data%201.1/0-SNAPSHOT]/installFeature/\n\nhttps://jenkins.opendaylight.org/releng/job/netconf-merge-carbon/org.opendaylight.netconf$features-netconf/82/testReport/junit/installFeature(org.opendaylight.odlparent.featuretest.SingleFeatureTest)[repoUrl_%20file__w_workspace_netconf-merge-carbon_features_netconf_target_classes_features.xml,%20Feature_%20odl-netconf-all%201.2/0-SNAPSHOT]/installFeature/\n\nhttps://jenkins.opendaylight.org/releng/job/controller-verify-carbon-mvn33-openjdk8/513/console\n\nAll those issues are occurring since this was merged.",
+      "range": {
+        "startLine": 479,
+        "startChar": 17,
+        "endLine": 479,
+        "endChar": 22
+      },
+      "revId": "b5739e344964ea69474f43c15e6b85d350c8171c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
