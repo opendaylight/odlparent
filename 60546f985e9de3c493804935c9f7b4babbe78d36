@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_c6b019f7",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2016-11-03T13:27:04Z",
+      "side": 1,
+      "message": "Do we require copyright on pom.xml files?  Some people in the project seem to like using them...",
+      "revId": "60546f985e9de3c493804935c9f7b4babbe78d36",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
