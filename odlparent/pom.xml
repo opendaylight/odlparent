@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>1.7.1-SNAPSHOT</version>
+    <version>1.7.2-SNAPSHOT</version>
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
@@ -76,7 +76,7 @@
          toolkit -->
     <checkstyle.version>2.17</checkstyle.version>
     <!-- Used in controller, packetcable -->
-    <odl.checkstyle.version>0.2.1-SNAPSHOT</odl.checkstyle.version>
+    <odl.checkstyle.version>0.2.2-SNAPSHOT</odl.checkstyle.version>
     <!-- Used in snmp4sdn; see also toolkit -->
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
     <!-- Used in controller, l2switch, netide, openflowjava, openflowplugin, snbi, tsdr, ttp; see also toolkit -->
@@ -138,7 +138,7 @@
       <dependency>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-artifacts</artifactId>
-        <version>1.7.1-SNAPSHOT</version>
+        <version>1.7.2-SNAPSHOT</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -1201,7 +1201,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>odl-license</artifactId>
-              <version>0.1.1-SNAPSHOT</version>
+              <version>0.1.2-SNAPSHOT</version>
             </dependency>
             <dependency>
               <groupId>com.github.sevntu.checkstyle</groupId>
@@ -1326,7 +1326,7 @@
                   <artifactItem>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>odl-license</artifactId>
-                    <version>0.1.1-SNAPSHOT</version>
+                    <version>0.1.2-SNAPSHOT</version>
                   </artifactItem>
                 </artifactItems>
                 <outputDirectory>${project.build.outputDirectory}</outputDirectory>
