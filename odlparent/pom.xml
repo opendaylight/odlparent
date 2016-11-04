@@ -1306,6 +1306,7 @@
             <includeResources>true</includeResources>
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
             <includeTestResources>true</includeTestResources>
+            <includes>**\/*.java, **\/*.xtend</includes>
             <excludes>
               org/opendaylight/yang/gen/**,
               **/protobuff/messages/**,
