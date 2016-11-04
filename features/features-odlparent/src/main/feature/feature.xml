@@ -21,7 +21,7 @@
          unversioned features, in terms of the feasability of handling upgrades
          later.) -->
     <!-- See also the links defined for our Maven site in the root POM (maven-javadoc-plugin) -->
-    <feature name="odl-netty" description="OpenDaylight :: Netty" version="4.0.43.Final">
+    <feature name="odl-netty" description="OpenDaylight :: Netty" version="4.1.7.Final">
         <feature version="${project.version}">odl-netty-4</feature>
     </feature>
     <feature name="odl-guava" description="OpenDaylight :: Guava" version="18.0">
