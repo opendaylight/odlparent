@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_c1a0fcf6",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-11-04T16:52:19Z",
+      "side": 1,
+      "message": "This may be useful to several parent pom files. Should we move it to odlparent:odlparent?",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 27
+      },
+      "revId": "78f0bac29b31ee7e4d1114949263d9c4c799f81d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
