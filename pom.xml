@@ -36,6 +36,7 @@
         <!-- Karaf integration -->
         <module>karaf</module>
         <module>karaf-plugin</module>
+        <module>karaf4-plugin</module>
 
         <!-- Parent POMs -->
         <module>bundle-parent</module>
