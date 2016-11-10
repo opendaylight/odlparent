@@ -1348,23 +1348,10 @@
               <version>1.21.0</version>
             </dependency>
           </dependencies>
-          <configuration>
-            <configLocation>odl_checks.xml</configLocation>
-            <!-- <sourceDirectory> is needed so that checkstyle ignores the
-                 generated sources directory -->
-            <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
-            <includeResources>true</includeResources>
-            <includeTestSourceDirectory>true</includeTestSourceDirectory>
-            <includeTestResources>true</includeTestResources>
-            <includes>**\/*.java, **\/*.xtend</includes>
-            <excludes>
-              org/opendaylight/yang/gen/**,
-              **/protobuff/messages/**,
-              **/thrift/gen/*.java
-            </excludes>
-            <failsOnError>false</failsOnError>
-            <consoleOutput>true</consoleOutput>
-          </configuration>
+          <!-- No <configuration> here, we noticed issued with inheritance
+               from <plugin><configuration> into <plugin><executions><execution><configuration>
+               and found it's better to have nothing here, and simple duplicate a section below.
+            -->
           <executions>
             <execution>
               <id>check-license</id>
@@ -1373,26 +1360,69 @@
               </goals>
               <phase>process-sources</phase>
               <configuration>
-                <configLocation>check-license.xml</configLocation>
-                <headerLocation>EPL-LICENSE.regexp.txt</headerLocation>
-                <includeResources>false</includeResources>
+                <!-- Common between check-license and check-style; keep this in sync -->
+                <sourceDirectories>
+                  <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                </sourceDirectories>
+                <testSourceDirectories>
+                  <testSourceDirectory>${project.build.testSourceDirectory}</testSourceDirectory>
+                </testSourceDirectories>
+                <!-- sourceDirectories & testSourceDirectories is needed so that Checkstyle ignores the
+                     generated sources directory, because the default is ${project.compileSourceRoots}
+                     and ${project.testCompileSourceRoots}, which included additional source
+                     folders for generated code added by plugins.
+                     sourceDirectories instead of deprecated sourceDirectory, because e.g. Eclipse IDE
+                     integration from https://github.com/m2e-code-quality/m2e-code-quality/ doesn't
+                     pick up on sourceDirectory, but only sourceDirectories. -->
                 <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                <includeTestResources>false</includeTestResources>
-                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                <includes>**\/*.java, **\/*.xtend</includes>
                 <excludes>
+                  target/**,target-ide/**,
                   org/opendaylight/yang/gen/**,
                   **/protobuff/messages/**,
                   **/thrift/gen/*.java
                 </excludes>
                 <failsOnError>false</failsOnError>
                 <consoleOutput>true</consoleOutput>
+
+                <!-- Specific to check-license -->
+                <configLocation>check-license.xml</configLocation>
+                <headerLocation>EPL-LICENSE.regexp.txt</headerLocation>
+                <includeResources>false</includeResources>
+                <includeTestResources>false</includeTestResources>
               </configuration>
             </execution>
             <execution>
+              <id>check-style</id>
               <goals>
                 <goal>check</goal>
               </goals>
               <phase>process-sources</phase>
+              <configuration>
+                <!-- Common between check-license and check-style; keep this in sync -->
+                <sourceDirectories>
+                  <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                </sourceDirectories>
+                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                <testSourceDirectories>
+                  <testSourceDirectory>${project.build.testSourceDirectory}</testSourceDirectory>
+                </testSourceDirectories>
+                <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                <includes>**\/*.java, **\/*.xtend</includes>
+                <excludes>
+                  target/**,target-ide/**,
+                  org/opendaylight/yang/gen/**,
+                  **/protobuff/messages/**,
+                  **/thrift/gen/*.java
+                </excludes>
+                <failsOnError>false</failsOnError>
+                <consoleOutput>true</consoleOutput>
+
+                <!-- Specific to check-style -->
+                <configLocation>odl_checks.xml</configLocation>
+                <includeResources>true</includeResources>
+                <includeTestResources>true</includeTestResources>
+              </configuration>
             </execution>
           </executions>
         </plugin>
@@ -1408,6 +1438,22 @@
                 <goal>cpd-check</goal>
               </goals>
               <configuration>
+                <sourceDirectories>
+                  <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                </sourceDirectories>
+                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                <testSourceDirectories>
+                  <testSourceDirectory>${project.build.testSourceDirectory}</testSourceDirectory>
+                </testSourceDirectories>
+                <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                <includes>**\/*.java, **\/*.xtend</includes>
+                <excludes>
+                  target/**,target-ide/**,
+                  org/opendaylight/yang/gen/**,
+                  **/protobuff/messages/**,
+                  **/thrift/gen/*.java
+                </excludes>
+
                 <failOnViolation>${pmd.cpd.fail}</failOnViolation>
                 <!-- 100 "tokens" here correspond to approx. 5-10 lines of code -->
                 <minimumTokens>101</minimumTokens>
