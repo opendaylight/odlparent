@@ -1357,11 +1357,7 @@
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
             <includeTestResources>true</includeTestResources>
             <includes>**\/*.java, **\/*.xtend</includes>
-            <excludes>
-              org/opendaylight/yang/gen/**,
-              **/protobuff/messages/**,
-              **/thrift/gen/*.java
-            </excludes>
+            <excludes>**\/target\/,**\/target-ide\/,org/opendaylight/yang/gen/**,**/protobuff/messages/**,**/thrift/gen/*.java</excludes>
             <failsOnError>false</failsOnError>
             <consoleOutput>true</consoleOutput>
           </configuration>
@@ -1379,11 +1375,7 @@
                 <includeTestSourceDirectory>true</includeTestSourceDirectory>
                 <includeTestResources>false</includeTestResources>
                 <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
-                <excludes>
-                  org/opendaylight/yang/gen/**,
-                  **/protobuff/messages/**,
-                  **/thrift/gen/*.java
-                </excludes>
+                <excludes>**\/target\/,**\/target-ide\/,org/opendaylight/yang/gen/**,**/protobuff/messages/**,**/thrift/gen/*.java</excludes>
                 <failsOnError>false</failsOnError>
                 <consoleOutput>true</consoleOutput>
               </configuration>
