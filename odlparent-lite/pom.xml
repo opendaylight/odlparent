@@ -312,6 +312,7 @@
             <maven.site.skip>true</maven.site.skip>
             <invoker.skip>true</invoker.skip>
             <enforcer.skip>true</enforcer.skip>
+            <mdsal.skip.verbose>true</mdsal.skip.verbose> <!-- Bug 6236 -->
         </properties>
     </profile>
     <profile>
