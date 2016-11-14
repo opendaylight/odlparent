@@ -50,6 +50,7 @@
         <bundle>mvn:io.aeron/aeron-driver/1.0.4</bundle>
         <bundle>mvn:io.netty/netty/3.10.6.Final</bundle>
         <bundle>mvn:org.reactivestreams/reactive-streams/1.0.0</bundle>
+        <bundle>wrap:mvn:org.lmdbjava/lmdbjava/0.0.4</bundle>
     </feature>
     <feature name='odl-akka-leveldb' description='LevelDB' version='${leveldb.version}'>
         <bundle>wrap:mvn:org.iq80.leveldb/leveldb/${leveldb.version}</bundle>
