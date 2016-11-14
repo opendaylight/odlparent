@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_8b9c41c2",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/resources/bin/karaf",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-11-14T18:03:48Z",
+      "side": 1,
+      "message": "When user provides nonempty JAVA_OPTS, this is ignored entirely (see lines 259-261).\nYou probably want to construct something like JAVA_SECURITY_OPTS and add that somewhere into line 472.",
+      "range": {
+        "startLine": 310,
+        "startChar": 12,
+        "endLine": 310,
+        "endChar": 29
+      },
+      "revId": "e80842768b702f17a6b231e9591b3bc83b86a284",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
