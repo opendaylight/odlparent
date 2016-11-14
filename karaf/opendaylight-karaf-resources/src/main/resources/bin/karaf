@@ -303,7 +303,27 @@ setupDefaults() {
                 DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS -XX:MaxPermSize=$JAVA_MAX_PERM_MEM"
             fi
         fi
-        DEFAULT_JAVA_OPTS="-server $DEFAULT_JAVA_OPTS -Dcom.sun.management.jmxremote"
+        DEFAULT_JAVA_OPTS="-server $DEFAULT_JAVA_OPTS"
+
+        # Disable JMX remote access if JAVA_REMOTE_JMX_DISABLE is set to "true"
+        if [ "x$JAVA_REMOTE_JMX_DISABLE" != "xtrue" ]; then
+            DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS -Dcom.sun.management.jmxremote"
+
+            # Recent JDK versions can override the wildcard bind policy, override it
+            # unless JAVA_REMOTE_JMX_BIND_ALL is set to "true"
+            if [ "x$JAVA_REMOTE_JMX_BIND_ALL" != "xtrue" ]; then
+
+                # Allow the bind host to be overridden via JAVA_REMOTE_JMX_BIND_HOST,
+                # but default to localhost
+                JMX_BIND_HOST="localhost"
+                if [ "x$JAVA_REMOTE_JMX_BIND_HOST" != "x" ]; then
+                    JMX_BIND_HOST="$JAVA_REMOTE_JMX_BIND_HOST"
+                fi
+                DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS -Dcom.sun.management.jmxremote.host=$JMX_BIND_HOST"
+            else
+                warn "Binding remote JMX to all addresses"
+            fi
+        fi
     elif [ "$JVM_VENDOR" = "IBM" ]; then
         if $os400; then
             DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS"
