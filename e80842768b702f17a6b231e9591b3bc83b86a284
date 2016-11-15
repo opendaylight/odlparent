@@ -22,6 +22,30 @@
       "revId": "e80842768b702f17a6b231e9591b3bc83b86a284",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_d6453c71",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/resources/bin/karaf",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-11-15T09:24:35Z",
+      "side": 1,
+      "message": "I think that is fine -- in that case we end up not defining -Dcom.sun.management.jmxremote, or do exactly what the user has asked for.",
+      "parentUuid": "3a65312a_8b9c41c2",
+      "range": {
+        "startLine": 310,
+        "startChar": 12,
+        "endLine": 310,
+        "endChar": 29
+      },
+      "revId": "e80842768b702f17a6b231e9591b3bc83b86a284",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
