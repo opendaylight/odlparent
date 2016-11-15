@@ -46,6 +46,30 @@
       "revId": "e80842768b702f17a6b231e9591b3bc83b86a284",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_d13c26e5",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/resources/bin/karaf",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-11-15T12:14:54Z",
+      "side": 1,
+      "message": "Oh I see.\nSo line 308 should read like this?\n# Enable JMX remote access unless JAVA_REMOTE_JMX_DISABLE is set to \"true\"",
+      "parentUuid": "3a65312a_d6453c71",
+      "range": {
+        "startLine": 310,
+        "startChar": 12,
+        "endLine": 310,
+        "endChar": 29
+      },
+      "revId": "e80842768b702f17a6b231e9591b3bc83b86a284",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
