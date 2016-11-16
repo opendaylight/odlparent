@@ -1444,6 +1444,28 @@
         <plugin>
           <artifactId>maven-failsafe-plugin</artifactId>
           <version>${failsafe.version}</version>
+          <executions>
+            <execution>
+              <id>integration-test</id>
+              <goals>
+                <goal>integration-test</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>verify</id>
+              <goals>
+                <goal>verify</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <properties>
+              <property>
+                <name>listener</name>
+                <value>org.sonar.java.jacoco.JUnitListener</value>
+              </property>
+            </properties>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-invoker-plugin</artifactId>
