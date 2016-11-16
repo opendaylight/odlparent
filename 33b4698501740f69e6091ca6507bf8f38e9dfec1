@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_924e2995",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-11-16T17:01:26Z",
+      "side": 1,
+      "message": "How do we figure out what versions are \"in sync\"? From the mycila-guice parent POM I presume, but it should be documented...\n\n(Plus, while it\u0027s nice to keep the versions in sync, as long as projects using these for their tests depend on one *or* the other but not both, we should be OK even if the versions diverge.)",
+      "revId": "33b4698501740f69e6091ca6507bf8f38e9dfec1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
