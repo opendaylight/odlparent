@@ -1,0 +1,7 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+2: Robert Varga <nite@hq.sk>
+Submitted-by: Stephen Kitt <skitt@redhat.com>
+Submitted-at: Wed, 16 Nov 2016 16:01:40 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/47699
+Project: odlparent
+Branch: refs/heads/stable/boron
