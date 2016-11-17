@@ -1564,7 +1564,7 @@
           <extensions>true</extensions>
           <configuration>
             <instructions>
-              <Include-Resource>{maven-resources},target/classes/LICENSE</Include-Resource>
+              <Include-Resource>{maven-resources},target/classes/LICENSE,META-INF/git.properties=target/classes/META-INF/git.properties</Include-Resource>
             </instructions>
           </configuration>
         </plugin>
