@@ -52,6 +52,24 @@
       "revId": "33b4698501740f69e6091ca6507bf8f38e9dfec1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_a861383b",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-11-17T12:53:14Z",
+      "side": 1,
+      "message": "Oh OK now I see what you mean.. yes, agreed - in theory. But in practice ultimately even if a project like say testutils from https://git.opendaylight.org/gerrit/#/c/48077/ only needs a dependency to Guice, it will ultimately be used by another project which may, likely, have a dependency to mycila.. so in practice, it would still be a mess - thus best to keep them in sync.",
+      "parentUuid": "3a65312a_6821e0fa",
+      "revId": "33b4698501740f69e6091ca6507bf8f38e9dfec1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
