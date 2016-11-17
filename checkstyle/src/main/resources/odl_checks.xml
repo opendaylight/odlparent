@@ -16,8 +16,8 @@
         <property name="message" value="Line has trailing spaces."/>
     </module>
     <module name="RegexpMultiline">
-        <property name="format" value="(\r\n|\r)"/>
-        <property name="message" value="Line has Windows line delimiter."/>
+        <property name="format" value="(?s:\r\n.*)"/>
+        <property name="message" value="File has Windows (CR+LF) instead of UNIX (LF) end of line (EOL) delimiters."/>
     </module>
     <module name="SuppressionFilter">
         <property name="file" value="${checkstyle.suppressions.file}" />
