@@ -70,6 +70,24 @@
       "revId": "33b4698501740f69e6091ca6507bf8f38e9dfec1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_6807201d",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-11-17T14:18:52Z",
+      "side": 1,
+      "message": "Ah right, testutils ends up with a compile-scope dependency... Agreed, best keep the two versions in sync.",
+      "parentUuid": "3a65312a_a861383b",
+      "revId": "33b4698501740f69e6091ca6507bf8f38e9dfec1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
