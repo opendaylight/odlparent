@@ -34,6 +34,24 @@
       "revId": "33b4698501740f69e6091ca6507bf8f38e9dfec1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_6821e0fa",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-11-17T12:42:23Z",
+      "side": 1,
+      "message": "Transitive dependencies aren\u0027t affected by dependency management: if a project depends on mycila, it will get whatever version of guice mycila depends on; if a project depends on guice, it will get the version of guice defined here. Since projects shouldn\u0027t depend on *both*, we shouldn\u0027t have compatibility issues related to these two specific dependency management entries — that doesn\u0027t exclude other compatibility issues such as the one you encountered.",
+      "parentUuid": "3a65312a_08f4ac85",
+      "revId": "33b4698501740f69e6091ca6507bf8f38e9dfec1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
