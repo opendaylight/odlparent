@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_3103d00e",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2016-11-17T17:41:45Z",
+      "side": 1,
+      "message": "Missing copyright.",
+      "revId": "7f526ea90ce167f72738bcc38d103786966b6a83",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_910aa41f",
+        "filename": "karaf/opendaylight-karaf4-empty/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2016-11-17T17:41:45Z",
+      "side": 1,
+      "message": "Missing copyright.",
+      "revId": "7f526ea90ce167f72738bcc38d103786966b6a83",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
