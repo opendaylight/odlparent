@@ -1562,6 +1562,11 @@
           <artifactId>maven-bundle-plugin</artifactId>
           <version>${maven.bundle.version}</version>
           <extensions>true</extensions>
+          <configuration>
+            <instructions>
+              <Include-Resource>{maven-resources},target/classes/LICENSE</Include-Resource>
+            </instructions>
+          </configuration>
         </plugin>
 
         <plugin>
