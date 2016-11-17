@@ -311,20 +311,20 @@
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>org.immutables</groupId>
-        <artifactId>value</artifactId>
-        <version>2.3.9</version>
-        <!-- Must be provided; <scope>test here breaks APT in Eclipse :( -->
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
         <!-- We repeat guice here, because some POM need only Guice, without mycila -->
         <groupId>com.google.inject</groupId>
         <artifactId>guice</artifactId>
         <!-- Make sure this version is in sync with the one used by mycila-guice-jsr250 above
              by checking it here: https://github.com/mycila/guice/blob/master/pom.xml#L103 -->
         <version>4.1.0</version>
-        <scope>test</scope>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.immutables</groupId>
+        <artifactId>value</artifactId>
+        <version>2.3.9</version>
+        <!-- Must be provided; <scope>test here breaks APT in Eclipse :( -->
+        <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
