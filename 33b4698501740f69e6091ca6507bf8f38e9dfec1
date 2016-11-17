@@ -16,6 +16,24 @@
       "revId": "33b4698501740f69e6091ca6507bf8f38e9dfec1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_08f4ac85",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-11-17T12:22:02Z",
+      "side": 1,
+      "message": "\u003e How do we figure out what versions are \"in sync\"? From the mycila-guice parent POM I presume, but it should be documented...\n\nOK; I\u0027ve added a pointer to exactly where this can be checked.\n\n\u003e (Plus, while it\u0027s nice to keep the versions in sync, as long as projects using these for their tests depend on one *or* the other but not both, we should be OK even if the versions diverge.)\n\nNOK; because projects do not depend on one *or* the other but not both, but by depending on mycila-guice-jsr250 implicitly transitively depend on guice also, and if we set another version here which mycila isn\u0027t compatible with, then we would be in trouble.\n\nThis is not theoretical but I\u0027ve run into the problem in practice; note https://github.com/mycila/guice/issues/11",
+      "parentUuid": "3a65312a_924e2995",
+      "revId": "33b4698501740f69e6091ca6507bf8f38e9dfec1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
