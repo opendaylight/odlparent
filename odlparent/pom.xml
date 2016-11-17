@@ -1377,6 +1377,11 @@
           <artifactId>maven-bundle-plugin</artifactId>
           <version>${maven.bundle.version}</version>
           <extensions>true</extensions>
+          <configuration>
+            <instructions>
+              <Include-Resource>META-INF/git.properties=target/classes/META-INF/git.properties</Include-Resource>
+            </instructions>
+          </configuration>
         </plugin>
 
         <plugin>
