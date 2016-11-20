@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_7d84f9d3",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1455,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2016-11-20T16:26:45Z",
+      "side": 1,
+      "message": "this seems to already work today - the verify and intergation-test goals call the failsafe plugin.",
+      "revId": "6ca8d21fa0f4180c0b71e4ef50e537e9c925c034",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a65312a_dd1b8dc8",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1465,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2016-11-20T16:26:45Z",
+      "side": 1,
+      "message": "this is what we do in netvirt to enable the listener. We do have the plugin listed in the dependencyManagement to get the right version.",
+      "revId": "6ca8d21fa0f4180c0b71e4ef50e537e9c925c034",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
