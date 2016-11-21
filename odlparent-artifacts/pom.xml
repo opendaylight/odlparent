@@ -17,6 +17,20 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- ODL Branding -->
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>karaf.branding</artifactId>
+                <version>1.8.0-SNAPSHOT</version>
+            </dependency>
+            <!-- ODL configuration -->
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>opendaylight-karaf4-resources</artifactId>
+                <version>1.8.0-SNAPSHOT</version>
+                <scope>provided</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>features-odlparent</artifactId>
