@@ -494,7 +494,7 @@
       <dependency>
         <groupId>com.github.romix</groupId>
         <artifactId>java-concurrent-hash-trie-map</artifactId>
-        <version>0.2.23</version>
+        <version>0.2.23-ODL</version>
       </dependency>
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
