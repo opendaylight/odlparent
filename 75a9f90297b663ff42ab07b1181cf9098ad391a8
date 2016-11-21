@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a65312a_a390324f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-11-21T12:31:32Z",
+      "side": 1,
+      "message": "To make this paragraph understandable without the surrounding context, it would be better to refer to buildnumber-maven-plugin only:\n\n    This automatically works for all ODL JARs without any changes needed in\n    any other POM (unlike buildnumber-maven-plugin which needs SCM info).",
+      "revId": "75a9f90297b663ff42ab07b1181cf9098ad391a8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
