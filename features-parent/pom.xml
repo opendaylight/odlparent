@@ -208,7 +208,7 @@
                 <plugin>
                     <groupId>org.apache.karaf.tooling</groupId>
                     <artifactId>karaf-maven-plugin</artifactId>
-                    <version>${karaf.version}</version>
+                    <version>3.0.8</version>
                     <extensions>true</extensions>
                     <executions>
                         <execution>

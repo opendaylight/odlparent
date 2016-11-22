@@ -49,7 +49,7 @@
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <version>3.0.8</version>
+                <version>4.0.7</version>
                 <extensions>true</extensions>
                 <configuration>
                     <excludedArtifactIds>
