@@ -25,14 +25,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.EnumSet;
 import java.util.List;
 import java.util.Properties;
-
 import javax.inject.Inject;
-
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
@@ -176,17 +172,13 @@ public class SingleFeatureTest {
     private Option standardKarafFeatures() throws IOException {
         String url = maven().groupId("org.apache.karaf.features").artifactId("standard").classifier("features").type(
                 "xml").version(getKarafVersion()).getURL();
-        try {
-            Features features = JaxbUtil.unmarshal(new URL(url).openStream(), false);
-            List<String> featureNames = new ArrayList<>();
-            for (Feature f : features.getFeature()) {
-                featureNames.add(f.getName());
-            }
-
-            return features(url, featureNames.toArray(new String[featureNames.size()]));
-        } catch (IOException e) {
-            throw new IOException("Could not obtain features from URL: " + url, e);
+        Features features = JaxbUtil.unmarshal(url, false);
+        List<String> featureNames = new ArrayList<>();
+        for (Feature f : features.getFeature()) {
+            featureNames.add(f.getName());
         }
+
+        return features(url, featureNames.toArray(new String[featureNames.size()]));
     }
 
     private String getKarafVersion() {
@@ -276,7 +268,7 @@ public class SingleFeatureTest {
         return prop;
     }
 
-    private void checkRepository(final URI repoUri) {
+    private void checkRepository(final URI repoUri) throws Exception {
         Repository repo = null;
         for (Repository r : featuresService.listRepositories()) {
             if (r.getURI().equals(repoUri)) {
@@ -305,8 +297,7 @@ public class SingleFeatureTest {
     @Test(timeout = 600000)
     public void installFeature() throws Exception {
         LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
-        featuresService.installFeature(getFeatureName(), getFeatureVersion(),
-                EnumSet.of(FeaturesService.Option.NoCleanIfFailure, FeaturesService.Option.PrintExecptionPerFeature));
+        featuresService.installFeature(getFeatureName(), getFeatureVersion());
         Feature feature = featuresService.getFeature(getFeatureName(), getFeatureVersion());
         Assert.assertNotNull(
                 "Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null", feature);
