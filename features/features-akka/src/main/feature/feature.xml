@@ -7,9 +7,9 @@
  terms of the Eclipse Public License v1.0 which accompanies this distribution,
  and is available at http://www.eclipse.org/legal/epl-v10.html
 -->
-<features name="odl-controller-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0"
+<features name="odl-controller-${project.version}" xmlns="http://karaf.apache.org/xmlns/features/v1.4.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.4.0 http://karaf.apache.org/xmlns/features/v1.4.0">
     <!-- These are additional features with non-standard (upstream) versions,
          provided for backwards-compatibility; they are now deprecated. For
          backwards-compatibility we need to preserve the feature name and
@@ -35,6 +35,7 @@
         <bundle>mvn:com.typesafe.akka/akka-osgi_${scala.version}/${akka.version}</bundle>
     </feature>
     <feature name="odl-akka-clustering" description="Akka Clustering" version="${akka.version}">
+        <feature prerequisite="true">wrap</feature>
         <feature version="${akka.version}">odl-akka-system</feature>
         <bundle>wrap:mvn:org.uncommons.maths/uncommons-maths/1.2.2a</bundle>
         <bundle>mvn:com.google.protobuf/protobuf-java/2.5.0</bundle>
@@ -52,10 +53,12 @@
         <bundle>mvn:org.reactivestreams/reactive-streams/1.0.0</bundle>
     </feature>
     <feature name='odl-akka-leveldb' description='LevelDB' version='${leveldb.version}'>
+        <feature prerequisite="true">wrap</feature>
         <bundle>wrap:mvn:org.iq80.leveldb/leveldb/${leveldb.version}</bundle>
         <bundle>mvn:org.fusesource.leveldbjni/leveldbjni-all/1.8-odl</bundle>
     </feature>
     <feature name='odl-akka-persistence' description='Akka Persistence' version="${akka.version}">
+        <feature prerequisite="true">wrap</feature>
         <feature version='${leveldb.version}'>odl-akka-leveldb</feature>
         <feature version="${akka.version}">odl-akka-system</feature>
         <bundle>mvn:com.typesafe.akka/akka-protobuf_${scala.version}/${akka.version}</bundle>
