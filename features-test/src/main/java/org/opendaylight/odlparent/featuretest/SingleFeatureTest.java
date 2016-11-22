@@ -25,14 +25,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.EnumSet;
 import java.util.List;
 import java.util.Properties;
-
 import javax.inject.Inject;
-
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
@@ -46,6 +42,8 @@ import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
+import org.ops4j.pax.exam.options.MavenArtifactUrlReference;
+import org.ops4j.pax.exam.options.MavenUrlReference;
 import org.ops4j.pax.exam.options.extra.VMOption;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,7 +60,7 @@ public class SingleFeatureTest {
     private static final String PROFILE_PROP = "karaf.featureTest.profile";
 
     private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
-            "log4j.logger.org.opendaylight.odlparent.featuretest";
+        "log4j.logger.org.opendaylight.odlparent.featuretest";
     private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
 
     /*
@@ -99,9 +97,9 @@ public class SingleFeatureTest {
      * <p>When updating Karaf, check this against org.ops4j.pax.url.mvn.cfg in the Karaf distribution.</p>
      */
     private static final String EXTERNAL_DEFAULT_REPOSITORIES = "http://repo1.maven.org/maven2@id=central, "
-            + "http://repository.springsource.com/maven/bundles/release@id=spring.ebr.release, "
-            + "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, "
-            + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
+        + "http://repository.springsource.com/maven/bundles/release@id=spring.ebr.release, "
+        + "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, "
+        + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
 
 
     @Inject
@@ -118,6 +116,18 @@ public class SingleFeatureTest {
      */
     @Configuration
     public Option[] config() throws IOException {
+        MavenArtifactUrlReference karafUrl = maven()
+            .groupId("org.apache.karaf")
+            .artifactId("apache-karaf")
+            .version(getKarafVersion())
+            .type("zip");
+
+        MavenUrlReference karafStandardRepo = maven()
+            .groupId("org.apache.karaf.features")
+            .artifactId("standard")
+            .version(getKarafVersion())
+            .classifier("features")
+            .type("xml");
         return new Option[] {
             // TODO: Find a way to inherit memory limits from Maven options.
             new VMOption("-Xmx2g"),
@@ -125,16 +135,29 @@ public class SingleFeatureTest {
                 new VMOption("-XX:+UnlockCommercialFeatures"),
                 new VMOption("-XX:+FlightRecorder"),
                 new VMOption("-XX:FlightRecorderOptions=defaultrecording=true,dumponexit=true,dumponexitpath="
-                               + getNewJFRFile())
+                    + getNewJFRFile())
             ),
+            //KarafDistributionOption.debugConfiguration("5005", true),
             getKarafDistroOption(),
             when(Boolean.getBoolean(KEEP_UNPACK_DIRECTORY_PROP)).useOptions(keepRuntimeFolder()),
             configureConsole().ignoreLocalConsole(),
+            features(karafStandardRepo, "scr"),
+            CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP).value(
+                System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP)),
+            CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP).value(
+                System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP)),
+            CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP).value(
+                System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
+        };
+    }
+
+    public Option[] oldconfig() throws IOException {
+        return new Option[] {
             logLevel(LogLevel.WARN),
             mvnLocalRepoOption(),
             standardKarafFeatures(),
             editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
-                    LogLevel.INFO.name()),
+                LogLevel.INFO.name()),
             editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
              /*
               *
@@ -161,11 +184,11 @@ public class SingleFeatureTest {
               */
             disableExternalSnapshotRepositories(),
             CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP).value(
-                    System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP)),
+                System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP)),
             CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP).value(
-                    System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP)),
+                System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP)),
             CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP).value(
-                    System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
+                System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
         };
     }
 
@@ -175,18 +198,14 @@ public class SingleFeatureTest {
 
     private Option standardKarafFeatures() throws IOException {
         String url = maven().groupId("org.apache.karaf.features").artifactId("standard").classifier("features").type(
-                "xml").version(getKarafVersion()).getURL();
-        try {
-            Features features = JaxbUtil.unmarshal(new URL(url).openStream(), false);
-            List<String> featureNames = new ArrayList<>();
-            for (Feature f : features.getFeature()) {
-                featureNames.add(f.getName());
-            }
-
-            return features(url, featureNames.toArray(new String[featureNames.size()]));
-        } catch (IOException e) {
-            throw new IOException("Could not obtain features from URL: " + url, e);
+            "xml").version(getKarafVersion()).getURL();
+        Features features = JaxbUtil.unmarshal(url, false);
+        List<String> featureNames = new ArrayList<>();
+        for (Feature f : features.getFeature()) {
+            featureNames.add(f.getName());
         }
+
+        return features(url, featureNames.toArray(new String[featureNames.size()]));
     }
 
     private String getKarafVersion() {
@@ -195,7 +214,7 @@ public class SingleFeatureTest {
             // This avoids forcing all users to depend on Karaf in their POMs
             Properties singleFeatureTestProps = new Properties();
             try (InputStream singleFeatureTestInputStream = Thread.currentThread().getContextClassLoader()
-                    .getResourceAsStream(PROPERTIES_FILENAME)) {
+                .getResourceAsStream(PROPERTIES_FILENAME)) {
                 singleFeatureTestProps.load(singleFeatureTestInputStream);
             } catch (IOException e) {
                 LOG.error("Unable to load {} to determine the Karaf version", PROPERTIES_FILENAME, e);
@@ -217,7 +236,7 @@ public class SingleFeatureTest {
                 karafDistroVersion = getKarafVersion();
             } else {
                 LOG.info("Retrieved karafDistroVersion {} from system property {}", karafVersion,
-                        KARAF_DISTRO_VERSION_PROP);
+                    KARAF_DISTRO_VERSION_PROP);
             }
         }
 
@@ -231,14 +250,14 @@ public class SingleFeatureTest {
      */
     private static Option disableExternalSnapshotRepositories() {
         return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_REPOSITORIES,
-                EXTERNAL_DEFAULT_REPOSITORIES);
+            EXTERNAL_DEFAULT_REPOSITORIES);
     }
 
     protected Option mvnLocalRepoOption() {
         String mvnRepoLocal = System.getProperty(MAVEN_REPO_LOCAL, "");
         LOG.info("mvnLocalRepo \"{}\"", mvnRepoLocal);
         return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY,
-                mvnRepoLocal);
+            mvnRepoLocal);
     }
 
     protected Option getKarafDistroOption() {
@@ -247,15 +266,15 @@ public class SingleFeatureTest {
         String type = System.getProperty(KARAF_DISTRO_TYPE_PROP, KARAF_DISTRO_TYPE);
         LOG.info("Using karaf distro {} {} {} {}", groupId, artifactId, getKarafDistroVersion(), type);
         return karafDistributionConfiguration()
-                .frameworkUrl(
-                        maven()
-                                .groupId(groupId)
-                                .artifactId(artifactId)
-                                .type(type)
-                                .version(getKarafDistroVersion()))
-                .name("OpenDaylight")
-                .unpackDirectory(new File("target/pax"))
-                .useDeployFolder(false);
+            .frameworkUrl(
+                maven()
+                    .groupId(groupId)
+                    .artifactId(artifactId)
+                    .type(type)
+                    .version(getKarafDistroVersion()))
+            .name("OpenDaylight")
+            .unpackDirectory(new File("target/pax"))
+            .useDeployFolder(false);
     }
 
     private static URI getRepoUri() throws URISyntaxException {
@@ -276,7 +295,7 @@ public class SingleFeatureTest {
         return prop;
     }
 
-    private void checkRepository(final URI repoUri) {
+    private void checkRepository(final URI repoUri) throws Exception {
         Repository repo = null;
         for (Repository r : featuresService.listRepositories()) {
             if (r.getURI().equals(repoUri)) {
@@ -305,13 +324,12 @@ public class SingleFeatureTest {
     @Test(timeout = 600000)
     public void installFeature() throws Exception {
         LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
-        featuresService.installFeature(getFeatureName(), getFeatureVersion(),
-                EnumSet.of(FeaturesService.Option.NoCleanIfFailure, FeaturesService.Option.PrintExecptionPerFeature));
+        featuresService.installFeature(getFeatureName(), getFeatureVersion());
         Feature feature = featuresService.getFeature(getFeatureName(), getFeatureVersion());
         Assert.assertNotNull(
-                "Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null", feature);
+            "Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null", feature);
         Assert.assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(),
-                featuresService.isInstalled(feature));
+            featuresService.isInstalled(feature));
         LOG.info("Successfull installed feature {} {}", getFeatureName(), getFeatureVersion());
     }
 }

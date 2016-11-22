@@ -122,7 +122,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
     }
 
     protected Features getFeatures(final URL repoUrl) throws JAXBException, IOException {
-        return JaxbUtil.unmarshal(repoUrl.openStream(), false);
+        return JaxbUtil.unmarshal(repoUrl.toExternalForm(), false);
     }
 
     @Override
