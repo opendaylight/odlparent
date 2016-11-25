@@ -1374,6 +1374,10 @@
             <includeResources>true</includeResources>
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
             <includeTestResources>true</includeTestResources>
+            <!-- default is only **/*.properties, but we want e.g.
+                 *.xml to be e.g. EOL & tab etc. checked as well -->
+            <resourceIncludes>**/*</resourceIncludes>
+            <resourceExcludes>**/archetype-resources/**/*.java</resourceExcludes>
             <includes>**\/*.java, **\/*.xtend</includes>
             <excludes>
               org/opendaylight/yang/gen/**,
