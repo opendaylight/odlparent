@@ -1369,8 +1369,15 @@
           <configuration>
             <configLocation>odl_checks.xml</configLocation>
             <!-- <sourceDirectory> is needed so that checkstyle ignores the
-                 generated sources directory -->
+                 generated sources directory, because the default is
+                 ${project.compileSourceRoots} respectively
+                 ${project.testCompileSourceRoots}.
+
+                 Unfortunately there is no equivalent option to exclude
+                 generated resources; therefore that's solved with a Suppressions Filter
+                 instead (which may actually make this and the excludes below unnecessary?) -->
             <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+            <testSourceDirectory>${project.build.testSourceDirectory}</testSourceDirectory>
             <includeResources>true</includeResources>
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
             <includeTestResources>true</includeTestResources>
