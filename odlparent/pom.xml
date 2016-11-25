@@ -1368,6 +1368,7 @@
           </dependencies>
           <configuration>
             <configLocation>odl_checks.xml</configLocation>
+            <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
             <!-- <sourceDirectory> is needed so that checkstyle ignores the
                  generated sources directory -->
             <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>

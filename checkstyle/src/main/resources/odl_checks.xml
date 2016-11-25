@@ -19,6 +19,9 @@
         <property name="format" value="(\r\n|\r)"/>
         <property name="message" value="Line has Windows line delimiter."/>
     </module>
+    <module name="SuppressionFilter">
+        <property name="file" value="${checkstyle.suppressions.file}" />
+    </module>
     <module name="SuppressWarningsFilter"/>
     <module name="TreeWalker">
         <module name="RegexpSinglelineJava">
