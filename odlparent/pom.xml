@@ -76,7 +76,7 @@
     <!-- Used in snmp4sdn; see also toolkit -->
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
     <!-- Used in controller, l2switch, netide, openflowjava, openflowplugin, snbi, tsdr, ttp; see also toolkit -->
-    <enforcer.version>1.4.1</enforcer.version>
+    <enforcer.version>3.0.0-M1</enforcer.version>
     <!-- Used in affinity, controller, nemo, opendove, snmp4sdn -->
     <enunciate.version>1.31</enunciate.version>
     <!-- Used in affinity, coretutorials, netide -->
@@ -87,8 +87,8 @@
     <jacoco.version>0.7.7.201606060606</jacoco.version>
     <!-- Used in aaa, controller, coretutorials, integration/distribution, l2switch, lacp, lispflowmapping, netide,
          nic, openflowplugin, ovsdb, persistence, sfc, snbi, snmp4sdn?, sxp, topoprocessing, unimgr, vtn -->
-    <karaf.version>4.0.10</karaf.version>
-    <karaf.plugin.version>4.0.10</karaf.plugin.version>
+    <karaf.version>4.1.3</karaf.version>
+    <karaf.plugin.version>4.1.3</karaf.plugin.version>
     <!-- Used in lispflowmapping, snmp4sdn, vtn -->
     <projectinfo>2.8.1</projectinfo>
     <!-- Used in of-config; see also snmp4sdn -->
@@ -137,7 +137,7 @@
         <groupId>com.puppycrawl.tools</groupId>
         <artifactId>checkstyle</artifactId>
         <!-- This should match the plugin management on maven-checkstyle-plugin below -->
-        <version>8.2</version>
+        <version>8.4</version>
       </dependency>
 
       <!-- Testing Dependencies -->
@@ -160,7 +160,7 @@
       <dependency>
          <groupId>org.skyscreamer</groupId>
          <artifactId>jsonassert</artifactId>
-         <version>1.3.0</version>
+         <version>1.5.0</version>
          <scope>test</scope>
       </dependency>
       <dependency>
@@ -184,13 +184,25 @@
       <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
-        <version>0.28</version>
+        <version>0.36</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.truth.extensions</groupId>
+        <artifactId>truth-java8-extension</artifactId>
+        <version>0.36</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.awaitility</groupId>
         <artifactId>awaitility</artifactId>
-        <version>2.0.0</version>
+        <version>3.0.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.awaitility</groupId>
+        <artifactId>awaitility-proxy</artifactId>
+        <version>3.0.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -249,53 +261,43 @@
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>jcl-over-slf4j</artifactId>
-        <version>1.7.21</version>
+        <version>1.7.25</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
-        <version>1.7.21</version>
+        <version>1.7.25</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-log4j12</artifactId>
-        <version>1.7.21</version>
+        <version>1.7.25</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>log4j-over-slf4j</artifactId>
-        <version>1.7.21</version>
+        <version>1.7.25</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
-        <version>1.7.21</version>
+        <version>1.7.25</version>
         <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>xml-apis</groupId>
-        <artifactId>xml-apis</artifactId>
-        <version>1.4.01</version>
-      </dependency>
-      <dependency>
-        <groupId>xerces</groupId>
-        <artifactId>xercesImpl</artifactId>
-        <version>2.11.0</version>
       </dependency>
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-core</artifactId>
-        <version>1.2.2</version>
+        <version>1.2.3</version>
       </dependency>
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>1.2.2</version>
+        <version>1.2.3</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>23.2-jre</version>
+        <version>23.3-jre</version>
         <exclusions>
           <exclusion>
             <groupId>com.google.code.findbugs</groupId>
@@ -307,7 +309,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
-        <version>23.2-jre</version>
+        <version>23.3-jre</version>
         <scope>test</scope>
         <exclusions>
           <exclusion>
@@ -510,11 +512,6 @@
       </dependency>
 
       <dependency>
-        <groupId>com.sun.xml.txw2</groupId>
-        <artifactId>txw2</artifactId>
-        <version>20110809</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
         <version>3.0.0</version>
@@ -542,91 +539,24 @@
       <dependency>
         <groupId>com.google.code.gson</groupId>
         <artifactId>gson</artifactId>
-        <version>2.7</version>
+        <version>2.8.2</version>
       </dependency>
       <dependency>
         <groupId>commons-fileupload</groupId>
         <artifactId>commons-fileupload</artifactId>
-        <version>1.3.2</version>
+        <version>1.3.3</version>
       </dependency>
       <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
-        <version>2.5</version>
+        <version>2.6</version>
       </dependency>
       <dependency>
         <groupId>commons-net</groupId>
         <artifactId>commons-net</artifactId>
         <version>3.6</version>
       </dependency>
-      <dependency>
-        <groupId>eclipselink</groupId>
-        <artifactId>javax.persistence</artifactId>
-        <version>2.0.4.v201112161009</version>
-      </dependency>
-      <dependency>
-        <groupId>eclipselink</groupId>
-        <artifactId>javax.resource</artifactId>
-        <version>1.5.0.v200906010428</version>
-      </dependency>
 
-      <dependency>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>org.eclipse.osgi</artifactId>
-        <version>3.9.1.v20130814-1242</version>
-      </dependency>
-
-      <!-- Gemini Web -->
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.gemini.web.core</artifactId>
-        <version>2.2.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.gemini.web.extender</artifactId>
-        <version>2.2.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.gemini.web.tomcat</artifactId>
-        <version>2.2.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.kernel.equinox.extensions</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.common</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.io</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.math</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.osgi</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.osgi.manifest</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.parser.manifest</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
       <!-- Netty -->
       <dependency>
         <groupId>io.netty</groupId>
@@ -678,127 +608,24 @@
         <version>1.1.1</version>
       </dependency>
       <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.activation</artifactId>
-        <version>1.1.0.v201211130549</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.annotation</artifactId>
-        <version>1.1.0.v201209060031</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.ejb</artifactId>
-        <version>3.1.1.v201204261316</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.el</artifactId>
-        <version>2.2.0.v201108011116</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.mail.glassfish</artifactId>
-        <version>1.4.1.v201108011116</version>
-      </dependency>
-      <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
         <version>3.1.0</version>
       </dependency>
       <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.servlet.jsp.jstl</artifactId>
-        <version>1.2.0.v201105211821</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.servlet.jsp.jstl.impl</artifactId>
-        <version>1.2.0.v201210211230</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.xml.rpc</artifactId>
-        <version>1.1.0.v201005080400</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.catalina</artifactId>
-        <version>7.0.53.v201406061610</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.catalina.ha</artifactId>
-        <version>7.0.53.v201406070630</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.catalina.tribes</artifactId>
-        <version>7.0.53.v201406070630</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.coyote</artifactId>
-        <version>7.0.53.v201406070630</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.el</artifactId>
-        <version>7.0.53.v201406060720</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.jasper</artifactId>
-        <version>7.0.53.v201406070630</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.juli.extras</artifactId>
-        <version>7.0.53.v201406060720</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.tomcat.api</artifactId>
-        <version>7.0.53.v201406060720</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.tomcat.util</artifactId>
-        <version>7.0.53.v201406070630</version>
-      </dependency>
-      <dependency>
-        <groupId>org.aopalliance</groupId>
-        <artifactId>com.springsource.org.aopalliance</artifactId>
-        <version>1.0.0</version>
-      </dependency>
-      <dependency>
         <groupId>org.apache.felix</groupId>
         <artifactId>org.apache.felix.dependencymanager</artifactId>
-        <version>4.3.0</version>
+        <version>4.4.1</version>
       </dependency>
       <dependency>
         <groupId>org.apache.felix</groupId>
         <artifactId>org.apache.felix.dependencymanager.shell</artifactId>
-        <version>4.0.4</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>org.apache.felix.fileinstall</artifactId>
-        <version>3.5.4</version>
+        <version>4.0.6</version>
       </dependency>
       <dependency>
         <groupId>org.apache.felix</groupId>
         <artifactId>org.apache.felix.metatype</artifactId>
-        <version>1.1.2</version>
-      </dependency>
-      <!-- felix webconsole -->
-      <dependency>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>org.apache.felix.webconsole</artifactId>
-        <version>4.2.14</version>
-        <!-- the all bundle includes all the necessary plugins -->
-        <classifier>all</classifier>
+        <version>1.1.6</version>
       </dependency>
       <dependency>
         <groupId>org.bouncycastle</groupId>
@@ -823,18 +650,12 @@
       <dependency>
         <groupId>com.webcohesion.enunciate</groupId>
         <artifactId>enunciate-core-annotations</artifactId>
-        <version>2.6.0</version>
+        <version>2.10.1</version>
       </dependency>
       <dependency>
         <groupId>org.codehaus.jettison</groupId>
         <artifactId>jettison</artifactId>
         <version>1.3.8</version>
-      </dependency>
-      <!-- equinox http service bridge -->
-      <dependency>
-        <groupId>org.eclipse.equinox.http</groupId>
-        <artifactId>servlet</artifactId>
-        <version>1.0.0-v20070606</version>
       </dependency>
       <!-- To upgrade org.eclipse.persistence dependencies to 2.6.0+, we need to ensure all downstreams consumers
          pull in javax.validation first:
@@ -906,78 +727,6 @@
         <groupId>org.ow2.asm</groupId>
         <artifactId>asm-all</artifactId>
         <version>5.1</version>
-      </dependency>
-      <!-- Visual VM hook -->
-      <dependency>
-        <groupId>org.ow2.chameleon.management</groupId>
-        <artifactId>chameleon-mbeans</artifactId>
-        <version>1.0.0</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-aop</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-beans</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-core</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-expression</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-tx</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-web</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-webmvc</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <!-- Spring security -->
-      <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-config</artifactId>
-        <version>3.2.9.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-core</artifactId>
-        <version>3.2.9.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-taglibs</artifactId>
-        <version>3.2.9.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-web</artifactId>
-        <version>3.2.9.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>virgomirror</groupId>
-        <artifactId>org.eclipse.jdt.core.compiler.batch</artifactId>
-        <version>3.8.0.I20120518-2145</version>
       </dependency>
 
       <!-- Configuration library -->
@@ -1081,7 +830,7 @@
       <dependency>
         <groupId>org.uncommons.maths</groupId>
         <artifactId>uncommons-maths</artifactId>
-        <version>1.2.2a</version>
+        <version>1.2.3</version>
       </dependency>
       <dependency>
         <groupId>com.google.protobuf</groupId>
@@ -1110,20 +859,19 @@
       <dependency>
         <groupId>org.scala-lang</groupId>
         <artifactId>scala-library</artifactId>
-        <version>2.12.3</version>
+        <version>2.12.4</version>
       </dependency>
       <dependency>
         <groupId>org.scala-lang</groupId>
         <artifactId>scala-reflect</artifactId>
-        <version>2.12.3</version>
+        <version>2.12.4</version>
       </dependency>
 
       <!-- LMAX Disruptor -->
       <dependency>
         <groupId>com.lmax</groupId>
         <artifactId>disruptor</artifactId>
-        <!-- If this is updated, the version in features.xml needs to be changed too -->
-        <version>3.3.6</version>
+        <version>3.3.7</version>
       </dependency>
 
       <!-- Add Pax Exam -->
@@ -1268,17 +1016,17 @@
       <dependency>
           <groupId>org.eclipse.xtend</groupId>
           <artifactId>org.eclipse.xtend.lib</artifactId>
-          <version>2.12.0</version>
+          <version>2.13.0</version>
       </dependency>
       <dependency>
           <groupId>org.eclipse.xtend</groupId>
           <artifactId>org.eclipse.xtend.lib.macro</artifactId>
-          <version>2.12.0</version>
+          <version>2.13.0</version>
       </dependency>
       <dependency>
           <groupId>org.eclipse.xtext</groupId>
           <artifactId>org.eclipse.xtext.xbase.lib</artifactId>
-          <version>2.12.0</version>
+          <version>2.13.0</version>
       </dependency>
 
       <!-- Annotations -->
@@ -1306,12 +1054,12 @@
       <dependency>
         <groupId>io.dropwizard.metrics</groupId>
         <artifactId>metrics-core</artifactId>
-        <version>3.1.2</version>
+        <version>3.2.3</version>
       </dependency>
       <dependency>
         <groupId>io.dropwizard.metrics</groupId>
         <artifactId>metrics-graphite</artifactId>
-        <version>3.1.2</version>
+        <version>3.2.3</version>
       </dependency>
 
       <!-- jung, a graph library -->
@@ -1405,7 +1153,7 @@
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
               <!-- This should match the dependency management on com.puppycrawl.tools:checkstyle above -->
-              <version>8.2</version>
+              <version>8.4</version>
             </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
@@ -1432,6 +1180,29 @@
             <includeResources>true</includeResources>
             <includeTestSourceDirectory>true</includeTestSourceDirectory>
             <includeTestResources>true</includeTestResources>
+            <!-- default is only **/*.properties, but we want e.g.
+                 *.xml to be e.g. EOL & tab etc. checked as well -->
+            <resourceIncludes>**/*</resourceIncludes>
+            <resourceExcludes>
+                **/archetype-resources/**/*.java,
+                **/*.png,
+                **/*.jpg,
+                **/*.gif,
+                **/*.ttf,
+                **/*.svg,
+                **/*.sass,
+                **/*.woff,
+                **/*.woff2,
+                **/*.gzip,
+                **/*.zip,
+                **/*.tgz,
+                **/*.gz,
+                **/*.gnu,
+                **/*.eot,
+                **/*.less,
+                **/*.patch,
+                **/*.postman_collection,
+            </resourceExcludes>
             <includes>**\/*.java, **\/*.xtend</includes>
             <excludes>
               org/opendaylight/yang/gen/**,
@@ -1509,8 +1280,10 @@
           <configuration>
             <source>1.8</source>
             <target>1.8</target>
+            <showWarnings>true</showWarnings>
             <compilerArgs>
               <arg>-parameters</arg>
+              <arg>-Xlint:deprecation</arg>
             </compilerArgs>
           </configuration>
         </plugin>
@@ -1768,7 +1541,7 @@
           <groupId>org.eclipse.xtend</groupId>
           <artifactId>xtend-maven-plugin</artifactId>
           <!-- NOTE: This version MUST be kept in sync with the Xtend version in <dependencyManagement> -->
-          <version>2.12.0</version>
+          <version>2.13.0</version>
           <executions>
             <execution>
               <goals>
@@ -2188,7 +1961,7 @@
         <configuration>
           <links>
             <link>http://doc.akka.io/japi/akka/${akka.version}/</link>
-            <link>https://google.github.io/guava/releases/23.2-jre/api/docs/</link>
+            <link>https://google.github.io/guava/releases/23.3-jre/api/docs/</link>
             <link>http://netty.io/4.1/api/</link>
           </links>
         </configuration>
