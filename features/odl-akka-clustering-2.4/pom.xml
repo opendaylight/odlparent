@@ -68,6 +68,10 @@
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-cluster_${scala.version}</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-distributed-data-experimental_${scala.version}</artifactId>
+        </dependency>
     </dependencies>
 
     <!--
