@@ -34,6 +34,24 @@
       "revId": "d08fe7ac4240dde69cf18b378b717a716c51c5d2",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_6b747c9c",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-11-30T21:02:23Z",
+      "side": 1,
+      "message": "Yes this should work. We just do a regex parse for 3 digits ending in -SNAPSHOT. The script doesn\u0027t care about words before and after.",
+      "parentUuid": "3a65312a_d5e24100",
+      "revId": "d08fe7ac4240dde69cf18b378b717a716c51c5d2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
