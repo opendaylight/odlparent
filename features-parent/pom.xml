@@ -46,6 +46,21 @@
 
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <!-- This generates the META-INF/maven/dependencies.properties file
+                         which is required by the versionAsInProject() used in SingleFeatureTest -->
+                    <groupId>org.ops4j.pax.exam</groupId>
+                    <artifactId>maven-paxexam-plugin</artifactId>
+                    <executions>
+                      <execution>
+                       <id>generate-dependencies.properties-file</id>
+                       <goals>
+                         <goal>generate-depends-file</goal>
+                       </goals>
+                      </execution>
+                    </executions>
+                </plugin>
+
                 <!-- generate dependencies versions -->
                 <plugin>
                     <artifactId>maven-dependency-plugin</artifactId>
@@ -329,6 +344,10 @@
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.ops4j.pax.exam</groupId>
+                <artifactId>maven-paxexam-plugin</artifactId>
+            </plugin>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
             </plugin>
