@@ -325,7 +325,6 @@
         <!-- Make sure this version is in sync with the one used by mycila-guice-jsr250 above
              by checking it here: https://github.com/mycila/guice/blob/master/pom.xml#L103 -->
         <version>4.1.0</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
