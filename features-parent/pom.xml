@@ -330,6 +330,12 @@
 
         <plugins>
             <plugin>
+                <!-- This generates the META-INF/maven/dependencies.properties file
+                        which is required by the versionAsInProject() used in SingleFeatureTest -->
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>depends-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
             </plugin>
             <plugin>
