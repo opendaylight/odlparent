@@ -31,6 +31,7 @@
         <module>checkstyle</module>
         <module>findbugs</module>
         <module>license</module>
+        <module>bundles-test</module>
         <module>features-test</module>
 
         <!-- Karaf integration -->
