@@ -13,6 +13,7 @@ import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.CoreOptions.when;
+import static org.ops4j.pax.exam.CoreOptions.wrappedBundle;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.configureConsole;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.editConfigurationFilePut;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
@@ -30,23 +31,25 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Properties;
-
 import javax.inject.Inject;
-
+import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.features.internal.model.JaxbUtil;
+import org.eclipse.jdt.annotation.NonNull;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.opendaylight.odlparent.bundlestest.TestBundleDiag;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
 import org.ops4j.pax.exam.options.extra.VMOption;
+import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -103,9 +106,14 @@ public class SingleFeatureTest {
             + "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, "
             + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
 
+    @Inject @NonNull
+    private BundleContext bundleContext;
 
-    @Inject
+    @Inject @NonNull
     private FeaturesService featuresService;
+
+    @Inject @NonNull
+    private BundleService bundleService; // NOT BundleStateService, see checkBundleStatesDiag()
 
     private String karafVersion;
     private String karafDistroVersion;
@@ -133,6 +141,8 @@ public class SingleFeatureTest {
             logLevel(LogLevel.WARN),
             mvnLocalRepoOption(),
             standardKarafFeatures(),
+            wrappedBundle(maven("org.awaitility", "awaitility")),
+            wrappedBundle(maven("org.opendaylight.odlparent", "bundles-test")),
             editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
                     LogLevel.INFO.name()),
             editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
@@ -313,5 +323,8 @@ public class SingleFeatureTest {
         Assert.assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(),
                 featuresService.isInstalled(feature));
         LOG.info("Successfull installed feature {} {}", getFeatureName(), getFeatureVersion());
+
+        new TestBundleDiag(bundleContext, bundleService).checkBundleDiagInfos();
     }
+
 }
