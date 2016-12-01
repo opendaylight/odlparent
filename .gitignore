@@ -17,6 +17,7 @@ local.properties
 .classpath
 
 .checkstyle
+.fbExcludeFilterFile
 
 # https://github.com/jbosstools/m2e-apt
 .factorypath
