@@ -28,7 +28,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class PerFeatureRunner extends Runner implements Filterable, Sortable {
+
     private static final Logger LOG = LoggerFactory.getLogger(PerFeatureRunner.class);
+
     private final String featureVersion;
     private final String featureName;
     private final PaxExam delegate;
