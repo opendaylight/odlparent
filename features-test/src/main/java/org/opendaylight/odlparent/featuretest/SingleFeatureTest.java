@@ -8,6 +8,10 @@
 
 package org.opendaylight.odlparent.featuretest;
 
+import static org.apache.karaf.bundle.core.BundleState.Failure;
+import static org.apache.karaf.bundle.core.BundleState.GracePeriod;
+import static org.apache.karaf.bundle.core.BundleState.Installed;
+import static org.apache.karaf.bundle.core.BundleState.Waiting;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
@@ -32,7 +36,9 @@ import java.util.List;
 import java.util.Properties;
 
 import javax.inject.Inject;
-
+import org.apache.karaf.bundle.core.BundleInfo;
+import org.apache.karaf.bundle.core.BundleService;
+import org.apache.karaf.bundle.core.BundleState;
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
@@ -47,6 +53,8 @@ import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
 import org.ops4j.pax.exam.options.extra.VMOption;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -103,9 +111,14 @@ public class SingleFeatureTest {
             + "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, "
             + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
 
+    @Inject
+    private BundleContext bundleContext;
 
     @Inject
     private FeaturesService featuresService;
+
+    @Inject
+    private BundleService bundleService; // NOT BundleStateService, see checkBundleStatesDiag()
 
     private String karafVersion;
     private String karafDistroVersion;
@@ -313,5 +326,50 @@ public class SingleFeatureTest {
         Assert.assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(),
                 featuresService.isInstalled(feature));
         LOG.info("Successfull installed feature {} {}", getFeatureName(), getFeatureVersion());
+
+        checkBundleStatesDiag();
+    }
+
+    /**
+     * Does the equivalent of the "diag" CLI command, and fails if any bundle wiring is NOK.
+     *
+     * <p>The implementation is based on Karaf's BundleService, and not the BundleStateService, here
+     * because each Karaf supported DI system (such as Blueprint and Declarative Services, see String constants
+     * in BundleStateService), will have a separate BundleStateService.  The BundleService however will
+     * contain the combined status of all BundleStateServices.
+     *
+     * @author Michael Vorburger, based on guidance from Christian Schneider
+     */
+    protected void checkBundleStatesDiag() {
+        Bundle[] bundles = bundleContext.getBundles();
+        List<String> nonActiveBundleDiagTexts = new ArrayList<>();
+        for (Bundle bundle : bundles) {
+            String bundleSymbolicName = bundle.getSymbolicName();
+            BundleInfo karafBundleInfo = bundleService.getInfo(bundle);
+            BundleState karafBundleState = karafBundleInfo.getState();
+            String diagText = bundleService.getDiag(bundle);
+            // bundleService.getUnsatisfiedRquirements() but for what namespace?
+
+            LOG.info("checkBundleStatesDiag: Bundle {}, OSGi state: {}, Karaf bundleState: {}, diag: {}",
+                    bundleSymbolicName, bundle.getState(), karafBundleState, diagText);
+
+            // BundleState comparison as in Karaf's "diag" command,
+            // see https://github.com/apache/karaf/blob/master/bundle/core/src/main/java/org/apache/karaf/bundle/command/Diag.java
+            // TODO Unknown? Starting, still, shouldn't be any?
+            if (karafBundleState == Failure || karafBundleState == Waiting
+                    || karafBundleState == GracePeriod || karafBundleState == Installed) {
+                String msg = bundleSymbolicName;
+                if (diagText != null && !diagText.isEmpty()) {
+                    msg += ", due to: " + diagText;
+                }
+                LOG.error("Not active bundle: {}", msg);
+                nonActiveBundleDiagTexts.add(msg);
+            }
+        }
+
+        if (!nonActiveBundleDiagTexts.isEmpty()) {
+            Assert.fail("diag failure; Karaf's BundleService reports bundle(s) which are not Active:\n"
+                    + nonActiveBundleDiagTexts.toString());
+        }
     }
 }
