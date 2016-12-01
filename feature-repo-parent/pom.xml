@@ -59,8 +59,21 @@
     <build>
         <plugins>
             <plugin>
+                <!-- This generates the META-INF/maven/dependencies.properties file
+                     which is required by the versionAsInProject() used in SingleFeatureTest -->
+                <groupId>org.ops4j.pax.exam</groupId>
+                <artifactId>maven-paxexam-plugin</artifactId>
+                <executions>
+                  <execution>
+                   <id>generate-dependencies.properties-file</id>
+                   <goals>
+                     <goal>generate-depends-file</goal>
+                   </goals>
+                  </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surefire.version}</version>
                 <configuration>
                     <skip>${skip.karaf.featureTest}</skip>
                     <dependenciesToScan>
@@ -82,7 +95,6 @@
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <version>3.0.8</version>
                 <extensions>true</extensions>
                 <configuration>
                     <aggregateFeatures>true</aggregateFeatures>
