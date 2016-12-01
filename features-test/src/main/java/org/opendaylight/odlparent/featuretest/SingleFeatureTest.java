@@ -12,7 +12,9 @@ import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
 import static org.ops4j.pax.exam.CoreOptions.maven;
+import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
 import static org.ops4j.pax.exam.CoreOptions.when;
+import static org.ops4j.pax.exam.CoreOptions.wrappedBundle;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.configureConsole;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.editConfigurationFilePut;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
@@ -20,6 +22,7 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDist
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
 
+import com.google.common.collect.ImmutableList;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,23 +33,25 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Properties;
-
 import javax.inject.Inject;
-
+import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.features.internal.model.JaxbUtil;
+import org.eclipse.jdt.annotation.NonNull;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.opendaylight.odlparent.bundlestest.TestBundleDiag;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
 import org.ops4j.pax.exam.options.extra.VMOption;
+import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,8 +63,10 @@ public class SingleFeatureTest {
     private static final String ORG_OPS4J_PAX_URL_MVN_REPOSITORIES = "org.ops4j.pax.url.mvn.repositories";
     private static final String ETC_ORG_OPS4J_PAX_URL_MVN_CFG = "etc/org.ops4j.pax.url.mvn.cfg";
     private static final String ETC_ORG_OPS4J_PAX_LOGGING_CFG = "etc/org.ops4j.pax.logging.cfg";
+
     private static final String KEEP_UNPACK_DIRECTORY_PROP = "karaf.keep.unpack";
     private static final String PROFILE_PROP = "karaf.featureTest.profile";
+    private static final String BUNDLES_DIAG_SKIP_PROP = "sft.diag.skip";
 
     private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
             "log4j.logger.org.opendaylight.odlparent.featuretest";
@@ -103,9 +110,14 @@ public class SingleFeatureTest {
             + "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, "
             + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
 
+    @Inject @NonNull
+    private BundleContext bundleContext;
 
-    @Inject
+    @Inject @NonNull
     private FeaturesService featuresService;
+
+    @Inject @NonNull
+    private BundleService bundleService; // NOT BundleStateService, see checkBundleStatesDiag()
 
     private String karafVersion;
     private String karafDistroVersion;
@@ -133,6 +145,9 @@ public class SingleFeatureTest {
             logLevel(LogLevel.WARN),
             mvnLocalRepoOption(),
             standardKarafFeatures(),
+            wrappedBundle(maven("org.awaitility", "awaitility").versionAsInProject()), // req. by bundles-test
+            mavenBundle(maven("com.google.guava", "guava").versionAsInProject()),      // req. by bundles-test
+            mavenBundle(maven("org.opendaylight.odlparent", "bundles-test").versionAsInProject()),
             editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
                     LogLevel.INFO.name()),
             editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
@@ -315,5 +330,54 @@ public class SingleFeatureTest {
         Assert.assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(),
                 featuresService.isInstalled(feature));
         LOG.info("Successfull installed feature {} {}", getFeatureName(), getFeatureVersion());
+
+        if (!Boolean.getBoolean(BUNDLES_DIAG_SKIP_PROP)
+                && !BLACKLISTED_BROKEN_FEATURES.contains(getFeatureName())) {
+            new TestBundleDiag(bundleContext, bundleService).checkBundleDiagInfos();
+        } else {
+            LOG.warn("SKIPPING TestBundleDiag because system property {} is true or feature is blacklisted: {}",
+                    BUNDLES_DIAG_SKIP_PROP, getFeatureName());
+        }
     }
+
+    // TODO Figure out why each of these fails the TestBundleDiag, fix it, and remove this.. ;)
+    private static final List<String> BLACKLISTED_BROKEN_FEATURES = ImmutableList.of(
+             // integration/distribution/features-test due to (unclear)
+            "odl-integration-all",
+            // controller/features/mdsal/ due to IllegalStateException: ./configuration/initial/akka.conf is missing
+            "odl-mdsal-broker-local",
+            "odl-mdsal-clustering-commons",
+            "odl-mdsal-distributed-datastore",
+            "odl-mdsal-remoterpc-connector",
+            // aaa/features/authn due to Cassandra expected to be up on
+            "odl-aaa-authn-cassandra-cluster",
+            // 3/18 in bgpcep/features/bgp/ due to NoSuchFileException: etc/....
+            "odl-bgpcep-bgp-rib-impl",
+            "odl-bgpcep-bgp-topology",
+            "odl-bgpcep-bgp-cli",
+            // 1/1 in bgpcep/features/bmp due to NoSuchFileException: etc/opendaylight/bgp
+            "odl-bgpcep-bmp",
+            // 4/8 in lispflowmapping/features due to.. unclear, similar issue to odl-integration-all?
+            "odl-lispflowmapping-mappingservice",
+            "odl-lispflowmapping-mappingservice-shell",
+            "odl-lispflowmapping-neutron",
+            "odl-lispflowmapping-ui",
+            // 1/17 in lispflowmapping/features due to NOK org.opendaylight.groupbasedpolicy
+            // Caused by: org.opendaylight.mdsal.eos.common.api.CandidateAlreadyRegisteredException
+            "odl-groupbasedpolicy-ne-location-provider",
+            // 1/11 in tsdr/features due to (strange) ClassNotFoundException: odlparent.bundlestest
+            //   .TestBundleDiag (works for all other features; class loading issue in that feature?)
+            "odl-hbaseclient",
+            // 1/9 in unimgr/features due missing mdsal, similar to issue to odl-integration-all?
+            "odl-unimgr-netvirt",
+            // 3/3 in alto/alto-release-features due to ClassNotFoundException:
+            //        org.opendaylight.alto.core.northbound.route
+            //         .networkmap.impl.AltoModelNetworkmapService,
+            //         .costmap.impl.AltoModelCostmapService,
+            //         .endpointcost.impl.AltoModelEndpointcostService,
+            //         .endpointproperty.impl.AltoModelEndpointpropertyService
+            "odl-alto-release",
+            "odl-alto-core",
+            "odl-alto-basic"
+    );
 }
