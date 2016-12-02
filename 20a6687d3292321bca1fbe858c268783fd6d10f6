@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_8e2c814c",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-12-02T11:52:18Z",
+      "side": 1,
+      "message": "Lines 308 and 322 suggest this is intended to be a subset of the mycila dependency element, so this should not have larger scope than mycila.",
+      "range": {
+        "startLine": 327,
+        "startChar": 31,
+        "endLine": 327,
+        "endChar": 32
+      },
+      "revId": "20a6687d3292321bca1fbe858c268783fd6d10f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
