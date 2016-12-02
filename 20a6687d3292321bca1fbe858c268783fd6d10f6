@@ -46,6 +46,30 @@
       "revId": "20a6687d3292321bca1fbe858c268783fd6d10f6",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_ce5af982",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-12-02T13:06:34Z",
+      "side": 1,
+      "message": "Actually it does have to do with Mycila. This issue is a bit more complex than it appears at first glance...\n\nodlparent added Mycila with scope test. Without specifying anything else, this results in Guice (a Mycila dependency) being pulled in with scope test too, and all is well (and downstreams pulling Guice in are fine too).\n\nUnfortunately when other projects added Guice as a test dependency, it became apparent that the versions of Guice used for these tests needed to be kept in sync with the version pulled in by Mycila. As a result, Guice was explicitly added to odlparent, with scope test.\n\nIf we move Guice to scope compile, the currently-broken downstream projects will be fixed, but all existing Mycila users will suddenly acquire a dependency on Guice with scope compile. Perhaps that\u0027s fine, but we need to check...",
+      "parentUuid": "1a622d24_8eb641db",
+      "range": {
+        "startLine": 327,
+        "startChar": 31,
+        "endLine": 327,
+        "endChar": 32
+      },
+      "revId": "20a6687d3292321bca1fbe858c268783fd6d10f6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
