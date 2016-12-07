@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_46cb6072",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2016-12-07T23:09:40Z",
+      "side": 1,
+      "message": "Still not sure what the problem was. In the NetVirtIT we use wrappedBundle() as below. The jar is in a completely different module and not in the test dir. The jar is also included in test scope. One other thing is sometimes these are included statically with: \u003cEmbed-Dependency\u003eutils.mdsal-openflow;type\u003d!pom;inline\u003dfalse\u003c/Embed-Dependency\u003e\n\nwrappedBundle(mavenBundle(\n\"org.opendaylight.netvirt\", \"utils.mdsal-openflow\")                                .version(asInProject())                                .type(\"jar\"))",
+      "revId": "eb2c1fde9ef6760b3d7c79dde141091725971b41",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
