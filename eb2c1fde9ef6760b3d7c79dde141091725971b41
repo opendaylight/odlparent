@@ -16,6 +16,24 @@
       "revId": "eb2c1fde9ef6760b3d7c79dde141091725971b41",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_06b168f8",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-07T23:13:16Z",
+      "side": 1,
+      "message": "What you are looking at and commenting on here is the final version now - the \"problem was\" that initially when I was on IRC this wasn\u0027t there.. ;-) because the code that is now in the new bundles-test originally was in features-test, and that caused issues with Pax Exam - all solved, it seems to work great for me.. will you test it, and give me your +1? ;-)",
+      "parentUuid": "1a622d24_46cb6072",
+      "revId": "eb2c1fde9ef6760b3d7c79dde141091725971b41",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
