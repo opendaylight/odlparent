@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_4c5b7f54",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-12-08T09:44:53Z",
+      "side": 1,
+      "message": "i",
+      "range": {
+        "startLine": 24,
+        "startChar": 14,
+        "endLine": 24,
+        "endChar": 15
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_8c55971f",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-12-08T09:44:53Z",
+      "side": 1,
+      "message": "\u0027forContext\u0027 ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 34,
+        "endLine": 34,
+        "endChar": 52
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_6c5e3b47",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-12-08T09:44:53Z",
+      "side": 1,
+      "message": "unneeded temporary",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 24
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_4c225fba",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-12-08T09:44:53Z",
+      "side": 1,
+      "message": "String.format() makes this a lot more readable",
+      "range": {
+        "startLine": 44,
+        "startChar": 41,
+        "endLine": 45,
+        "endChar": 62
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_ac2fb3a0",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-12-08T09:44:53Z",
+      "side": 1,
+      "message": "Strings.isNullOrEmpty()",
+      "range": {
+        "startLine": 47,
+        "startChar": 16,
+        "endLine": 47,
+        "endChar": 55
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_ec188b86",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-12-08T09:44:53Z",
+      "side": 1,
+      "message": "please don\u0027t. Fully initialize the collection and pass it down to a private constructor -- given currect lifecycle that constructor should ImmutableList.copyOf()",
+      "range": {
+        "startLine": 58,
+        "startChar": 16,
+        "endLine": 58,
+        "endChar": 55
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_0c41875a",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-12-08T09:44:53Z",
+      "side": 1,
+      "message": "This is very confusing coding style. Is this class supposed to be subclassed or not?\n\nEither provide static factory methods or public constructors, never both.",
+      "range": {
+        "startLine": 67,
+        "startChar": 3,
+        "endLine": 71,
+        "endChar": 5
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
