@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_60d8ff1d",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-08T11:21:04Z",
+      "side": 1,
+      "message": "OK, done; thanks.  (I\u0027ll add a JavaDoc spell checker Checkstyle rule? ;-)",
+      "parentUuid": "1a622d24_4c5b7f54",
+      "range": {
+        "startLine": 24,
+        "startChar": 14,
+        "endLine": 24,
+        "endChar": 15
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_8c55971f",
         "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2016-12-08T09:44:53Z",
       "side": 1,
       "message": "\u0027forContext\u0027 ?",
+      "range": {
+        "startLine": 34,
+        "startChar": 34,
+        "endLine": 34,
+        "endChar": 52
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_a0097797",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-08T11:21:04Z",
+      "side": 1,
+      "message": "OK, done; whatever... :)",
+      "parentUuid": "1a622d24_8c55971f",
       "range": {
         "startLine": 34,
         "startChar": 34,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_e0036f71",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-08T11:21:04Z",
+      "side": 1,
+      "message": "OK, done; whatever... :)",
+      "parentUuid": "1a622d24_6c5e3b47",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 24
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_4c225fba",
         "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
         "patchSetId": 11
@@ -82,6 +154,30 @@
       "writtenOn": "2016-12-08T09:44:53Z",
       "side": 1,
       "message": "String.format() makes this a lot more readable",
+      "range": {
+        "startLine": 44,
+        "startChar": 41,
+        "endLine": 45,
+        "endChar": 62
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_40f8637c",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-08T11:21:04Z",
+      "side": 1,
+      "message": "NOK, I disagree and find this more readable",
+      "parentUuid": "1a622d24_4c225fba",
       "range": {
         "startLine": 44,
         "startChar": 41,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_60ef5fb1",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-08T11:21:04Z",
+      "side": 1,
+      "message": "OK, done; yup, clearer - thanks.",
+      "parentUuid": "1a622d24_ac2fb3a0",
+      "range": {
+        "startLine": 47,
+        "startChar": 16,
+        "endLine": 47,
+        "endChar": 55
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_ec188b86",
         "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
         "patchSetId": 11
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_60463fc1",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-08T11:21:04Z",
+      "side": 1,
+      "message": "OK, done - I see what you mean, better now?",
+      "parentUuid": "1a622d24_ec188b86",
+      "range": {
+        "startLine": 58,
+        "startChar": 16,
+        "endLine": 58,
+        "endChar": 55
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_0c41875a",
         "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
         "patchSetId": 11
@@ -151,6 +295,30 @@
       "writtenOn": "2016-12-08T09:44:53Z",
       "side": 1,
       "message": "This is very confusing coding style. Is this class supposed to be subclassed or not?\n\nEither provide static factory methods or public constructors, never both.",
+      "range": {
+        "startLine": 67,
+        "startChar": 3,
+        "endLine": 71,
+        "endChar": 5
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_c012b3b3",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-08T11:21:04Z",
+      "side": 1,
+      "message": "OK, done - I see what you mean, better now?",
+      "parentUuid": "1a622d24_0c41875a",
       "range": {
         "startLine": 67,
         "startChar": 3,
