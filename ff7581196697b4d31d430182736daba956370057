@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_f644d575",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2016-12-08T17:44:41Z",
+      "side": 1,
+      "message": "As a Python developer, I prefer concatenation as well. Third option is StringBuilder.",
+      "parentUuid": "1a622d24_40f8637c",
+      "range": {
+        "startLine": 44,
+        "startChar": 41,
+        "endLine": 45,
+        "endChar": 62
+      },
+      "revId": "ff7581196697b4d31d430182736daba956370057",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_ac2fb3a0",
         "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
         "patchSetId": 11
