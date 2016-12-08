@@ -53,7 +53,7 @@
         <dependency>
             <groupId>org.apache.karaf.features</groupId>
             <artifactId>standard</artifactId>
-            <version>${karaf4.version}</version>
+            <version>${karaf.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
@@ -65,19 +65,19 @@
         <dependency>
             <groupId>org.apache.karaf.deployer</groupId>
             <artifactId>org.apache.karaf.deployer.blueprint</artifactId>
-            <version>${karaf4.version}</version>
+            <version>${karaf.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.karaf.deployer</groupId>
             <artifactId>org.apache.karaf.deployer.features</artifactId>
-            <version>${karaf4.version}</version>
+            <version>${karaf.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.karaf.deployer</groupId>
             <artifactId>org.apache.karaf.deployer.spring</artifactId>
-            <version>${karaf4.version}</version>
+            <version>${karaf.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
