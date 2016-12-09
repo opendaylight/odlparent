@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vi: set et smarttab sw=4 tabstop=4: -->
+<!--
+ Copyright (c) 2014 Cisco Systems, Inc. and others.  All rights reserved.
+
+ This program and the accompanying materials are made available under the
+ terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ and is available at http://www.eclipse.org/legal/epl-v10.html
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!--
+         This is a near-clone of org.opendaylight.odlparent:features-parent
+         see comments there.
+
+         There is only one difference, the version of opendaylight-karaf-empty
+         (to be use for SingleFeatureTest).
+
+         The benefit is that a Change only relying (project-wide) on this (instead of features-parent)
+         will not require daily download of big snapshot artifact.
+         The downside is that there might been incompatible changes since last released version,
+         making SingleFeatureTest results invalid.
+
+         Contributors, only use this locally, or in DO NOT MERGE contributions.
+         Committers, never merge a Change depending on this.
+    -->
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>odlparent</artifactId>
+        <version>1.8.0-SNAPSHOT</version>
+        <relativePath>../odlparent</relativePath>
+    </parent>
+
+    <artifactId>features-backwards-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <properties>
+        <features.file>features.xml</features.file>
+        <skip.karaf.featureTest>false</skip.karaf.featureTest>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <pluginManagement>
+            <plugins>
+                <!-- generate dependencies versions -->
+                <plugin>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.10</version>
+                      <executions>
+                          <execution>
+                              <phase>generate-resources</phase>
+                              <goals><goal>resolve</goal></goals>
+                              <configuration>
+                                  <outputFile>${project.build.directory}/dependencies.txt</outputFile>
+                              </configuration>
+                          </execution>
+                      </executions>
+                </plugin>
+                <plugin>
+                    <groupId>com.alexecollins.maven.plugin</groupId>
+                    <artifactId>script-maven-plugin</artifactId>
+                    <version>1.0.0</version>
+                    <executions>
+                        <execution>
+                        <id>add-version-to-features</id>
+                        <phase>generate-resources</phase>
+                            <goals>
+                                 <goal>execute</goal>
+                            </goals>
+                            <configuration>
+                                <language>groovy</language>
+                                <script>
+                                    /**
+                                     * Placeholder, which is used in src/features/features.xml
+                                     * to mark version which should be inserted from dependencies.
+                                     * Currently works only for bundle and configfile tags
+                                     * with mvn: url schema, and needs to be used
+                                     * as third component of schema.
+                                     * eg. mvn:group/artefact/{{VERSION}}
+                                     */
+                                    def versionPlaceholder = "{{VERSION}}"
+                                    /**
+                                     * Path to features.xml which uses versionPlaceholder.
+                                     * This will be processed by this script.
+                                     *
+                                     */
+                                    def featureFilePath = "src/main/features/features.xml"
+                                    // Contains mapping of groupID:artefactID to versoin
+                                    def versionMap = new HashMap();
+                                    /* Loads transitive dependency list generated from
+                                     * maven-dependency-plugin resolve goal
+                                     * and populates map
+                                     */
+                                    def dependencies = new File(project.build.directory,"dependencies.txt")
+                                    dependencies.eachLine {
+                                        def cmps = it.trim().split(":")
+                                        // Depends on number of components:
+                                        //  - groupId
+                                        //  - artifactId
+                                        //  - Type
+                                        //  - Qualifier (optional)
+                                        //  - Version
+                                        //  - Scope
+                                        if(cmps.length > 4) {
+                                            def id = cmps[0] + ":" + cmps[1]
+                                            if(cmps.length == 6) {
+                                                versionMap[id] = cmps[4]
+                                            } else if(cmps.length == 5) {
+                                                versionMap[id] = cmps[3]
+                                            }
+                                        }
+                                    }
+
+                                    /*
+                                     * Takes splitted mvn: URL, looks for placeholder
+                                     * and returns new mvn: URL with version learned
+                                     * from dependency plugin.
+                                     *
+                                     * If referenced bundle is not dependency (direct or transitive)
+                                     * throws an exception and fails build.
+                                     *
+                                     */
+                                    def updatedURLFromProject = { args ->
+                                        // 0 - groupID, 1 - artifactID
+                                        // 2 - version, 3 - type, 4 - Classifier
+
+                                        def groupId = args[0];
+                                        def artifactId = args[1];
+                                        def id = groupId + ":" + artifactId
+                                        def dependencyVersion = versionMap[id]
+                                        if(dependencyVersion != null) {
+                                            // Overriding version
+                                            args[2] = dependencyVersion
+                                            return "mvn:" + args.join("/")
+                                        }
+                                        throw new IllegalArgumentException("Feature dependency $groupId:$artifactId is not a dependency in the project pom.xml.")
+                                    }
+
+                                    def updateMavenDependency = { dep ->
+                                        def mvnUrl = dep.text()
+                                        def prefix = ""
+                                        if (mvnUrl.startsWith("wrap:")) {
+                                            prefix = "wrap:"
+                                            mvnUrl = mvnUrl.substring(5)
+                                        }
+                                        if (mvnUrl.startsWith("mvn:") &amp;&amp; mvnUrl.indexOf(versionPlaceholder) >= 0) {
+                                            // Process property place-holders
+                                            def dollarIndex;
+                                            while ((dollarIndex = mvnUrl.indexOf("\${")) >= 0) {
+                                                def closingBrace = mvnUrl.indexOf("}", dollarIndex);
+                                                if (closingBrace > dollarIndex) {
+                                                    def propKey = mvnUrl.substring(dollarIndex + 2, closingBrace);
+                                                    def propVal = project.properties[propKey];
+                                                    mvnUrl = mvnUrl.replace("\${${propKey}}", propVal);
+                                                } else {
+                                                    println "[WARN] Malformed Maven URL: ${mvnUrl}";
+                                                    break;
+                                                }
+                                            }
+                                            def components =  mvnUrl.substring(4).split("/")
+                                            if (components[2].startsWith(versionPlaceholder)) {
+                                                def suffix = "";
+                                                if (components[2].length() > versionPlaceholder.length()) {
+                                                    suffix = components[2].substring(versionPlaceholder.length())
+                                                    components[2] = versionPlaceholder
+                                                }
+                                                dep.value = prefix + updatedURLFromProject(components) + suffix
+                                            }
+                                        }
+                                    }
+
+                                    def featureFile = new File(project.basedir,featureFilePath)
+                                    def root = new XmlParser().parse(featureFile)
+
+                                    println "[INFO] Updating repository declarations"
+                                    root.repository.each updateMavenDependency
+
+                                    root.feature.each { feature ->
+                                        println "[INFO] Processing feature: ${feature.@name}"
+                                        feature.bundle.each updateMavenDependency
+                                        feature.configfile.each updateMavenDependency
+                                    }
+
+                                    def outDir = new File(project.build.directory,"generated-resources/script")
+                                    outDir.mkdirs();
+                                    def outFile = new File(outDir,"features.xml")
+                                    def outWriter = outFile.newPrintWriter("ASCII");
+                                    xmlPrinter = new XmlNodePrinter(outWriter);
+                                    xmlPrinter.preserveWhitespace = true
+                                    xmlPrinter.print(root)
+                                    outWriter.close();
+                                </script>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.groovy</groupId>
+                            <artifactId>groovy</artifactId>
+                            <version>1.8.6</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.karaf.tooling</groupId>
+                    <artifactId>karaf-maven-plugin</artifactId>
+                    <version>${karaf.version}</version>
+                    <extensions>true</extensions>
+                    <executions>
+                        <execution>
+                            <id>features-create-kar</id>
+                            <goals>
+                                <goal>features-create-kar</goal>
+                            </goals>
+                            <configuration>
+                                <featuresFile>${project.build.directory}/classes/${features.file}</featuresFile>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    <!-- There is no useful configuration for the kar mojo. The features-generate-descriptor mojo configuration may be useful -->
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.12</version>
+                    <executions>
+                        <execution>
+                        <phase>generate-resources</phase>
+                        <goals><goal>add-resource</goal></goals>
+                        <configuration>
+                            <resources>
+                              <resource>
+                                <directory>${project.build.directory}/generated-resources/script</directory>
+                                <filtering>true</filtering>
+                              </resource>
+                            </resources>
+                        </configuration>
+                        </execution>
+                        <execution>
+                            <id>attach-artifacts</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>attach-artifact</goal>
+                            </goals>
+                            <configuration>
+                                <artifacts>
+                                    <artifact>
+                                        <file>${project.build.directory}/classes/${features.file}</file>
+                                        <type>xml</type>
+                                        <classifier>features</classifier>
+                                    </artifact>
+                                </artifacts>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.0.1</version>
+                    <executions>
+                        <execution>
+                            <id>filter</id>
+                            <phase>generate-resources</phase>
+                            <goals>
+                                <goal>resources</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire.version}</version>
+                    <configuration>
+                        <skip>${skip.karaf.featureTest}</skip>
+                        <systemPropertyVariables>
+                            <karaf.distro.groupId>org.opendaylight.odlparent</karaf.distro.groupId>
+                            <karaf.distro.artifactId>opendaylight-karaf-empty</karaf.distro.artifactId>
+                            <!-- Use the latest released version of the current (or the previous) stream. -->
+                            <karaf.distro.version>1.7.1-Boron-SR1</karaf.distro.version>
+                        </systemPropertyVariables>
+                        <dependenciesToScan>
+                            <dependency>org.opendaylight.odlparent:features-test</dependency>
+                        </dependenciesToScan>
+                    </configuration>
+                </plugin>
+                <!-- Ignore/Execute plugin execution -->
+                <plugin>
+                  <groupId>org.eclipse.m2e</groupId>
+                  <artifactId>lifecycle-mapping</artifactId>
+                  <version>1.0.0</version>
+                  <configuration>
+                    <lifecycleMappingMetadata>
+                      <pluginExecutions>
+                        <pluginExecution>
+                          <pluginExecutionFilter>
+                            <groupId>com.alexecollins.maven.plugin</groupId>
+                            <artifactId>script-maven-plugin</artifactId>
+                            <versionRange>[0.0,)</versionRange>
+                            <goals>
+                              <goal>execute</goal>
+                            </goals>
+                          </pluginExecutionFilter>
+                          <action>
+                            <ignore/>
+                          </action>
+                        </pluginExecution>
+                        <pluginExecution>
+                          <pluginExecutionFilter>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-dependency-plugin</artifactId>
+                            <versionRange>[0.0,)</versionRange>
+                            <goals>
+                              <goal>resolve</goal>
+                            </goals>
+                          </pluginExecutionFilter>
+                          <action>
+                            <ignore/>
+                          </action>
+                        </pluginExecution>
+                     </pluginExecutions>
+                   </lifecycleMappingMetadata>
+                  </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.alexecollins.maven.plugin</groupId>
+                <artifactId>script-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- test the features.xml -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>features-test</artifactId>
+            <version>1.8.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Remove this dependency when a better fix for Bug 6523 appears. -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>opendaylight-karaf-empty</artifactId>
+            <version>1.8.0-SNAPSHOT</version>
+            <type>zip</type>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+  <!--
+    Maven Site Configuration
+
+    The following configuration is necessary for maven-site-plugin to
+    correctly identify the correct deployment path for OpenDaylight Maven
+    sites.
+  -->
+  <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
+
+  <distributionManagement>
+    <site>
+      <id>opendaylight-site</id>
+      <url>${nexus.site.url}/${project.artifactId}/</url>
+    </site>
+  </distributionManagement>
+</project>
