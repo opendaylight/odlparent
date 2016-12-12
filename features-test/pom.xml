@@ -90,6 +90,12 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <!-- Dlux lists this dependency as runtime, this attempts to override so that test phase does not fail. -->
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.21</version>
+            <scope>compile</scope>
+        </dependency>        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <scope>compile</scope>
