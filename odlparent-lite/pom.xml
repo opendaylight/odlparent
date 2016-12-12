@@ -264,6 +264,17 @@
             <enforcer.skip>true</enforcer.skip>
             <mdsal.skip.verbose>true</mdsal.skip.verbose> <!-- Bug 6236 -->
         </properties>
+        <build>
+          <plugins>
+            <plugin>
+              <groupId>pl.project13.maven</groupId>
+              <artifactId>git-commit-id-plugin</artifactId>
+              <configuration>
+                <skip>true</skip>
+              </configuration>
+            </plugin>
+          </plugins>
+        </build>
     </profile>
     <profile>
       <!-- http://blog2.vorburger.ch/2016/06/maven-install-into-additional.html
