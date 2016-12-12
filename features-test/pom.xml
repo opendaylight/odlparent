@@ -90,6 +90,14 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <!-- For some reason, the following dependency is only required sometimes, e.g. cardinal-features.
+            Usually it is pulled in as a dependency of pax-url-aether, even though the version should not match. -->
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.21</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <scope>compile</scope>
