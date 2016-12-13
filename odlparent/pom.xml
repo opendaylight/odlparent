@@ -1791,7 +1791,7 @@
             <excludes>
               <exclude>**/gen/**</exclude>
               <exclude>**/generated-sources/**</exclude>
-              <exclude>**/yang-gen/**</exclude>
+              <exclude>**/yang-gen**</exclude>
               <exclude>**/pax/**</exclude>
             </excludes>
           </configuration>
