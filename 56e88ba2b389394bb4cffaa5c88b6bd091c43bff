@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_0675d197",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1795,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-12-13T14:33:02Z",
+      "side": 1,
+      "message": "I\u0027m not comfortable with this kind of wild card excludes. Can we be more specific and list the directories we know that need to be excluded?\n\nI don\u0027t want to accidently exclude a project that might have a real directory that starts with \"yang-gen\".",
+      "revId": "56e88ba2b389394bb4cffaa5c88b6bd091c43bff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
