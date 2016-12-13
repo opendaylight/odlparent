@@ -1792,6 +1792,9 @@
               <exclude>**/gen/**</exclude>
               <exclude>**/generated-sources/**</exclude>
               <exclude>**/yang-gen/**</exclude>
+              <exclude>**/yang-gen-config/**</exclude>
+              <exclude>**/yang-gen-sal/**</exclude>
+              <exclude>**/yang-gen-code/**</exclude>
               <exclude>**/pax/**</exclude>
             </excludes>
           </configuration>
