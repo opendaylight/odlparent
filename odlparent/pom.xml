@@ -128,7 +128,7 @@
     <sonar.jacoco.reportPath>${project.build.directory}/code-coverage/jacoco.exec</sonar.jacoco.reportPath>
     <sonar.jacoco.itReportPath>${project.build.directory}/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
     <!-- Note: This list should match jacoco-maven-plugin's exclusion list below -->
-    <sonar.exclusions>**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**</sonar.exclusions>
+    <sonar.exclusions>**/gen/**,**/generated-sources/**,**/yang-gen/**,**/yang-gen-config/**,**/yang-gen-sal/**,**/yang-gen-code/**,**/pax/**</sonar.exclusions>
 
     <pmd.cpd.fail>false</pmd.cpd.fail>
   </properties>
@@ -1792,6 +1792,9 @@
               <exclude>**/gen/**</exclude>
               <exclude>**/generated-sources/**</exclude>
               <exclude>**/yang-gen/**</exclude>
+              <exclude>**/yang-gen-config/**</exclude>
+              <exclude>**/yang-gen-sal/**</exclude>
+              <exclude>**/yang-gen-code/**</exclude>
               <exclude>**/pax/**</exclude>
             </excludes>
           </configuration>
