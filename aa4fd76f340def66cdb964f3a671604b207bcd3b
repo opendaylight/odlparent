@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_a1f7a2f4",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2759
+      },
+      "writtenOn": "2016-12-14T14:57:52Z",
+      "side": 1,
+      "message": "We need to update this list to match and fix the yang-gen** issue too. I\u0027ll update the patch shortly.",
+      "range": {
+        "startLine": 131,
+        "startChar": 5,
+        "endLine": 131,
+        "endChar": 21
+      },
+      "revId": "aa4fd76f340def66cdb964f3a671604b207bcd3b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
