@@ -128,7 +128,7 @@
     <sonar.jacoco.reportPath>${project.build.directory}/code-coverage/jacoco.exec</sonar.jacoco.reportPath>
     <sonar.jacoco.itReportPath>${project.build.directory}/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
     <!-- Note: This list should match jacoco-maven-plugin's exclusion list below -->
-    <sonar.exclusions>**/gen/**,**/generated-sources/**,**/yang-gen/**,**/yang-gen-config/**,**/yang-gen-sal/**,**/yang-gen-code/**,**/pax/**</sonar.exclusions>
+    <sonar.exclusions>**/gen/**,**/generated-sources/**,**/yang-gen/**,**/yang-gen-config/**,**/yang-gen-sal/**,**/yang-gen-code/**,**/pax/**,org/opendaylight/controller/config/yang/config/**/Abstract*Module.class,org/opendaylight/controller/config/yang/config/**/Abstract*ModuleFactory.class</sonar.exclusions>
 
     <pmd.cpd.fail>false</pmd.cpd.fail>
   </properties>
@@ -1795,6 +1795,8 @@
               <exclude>**/yang-gen-config/**</exclude>
               <exclude>**/yang-gen-sal/**</exclude>
               <exclude>**/yang-gen-code/**</exclude>
+              <exclude>org/opendaylight/controller/config/yang/config/**/Abstract*Module.class</exclude>
+              <exclude>org/opendaylight/controller/config/yang/config/**/Abstract*ModuleFactory.class</exclude>
               <exclude>**/pax/**</exclude>
             </excludes>
           </configuration>
