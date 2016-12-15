@@ -4,7 +4,7 @@
   <parent>
     <artifactId>odlparent</artifactId>
     <groupId>org.opendaylight.odlparent</groupId>
-    <version>1.7.2-SNAPSHOT</version>
+    <version>1.7.2-Boron-SR2</version>
     <relativePath>../odlparent/</relativePath>
   </parent>
   <artifactId>karaf-plugin</artifactId>
