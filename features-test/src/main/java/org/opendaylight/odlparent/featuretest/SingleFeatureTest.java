@@ -166,6 +166,8 @@ public class SingleFeatureTest {
                     System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP)),
             CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP).value(
                     System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
+            // Needed for Agrona/aeron.io
+            CoreOptions.systemPackages("com.sun.media.sound", "sun.nio.ch"),
         };
     }
 
