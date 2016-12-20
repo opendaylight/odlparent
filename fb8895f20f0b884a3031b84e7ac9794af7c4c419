@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_efdb2aeb",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/PerRepoTestRunner.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-12-20T16:48:40Z",
+      "side": 1,
+      "message": "It\u0027s equivalent; toURI() calls new URI(toString()), and toExternalForm() and toString() are the same (toString() calls toExternalForm()).",
+      "parentUuid": "1a622d24_efd16afc",
+      "revId": "fb8895f20f0b884a3031b84e7ac9794af7c4c419",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_8f02766d",
         "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2016-12-20T16:30:13Z",
       "side": 1,
       "message": "this looks like we\u0027re loosing something - intentional?",
+      "revId": "fb8895f20f0b884a3031b84e7ac9794af7c4c419",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_2fe6c2b4",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2016-12-20T16:48:40Z",
+      "side": 1,
+      "message": "It\u0027s intentional, those options are no longer supported in Karaf 4.",
+      "parentUuid": "1a622d24_8f02766d",
       "revId": "fb8895f20f0b884a3031b84e7ac9794af7c4c419",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
