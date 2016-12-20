@@ -1238,7 +1238,7 @@
       <dependency>
         <groupId>org.apache.aries.blueprint</groupId>
         <artifactId>org.apache.aries.blueprint.core</artifactId>
-        <version>1.4.2</version>
+        <version>1.7.1</version>
       </dependency>
 
       <!-- Xtend http://xtend-lang.org
