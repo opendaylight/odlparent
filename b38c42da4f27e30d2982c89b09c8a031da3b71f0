@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_ef25eac2",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 25
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2016-12-20T17:25:03Z",
+      "side": 1,
+      "message": "I\u0027ll bring up removing this on the AAA call this coming Thursday.",
+      "range": {
+        "startLine": 351,
+        "startChar": 12,
+        "endLine": 351,
+        "endChar": 46
+      },
+      "revId": "b38c42da4f27e30d2982c89b09c8a031da3b71f0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
