@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_6f90ba43",
+        "filename": "feature-repo-parent/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-20T16:30:13Z",
+      "side": 1,
+      "message": "remove \u003cversion\u003e \u0026 \u003cexecutions\u003e here, see longer explanation in my email \"org.ops4j.pax.exam:maven-paxexam-plugin VS org.apache.servicemix.tooling:depends-maven-plugin\" to you",
+      "revId": "fb8895f20f0b884a3031b84e7ac9794af7c4c419",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_efd16afc",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/PerRepoTestRunner.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-20T16:30:13Z",
+      "side": 1,
+      "message": "dunno if toURI().toString() would be more accurate here? (Maybe it would escape stuff more correctly; just a hunch.)",
+      "revId": "fb8895f20f0b884a3031b84e7ac9794af7c4c419",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_8f02766d",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2016-12-20T16:30:13Z",
+      "side": 1,
+      "message": "this looks like we\u0027re loosing something - intentional?",
+      "revId": "fb8895f20f0b884a3031b84e7ac9794af7c4c419",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
