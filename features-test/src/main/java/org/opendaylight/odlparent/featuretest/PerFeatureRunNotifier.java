@@ -9,6 +9,7 @@ package org.opendaylight.odlparent.featuretest;
 
 import com.google.common.base.Preconditions;
 import java.net.URL;
+import java.rmi.NoSuchObjectException;
 import org.junit.runner.Description;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
@@ -85,7 +86,9 @@ public class PerFeatureRunNotifier extends RunNotifier {
 
     @Override
     public void fireTestFailure(final Failure failure) {
-        delegate.fireTestFailure(convertFailure(failure));
+        if (!(failure.getException() instanceof NoSuchObjectException)) {
+            delegate.fireTestFailure(convertFailure(failure));
+        }
     }
 
     @Override
