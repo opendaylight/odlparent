@@ -1,9 +1,8 @@
 --- bin/setenv.bat	2016-10-27 16:23:51.966147872 +0200
 +++ bin/setenv.bat	2016-10-03 13:48:22.841563465 +0200
-@@ -62,4 +62,5 @@
+@@ -62,4 +62,4 @@
  rem SET KARAF_OPTS
  rem Enable debug mode
  rem SET KARAF_DEBUG
 -
-+IF "%JAVA_MAX_PERM_MEM%"=="" SET JAVA_MAX_PERM_MEM=512m
 +IF "%JAVA_MAX_MEM%"=="" SET JAVA_MAX_MEM=2048m
