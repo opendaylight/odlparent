@@ -22,45 +22,18 @@
          unversioned features, in terms of the feasability of handling upgrades
          later.) -->
     <feature name="odl-akka-scala" description="Scala Runtime for OpenDaylight" version="${scala.version}">
-        <bundle>mvn:org.scala-lang/scala-library/${scala.version}.${scala.micro.version}</bundle>
-        <bundle>mvn:org.scala-lang/scala-reflect/${scala.version}.${scala.micro.version}</bundle>
-        <bundle>mvn:org.scala-lang.modules/scala-java8-compat_${scala.version}/0.8.0</bundle>
-        <bundle>mvn:org.scala-lang.modules/scala-parser-combinators_${scala.version}/1.0.4</bundle>
+        <feature version="${project.version}">odl-akka-scala-${scala.version}</feature>
     </feature>
     <feature name="odl-akka-system" description="Akka Actor Framework System Bundles" version="${akka.version}">
-        <feature version="${scala.version}">odl-akka-scala</feature>
-        <bundle>mvn:com.typesafe/config/1.3.0</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-actor_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-slf4j_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-osgi_${scala.version}/${akka.version}</bundle>
+        <feature version="${project.version}">odl-akka-system-2.4</feature>
     </feature>
     <feature name="odl-akka-clustering" description="Akka Clustering" version="${akka.version}">
-        <feature version="${akka.version}">odl-akka-system</feature>
-        <bundle>wrap:mvn:org.uncommons.maths/uncommons-maths/1.2.2a</bundle>
-        <bundle>mvn:com.google.protobuf/protobuf-java/2.5.0</bundle>
-        <bundle>mvn:com.typesafe/ssl-config-akka_${scala.version}/0.2.1</bundle>
-        <bundle>mvn:com.typesafe/ssl-config-core_${scala.version}/0.2.1</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-cluster_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-distributed-data-experimental_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-protobuf_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-remote_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-stream_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:org.agrona/Agrona/0.9.1</bundle>
-        <bundle>mvn:io.aeron/aeron-client/1.0.5</bundle>
-        <bundle>mvn:io.aeron/aeron-driver/1.0.5</bundle>
-        <bundle>mvn:io.netty/netty/3.10.6.Final</bundle>
-        <bundle>mvn:org.reactivestreams/reactive-streams/1.0.0</bundle>
-        <bundle>wrap:mvn:org.lmdbjava/lmdbjava/0.0.4</bundle>
+        <feature version="${project.version}">odl-akka-clustering-2.4</feature>
     </feature>
     <feature name='odl-akka-leveldb' description='LevelDB' version='${leveldb.version}'>
-        <bundle>wrap:mvn:org.iq80.leveldb/leveldb/${leveldb.version}</bundle>
-        <bundle>mvn:org.fusesource.leveldbjni/leveldbjni-all/1.8-odl</bundle>
+        <feature version="${project.version}">odl-akka-leveldb-0.7</feature>
     </feature>
     <feature name='odl-akka-persistence' description='Akka Persistence' version="${akka.version}">
-        <feature version='${leveldb.version}'>odl-akka-leveldb</feature>
-        <feature version="${akka.version}">odl-akka-system</feature>
-        <bundle>mvn:com.typesafe.akka/akka-protobuf_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-persistence_${scala.version}/${akka.version}</bundle>
-        <bundle>wrap:mvn:com.google.protobuf/protobuf-java/2.5.0$overwrite=merge&amp;DynamicImport-Package=org.opendaylight.controller.protobuff.messages.*;org.opendaylight.controller.cluster.raft.protobuff.client.messages.*</bundle>
+        <feature version="${project.version}">odl-akka-persistence-2.4</feature>
     </feature>
 </features>
