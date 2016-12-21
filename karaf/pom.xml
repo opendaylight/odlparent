@@ -17,6 +17,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
   </parent>
   <artifactId>karaf-aggregator</artifactId>
   <packaging>pom</packaging>
+  <name>ODL :: odlparent :: ${project.artifactId}</name>
   <modules>
     <module>karaf-branding</module>
     <module>opendaylight-karaf-resources</module>
