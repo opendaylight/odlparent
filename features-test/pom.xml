@@ -52,9 +52,10 @@
         </dependency>
         <dependency>
             <groupId>org.apache.karaf.features</groupId>
-            <artifactId>org.apache.karaf.features.core</artifactId>
+            <artifactId>standard</artifactId>
             <version>${karaf.version}</version>
-            <scope>compile</scope>
+            <classifier>features</classifier>
+            <type>xml</type>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
