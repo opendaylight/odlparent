@@ -240,22 +240,8 @@
                         <feature>wrapper</feature>
                     </installedFeatures>
                     <bootFeatures>
-                        <feature>framework</feature>
-                        <feature>jaas</feature>
-                        <feature>shell</feature>
-                        <feature>feature</feature>
-                        <feature>ssh</feature>
-                        <feature>management</feature>
-                        <feature>bundle</feature>
-                        <feature>config</feature>
-                        <feature>deployer</feature>
-                        <feature>diagnostic</feature>
-                        <feature>instance</feature>
-                        <feature>kar</feature>
-                        <feature>log</feature>
-                        <feature>package</feature>
-                        <feature>service</feature>
-                        <feature>system</feature>
+                        <feature>standard</feature>
+                        <feature>war</feature>
                         <!-- We load wrap as a workaround to handle old features without the wrap prerequisite -->
                         <!-- TODO Remove this once all the downstream features are fixed -->
                         <feature>wrap</feature>
