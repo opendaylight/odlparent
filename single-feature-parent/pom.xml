@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Copyright © 2016 Red Hat, Inc. and others.  All rights reserved.
+ Copyright © 2016, 2017 Red Hat, Inc. and others.  All rights reserved.
 
  This program and the accompanying materials are made available under the
  terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -44,14 +44,25 @@
     <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
+    <properties>
+        <karaf.version>${karaf4.version}</karaf.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
+                <!-- This generates the META-INF/maven/dependencies.properties file
+                     which is required by the versionAsInProject() used in SingleFeatureTest -->
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>depends-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <version>3.0.8</version>
+                <version>${karaf4.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
+                    <simplifyBundleDependencies>true</simplifyBundleDependencies>
                     <excludedArtifactIds>
                         <excludedArtifactId>slf4j-api</excludedArtifactId>
                     </excludedArtifactIds>
@@ -70,7 +81,7 @@
                 <!-- Test the generated features.xml -->
                 <dependency>
                     <groupId>org.opendaylight.odlparent</groupId>
-                    <artifactId>features-test</artifactId>
+                    <artifactId>features4-test</artifactId>
                     <version>1.8.0-SNAPSHOT</version>
                     <scope>test</scope>
                 </dependency>
@@ -88,7 +99,7 @@
                         <version>${maven.surefire.version}</version>
                         <configuration>
                             <dependenciesToScan>
-                                <dependency>org.opendaylight.odlparent:features-test</dependency>
+                                <dependency>org.opendaylight.odlparent:features4-test</dependency>
                             </dependenciesToScan>
                             <additionalClasspathElements>
                                 <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
