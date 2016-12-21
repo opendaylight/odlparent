@@ -22,6 +22,12 @@
     <artifactId>karaf4-parent</artifactId>
     <version>1.8.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <properties>
+        <!-- Projects can override this to add their own boot feature -->
+        <karaf.localFeature>standard</karaf.localFeature>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -240,25 +246,13 @@
                         <feature>wrapper</feature>
                     </installedFeatures>
                     <bootFeatures>
-                        <feature>framework</feature>
-                        <feature>jaas</feature>
-                        <feature>shell</feature>
-                        <feature>feature</feature>
-                        <feature>ssh</feature>
-                        <feature>management</feature>
-                        <feature>bundle</feature>
-                        <feature>config</feature>
-                        <feature>deployer</feature>
-                        <feature>diagnostic</feature>
-                        <feature>instance</feature>
-                        <feature>kar</feature>
-                        <feature>log</feature>
-                        <feature>package</feature>
-                        <feature>service</feature>
-                        <feature>system</feature>
+                        <feature>standard</feature>
+                        <feature>war</feature>
                         <!-- We load wrap as a workaround to handle old features without the wrap prerequisite -->
                         <!-- TODO Remove this once all the downstream features are fixed -->
                         <feature>wrap</feature>
+                        <!-- Local feature if any -->
+                        <feature>${karaf.localFeature}</feature>
                     </bootFeatures>
                     <javase>1.8</javase>
                 </configuration>
