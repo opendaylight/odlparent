@@ -8,8 +8,8 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>opendaylight-karaf-empty</artifactId>
-  <name>${project.artifactId}</name>
   <packaging>pom</packaging>
+  <name>ODL :: odlparent :: ${project.artifactId}</name>
   <prerequisites>
     <maven>3.1.1</maven>
   </prerequisites>
