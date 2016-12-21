@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright © 2016, 2017 Red Hat, Inc. and others.  All rights reserved.
+
+ This program and the accompanying materials are made available under the
+ terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ and is available at http://www.eclipse.org/legal/epl-v10.html
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>odlparent-lite</artifactId>
+        <version>1.8.0-SNAPSHOT</version>
+        <relativePath>../odlparent-lite</relativePath>
+    </parent>
+
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>features4-aggregator</artifactId>
+    <version>1.8.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <modules>
+        <!-- Akka features -->
+        <module>features4-akka</module>
+        <module>odl-akka-all</module>
+        <module>odl-akka-clustering-2.4</module>
+        <module>odl-akka-leveldb-0.7</module>
+        <module>odl-akka-persistence-2.4</module>
+        <module>odl-akka-scala-2.11</module>
+        <module>odl-akka-system-2.4</module>
+
+        <!-- General features -->
+        <module>features4-odlparent</module>
+        <module>odl-guava-18</module>
+        <module>odl-guava-21</module>
+        <module>odl-lmax-3</module>
+        <module>odl-netty-4</module>
+        <module>odl-triemap-0.2</module>
+
+        <!-- Test features -->
+        <module>odl-bundles-test</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
