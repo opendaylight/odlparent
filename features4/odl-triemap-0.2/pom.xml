@@ -13,15 +13,24 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>karaf4-parent</artifactId>
+        <artifactId>single-feature4-parent</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../karaf4-parent</relativePath>
+        <relativePath>../../single-feature4-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>opendaylight-karaf4-empty</artifactId>
+    <artifactId>odl4-triemap-0.2</artifactId>
     <version>1.8.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <packaging>feature</packaging>
+
+    <name>OpenDaylight :: Concurrent Trie HashMap (for Karaf 4)</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.romix</groupId>
+            <artifactId>java-concurrent-hash-trie-map</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
