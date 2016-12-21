@@ -22,26 +22,18 @@
          later.) -->
     <!-- See also the links defined for our Maven site in the root POM (maven-javadoc-plugin) -->
     <feature name="odl-netty" description="OpenDaylight :: Netty" version="4.0.37.Final">
-        <bundle>mvn:io.netty/netty-buffer/4.0.37.Final</bundle>
-        <bundle>mvn:io.netty/netty-common/4.0.37.Final</bundle>
-        <bundle>mvn:io.netty/netty-transport/4.0.37.Final</bundle>
-        <bundle>mvn:io.netty/netty-codec/4.0.37.Final</bundle>
-        <bundle>mvn:io.netty/netty-codec-http/4.0.37.Final</bundle>
-        <bundle>mvn:io.netty/netty-handler/4.0.37.Final</bundle>
-        <!-- Here we need to include all available native epoll implementations; we can't limit ourselves to the build
-        platform and we can't require the build platform to have an implementation (e.g. OS X) -->
-        <bundle>mvn:io.netty/netty-transport-native-epoll/4.0.37.Final/jar/linux-x86_64</bundle>
+        <feature version="${project.version}">odl-netty-4</feature>
     </feature>
     <feature name="odl-guava" description="OpenDaylight :: Guava" version="18.0">
-        <bundle>mvn:com.google.guava/guava/18.0</bundle>
+        <feature version="${project.version}">odl-guava-18</feature>
     </feature>
     <feature name="odl-guava" description="OpenDaylight :: Guava" version="19.0">
         <bundle>mvn:com.google.guava/guava/19.0</bundle>
     </feature>
     <feature name="odl-lmax" description="OpenDaylight :: LMAX Disruptor" version="3.3.4">
-        <bundle>mvn:com.lmax/disruptor/3.3.4</bundle>
+        <feature version="${project.version}">odl-lmax-3</feature>
     </feature>
     <feature name="odl-triemap" description="OpenDaylight :: Concurrent Trie HashMap" version="0.2.23">
-        <bundle>mvn:com.github.romix/java-concurrent-hash-trie-map/0.2.23</bundle>
+        <feature version="${project.version}">odl-triemap-0.2</feature>
     </feature>
 </features>
