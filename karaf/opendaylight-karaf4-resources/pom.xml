@@ -18,6 +18,7 @@
   <artifactId>opendaylight-karaf4-resources</artifactId>
   <description>Resources for opendaylight-karaf</description>
   <packaging>jar</packaging>
+  <name>ODL :: odlparent :: ${project.artifactId}</name>
   <build>
     <resources>
       <resource>

@@ -84,25 +84,16 @@
     <!-- Used in affinity, controller, nemo, opendove, snmp4sdn -->
     <enunciate.version>1.31</enunciate.version>
     <!-- Used in affinity, coretutorials, netide -->
-    <exam.version>4.4.0</exam.version>
+    <exam.version>4.9.2</exam.version>
     <!-- Used in affinity, controller, neutron, of-config; see also snmp4sdn -->
     <!-- Later versions break tests in downstream projects -->
     <failsafe.version>2.18.1</failsafe.version>
-    <!--
-        Regression in jacoco-plugin 0.7.5 prevents us from upgrading to it
-        http://jira.xwiki.org/browse/XCOMMONS-821
-
-        Additionally we need to stay on jacoco 0.7.2.201409121644. Future
-        versions appear to have issues picking up code coverage for projects
-        that use PowerMock.
-        https://github.com/jayway/powermock/issues/564
-    -->
     <!-- Used in controller, netvirt, neutron, of-config, ovsdb, persistence, snmp4sdn, vtn; see also usc -->
-    <jacoco.version>0.7.2.201409121644</jacoco.version>
+    <jacoco.version>0.7.7.201606060606</jacoco.version>
     <!-- Used in aaa, controller, coretutorials, integration/distribution, l2switch, lacp, lispflowmapping, netide,
          nic, openflowplugin, ovsdb, persistence, sfc, snbi, snmp4sdn?, sxp, topoprocessing, unimgr, vtn -->
     <karaf.version>3.0.8</karaf.version>
-    <karaf4.version>4.0.7</karaf4.version>
+    <karaf4.version>4.0.9-SNAPSHOT</karaf4.version>
     <!-- Used in lispflowmapping, snmp4sdn, vtn -->
     <projectinfo>2.8.1</projectinfo>
     <!-- Used in of-config; see also snmp4sdn -->
@@ -1190,13 +1181,13 @@
       <dependency>
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-aether</artifactId>
-        <version>2.4.7</version>
+        <version>2.5.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-wrap</artifactId>
-        <version>2.4.7</version>
+        <version>2.5.1</version>
       </dependency>
       <dependency>
         <groupId>org.springframework.osgi</groupId>

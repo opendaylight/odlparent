@@ -37,6 +37,7 @@
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <properties>
+        <karaf.version>${karaf4.version}</karaf.version>
         <skip.karaf.featureTest>false</skip.karaf.featureTest>
     </properties>
 
@@ -44,7 +45,7 @@
         <!-- Test the generated features.xml -->
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>features-test</artifactId>
+            <artifactId>features4-test</artifactId>
             <version>1.8.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
@@ -59,12 +60,16 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>depends-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surefire.version}</version>
                 <configuration>
                     <skip>${skip.karaf.featureTest}</skip>
                     <dependenciesToScan>
-                        <dependency>org.opendaylight.odlparent:features-test</dependency>
+                        <dependency>org.opendaylight.odlparent:features4-test</dependency>
                     </dependenciesToScan>
                     <additionalClasspathElements>
                         <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
@@ -82,7 +87,7 @@
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <version>3.0.8</version>
+                <version>${karaf4.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <aggregateFeatures>true</aggregateFeatures>
