@@ -32,6 +32,7 @@
         <module>findbugs</module>
         <module>license</module>
         <module>features-test</module>
+        <module>features4-test</module>
 
         <!-- Karaf integration -->
         <module>karaf</module>
@@ -41,13 +42,16 @@
         <!-- Parent POMs -->
         <module>bundle-parent</module>
         <module>features-parent</module>
+        <module>single-feature3-parent</module>
         <module>single-feature-parent</module>
+        <module>feature3-repo-parent</module>
         <module>feature-repo-parent</module>
         <module>odlparent</module>
         <module>odlparent-lite</module>
 
         <!-- Features -->
         <module>features</module>
+        <module>features4</module>
 
         <!-- Artifacts -->
         <module>odlparent-artifacts</module>

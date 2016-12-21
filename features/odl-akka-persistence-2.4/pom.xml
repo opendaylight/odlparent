@@ -13,9 +13,9 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>single-feature-parent</artifactId>
+        <artifactId>single-feature3-parent</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../../single-feature-parent</relativePath>
+        <relativePath>../../single-feature3-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
@@ -48,11 +48,10 @@
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-persistence_${scala.version}</artifactId>
         </dependency>
-        <!-- karaf-maven-plugin doesn't merge this with the feature.xml file yet -->
-        <!--dependency>
+        <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-        </dependency-->
+        </dependency>
     </dependencies>
 
     <!--
