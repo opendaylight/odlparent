@@ -39,17 +39,21 @@
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>single-feature-parent</artifactId>
+    <artifactId>single-feature4-parent</artifactId>
     <version>1.8.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <properties>
+        <karaf.version>${karaf4.version}</karaf.version>
+    </properties>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <version>${karaf.version}</version>
+                <version>${karaf4.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <excludedArtifactIds>
@@ -70,7 +74,7 @@
                 <!-- Test the generated features.xml -->
                 <dependency>
                     <groupId>org.opendaylight.odlparent</groupId>
-                    <artifactId>features-test</artifactId>
+                    <artifactId>features4-test</artifactId>
                     <version>1.8.0-SNAPSHOT</version>
                     <scope>test</scope>
                 </dependency>
