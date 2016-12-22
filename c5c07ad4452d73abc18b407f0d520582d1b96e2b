@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_4e49778a",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2016-12-22T23:26:06Z",
+      "side": 1,
+      "message": "\u003cignore/\u003e",
+      "range": {
+        "startLine": 269,
+        "startChar": 20,
+        "endLine": 269,
+        "endChar": 37
+      },
+      "revId": "c5c07ad4452d73abc18b407f0d520582d1b96e2b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
