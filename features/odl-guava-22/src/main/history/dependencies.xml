@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl4-guava-22">
+    <feature version="0.0.0">
+        <feature prerequisite="false" dependency="false">wrap</feature>
+        <bundle>mvn:com.google.guava/guava/22.0</bundle>
+        <bundle>wrap:mvn:com.google.errorprone/error_prone_annotations/2.0.18</bundle>
+        <bundle>wrap:mvn:com.google.j2objc/j2objc-annotations/1.1</bundle>
+        <bundle>wrap:mvn:org.codehaus.mojo/animal-sniffer-annotations/1.14</bundle>
+    </feature>
+</features>
