@@ -295,12 +295,12 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>18.0</version>
+        <version>21.0-rc2</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
-        <version>18.0</version>
+        <version>21.0-rc2</version>
         <scope>test</scope>
       </dependency>
       <dependency>
@@ -1993,7 +1993,7 @@
           <links>
             <link>http://doc.akka.io/japi/akka/${akka.version}/</link>
             <link>https://google.github.io/guava/releases/18.0/api/docs/</link>
-            <link>https://google.github.io/guava/releases/19.0/api/docs/</link>
+            <link>https://google.github.io/guava/releases/21.0-rc2/api/docs/</link>
             <link>http://netty.io/4.0/api/</link>
           </links>
         </configuration>
