@@ -41,6 +41,14 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>odl-guava-21</artifactId>
+            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>odl-lmax-3</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>

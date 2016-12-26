@@ -37,6 +37,7 @@
         <!-- General features -->
         <module>features-odlparent</module>
         <module>odl-guava-18</module>
+        <module>odl-guava-21</module>
         <module>odl-lmax-3</module>
         <module>odl-netty-4</module>
         <module>odl-triemap-0.2</module>
