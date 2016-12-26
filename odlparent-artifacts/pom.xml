@@ -218,7 +218,7 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl4-guava-21</artifactId>
+                <artifactId>odl4-guava-22</artifactId>
                 <version>1.9.1-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
