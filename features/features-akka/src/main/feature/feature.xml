@@ -45,9 +45,9 @@
         <bundle>mvn:com.typesafe.akka/akka-protobuf_${scala.version}/${akka.version}</bundle>
         <bundle>mvn:com.typesafe.akka/akka-remote_${scala.version}/${akka.version}</bundle>
         <bundle>mvn:com.typesafe.akka/akka-stream_${scala.version}/${akka.version}</bundle>
-        <bundle>mvn:org.agrona/Agrona/0.9.0</bundle>
-        <bundle>mvn:io.aeron/aeron-client/1.0.4</bundle>
-        <bundle>mvn:io.aeron/aeron-driver/1.0.4</bundle>
+        <bundle>mvn:org.agrona/Agrona/0.9.1</bundle>
+        <bundle>mvn:io.aeron/aeron-client/1.0.5</bundle>
+        <bundle>mvn:io.aeron/aeron-driver/1.0.5</bundle>
         <bundle>mvn:io.netty/netty/3.10.6.Final</bundle>
         <bundle>mvn:org.reactivestreams/reactive-streams/1.0.0</bundle>
         <bundle>wrap:mvn:org.lmdbjava/lmdbjava/0.0.4</bundle>
