@@ -121,6 +121,13 @@ public class SingleFeatureTest {
         return new Option[] {
             // TODO: Find a way to inherit memory limits from Maven options.
             new VMOption("-Xmx2g"),
+            // inspired by org.apache.commons.lang.SystemUtils
+            when(System.getProperty("os.name").toLowerCase().startsWith("linux")).useOptions(
+                // This prevents low entropy issues on Linux to affect Java random numbers
+                // which can block crypto such as the SSH server in netconf
+                // see https://bugs.opendaylight.org/show_bug.cgi?id=6790
+                new VMOption("-Djava.security.egd=file:/dev/./urandom")
+            ),
             when(Boolean.getBoolean(PROFILE_PROP)).useOptions(
                 new VMOption("-XX:+UnlockCommercialFeatures"),
                 new VMOption("-XX:+FlightRecorder"),
