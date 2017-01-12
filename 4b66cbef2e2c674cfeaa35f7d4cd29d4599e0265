@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a622d24_76d4cabc",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 31
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-01-12T13:50:25Z",
+      "side": 1,
+      "message": "Yeah, could and perhaps will do later.. works as-is for now. I have a future (medium term) idea of perhaps using bundles-test for something else than only SingleFeatureTest later; if that happens, then I think this would good to do (then).",
+      "parentUuid": "1a622d24_56bc2edc",
+      "revId": "4b66cbef2e2c674cfeaa35f7d4cd29d4599e0265",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a622d24_36da524c",
         "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
         "patchSetId": 31
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-12T13:14:04Z",
       "side": 1,
       "message": "This won\u0027t get traction if no bugs are filed ;-).",
+      "revId": "4b66cbef2e2c674cfeaa35f7d4cd29d4599e0265",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_b652e264",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 31
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-01-12T13:50:25Z",
+      "side": 1,
+      "message": "Good point. I took a note to try to get to doing that (not top prio, for me).  If/when I do, I\u0027ll propose new Gerrits (after this is merged) inserting inline comments references to resp. raised bugs here.",
+      "parentUuid": "1a622d24_36da524c",
       "revId": "4b66cbef2e2c674cfeaa35f7d4cd29d4599e0265",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
