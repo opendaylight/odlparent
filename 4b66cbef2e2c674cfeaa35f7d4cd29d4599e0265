@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_56bc2edc",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 31
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-01-12T13:14:04Z",
+      "side": 1,
+      "message": "This makes it seem like bundles-test should really provide a feature with the relevant dependencies...",
+      "revId": "4b66cbef2e2c674cfeaa35f7d4cd29d4599e0265",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_36da524c",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 31
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-01-12T13:14:04Z",
+      "side": 1,
+      "message": "This won\u0027t get traction if no bugs are filed ;-).",
+      "revId": "4b66cbef2e2c674cfeaa35f7d4cd29d4599e0265",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
