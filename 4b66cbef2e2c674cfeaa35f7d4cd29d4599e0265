@@ -69,6 +69,29 @@
       "revId": "4b66cbef2e2c674cfeaa35f7d4cd29d4599e0265",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_c9fd3cb3",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 31
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2017-01-13T13:55:50Z",
+      "side": 1,
+      "message": "not longer need it.",
+      "range": {
+        "startLine": 384,
+        "startChar": 12,
+        "endLine": 387,
+        "endChar": 45
+      },
+      "revId": "4b66cbef2e2c674cfeaa35f7d4cd29d4599e0265",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
