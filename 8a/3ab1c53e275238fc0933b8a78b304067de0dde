@@ -1,0 +1,7 @@
+Code-Review+2: Stephen Kitt <skitt@redhat.com>
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Submitted-by: Stephen Kitt <skitt@redhat.com>
+Submitted-at: Tue, 17 Jan 2017 10:47:28 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/50537
+Project: odlparent
+Branch: refs/heads/master
