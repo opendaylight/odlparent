@@ -376,10 +376,6 @@ public class SingleFeatureTest {
             //   .TestBundleDiag (works for all other features; class loading issue in that feature?)
             "odl-hbaseclient",
             // 1/9 in unimgr/features due missing mdsal, similar to issue to odl-integration-all?
-            "odl-unimgr-netvirt",
-            // 1/19 in bgpcep/features/bgp due to Missing dependencies:
-            // (objectClass=org.opendaylight.protocol.bgp.rib.spi.state.BGPStateConsumer)
-            // NOK org.opendaylight.bgpcep.bgp-openconfig-state
-            "odl-bgpcep-bgp-openconfig-state"
+            "odl-unimgr-netvirt"
     );
 }
