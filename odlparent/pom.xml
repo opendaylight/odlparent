@@ -128,7 +128,7 @@
     <sonar.jacoco.reportPath>${project.build.directory}/code-coverage/jacoco.exec</sonar.jacoco.reportPath>
     <sonar.jacoco.itReportPath>${project.build.directory}/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
     <!-- Note: This list should match jacoco-maven-plugin's exclusion list below -->
-    <sonar.exclusions>**/gen/**,**/generated-sources/**,**/yang-gen/**,**/yang-gen-config/**,**/yang-gen-sal/**,**/yang-gen-code/**,**/pax/**</sonar.exclusions>
+    <sonar.exclusions>**/gen/**,**/generated-sources/**,**/generated-test-sources/**,**/yang-gen/**,**/yang-gen-config/**,**/yang-gen-sal/**,**/yang-gen-code/**,**/pax/**</sonar.exclusions>
 
     <pmd.cpd.fail>false</pmd.cpd.fail>
   </properties>
@@ -1441,6 +1441,7 @@
                               PMD config too.
                    -->
                   <excludeRoot>${project.build.directory}/generated-sources</excludeRoot>
+                  <excludeRoot>${project.build.directory}/generated-test-sources</excludeRoot>
                 </excludeRoots>
                 <linkXRef>false</linkXRef>
               </configuration>
@@ -1670,8 +1671,8 @@
                 <goal>testCompile</goal>
               </goals>
               <configuration>
-                <outputDirectory>${project.build.directory}/generated-sources/xtend/main</outputDirectory>
-                <testOutputDirectory>${project.build.directory}/generated-sources/xtend/test</testOutputDirectory>
+                <outputDirectory>${project.build.directory}/generated-sources/xtend</outputDirectory>
+                <testOutputDirectory>${project.build.directory}/generated-test-sources/xtend</testOutputDirectory>
               </configuration>
             </execution>
           </executions>
@@ -1806,6 +1807,7 @@
             <excludes>
               <exclude>**/gen/**</exclude>
               <exclude>**/generated-sources/**</exclude>
+              <exclude>**/generated-test-sources/**</exclude>
               <exclude>**/yang-gen/**</exclude>
               <exclude>**/yang-gen-config/**</exclude>
               <exclude>**/yang-gen-sal/**</exclude>
