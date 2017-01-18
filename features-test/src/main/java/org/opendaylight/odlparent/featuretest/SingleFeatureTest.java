@@ -347,33 +347,40 @@ public class SingleFeatureTest {
         }
     }
 
-    // TODO Figure out why each of these fails the TestBundleDiag, fix it, and remove this.. ;)
+    // TODO remove this when all issues linked to parent https://bugs.opendaylight.org/show_bug.cgi?id=7582 are resolved
     private static final List<String> BLACKLISTED_BROKEN_FEATURES = ImmutableList.of(
-             // integration/distribution/features-test due to (unclear)
+            // integration/distribution/features-test due to (unclear)
             "odl-integration-all",
             // controller/features/mdsal/ due to IllegalStateException: ./configuration/initial/akka.conf is missing
+            // see https://bugs.opendaylight.org/show_bug.cgi?id=7583
             "odl-mdsal-broker-local",
             "odl-mdsal-clustering-commons",
             "odl-mdsal-distributed-datastore",
             "odl-mdsal-remoterpc-connector",
             // aaa/features/authn due to Cassandra expected to be up on
+            // see https://bugs.opendaylight.org/show_bug.cgi?id=7584
             "odl-aaa-authn-cassandra-cluster",
             // 3/18 in bgpcep/features/bgp/ due to NoSuchFileException: etc/....
+            // see https://bugs.opendaylight.org/show_bug.cgi?id=7585
             "odl-bgpcep-bgp-rib-impl",
             "odl-bgpcep-bgp-topology",
             "odl-bgpcep-bgp-cli",
             // 1/1 in bgpcep/features/bmp due to NoSuchFileException: etc/opendaylight/bgp
+            // also https://bugs.opendaylight.org/show_bug.cgi?id=7585 (same as above)
             "odl-bgpcep-bmp",
             // 4/8 in lispflowmapping/features due to.. unclear, similar issue to odl-integration-all?
+            // see https://bugs.opendaylight.org/show_bug.cgi?id=7586
             "odl-lispflowmapping-mappingservice",
             "odl-lispflowmapping-mappingservice-shell",
             "odl-lispflowmapping-neutron",
             "odl-lispflowmapping-ui",
-            // 1/17 in lispflowmapping/features due to NOK org.opendaylight.groupbasedpolicy
+            // 1/17 in groupbasedpolicy/features due to NOK org.opendaylight.groupbasedpolicy
             // Caused by: org.opendaylight.mdsal.eos.common.api.CandidateAlreadyRegisteredException
+            // see https://bugs.opendaylight.org/show_bug.cgi?id=7587
             "odl-groupbasedpolicy-ne-location-provider",
             // 1/11 in tsdr/features due to (strange) ClassNotFoundException: odlparent.bundlestest
             //   .TestBundleDiag (works for all other features; class loading issue in that feature?)
+            // see https://bugs.opendaylight.org/show_bug.cgi?id=7588
             "odl-hbaseclient",
             // 1/9 in unimgr/features due missing mdsal, similar to issue to odl-integration-all?
             "odl-unimgr-netvirt"
