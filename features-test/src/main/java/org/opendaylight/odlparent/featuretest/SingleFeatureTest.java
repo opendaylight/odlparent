@@ -349,7 +349,8 @@ public class SingleFeatureTest {
 
     // TODO remove this when all issues linked to parent https://bugs.opendaylight.org/show_bug.cgi?id=7582 are resolved
     private static final List<String> BLACKLISTED_BROKEN_FEATURES = ImmutableList.of(
-            // integration/distribution/features-test due to (unclear)
+            // integration/distribution/features-test due to DOMRpcService
+            // see https://bugs.opendaylight.org/show_bug.cgi?id=7595
             "odl-integration-all",
             // controller/features/mdsal/ due to IllegalStateException: ./configuration/initial/akka.conf is missing
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7583
@@ -370,6 +371,7 @@ public class SingleFeatureTest {
             "odl-bgpcep-bmp",
             // 4/8 in lispflowmapping/features due to.. unclear, similar issue to odl-integration-all?
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7586
+            // TODO retry after https://bugs.opendaylight.org/show_bug.cgi?id=7595 is fixed
             "odl-lispflowmapping-mappingservice",
             "odl-lispflowmapping-mappingservice-shell",
             "odl-lispflowmapping-neutron",
@@ -383,6 +385,7 @@ public class SingleFeatureTest {
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7588
             "odl-hbaseclient",
             // 1/9 in unimgr/features due missing mdsal, similar to issue to odl-integration-all?
+            // TODO retry after https://bugs.opendaylight.org/show_bug.cgi?id=7595 is fixed
             "odl-unimgr-netvirt"
     );
 }
