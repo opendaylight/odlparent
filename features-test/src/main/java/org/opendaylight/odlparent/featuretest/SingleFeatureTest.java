@@ -8,6 +8,7 @@
 
 package org.opendaylight.odlparent.featuretest;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
@@ -50,6 +51,7 @@ import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
+import org.ops4j.pax.exam.options.PropagateSystemPropertyOption;
 import org.ops4j.pax.exam.options.extra.VMOption;
 import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
@@ -67,6 +69,7 @@ public class SingleFeatureTest {
     private static final String KEEP_UNPACK_DIRECTORY_PROP = "karaf.keep.unpack";
     private static final String PROFILE_PROP = "karaf.featureTest.profile";
     private static final String BUNDLES_DIAG_SKIP_PROP = "sft.diag.skip";
+    private static final String BUNDLES_DIAG_TIMEOUT_PROP = "sft.diag.timeout";
 
     private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
             "log4j.logger.org.opendaylight.odlparent.featuretest";
@@ -182,12 +185,11 @@ public class SingleFeatureTest {
               *
               */
             disableExternalSnapshotRepositories(),
-            CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP).value(
-                    System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP)),
-            CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP).value(
-                    System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP)),
-            CoreOptions.systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP).value(
-                    System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP)),
+            new PropagateSystemPropertyOption(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP),
+            new PropagateSystemPropertyOption(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP),
+            new PropagateSystemPropertyOption(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP),
+            new PropagateSystemPropertyOption(BUNDLES_DIAG_SKIP_PROP),
+            new PropagateSystemPropertyOption(BUNDLES_DIAG_TIMEOUT_PROP),
             // Needed for Agrona/aeron.io
             CoreOptions.systemPackages("com.sun.media.sound", "sun.nio.ch"),
         };
@@ -340,7 +342,8 @@ public class SingleFeatureTest {
 
         if (!Boolean.getBoolean(BUNDLES_DIAG_SKIP_PROP)
                 && !BLACKLISTED_BROKEN_FEATURES.contains(getFeatureName())) {
-            new TestBundleDiag(bundleContext, bundleService).checkBundleDiagInfos();
+            Integer timeOutInSeconds = Integer.getInteger(BUNDLES_DIAG_TIMEOUT_PROP, 5 * 60);
+            new TestBundleDiag(bundleContext, bundleService).checkBundleDiagInfos(timeOutInSeconds, SECONDS);
         } else {
             LOG.warn("SKIPPING TestBundleDiag because system property {} is true or feature is blacklisted: {}",
                     BUNDLES_DIAG_SKIP_PROP, getFeatureName());

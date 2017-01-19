@@ -8,9 +8,10 @@
 package org.opendaylight.odlparent.bundlestest;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
-import static java.util.concurrent.TimeUnit.MINUTES;
+import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.junit.Assert.fail;
 
+import java.util.concurrent.TimeUnit;
 import org.apache.karaf.bundle.core.BundleService;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
@@ -47,16 +48,16 @@ public class TestBundleDiag {
      *
      * @author Michael Vorburger, based on guidance from Christian Schneider
      */
-    public void checkBundleDiagInfos() {
+    public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) {
         try {
             Awaitility.await("checkBundleDiagInfos")
                 .pollDelay(0, MILLISECONDS)
-                .pollInterval(250, MILLISECONDS)
-                .atMost(5, MINUTES)
+                .pollInterval(1, SECONDS)
+                .atMost(timeout, timeoutUnit)
                     .conditionEvaluationListener(
-                        condition -> LOG.info("{} (elapsed time {}ms, remaining time {}ms)",
+                        condition -> LOG.info("{} (elapsed time {}s, remaining time {}s)",
                             ((BundleDiagInfos) condition.getValue()).getSummaryText(),
-                            condition.getElapsedTimeInMS(), condition.getRemainingTimeInMS()))
+                            condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000 ))
                     .until(() -> getBundleDiagInfos(), new BundleServiceSummaryMatcher());
 
             // If we're here then either BundleServiceSummaryMatcher quit because of Active, Failure or Stopping..
