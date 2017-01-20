@@ -364,13 +364,6 @@ public class SingleFeatureTest {
             // aaa/features/authn due to Cassandra expected to be up on
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7584
             "odl-aaa-authn-cassandra-cluster",
-            // 4/8 in lispflowmapping/features due to.. unclear, similar issue to odl-integration-all?
-            // see https://bugs.opendaylight.org/show_bug.cgi?id=7586
-            // TODO retry after https://bugs.opendaylight.org/show_bug.cgi?id=7595 is fixed
-            "odl-lispflowmapping-mappingservice",
-            "odl-lispflowmapping-mappingservice-shell",
-            "odl-lispflowmapping-neutron",
-            "odl-lispflowmapping-ui",
             // 1/17 in groupbasedpolicy/features due to NOK org.opendaylight.groupbasedpolicy
             // Caused by: org.opendaylight.mdsal.eos.common.api.CandidateAlreadyRegisteredException
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7587
