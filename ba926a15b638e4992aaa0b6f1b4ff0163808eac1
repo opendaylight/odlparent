@@ -22,6 +22,30 @@
       "revId": "ba926a15b638e4992aaa0b6f1b4ff0163808eac1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a622d24_4a99fe6c",
+        "filename": "karaf/opendaylight-karaf4-resources/src/main/resources/patches/karaf-setenv-4.0.7.patch",
+        "patchSetId": 19
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-01-20T15:15:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a622d24_b77bdbbc",
+      "range": {
+        "startLine": 9,
+        "startChar": 21,
+        "endLine": 9,
+        "endChar": 26
+      },
+      "revId": "ba926a15b638e4992aaa0b6f1b4ff0163808eac1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
