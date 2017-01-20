@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a622d24_b77bdbbc",
+        "filename": "karaf/opendaylight-karaf4-resources/src/main/resources/patches/karaf-setenv-4.0.7.patch",
+        "patchSetId": 19
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-01-20T13:44:54Z",
+      "side": 1,
+      "message": "Java 8 warns this is ignored. As ODL is incompatible with Java 7 since Boron (I think), we can drop this from every script it appears in.",
+      "range": {
+        "startLine": 9,
+        "startChar": 21,
+        "endLine": 9,
+        "endChar": 26
+      },
+      "revId": "ba926a15b638e4992aaa0b6f1b4ff0163808eac1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
