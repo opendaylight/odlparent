@@ -369,13 +369,6 @@ public class SingleFeatureTest {
             // 1/1 in bgpcep/features/bmp due to NoSuchFileException: etc/opendaylight/bgp
             // also https://bugs.opendaylight.org/show_bug.cgi?id=7585 (same as above)
             "odl-bgpcep-bmp",
-            // 4/8 in lispflowmapping/features due to.. unclear, similar issue to odl-integration-all?
-            // see https://bugs.opendaylight.org/show_bug.cgi?id=7586
-            // TODO retry after https://bugs.opendaylight.org/show_bug.cgi?id=7595 is fixed
-            "odl-lispflowmapping-mappingservice",
-            "odl-lispflowmapping-mappingservice-shell",
-            "odl-lispflowmapping-neutron",
-            "odl-lispflowmapping-ui",
             // 1/17 in groupbasedpolicy/features due to NOK org.opendaylight.groupbasedpolicy
             // Caused by: org.opendaylight.mdsal.eos.common.api.CandidateAlreadyRegisteredException
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7587
