@@ -245,7 +245,29 @@
         <version>1.6.4</version>
         <scope>test</scope>
       </dependency>
-      <!-- Supporting Libraries -->
+
+      <!--
+           Annotation Processors
+       -->
+      <dependency>
+        <!-- Generates immutable implementations, builders, the works -->
+        <groupId>org.immutables</groupId>
+        <artifactId>value</artifactId>
+        <version>2.3.9</version>
+        <!-- Must be provided; <scope>test here breaks APT in Eclipse :( -->
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <!-- Generates META-INF/services entries for ServiceLoader -->
+        <groupId>org.kohsuke.metainf-services</groupId>
+        <artifactId>metainf-services</artifactId>
+        <version>1.7</version>
+        <optional>true</optional>
+      </dependency>
+
+      <!--
+           Supporting Libraries
+       -->
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>jcl-over-slf4j</artifactId>
@@ -309,13 +331,6 @@
         <!-- Make sure this version is in sync with the guice one below -->
         <version>4.0.rc1</version>
         <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.immutables</groupId>
-        <artifactId>value</artifactId>
-        <version>2.3.9</version>
-        <!-- Must be provided; <scope>test here breaks APT in Eclipse :( -->
-        <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>com.google.inject</groupId>
