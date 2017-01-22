@@ -361,14 +361,6 @@ public class SingleFeatureTest {
             // aaa/features/authn due to Cassandra expected to be up on
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7584
             "odl-aaa-authn-cassandra-cluster",
-            // 3/18 in bgpcep/features/bgp/ due to NoSuchFileException: etc/....
-            // see https://bugs.opendaylight.org/show_bug.cgi?id=7585
-            "odl-bgpcep-bgp-rib-impl",
-            "odl-bgpcep-bgp-topology",
-            "odl-bgpcep-bgp-cli",
-            // 1/1 in bgpcep/features/bmp due to NoSuchFileException: etc/opendaylight/bgp
-            // also https://bugs.opendaylight.org/show_bug.cgi?id=7585 (same as above)
-            "odl-bgpcep-bmp",
             // 4/8 in lispflowmapping/features due to.. unclear, similar issue to odl-integration-all?
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7586
             // TODO retry after https://bugs.opendaylight.org/show_bug.cgi?id=7595 is fixed
