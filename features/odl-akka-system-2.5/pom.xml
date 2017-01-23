@@ -55,6 +55,12 @@
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-osgi_2.12</artifactId>
+            <exclusions>
+              <exclusion>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.compendium</artifactId>
+              </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
