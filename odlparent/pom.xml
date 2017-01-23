@@ -171,6 +171,10 @@
          <version>1.3.0</version>
          <scope>test</scope>
       </dependency>
+      <!-- Bug 7662: TODO eventually remove mockito-all, because its use is now forbidden via a new rule of maven-enforcer-plugin below
+                     It wasn't immediately removed together with the introduction of the maven-enforcer-plugin, because while we transition
+                     to replace all uses of mockito-all by mockito-core in all of ODL downstream projects, its much clearer to get a
+                     maven-enforcer-plugin violation message than suddenly a confusing 'dependencies.dependency.version' for org.mockito:mockito-all:jar is missing  -->
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-all</artifactId>
@@ -1847,6 +1851,28 @@
     </pluginManagement>
 
     <plugins>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-banned-dependencies</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <bannedDependencies>
+                  <message>Please always use mockito-core instead of mockito-all (https://bugs.opendaylight.org/show_bug.cgi?id=7662)</message>
+                  <excludes>
+                    <exclude>org.mockito:mockito-all</exclude>
+                  </excludes>
+                </bannedDependencies>
+              </rules>
+              <fail>true</fail>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
       </plugin>
