@@ -1862,9 +1862,17 @@
             <configuration>
               <rules>
                 <bannedDependencies>
-                  <message>Please always use mockito-core instead of mockito-all (https://bugs.opendaylight.org/show_bug.cgi?id=7662)</message>
+                  <message>Please always use mockito-core instead of mockito-all, and findbugs:annotations instead of findbugs:jsr305 (see https://bugs.opendaylight.org/show_bug.cgi?id=7662 &amp; https://bugs.opendaylight.org/show_bug.cgi?id=7663)</message>
                   <excludes>
                     <exclude>org.mockito:mockito-all</exclude>
+                    <!-- https://github.com/facebook/facebook-oss-pom/blob/master/pom.xml#L331-L336 -->
+                    <!-- Clashes with com.google.code.findbugs:annotations and having both jars -->
+                    <!-- as a dependency then clashes with the dependency checker (because it   -->
+                    <!-- is not very good at handling annotations). Use the annotations jar     -->
+                    <!-- instead which has all jsr305 annotations and the additional findbugs   -->
+                    <!-- stuff. -->
+                    <exclude>com.google.code.findbugs:jsr305</exclude>
+                    <exclude>net.jcip:jcip-annotations</exclude>
                   </excludes>
                 </bannedDependencies>
               </rules>
