@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Copyright © 2016, 2017 Red Hat, Inc. and others.  All rights reserved.
+ Copyright © 2016 Red Hat, Inc. and others.  All rights reserved.
 
  This program and the accompanying materials are made available under the
  terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -19,32 +19,28 @@
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl4-akka-clustering-2.4</artifactId>
+    <artifactId>odl4-akka-scala-2.12</artifactId>
     <version>1.9.0-SNAPSHOT</version>
     <packaging>feature</packaging>
 
-    <name>Akka Clustering (for Karaf 4)</name>
-
-    <properties>
-        <checkDependencyChange>true</checkDependencyChange>
-        <failOnDependencyChange>true</failOnDependencyChange>
-    </properties>
+    <name>Scala 2.12 Runtime for OpenDaylight (for Karaf 4)</name>
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-akka-system-2.4</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-cluster_${scala.version}</artifactId>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-reflect</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.typesafe</groupId>
-            <artifactId>ssl-config-core_${scala.version}</artifactId>
+            <groupId>org.scala-lang.modules</groupId>
+            <artifactId>scala-parser-combinators_${scala.version}</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang.modules</groupId>
+            <artifactId>scala-java8-compat_${scala.version}</artifactId>
         </dependency>
     </dependencies>
 
