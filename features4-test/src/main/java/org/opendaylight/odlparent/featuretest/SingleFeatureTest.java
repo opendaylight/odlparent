@@ -342,9 +342,6 @@ public class SingleFeatureTest {
             "odl-mdsal-clustering-commons",
             "odl-mdsal-distributed-datastore",
             "odl-mdsal-remoterpc-connector",
-            // aaa/features/authn due to Cassandra expected to be up on
-            // see https://bugs.opendaylight.org/show_bug.cgi?id=7584
-            "odl-aaa-authn-cassandra-cluster",
             // 1/17 in groupbasedpolicy/features due to NOK org.opendaylight.groupbasedpolicy
             // Caused by: org.opendaylight.mdsal.eos.common.api.CandidateAlreadyRegisteredException
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7587
