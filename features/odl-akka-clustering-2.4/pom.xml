@@ -53,7 +53,8 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-protobuf_${scala.version}</artifactId>
+            <artifactId>akka-protobuf_2.11</artifactId>
+            <version>${akka.version}</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
@@ -62,15 +63,18 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-remote_${scala.version}</artifactId>
+            <artifactId>akka-remote_2.11</artifactId>
+            <version>${akka.version}</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-cluster_${scala.version}</artifactId>
+            <artifactId>akka-cluster_2.11</artifactId>
+            <version>${akka.version}</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-distributed-data-experimental_${scala.version}</artifactId>
+            <artifactId>akka-distributed-data-experimental_2.11</artifactId>
+            <version>${akka.version}</version>
         </dependency>
     </dependencies>
 
