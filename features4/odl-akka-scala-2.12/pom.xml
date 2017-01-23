@@ -13,36 +13,34 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>single-feature3-parent</artifactId>
+        <artifactId>single-feature-parent</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../../single-feature3-parent</relativePath>
+        <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl-akka-scala-2.11</artifactId>
+    <artifactId>odl4-akka-scala-2.12</artifactId>
     <version>1.8.0-SNAPSHOT</version>
     <packaging>feature</packaging>
 
-    <name>Scala Runtime for OpenDaylight</name>
+    <name>Scala 2.12 Runtime for OpenDaylight (for Karaf 4)</name>
 
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
-            <version>2.11.8</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-reflect</artifactId>
-            <version>2.11.8</version>
         </dependency>
         <dependency>
             <groupId>org.scala-lang.modules</groupId>
-            <artifactId>scala-parser-combinators_2.11</artifactId>
+            <artifactId>scala-parser-combinators_${scala.version}</artifactId>
         </dependency>
         <dependency>
             <groupId>org.scala-lang.modules</groupId>
-            <artifactId>scala-java8-compat_2.11</artifactId>
+            <artifactId>scala-java8-compat_${scala.version}</artifactId>
         </dependency>
     </dependencies>
 
