@@ -40,11 +40,26 @@
             <artifactId>wagon-http</artifactId>
             <version>2.10</version>
             <scope>compile</scope>
+            <exclusions>
+              <exclusion>
+                <!-- because it conflicts with org.slf4j:jcl-over-slf4j -->
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+              </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.url</groupId>
             <artifactId>pax-url-wrap</artifactId>
             <scope>compile</scope>
+        </dependency>
+        <!-- because the exclusion of pax-url-commons in pax-url-wrap's dependencyManagement in odlparent
+             transitively also excludes ops4j-base-util-property, but we do need it to use karaf-util in karaf-plugin
+             (and features-test?), we add it back here -->
+        <dependency>
+            <groupId>org.ops4j.base</groupId>
+            <artifactId>ops4j-base-util-property</artifactId>
+            <version>1.5.0</version>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>

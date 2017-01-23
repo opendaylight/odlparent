@@ -1205,6 +1205,13 @@
         <artifactId>pax-url-link</artifactId>
         <version>2.5.3</version>
         <scope>test</scope>
+        <exclusions>
+          <exclusion>
+            <!-- because pax-url-aether already includes a different version of classes in this artifact -->
+            <groupId>org.ops4j.pax.url</groupId>
+            <artifactId>pax-url-commons</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.url</groupId>
@@ -1216,6 +1223,12 @@
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-wrap</artifactId>
         <version>2.5.3</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.ops4j.pax.url</groupId>
+            <artifactId>pax-url-commons</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
 
       <dependency>
@@ -1986,6 +1999,49 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.basepom.maven</groupId>
+        <artifactId>duplicate-finder-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+          <execution>
+            <id>find-duplicate-classpath-entries</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+            <!-- https://github.com/basepom/duplicate-finder-maven-plugin/wiki -->
+            <failBuildInCaseOfConflict>false</failBuildInCaseOfConflict>
+            <failBuildInCaseOfDifferentContentConflict>true</failBuildInCaseOfDifferentContentConflict>
+            <failBuildInCaseOfEqualContentConflict>false</failBuildInCaseOfEqualContentConflict>
+            <printEqualFiles>false</printEqualFiles>
+            <quiet>true</quiet>
+            <!-- In addition to https://github.com/basepom/duplicate-finder-maven-plugin/wiki/Default%20ignored%20elements,
+                 as explained on https://github.com/basepom/duplicate-finder-maven-plugin/wiki/Ignoring%20Dependencies%20and%20Resources,
+                 we use resources not dependencies (see https://github.com/basepom/duplicate-finder-maven-plugin/wiki/Classpath%20Exceptions)
+                 also ignore: -->
+            <ignoredResourcePatterns>
+              <ignoredResourcePattern>org/opendaylight/blueprint/autowire.xml$</ignoredResourcePattern>
+              <ignoredResourcePattern>OSGI-OPT/bnd.bnd$</ignoredResourcePattern>
+              <ignoredResourcePattern>README.*$</ignoredResourcePattern>
+              <ignoredResourcePattern>.*\.html$</ignoredResourcePattern>
+              <ignoredResourcePattern>reference.conf</ignoredResourcePattern>
+            </ignoredResourcePatterns>
+            <ignoredDependencies>
+              <ignoredDependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+              </ignoredDependency>
+              <ignoredDependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>opendaylight-karaf-empty</artifactId>
+              </ignoredDependency>
+            </ignoredDependencies>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
