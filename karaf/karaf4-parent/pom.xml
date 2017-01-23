@@ -29,6 +29,10 @@
         <karaf.localFeature>standard</karaf.localFeature>
         <karaf.archiveZip>true</karaf.archiveZip>
         <karaf.archiveTarGz>true</karaf.archiveTarGz>
+
+        <!-- Karaf distribution projects aren't "real" Java projects anyway,
+             so we can safely avoid all hassles from duplicate finder -->
+        <duplicate-finder.skip>true</duplicate-finder.skip>
     </properties>
 
     <dependencyManagement>
