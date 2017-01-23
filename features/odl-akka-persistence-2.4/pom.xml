@@ -42,11 +42,13 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-protobuf_${scala.version}</artifactId>
+            <artifactId>akka-protobuf_2.11</artifactId>
+            <version>${akka.version}</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-persistence_${scala.version}</artifactId>
+            <artifactId>akka-persistence_2.11</artifactId>
+            <version>${akka.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.protobuf</groupId>
