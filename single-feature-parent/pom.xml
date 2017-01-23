@@ -65,6 +65,7 @@
                     <simplifyBundleDependencies>true</simplifyBundleDependencies>
                     <excludedArtifactIds>
                         <excludedArtifactId>slf4j-api</excludedArtifactId>
+                        <excludedArtifactId>jcl-over-slf4j</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
             </plugin>
