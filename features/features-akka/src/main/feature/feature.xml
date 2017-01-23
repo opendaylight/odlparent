@@ -21,8 +21,8 @@
     <!-- (In both cases, we need to determine whether it makes sense to use
          unversioned features, in terms of the feasability of handling upgrades
          later.) -->
-    <feature name="odl-akka-scala" description="Scala Runtime for OpenDaylight" version="${scala.version}">
-        <feature version="${project.version}">odl-akka-scala-${scala.version}</feature>
+    <feature name="odl-akka-scala" description="Scala Runtime for OpenDaylight" version="2.11">
+        <feature version="${project.version}">odl-akka-scala-2.11</feature>
     </feature>
     <feature name="odl-akka-system" description="Akka Actor Framework System Bundles" version="${akka.version}">
         <feature version="${project.version}">odl-akka-system-2.4</feature>
