@@ -1848,6 +1848,37 @@
 
     <plugins>
       <plugin>
+        <groupId>org.basepom.maven</groupId>
+        <artifactId>duplicate-finder-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+          <execution>
+            <id>find-duplicate-classpath-entries</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+            <!-- https://github.com/basepom/duplicate-finder-maven-plugin/wiki -->
+            <failBuildInCaseOfConflict>true</failBuildInCaseOfConflict>
+            <failBuildInCaseOfDifferentContentConflict>true</failBuildInCaseOfDifferentContentConflict>
+            <failBuildInCaseOfEqualContentConflict>true</failBuildInCaseOfEqualContentConflict>
+            <printEqualFiles>true</printEqualFiles>
+            <!-- In addition to https://github.com/basepom/duplicate-finder-maven-plugin/wiki/Default%20ignored%20elements,
+                 as explained on https://github.com/basepom/duplicate-finder-maven-plugin/wiki/Ignoring%20Dependencies%20and%20Resources,
+                 we use resources not dependencies (see https://github.com/basepom/duplicate-finder-maven-plugin/wiki/Classpath%20Exceptions)
+                 also ignore: -->
+            <ignoredResourcePatterns>
+              <ignoredResourcePattern>org/opendaylight/blueprint/autowire.xml$</ignoredResourcePattern>
+              <ignoredResourcePattern>OSGI-OPT/bnd.bnd$</ignoredResourcePattern>
+              <ignoredResourcePattern>README.*$</ignoredResourcePattern>
+              <ignoredResourcePattern>.*\.html$</ignoredResourcePattern>
+            </ignoredResourcePatterns>
+        </configuration>
+      </plugin>
+      <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
       </plugin>
       <plugin>
