@@ -173,8 +173,8 @@
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
-        <!-- Bug 7662: @deprecated Do *NOT* use mockito-all, but *ALWAYS* only mockito-core; this should be removed, and non-usage enforced! -->
-        <artifactId>mockito-all</artifactId>
+        <!-- Bug 7662: @deprecated Do *NOT* use mockito-core, but *ALWAYS* only mockito-core; this should be removed, and non-usage enforced! -->
+        <artifactId>mockito-core</artifactId>
         <version>1.10.19</version>
         <scope>test</scope>
       </dependency>
