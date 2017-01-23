@@ -65,6 +65,11 @@
             <artifactId>akka-cluster_${scala.version}</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>ssl-config-core_${scala.version}</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-distributed-data-experimental_${scala.version}</artifactId>
             <exclusions>
