@@ -28,7 +28,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-akka-scala-2.11</artifactId>
+            <artifactId>odl4-akka-scala-2.12</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
