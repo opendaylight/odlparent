@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_99cafc9f",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-01-23T20:29:26Z",
+      "side": 1,
+      "message": "In https://git.opendaylight.org/gerrit/#/c/50905/, I\u0027ve moved this to odlparent instead of odlparent-lite (\"code artifact -\u003e odlparent\").  It\u0027s also better to do the dependencyManagement and enforcer in two separate Gerrit changes.  Thus will remove this part from here.",
+      "revId": "2fd8d8decf7ba4a3cf4052ea71ddc26899a1ef58",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
