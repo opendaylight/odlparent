@@ -76,10 +76,6 @@
             <groupId>com.typesafe</groupId>
             <artifactId>ssl-config-core_${scala.version}</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.scala-lang.modules</groupId>
-            <artifactId>scala-parser-combinators_${scala.version}</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>com.typesafe.akka</groupId>
