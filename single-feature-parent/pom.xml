@@ -62,6 +62,11 @@
                 <version>${karaf4.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
+                    <addTransitiveFeatures>false</addTransitiveFeatures>
+                    <includeTransitiveDependency>false</includeTransitiveDependency>
+                    <addBundlesToPrimaryFeature>true</addBundlesToPrimaryFeature>
+                    <useVersionRange>true</useVersionRange>
+                    <includeTransitiveVersionRanges>true</includeTransitiveVersionRanges>
                     <simplifyBundleDependencies>true</simplifyBundleDependencies>
                     <excludedArtifactIds>
                         <excludedArtifactId>slf4j-api</excludedArtifactId>

@@ -91,7 +91,13 @@
                 <version>${karaf4.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
+                    <addTransitiveFeatures>false</addTransitiveFeatures>
                     <aggregateFeatures>true</aggregateFeatures>
+                    <includeTransitiveDependency>false</includeTransitiveDependency>
+                    <addBundlesToPrimaryFeature>true</addBundlesToPrimaryFeature>
+                    <useVersionRange>true</useVersionRange>
+                    <includeTransitiveVersionRanges>true</includeTransitiveVersionRanges>
+                    <simplifyBundleDependencies>true</simplifyBundleDependencies>
                 </configuration>
             </plugin>
         </plugins>
