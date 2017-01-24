@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_cf715279",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-01-24T08:52:53Z",
+      "side": 1,
+      "message": "To me this reads like having this behaviour is wrong, and the patch is fixing it — it would work better with something like\n\n    Add plugin to fail build if classpath contains duplicates",
+      "revId": "e4fe1bf7db2ca974ae32848334169176ca3bca8a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
