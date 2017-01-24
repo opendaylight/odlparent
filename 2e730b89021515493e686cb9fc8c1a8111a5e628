@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_0f623ad8",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-01-24T08:22:41Z",
+      "side": 1,
+      "message": "The version bump in features.xml is missing...",
+      "revId": "2e730b89021515493e686cb9fc8c1a8111a5e628",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
