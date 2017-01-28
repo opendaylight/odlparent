@@ -94,7 +94,7 @@
          nic, openflowplugin, ovsdb, persistence, sfc, snbi, snmp4sdn?, sxp, topoprocessing, unimgr, vtn -->
     <karaf.version>3.0.8</karaf.version>
     <karaf4.version>4.0.7</karaf4.version>
-    <karaf4.plugin.version>4.0.8-odl</karaf4.plugin.version>
+    <karaf4.plugin.version>4.0.9-SRC-branch-karaf-4.0.x</karaf4.plugin.version>
     <!-- Used in lispflowmapping, snmp4sdn, vtn -->
     <projectinfo>2.8.1</projectinfo>
     <!-- Used in of-config; see also snmp4sdn -->
