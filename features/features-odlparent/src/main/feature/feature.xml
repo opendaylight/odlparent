@@ -30,7 +30,7 @@
     <feature name="odl-guava" description="OpenDaylight :: Guava" version="19.0">
         <bundle>mvn:com.google.guava/guava/19.0</bundle>
     </feature>
-    <feature name="odl-lmax" description="OpenDaylight :: LMAX Disruptor" version="3.3.4">
+    <feature name="odl-lmax" description="OpenDaylight :: LMAX Disruptor" version="3.3.6">
         <feature version="${project.version}">odl-lmax-3</feature>
     </feature>
     <feature name="odl-triemap" description="OpenDaylight :: Concurrent Trie HashMap" version="0.2.23">
