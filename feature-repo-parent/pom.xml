@@ -39,6 +39,7 @@
     <properties>
         <karaf.version>${karaf4.version}</karaf.version>
         <skip.karaf.featureTest>false</skip.karaf.featureTest>
+        <jacoco.skip>true</jacoco.skip>
     </properties>
 
     <dependencies>
