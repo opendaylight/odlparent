@@ -217,16 +217,18 @@ public class SingleFeatureTest {
         }
     }
 
-    private String getKarafVersion() {
+    private String getKarafVersion() throws IOException {
         if (karafVersion == null) {
             // We use a properties file to retrieve ${karaf.version}, instead of .versionAsInProject()
             // This avoids forcing all users to depend on Karaf in their POMs
             Properties singleFeatureTestProps = new Properties();
             try (InputStream singleFeatureTestInputStream = Thread.currentThread().getContextClassLoader()
                     .getResourceAsStream(PROPERTIES_FILENAME)) {
+                if (singleFeatureTestInputStream == null) {
+                    throw new IOException("Resource not found; expected to be present on current thread classloader: "
+                            + PROPERTIES_FILENAME);
+                }
                 singleFeatureTestProps.load(singleFeatureTestInputStream);
-            } catch (IOException e) {
-                LOG.error("Unable to load {} to determine the Karaf version", PROPERTIES_FILENAME, e);
             }
             karafVersion = singleFeatureTestProps.getProperty(KARAF_DISTRO_VERSION_PROP);
 
@@ -238,7 +240,7 @@ public class SingleFeatureTest {
         return karafVersion;
     }
 
-    private String getKarafDistroVersion() {
+    private String getKarafDistroVersion() throws IOException {
         if (karafDistroVersion == null) {
             karafDistroVersion = System.getProperty(KARAF_DISTRO_VERSION_PROP);
             if (karafDistroVersion == null) {
@@ -269,7 +271,7 @@ public class SingleFeatureTest {
                 mvnRepoLocal);
     }
 
-    protected Option getKarafDistroOption() {
+    protected Option getKarafDistroOption() throws IOException {
         String groupId = System.getProperty(KARAF_DISTRO_GROUPID_PROP, KARAF_DISTRO_GROUPID);
         String artifactId = System.getProperty(KARAF_DISTRO_ARTIFACTID_PROP, KARAF_DISTRO_ARTIFACTID);
         String type = System.getProperty(KARAF_DISTRO_TYPE_PROP, KARAF_DISTRO_TYPE);
