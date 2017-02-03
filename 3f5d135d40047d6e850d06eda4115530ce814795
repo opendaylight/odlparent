@@ -22,6 +22,30 @@
       "revId": "3f5d135d40047d6e850d06eda4115530ce814795",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_6dbbd9e5",
+        "filename": "features4-test/src/main/java/org/opendaylight/odlparent/featuretest/PerRepoTestRunner.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-02-03T13:31:38Z",
+      "side": 1,
+      "message": "Right, it\u0027s not very clear from the comment — it means features with the same name as the repository, e.g. features4-odlparent. These are generated automatically by the Karaf Maven plugin. Given that the current naming policy includes the project version in the repository name, we don\u0027t risk ignoring existing features... I\u0027ll document it in the developer\u0027s guide.",
+      "parentUuid": "fafc7978_8da9dde1",
+      "range": {
+        "startLine": 121,
+        "startChar": 59,
+        "endLine": 121,
+        "endChar": 84
+      },
+      "revId": "3f5d135d40047d6e850d06eda4115530ce814795",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
