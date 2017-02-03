@@ -11,6 +11,7 @@ package org.opendaylight.odlparent.featuretest;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.xml.bind.JAXBException;
 import org.apache.karaf.features.internal.model.Feature;
@@ -56,9 +57,10 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
                     final boolean recursive = Boolean.getBoolean(REPO_RECURSE);
                     LOG.info("Creating test runners for repoUrl {} recursive {}", repoUrl, recursive);
                     children.addAll(runnersFromRepoUrl(repoUrl, testClass, recursive));
-                } else {
-                    LOG.error("getClass().getClassLoader().getResource(\"{}\") returned null", filename);
                 }
+            }
+            if (children.isEmpty()) {
+                LOG.error("No features found to test; looked for {}", Arrays.toString(FEATURES_FILENAMES));
             }
         } catch (final IOException | JAXBException e) {
             throw new InitializationError(e);
