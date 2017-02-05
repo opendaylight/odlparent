@@ -1609,7 +1609,7 @@
         <plugin>
           <groupId>org.codehaus.groovy.maven</groupId>
           <artifactId>gmaven-plugin</artifactId>
-          <version>1.0</version>
+          <version>1.5</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -1625,6 +1625,14 @@
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>findbugs</artifactId>
               <version>1.8.0-SNAPSHOT</version>
+            </dependency>
+
+            <!-- FindBugs does not work with Java 9, but at least this keeps
+                 it from failing completely. -->
+            <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy</artifactId>
+              <version>2.4.8</version>
             </dependency>
           </dependencies>
           <configuration>
