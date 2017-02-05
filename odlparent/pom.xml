@@ -48,8 +48,6 @@
     <java.version.target>${maven.compiler.target}</java.version.target>
 
     <!-- Maven plugin versions, in the 'canonical' format -->
-    <!-- Used in controller -->
-    <maven.antrun.plugin.version>1.8</maven.antrun.plugin.version>
     <!-- Used in controller, didm, neutron, openflowplugin, persistence; see also affinity -->
     <maven.bundle.version>3.0.1</maven.bundle.version>
     <!-- Used in sxp -->
@@ -1348,7 +1346,7 @@
              We do not need to specify the groupId. -->
         <plugin>
           <artifactId>maven-antrun-plugin</artifactId>
-          <version>${maven.antrun.plugin.version}</version>
+          <version>1.8</version>
         </plugin>
         <plugin>
           <artifactId>maven-checkstyle-plugin</artifactId>
