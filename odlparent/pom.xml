@@ -53,7 +53,7 @@
     <!-- Used in sxp -->
     <maven.clean.plugin.version>2.6.1</maven.clean.plugin.version>
     <!-- Used in controller, didm, l2switch, lacp, persistence; see also toolkit, tsdr, ttp -->
-    <maven.compile.plugin.version>3.5.1</maven.compile.plugin.version>
+    <maven.compile.plugin.version>3.6.1</maven.compile.plugin.version>
     <!-- Used in controller, coretutorials, mdsal, snbi, yangtools -->
     <maven.javadoc.version>2.10.4</maven.javadoc.version>
     <!-- Used in snmp -->
