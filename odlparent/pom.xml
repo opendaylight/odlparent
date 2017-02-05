@@ -1096,16 +1096,6 @@
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>org.scala-lang.modules</groupId>
-        <artifactId>scala-java8-compat_${scala.version}</artifactId>
-        <version>0.8.0</version>
-      </dependency>
-      <dependency>
-        <groupId>org.scala-lang.modules</groupId>
-        <artifactId>scala-parser-combinators_${scala.version}</artifactId>
-        <version>1.0.4</version>
-      </dependency>
-      <dependency>
         <groupId>org.iq80.leveldb</groupId>
         <artifactId>leveldb</artifactId>
         <version>${leveldb.version}</version>
@@ -1153,6 +1143,27 @@
         <groupId>org.scala-lang</groupId>
         <artifactId>scala-reflect</artifactId>
         <version>${scala.version}.${scala.micro.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.scala-lang.modules</groupId>
+        <artifactId>scala-parser-combinators_${scala.version}</artifactId>
+        <version>1.0.4</version>
+      </dependency>
+      <dependency>
+        <groupId>org.scala-lang.modules</groupId>
+        <artifactId>scala-java8-compat_${scala.version}</artifactId>
+        <version>0.8.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.scala-lang.modules</groupId>
+        <artifactId>scala-parser-combinators_2.11</artifactId>
+        <version>1.0.4</version>
+      </dependency>
+      <dependency>
+        <groupId>org.scala-lang.modules</groupId>
+        <artifactId>scala-java8-compat_2.11</artifactId>
+        <version>0.8.0</version>
       </dependency>
 
       <!-- LMAX Disruptor -->
