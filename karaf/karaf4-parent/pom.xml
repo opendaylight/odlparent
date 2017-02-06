@@ -215,6 +215,9 @@
                                 <patch patchfile="${project.build.directory}/assembly/patches/karaf-setenv.bat.patch"
                                        originalfile="${project.build.directory}/assembly/bin/setenv.bat"
                                        failonerror="true"/>
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-quiesce-4.0.7.patch"
+                                       originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/4.0.7/standard-4.0.7-features.xml"
+                                       failonerror="true"/>
                                 <fixcrlf srcdir="${project.build.directory}/assembly/bin"
                                          includes="*.bat" eol="crlf"/>
                             </target>
