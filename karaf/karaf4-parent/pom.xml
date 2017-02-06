@@ -183,6 +183,24 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- This needs to execute before patching, otherwise the feature will be left unpatched -->
+            <plugin>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>karaf4-plugin</artifactId>
+                <version>1.8.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>populate-local-repo</id>
+                        <goals>
+                            <goal>populate-local-repo</goal>
+                        </goals>
+                        <configuration>
+                            <localRepo>${project.build.directory}/assembly/system</localRepo>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
@@ -214,6 +232,9 @@
                                        failonerror="true"/>
                                 <patch patchfile="${project.build.directory}/assembly/patches/karaf-setenv.bat.patch"
                                        originalfile="${project.build.directory}/assembly/bin/setenv.bat"
+                                       failonerror="true"/>
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-quiesce-4.0.7.patch"
+                                       originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/4.0.7/standard-4.0.7-features.xml"
                                        failonerror="true"/>
                                 <fixcrlf srcdir="${project.build.directory}/assembly/bin"
                                          includes="*.bat" eol="crlf"/>
@@ -256,22 +277,6 @@
                     </bootFeatures>
                     <javase>1.8</javase>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>karaf4-plugin</artifactId>
-                <version>1.8.0-SNAPSHOT</version>
-                <executions>
-                    <execution>
-                        <id>populate-local-repo</id>
-                        <goals>
-                            <goal>populate-local-repo</goal>
-                        </goals>
-                        <configuration>
-                            <localRepo>${project.build.directory}/assembly/system</localRepo>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
