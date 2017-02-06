@@ -71,6 +71,13 @@
         <dependency>
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-distributed-data-experimental_${scala.version}</artifactId>
+            <exclusions>
+                <!-- ow2.asm is provided -->
+                <exclusion>
+                    <groupId>org.ow2.asm</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
