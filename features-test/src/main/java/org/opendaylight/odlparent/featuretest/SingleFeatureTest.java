@@ -9,9 +9,6 @@
 package org.opendaylight.odlparent.featuretest;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
-import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
-import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
-import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
 import static org.ops4j.pax.exam.CoreOptions.when;
@@ -23,18 +20,28 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDist
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
 
-import com.google.common.collect.ImmutableList;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import com.google.common.collect.ImmutableList;
+
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Properties;
+
 import javax.inject.Inject;
+
+import org.apache.commons.codec.binary.Base64;
 import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
@@ -46,28 +53,48 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized.Parameters;
 import org.opendaylight.odlparent.bundlestest.TestBundleDiag;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
+import org.ops4j.pax.exam.junit.PaxExamParameterized;
 import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
 import org.ops4j.pax.exam.options.PropagateSystemPropertyOption;
 import org.ops4j.pax.exam.options.extra.VMOption;
+import org.ops4j.pax.exam.spi.reactors.ExamReactorStrategy;
+import org.ops4j.pax.exam.spi.reactors.PerClass;
 import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@RunWith(PerRepoTestRunner.class)
+@RunWith(PaxExamParameterized.class)
+@ExamReactorStrategy(PerClass.class)
 public class SingleFeatureTest {
 
+    private static final String ORG_OPENDAYLIGHT_FEATURETEST_FEATURE_VERSION_REPO_LIST = "features_versions_repos";
+    private static final String ORG_OPENDAYLIGHT_FEATURETEST_ARE_FEATURES_INITIALIZED_FLAG = "get_features_initialized";
     private static final String MAVEN_REPO_LOCAL = "maven.repo.local";
     private static final String ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY = "org.ops4j.pax.url.mvn.localRepository";
     private static final String ORG_OPS4J_PAX_URL_MVN_REPOSITORIES = "org.ops4j.pax.url.mvn.repositories";
     private static final String ETC_ORG_OPS4J_PAX_URL_MVN_CFG = "etc/org.ops4j.pax.url.mvn.cfg";
+
+//    //@Parameter(value = 0)
+    public static String theFeature;
+//
+//    //@Parameter(value = 1)
+    public String theVersion;
+//
+//    //@Parameter(value = 2)
+    public String theRepoUri;
+
+    public static Option[] theConfig;
+
     private static final String ETC_ORG_OPS4J_PAX_LOGGING_CFG = "etc/org.ops4j.pax.logging.cfg";
 
     private static final String KEEP_UNPACK_DIRECTORY_PROP = "karaf.keep.unpack";
     private static final String PROFILE_PROP = "karaf.featureTest.profile";
+
     private static final String BUNDLES_DIAG_SKIP_PROP = "sft.diag.skip";
     private static final String BUNDLES_DIAG_FORCE_PROP = "sft.diag.force";
     private static final String BUNDLES_DIAG_TIMEOUT_PROP = "sft.diag.timeout";
@@ -123,8 +150,26 @@ public class SingleFeatureTest {
     @Inject @NonNull
     private BundleService bundleService; // NOT BundleStateService, see checkBundleStatesDiag()
 
-    private String karafVersion;
-    private String karafDistroVersion;
+    private static String karafVersion;
+    private static String karafDistroVersion;
+    private static boolean isURLStreamHandlerFactorySet = false;
+
+    // We have to exceptionally suppress IllegalCatch just because URL.setURLStreamHandlerFactory stupidly throws Error
+    @SuppressWarnings("checkstyle:IllegalCatch")
+    // see doc on isURLStreamHandlerFactorySet for why we do NOT want to do this in a static block
+    static synchronized void setURLStreamHandlerFactory() {
+        if (!isURLStreamHandlerFactorySet) {
+            try {
+                URL.setURLStreamHandlerFactory(new CustomBundleUrlStreamHandlerFactory());
+                isURLStreamHandlerFactorySet = true;
+            } catch (Error e) {
+                LOG.warn("Failed to setURLStreamHandlerFactory to CustomBundleUrlStreamHandlerFactory "
+                       + "(depending on which is already set, this may or may not actually be a problem"
+                       + "; e.g. Karaf 4 already registers the neccessary handlers, so OK to ignore)", e);
+            }
+        }
+    }
+
 
     /**
      * Returns the required configuration.
@@ -132,8 +177,11 @@ public class SingleFeatureTest {
      * @return The Pax Exam configuration.
      * @throws IOException if an error occurs.
      */
-    @Configuration
-    public Option[] config() throws IOException {
+    public static Option[] commonConfig() throws IOException {
+
+        LOG.info("commonConfig(): the suite is starting!");
+        setURLStreamHandlerFactory();
+
         return new Option[] {
             // TODO: Find a way to inherit memory limits from Maven options.
             new VMOption("-Xmx2g"),
@@ -156,6 +204,7 @@ public class SingleFeatureTest {
             logLevel(LogLevel.WARN),
             mvnLocalRepoOption(),
             standardKarafFeatures(),
+            //todo ediegra remove org.ops4j.pax.exam.CoreOptions.junitBundles(),
             wrappedBundle(maven("org.awaitility", "awaitility").versionAsInProject()), // req. by bundles-test
             mavenBundle(maven("com.google.guava", "guava").versionAsInProject()),      // req. by bundles-test
             mavenBundle(maven("org.opendaylight.odlparent", "bundles-test").versionAsInProject()),
@@ -186,9 +235,8 @@ public class SingleFeatureTest {
               *
               */
             disableExternalSnapshotRepositories(),
-            new PropagateSystemPropertyOption(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP),
-            new PropagateSystemPropertyOption(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP),
-            new PropagateSystemPropertyOption(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP),
+            new PropagateSystemPropertyOption(ORG_OPENDAYLIGHT_FEATURETEST_ARE_FEATURES_INITIALIZED_FLAG),
+            new PropagateSystemPropertyOption(ORG_OPENDAYLIGHT_FEATURETEST_FEATURE_VERSION_REPO_LIST),
             new PropagateSystemPropertyOption(BUNDLES_DIAG_SKIP_PROP),
             new PropagateSystemPropertyOption(BUNDLES_DIAG_FORCE_PROP),
             new PropagateSystemPropertyOption(BUNDLES_DIAG_TIMEOUT_PROP),
@@ -197,11 +245,11 @@ public class SingleFeatureTest {
         };
     }
 
-    private String getNewJFRFile() throws IOException {
+    private static String getNewJFRFile() throws IOException {
         return File.createTempFile("SingleFeatureTest-Karaf-JavaFlightRecorder", ".jfr").getAbsolutePath();
     }
 
-    private Option standardKarafFeatures() throws IOException {
+    private static Option standardKarafFeatures() throws IOException {
         String url = maven().groupId("org.apache.karaf.features").artifactId("standard").classifier("features").type(
                 "xml").version(getKarafVersion()).getURL();
         try {
@@ -217,7 +265,7 @@ public class SingleFeatureTest {
         }
     }
 
-    private String getKarafVersion() throws IOException {
+    private static String getKarafVersion() {
         if (karafVersion == null) {
             // We use a properties file to retrieve ${karaf.version}, instead of .versionAsInProject()
             // This avoids forcing all users to depend on Karaf in their POMs
@@ -240,7 +288,7 @@ public class SingleFeatureTest {
         return karafVersion;
     }
 
-    private String getKarafDistroVersion() throws IOException {
+    private static String getKarafDistroVersion() {
         if (karafDistroVersion == null) {
             karafDistroVersion = System.getProperty(KARAF_DISTRO_VERSION_PROP);
             if (karafDistroVersion == null) {
@@ -254,6 +302,8 @@ public class SingleFeatureTest {
         return karafDistroVersion;
     }
 
+
+
     /**
      * Disables snapshot repositories, which are enabled by default in karaf distribution.
      *
@@ -264,14 +314,14 @@ public class SingleFeatureTest {
                 EXTERNAL_DEFAULT_REPOSITORIES);
     }
 
-    protected Option mvnLocalRepoOption() {
+    protected static Option mvnLocalRepoOption() {
         String mvnRepoLocal = System.getProperty(MAVEN_REPO_LOCAL, "");
         LOG.info("mvnLocalRepo \"{}\"", mvnRepoLocal);
         return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY,
                 mvnRepoLocal);
     }
 
-    protected Option getKarafDistroOption() throws IOException {
+    protected static Option getKarafDistroOption() {
         String groupId = System.getProperty(KARAF_DISTRO_GROUPID_PROP, KARAF_DISTRO_GROUPID);
         String artifactId = System.getProperty(KARAF_DISTRO_ARTIFACTID_PROP, KARAF_DISTRO_ARTIFACTID);
         String type = System.getProperty(KARAF_DISTRO_TYPE_PROP, KARAF_DISTRO_TYPE);
@@ -288,16 +338,95 @@ public class SingleFeatureTest {
                 .useDeployFolder(false);
     }
 
-    private static URI getRepoUri() throws URISyntaxException {
-        return new URI(getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP));
+    @Parameters
+    public static Collection<String[]> getFeatures() throws ClassNotFoundException, IOException {
+
+        LOG.info("getFeatures() (parameterization): starting!");
+
+        // List of features is calculated in the original VM (the one started by the surefire plugin).
+        // The internal (pax) VM cannot build that list itself; instead, it receives that  list
+        // composed of features + versions + repos to test via property propagation
+        boolean isInitialization = (System.getProperty(ORG_OPENDAYLIGHT_FEATURETEST_ARE_FEATURES_INITIALIZED_FLAG) == null);
+        if (!isInitialization) {
+            LOG.info("getFeatures() already initialized. Returning stored value value");
+            return Arrays.asList(base64Deserialize(getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURE_VERSION_REPO_LIST)));
+        }
+
+        LOG.info("getFeatures(). Uninitialized. Calculating list of features / versions to test");
+        System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_ARE_FEATURES_INITIALIZED_FLAG, "true");
+        Features features;
+        String[][] myList = null;
+        try {
+            String repoUri = getUriString();
+            URL theUrl = new URL(repoUri);
+            LOG.info("getFeatures() theurl: {}", theUrl);
+            features = JaxbUtil.unmarshal(theUrl.openStream(), false);
+
+            final List<org.apache.karaf.features.internal.model.Feature> featureList = features.getFeature();
+            LOG.info("getFeatures() Number of features: {}", featureList.size());
+            myList = new String[featureList.size()][3];
+            int index = 0;
+            for (final Feature f : featureList) {
+                myList[index][0] = f.getName();
+                myList[index][1] = f.getVersion();
+                myList[index][2] = repoUri;
+                LOG.info("getFeatures() Added feature [{}] version [{}] repo [{}]",
+                        myList[index][0],  myList[index][1],  myList[index][2]);
+                index++;
+            }
+        } catch (IOException e) {
+            LOG.error("getFeatures(): failed!!", e);
+            throw e;
+        }
+
+        System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURE_VERSION_REPO_LIST, base64Serialize(myList));
+        return Arrays.asList(myList);
     }
 
-    private static String getFeatureName() {
-        return getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP);
+    /**
+     * Returns the required configuration.
+     *
+     * @return The Pax Exam configuration.
+     * @throws IOException if an error occurs.
+     */
+    @Configuration
+    public static Option[] config() {
+        LOG.info("config() starting");
+        try {
+            return commonConfig();
+        } catch (Exception e) {
+            LOG.error("config() failed!", e);
+            return null;
+        }
+    }
+
+    public SingleFeatureTest(String feature, String version, String uri) {
+        theFeature = feature;
+        theVersion = version;
+        theRepoUri = uri;
+        LOG.info("singleFeatureTest():called with values {},{},{}", theFeature, theVersion, theRepoUri);
+    }
+
+    private static String getUriString() {
+            String[] FEATURES_FILENAMES = new String[] { "features.xml", "feature.xml" };
+            for (String filename : FEATURES_FILENAMES) {
+                LOG.info("getUriString(): checking file: {}", filename);
+                final URL repoUrl = SingleFeatureTest.class.getClassLoader().getResource(filename);
+                if (repoUrl != null) {
+                    LOG.info("getUriString: returning url: {}", repoUrl);
+                    return repoUrl.toString();
+                }
+            }
+            LOG.info("getUriString: returning null");
+            return null;
+    }
+
+    private String getFeatureName() {
+        return theFeature;
     }
 
     public String getFeatureVersion() {
-        return getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP);
+        return theVersion;
     }
 
     private static String getProperty(final String propName) {
@@ -324,8 +453,8 @@ public class SingleFeatureTest {
      */
     @Before
     public void installRepo() throws Exception {
-        final URI repoUri = getRepoUri();
-        LOG.info("Attempting to add repository {}", repoUri);
+        final URI repoUri = new URI(theRepoUri);
+        LOG.info("Attempting to add repository from param uri [{}]", repoUri);
         featuresService.addRepository(repoUri);
         checkRepository(repoUri);
         LOG.info("Successfully loaded repository {}", repoUri);
@@ -378,4 +507,25 @@ public class SingleFeatureTest {
             // TODO retry after https://bugs.opendaylight.org/show_bug.cgi?id=7595 is fixed
             "odl-unimgr-netvirt"
     );
+
+    /*
+     * Storage of an String[][] as a base-64 encoded string
+     */
+    public static String base64Serialize(String[][] input) throws IOException {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        new ObjectOutputStream(out).writeObject(input);
+
+        String result = new String(Base64.encodeBase64(out.toByteArray()));
+        return result;
+    }
+
+    /*
+     * Recovery of the original String[][] from the a base-64 encoded string
+     *@param input the string to decode
+     */
+    public static String[][] base64Deserialize(String input) throws ClassNotFoundException, IOException {
+        ByteArrayInputStream in = new ByteArrayInputStream(Base64.decodeBase64(input.getBytes()));
+        String[][] decodedArray = (String[][])new ObjectInputStream(in).readObject();
+        return decodedArray;
+    }
 }
