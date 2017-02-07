@@ -22,6 +22,30 @@
       "revId": "4a7006fc6a16c02e4607e89afc7100f086b463f7",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_984f4fbe",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/resources/etc/jetty.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-02-07T19:52:53Z",
+      "side": 1,
+      "message": "Well, the usual combo is 8080/8443, 8181 makes co-existence just a wee bit better. I would go for 8443, but that makes the transition a bit more painful.",
+      "parentUuid": "fafc7978_3861033a",
+      "range": {
+        "startLine": 45,
+        "startChar": 45,
+        "endLine": 45,
+        "endChar": 49
+      },
+      "revId": "4a7006fc6a16c02e4607e89afc7100f086b463f7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
