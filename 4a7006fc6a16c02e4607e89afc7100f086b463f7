@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_3861033a",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/resources/etc/jetty.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-02-07T19:47:02Z",
+      "side": 1,
+      "message": "We may want to change the confidential port here too, since most of our docs point at 8443 which is removed in the below connector.  Thoughts?  I am open to anything.",
+      "range": {
+        "startLine": 45,
+        "startChar": 45,
+        "endLine": 45,
+        "endChar": 49
+      },
+      "revId": "4a7006fc6a16c02e4607e89afc7100f086b463f7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
