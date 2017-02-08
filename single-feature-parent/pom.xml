@@ -65,8 +65,25 @@
                 <configuration>
                     <simplifyBundleDependencies>true</simplifyBundleDependencies>
                     <excludedArtifactIds>
+                        <!-- These artifacts are provided by our Karaf distribution -->
+                        <!-- Aries Blueprint -->
+                        <excludedArtifactId>org.apache.aries.blueprint.api</excludedArtifactId>
+                        <excludedArtifactId>org.apache.aries.blueprint.core</excludedArtifactId>
+                        <!-- Aries Quiesce -->
+                        <excludedArtifactId>org.apache.aries.quiesce.api</excludedArtifactId>
+                        <!-- jline -->
+                        <excludedArtifactId>jline</excludedArtifactId>
+                        <!-- SLF4J -->
                         <excludedArtifactId>slf4j-api</excludedArtifactId>
                         <excludedArtifactId>jcl-over-slf4j</excludedArtifactId>
+                        <!-- sshd -->
+                        <excludedArtifactId>sshd-core</excludedArtifactId>
+                        <!-- Karaf artifacts -->
+                        <!-- TODO Rework this once Karaf supports wildcards here -->
+                        <excludedArtifactId>org.apache.karaf.jaas.config</excludedArtifactId>
+                        <excludedArtifactId>org.apache.karaf.jaas.modules</excludedArtifactId>
+                        <excludedArtifactId>org.apache.karaf.shell.console</excludedArtifactId>
+                        <excludedArtifactId>org.apache.karaf.shell.core</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
             </plugin>
