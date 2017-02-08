@@ -27,6 +27,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>odl-guava-18</artifactId>
+            <version>${project.version}</version>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+        <dependency>
             <groupId>org.iq80.leveldb</groupId>
             <artifactId>leveldb</artifactId>
         </dependency>
