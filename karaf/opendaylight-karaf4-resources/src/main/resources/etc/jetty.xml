@@ -20,7 +20,7 @@
 <!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//
 DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
 
-<Configure class="org.eclipse.jetty.server.Server">
+<Configure id="Server" class="org.eclipse.jetty.server.Server">
 
     <!-- =========================================================== -->
     <!-- Set connectors -->
@@ -30,41 +30,98 @@ DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
 
     <!-- Use this connector for many frequently idle connections and for
         threadless continuations. -->
+    <New id="http-default" class="org.eclipse.jetty.server.HttpConfiguration">
+        <Set name="secureScheme">https</Set>
+        <Set name="securePort">
+            <Property name="jetty.secure.port" default="8543" />
+        </Set>
+        <Set name="outputBufferSize">32768</Set>
+        <Set name="requestHeaderSize">8192</Set>
+        <Set name="responseHeaderSize">8192</Set>
+
+        <!-- Default security setting: do not leak our version -->
+        <Set name="sendServerVersion">false</Set>
+
+        <Set name="sendDateHeader">false</Set>
+        <Set name="headerCacheSize">512</Set>
+    </New>
+
+    <New id="http-legacy" class="org.eclipse.jetty.server.HttpConfiguration">
+        <Set name="secureScheme">https</Set>
+        <Set name="securePort">
+            <Property name="jetty.secure.port" default="8443" />
+        </Set>
+        <Set name="outputBufferSize">32768</Set>
+        <Set name="requestHeaderSize">8192</Set>
+        <Set name="responseHeaderSize">8192</Set>
+
+        <!-- Default security setting: do not leak our version -->
+        <Set name="sendServerVersion">false</Set>
+
+        <Set name="sendDateHeader">false</Set>
+        <Set name="headerCacheSize">512</Set>
+    </New>
+
     <Call name="addConnector">
         <Arg>
-            <New class="org.eclipse.jetty.server.nio.SelectChannelConnector">
+            <New class="org.eclipse.jetty.server.ServerConnector">
+                <Arg name="server">
+                    <Ref refid="Server" />
+                </Arg>
+                <Arg name="factories">
+                    <Array type="org.eclipse.jetty.server.ConnectionFactory">
+                        <Item>
+                            <New class="org.eclipse.jetty.server.HttpConnectionFactory">
+                                <Arg name="config">
+                                    <Ref refid="http-default"/>
+                                </Arg>
+                            </New>
+                        </Item>
+                    </Array>
+                </Arg>
                 <Set name="host">
-                    <Property name="jetty.host" />
+                    <Property name="jetty.host" default="localhost"/>
                 </Set>
                 <Set name="port">
-                    <Property name="jetty.port" default="8181" />
+                    <Property name="jetty.port" default="8181"/>
                 </Set>
-                <Set name="maxIdleTime">300000</Set>
-                <Set name="Acceptors">2</Set>
-                <Set name="statsOn">false</Set>
-                <Set name="confidentialPort">8543</Set>
-                <Set name="lowResourcesConnections">20000</Set>
-                <Set name="lowResourcesMaxIdleTime">5000</Set>
+                <Set name="idleTimeout">
+                    <Property name="http.timeout" default="300000"/>
+                </Set>
+                <Set name="name">jetty-default</Set>
             </New>
         </Arg>
     </Call>
+
     <Call name="addConnector">
-      <Arg>
-        <New class="org.eclipse.jetty.server.nio.SelectChannelConnector">
-          <Set name="host">
-            <Property name="jetty.host" />
-          </Set>
-          <Set name="port">
-            <Property name="jetty.port" default="8080" />
-          </Set>
-          <Set name="maxIdleTime">300000</Set>
-          <Set name="Acceptors">2</Set>
-          <Set name="statsOn">false</Set>
-          <Set name="confidentialPort">8443</Set>
-          <Set name="lowResourcesConnections">20000</Set>
-          <Set name="lowResourcesMaxIdleTime">5000</Set>
-        </New>
-      </Arg>
+        <Arg>
+            <New class="org.eclipse.jetty.server.ServerConnector">
+                <Arg name="server">
+                    <Ref refid="Server" />
+                </Arg>
+                <Arg name="factories">
+                    <Array type="org.eclipse.jetty.server.ConnectionFactory">
+                        <Item>
+                            <New class="org.eclipse.jetty.server.HttpConnectionFactory">
+                                <Arg name="config">
+                                    <Ref refid="http-legacy" />
+                                </Arg>
+                            </New>
+                        </Item>
+                    </Array>
+                </Arg>
+                <Set name="host">
+                    <Property name="jetty.host" default="localhost"/>
+                </Set>
+                <Set name="port">
+                    <Property name="jetty.port" default="8080"/>
+                </Set>
+                <Set name="idleTimeout">
+                    <Property name="http.timeout" default="300000"/>
+                </Set>q
+                <Set name="name">jetty-legacy</Set>
+            </New>
+        </Arg>
     </Call>
 
     <!-- =========================================================== -->
@@ -76,7 +133,7 @@ DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
     <!-- =========================================================== -->
     <Call name="addBean">
         <Arg>
-            <New class="org.eclipse.jetty.plus.jaas.JAASLoginService">
+            <New class="org.eclipse.jetty.jaas.JAASLoginService">
                 <Set name="name">karaf</Set>
                 <Set name="loginModuleName">karaf</Set>
                 <Set name="roleClassNames">
@@ -90,7 +147,7 @@ DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
     </Call>
     <Call name="addBean">
         <Arg>
-            <New class="org.eclipse.jetty.plus.jaas.JAASLoginService">
+            <New class="org.eclipse.jetty.jaas.JAASLoginService">
                 <Set name="name">default</Set>
                 <Set name="loginModuleName">karaf</Set>
                 <Set name="roleClassNames">
@@ -102,5 +159,4 @@ DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
             </New>
         </Arg>
     </Call>
-
 </Configure>
