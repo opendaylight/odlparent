@@ -35,7 +35,9 @@
         <module>odl-akka-system-2.4</module>
 
         <!-- Proxy features for Karaf-provided features -->
+        <module>odl-karaf-feat-feature</module>
         <module>odl-karaf-feat-jdbc</module>
+        <module>odl-karaf-feat-jetty</module>
         <module>odl-karaf-feat-war</module>
 
         <!-- General features -->
