@@ -36,6 +36,7 @@
 
         <!-- Proxy features for Karaf-provided features -->
         <module>odl-karaf-feat-jdbc</module>
+        <module>odl-karaf-feat-jetty</module>
         <module>odl-karaf-feat-war</module>
 
         <!-- General features -->
