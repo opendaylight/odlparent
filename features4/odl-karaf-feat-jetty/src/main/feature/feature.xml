@@ -9,7 +9,6 @@
 -->
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl-karaf-feat-jetty">
     <feature name="odl-karaf-feat-jetty" version="${project.version}">
-        <!-- FIXME: upgrade to 9.2.19.v20160908 -->
-        <feature dependency="true" version="8.1.14.v20131031">jetty</feature>
+        <feature dependency="true" prerequisite="true">war</feature>
     </feature>
 </features>
