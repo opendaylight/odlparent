@@ -34,6 +34,10 @@
         <module>odl-akka-scala-2.11</module>
         <module>odl-akka-system-2.4</module>
 
+        <!-- Proxy features for Karaf-provided features -->
+        <module>odl-karaf-feat-jdbc</module>
+        <module>odl-karaf-feat-war</module>
+
         <!-- General features -->
         <module>features4-odlparent</module>
         <module>odl-guava-18</module>
