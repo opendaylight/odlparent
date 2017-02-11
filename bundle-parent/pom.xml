@@ -33,6 +33,15 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                  <instructions>
+                    <!-- This allows BND instructions to be in a file named bnd.bnd next to the pom.xml, instead of inline in the pom.xml.
+                         This keeps pom.xml files shorter, and make BND instructions useable by tools such as the Eclipse plugin bndtools,
+                         or a future alternative build system based on Gradle instead of a Maven.
+                         The '-' prefix means not to log/stop when there is no bnd.bnd -->
+                    <_include>-bnd.bnd</_include>
+                  </instructions>
+                </configuration>
             </plugin>
         </plugins>
     </build>
