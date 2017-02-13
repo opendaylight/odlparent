@@ -114,10 +114,10 @@
             <classifier>features</classifier>
         </dependency>
         <dependency>
-            <groupId>org.apache.karaf</groupId>
-            <artifactId>apache-karaf</artifactId>
-            <version>${karaf4.version}</version>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>opendaylight-karaf4-empty</artifactId>
             <type>zip</type>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
