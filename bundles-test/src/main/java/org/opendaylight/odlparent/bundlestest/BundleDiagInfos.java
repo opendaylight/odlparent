@@ -36,7 +36,7 @@ public class BundleDiagInfos {
     private final Map<BundleState, Integer> bundleStatesCounters;
 
     private static final Map<String, BundleState> WHITELISTED_BUNDLES = ImmutableMap.of(
-            "slf4j.log4j12", Installed );
+            "slf4j.log4j12", Installed);
 
     public static BundleDiagInfos forContext(BundleContext bundleContext, BundleService bundleService) {
         List<String> okBundleStateInfoTexts = new ArrayList<>();
