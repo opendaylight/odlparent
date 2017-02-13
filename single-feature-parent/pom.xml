@@ -49,6 +49,31 @@
         <jacoco.skip>true</jacoco.skip>
     </properties>
 
+    <dependencies>
+        <!-- Our standard Karaf distribution pulls in framework, spring and standard -->
+        <dependency>
+            <groupId>org.apache.karaf.features</groupId>
+            <artifactId>framework</artifactId>
+            <version>${karaf4.version}</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.features</groupId>
+            <artifactId>standard</artifactId>
+            <version>${karaf4.version}</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.features</groupId>
+            <artifactId>spring</artifactId>
+            <version>${karaf4.version}</version>
+            <type>pom</type>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -66,24 +91,11 @@
                     <simplifyBundleDependencies>true</simplifyBundleDependencies>
                     <excludedArtifactIds>
                         <!-- These artifacts are provided by our Karaf distribution -->
-                        <!-- Aries Blueprint -->
-                        <excludedArtifactId>org.apache.aries.blueprint.api</excludedArtifactId>
-                        <excludedArtifactId>org.apache.aries.blueprint.core</excludedArtifactId>
                         <!-- Aries Quiesce -->
                         <excludedArtifactId>org.apache.aries.quiesce.api</excludedArtifactId>
-                        <!-- jline -->
-                        <excludedArtifactId>jline</excludedArtifactId>
                         <!-- SLF4J -->
                         <excludedArtifactId>slf4j-api</excludedArtifactId>
                         <excludedArtifactId>jcl-over-slf4j</excludedArtifactId>
-                        <!-- sshd -->
-                        <excludedArtifactId>sshd-core</excludedArtifactId>
-                        <!-- Karaf artifacts -->
-                        <!-- TODO Rework this once Karaf supports wildcards here -->
-                        <excludedArtifactId>org.apache.karaf.jaas.config</excludedArtifactId>
-                        <excludedArtifactId>org.apache.karaf.jaas.modules</excludedArtifactId>
-                        <excludedArtifactId>org.apache.karaf.shell.console</excludedArtifactId>
-                        <excludedArtifactId>org.apache.karaf.shell.core</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
             </plugin>
