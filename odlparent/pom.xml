@@ -1508,6 +1508,10 @@
         </plugin>
 
         <plugin>
+          <artifactId>maven-remote-resources-plugin</artifactId>
+          <version>1.5</version>
+        </plugin>
+        <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.1</version>
         </plugin>
