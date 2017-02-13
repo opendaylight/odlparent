@@ -95,10 +95,17 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.karaf</groupId>
-            <artifactId>apache-karaf</artifactId>
-            <version>${karaf4.version}</version>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>opendaylight-karaf4-empty</artifactId>
             <type>zip</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-bundles-test</artifactId>
+            <version>${project.version}</version>
+            <type>xml</type>
+            <classifier>features</classifier>
         </dependency>
         <!-- BEWARE of adding additional dependencies here...
              It will cause weird issues e.g. in integration/distribution/features/repos/distribution -->

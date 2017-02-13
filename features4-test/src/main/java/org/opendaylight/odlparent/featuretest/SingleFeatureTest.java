@@ -82,8 +82,8 @@ public class SingleFeatureTest {
      * Default values for karaf distro type, groupId, and artifactId
      */
     private static final String KARAF_DISTRO_TYPE = "zip";
-    private static final String KARAF_DISTRO_ARTIFACTID = "apache-karaf";
-    private static final String KARAF_DISTRO_GROUPID = "org.apache.karaf";
+    private static final String KARAF_DISTRO_ARTIFACTID = "opendaylight-karaf4-empty";
+    private static final String KARAF_DISTRO_GROUPID = "org.opendaylight.odlparent";
 
     /*
      * Property names to override defaults for karaf distro artifactId, groupId, version, and type
