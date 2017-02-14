@@ -26,5 +26,6 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     <module>karaf4-parent</module>
     <module>opendaylight-karaf4-resources</module>
     <module>opendaylight-karaf4-empty</module>
+    <module>karaf-maven-plugin</module>
   </modules>
 </project>
