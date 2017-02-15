@@ -269,7 +269,6 @@
                     </installedFeatures>
                     <bootFeatures>
                         <feature>standard</feature>
-                        <feature>war</feature>
                         <!-- We load wrap as a workaround to handle old features without the wrap prerequisite -->
                         <!-- TODO Remove this once all the downstream features are fixed -->
                         <feature>wrap</feature>
