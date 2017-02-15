@@ -55,9 +55,9 @@ public class TestBundleDiag {
                 .pollInterval(1, SECONDS)
                 .atMost(timeout, timeoutUnit)
                     .conditionEvaluationListener(
-                        condition -> LOG.info("{} (elapsed time {}s, remaining time {}s)",
-                            ((BundleDiagInfos) condition.getValue()).getSummaryText(),
-                            condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000))
+                        condition -> LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
+                            condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000,
+                            ((BundleDiagInfos) condition.getValue()).getFullDiagnosticText()))
                     .until(() -> getBundleDiagInfos(), new BundleServiceSummaryMatcher());
 
             // If we're here then either BundleServiceSummaryMatcher quit because of Active, Failure or Stopping..
