@@ -72,13 +72,6 @@
         </dependency>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-karaf-feat-jetty</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>odl-karaf-feat-war</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
