@@ -75,12 +75,6 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.karaf.deployer</groupId>
-            <artifactId>org.apache.karaf.deployer.spring</artifactId>
-            <version>${karaf4.version}</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>org.ops4j.pax.url</groupId>
             <artifactId>pax-url-wrap</artifactId>
             <scope>compile</scope>
