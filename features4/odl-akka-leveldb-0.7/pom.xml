@@ -25,6 +25,12 @@
 
     <name>LevelDB (for Karaf 4)</name>
 
+    <!-- We can't use our own plugin in the same reactor builds -->
+    <properties>
+        <karaf4.plugin.groupId>org.apache.karaf.tooling</karaf4.plugin.groupId>
+        <karaf4.plugin.version>4.0.8-odl</karaf4.plugin.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
