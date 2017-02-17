@@ -537,7 +537,14 @@ public class GenerateDescriptorMojo extends MojoSupport {
             }
             for (Feature includedFeature : includedFeatures.getFeature()) {
                 Dependency dependency = new Dependency(includedFeature.getName(), includedFeature.getVersion());
-                // We musn't de-duplicate here, we may have seen a feature in !add mode
+                // Determine what dependency we're actually going to use
+                Dependency matchingDependency = findMatchingDependency(feature.getFeature(), dependency);
+                if (matchingDependency != null) {
+                    // The feature already has a matching dependency, merge them
+                    mergeDependencies(matchingDependency, dependency);
+                    dependency = matchingDependency;
+                }
+                // We mustn't de-duplicate here, we may have seen a feature in !add mode
                 otherFeatures.put(dependency, includedFeature);
                 if (add) {
                     if (!feature.getFeature().contains(dependency)) {
@@ -552,6 +559,27 @@ public class GenerateDescriptorMojo extends MojoSupport {
                             this.dependencyHelper.artifactToMvn(artifact, getVersionOrRange(parent, artifact)));
                 }
             }
+        }
+    }
+
+    private Dependency findMatchingDependency(List<Dependency> dependencies, Dependency reference) {
+        for (Dependency dependency : dependencies) {
+            if (dependency.getName().equals(reference.getName())) {
+                return dependency;
+            }
+        }
+        return null;
+    }
+
+    private void mergeDependencies(Dependency target, Dependency source) {
+        if (target.getVersion() == null || Feature.DEFAULT_VERSION.equals(target.getVersion())) {
+            target.setVersion(source.getVersion());
+        }
+        if (source.isDependency()) {
+            target.setDependency(true);
+        }
+        if (source.isPrerequisite()) {
+            target.setPrerequisite(true);
         }
     }
 
