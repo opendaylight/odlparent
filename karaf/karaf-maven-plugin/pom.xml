@@ -205,6 +205,11 @@
     <properties>
         <!-- This doesn't react too well with our build setup -->
         <invoker.skip>true</invoker.skip>
+
+        <!-- Variables required for Maven Site generation -->
+        <nexus.site.url>file:${user.dir}/target/staged-site</nexus.site.url>
+        <odl.site.url>https://nexus.opendaylight.org/content/sites/site/</odl.site.url>
+        <stream>latest</stream><!-- CI should pass in -Dstream={stream} -->
     </properties>
 
     <build>
@@ -283,5 +288,21 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <!--
+        Maven Site Configuration
+
+        The following configuration is necessary for maven-site-plugin to
+        correctly identify the correct deployment path for OpenDaylight Maven
+        sites.
+    -->
+    <url>${odl.site.url}/${project.groupId}/${stream}/</url>
+
+    <distributionManagement>
+        <site>
+            <id>opendaylight-site</id>
+            <url>${nexus.site.url}/</url>
+        </site>
+    </distributionManagement>
 
 </project>
