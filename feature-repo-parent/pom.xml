@@ -87,7 +87,7 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.karaf.tooling</groupId>
+                <groupId>${karaf4.plugin.groupId}</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>${karaf4.plugin.version}</version>
                 <extensions>true</extensions>
