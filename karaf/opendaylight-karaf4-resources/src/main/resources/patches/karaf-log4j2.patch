@@ -1,0 +1,10 @@
+---etc/startup.properties	2017-02-17 00:53:04.410000000 +0100
++++etc/startup.properties	2017-02-17 01:48:00.853000000 +0100
+@@ -1,6 +1,6 @@
+ # Bundles to be started on startup, with startlevel
+ mvn\:org.ops4j.pax.logging/pax-logging-api/1.8.5 = 8
+-mvn\:org.ops4j.pax.logging/pax-logging-service/1.8.5 = 8
++mvn\:org.ops4j.pax.logging/pax-logging-log4j2/1.8.5 = 8
+ mvn\:org.apache.felix/org.apache.felix.configadmin/1.8.8 = 10
+ mvn\:org.opendaylight.odlparent/karaf.branding/1.8.0-SNAPSHOT = 50
+ mvn\:org.apache.felix/org.apache.felix.fileinstall/3.5.4 = 11
