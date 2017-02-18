@@ -8,10 +8,13 @@
 
 package org.opendaylight.odlparent.featuretest;
 
+import com.google.common.base.Splitter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.xml.bind.JAXBException;
 import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
@@ -27,6 +30,7 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
 
     private static final Logger LOG = LoggerFactory.getLogger(PerRepoTestRunner.class);
 
+    private static final String FEATURES_FILTER_PROP = "sft.features.filter";
     private static final String REPO_RECURSE = "repo.recurse";
     private static final String[] FEATURES_FILENAMES = new String[] { "features.xml", "feature.xml" };
 
@@ -113,10 +117,27 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
 
     protected List<PerFeatureRunner> runnersFromFeatures(
             final URL repoUrl, final Features features, final Class<?> testClass) throws InitializationError {
+        List<String> allFeatureNames = features.getFeature().stream()
+                .map(feature -> feature.getName()).collect(Collectors.toList());
+        String featuresFilterProperty = System.getProperty(FEATURES_FILTER_PROP);
+        List<String> filteredFeatureNames = featuresFilterProperty != null
+                ? Splitter.on(',').splitToList(featuresFilterProperty)
+                : Collections.emptyList();
+        if (!allFeatureNames.containsAll(filteredFeatureNames)) {
+            throw new IllegalArgumentException(
+                    "Feature Filter (-D" + FEATURES_FILTER_PROP + ") contains at least some features ("
+                    + filteredFeatureNames + ") which actually are not available to filter on"
+                    + "; all features: " + allFeatureNames);
+        }
+
         final List<PerFeatureRunner> runners = new ArrayList<>();
         final List<Feature> featureList = features.getFeature();
         for (final Feature f : featureList) {
-            runners.add(new PerFeatureRunner(repoUrl, f.getName(), f.getVersion(), testClass));
+            if (filteredFeatureNames.isEmpty() || filteredFeatureNames.contains(f.getName())) {
+                runners.add(new PerFeatureRunner(repoUrl, f.getName(), f.getVersion(), testClass));
+            } else {
+                LOG.info("Skipping filtered (-D{}) feature: {}", FEATURES_FILTER_PROP, f.getName());
+            }
         }
         return runners;
     }
@@ -143,9 +164,6 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
         child.run(notifier);
     }
 
-    /* (non-Javadoc)
-     * @see org.junit.runner.Runner#testCount()
-     */
     @Override
     public int testCount() {
         return super.testCount() * children.size();

@@ -62,6 +62,7 @@ public class SingleFeatureTest {
     private static final String ETC_ORG_OPS4J_PAX_LOGGING_CFG = "etc/org.ops4j.pax.logging.cfg";
 
     private static final String KEEP_UNPACK_DIRECTORY_PROP = "karaf.keep.unpack";
+    // see also PerRepoTestRunner's FEATURES_FILTER_PROP = "sft.features.filter"
     private static final String PROFILE_PROP = "karaf.featureTest.profile";
     private static final String BUNDLES_DIAG_SKIP_PROP = "sft.diag.skip";
     private static final String BUNDLES_DIAG_FORCE_PROP = "sft.diag.force";
