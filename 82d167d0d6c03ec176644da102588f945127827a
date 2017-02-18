@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_886a2b7f",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 773
+      },
+      "writtenOn": "2017-02-18T01:53:12Z",
+      "side": 1,
+      "message": "remove this?",
+      "revId": "82d167d0d6c03ec176644da102588f945127827a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
