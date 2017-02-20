@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_51046e49",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1125,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-02-20T10:12:15Z",
+      "side": 1,
+      "message": "Do we actually need these declarations? They\u0027re pulled in automatically via akka-remote_2.11 AFAICS, and nothing references them directly.",
+      "revId": "e3fc43cb2ae3a61478d9ac199fa55f6f0b35d7cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
