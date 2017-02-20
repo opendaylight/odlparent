@@ -22,6 +22,30 @@
       "revId": "3a418daa88ab009d5ee670adfe7883128c1d3382",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_e9bc96de",
+        "filename": "karaf/karaf-maven-plugin/src/main/java/org/apache/karaf/tooling/features/GenerateDescriptorMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-02-20T16:48:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fafc7978_493962d6",
+      "range": {
+        "startLine": 567,
+        "startChar": 12,
+        "endLine": 567,
+        "endChar": 67
+      },
+      "revId": "3a418daa88ab009d5ee670adfe7883128c1d3382",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
