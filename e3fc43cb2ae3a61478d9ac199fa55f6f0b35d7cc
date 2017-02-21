@@ -16,6 +16,24 @@
       "revId": "e3fc43cb2ae3a61478d9ac199fa55f6f0b35d7cc",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_42dc9773",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1125,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-02-21T09:41:39Z",
+      "side": 1,
+      "message": "They are useful for delivering fixes outside of akka release updates.",
+      "parentUuid": "fafc7978_51046e49",
+      "revId": "e3fc43cb2ae3a61478d9ac199fa55f6f0b35d7cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
