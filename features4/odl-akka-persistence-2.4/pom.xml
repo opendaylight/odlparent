@@ -48,10 +48,6 @@
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-persistence_${scala.version}</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.google.protobuf</groupId>
-            <artifactId>protobuf-java</artifactId>
-        </dependency>
     </dependencies>
 
     <!--
