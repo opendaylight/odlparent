@@ -1071,6 +1071,12 @@
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
+        <artifactId>akka-persistence-tck_${scala.version}</artifactId>
+        <version>${akka.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.typesafe.akka</groupId>
         <artifactId>akka-protobuf_${scala.version}</artifactId>
         <version>${akka.version}</version>
       </dependency>
