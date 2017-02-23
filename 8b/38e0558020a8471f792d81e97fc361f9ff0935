@@ -1,0 +1,9 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+1: Thomas Nadeau <tnadeau@lucidvision.com>
+Code-Review+1: Tom Pantelis <tpanteli@brocade.com>
+Code-Review+2: Robert Varga <nite@hq.sk>
+Submitted-by: Robert Varga <nite@hq.sk>
+Submitted-at: Thu, 23 Feb 2017 08:36:51 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/51884
+Project: odlparent
+Branch: refs/heads/master
