@@ -19,6 +19,7 @@
     </parent>
 
     <artifactId>odl-karaf-feat-feature</artifactId>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
     <packaging>kar</packaging>
 
     <dependencies>
