@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_f58f0773",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 491
+      },
+      "writtenOn": "2017-03-03T12:30:57Z",
+      "side": 1,
+      "message": "Well, what the patch really implements for the middle part is the project name, not the groupId.",
+      "revId": "91578b1bfcda2d3a180a01d1c7866540b04a4d95",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
