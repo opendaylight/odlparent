@@ -9,6 +9,8 @@
   </parent>
 
   <artifactId>findbugs</artifactId>
+  <!-- <name> formatting is used by autorelease to parse and notify projects on
+       build failure. Please do not modify this unless you have a good reason. -->
   <name>ODL :: odlparent :: ${project.artifactId}</name>
 
   <build>
