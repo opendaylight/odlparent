@@ -46,7 +46,8 @@
       <id>opendaylight-snapshots</id>
       <repositories>
         <repository>
-          <id>opendaylight-snapshot</id>
+          <!-- https://issues.apache.org/jira/browse/ARCHETYPE-438?focusedCommentId=15866190&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-15866190 -->
+          <id>archetype</id>
           <name>opendaylight-snapshot</name>
           <url>https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
           <releases>
@@ -59,7 +60,7 @@
       </repositories>
       <pluginRepositories>
         <pluginRepository>
-          <id>opendaylight-snapshot</id>
+          <id>archetype</id>
           <name>opendaylight-snapshot</name>
           <url>https://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
           <releases>
