@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright © 2016, 2017 Red Hat, Inc. and others.  All rights reserved.
+
+ This program and the accompanying materials are made available under the
+ terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ and is available at http://www.eclipse.org/legal/epl-v10.html
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+         Internal parent for building and packaging single Karaf features *without tests*.
+
+         We need this in odlparent to build features which are used in other parents with tests.
+         Projects outside odlparent shouldn't use this, nor should modules in odlparent which can
+         build with single-feature-parent.
+    -->
+
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>odlparent</artifactId>
+        <version>1.9.0-SNAPSHOT</version>
+        <relativePath>../odlparent</relativePath>
+    </parent>
+
+    <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>untested-single-feature-parent</artifactId>
+    <version>1.9.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <properties>
+        <karaf.version>${karaf4.version}</karaf.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!-- This generates the META-INF/maven/dependencies.properties file
+                     which is required by the versionAsInProject() used in SingleFeatureTest -->
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>depends-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+                <version>${karaf4.plugin.version}</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <simplifyBundleDependencies>true</simplifyBundleDependencies>
+                    <excludedArtifactIds>
+                        <!-- These artifacts are provided by our Karaf distribution -->
+                        <!-- Aries Blueprint -->
+                        <excludedArtifactId>org.apache.aries.blueprint.api</excludedArtifactId>
+                        <excludedArtifactId>org.apache.aries.blueprint.core</excludedArtifactId>
+                        <!-- Aries Quiesce -->
+                        <excludedArtifactId>org.apache.aries.quiesce.api</excludedArtifactId>
+                        <!-- jline -->
+                        <excludedArtifactId>jline</excludedArtifactId>
+                        <!-- SLF4J -->
+                        <excludedArtifactId>slf4j-api</excludedArtifactId>
+                        <excludedArtifactId>jcl-over-slf4j</excludedArtifactId>
+                        <!-- sshd -->
+                        <excludedArtifactId>sshd-core</excludedArtifactId>
+                        <!-- Karaf artifacts -->
+                        <!-- TODO Rework this once Karaf supports wildcards here -->
+                        <excludedArtifactId>org.apache.karaf.jaas.config</excludedArtifactId>
+                        <excludedArtifactId>org.apache.karaf.jaas.modules</excludedArtifactId>
+                        <excludedArtifactId>org.apache.karaf.shell.console</excludedArtifactId>
+                        <excludedArtifactId>org.apache.karaf.shell.core</excludedArtifactId>
+                        <!-- OSGi -->
+                        <excludedArtifactId>org.osgi.compendium</excludedArtifactId>
+                        <excludedArtifactId>org.osgi.core</excludedArtifactId>
+                        <excludedArtifactId>org.osgi.enterprise</excludedArtifactId>
+                    </excludedArtifactIds>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--
+        Maven Site Configuration
+
+        The following configuration is necessary for maven-site-plugin to
+        correctly identify the correct deployment path for OpenDaylight Maven
+        sites.
+    -->
+    <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
+
+    <distributionManagement>
+        <site>
+            <id>opendaylight-site</id>
+            <url>${nexus.site.url}/${project.artifactId}/</url>
+        </site>
+    </distributionManagement>
+
+</project>
