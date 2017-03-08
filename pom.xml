@@ -45,6 +45,7 @@
         <module>bundle-parent</module>
         <module>features-parent</module>
         <module>single-feature3-parent</module>
+        <module>untested-single-feature-parent</module>
         <module>single-feature-parent</module>
         <module>feature3-repo-parent</module>
         <module>feature-repo-parent</module>

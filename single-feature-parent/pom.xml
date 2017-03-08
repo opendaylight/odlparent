@@ -33,9 +33,9 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>odlparent</artifactId>
+        <artifactId>untested-single-feature-parent</artifactId>
         <version>1.9.0-SNAPSHOT</version>
-        <relativePath>../odlparent</relativePath>
+        <relativePath>../untested-single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
@@ -49,98 +49,46 @@
         <jacoco.skip>true</jacoco.skip>
     </properties>
 
+    <dependencies>
+        <!-- Test the generated features.xml -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>features4-test</artifactId>
+            <version>1.8.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Force SLF4J to test scope -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
-                <!-- This generates the META-INF/maven/dependencies.properties file
-                     which is required by the versionAsInProject() used in SingleFeatureTest -->
-                <groupId>org.apache.servicemix.tooling</groupId>
-                <artifactId>depends-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.karaf.tooling</groupId>
-                <artifactId>karaf-maven-plugin</artifactId>
-                <version>${karaf4.plugin.version}</version>
-                <extensions>true</extensions>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.version}</version>
                 <configuration>
-                    <simplifyBundleDependencies>true</simplifyBundleDependencies>
-                    <excludedArtifactIds>
-                        <!-- These artifacts are provided by our Karaf distribution -->
-                        <!-- Aries Blueprint -->
-                        <excludedArtifactId>org.apache.aries.blueprint.api</excludedArtifactId>
-                        <excludedArtifactId>org.apache.aries.blueprint.core</excludedArtifactId>
-                        <!-- Aries Quiesce -->
-                        <excludedArtifactId>org.apache.aries.quiesce.api</excludedArtifactId>
-                        <!-- jline -->
-                        <excludedArtifactId>jline</excludedArtifactId>
-                        <!-- SLF4J -->
-                        <excludedArtifactId>slf4j-api</excludedArtifactId>
-                        <excludedArtifactId>jcl-over-slf4j</excludedArtifactId>
-                        <!-- sshd -->
-                        <excludedArtifactId>sshd-core</excludedArtifactId>
-                        <!-- Karaf artifacts -->
-                        <!-- TODO Rework this once Karaf supports wildcards here -->
-                        <excludedArtifactId>org.apache.karaf.jaas.config</excludedArtifactId>
-                        <excludedArtifactId>org.apache.karaf.jaas.modules</excludedArtifactId>
-                        <excludedArtifactId>org.apache.karaf.shell.console</excludedArtifactId>
-                        <excludedArtifactId>org.apache.karaf.shell.core</excludedArtifactId>
-                        <!-- OSGi -->
-                        <excludedArtifactId>org.osgi.compendium</excludedArtifactId>
-                        <excludedArtifactId>org.osgi.core</excludedArtifactId>
-                        <excludedArtifactId>org.osgi.enterprise</excludedArtifactId>
-                    </excludedArtifactIds>
+                    <dependenciesToScan>
+                        <dependency>org.opendaylight.odlparent:features4-test</dependency>
+                    </dependenciesToScan>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
+                    </additionalClasspathElements>
                 </configuration>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>sft</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <dependencies>
-                <!-- Test the generated features.xml -->
-                <dependency>
-                    <groupId>org.opendaylight.odlparent</groupId>
-                    <artifactId>features4-test</artifactId>
-                    <version>1.9.0-SNAPSHOT</version>
-                    <scope>test</scope>
-                </dependency>
-                <!-- Force SLF4J to test scope -->
-                <dependency>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                    <scope>test</scope>
-                </dependency>
-            </dependencies>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${maven.surefire.version}</version>
-                        <configuration>
-                            <dependenciesToScan>
-                                <dependency>org.opendaylight.odlparent:features4-test</dependency>
-                            </dependenciesToScan>
-                            <additionalClasspathElements>
-                                <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
-                            </additionalClasspathElements>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <phase>test</phase>
-                                <goals>
-                                    <goal>test</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 
     <!--
         Maven Site Configuration
