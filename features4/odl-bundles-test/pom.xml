@@ -13,9 +13,9 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>single-feature-parent</artifactId>
+        <artifactId>untested-single-feature-parent</artifactId>
         <version>1.8.0-SNAPSHOT</version>
-        <relativePath>../../single-feature-parent</relativePath>
+        <relativePath>../../untested-single-feature-parent</relativePath>
     </parent>
 
     <name>ODL :: odlparent :: ${project.artifactId}</name>
