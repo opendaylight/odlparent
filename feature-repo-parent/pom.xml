@@ -91,9 +91,6 @@
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>${karaf4.plugin.version}</version>
                 <extensions>true</extensions>
-                <configuration>
-                    <aggregateFeatures>true</aggregateFeatures>
-                </configuration>
             </plugin>
         </plugins>
     </build>
