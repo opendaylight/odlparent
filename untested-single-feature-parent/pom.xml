@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Copyright © 2016 Red Hat, Inc. and others.  All rights reserved.
+ Copyright © 2016, 2017 Red Hat, Inc. and others.  All rights reserved.
 
  This program and the accompanying materials are made available under the
  terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -12,15 +12,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!--
-         Base parent POM for building, packaging and testing Karaf feature repositories.
-         Karaf features are generated based on the POM dependencies; they can be supplemented by a base
-         feature.xml file in src/main/feature.
+         Internal parent for building and packaging single Karaf features *without tests*.
 
-         Users should do the following:
-
-         - specify this as their parent
-         - make sure the packaging is set to feature
-         - specify features to be provided in the repository by depending on them in the project <dependencies/>
+         We need this in odlparent to build features which are used in other parents with tests.
+         Projects outside odlparent shouldn't use this, nor should modules in odlparent which can
+         build with single-feature-parent.
     -->
 
     <parent>
@@ -31,32 +27,14 @@
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>feature-repo-parent</artifactId>
+    <artifactId>untested-single-feature-parent</artifactId>
     <version>1.8.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <properties>
         <karaf.version>${karaf4.version}</karaf.version>
-        <skip.karaf.featureTest>false</skip.karaf.featureTest>
-        <jacoco.skip>true</jacoco.skip>
     </properties>
-
-    <dependencies>
-        <!-- Test the generated features.xml -->
-        <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>features4-test</artifactId>
-            <version>1.8.0-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- Force SLF4J to test scope -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
@@ -67,30 +45,34 @@
                 <artifactId>depends-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <skip>${skip.karaf.featureTest}</skip>
-                    <dependenciesToScan>
-                        <dependency>org.opendaylight.odlparent:features4-test</dependency>
-                    </dependenciesToScan>
-                    <additionalClasspathElements>
-                        <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
-                    </additionalClasspathElements>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>${karaf4.plugin.version}</version>
                 <extensions>true</extensions>
+                <configuration>
+                    <simplifyBundleDependencies>true</simplifyBundleDependencies>
+                    <excludedArtifactIds>
+                        <!-- These artifacts are provided by our Karaf distribution -->
+                        <!-- Aries Blueprint -->
+                        <excludedArtifactId>org.apache.aries.blueprint.api</excludedArtifactId>
+                        <excludedArtifactId>org.apache.aries.blueprint.core</excludedArtifactId>
+                        <!-- Aries Quiesce -->
+                        <excludedArtifactId>org.apache.aries.quiesce.api</excludedArtifactId>
+                        <!-- jline -->
+                        <excludedArtifactId>jline</excludedArtifactId>
+                        <!-- SLF4J -->
+                        <excludedArtifactId>slf4j-api</excludedArtifactId>
+                        <excludedArtifactId>jcl-over-slf4j</excludedArtifactId>
+                        <!-- sshd -->
+                        <excludedArtifactId>sshd-core</excludedArtifactId>
+                        <!-- Karaf artifacts -->
+                        <!-- TODO Rework this once Karaf supports wildcards here -->
+                        <excludedArtifactId>org.apache.karaf.jaas.config</excludedArtifactId>
+                        <excludedArtifactId>org.apache.karaf.jaas.modules</excludedArtifactId>
+                        <excludedArtifactId>org.apache.karaf.shell.console</excludedArtifactId>
+                        <excludedArtifactId>org.apache.karaf.shell.core</excludedArtifactId>
+                    </excludedArtifactIds>
+                </configuration>
             </plugin>
         </plugins>
     </build>
