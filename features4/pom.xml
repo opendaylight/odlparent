@@ -49,7 +49,6 @@
         <module>odl-triemap-0.2</module>
 
         <!-- Test features -->
-        <module>odl-bundles-test</module>
     </modules>
 
     <build>
