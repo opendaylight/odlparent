@@ -370,10 +370,6 @@ public class SingleFeatureTest {
             // Caused by: org.opendaylight.mdsal.eos.common.api.CandidateAlreadyRegisteredException
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7587
             "odl-groupbasedpolicy-ne-location-provider",
-            // 1/11 in tsdr/features due to (strange) ClassNotFoundException: odlparent.bundlestest
-            //   .TestBundleDiag (works for all other features; class loading issue in that feature?)
-            // see https://bugs.opendaylight.org/show_bug.cgi?id=7588
-            "odl-hbaseclient",
             // 1/9 in unimgr/features due missing mdsal, similar to issue to odl-integration-all?
             // TODO retry after https://bugs.opendaylight.org/show_bug.cgi?id=7595 is fixed
             "odl-unimgr-netvirt"
