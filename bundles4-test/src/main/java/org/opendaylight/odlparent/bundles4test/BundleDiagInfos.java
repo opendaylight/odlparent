@@ -10,11 +10,10 @@ package org.opendaylight.odlparent.bundles4test;
 import static org.apache.karaf.bundle.core.BundleState.Active;
 import static org.apache.karaf.bundle.core.BundleState.Installed;
 
-import com.google.common.base.Strings;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.EnumMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.karaf.bundle.core.BundleInfo;
@@ -35,15 +34,18 @@ public final class BundleDiagInfos {
     private final List<String> whitelistedBundleStateInfoTexts;
     private final Map<BundleState, Integer> bundleStatesCounters;
 
-    private static final Map<String, BundleState> WHITELISTED_BUNDLES = ImmutableMap.of(
-            "slf4j.log4j12", Installed);
+    private static final Map<String, BundleState> WHITELISTED_BUNDLES;
+    static {
+        WHITELISTED_BUNDLES = new HashMap<>();
+        WHITELISTED_BUNDLES.put("slf4j.log4j12", Installed);
+    }
 
     private BundleDiagInfos(List<String> okBundleStateInfoTexts, List<String> nokBundleStateInfoTexts,
             List<String> whitelistedBundleStateInfoTexts, Map<BundleState, Integer> bundleStatesCounters) {
-        this.okBundleStateInfoTexts = ImmutableList.copyOf(okBundleStateInfoTexts);
-        this.nokBundleStateInfoTexts = ImmutableList.copyOf(nokBundleStateInfoTexts);
-        this.whitelistedBundleStateInfoTexts = ImmutableList.copyOf(whitelistedBundleStateInfoTexts);
-        this.bundleStatesCounters = ImmutableMap.copyOf(bundleStatesCounters);
+        this.okBundleStateInfoTexts = immutableCopyOf(okBundleStateInfoTexts);
+        this.nokBundleStateInfoTexts = immutableCopyOf(nokBundleStateInfoTexts);
+        this.whitelistedBundleStateInfoTexts = immutableCopyOf(whitelistedBundleStateInfoTexts);
+        this.bundleStatesCounters = immutableCopyOf(bundleStatesCounters);
     }
 
     public static BundleDiagInfos forContext(BundleContext bundleContext, BundleService bundleService) {
@@ -63,7 +65,7 @@ public final class BundleDiagInfos {
             String bundleStateDiagText = "OSGi state = " + bundleStatetoText(bundle.getState())
                 + ", Karaf bundleState = " + karafBundleState;
             String diagText = bundleService.getDiag(bundle);
-            if (!Strings.isNullOrEmpty(diagText)) {
+            if (!diagText.isEmpty()) {
                 bundleStateDiagText += ", due to: " + diagText;
             }
 
@@ -151,19 +153,28 @@ public final class BundleDiagInfos {
     }
 
     public List<String> getNokBundleStateInfoTexts() {
-        return ImmutableList.copyOf(nokBundleStateInfoTexts);
+        return immutableCopyOf(nokBundleStateInfoTexts);
     }
 
     public List<String> getOkBundleStateInfoTexts() {
-        return ImmutableList.copyOf(okBundleStateInfoTexts);
+        return immutableCopyOf(okBundleStateInfoTexts);
     }
 
     public List<String> getWhitelistedBundleStateInfoTexts() {
-        return ImmutableList.copyOf(whitelistedBundleStateInfoTexts);
+        return immutableCopyOf(whitelistedBundleStateInfoTexts);
     }
 
     @Override
     public String toString() {
         return getFullDiagnosticText();
     }
+
+    private List<String> immutableCopyOf(List<String> stringList) {
+        return Collections.unmodifiableList(new ArrayList<>(stringList));
+    }
+
+    private Map<BundleState, Integer> immutableCopyOf(Map<BundleState, Integer> map) {
+        return Collections.unmodifiableMap(new HashMap<>(map));
+    }
+
 }
