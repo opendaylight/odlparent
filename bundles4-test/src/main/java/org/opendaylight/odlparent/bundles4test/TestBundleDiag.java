@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.karaf.bundle.core.BundleService;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
@@ -26,16 +27,39 @@ import org.slf4j.LoggerFactory;
  *
  * @author Michael Vorburger.ch
  */
-public class TestBundleDiag {
+public class TestBundleDiag implements AutoCloseable {
 
     private static final Logger LOG = LoggerFactory.getLogger(TestBundleDiag.class);
 
     private final BundleContext bundleContext;
+    private final ServiceReference<BundleService> bundleServiceReference;
     private final BundleService bundleService;
 
-    public TestBundleDiag(BundleContext bundleContext, BundleService bundleService) {
+    @SuppressWarnings("checkstyle:RegexpSinglelineJava")
+    private TestBundleDiag(BundleContext bundleContext) {
         this.bundleContext = bundleContext;
-        this.bundleService = bundleService;
+
+        Bundle bundle = bundleContext.getBundle();
+        System.out.println("bundleContext symbolicName: "
+                + bundle.getSymbolicName() + ", location: " + bundle.getLocation() + ", state: "
+                + bundle.getState());
+
+        this.bundleServiceReference = bundleContext.getServiceReference(BundleService.class);
+        this.bundleService = bundleContext.getService(bundleServiceReference);
+    }
+
+    @Override
+    public void close() {
+        bundleContext.ungetService(bundleServiceReference);
+    }
+
+    public static void checkBundleDiagInfos(BundleContext bundleContext, long timeout, TimeUnit timeoutUnit) {
+        TestBundleDiag diag = new TestBundleDiag(bundleContext);
+        try {
+            diag.checkBundleDiagInfos(timeout, timeoutUnit);
+        } finally {
+            diag.close();
+        }
     }
 
     /**
@@ -48,7 +72,14 @@ public class TestBundleDiag {
      *
      * @author Michael Vorburger, based on guidance from Christian Schneider
      */
-    public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) {
+    @SuppressWarnings("checkstyle:IllegalCatch")
+    private void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) {
+        LOG.info("checkBundleDiagInfos() started...");
+        try {
+            throw new Exception();
+        } catch (Exception e) {
+            LOG.info("checkBundleDiagInfos() caller stack (fake exception)", e);
+        }
         try {
             Awaitility.await("checkBundleDiagInfos")
                 .pollDelay(0, MILLISECONDS)
