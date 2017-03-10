@@ -1599,6 +1599,18 @@
               <Include-Resource>{maven-resources},target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties</Include-Resource>
             </instructions>
           </configuration>
+          <executions>
+            <!-- We don't use OSGi OBR in ODL, so we can gain a few secs (and shorten build logs), by disabling
+                 the installation of bundle details in the local OBR repository for every of our several hundred bundles: -->
+            <execution>
+              <id>default-install</id>
+              <!-- This is, intentionally, a non-existant phase -->
+              <phase>dont-install-obr</phase>
+              <goals>
+                <goal>install</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
 
         <plugin>
