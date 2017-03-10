@@ -26,16 +26,32 @@ import org.slf4j.LoggerFactory;
  *
  * @author Michael Vorburger.ch
  */
-public class TestBundleDiag {
+public class TestBundleDiag implements AutoCloseable {
 
     private static final Logger LOG = LoggerFactory.getLogger(TestBundleDiag.class);
 
     private final BundleContext bundleContext;
+    private final ServiceReference<BundleService> bundleServiceReference;
     private final BundleService bundleService;
 
-    public TestBundleDiag(BundleContext bundleContext, BundleService bundleService) {
+    private TestBundleDiag(BundleContext bundleContext) {
         this.bundleContext = bundleContext;
-        this.bundleService = bundleService;
+        this.bundleServiceReference = bundleContext.getServiceReference(BundleService.class);
+        this.bundleService = bundleContext.getService(bundleServiceReference);
+    }
+
+    @Override
+    public void close() {
+        bundleContext.ungetService(bundleServiceReference);
+    }
+
+    public static void checkBundleDiagInfos(BundleContext bundleContext, long timeout, TimeUnit timeoutUnit) {
+        TestBundleDiag diag = new TestBundleDiag(bundleContext);
+        try {
+            diag.checkBundleDiagInfos(timeout, timeoutUnit);
+        } finally {
+            diag.close();
+        }
     }
 
     /**
@@ -48,7 +64,8 @@ public class TestBundleDiag {
      *
      * @author Michael Vorburger, based on guidance from Christian Schneider
      */
-    public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) {
+    private void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) {
+        LOG.info("checkBundleDiagInfos() started...");
         try {
             Awaitility.await("checkBundleDiagInfos")
                 .pollDelay(0, MILLISECONDS)
