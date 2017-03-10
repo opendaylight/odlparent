@@ -26,13 +26,13 @@
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.karaf.bundle</groupId>
       <artifactId>org.apache.karaf.bundle.core</artifactId>
       <version>${karaf4.version}</version>
-      <scope>compile</scope>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -54,10 +54,8 @@
       <artifactId>awaitility</artifactId>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-    </dependency>
+    <!-- BEWARE of adding additional dependencies here...
+         It will cause weird issues e.g. in integration/distribution/features/repos/distribution -->
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>
