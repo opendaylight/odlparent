@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "fafc7978_eb4edc36",
+        "filename": "features4-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-03-10T13:19:14Z",
+      "side": 1,
+      "message": "yes it will... we have had a mechanism to generate a property file which listed the version into the project ... and then we picked it up from resources -- that did work in tests at least. Something like: https://stackoverflow.com/questions/3532135/using-maven-to-output-the-version-number-to-a-text-file",
+      "range": {
+        "startLine": 137,
+        "startChar": 19,
+        "endLine": 137,
+        "endChar": 55
+      },
+      "revId": "2e87262a1624a722ae73a37f921539f60867d716",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_2b3d848f",
         "filename": "features4-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
         "patchSetId": 3
