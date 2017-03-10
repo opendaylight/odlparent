@@ -24,16 +24,17 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDist
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
 
-import com.google.common.collect.ImmutableList;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.Properties;
 import javax.inject.Inject;
-import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
@@ -44,6 +45,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.opendaylight.odlparent.bundles4test.TestBundleDiag;
 import org.ops4j.pax.exam.Configuration;
+import org.ops4j.pax.exam.MavenUtils;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
 import org.ops4j.pax.exam.options.MavenUrlReference;
@@ -115,9 +117,6 @@ public class SingleFeatureTest {
     @Inject @NonNull
     private FeaturesService featuresService;
 
-    @Inject @NonNull
-    private BundleService bundleService; // NOT BundleStateService, see checkBundleStatesDiag()
-
     private String karafVersion;
     private String karafDistroVersion;
 
@@ -134,7 +133,13 @@ public class SingleFeatureTest {
                 .artifactId("odl-bundles-test")
                 .classifier("features")
                 .type("xml")
-                .versionAsInProject();
+                // we cannot use .versionAsInProject(); here
+                // because of <scope>provided, which is required for other reasons,
+                // odl-bundles-test is not in META-INF/maven/dependencies.properties,
+                // but we can "cheat" (a little) and use the version of features4-test,
+                // the artifact that this code is in, trusting that it will always be the same:
+                .version((groupId, artifactId) -> MavenUtils
+                        .getArtifactVersion("org.opendaylight.odlparent", "features4-test"));
 
         return new Option[] {
             // TODO: Find a way to inherit memory limits from Maven options.
@@ -155,7 +160,7 @@ public class SingleFeatureTest {
             getKarafDistroOption(),
             when(Boolean.getBoolean(KEEP_UNPACK_DIRECTORY_PROP)).useOptions(keepRuntimeFolder()),
             configureConsole().ignoreLocalConsole(),
-            logLevel(LogLevel.WARN),
+            logLevel(LogLevel.INFO),
             mvnLocalRepoOption(),
             features(bundleTestRepo, "odl-bundles-test"),
             mavenBundle("org.apache.aries.quiesce", "org.apache.aries.quiesce.api", "1.0.0"),
@@ -318,21 +323,62 @@ public class SingleFeatureTest {
 
     // Give it 10 minutes max as we've seen feature install hang on jenkins.
     @Test(timeout = 600000)
+    @SuppressWarnings("checkstyle:IllegalCatch")
+    public void installFeatureCatchAndLog() throws Exception {
+        // TODO remove this when the underlying problem is solved
+        // https://bugs.opendaylight.org/show_bug.cgi?id=7981:
+        // "SFT never fails, Pax Exam (or our wrappers) swallow all exceptions"
+        try {
+            installFeature();
+        } catch (Throwable t) {
+            LOG.error("installFeature() failed", t);
+            // as of 2017.03.20, this re-throw seems to have no effect,
+            // the exception gets lost in space, swallowed somewhere! :(
+            throw t;
+        }
+    }
+
     public void installFeature() throws Exception {
+        // The BundleContext originally @Inject'd into the field
+        // is, as expected, the PAXEXAM-PROBE.  For some strange reason,
+        // under Karaf 4 (this works under Karaf 3 without this trick),
+        // after the installFeature() & getFeature() & isInstalled()
+        // below are through, that BundleContext has become invalid
+        // already (too soon!), and using it leads to "IllegalStateException:
+        // BundleContext is no longer valid". -- Because we don't actually
+        // need the PAXEXAM-PROBE, just ANY BundleContext, we employ a
+        // little trick, and obtain the OSGi Framework's (Felix or Equinox's)
+        // own BundleContext, which will never become invalid, and use that instead.
+        // This works, but is a work around, and the fact that we have to do this
+        // may be an indication of a larger problem... see also related strange open bugs
+        // which make it seem like at least some other bundles also get uninstalled
+        // way too soon, for some reason:
+        //  * https://bugs.opendaylight.org/show_bug.cgi?id=7924
+        //  * https://bugs.opendaylight.org/show_bug.cgi?id=7923 (?)
+        //  * https://bugs.opendaylight.org/show_bug.cgi?id=7926
+        bundleContext = bundleContext.getBundle(0).getBundleContext();
+
         LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
-        featuresService.installFeature(getFeatureName(), getFeatureVersion());
+        featuresService.installFeature(getFeatureName(), getFeatureVersion(),
+                EnumSet.of(FeaturesService.Option.Verbose));
+        LOG.info("installFeature() completed");
         Feature feature = featuresService.getFeature(getFeatureName(), getFeatureVersion());
+        LOG.info("getFeature() completed");
         Assert.assertNotNull(
-                "Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null", feature);
-        Assert.assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(),
-                featuresService.isInstalled(feature));
-        LOG.info("Successfull installed feature {} {}", getFeatureName(), getFeatureVersion());
+                "Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null",
+                feature);
+        boolean isInstalled = featuresService.isInstalled(feature);
+        LOG.info("isInstalled() completed");
+        Assert.assertTrue(
+                "Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(), isInstalled);
+        LOG.info("Successfully installed feature {} {}", getFeatureName(), getFeatureVersion());
 
         if (!Boolean.getBoolean(BUNDLES_DIAG_SKIP_PROP)
                 && (Boolean.getBoolean(BUNDLES_DIAG_FORCE_PROP)
                     || !BLACKLISTED_BROKEN_FEATURES.contains(getFeatureName()))) {
+            LOG.info("new TestBundleDiag().checkBundleDiagInfos()");
             Integer timeOutInSeconds = Integer.getInteger(BUNDLES_DIAG_TIMEOUT_PROP, 5 * 60);
-            new TestBundleDiag(bundleContext, bundleService).checkBundleDiagInfos(timeOutInSeconds, SECONDS);
+            TestBundleDiag.checkBundleDiagInfos(bundleContext, timeOutInSeconds, SECONDS);
         } else {
             LOG.warn("SKIPPING TestBundleDiag because system property {} is true or feature is blacklisted: {}",
                     BUNDLES_DIAG_SKIP_PROP, getFeatureName());
@@ -340,7 +386,7 @@ public class SingleFeatureTest {
     }
 
     // TODO remove this when all issues linked to parent https://bugs.opendaylight.org/show_bug.cgi?id=7582 are resolved
-    private static final List<String> BLACKLISTED_BROKEN_FEATURES = ImmutableList.of(
+    private static final List<String> BLACKLISTED_BROKEN_FEATURES = new ArrayList<>(Arrays.asList(
             // integration/distribution/features-test due to DOMRpcService
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7595
             "odl-integration-all",
@@ -361,5 +407,5 @@ public class SingleFeatureTest {
             // 1/9 in unimgr/features due missing mdsal, similar to issue to odl-integration-all?
             // TODO retry after https://bugs.opendaylight.org/show_bug.cgi?id=7595 is fixed
             "odl-unimgr-netvirt"
-    );
+    ));
 }
