@@ -12,8 +12,8 @@ import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
 
-import com.google.common.base.Preconditions;
 import java.net.URL;
+import java.util.Objects;
 import org.junit.runner.Description;
 import org.junit.runner.Runner;
 import org.junit.runner.manipulation.Filter;
@@ -48,14 +48,14 @@ public class PerFeatureRunner extends Runner implements Filterable, Sortable {
     public PerFeatureRunner(
             final URL repoUrl, final String featureName, final String featureVersion, final Class<?> testClass)
             throws InitializationError {
-        this.repoUrl = Preconditions.checkNotNull(repoUrl);
-        this.featureName = Preconditions.checkNotNull(featureName);
-        this.featureVersion = Preconditions.checkNotNull(featureVersion);
+        this.repoUrl = Objects.requireNonNull(repoUrl);
+        this.featureName = Objects.requireNonNull(featureName);
+        this.featureVersion = Objects.requireNonNull(featureVersion);
 
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP, repoUrl.toString());
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP, featureName);
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP, featureVersion);
-        this.delegate = new PaxExam(Preconditions.checkNotNull(testClass));
+        this.delegate = new PaxExam(Objects.requireNonNull(testClass));
     }
 
     @Override
