@@ -106,10 +106,6 @@ public class PerFeatureRunNotifier extends RunNotifier {
         delegate.fireTestFinished(Util.convertDescription(repoUrl, featureName, featureVersion, description));
     }
 
-    /**
-     * Please stop.
-     * @see org.junit.runner.notification.RunNotifier#pleaseStop()
-     */
     @Override
     public void pleaseStop() {
         delegate.pleaseStop();

@@ -152,9 +152,6 @@ public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
         child.run(notifier);
     }
 
-    /* (non-Javadoc)
-     * @see org.junit.runner.Runner#testCount()
-     */
     @Override
     public int testCount() {
         return super.testCount() * children.size();
