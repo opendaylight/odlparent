@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "fafc7978_f5c6b566",
+        "filename": "features4-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-03-13T09:52:21Z",
+      "side": 1,
+      "message": "OK, let me try to figure out something a bit smarter than hard-coding this then...",
+      "parentUuid": "fafc7978_4bd60829",
+      "range": {
+        "startLine": 138,
+        "startChar": 25,
+        "endLine": 138,
+        "endChar": 41
+      },
+      "revId": "2e87262a1624a722ae73a37f921539f60867d716",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_2b3d848f",
         "filename": "features4-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
         "patchSetId": 3
@@ -82,6 +106,30 @@
       "writtenOn": "2017-03-10T13:16:55Z",
       "side": 1,
       "message": "Can we transform/wrap this to something less likely to get lost?",
+      "range": {
+        "startLine": 330,
+        "startChar": 29,
+        "endLine": 330,
+        "endChar": 38
+      },
+      "revId": "2e87262a1624a722ae73a37f921539f60867d716",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_b5d0ad1f",
+        "filename": "features4-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-03-13T09:52:21Z",
+      "side": 1,
+      "message": "How? It\u0027s broken somewhere in Pax, and I haven\u0027t been able to figure out why, why... I meant to later separately look into what the root cause is of what\u0027s really going on here, but would suggest that we get this in as-is already to at least see the logs.. what do you think?",
+      "parentUuid": "fafc7978_2b3d848f",
       "range": {
         "startLine": 330,
         "startChar": 29,
