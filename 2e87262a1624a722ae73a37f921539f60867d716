@@ -139,6 +139,30 @@
       "revId": "2e87262a1624a722ae73a37f921539f60867d716",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_1530969d",
+        "filename": "features4-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-03-13T15:43:48Z",
+      "side": 1,
+      "message": "So there is a Bug which swallows the Throwable.\nLine 331 just explicitly performs what should implicitly happen without the catch block,\nand this comment refers to why LOG is needed before that.\n\nInstead of this comment two-liner, I would expect a comment line before line 328 saying \"TODO: Remove this logging when BUG-XYZ is fixed\".\n\nNo big deal though (as opposed to line 138).",
+      "parentUuid": "fafc7978_b5d0ad1f",
+      "range": {
+        "startLine": 330,
+        "startChar": 29,
+        "endLine": 330,
+        "endChar": 38
+      },
+      "revId": "2e87262a1624a722ae73a37f921539f60867d716",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
