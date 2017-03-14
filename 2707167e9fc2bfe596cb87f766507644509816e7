@@ -33,6 +33,24 @@
       "revId": "2707167e9fc2bfe596cb87f766507644509816e7",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_e7ec40f6",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/BundleDiagInfos.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-03-14T09:34:45Z",
+      "side": 1,
+      "message": "Not quite, the ODL coding guidelines specify all static *fields* first, then constructors (private, public, then static factories). David mentioned this move in the commit message ;-).",
+      "parentUuid": "fafc7978_272ac87e",
+      "revId": "2707167e9fc2bfe596cb87f766507644509816e7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
