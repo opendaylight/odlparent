@@ -29,7 +29,7 @@
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>odl-guava-18</artifactId>
-            <version>${project.version}</version>
+            <version>[1.8.0, 2.0.0)</version>
             <type>xml</type>
             <classifier>features</classifier>
         </dependency>
