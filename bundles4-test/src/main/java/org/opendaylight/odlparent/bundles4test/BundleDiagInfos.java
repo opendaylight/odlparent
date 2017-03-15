@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Red Hat, Inc. and others. All rights reserved.
+ * Copyright (c) 2016, 2017 Red Hat, Inc. and others. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -28,7 +28,7 @@ import org.osgi.framework.BundleContext;
  *
  * @author Michael Vorburger.ch
  */
-public class BundleDiagInfos {
+public final class BundleDiagInfos {
 
     private final List<String> okBundleStateInfoTexts;
     private final List<String> nokBundleStateInfoTexts;
@@ -37,6 +37,14 @@ public class BundleDiagInfos {
 
     private static final Map<String, BundleState> WHITELISTED_BUNDLES = ImmutableMap.of(
             "slf4j.log4j12", Installed);
+
+    private BundleDiagInfos(List<String> okBundleStateInfoTexts, List<String> nokBundleStateInfoTexts,
+            List<String> whitelistedBundleStateInfoTexts, Map<BundleState, Integer> bundleStatesCounters) {
+        this.okBundleStateInfoTexts = ImmutableList.copyOf(okBundleStateInfoTexts);
+        this.nokBundleStateInfoTexts = ImmutableList.copyOf(nokBundleStateInfoTexts);
+        this.whitelistedBundleStateInfoTexts = ImmutableList.copyOf(whitelistedBundleStateInfoTexts);
+        this.bundleStatesCounters = ImmutableMap.copyOf(bundleStatesCounters);
+    }
 
     public static BundleDiagInfos forContext(BundleContext bundleContext, BundleService bundleService) {
         List<String> okBundleStateInfoTexts = new ArrayList<>();
@@ -104,14 +112,6 @@ public class BundleDiagInfos {
             default:
                 return state + "???";
         }
-    }
-
-    private BundleDiagInfos(List<String> okBundleStateInfoTexts, List<String> nokBundleStateInfoTexts,
-            List<String> whitelistedBundleStateInfoTexts, Map<BundleState, Integer> bundleStatesCounters) {
-        this.okBundleStateInfoTexts = ImmutableList.copyOf(okBundleStateInfoTexts);
-        this.nokBundleStateInfoTexts = ImmutableList.copyOf(nokBundleStateInfoTexts);
-        this.whitelistedBundleStateInfoTexts = ImmutableList.copyOf(whitelistedBundleStateInfoTexts);
-        this.bundleStatesCounters = ImmutableMap.copyOf(bundleStatesCounters);
     }
 
     public SystemState getSystemState() {
