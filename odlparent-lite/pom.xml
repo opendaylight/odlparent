@@ -80,6 +80,13 @@
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <!-- This property is used in the pluginManagement and the q profile as well as -D set e.g. in releng/builder by c/53426
+         to emulate a future "maven.gitcommitid.skip", which only a future not-yet-available-on-Maven-central maven-git-commit-id-plugin release has.
+         (If we ever upgrade the version of the maven-git-commit-id-plugin we use, then this and re. pluginManagement config could be removed; BUT then
+          the q profile and all -D in releng/builder etc. else would have to be changed from this "gitid.skip" to "maven.gitcommitid.skip.)
+      -->
+    <gitid.skip>false</gitid.skip>
   </properties>
 
   <build>
@@ -255,6 +262,7 @@
           </execution>
         </executions>
         <configuration>
+          <skip>${gitid.skip}</skip>
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
           <generateGitPropertiesFile>true</generateGitPropertiesFile>
           <generateGitPropertiesFilename>${project.build.outputDirectory}/META-INF/git.properties</generateGitPropertiesFilename>
@@ -302,18 +310,8 @@
             <invoker.skip>true</invoker.skip>
             <enforcer.skip>true</enforcer.skip>
             <mdsal.skip.verbose>true</mdsal.skip.verbose> <!-- Bug 6236 -->
+            <gitid.skip>true</gitid.skip>
         </properties>
-        <build>
-          <plugins>
-            <plugin>
-              <groupId>pl.project13.maven</groupId>
-              <artifactId>git-commit-id-plugin</artifactId>
-              <configuration>
-                <skip>true</skip>
-              </configuration>
-            </plugin>
-          </plugins>
-        </build>
     </profile>
     <profile>
       <!-- http://blog2.vorburger.ch/2016/06/maven-install-into-additional.html
