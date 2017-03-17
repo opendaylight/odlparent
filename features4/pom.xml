@@ -42,6 +42,7 @@
 
         <!-- General features -->
         <module>features4-odlparent</module>
+        <module>odl-guava</module>
         <module>odl-guava-18</module>
         <module>odl-guava-21</module>
         <module>odl-lmax-3</module>
