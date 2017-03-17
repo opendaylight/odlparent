@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fafc7978_ec4feebc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-03-17T11:18:28Z",
+      "side": 1,
+      "message": "Add CLI property to un-skip git-commit-id in -Pq",
+      "revId": "16204d4ee5d1020bba1288fd5bb7a81ee19f3283",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fafc7978_8c78e2f9",
         "filename": "odlparent-lite/pom.xml",
         "patchSetId": 1
