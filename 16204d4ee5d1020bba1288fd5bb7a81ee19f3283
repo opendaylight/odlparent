@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_8c78e2f9",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-03-17T11:10:45Z",
+      "side": 1,
+      "message": "given https://github.com/welcor/maven-git-commit-id-plugin/commit/2ff6c55d606d02ccb4e44e3dc397af087c115c48 for https://github.com/ktoso/maven-git-commit-id-plugin/issues/268, I don\u0027t think we should use the exact same property name here (it would be VERY confusing the day we upgrade to a new version of the git-commit-id-plugin which will include that change)... how about changing \"maven.gitcommitid.skip\" to be e.g. \"profile.q.gitcommitid.skip\" - that best describes this is really for, IMHO.",
+      "revId": "16204d4ee5d1020bba1288fd5bb7a81ee19f3283",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
