@@ -22,6 +22,30 @@
       "revId": "ba476f03ef4809a309fab377085321467ad3bf87",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_ee3a38e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-03-20T16:15:47Z",
+      "side": 1,
+      "message": "Interesting.. didn\u0027t know that.  A grep shows that some of the Karaf standard features, like standard-3.0.8-features.xml or spring-3.0.8-features.xml and a few more, also use \u0027resolver\u003d\"(obr)\"\u0027 .. I suspect that this may mean \"this feature COULD be resolve via OBR instead of Maven\" ?  Just guessing.  We\u0027re not using \u0027resolver\u003d\"(obr)\"\u0027 in most ODL features though, so I\u0027d think that at best it\u0027s harmless to have it, but at worst it could cause issuses.  I\u0027d therefore remove it from tsdr, just for consistency and to avoid confusion? So proposed in https://git.opendaylight.org/gerrit/#/c/53569/, what do you think?\n\nre. [1] sorry I didn\u0027t understand what you meant - that looks more related to c/53109 than this idea here?",
+      "parentUuid": "fafc7978_06a21c9a",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 16
+      },
+      "revId": "ba476f03ef4809a309fab377085321467ad3bf87",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
