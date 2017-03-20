@@ -1,0 +1,11 @@
+[Git]
+bears = GitCommitBear
+ignore_length_regex = Signed-off-by,
+    Also-by,
+    Co-authored-by,
+    http://,
+    https://
+
+[XML]
+bears = XMLBear
+files = settings.xml
