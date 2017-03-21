@@ -46,6 +46,30 @@
       "revId": "ba476f03ef4809a309fab377085321467ad3bf87",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_69192279",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-03-21T11:22:30Z",
+      "side": 1,
+      "message": "\u003e re. [1]\n\nThat turned out to be unrelated [2].\n\n[2] https://git.opendaylight.org/gerrit/53372",
+      "parentUuid": "fafc7978_ee3a38e6",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 16
+      },
+      "revId": "ba476f03ef4809a309fab377085321467ad3bf87",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
