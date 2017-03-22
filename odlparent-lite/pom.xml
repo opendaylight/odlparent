@@ -391,15 +391,15 @@
         <plugins>
           <plugin>
             <artifactId>maven-install-plugin</artifactId>
+            <version>3.0.0-SNAPSHOT</version>
             <executions>
               <execution>
                 <id>additional-install</id>
                 <phase>install</phase>
                 <goals>
-                  <goal>install-file</goal>
+                  <goal>install</goal>
                 </goals>
                 <configuration>
-                  <file>${project.build.directory}/${project.build.finalName}.jar</file>
                   <localRepositoryPath>${addInstallRepositoryPath}</localRepositoryPath>
                 </configuration>
               </execution>
