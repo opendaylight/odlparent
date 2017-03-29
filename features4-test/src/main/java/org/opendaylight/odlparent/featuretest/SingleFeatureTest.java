@@ -352,6 +352,14 @@ public class SingleFeatureTest {
             "odl-mdsal-clustering-commons",
             "odl-mdsal-distributed-datastore",
             "odl-mdsal-remoterpc-connector",
+            // Karaf 4 specific problems with genius features
+            // see https://bugs.opendaylight.org/show_bug.cgi?id=8100
+            "odl-genius",
+            "odl-genius-api",
+            "odl-genius-rest",
+            "odl-genius-ui",
+            "odl-genius-fcaps-framework",
+            "odl-genius-fcaps-application",
             // 1/17 in groupbasedpolicy/features due to NOK org.opendaylight.groupbasedpolicy
             // Caused by: org.opendaylight.mdsal.eos.common.api.CandidateAlreadyRegisteredException
             // see https://bugs.opendaylight.org/show_bug.cgi?id=7587
