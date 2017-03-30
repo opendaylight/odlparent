@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fafc7978_e3821151",
+        "filename": "features4-test/pom.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-03-30T16:13:22Z",
+      "side": 1,
+      "message": "There is a progress [0], so maybe this is the correct scope after all.\n\n2017-03-29 15:39:09,413 | WARN  | pool-3-thread-1  | AetherBasedResolver              | 1 - org.ops4j.pax.logging.pax-logging-api - 1.8.5 | Error resolving artifactorg.opendaylight.odlparent:bundles4-test:jar:1.8.0-SNAPSHOT:Could not find artifact org.opendaylight.odlparent:bundles4-test:jar:1.8.0-SNAPSHOT\nshaded.org.eclipse.aether.resolution.ArtifactResolutionException: Could not find artifact org.opendaylight.odlparent:bundles4-test:jar:1.8.0-SNAPSHOT\n\tat shaded.org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:444)[7:org.ops4j.pax.url.mvn:2.4.7]\n\tat shaded.org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifacts(DefaultArtifactResolver.java:246)[7:org.ops4j.pax.url.mvn:2.4.7]\n\tat shaded.org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolveArtifact(DefaultArtifactResolver.java:223)[7:org.ops4j.pax.url.mvn:2.4.7]\n\tat shaded.org.eclipse.aether.internal.impl.DefaultRepositorySystem.resolveArtifact(DefaultRepositorySystem.java:294)[7:org.ops4j.pax.url.mvn:2.4.7]\n\tat org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:650)[7:org.ops4j.pax.url.mvn:2.4.7]\n\tat org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:598)[7:org.ops4j.pax.url.mvn:2.4.7]\n\tat org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:576)[7:org.ops4j.pax.url.mvn:2.4.7]\n\tat org.ops4j.pax.url.mvn.internal.AetherBasedResolver.resolve(AetherBasedResolver.java:550)[7:org.ops4j.pax.url.mvn:2.4.7]\n\tat org.apache.karaf.features.internal.download.impl.MavenDownloadTask.download(MavenDownloadTask.java:34)[8:org.apache.karaf.features.core:4.0.7]\n\tat org.apache.karaf.features.internal.download.impl.AbstractRetryableDownloadTask.run(AbstractRetryableDownloadTask.java:58)[8:org.apache.karaf.features.core:4.0.7]\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)[:1.8.0_121]\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)[:1.8.0_121]\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)[:1.8.0_121]\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)[:1.8.0_121]\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)[:1.8.0_121]\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)[:1.8.0_121]\n\tat java.lang.Thread.run(Thread.java:745)[:1.8.0_121]\nCaused by: shaded.org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact org.opendaylight.odlparent:bundles4-test:jar:1.8.0-SNAPSHOT\n\tat shaded.org.eclipse.aether.internal.impl.DefaultArtifactResolver.resolve(DefaultArtifactResolver.java:434)[7:org.ops4j.pax.url.mvn:2.4.7]\n\t... 16 more\n\n[0] https://logs.opendaylight.org/releng/jenkins092/odlparent-distribution-check-carbon/581/archives/distribution/features/repos/distribution/target/surefire-reports/org.opendaylight.odlparent.featuretest.SingleFeatureTest-output.txt.gz",
+      "range": {
+        "startLine": 105,
+        "startChar": 19,
+        "endLine": 105,
+        "endChar": 27
+      },
+      "revId": "8895b9d8a01cc4615b53ca1cb564e03a63d6b77d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
