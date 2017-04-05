@@ -23,7 +23,7 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>1.7.3-SNAPSHOT</version>
+        <version>1.7.3-Boron-SR3</version>
         <relativePath>../odlparent</relativePath>
     </parent>
 
@@ -353,7 +353,7 @@
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>features-test</artifactId>
-            <version>1.7.3-SNAPSHOT</version>
+            <version>1.7.3-Boron-SR3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
