@@ -22,6 +22,30 @@
       "revId": "b04dfc35475656069d716def7f714e3c56da5252",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fafc7978_c4ed9390",
+        "filename": "features4-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-04-06T23:39:13Z",
+      "side": 1,
+      "message": "This is related to #2 from the commit message... But I\u0027d rather get this change merged ASAP, one way or another - because currently the SFT under Karaf 4 is really badly broken; e.g. the Karaf 4 feature build of infrautils takes 1/2h - doing nothing, did you know?  Later we can look at those classpath issues with the SFT... PS: I have a feeling we may be able to significantly simplify something related to that - IMHO we\u0027re currently making a bit of a mess of the SFT CP for Pax Exam.. a cleaner CP split of may be possible.  But I\u0027d like to only take that up separately \"later\", once this is in so that SFT under Karaf 4 isn\u0027t just so completely broken as it currently is.",
+      "parentUuid": "fafc7978_34781c2b",
+      "range": {
+        "startLine": 136,
+        "startChar": 56,
+        "endLine": 136,
+        "endChar": 82
+      },
+      "revId": "b04dfc35475656069d716def7f714e3c56da5252",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
