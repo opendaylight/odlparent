@@ -205,23 +205,23 @@
                                 <patch patchfile="${project.build.directory}/assembly/patches/karaf-instance.bat.patch"
                                        originalfile="${project.build.directory}/assembly/bin/instance.bat"
                                        failonerror="true" ignorewhitespace="true"/>
-                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-karaf.patch"
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-karaf-${karaf4.version}.patch"
                                        originalfile="${project.build.directory}/assembly/bin/karaf"
                                        failonerror="true"/>
                                 <patch patchfile="${project.build.directory}/assembly/patches/karaf-karaf.bat.patch"
                                        originalfile="${project.build.directory}/assembly/bin/karaf.bat"
                                        failonerror="true"/>
-                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-setenv.patch"
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-setenv-${karaf4.version}.patch"
                                        originalfile="${project.build.directory}/assembly/bin/setenv"
                                        failonerror="true"/>
                                 <patch patchfile="${project.build.directory}/assembly/patches/karaf-setenv.bat.patch"
                                        originalfile="${project.build.directory}/assembly/bin/setenv.bat"
                                        failonerror="true"/>
-                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-quiesce-4.0.7.patch"
-                                       originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/4.0.7/standard-4.0.7-features.xml"
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-quiesce-${karaf4.version}.patch"
+                                       originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf4.version}/standard-${karaf4.version}-features.xml"
                                        failonerror="true"/>
-                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-javax-mail.patch"
-                                       originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/4.0.7/standard-4.0.7-features.xml"
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-javax-mail-${karaf4.version}.patch"
+                                       originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf4.version}/standard-${karaf4.version}-features.xml"
                                        failonerror="true"/>
                                 <fixcrlf srcdir="${project.build.directory}/assembly/bin"
                                          includes="*.bat" eol="crlf"/>
