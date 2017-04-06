@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_b457f801",
+        "filename": "features4/odl-karaf-feat-jetty/src/main/feature/feature.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-04-06T12:21:45Z",
+      "side": 1,
+      "message": "jetty?\n\nThis may explain why so many karaf4 features have trouble with jetty.",
+      "range": {
+        "startLine": 12,
+        "startChar": 56,
+        "endLine": 12,
+        "endChar": 59
+      },
+      "revId": "ee954b112c88df91ccd47016d3f092e7d20a5236",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
