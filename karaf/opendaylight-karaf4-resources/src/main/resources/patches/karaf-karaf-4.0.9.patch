@@ -1,0 +1,87 @@
+--- bin/karaf.orig	2017-04-07 10:30:36.660612690 +0200
++++ bin/karaf	2017-04-07 10:52:05.728046790 +0200
+@@ -260,8 +260,8 @@
+     if [ "x${VERSION}" = "x" ]; then
+        VERSION=90
+     fi
+-    if [ "${VERSION}" -lt "60" ]; then
+-        echo "JVM must be greater than 1.6"
++    if [ "${VERSION}" -lt "80" ]; then
++        echo "JVM must be greater than 1.8"
+         exit 1;
+     fi
+ }
+@@ -300,6 +300,7 @@
+ 
+ setupDefaults() {
+     DEFAULT_JAVA_OPTS="-Xms${JAVA_MIN_MEM} -Xmx${JAVA_MAX_MEM} -XX:+UnlockDiagnosticVMOptions -XX:+UnsyncloadClass "
++    DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError"
+ 
+     #Set the JVM_VENDOR specific JVM flags
+     if [ "${JVM_VENDOR}" = "SUN" ]; then
+@@ -328,6 +329,13 @@
+         fi
+     fi
+ 
++    # Add default security file option
++    if [ "x$ODL_JAVA_SECURITY_PROPERTIES" != "x" ]; then
++        DEFAULT_JAVA_OPTS="-Djava.security.properties="${ODL_JAVA_SECURITY_PROPERTIES}" $DEFAULT_JAVA_OPTS"
++    else
++        DEFAULT_JAVA_OPTS="-Djava.security.properties="${KARAF_ETC}/odl.java.security" $DEFAULT_JAVA_OPTS"
++    fi
++
+     # Add the jars in the lib dir
+     for file in "${KARAF_HOME}"/lib/boot/*.jar
+     do
+@@ -483,6 +491,13 @@
+         KARAF_EXEC=""
+     fi
+ 
++    # Use /dev/urandom to avoid blocking on /dev/random
++    # See http://www.2uo.de/myths-about-urandom/ to understand why this is safe (as long as your VM provisioning seeds
++    # the PRNG)
++    # The /dev/./urandom workaround is necessary because of https://bugs.openjdk.java.net/browse/JDK-6202721
++    NON_BLOCKING_PRNG=
++    [ -c /dev/urandom -a -r /dev/urandom ] && NON_BLOCKING_PRNG=-Djava.security.egd=file:/dev/./urandom
++
+     while true; do
+         # When users want to update the lib version of, they just need to create
+         # a lib.next directory and on the new restart, it will replace the current lib directory.
+@@ -499,8 +514,12 @@
+         fi
+ 
+         if [ "${ROOT_INSTANCE_RUNNING}" = "false" ] || [ "${CHECK_ROOT_INSTANCE_RUNNING}" = "false" ] ; then
++            # Using command line arguments as java arguments
++            # (as opposed to arguments for $MAIN)
++            # FIXME: document this in the user guide
+             if [ "${VERSION}" -gt "80" ]; then
+                 ${KARAF_EXEC} "${JAVA}" ${JAVA_OPTS} \
++                    "$NON_BLOCKING_PRNG" \
+                     --add-exports=java.base/sun.net.www.protocol.http=ALL-UNNAMED \
+                     --add-exports=java.base/sun.net.www.protocol.https=ALL-UNNAMED \
+                     --add-exports=java.base/sun.net.www.protocol.jar=ALL-UNNAMED \
+@@ -519,10 +538,12 @@
+                     ${KARAF_SYSTEM_OPTS} \
+                     ${KARAF_OPTS} \
+                     ${OPTS} \
++                    "$@" \
+                     -classpath "${CLASSPATH}" \
+-                    ${MAIN} "$@"
++                    ${MAIN}
+             else
+                 ${KARAF_EXEC} "${JAVA}" ${JAVA_OPTS} \
++                    "$NON_BLOCKING_PRNG" \
+                     -Djava.endorsed.dirs="${JAVA_ENDORSED_DIRS}" \
+                     -Djava.ext.dirs="${JAVA_EXT_DIRS}" \
+                     -Dkaraf.instances="${KARAF_HOME}/instances" \
+@@ -536,8 +557,9 @@
+                     ${KARAF_SYSTEM_OPTS} \
+                     ${KARAF_OPTS} \
+                     ${OPTS} \
++                    "$@" \
+                     -classpath "${CLASSPATH}" \
+-                    ${MAIN} "$@"
++                    ${MAIN}
+             fi
+         else
+             die "There is a Root instance already running with name ${ROOT_INSTANCE_NAME} and pid ${ROOT_INSTANCE_PID}"
