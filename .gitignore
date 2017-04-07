@@ -76,3 +76,6 @@ com_crashlytics_export_strings.xml
 # maven
 target/
 target-ide/
+
+# ./tox.ini Python packages used e.g. by http://coala.io
+.tox/
