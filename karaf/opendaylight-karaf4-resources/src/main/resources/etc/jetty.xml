@@ -80,7 +80,7 @@ DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
                     </Array>
                 </Arg>
                 <Set name="host">
-                    <Property name="jetty.host" default="localhost"/>
+                    <Property name="jetty.host"/>
                 </Set>
                 <Set name="port">
                     <Property name="jetty.port" default="8181"/>
@@ -111,7 +111,7 @@ DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
                     </Array>
                 </Arg>
                 <Set name="host">
-                    <Property name="jetty.host" default="localhost"/>
+                    <Property name="jetty.host"/>
                 </Set>
                 <Set name="port">
                     <Property name="jetty.port" default="8080"/>
