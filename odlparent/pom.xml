@@ -1997,8 +1997,9 @@
 
       <!-- Blueprint dependency injection -->
       <!-- Remove when upgrading to plugin 1.5.0, and use
-           <configuration><generatedDir>org/opendaylight/blueprint/</...></...> -->
-      <!-- See https://issues.apache.org/jira/browse/ARIES-1597 -->
+           <configuration><generatedDir>org/opendaylight/blueprint/</...></...>
+           See https://issues.apache.org/jira/browse/ARIES-1597
+           BUT beware that the directory is now conditional... -->
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
@@ -2013,10 +2014,19 @@
             </goals>
             <configuration>
               <target>
-                <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
-                <move file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
-                      todir="${project.build.directory}/generated-resources/org/opendaylight/blueprint"
-                      failonerror="false" quiet="true" />
+                <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+                <if>
+                  <available file="${project.basedir}/src/main/resources/org/opendaylight/blueprint" type="dir"/>
+                  <then>
+                    <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
+                    <move file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
+                          todir="${project.build.directory}/generated-resources/org/opendaylight/blueprint"
+                          failonerror="false" quiet="true" />
+                  </then>
+                  <else>
+                    <echo>NOT moving autowire.xml (to org/opendaylight/blueprint)</echo>
+                  </else>
+                </if>
               </target>
             </configuration>
           </execution>
@@ -2028,14 +2038,41 @@
             </goals>
             <configuration>
               <target>
-                <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
-                <move file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
-                      todir="${project.build.directory}/generated-resources/org/opendaylight/blueprint"
-                      failonerror="false" quiet="true" />
+                <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+                <if>
+                  <available file="${project.basedir}/src/main/resources/org/opendaylight/blueprint" type="dir"/>
+                  <then>
+                    <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
+                    <move file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
+                          todir="${project.build.directory}/generated-resources/org/opendaylight/blueprint"
+                          failonerror="false" quiet="true" />
+                  </then>
+                  <else>
+                    <echo>NOT moving autowire.xml (to org/opendaylight/blueprint)</echo>
+                  </else>
+                </if>
               </target>
             </configuration>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>ant-contrib</groupId>
+            <artifactId>ant-contrib</artifactId>
+            <version>1.0b3</version>
+            <exclusions>
+              <exclusion>
+                <groupId>ant</groupId>
+                <artifactId>ant</artifactId>
+              </exclusion>
+            </exclusions>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-nodeps</artifactId>
+            <version>1.8.1</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
