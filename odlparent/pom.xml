@@ -1984,8 +1984,9 @@
 
       <!-- Blueprint dependency injection -->
       <!-- Remove when upgrading to plugin 1.5.0, and use
-           <configuration><generatedDir>org/opendaylight/blueprint/</...></...> -->
-      <!-- See https://issues.apache.org/jira/browse/ARIES-1597 -->
+           <configuration><generatedDir>org/opendaylight/blueprint/</...></...>
+           See https://issues.apache.org/jira/browse/ARIES-1597 
+           BUT beware that the directory is now conditional... -->
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
@@ -2000,6 +2001,9 @@
             </goals>
             <configuration>
               <target>
+                <available file="${project.basedir}/src/main/resources/org/opendaylight/blueprint" type="dir" property="opendaylight.blueprint" />
+              </target>
+              <target if="opendaylight.blueprint">
                 <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
                 <move file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
                       todir="${project.build.directory}/generated-resources/org/opendaylight/blueprint"
@@ -2015,6 +2019,9 @@
             </goals>
             <configuration>
               <target>
+                <available file="${project.basedir}/src/main/resources/org/opendaylight/blueprint" type="dir" property="opendaylight.blueprint" />
+              </target>
+              <target if="opendaylight.blueprint">
                 <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
                 <move file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
                       todir="${project.build.directory}/generated-resources/org/opendaylight/blueprint"
