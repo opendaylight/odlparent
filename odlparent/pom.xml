@@ -1195,7 +1195,19 @@
         <version>${exam.version}</version>
         <scope>test</scope>
       </dependency>
+      <dependency>
+        <groupId>org.ops4j.pax.exam</groupId>
+        <artifactId>pax-exam-link-assembly</artifactId>
+        <version>${exam.version}</version>
+        <scope>test</scope>
+      </dependency>
 
+      <dependency>
+        <groupId>org.ops4j.pax.url</groupId>
+        <artifactId>pax-url-link</artifactId>
+        <version>2.5.1</version>
+        <scope>test</scope>
+      </dependency>
       <dependency>
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-aether</artifactId>
