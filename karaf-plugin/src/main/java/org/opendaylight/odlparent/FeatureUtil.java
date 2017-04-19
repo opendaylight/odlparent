@@ -321,7 +321,7 @@ public final class FeatureUtil {
      */
     public static Set<Features> findAllFeaturesRecursively(AetherUtil aetherUtil, Set<Features> features)
             throws MalformedURLException, FileNotFoundException, ArtifactResolutionException {
-        return findAllFeaturesRecursively(aetherUtil, features, new LinkedHashSet<String>());
+        return findAllFeaturesRecursively(aetherUtil, features, new LinkedHashSet<>());
     }
 
 }
