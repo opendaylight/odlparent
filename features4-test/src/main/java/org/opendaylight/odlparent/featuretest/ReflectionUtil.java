@@ -40,9 +40,9 @@ public final class ReflectionUtil {
             ClassPath classPath = ClassPath.from(classLoader);
             // inspired by https://github.com/vorburger/ch.vorburger.minecraft.osgi/blob/master/ch.vorburger.minecraft.osgi/src/main/java/ch/vorburger/osgi/embedded/PackagesBuilder.java
             return classPath.getTopLevelClassesRecursive(packageName)
-                    .stream().map(classInfo -> classInfo.load())
+                    .stream().map(ClassPath.ClassInfo::load)
                      // to include all inner classes, including anonymous inner classes:
-                    .flatMap(clazz -> getDeclaredAndAnonymousInnerClass(clazz));
+                    .flatMap(ReflectionUtil::getDeclaredAndAnonymousInnerClass);
         } catch (IOException e) {
             throw new IllegalStateException("ClassPath.from(classLoader) failed", e);
         }

@@ -48,8 +48,7 @@ public class ServiceReferenceUtil {
         if (usingBundles == null) {
             return Collections.emptyList();
         } else {
-            return Arrays.asList(usingBundles).stream()
-                    .map(bundle -> bundle.getSymbolicName()).collect(Collectors.toList());
+            return Arrays.stream(usingBundles).map(Bundle::getSymbolicName).collect(Collectors.toList());
         }
     }
 
