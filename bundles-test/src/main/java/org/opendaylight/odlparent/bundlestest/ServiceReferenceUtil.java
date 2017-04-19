@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.ServiceReference;
 
 /**
@@ -39,8 +40,8 @@ public class ServiceReferenceUtil {
         if (serviceRef.getUsingBundles() == null) {
             return Collections.emptyList();
         } else {
-            return Arrays.asList(serviceRef.getUsingBundles()).stream()
-                .map(bundle -> bundle.getSymbolicName()).collect(Collectors.toList());
+            return Arrays.stream(serviceRef.getUsingBundles())
+                .map(Bundle::getSymbolicName).collect(Collectors.toList());
         }
     }
 

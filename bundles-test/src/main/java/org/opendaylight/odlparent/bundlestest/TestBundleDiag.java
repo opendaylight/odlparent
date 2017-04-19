@@ -58,7 +58,7 @@ public class TestBundleDiag {
                         condition -> LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
                             condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000,
                             ((BundleDiagInfos) condition.getValue()).getFullDiagnosticText()))
-                    .until(() -> getBundleDiagInfos(), new BundleServiceSummaryMatcher());
+                    .until(this::getBundleDiagInfos, new BundleServiceSummaryMatcher());
 
             // If we're here then either BundleServiceSummaryMatcher quit because of Active, Failure or Stopping..
             BundleDiagInfos bundleInfos = getBundleDiagInfos();
