@@ -10,6 +10,6 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl-karaf-feat-jdbc">
     <repository>mvn:org.apache.karaf.features/enterprise/${karaf4.version}/xml/features</repository>
     <feature name="odl-karaf-feat-jdbc" version="${project.version}">
-        <feature dependency="true" prerequisite="true">jdbc</feature>
+        <feature dependency="false" prerequisite="false">jdbc</feature>
     </feature>
 </features>

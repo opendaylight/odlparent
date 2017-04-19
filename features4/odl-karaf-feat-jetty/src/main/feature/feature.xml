@@ -9,6 +9,6 @@
 -->
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl-karaf-feat-jetty">
     <feature name="odl-karaf-feat-jetty" version="${project.version}">
-        <feature dependency="true" prerequisite="true">war</feature>
+        <feature dependency="false" prerequisite="false">war</feature>
     </feature>
 </features>
