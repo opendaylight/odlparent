@@ -1,0 +1,8 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+1: Jakub Toth <jatoth@cisco.com>
+Code-Review+2: Stephen Kitt <skitt@redhat.com>
+Submitted-by: Stephen Kitt <skitt@redhat.com>
+Submitted-at: Thu, 20 Apr 2017 09:35:29 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/55273
+Project: odlparent
+Branch: refs/heads/stable/carbon
