@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_ff990b20",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-04-20T14:20:42Z",
+      "side": 1,
+      "message": "Please make your commit message\u0027s title explain what your commit is doing, not the (current) behaviour.",
+      "revId": "9f62e959457c466f19a7418c1b88008b34d5fb50",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
