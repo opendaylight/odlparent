@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da01753e_3a40c155",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/ServiceReferenceUtil.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-04-20T16:50:38Z",
+      "side": 1,
+      "message": "later, this is blocking 2 AAA blocking bugs.",
+      "parentUuid": "da01753e_ba7dd1b3",
+      "revId": "46aaff6052ef9f9265cfe04af179e3ce2094c816",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_1a4cdd9d",
         "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/ServiceReferenceUtil.java",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da01753e_9a260dcd",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/ServiceReferenceUtil.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-04-20T16:50:38Z",
+      "side": 1,
+      "message": "You want to put a null value in the map?  Seems dangerous.",
+      "parentUuid": "da01753e_1a4cdd9d",
+      "revId": "46aaff6052ef9f9265cfe04af179e3ce2094c816",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da01753e_fa4e3995",
         "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/ServiceReferenceUtil.java",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2017-04-20T16:45:17Z",
       "side": 1,
       "message": "I would remove this",
+      "revId": "46aaff6052ef9f9265cfe04af179e3ce2094c816",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da01753e_7a21a9b3",
+        "filename": "bundles-test/src/main/java/org/opendaylight/odlparent/bundlestest/ServiceReferenceUtil.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2017-04-20T16:50:38Z",
+      "side": 1,
+      "message": "Can be done later, this is blocking 2 AAA bugs and is just trace anyway.",
+      "parentUuid": "da01753e_fa4e3995",
       "revId": "46aaff6052ef9f9265cfe04af179e3ce2094c816",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
