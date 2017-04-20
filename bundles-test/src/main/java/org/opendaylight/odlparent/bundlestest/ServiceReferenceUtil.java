@@ -13,7 +13,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.ServiceReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utilities for OSGi's {@link ServiceReference}.
@@ -22,25 +25,31 @@ import org.osgi.framework.ServiceReference;
  */
 public class ServiceReferenceUtil {
 
+    private static final Logger LOG = LoggerFactory.getLogger(ServiceReferenceUtil.class);
+
     public Map<String, Object> getProperties(ServiceReference<?> serviceRef) {
         String[] propertyKeys = serviceRef.getPropertyKeys();
         Map<String, Object> properties = new HashMap<>(propertyKeys.length);
         for (String propertyKey : propertyKeys) {
             Object propertyValue = serviceRef.getProperty(propertyKey);
-            if (propertyValue.getClass().isArray()) {
-                propertyValue = Arrays.asList((Object[]) propertyValue);
+            if (propertyValue != null) {
+                if (propertyValue.getClass().isArray()) {
+                    propertyValue = Arrays.asList((Object[]) propertyValue);
+                }
             }
+            // maintain the null value in the property map anyway
             properties.put(propertyKey, propertyValue);
         }
         return properties;
     }
 
     public List<String> getUsingBundleSymbolicNames(ServiceReference<?> serviceRef) {
-        if (serviceRef.getUsingBundles() == null) {
+        Bundle[] usingBundles = serviceRef.getUsingBundles();
+        if (usingBundles == null) {
             return Collections.emptyList();
         } else {
-            return Arrays.asList(serviceRef.getUsingBundles()).stream()
-                .map(bundle -> bundle.getSymbolicName()).collect(Collectors.toList());
+            return Arrays.asList(usingBundles).stream()
+                    .map(bundle -> bundle.getSymbolicName()).collect(Collectors.toList());
         }
     }
 
