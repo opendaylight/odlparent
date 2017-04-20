@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.karaf.bundle.core.BundleService;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;
 import org.osgi.framework.ServiceReference;
@@ -112,8 +113,14 @@ public class TestBundleDiag {
                 + "diag failure BundleService reported bundle(s) which are not active");
         try {
             for (ServiceReference<?> serviceRef : bundleContext.getAllServiceReferences(null, null)) {
-                LOG.info("{} defines OSGi Service {} used by {}", serviceRef.getBundle().getSymbolicName(),
-                        util.getProperties(serviceRef), util.getUsingBundleSymbolicNames(serviceRef));
+                Bundle bundle = serviceRef.getBundle();
+                // serviceRef.getBundle() can return null if the bundle was destroyed
+                if (bundle != null) {
+                    LOG.info("{} defines OSGi Service {} used by {}", bundle.getSymbolicName(),
+                            util.getProperties(serviceRef), util.getUsingBundleSymbolicNames(serviceRef));
+                } else {
+                    LOG.trace("skipping reporting service reference as the underlying bundle is null");
+                }
             }
         } catch (InvalidSyntaxException e) {
             LOG.error("logOSGiServices() failed due to InvalidSyntaxException", e);
