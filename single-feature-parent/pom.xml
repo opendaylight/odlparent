@@ -84,6 +84,10 @@
                         <excludedArtifactId>org.apache.karaf.jaas.modules</excludedArtifactId>
                         <excludedArtifactId>org.apache.karaf.shell.console</excludedArtifactId>
                         <excludedArtifactId>org.apache.karaf.shell.core</excludedArtifactId>
+                        <!-- OSGi -->
+                        <excludedArtifactId>org.osgi.compendium</excludedArtifactId>
+                        <excludedArtifactId>org.osgi.core</excludedArtifactId>
+                        <excludedArtifactId>org.osgi.enterprise</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
             </plugin>
