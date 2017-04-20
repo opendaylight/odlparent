@@ -9,7 +9,10 @@ package org.opendaylight.odlparent.bundlestest;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import java.util.Arrays;
+import java.util.Map;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.ServiceReference;
@@ -30,48 +33,53 @@ public class ServiceReferenceUtilTest {
     public void testGetProperties() {
         assertThat(new ServiceReferenceUtil().getProperties(getServiceReference())).containsExactly(
                 "property1", "value1",
-                "property2", Arrays.asList(new String[] { "value2.1", "value2.2" }));
+                "property2", Arrays.asList(new String[] { "value2.1", "value2.2" }),
+                "property3", null);
     }
 
-    private ServiceReference<?> getServiceReference() {
-        return new ServiceReference<Object>() {
+    private static ServiceReference<?> getServiceReference() {
+        return new TestServiceReference();
+    }
 
-            @Override
-            public Object getProperty(String key) {
-                if ("property1".equals(key)) {
-                    return "value1";
-                } else if ("property2".equals(key)) {
-                    return new String[] { "value2.1", "value2.2" };
-                } else {
-                    return null;
-                }
-            }
+    private static final class TestServiceReference implements ServiceReference<Object> {
 
-            @Override
-            public String[] getPropertyKeys() {
-                return new String[] { "property1", "property2"};
-            }
+        private Map<String, Object> properties = Maps.newHashMap();
 
-            @Override
-            public Bundle getBundle() {
-                return null;
-            }
+        TestServiceReference() {
+            properties.put("property1", "value1");
+            properties.put("property2", Lists.newArrayList("value2.1", "value2.2"));
+            properties.put("property3", null);
+        }
 
-            @Override
-            public Bundle[] getUsingBundles() {
-                return null;
-            }
+        @Override
+        public Object getProperty(String key) {
+            return properties.get(key);
+        }
 
-            @Override
-            public boolean isAssignableTo(Bundle bundle, String className) {
-                return false;
-            }
+        @Override
+        public String[] getPropertyKeys() {
+            return properties.keySet().stream().toArray(String[]::new);
+        }
 
-            @Override
-            public int compareTo(Object reference) {
-                return 0;
-            }
-        };
+        @Override
+        public Bundle getBundle() {
+            return null;
+        }
+
+        @Override
+        public Bundle[] getUsingBundles() {
+            return null;
+        }
+
+        @Override
+        public boolean isAssignableTo(Bundle bundle, String className) {
+            return false;
+        }
+
+        @Override
+        public int compareTo(Object reference) {
+            return 0;
+        }
     }
 
 }
