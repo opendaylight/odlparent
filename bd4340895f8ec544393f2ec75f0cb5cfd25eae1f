@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_226eca96",
+        "filename": "features4/odl-triemap-0.2/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-04-24T11:10:41Z",
+      "side": 1,
+      "message": "What is the correlation between this and bundle-test (mentioned in commit message)?",
+      "range": {
+        "startLine": 22,
+        "startChar": 16,
+        "endLine": 22,
+        "endChar": 32
+      },
+      "revId": "bd4340895f8ec544393f2ec75f0cb5cfd25eae1f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
