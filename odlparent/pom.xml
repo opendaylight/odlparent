@@ -308,6 +308,11 @@
         <version>1.1.9</version>
       </dependency>
       <dependency>
+        <groupId>com.spotify</groupId>
+        <artifactId>futures-extra</artifactId>
+        <version>3.0.0</version>
+      </dependency>
+      <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <version>18.0</version>
