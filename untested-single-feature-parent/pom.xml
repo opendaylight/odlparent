@@ -49,7 +49,7 @@
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>${karaf4.plugin.version}</version>
                 <extensions>true</extensions>
-                <configuration>
+                <configuration combine.children="append">
                     <simplifyBundleDependencies>true</simplifyBundleDependencies>
                     <excludedArtifactIds>
                         <!-- These artifacts are provided by our Karaf distribution -->
