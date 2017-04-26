@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_8a75fffb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-04-26T12:45:03Z",
+      "side": 1,
+      "message": "Why is odl4-triemap-0.2 the untested feature instead?",
+      "range": {
+        "startLine": 17,
+        "startChar": 34,
+        "endLine": 17,
+        "endChar": 50
+      },
+      "revId": "1d7f6d0ba22823dc2e060fb5acebe7be193b6f7b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
