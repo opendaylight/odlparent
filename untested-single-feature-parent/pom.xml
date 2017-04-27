@@ -51,6 +51,9 @@
                 <extensions>true</extensions>
                 <configuration combine.children="append">
                     <simplifyBundleDependencies>true</simplifyBundleDependencies>
+                    <checkDependencyChange>true</checkDependencyChange>
+                    <logDependencyChanges>true</logDependencyChanges>
+                    <failOnDependencyChange>false</failOnDependencyChange>
                     <excludedArtifactIds>
                         <!-- These artifacts are provided by our Karaf distribution -->
                         <!-- Aries Blueprint -->
