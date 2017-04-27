@@ -25,6 +25,11 @@
 
     <name>OpenDaylight :: Guava 21 (for Karaf 4)</name>
 
+    <properties>
+        <checkDependencyChange>true</checkDependencyChange>
+        <failOnDependencyChange>true</failOnDependencyChange>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>

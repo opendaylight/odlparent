@@ -25,6 +25,11 @@
 
     <name>Scala Runtime for OpenDaylight (for Karaf 4)</name>
 
+    <properties>
+        <checkDependencyChange>true</checkDependencyChange>
+        <failOnDependencyChange>true</failOnDependencyChange>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
