@@ -34,6 +34,8 @@
 
     <properties>
         <karaf.version>${karaf4.version}</karaf.version>
+        <checkDependencyChange>false</checkDependencyChange>
+        <failOnDependencyChange>false</failOnDependencyChange>
     </properties>
 
     <build>
@@ -51,6 +53,9 @@
                 <extensions>true</extensions>
                 <configuration combine.children="append">
                     <simplifyBundleDependencies>true</simplifyBundleDependencies>
+                    <checkDependencyChange>${checkDependencyChange}</checkDependencyChange>
+                    <logDependencyChanges>true</logDependencyChanges>
+                    <failOnDependencyChange>${failOnDependencyChange}</failOnDependencyChange>
                     <excludedArtifactIds>
                         <!-- These artifacts are provided by our Karaf distribution -->
                         <!-- Aries Blueprint -->

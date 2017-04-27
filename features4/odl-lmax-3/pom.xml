@@ -25,6 +25,11 @@
 
     <name>OpenDaylight :: LMAX Disruptor (for Karaf 4)</name>
 
+    <properties>
+        <checkDependencyChange>true</checkDependencyChange>
+        <failOnDependencyChange>true</failOnDependencyChange>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.lmax</groupId>
