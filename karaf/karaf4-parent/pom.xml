@@ -300,6 +300,8 @@
                         <!-- We load wrap as a workaround to handle old features without the wrap prerequisite -->
                         <!-- TODO Remove this once all the downstream features are fixed -->
                         <feature>wrap</feature>
+                        <!-- Features always assumed to be present. Keep in sync with feature parent exclusions. -->
+                        <feature>ssh</feature>
                         <!-- Local feature if any -->
                         <feature>${karaf.localFeature}</feature>
                     </bootFeatures>
