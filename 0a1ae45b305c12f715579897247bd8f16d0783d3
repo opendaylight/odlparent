@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_64aefee7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-04-28T16:48:52Z",
+      "side": 1,
+      "message": "I tried \"Put\" here, but:\n\nShortlog of HEAD commit isn\u0027t in imperative mood! Bad words are \u0027Put\u0027",
+      "range": {
+        "startLine": 7,
+        "startChar": 10,
+        "endLine": 7,
+        "endChar": 15
+      },
+      "revId": "0a1ae45b305c12f715579897247bd8f16d0783d3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
