@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da01753e_3e11a75d",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-04-28T15:00:22Z",
+      "side": 1,
+      "message": "By the way, after cherry-picking to nitrogen, this could also fix distribution-offline-nitrogen job, which is failing [1] because bin/client fails to connect (as there is no ssh server running on Karaf by default).\n\n[1] https://jenkins.opendaylight.org/releng/view/distribution/job/distribution-offline-nitrogen/",
+      "range": {
+        "startLine": 262,
+        "startChar": 33,
+        "endLine": 262,
+        "endChar": 36
+      },
+      "revId": "e8023bd91aecd424120efc6333a17b927fa16314",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
