@@ -297,6 +297,8 @@
                     </installedFeatures>
                     <bootFeatures>
                         <feature>standard</feature>
+                        <!-- Features always assumed to be present. Keep in sync with feature parent exclusions. -->
+                        <feature>ssh</feature>
                         <!-- Local feature if any -->
                         <feature>${karaf.localFeature}</feature>
                     </bootFeatures>
