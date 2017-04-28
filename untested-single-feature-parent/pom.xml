@@ -55,7 +55,8 @@
                     <logDependencyChanges>true</logDependencyChanges>
                     <failOnDependencyChange>${failOnDependencyChange}</failOnDependencyChange>
                     <excludedArtifactIds>
-                        <!-- These artifacts are provided by our Karaf distribution -->
+                        <!-- These artifacts are provided by our Karaf distribution. -->
+                        <!-- Keep in synch with karaf parent minimal bootFeatures. -->
                         <!-- Aries Blueprint -->
                         <excludedArtifactId>org.apache.aries.blueprint.api</excludedArtifactId>
                         <excludedArtifactId>org.apache.aries.blueprint.core</excludedArtifactId>
