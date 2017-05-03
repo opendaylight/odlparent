@@ -47,6 +47,7 @@
     <properties>
         <karaf.version>${karaf4.version}</karaf.version>
         <jacoco.skip>true</jacoco.skip>
+        <skip.karaf.featureTest>false</skip.karaf.featureTest>
     </properties>
 
     <dependencies>
@@ -77,6 +78,7 @@
                     <additionalClasspathElements>
                         <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
                     </additionalClasspathElements>
+                    <skip>${skip.karaf.featureTest}</skip>
                 </configuration>
                 <executions>
                     <execution>
