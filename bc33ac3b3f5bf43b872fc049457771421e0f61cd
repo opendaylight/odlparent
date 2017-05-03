@@ -34,6 +34,24 @@
       "revId": "bc33ac3b3f5bf43b872fc049457771421e0f61cd",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_8649f38d",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 48
+      },
+      "writtenOn": "2017-05-03T22:57:03Z",
+      "side": 1,
+      "message": "I think maybe this:\nhttps://github.com/opendaylight/odlparent/blob/master/karaf/karaf-parent/pom.xml#L105\n\nI\u0027m not 100% sure that\u0027s the right file though.",
+      "parentUuid": "ba068154_061d03be",
+      "revId": "bc33ac3b3f5bf43b872fc049457771421e0f61cd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
