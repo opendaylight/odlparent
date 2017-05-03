@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_f0ba3509",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-05-03T13:55:12Z",
+      "side": 1,
+      "message": "You need to add this to the existing plugin management’s configuration for maven-surefire-plugin. It’s also worth checking whether this is possible for maven-failsafe-plugin and maven-invoker-plugin.",
+      "revId": "bc33ac3b3f5bf43b872fc049457771421e0f61cd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
