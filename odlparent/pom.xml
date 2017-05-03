@@ -1547,6 +1547,16 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>${maven.surefire.version}</version>
           <configuration>
+            <!--
+                Add section for excluding tests in the top parent pom.xml.
+                To disable test we need to add path, test name or regex in
+                excludes.txt
+                Example:
+                  */test/*
+                  **/DontRunTest.*
+                  %regex[.*Test.*|.*Not.*]
+            -->
+            <excludesFile>test_excludes.txt</excludesFile>
             <redirectTestOutputToFile>true</redirectTestOutputToFile>
             <trimStackTrace>false</trimStackTrace>
           </configuration>
