@@ -68,6 +68,23 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
+            <!--
+                Add section for excluding tests in the top parent pom.xml.
+                To disable test we need to add path, test name or regex in
+                excludes.txt
+                Example:
+                  */test/*
+                  **/DontRunTest.*
+                  %regex[.*Test.*|.*Not.*]
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.20</version>
+                <configuration>
+                    <excludesFile>excludes.txt</excludesFile>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
