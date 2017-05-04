@@ -83,6 +83,51 @@
                     </excludedArtifactIds>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <!-- Post-process generated features to add a capability matching the feature name -->
+                        <id>add-capabilities</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <copy file="${project.build.directory}/feature/feature.xml"
+                                      tofile="${project.build.directory}/feature/feature.xml.capability.orig"
+                                      failonerror="false"/>
+                                <replaceregexp flags="g">
+                                    <fileset dir="${project.build.directory}" includes="feature/feature.xml"/>
+                                    <regexp pattern="feature name=&quot;([^&quot;]+)&quot;([^>]*)>"/>
+                                    <substitution expression="feature name=&quot;\1&quot;\2>&lt;capability>\1&lt;/capability>"/>
+                                </replaceregexp>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <!-- Post-process generated features to convert dependencies to requirements -->
+                        <id>define-requirements</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <copy file="${project.build.directory}/feature/feature.xml"
+                                      tofile="${project.build.directory}/feature/feature.xml.requirements.orig"
+                                      failonerror="false"/>
+                                <replaceregexp flags="g">
+                                    <fileset dir="${project.build.directory}" includes="feature/feature.xml"/>
+                                    <regexp pattern="&lt;feature version=([^ ]+) prerequisite=&quot;false&quot; dependency=&quot;false&quot;>([^&lt;]+)&lt;/feature>"/>
+                                    <substitution expression="&lt;requirement>\2&lt;/requirement>"/>
+                                </replaceregexp>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
