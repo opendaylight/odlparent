@@ -25,6 +25,10 @@
 
     <name>Akka Persistence (for Karaf 4)</name>
 
+    <properties>
+        <explicitFeatureDependencies>true</explicitFeatureDependencies>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>

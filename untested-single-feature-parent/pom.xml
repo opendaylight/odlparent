@@ -34,6 +34,8 @@
 
     <properties>
         <karaf.version>${karaf4.version}</karaf.version>
+        <!-- Set this to true if your feature specifies its own dependency attributes -->
+        <explicitFeatureDependencies>false</explicitFeatureDependencies>
     </properties>
 
     <build>
@@ -78,6 +80,31 @@
                         <excludedArtifactId>org.osgi.enterprise</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>force-feature-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${explicitFeatureDependencies}</skip>
+                            <target>
+                                <copy file="${project.build.directory}/feature/feature.xml"
+                                      tofile="${project.build.directory}/feature/feature.xml.orig"
+                                      failonerror="false"/>
+                                <replaceregexp flags="g">
+                                    <fileset dir="${project.build.directory}" includes="feature/feature.xml"/>
+                                    <regexp pattern="feature version=([^ ]+) prerequisite=([^ ]+) dependency=(.)false(.)"/>
+                                    <substitution expression="feature version=\1 prerequisite=\2 dependency=\3true\4"/>
+                                </replaceregexp>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -25,6 +25,10 @@
 
     <name>LevelDB (for Karaf 4)</name>
 
+    <properties>
+        <explicitFeatureDependencies>true</explicitFeatureDependencies>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
