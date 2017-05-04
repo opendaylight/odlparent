@@ -28,3 +28,12 @@ diff -urN a/pax-web-features-4.3.0-features.xml b/pax-web-features-4.3.0-feature
          <bundle dependency="true" start-level="20">mvn:org.apache.xbean/xbean-bundleutils/4.1</bundle>
          <bundle dependency="true" start-level="20">mvn:org.apache.xbean/xbean-reflect/4.1</bundle>
          <bundle dependency="true" start-level="20">mvn:org.apache.xbean/xbean-finder/4.1</bundle>
+@@ -175,7 +175,7 @@
+         <bundle dependency="true">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr250-1.0/2.5.0</bundle>
+         <bundle dependency="true">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr303-api-1.0.0/2.5.0</bundle>
+         <bundle dependency="true">mvn:commons-beanutils/commons-beanutils/1.8.3</bundle>
+-        <bundle dependency="true">mvn:commons-collections/commons-collections/3.2.1</bundle>
++        <bundle dependency="true">mvn:commons-collections/commons-collections/3.2.2</bundle>
+         <bundle dependency="true">mvn:commons-codec/commons-codec/1.8</bundle>
+         <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-digester/1.8_4</bundle>
+         <bundle dependency="true">mvn:org.apache.geronimo.bundles/commons-discovery/0.4_1</bundle>
