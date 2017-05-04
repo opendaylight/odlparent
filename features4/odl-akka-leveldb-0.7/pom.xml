@@ -33,7 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-guava-18</artifactId>
+            <artifactId>odl4-guava-18</artifactId>
             <version>${project.version}</version>
             <type>xml</type>
             <classifier>features</classifier>
@@ -47,6 +47,20 @@
             <artifactId>leveldbjni-all</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+                <configuration>
+                    <dependencyFeatures>
+                        <dependencyFeature>odl4-guava-18</dependencyFeature>
+                    </dependencyFeatures>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <!--
         Maven Site Configuration
