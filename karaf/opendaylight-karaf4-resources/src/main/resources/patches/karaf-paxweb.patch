@@ -1,0 +1,30 @@
+diff -urN a/pax-web-features-4.3.0-features.xml b/pax-web-features-4.3.0-features.xml
+--- system/org/ops4j/pax/web/pax-web-features/4.3.0/pax-web-features-4.3.0-features.xml	2017-05-05 01:32:43.260023036 +0200
++++ system/org/ops4j/pax/web/pax-web-features/4.3.0/pax-web-features-4.3.0-features.xml	2017-05-05 01:35:46.437890587 +0200
+@@ -8,7 +8,7 @@
+         <bundle dependency="true" start-level="30">mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/1.1.1</bundle>
+ 		<bundle dependency="true" start-level="30">mvn:javax.annotation/javax.annotation-api/1.2</bundle>
+         <bundle dependency="true" start-level="30">mvn:org.apache.geronimo.specs/geronimo-jaspic_1.0_spec/1.1</bundle>
+-        <bundle dependency="true" start-level="30">mvn:org.ow2.asm/asm-all/5.0.2</bundle>
++        <bundle dependency="true" start-level="30">mvn:org.ow2.asm/asm-all/5.0.4</bundle>
+         <bundle dependency="true" start-level="30">mvn:org.apache.aries.spifly/org.apache.aries.spifly.dynamic.bundle/1.0.1</bundle>
+         <bundle dependency="true" start-level="30">mvn:org.apache.aries/org.apache.aries.util/1.1.0</bundle>
+         <bundle start-level="30">mvn:org.eclipse.jetty/jetty-continuation/9.2.19.v20160908</bundle>
+@@ -72,7 +72,7 @@
+         </config>
+         <feature version="[7.0,10.0)">pax-jetty</feature>
+ 
+-        <bundle dependency="true" start-level="20">mvn:org.ow2.asm/asm-all/5.0.2</bundle>
++        <bundle dependency="true" start-level="20">mvn:org.ow2.asm/asm-all/5.0.4</bundle>
+         <bundle dependency="true" start-level="20">mvn:org.apache.xbean/xbean-bundleutils/4.1</bundle>
+         <bundle dependency="true" start-level="20">mvn:org.apache.xbean/xbean-reflect/4.1</bundle>
+         <bundle dependency="true" start-level="20">mvn:org.apache.xbean/xbean-finder/4.1</bundle>
+@@ -148,7 +148,7 @@
+         <bundle dependency="true" start-level="30">mvn:org.apache.geronimo.specs/geronimo-annotation_1.1_spec/1.0.1</bundle>
+         <bundle dependency="true" start-level="30">mvn:javax.websocket/javax.websocket-api/1.1</bundle>
+ 
+-        <bundle dependency="true" start-level="20">mvn:org.ow2.asm/asm-all/5.0.2</bundle>
++        <bundle dependency="true" start-level="20">mvn:org.ow2.asm/asm-all/5.0.4</bundle>
+         <bundle dependency="true" start-level="20">mvn:org.apache.xbean/xbean-bundleutils/4.1</bundle>
+         <bundle dependency="true" start-level="20">mvn:org.apache.xbean/xbean-reflect/4.1</bundle>
+         <bundle dependency="true" start-level="20">mvn:org.apache.xbean/xbean-finder/4.1</bundle>

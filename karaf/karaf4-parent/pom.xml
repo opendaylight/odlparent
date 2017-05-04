@@ -223,6 +223,9 @@
                                 <patch patchfile="${project.build.directory}/assembly/patches/karaf-javax-mail-${karaf4.version}.patch"
                                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf4.version}/standard-${karaf4.version}-features.xml"
                                        failonerror="true"/>
+                                <patch patchfile="${project.build.directory}/assembly/patches/karaf-paxweb.patch"
+                                       originalfile="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/4.3.0/pax-web-features-4.3.0-features.xml"
+                                       failonerror="true"/>
                                 <fixcrlf srcdir="${project.build.directory}/assembly/bin"
                                          includes="*.bat" eol="crlf"/>
                             </target>
