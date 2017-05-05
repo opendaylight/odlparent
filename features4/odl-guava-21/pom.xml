@@ -28,6 +28,7 @@
     <properties>
         <checkDependencyChange>true</checkDependencyChange>
         <failOnDependencyChange>true</failOnDependencyChange>
+        <explicitBundleDependencies>true</explicitBundleDependencies>
     </properties>
 
     <dependencies>

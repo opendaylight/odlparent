@@ -36,8 +36,10 @@
         <karaf.version>${karaf4.version}</karaf.version>
         <checkDependencyChange>false</checkDependencyChange>
         <failOnDependencyChange>false</failOnDependencyChange>
-        <!-- Set this to true if your feature specifies its own dependency attributes -->
+        <!-- Set this to true if your feature specifies its own feature dependency attributes -->
         <explicitFeatureDependencies>false</explicitFeatureDependencies>
+        <!-- Set this to true if your feature specifies its own bundle dependency attributes -->
+        <explicitBundleDependencies>false</explicitBundleDependencies>
     </properties>
 
     <build>
@@ -89,6 +91,7 @@
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
                     <execution>
+                        <!-- Post-process generated features to set dependency="true" by default on features -->
                         <id>force-feature-dependencies</id>
                         <phase>prepare-package</phase>
                         <goals>
@@ -98,12 +101,49 @@
                             <skip>${explicitFeatureDependencies}</skip>
                             <target>
                                 <copy file="${project.build.directory}/feature/feature.xml"
-                                      tofile="${project.build.directory}/feature/feature.xml.orig"
+                                      tofile="${project.build.directory}/feature/feature.xml.feature.orig"
                                       failonerror="false"/>
                                 <replaceregexp flags="g">
                                     <fileset dir="${project.build.directory}" includes="feature/feature.xml"/>
-                                    <regexp pattern="feature version=([^ ]+) prerequisite=([^ ]+) dependency=(.)false(.)"/>
-                                    <substitution expression="feature version=\1 prerequisite=\2 dependency=\3true\4"/>
+                                    <regexp pattern="feature version=([^ ]+) prerequisite=([^ ]+) dependency=&quot;false&quot;"/>
+                                    <substitution expression="feature version=\1 prerequisite=\2 dependency=&quot;true&quot;"/>
+                                </replaceregexp>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <!-- Post-process generated features to set dependency="true" by default on external bundles -->
+                        <id>force-bundle-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <skip>${explicitBundleDependencies}</skip>
+                            <target>
+                                <copy file="${project.build.directory}/feature/feature.xml"
+                                      tofile="${project.build.directory}/feature/feature.xml.bundle.orig"
+                                      failonerror="false"/>
+                                <!-- The general idea here is that any bundle from outside the project should be a
+                                     dependency (“outside the project” means “with a different groupId”) -->
+                                <!-- Because regexp can’t represent “not”, we proceed in three steps -->
+                                <!-- Step 1: find “our” bundles and rename them -->
+                                <replaceregexp flags="g">
+                                    <fileset dir="${project.build.directory}" includes="feature/feature.xml"/>
+                                    <regexp pattern="bundle(.mvn:${project.groupId}/)"/>
+                                    <substitution expression="bnudle\1"/>
+                                </replaceregexp>
+                                <!-- Step 2: add dependency="true" where necessary -->
+                                <replaceregexp flags="g">
+                                    <fileset dir="${project.build.directory}" includes="feature/feature.xml"/>
+                                    <regexp pattern="bundle&gt;mvn:"/>
+                                    <substitution expression="bundle dependency=&quot;true&quot;&gt;mvn:"/>
+                                </replaceregexp>
+                                <!-- Step 3: restore our bundles -->
+                                <replaceregexp flags="g">
+                                    <fileset dir="${project.build.directory}" includes="feature/feature.xml"/>
+                                    <regexp pattern="bnudle"/>
+                                    <substitution expression="bundle"/>
                                 </replaceregexp>
                             </target>
                         </configuration>

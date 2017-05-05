@@ -29,6 +29,7 @@
         <checkDependencyChange>true</checkDependencyChange>
         <failOnDependencyChange>true</failOnDependencyChange>
         <explicitFeatureDependencies>true</explicitFeatureDependencies>
+        <explicitBundleDependencies>true</explicitBundleDependencies>
     </properties>
 
     <dependencies>
