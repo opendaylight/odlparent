@@ -1,0 +1,9 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+1: Colin Dixon <colin@colindixon.com>
+Code-Review+1: Anil Belur <abelur@linuxfoundation.org>
+Code-Review+2: Robert Varga <nite@hq.sk>
+Submitted-by: Robert Varga <nite@hq.sk>
+Submitted-at: Sat, 06 May 2017 11:47:49 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/56436
+Project: odlparent
+Branch: refs/heads/master
