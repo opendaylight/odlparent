@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_8c03c3b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-05-09T10:05:13Z",
+      "side": 1,
+      "message": "Soon, once Carbon is out.\n\nRe. testing, I would like to see the results of a full autorelease build with and without this patch, to make sure that the existing BP XML files all end up in the right place (note that this means you can run the build without tests).",
+      "revId": "63c4c3fa417b11794219414a09e1de943e0942a8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
