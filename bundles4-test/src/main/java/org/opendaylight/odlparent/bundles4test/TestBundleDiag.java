@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Michael Vorburger.ch
  */
-public class TestBundleDiag {
+public class TestBundleDiag implements AutoCloseable {
 
     private static final Logger LOG = LoggerFactory.getLogger(TestBundleDiag.class);
 
@@ -40,21 +40,14 @@ public class TestBundleDiag {
         this.bundleService = bundleContext.getService(bundleServiceReference);
     }
 
-    private void close() {
+    @Override
+    public void close() {
         bundleContext.ungetService(bundleServiceReference);
     }
 
-    public static void checkBundleDiagInfos(BundleContext bundleContext, long timeout, TimeUnit timeoutUnit) {
-        TestBundleDiag diag = new TestBundleDiag(bundleContext);
-        try {
-            diag.checkBundleDiagInfos(timeout, timeoutUnit);
-        } finally {
-            diag.close();
-        }
-    }
-
     /**
-     * Does the equivalent of the "diag" CLI command, and fails the test if anything incl. bundle wiring is NOK.
+     * Does something similar to Karaf's "diag" CLI command,
+     * and throws a {@link SystemStateFailureException} if anything incl. bundle wiring is NOK.
      *
      * <p>The implementation is based on Karaf's BundleService, and not the BundleStateService,
      * because each Karaf supported DI system (such as Blueprint and Declarative Services, see String constants
@@ -63,7 +56,14 @@ public class TestBundleDiag {
      *
      * @author Michael Vorburger, based on guidance from Christian Schneider
      */
-    private void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) {
+    public static void checkBundleDiagInfos(BundleContext bundleContext, long timeout, TimeUnit timeoutUnit)
+            throws SystemStateFailureException {
+        try (TestBundleDiag diag = new TestBundleDiag(bundleContext)) {
+            diag.checkBundleDiagInfos(timeout, timeoutUnit);
+        }
+    }
+
+    private void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) throws SystemStateFailureException {
         LOG.info("checkBundleDiagInfos() started...");
         try {
             Awaitility.await("checkBundleDiagInfos")
@@ -83,7 +83,7 @@ public class TestBundleDiag {
                 LOG.error("diag failure; BundleService reports bundle(s) which failed or are already stopping"
                         + " (details in following INFO and ERROR log messages...)");
                 logBundleDiagInfos(bundleInfos);
-                throw new AssertionError(bundleInfos.getFullDiagnosticText());
+                throw new SystemStateFailureException("diag failed; some bundles failed to start", bundleInfos);
 
             } else {
                 // Inform the developer of the green SystemState.Active
@@ -97,7 +97,7 @@ public class TestBundleDiag {
                     + " (details in following INFO and ERROR log messages...)");
             BundleDiagInfos bundleInfos = getBundleDiagInfos();
             logBundleDiagInfos(bundleInfos);
-            throw e; // fail the test!
+            throw new SystemStateFailureException("diag timeout; some bundles are still not active:", bundleInfos, e);
         }
     }
 

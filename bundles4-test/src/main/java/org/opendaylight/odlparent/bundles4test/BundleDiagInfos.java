@@ -10,6 +10,7 @@ package org.opendaylight.odlparent.bundles4test;
 import static org.apache.karaf.bundle.core.BundleState.Active;
 import static org.apache.karaf.bundle.core.BundleState.Installed;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.EnumMap;
@@ -27,7 +28,8 @@ import org.osgi.framework.BundleContext;
  *
  * @author Michael Vorburger.ch
  */
-public final class BundleDiagInfos {
+public final class BundleDiagInfos implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private static final Map<String, BundleState> WHITELISTED_BUNDLES;
 
