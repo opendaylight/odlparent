@@ -11,6 +11,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 import java.util.concurrent.TimeUnit;
+import javax.annotation.Nullable;
 import org.apache.karaf.bundle.core.BundleService;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
@@ -44,13 +45,18 @@ public class TestBundleDiag {
         bundleContext.ungetService(bundleServiceReference);
     }
 
-    public static void checkBundleDiagInfos(BundleContext bundleContext, long timeout, TimeUnit timeoutUnit) {
+    public static void checkBundleDiagInfos(
+            BundleContext bundleContext, long timeout, TimeUnit timeoutUnit, @Nullable DiagUpdatesListener listener) {
         TestBundleDiag diag = new TestBundleDiag(bundleContext);
         try {
-            diag.checkBundleDiagInfos(timeout, timeoutUnit);
+            diag.checkBundleDiagInfos(timeout, timeoutUnit, listener);
         } finally {
             diag.close();
         }
+    }
+
+    public static void checkBundleDiagInfos(BundleContext bundleContext, long timeout, TimeUnit timeoutUnit) {
+        checkBundleDiagInfos(bundleContext, timeout, timeoutUnit, null);
     }
 
     /**
@@ -63,7 +69,7 @@ public class TestBundleDiag {
      *
      * @author Michael Vorburger, based on guidance from Christian Schneider
      */
-    private void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) {
+    private void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit, @Nullable DiagUpdatesListener listener) {
         LOG.info("checkBundleDiagInfos() started...");
         try {
             Awaitility.await("checkBundleDiagInfos")
@@ -71,9 +77,16 @@ public class TestBundleDiag {
                 .pollInterval(1, SECONDS)
                 .atMost(timeout, timeoutUnit)
                     .conditionEvaluationListener(
-                        condition -> LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
-                            condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000,
-                            ((BundleDiagInfos) condition.getValue()).getFullDiagnosticText()))
+                        condition -> {
+                            final String diagInfo = String.format(
+                                    "checkBundleDiagInfos: Elapsed time %d, remaining time %d, %s",
+                                    condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000,
+                                    ((BundleDiagInfos) condition.getValue()).getFullDiagnosticText());
+                            LOG.info(diagInfo);
+                            if (listener != null) {
+                                listener.onUpdate(diagInfo);
+                            }
+                        })
                     .until(this::getBundleDiagInfos, new BundleServiceSummaryMatcher());
 
             // If we're here then either BundleServiceSummaryMatcher quit because of Active, Failure or Stopping..
