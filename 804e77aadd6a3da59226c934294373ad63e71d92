@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_535faf0e",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/DiagUpdatesListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-05-10T16:12:22Z",
+      "side": 1,
+      "message": "sure, why not; Done!",
+      "parentUuid": "ba068154_7b7e0fb0",
+      "revId": "804e77aadd6a3da59226c934294373ad63e71d92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_fb495f8c",
         "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/DiagUpdatesListener.java",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_73b9132e",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/DiagUpdatesListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-05-10T16:12:22Z",
+      "side": 1,
+      "message": "Erm.. Jein (German for neither \"Ja\" nor \"Nein\").  I do like the idea of passing through the full BundleDiagInfos, as consumers could glean more information from that, and have added that as a (new) 1st arg - but I\u0027ve as a 2nd argument kept the fullDiagnosticTextWithMoreDetails String.. the thing is that that has \"Elapsed time %d, remaining time %d\" information which BundleDiagInfos does not have, which is useful to expose in where I\u0027m going to use this for in c/56749!  Alternatively both the TestBundleDiag and whatever implements DiagUpdatesListener could duplicate the String, but that duplication would not be great (and also then we\u0027d have to pass along the elapsedTime and remainingTime as well).",
+      "parentUuid": "ba068154_fb495f8c",
+      "revId": "804e77aadd6a3da59226c934294373ad63e71d92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_3b5be755",
         "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/TestBundleDiag.java",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2017-05-10T09:56:14Z",
       "side": 1,
       "message": "Not that this particularly matters here, but String::format() is very expensive. If onUpdate() is changed to take the condition instead, you can leave the LOG.info() call as-is.",
+      "revId": "804e77aadd6a3da59226c934294373ad63e71d92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_d381df4b",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/TestBundleDiag.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-05-10T16:12:22Z",
+      "side": 1,
+      "message": "see also feedback in DiagUpdatesListener .. I\u0027d actually like the very same informational text created here to go both into the log and be able to be exposed elsewhere, so would like to keep this String::format() as-is, if that\u0027s OK with you?",
+      "parentUuid": "ba068154_3b5be755",
       "revId": "804e77aadd6a3da59226c934294373ad63e71d92",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
