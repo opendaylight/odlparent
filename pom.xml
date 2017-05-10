@@ -10,9 +10,9 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>odlparent-lite</artifactId>
+        <artifactId>aggregator-parent</artifactId>
         <version>1.9.0-SNAPSHOT</version>
-        <relativePath>odlparent-lite</relativePath>
+        <relativePath>aggregator-parent</relativePath>
     </parent>
 
     <artifactId>odlparent-aggregator</artifactId>
@@ -42,6 +42,7 @@
         <module>karaf4-plugin</module>
 
         <!-- Parent POMs -->
+        <module>aggregator-parent</module>
         <module>bundle-parent</module>
         <module>features-parent</module>
         <module>single-feature3-parent</module>
@@ -59,17 +60,6 @@
         <!-- Artifacts -->
         <module>odlparent-artifacts</module>
     </modules>
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <profiles>
         <profile>
