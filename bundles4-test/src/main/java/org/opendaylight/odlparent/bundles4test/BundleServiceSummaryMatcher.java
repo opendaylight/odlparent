@@ -19,6 +19,7 @@ import org.hamcrest.Description;
  *
  * @author Michael Vorburger.ch
  */
+// intentionally just package-local
 class BundleServiceSummaryMatcher extends BaseMatcher<BundleDiagInfos> {
 
     @Override
