@@ -16,6 +16,40 @@
       "revId": "804e77aadd6a3da59226c934294373ad63e71d92",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_fb495f8c",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/DiagUpdatesListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-05-10T09:56:14Z",
+      "side": 1,
+      "message": "I think this would be more useful with the actual change object, not the diagnostic string.",
+      "revId": "804e77aadd6a3da59226c934294373ad63e71d92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_3b5be755",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/TestBundleDiag.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-05-10T09:56:14Z",
+      "side": 1,
+      "message": "Not that this particularly matters here, but String::format() is very expensive. If onUpdate() is changed to take the condition instead, you can leave the LOG.info() call as-is.",
+      "revId": "804e77aadd6a3da59226c934294373ad63e71d92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
