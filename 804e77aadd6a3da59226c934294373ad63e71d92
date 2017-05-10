@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_7b7e0fb0",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/DiagUpdatesListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-05-10T09:53:09Z",
+      "side": 1,
+      "message": "Would it make sense to annotate this with @FunctionalInterface? (I\u0027m genuinely not sure, the only real use of @FunctionalInterface is to fail the build if the interface is changed to no longer be functional.)",
+      "revId": "804e77aadd6a3da59226c934294373ad63e71d92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
