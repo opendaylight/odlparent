@@ -23,7 +23,8 @@ import org.slf4j.LoggerFactory;
  *
  * @author Michael Vorburger.ch
  */
-public class ServiceReferenceUtil {
+// intentionally just package-local
+class ServiceReferenceUtil {
 
     private static final Logger LOG = LoggerFactory.getLogger(ServiceReferenceUtil.class);
 

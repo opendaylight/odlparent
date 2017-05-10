@@ -44,7 +44,8 @@ public class TestBundleDiag {
         bundleContext.ungetService(bundleServiceReference);
     }
 
-    public static void checkBundleDiagInfos(BundleContext bundleContext, long timeout, TimeUnit timeoutUnit) {
+    public static void checkBundleDiagInfos(BundleContext bundleContext, long timeout, TimeUnit timeoutUnit)
+            throws SystemStateFailureException {
         TestBundleDiag diag = new TestBundleDiag(bundleContext);
         try {
             diag.checkBundleDiagInfos(timeout, timeoutUnit);
@@ -63,7 +64,7 @@ public class TestBundleDiag {
      *
      * @author Michael Vorburger, based on guidance from Christian Schneider
      */
-    private void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) {
+    private void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) throws SystemStateFailureException {
         LOG.info("checkBundleDiagInfos() started...");
         try {
             Awaitility.await("checkBundleDiagInfos")
@@ -83,7 +84,7 @@ public class TestBundleDiag {
                 LOG.error("diag failure; BundleService reports bundle(s) which failed or are already stopping"
                         + " (details in following INFO and ERROR log messages...)");
                 logBundleDiagInfos(bundleInfos);
-                throw new AssertionError(bundleInfos.getFullDiagnosticText());
+                throw new SystemStateFailureException(bundleInfos.getFullDiagnosticText());
 
             } else {
                 // Inform the developer of the green SystemState.Active
@@ -97,7 +98,8 @@ public class TestBundleDiag {
                     + " (details in following INFO and ERROR log messages...)");
             BundleDiagInfos bundleInfos = getBundleDiagInfos();
             logBundleDiagInfos(bundleInfos);
-            throw e; // fail the test!
+            throw new SystemStateFailureException("diag timeout; some bundle(s) are still not active:\n"
+                    + bundleInfos.getFullDiagnosticText(), e);
         }
     }
 
