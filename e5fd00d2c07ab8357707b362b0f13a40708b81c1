@@ -16,6 +16,24 @@
       "revId": "e5fd00d2c07ab8357707b362b0f13a40708b81c1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_cc402059",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/SystemStateFailureException.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-05-11T11:48:00Z",
+      "side": 1,
+      "message": "Better now, happy? ;) - FYI forget about SystemState#Failure .. it was a mistake that I mentioned that, here; that\u0027s not really the intended main API surface of this stuff; hopefully it\u0027s clearer, as it\u0027s now.",
+      "parentUuid": "ba068154_4ce4303b",
+      "revId": "e5fd00d2c07ab8357707b362b0f13a40708b81c1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
