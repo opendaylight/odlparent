@@ -5,7 +5,7 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundles4test;
+package org.opendaylight.odlparent.bundles4test.internal;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -43,7 +43,7 @@ public class ServiceReferenceUtilTest {
 
     private static final class TestServiceReference implements ServiceReference<Object> {
 
-        private Map<String, Object> properties = Maps.newHashMap();
+        private final Map<String, Object> properties = Maps.newHashMap();
 
         TestServiceReference() {
             properties.put("property1", "value1");
