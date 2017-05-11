@@ -15,8 +15,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.ServiceReference;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Utilities for OSGi's {@link ServiceReference}.
@@ -25,8 +23,6 @@ import org.slf4j.LoggerFactory;
  */
 // intentionally just package-local
 class ServiceReferenceUtil {
-
-    private static final Logger LOG = LoggerFactory.getLogger(ServiceReferenceUtil.class);
 
     public Map<String, Object> getProperties(ServiceReference<?> serviceRef) {
         String[] propertyKeys = serviceRef.getPropertyKeys();

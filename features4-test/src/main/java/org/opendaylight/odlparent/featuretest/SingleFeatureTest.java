@@ -34,6 +34,7 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Properties;
 import javax.inject.Inject;
+import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
@@ -43,7 +44,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.opendaylight.odlparent.bundles4test.TestBundleDiag;
+import org.opendaylight.odlparent.bundles4test.BundleDiagImpl;
+import org.opendaylight.odlparent.bundlestest.BundleDiag;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.ProbeBuilder;
@@ -112,10 +114,13 @@ public class SingleFeatureTest {
             + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
 
     @Inject @NonNull
+    private FeaturesService featuresService;
+
+    @Inject @NonNull
     private BundleContext bundleContext;
 
     @Inject @NonNull
-    private FeaturesService featuresService;
+    private BundleService bundleService;
 
     private String karafVersion;
     private String karafDistroVersion;
@@ -133,7 +138,8 @@ public class SingleFeatureTest {
         // problems we've had in distribution jobs with custom local Maven repos;
         // but because of this we have to "help" Pax Exam with what classes need
         // to be bundled with its probe:
-        ReflectionUtil.addAllClassesInSameAndSubPackageOfClass(probe, TestBundleDiag.class);
+        ReflectionUtil.addAllClassesInSameAndSubPackageOfClass(probe, BundleDiag.class);
+        ReflectionUtil.addAllClassesInSameAndSubPackageOfClass(probe, BundleDiagImpl.class);
         ReflectionUtil.addAllClassesInSameAndSubPackageOfClass(probe, Awaitility.class);
         ReflectionUtil.addAllClassesInSameAndSubPackageOfPackage(probe, "com.google.common");
 
@@ -384,7 +390,8 @@ public class SingleFeatureTest {
                     || !BLACKLISTED_BROKEN_FEATURES.contains(getFeatureName()))) {
             LOG.info("new TestBundleDiag().checkBundleDiagInfos() STARTING");
             Integer timeOutInSeconds = Integer.getInteger(BUNDLES_DIAG_TIMEOUT_PROP, 5 * 60);
-            TestBundleDiag.checkBundleDiagInfos(bundleContext, timeOutInSeconds, SECONDS);
+            BundleDiagImpl diag = new BundleDiagImpl(bundleContext, bundleService);
+            diag.checkBundleDiagInfos(timeOutInSeconds, SECONDS, null);
             LOG.info("new TestBundleDiag().checkBundleDiagInfos() ENDED");
         } else {
             LOG.warn("SKIPPING TestBundleDiag because system property {} is true or feature is blacklisted: {}",

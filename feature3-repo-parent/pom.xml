@@ -48,6 +48,22 @@
             <version>1.9.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
+        <!-- The following needs to be repeated here, because they are <scope>provided
+             in features4-test > bundles-test (so they don't get embedded into those bundles),
+             because without this it's missing on the classpath of JUnit
+             (but not Karaf) JVM at run-time, causing NoClassDefFoundError -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>bundles-test-api</artifactId>
+            <version>1.9.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.bundle</groupId>
+            <artifactId>org.apache.karaf.bundle.core</artifactId>
+            <version>${karaf.version}</version>
+            <scope>test</scope>
+        </dependency>
         <!-- Force SLF4J to test scope -->
         <dependency>
             <groupId>org.slf4j</groupId>
