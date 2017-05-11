@@ -1,20 +1,28 @@
 /*
- * Copyright (c) 2016 Red Hat, Inc. and others. All rights reserved.
+ * Copyright (c) 2017 Red Hat, Inc. and others. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundlestest;
+package org.opendaylight.odlparent.bundles4test.internal;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
-import static org.junit.Assert.fail;
 
 import java.util.concurrent.TimeUnit;
+import javax.annotation.Nullable;
+import javax.annotation.PreDestroy;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 import org.apache.karaf.bundle.core.BundleService;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
+import org.opendaylight.odlparent.bundles4test.SystemStateFailureException;
+import org.opendaylight.odlparent.bundlestest.BundleDiag;
+import org.opendaylight.odlparent.bundlestest.BundleDiagInfos;
+import org.opendaylight.odlparent.bundlestest.DiagUpdatesListener;
+import org.opendaylight.odlparent.bundlestest.SystemState;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;
@@ -23,42 +31,52 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Utility to verify bundle diagnostic state from OSGi integration tests.
+ * Implementation of {@link BundleDiag}.
  *
  * @author Michael Vorburger.ch
  */
-public class TestBundleDiag {
+@Singleton
+public class BundleDiagImpl implements BundleDiag, AutoCloseable {
 
-    private static final Logger LOG = LoggerFactory.getLogger(TestBundleDiag.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BundleDiagImpl.class);
 
     private final BundleContext bundleContext;
+    private final ServiceReference<BundleService> bundleServiceReference;
     private final BundleService bundleService;
 
-    public TestBundleDiag(BundleContext bundleContext, BundleService bundleService) {
+    @Inject
+    public BundleDiagImpl(BundleContext bundleContext) {
         this.bundleContext = bundleContext;
-        this.bundleService = bundleService;
+        this.bundleServiceReference = bundleContext.getServiceReference(BundleService.class);
+        this.bundleService = bundleContext.getService(bundleServiceReference);
     }
 
-    /**
-     * Does the equivalent of the "diag" CLI command, and fails the test if anything incl. bundle wiring is NOK.
-     *
-     * <p>The implementation is based on Karaf's BundleService, and not the BundleStateService,
-     * because each Karaf supported DI system (such as Blueprint and Declarative Services, see String constants
-     * in BundleStateService), will have a separate BundleStateService.  The BundleService however will
-     * contain the combined status of all BundleStateServices.
-     *
-     * @author Michael Vorburger, based on guidance from Christian Schneider
-     */
-    public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) {
+    @Override
+    @PreDestroy
+    public void close() {
+        bundleContext.ungetService(bundleServiceReference);
+    }
+
+    @Override
+    public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit, @Nullable DiagUpdatesListener listener)
+            throws SystemStateFailureException {
+        LOG.info("checkBundleDiagInfos() started...");
         try {
             Awaitility.await("checkBundleDiagInfos")
                 .pollDelay(0, MILLISECONDS)
                 .pollInterval(1, SECONDS)
                 .atMost(timeout, timeoutUnit)
                     .conditionEvaluationListener(
-                        condition -> LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
-                            condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000,
-                            ((BundleDiagInfos) condition.getValue()).getFullDiagnosticText()))
+                        condition -> {
+                            final BundleDiagInfos bundleDiagInfos = (BundleDiagInfosImpl) condition.getValue();
+                            LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
+                                condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000,
+                                bundleDiagInfos.getFullDiagnosticText());
+                            if (listener != null) {
+                                listener.onUpdate(bundleDiagInfos,
+                                        condition.getElapsedTimeInMS(), condition.getRemainingTimeInMS());
+                            }
+                        })
                     .until(this::getBundleDiagInfos, new BundleServiceSummaryMatcher());
 
             // If we're here then either BundleServiceSummaryMatcher quit because of Active, Failure or Stopping..
@@ -68,7 +86,7 @@ public class TestBundleDiag {
                 LOG.error("diag failure; BundleService reports bundle(s) which failed or are already stopping"
                         + " (details in following INFO and ERROR log messages...)");
                 logBundleDiagInfos(bundleInfos);
-                fail(bundleInfos.getFullDiagnosticText());
+                throw new AssertionError(bundleInfos.getFullDiagnosticText());
 
             } else {
                 // Inform the developer of the green SystemState.Active
@@ -103,8 +121,8 @@ public class TestBundleDiag {
         }
     }
 
-    private BundleDiagInfos getBundleDiagInfos() {
-        return BundleDiagInfos.forContext(bundleContext, bundleService);
+    private BundleDiagInfosImpl getBundleDiagInfos() {
+        return BundleDiagInfosImpl.forContext(bundleContext, bundleService);
     }
 
     private void logOSGiServices() {

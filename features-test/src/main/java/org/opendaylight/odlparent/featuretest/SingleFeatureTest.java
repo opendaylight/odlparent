@@ -46,7 +46,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.opendaylight.odlparent.bundlestest.TestBundleDiag;
+import org.opendaylight.odlparent.bundles3test.BundleDiagImpl;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
@@ -350,7 +350,7 @@ public class SingleFeatureTest {
                 && (Boolean.getBoolean(BUNDLES_DIAG_FORCE_PROP)
                     || !BLACKLISTED_BROKEN_FEATURES.contains(getFeatureName()))) {
             Integer timeOutInSeconds = Integer.getInteger(BUNDLES_DIAG_TIMEOUT_PROP, 5 * 60);
-            new TestBundleDiag(bundleContext, bundleService).checkBundleDiagInfos(timeOutInSeconds, SECONDS);
+            new BundleDiagImpl(bundleContext, bundleService).checkBundleDiagInfos(timeOutInSeconds, SECONDS, null);
         } else {
             LOG.warn("SKIPPING TestBundleDiag because system property {} is true or feature is blacklisted: {}",
                     BUNDLES_DIAG_SKIP_PROP, getFeatureName());
