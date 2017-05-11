@@ -43,7 +43,7 @@ public class ServiceReferenceUtilTest {
 
     private static final class TestServiceReference implements ServiceReference<Object> {
 
-        private Map<String, Object> properties = Maps.newHashMap();
+        private final Map<String, Object> properties = Maps.newHashMap();
 
         TestServiceReference() {
             properties.put("property1", "value1");

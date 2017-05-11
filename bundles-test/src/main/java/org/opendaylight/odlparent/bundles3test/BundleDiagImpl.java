@@ -5,16 +5,24 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundlestest;
+package org.opendaylight.odlparent.bundles3test;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
-import static org.junit.Assert.fail;
 
 import java.util.concurrent.TimeUnit;
+import javax.annotation.Nullable;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 import org.apache.karaf.bundle.core.BundleService;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
+import org.opendaylight.odlparent.bundlestest.BundleDiag;
+import org.opendaylight.odlparent.bundlestest.BundleDiagInfos;
+import org.opendaylight.odlparent.bundlestest.DiagUpdatesListener;
+import org.opendaylight.odlparent.bundlestest.SystemState;
+import org.opendaylight.odlparent.bundlestest.SystemStateFailureException;
+import org.ops4j.pax.cdi.api.OsgiService;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.InvalidSyntaxException;
@@ -27,14 +35,16 @@ import org.slf4j.LoggerFactory;
  *
  * @author Michael Vorburger.ch
  */
-public class TestBundleDiag {
+@Singleton
+public class BundleDiagImpl implements BundleDiag {
 
-    private static final Logger LOG = LoggerFactory.getLogger(TestBundleDiag.class);
+    private static final Logger LOG = LoggerFactory.getLogger(BundleDiagImpl.class);
 
     private final BundleContext bundleContext;
     private final BundleService bundleService;
 
-    public TestBundleDiag(BundleContext bundleContext, BundleService bundleService) {
+    @Inject
+    public BundleDiagImpl(BundleContext bundleContext, @OsgiService BundleService bundleService) {
         this.bundleContext = bundleContext;
         this.bundleService = bundleService;
     }
@@ -49,16 +59,25 @@ public class TestBundleDiag {
      *
      * @author Michael Vorburger, based on guidance from Christian Schneider
      */
-    public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) {
+    @Override
+    public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit, @Nullable DiagUpdatesListener listener)
+            throws SystemStateFailureException {
         try {
             Awaitility.await("checkBundleDiagInfos")
                 .pollDelay(0, MILLISECONDS)
                 .pollInterval(1, SECONDS)
                 .atMost(timeout, timeoutUnit)
                     .conditionEvaluationListener(
-                        condition -> LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
-                            condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000,
-                            ((BundleDiagInfos) condition.getValue()).getFullDiagnosticText()))
+                        condition -> {
+                            final BundleDiagInfos bundleDiagInfos = (BundleDiagInfos) condition.getValue();
+                            LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
+                                condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000,
+                                bundleDiagInfos.getFullDiagnosticText());
+                            if (listener != null) {
+                                listener.onUpdate(bundleDiagInfos,
+                                        condition.getElapsedTimeInMS(), condition.getRemainingTimeInMS());
+                            }
+                        })
                     .until(this::getBundleDiagInfos, new BundleServiceSummaryMatcher());
 
             // If we're here then either BundleServiceSummaryMatcher quit because of Active, Failure or Stopping..
@@ -68,7 +87,7 @@ public class TestBundleDiag {
                 LOG.error("diag failure; BundleService reports bundle(s) which failed or are already stopping"
                         + " (details in following INFO and ERROR log messages...)");
                 logBundleDiagInfos(bundleInfos);
-                fail(bundleInfos.getFullDiagnosticText());
+                throw new SystemStateFailureException("diag failed; some bundles failed to start", bundleInfos);
 
             } else {
                 // Inform the developer of the green SystemState.Active
@@ -82,7 +101,7 @@ public class TestBundleDiag {
                     + " (details in following INFO and ERROR log messages...)");
             BundleDiagInfos bundleInfos = getBundleDiagInfos();
             logBundleDiagInfos(bundleInfos);
-            throw e; // fail the test!
+            throw new SystemStateFailureException("diag timeout; some bundles are still not active:", bundleInfos, e);
         }
     }
 
@@ -103,8 +122,8 @@ public class TestBundleDiag {
         }
     }
 
-    private BundleDiagInfos getBundleDiagInfos() {
-        return BundleDiagInfos.forContext(bundleContext, bundleService);
+    private BundleDiagInfosImpl getBundleDiagInfos() {
+        return BundleDiagInfosImpl.forContext(bundleContext, bundleService);
     }
 
     private void logOSGiServices() {

@@ -5,7 +5,7 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundlestest;
+package org.opendaylight.odlparent.bundles3test;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,17 +15,14 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.ServiceReference;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Utilities for OSGi's {@link ServiceReference}.
  *
  * @author Michael Vorburger.ch
  */
-public class ServiceReferenceUtil {
-
-    private static final Logger LOG = LoggerFactory.getLogger(ServiceReferenceUtil.class);
+// intentionally just package-local
+class ServiceReferenceUtil {
 
     public Map<String, Object> getProperties(ServiceReference<?> serviceRef) {
         String[] propertyKeys = serviceRef.getPropertyKeys();
