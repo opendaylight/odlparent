@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ba068154_cc2b002f",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/DiagUpdatesListener.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-05-11T09:17:33Z",
+      "side": 1,
+      "message": "The solution then would be to add the time information as either extra parameters, or wrapped (with the BundleDiagInfos) in a new class. Strings are never a good idea for passing information around. (See also my comment on c/56749.)",
+      "parentUuid": "ba068154_73b9132e",
+      "revId": "804e77aadd6a3da59226c934294373ad63e71d92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba068154_3b5be755",
         "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/TestBundleDiag.java",
         "patchSetId": 1
