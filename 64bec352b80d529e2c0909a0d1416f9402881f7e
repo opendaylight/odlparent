@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba068154_276f4594",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/BundleDiagInfos.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-05-11T12:40:42Z",
+      "side": 1,
+      "message": "Since this is the first serializable version, declare it as\n\n    private static final long serialVersionUID \u003d 1L;",
+      "revId": "64bec352b80d529e2c0909a0d1416f9402881f7e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_876c319e",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/SystemStateFailureException.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-05-11T12:40:42Z",
+      "side": 1,
+      "message": "1L is better...",
+      "revId": "64bec352b80d529e2c0909a0d1416f9402881f7e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba068154_c7d3d936",
+        "filename": "bundles4-test/src/main/java/org/opendaylight/odlparent/bundles4test/SystemStateFailureException.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-05-11T12:40:42Z",
+      "side": 1,
+      "message": "I get the impression recent trends have the throwable as the last parameter in all cases (see e.g. JAXBException, although there are older counter-examples in the JDK). Having the throwable last also makes exception declarations coherent with Log4J logs ;-).",
+      "revId": "64bec352b80d529e2c0909a0d1416f9402881f7e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
