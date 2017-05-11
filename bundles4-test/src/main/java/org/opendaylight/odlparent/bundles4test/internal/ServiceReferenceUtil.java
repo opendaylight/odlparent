@@ -5,7 +5,7 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundles4test;
+package org.opendaylight.odlparent.bundles4test.internal;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Michael Vorburger.ch
  */
-public class ServiceReferenceUtil {
+class ServiceReferenceUtil {
 
     private static final Logger LOG = LoggerFactory.getLogger(ServiceReferenceUtil.class);
 

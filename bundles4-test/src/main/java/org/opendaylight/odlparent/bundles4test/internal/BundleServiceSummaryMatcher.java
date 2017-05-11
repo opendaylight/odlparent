@@ -5,7 +5,7 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundles4test;
+package org.opendaylight.odlparent.bundles4test.internal;
 
 import static org.opendaylight.odlparent.bundles4test.SystemState.Active;
 import static org.opendaylight.odlparent.bundles4test.SystemState.Failure;
@@ -13,6 +13,8 @@ import static org.opendaylight.odlparent.bundles4test.SystemState.Stopping;
 
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
+import org.opendaylight.odlparent.bundles4test.BundleDiagInfos;
+import org.opendaylight.odlparent.bundles4test.SystemState;
 
 /**
  * Hamcrest Matcher for {@link BundleDiagInfos}.

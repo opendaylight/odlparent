@@ -24,6 +24,11 @@
 
   <dependencies>
     <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
       <scope>provided</scope>
@@ -76,6 +81,10 @@
             </instructions>
           </configuration>
       </plugin>
+      <plugin>
+       <groupId>org.apache.aries.blueprint</groupId>
+       <artifactId>blueprint-maven-plugin</artifactId>
+     </plugin>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <configuration>
