@@ -5,22 +5,24 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundles4test;
+package org.opendaylight.odlparent.bundles4test.internal;
 
-import static org.opendaylight.odlparent.bundles4test.SystemState.Active;
-import static org.opendaylight.odlparent.bundles4test.SystemState.Failure;
-import static org.opendaylight.odlparent.bundles4test.SystemState.Stopping;
+import static org.opendaylight.odlparent.bundlestest.SystemState.Active;
+import static org.opendaylight.odlparent.bundlestest.SystemState.Failure;
+import static org.opendaylight.odlparent.bundlestest.SystemState.Stopping;
 
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
+import org.opendaylight.odlparent.bundlestest.BundleDiagInfos;
+import org.opendaylight.odlparent.bundlestest.SystemState;
 
 /**
- * Hamcrest Matcher for {@link BundleDiagInfos}.
+ * Hamcrest Matcher for {@link BundleDiagInfosImpl}.
  *
  * @author Michael Vorburger.ch
  */
 // intentionally just package-local
-class BundleServiceSummaryMatcher extends BaseMatcher<BundleDiagInfos> {
+class BundleServiceSummaryMatcher extends BaseMatcher<BundleDiagInfosImpl> {
 
     @Override
     public boolean matches(Object item) {

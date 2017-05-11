@@ -5,14 +5,11 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundles4test;
-
-import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleActivator;
+package org.opendaylight.odlparent.bundlestest;
 
 /**
  * Exception thrown (only) by
- * {@link TestBundleDiag#checkBundleDiagInfos(org.osgi.framework.BundleContext, long, java.util.concurrent.TimeUnit)}
+ * {@link BundleDiag#checkBundleDiagInfos(long, java.util.concurrent.TimeUnit, DiagUpdatesListener)}
  * if there are any OSGi bundles that failed to start.  This is based on not only {@link Bundle#getState()}'s
  * {@link Bundle#ACTIVE}, but also DI wiring systems such as blueprint containers.  The Exceptions' message
  * will likely contain a longer multi-line String with extensive technical details including all failed
