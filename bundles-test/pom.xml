@@ -24,6 +24,16 @@
 
   <dependencies>
     <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>bundles-test-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
       <scope>compile</scope>
@@ -79,6 +89,105 @@
         <configuration>
           <failOnError>true</failOnError>
         </configuration>
+      </plugin>
+
+      <plugin>
+       <groupId>org.apache.aries.blueprint</groupId>
+       <artifactId>blueprint-maven-plugin</artifactId>
+      </plugin>
+      <!-- The following is needed so that this bundle can be used and tested e.g. in infrautils without relying on controller's blueprint extensions -->
+      <!-- TODO Remove again once https://git.opendaylight.org/gerrit/#/c/54885/ is merged -->
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <inherited>false</inherited>
+        <executions>
+          <execution>
+            <id>move-autowire-test</id>
+            <phase>process-test-classes</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </execution>
+          <execution>
+            <id>move-autowire-test_c54885</id>
+            <phase>process-test-classes</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+                <if>
+                  <available file="${project.basedir}/src/main/resources/org/opendaylight/blueprint" type="dir"/>
+                  <then>
+                    <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
+                    <move file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
+                          todir="${project.build.directory}/generated-resources/org/opendaylight/blueprint"
+                          failonerror="false" quiet="true" />
+                  </then>
+                  <else>
+                    <echo>NOT moving autowire.xml (to org/opendaylight/blueprint)</echo>
+                  </else>
+                </if>
+              </target>
+            </configuration>
+          </execution>
+          <execution>
+            <id>move-autowire-package</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <skip>true</skip>
+            </configuration>
+          </execution>
+          <execution>
+            <id>move-autowire-package_c54885</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+                <if>
+                  <available file="${project.basedir}/src/main/resources/org/opendaylight/blueprint" type="dir"/>
+                  <then>
+                    <echo>Moving autowire.xml to org/opendaylight/blueprint</echo>
+                    <move file="${project.build.directory}/generated-resources/OSGI-INF/blueprint/autowire.xml"
+                          todir="${project.build.directory}/generated-resources/org/opendaylight/blueprint"
+                          failonerror="false" quiet="true" />
+                  </then>
+                  <else>
+                    <echo>NOT moving autowire.xml (to org/opendaylight/blueprint)</echo>
+                  </else>
+                </if>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>ant-contrib</groupId>
+            <artifactId>ant-contrib</artifactId>
+            <version>1.0b3</version>
+            <exclusions>
+              <exclusion>
+                <groupId>ant</groupId>
+                <artifactId>ant</artifactId>
+              </exclusion>
+            </exclusions>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-nodeps</artifactId>
+            <version>1.8.1</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
