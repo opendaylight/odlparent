@@ -50,6 +50,12 @@
             <version>1.9.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>bundles-test-api</artifactId>
+            <version>1.9.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
         <!-- Force SLF4J to test scope -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -72,6 +78,7 @@
                     <skip>${skip.karaf.featureTest}</skip>
                     <dependenciesToScan>
                         <dependency>org.opendaylight.odlparent:features4-test</dependency>
+                        <dependency>org.opendaylight.odlparent:bundles-test-api</dependency>
                     </dependenciesToScan>
                     <additionalClasspathElements>
                         <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>

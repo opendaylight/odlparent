@@ -44,6 +44,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.opendaylight.odlparent.bundles4test.TestBundleDiag;
+import org.opendaylight.odlparent.bundles4test.internal.BundleDiagImpl;
+import org.opendaylight.odlparent.bundlestest.BundleDiag;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.ProbeBuilder;
@@ -133,6 +135,7 @@ public class SingleFeatureTest {
         // problems we've had in distribution jobs with custom local Maven repos;
         // but because of this we have to "help" Pax Exam with what classes need
         // to be bundled with its probe:
+        ReflectionUtil.addAllClassesInSameAndSubPackageOfClass(probe, BundleDiag.class);
         ReflectionUtil.addAllClassesInSameAndSubPackageOfClass(probe, TestBundleDiag.class);
         ReflectionUtil.addAllClassesInSameAndSubPackageOfClass(probe, Awaitility.class);
         ReflectionUtil.addAllClassesInSameAndSubPackageOfPackage(probe, "com.google.common");
@@ -384,7 +387,9 @@ public class SingleFeatureTest {
                     || !BLACKLISTED_BROKEN_FEATURES.contains(getFeatureName()))) {
             LOG.info("new TestBundleDiag().checkBundleDiagInfos() STARTING");
             Integer timeOutInSeconds = Integer.getInteger(BUNDLES_DIAG_TIMEOUT_PROP, 5 * 60);
-            TestBundleDiag.checkBundleDiagInfos(bundleContext, timeOutInSeconds, SECONDS);
+            try (BundleDiagImpl diag = new BundleDiagImpl(bundleContext)) {
+                diag.checkBundleDiagInfos(timeOutInSeconds, SECONDS, null);
+            }
             LOG.info("new TestBundleDiag().checkBundleDiagInfos() ENDED");
         } else {
             LOG.warn("SKIPPING TestBundleDiag because system property {} is true or feature is blacklisted: {}",

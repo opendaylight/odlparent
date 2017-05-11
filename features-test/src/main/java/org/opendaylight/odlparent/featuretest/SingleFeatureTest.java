@@ -15,7 +15,6 @@ import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
 import static org.ops4j.pax.exam.CoreOptions.when;
-import static org.ops4j.pax.exam.CoreOptions.wrappedBundle;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.configureConsole;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.editConfigurationFilePut;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
@@ -35,7 +34,6 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Properties;
 import javax.inject.Inject;
-import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.features.Feature;
 import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
@@ -46,7 +44,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.opendaylight.odlparent.bundlestest.TestBundleDiag;
+import org.opendaylight.odlparent.bundles3test.BundleDiagImpl;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
@@ -120,9 +118,6 @@ public class SingleFeatureTest {
     @Inject @NonNull
     private FeaturesService featuresService;
 
-    @Inject @NonNull
-    private BundleService bundleService; // NOT BundleStateService, see checkBundleStatesDiag()
-
     private String karafVersion;
     private String karafDistroVersion;
 
@@ -158,8 +153,10 @@ public class SingleFeatureTest {
             logLevel(LogLevel.WARN),
             mvnLocalRepoOption(),
             standardKarafFeatures(),
-            wrappedBundle(maven("org.awaitility", "awaitility").versionAsInProject()), // req. by bundles-test
-            mavenBundle(maven("com.google.guava", "guava").versionAsInProject()),      // req. by bundles-test
+            // Guava is used by this SingleFeatureTest class itself (not, anymore, by by bundles-test),
+            // in (at least) the BLACKLISTED_BROKEN_FEATURES ImmutableList at the end, so we need to
+            // add Guava so that this class can run in Karaf under OSGi, as it compiled here
+            mavenBundle(maven("com.google.guava", "guava").versionAsInProject()),
             mavenBundle(maven("org.opendaylight.odlparent", "bundles-test").versionAsInProject()),
             editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
                     LogLevel.INFO.name()),
@@ -350,7 +347,7 @@ public class SingleFeatureTest {
                 && (Boolean.getBoolean(BUNDLES_DIAG_FORCE_PROP)
                     || !BLACKLISTED_BROKEN_FEATURES.contains(getFeatureName()))) {
             Integer timeOutInSeconds = Integer.getInteger(BUNDLES_DIAG_TIMEOUT_PROP, 5 * 60);
-            new TestBundleDiag(bundleContext, bundleService).checkBundleDiagInfos(timeOutInSeconds, SECONDS);
+            new BundleDiagImpl(bundleContext).checkBundleDiagInfos(timeOutInSeconds, SECONDS, null);
         } else {
             LOG.warn("SKIPPING TestBundleDiag because system property {} is true or feature is blacklisted: {}",
                     BUNDLES_DIAG_SKIP_PROP, getFeatureName());

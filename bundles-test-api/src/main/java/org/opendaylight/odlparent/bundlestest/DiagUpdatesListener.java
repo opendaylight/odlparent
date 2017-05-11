@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Red Hat, Inc. and others. All rights reserved.
+ * Copyright (c) 2017 Red Hat, Inc. and others. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -7,23 +7,14 @@
  */
 package org.opendaylight.odlparent.bundlestest;
 
-import org.apache.karaf.bundle.core.BundleState;
-
 /**
- * Karaf OSGi System State.
- *
- * @see BundleState
+ * Listener which is notified for every diag update.
  *
  * @author Michael Vorburger.ch
  */
-public enum SystemState {
+@FunctionalInterface
+public interface DiagUpdatesListener {
 
-    Booting,
-
-    Active,
-
-    Stopping,
-
-    Failure
+    void onUpdate(BundleDiagInfos bundleDiagInfos, long elapsedTimeInMS, long remainingTimeInMS);
 
 }
