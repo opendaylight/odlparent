@@ -24,6 +24,23 @@
 
   <dependencies>
     <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>bundles-test-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <optional>true</optional>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.ops4j.pax.cdi</groupId>
+      <artifactId>pax-cdi-api</artifactId>
+      <optional>true</optional>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.core</artifactId>
       <scope>provided</scope>
@@ -73,6 +90,7 @@
               <Embed-Dependency>*;scope=compile</Embed-Dependency>
               <Embed-Transitive>true</Embed-Transitive>
               <Import-Package>!net.sf.cglib.proxy,!org.objenesis,*</Import-Package>
+              <_exportcontents>org.opendaylight.odlparent.bundlestest.*,org.opendaylight.odlparent.bundles4test.*</_exportcontents>
             </instructions>
           </configuration>
       </plugin>
@@ -88,6 +106,10 @@
         <configuration>
           <failOnError>true</failOnError>
         </configuration>
+      </plugin>
+      <plugin>
+       <groupId>org.apache.aries.blueprint</groupId>
+       <artifactId>blueprint-maven-plugin</artifactId>
       </plugin>
     </plugins>
   </build>

@@ -1,11 +1,11 @@
 /*
- * Copyright (c) 2016, 2017 Red Hat, Inc. and others. All rights reserved.
+ * Copyright (c) 2016 Red Hat, Inc. and others. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundles4test;
+package org.opendaylight.odlparent.bundles3test;
 
 import static org.apache.karaf.bundle.core.BundleState.Active;
 import static org.apache.karaf.bundle.core.BundleState.Installed;
@@ -20,6 +20,8 @@ import java.util.Map;
 import org.apache.karaf.bundle.core.BundleInfo;
 import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.bundle.core.BundleState;
+import org.opendaylight.odlparent.bundlestest.BundleDiagInfos;
+import org.opendaylight.odlparent.bundlestest.SystemState;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
@@ -28,22 +30,22 @@ import org.osgi.framework.BundleContext;
  *
  * @author Michael Vorburger.ch
  */
-public final class BundleDiagInfos implements Serializable {
+// intentionally just package-local
+final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
     private static final long serialVersionUID = 1L;
-
-    private static final Map<String, BundleState> WHITELISTED_BUNDLES;
-
-    static {
-        WHITELISTED_BUNDLES = new HashMap<>();
-        WHITELISTED_BUNDLES.put("slf4j.log4j12", Installed);
-    }
 
     private final List<String> okBundleStateInfoTexts;
     private final List<String> nokBundleStateInfoTexts;
     private final List<String> whitelistedBundleStateInfoTexts;
     private final Map<BundleState, Integer> bundleStatesCounters;
 
-    private BundleDiagInfos(List<String> okBundleStateInfoTexts, List<String> nokBundleStateInfoTexts,
+    private static final Map<String, BundleState> WHITELISTED_BUNDLES = new HashMap<>();
+
+    static {
+        WHITELISTED_BUNDLES.put("slf4j.log4j12", Installed);
+    }
+
+    private BundleDiagInfosImpl(List<String> okBundleStateInfoTexts, List<String> nokBundleStateInfoTexts,
             List<String> whitelistedBundleStateInfoTexts, Map<BundleState, Integer> bundleStatesCounters) {
         this.okBundleStateInfoTexts = immutableCopyOf(okBundleStateInfoTexts);
         this.nokBundleStateInfoTexts = immutableCopyOf(nokBundleStateInfoTexts);
@@ -51,7 +53,7 @@ public final class BundleDiagInfos implements Serializable {
         this.bundleStatesCounters = immutableCopyOf(bundleStatesCounters);
     }
 
-    public static BundleDiagInfos forContext(BundleContext bundleContext, BundleService bundleService) {
+    public static BundleDiagInfosImpl forContext(BundleContext bundleContext, BundleService bundleService) {
         List<String> okBundleStateInfoTexts = new ArrayList<>();
         List<String> nokBundleStateInfoTexts = new ArrayList<>();
         List<String> whitelistedBundleStateInfoTexts = new ArrayList<>();
@@ -96,7 +98,7 @@ public final class BundleDiagInfos implements Serializable {
             }
         }
 
-        return new BundleDiagInfos(okBundleStateInfoTexts, nokBundleStateInfoTexts,
+        return new BundleDiagInfosImpl(okBundleStateInfoTexts, nokBundleStateInfoTexts,
                 whitelistedBundleStateInfoTexts, bundleStatesCounters);
     }
 
@@ -119,6 +121,7 @@ public final class BundleDiagInfos implements Serializable {
         }
     }
 
+    @Override
     public SystemState getSystemState() {
         if (bundleStatesCounters.get(BundleState.Failure) > 0) {
             return SystemState.Failure;
@@ -139,6 +142,7 @@ public final class BundleDiagInfos implements Serializable {
         }
     }
 
+    @Override
     public String getFullDiagnosticText() {
         StringBuilder sb = new StringBuilder(getSummaryText());
         int failureNumber = 1;
@@ -151,18 +155,22 @@ public final class BundleDiagInfos implements Serializable {
         return sb.toString();
     }
 
+    @Override
     public String getSummaryText() {
         return "diag: " + getSystemState() + " " + bundleStatesCounters.toString();
     }
 
+    @Override
     public List<String> getNokBundleStateInfoTexts() {
         return immutableCopyOf(nokBundleStateInfoTexts);
     }
 
+    @Override
     public List<String> getOkBundleStateInfoTexts() {
         return immutableCopyOf(okBundleStateInfoTexts);
     }
 
+    @Override
     public List<String> getWhitelistedBundleStateInfoTexts() {
         return immutableCopyOf(whitelistedBundleStateInfoTexts);
     }

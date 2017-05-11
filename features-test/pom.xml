@@ -110,6 +110,15 @@
             <artifactId>bundles-test</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <!-- This needs to be repeated here, because it's <scope>provided
+                 in bundles-test (so that it doesn't get embedded into that bundle),
+                 because without this it's missing on the classpath of JUnit
+                 (but not Karaf) JVM at run-time, causing NoClassDefFoundError -->
+            <groupId>org.apache.karaf.bundle</groupId>
+            <artifactId>org.apache.karaf.bundle.core</artifactId>
+            <version>${karaf.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
