@@ -933,6 +933,12 @@
         <artifactId>org.osgi.compendium</artifactId>
         <version>${osgi.core.version}</version>
         <scope>provided</scope>
+        <exclusions>
+          <exclusion>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.osgi.foundation</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
