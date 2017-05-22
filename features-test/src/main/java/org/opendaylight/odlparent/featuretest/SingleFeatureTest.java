@@ -15,7 +15,6 @@ import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
 import static org.ops4j.pax.exam.CoreOptions.when;
-import static org.ops4j.pax.exam.CoreOptions.wrappedBundle;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.configureConsole;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.editConfigurationFilePut;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
@@ -46,7 +45,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.opendaylight.odlparent.bundlestest.TestBundleDiag;
+import org.opendaylight.odlparent.bundlestest.lib.TestBundleDiag;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
@@ -158,8 +157,10 @@ public class SingleFeatureTest {
             logLevel(LogLevel.WARN),
             mvnLocalRepoOption(),
             standardKarafFeatures(),
-            wrappedBundle(maven("org.awaitility", "awaitility").versionAsInProject()), // req. by bundles-test
-            mavenBundle(maven("com.google.guava", "guava").versionAsInProject()),      // req. by bundles-test
+            // Guava is used by this SingleFeatureTest class itself (not, anymore, by by bundles-test),
+            // in (at least) the BLACKLISTED_BROKEN_FEATURES ImmutableList at the end, so we need to
+            // add Guava so that this class can run in Karaf under OSGi, as it compiled here
+            mavenBundle(maven("com.google.guava", "guava").versionAsInProject()),
             mavenBundle(maven("org.opendaylight.odlparent", "bundles-test").versionAsInProject()),
             editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
                     LogLevel.INFO.name()),
