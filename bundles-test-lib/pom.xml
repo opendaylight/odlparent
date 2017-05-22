@@ -13,30 +13,25 @@
 
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>bundle-parent</artifactId>
+    <artifactId>odlparent</artifactId>
     <version>1.9.0-SNAPSHOT</version>
-    <relativePath>../bundle-parent</relativePath>
+    <relativePath>../odlparent</relativePath>
   </parent>
 
-  <artifactId>bundles4-test</artifactId>
-  <packaging>bundle</packaging>
+  <artifactId>bundles-test-lib</artifactId>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.opendaylight.odlparent</groupId>
-      <artifactId>bundles-test-lib</artifactId>
-      <version>${project.version}</version>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.core</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.karaf.bundle</groupId>
       <artifactId>org.apache.karaf.bundle.core</artifactId>
-      <version>${karaf4.version}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.core</artifactId>
+      <!-- karaf.version & karaf4.version are API compatible (for karaf.bundle.core) -->
+      <version>${karaf.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -59,22 +54,17 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <!-- BEWARE of adding additional dependencies here...
+         It will cause weird issues e.g. in integration/distribution/features/repos/distribution -->
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <configuration>
-          <instructions>
-            <Embed-Dependency>*;scope=compile</Embed-Dependency>
-            <Embed-Transitive>true</Embed-Transitive>
-            <Import-Package>!net.sf.cglib.proxy,!org.objenesis,*</Import-Package>
-            <_exportcontents>org.opendaylight.odlparent.bundlestest.lib.*</_exportcontents>
-          </instructions>
-        </configuration>
-      </plugin>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <configuration>
