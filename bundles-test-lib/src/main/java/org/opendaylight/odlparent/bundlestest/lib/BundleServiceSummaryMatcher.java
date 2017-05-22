@@ -5,26 +5,26 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundles4test;
+package org.opendaylight.odlparent.bundlestest.lib;
 
-import static org.opendaylight.odlparent.bundles4test.SystemState.Active;
-import static org.opendaylight.odlparent.bundles4test.SystemState.Failure;
-import static org.opendaylight.odlparent.bundles4test.SystemState.Stopping;
+import static org.opendaylight.odlparent.bundlestest.lib.SystemState.Active;
+import static org.opendaylight.odlparent.bundlestest.lib.SystemState.Failure;
+import static org.opendaylight.odlparent.bundlestest.lib.SystemState.Stopping;
 
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 
 /**
- * Hamcrest Matcher for {@link BundleDiagInfos}.
+ * Hamcrest Matcher for BundleDiagInfosImpl.
  *
  * @author Michael Vorburger.ch
  */
 // intentionally just package-local
-class BundleServiceSummaryMatcher extends BaseMatcher<BundleDiagInfos> {
+class BundleServiceSummaryMatcher extends BaseMatcher<BundleDiagInfosImpl> {
 
     @Override
     public boolean matches(Object item) {
-        SystemState systemState = ((BundleDiagInfos) item).getSystemState();
+        SystemState systemState = ((BundleDiagInfosImpl) item).getSystemState();
         return systemState.equals(Active) || systemState.equals(Stopping) || systemState.equals(Failure);
     }
 

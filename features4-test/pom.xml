@@ -109,6 +109,12 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.apache.karaf.bundle</groupId>
+            <artifactId>org.apache.karaf.bundle.core</artifactId>
+            <version>${karaf4.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
           <groupId>com.google.guava</groupId>
           <artifactId>guava</artifactId>
           <scope>compile</scope>
