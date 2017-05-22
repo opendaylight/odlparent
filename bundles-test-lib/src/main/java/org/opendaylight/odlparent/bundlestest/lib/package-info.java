@@ -6,4 +6,4 @@
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
 @org.eclipse.jdt.annotation.NonNullByDefault
-package org.opendaylight.odlparent.bundles4test;
+package org.opendaylight.odlparent.bundlestest.lib;

@@ -7,41 +7,24 @@
  */
 package org.opendaylight.odlparent.bundles4test;
 
-import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleActivator;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import org.opendaylight.odlparent.bundlestest.lib.BundleDiagInfos;
 
-/**
- * Exception thrown (only) by
- * {@link TestBundleDiag#checkBundleDiagInfos(org.osgi.framework.BundleContext, long, java.util.concurrent.TimeUnit)}
- * if there are any OSGi bundles that failed to start.  This is based on not only {@link Bundle#getState()}'s
- * {@link Bundle#ACTIVE}, but also DI wiring systems such as blueprint containers.  The Exceptions' message
- * will likely contain a longer multi-line String with extensive technical details including all failed
- * bundles' states, detailed technical information related to OSGi bundle and blueprint resolution,
- * and possibly exceptions incl. stack traces thrown by {@link BundleActivator} start() methods and
- * dependency injection object wiring {@literal @}PostConstruct "init" type methods.
- *
- * @author Michael Vorburger.ch
- */
-public class SystemStateFailureException extends Exception {
+@Deprecated
+@SuppressFBWarnings("NM_SAME_SIMPLE_NAME_AS_SUPERCLASS")
+public class SystemStateFailureException
+        extends org.opendaylight.odlparent.bundlestest.lib.SystemStateFailureException {
+
+    // TODO remove along with @Deprecated TestBundleDiag
+
     private static final long serialVersionUID = 1L;
 
-    private final BundleDiagInfos bundleDiagInfos;
+    public SystemStateFailureException(String message, BundleDiagInfos bundleDiagInfos) {
+        super(message, bundleDiagInfos);
+    }
 
     public SystemStateFailureException(String message, BundleDiagInfos bundleDiagInfos, Throwable cause) {
-        super(getExtendedMessage(message, bundleDiagInfos), cause);
-        this.bundleDiagInfos = bundleDiagInfos;
+        super(message, bundleDiagInfos, cause);
     }
 
-    public SystemStateFailureException(String message, BundleDiagInfos bundleDiagInfos) {
-        super(getExtendedMessage(message, bundleDiagInfos));
-        this.bundleDiagInfos = bundleDiagInfos;
-    }
-
-    private static String getExtendedMessage(String message, BundleDiagInfos bundleDiagInfos) {
-        return message + "\n" + bundleDiagInfos.getFullDiagnosticText();
-    }
-
-    public BundleDiagInfos getBundleDiagInfos() {
-        return bundleDiagInfos;
-    }
 }
