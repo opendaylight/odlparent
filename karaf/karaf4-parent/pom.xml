@@ -74,6 +74,11 @@
             <type>xml</type>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.aries.quiesce</groupId>
+            <artifactId>org.apache.aries.quiesce.api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 
         <!-- ODL Branding -->
         <dependency>
