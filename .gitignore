@@ -7,7 +7,6 @@ bin/
 tmp/
 *.tmp
 *.bak
-*.swp
 *~.nib
 local.properties
 .settings/
@@ -18,6 +17,9 @@ local.properties
 
 .checkstyle
 .fbExcludeFilterFile
+
+# Vim
+.*.sw?
 
 # https://github.com/jbosstools/m2e-apt
 .factorypath
