@@ -1270,11 +1270,6 @@
         <artifactId>jetty-webapp</artifactId>
         <version>9.2.19.v20160908</version>
       </dependency>
-      <dependency>
-        <groupId>org.apache.aries.blueprint</groupId>
-        <artifactId>org.apache.aries.blueprint.core</artifactId>
-        <version>1.4.2</version>
-      </dependency>
 
       <dependency>
         <groupId>com.h2database</groupId>
@@ -1342,6 +1337,14 @@
         <groupId>org.apache.karaf.shell</groupId>
         <artifactId>org.apache.karaf.shell.console</artifactId>
         <version>${karaf.version}</version>
+      </dependency>
+      <!-- Aries' Blueprint version should be kept in sync to the version actually
+           used by our ${karaf[4].version} ... please bump this when increasing that.
+           TODO Find a smarter way to inherit this from a (TBD..) Karaf artifacts BOM! -->
+      <dependency>
+        <groupId>org.apache.aries.blueprint</groupId>
+        <artifactId>org.apache.aries.blueprint.core</artifactId>
+        <version>1.7.1</version>
       </dependency>
 
     </dependencies>
