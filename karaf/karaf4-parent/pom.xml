@@ -77,7 +77,11 @@
         <dependency>
             <groupId>org.apache.aries.quiesce</groupId>
             <artifactId>org.apache.aries.quiesce.api</artifactId>
-            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <!-- for https://bugs.opendaylight.org/show_bug.cgi?id=4290 -->
+            <artifactId>org.osgi.service.event</artifactId>
         </dependency>
 
         <!-- ODL Branding -->
