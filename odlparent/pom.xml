@@ -88,7 +88,6 @@
     <jacoco.version>0.7.7.201606060606</jacoco.version>
     <!-- Used in aaa, controller, coretutorials, integration/distribution, l2switch, lacp, lispflowmapping, netide,
          nic, openflowplugin, ovsdb, persistence, sfc, snbi, snmp4sdn?, sxp, topoprocessing, unimgr, vtn -->
-    <karaf.version>3.0.8</karaf.version>
     <karaf4.version>4.0.9</karaf4.version>
     <karaf4.plugin.version>4.0.9</karaf4.plugin.version>
     <!-- Used in lispflowmapping, snmp4sdn, vtn -->
@@ -1341,7 +1340,7 @@
       <dependency>
         <groupId>org.apache.karaf.shell</groupId>
         <artifactId>org.apache.karaf.shell.console</artifactId>
-        <version>${karaf.version}</version>
+        <version>${karaf4.version}</version>
       </dependency>
 
     </dependencies>
@@ -1630,7 +1629,7 @@
         <plugin>
           <groupId>org.apache.karaf.tooling</groupId>
           <artifactId>karaf-maven-plugin</artifactId>
-          <version>${karaf.version}</version>
+          <version>${karaf4.version}</version>
         </plugin>
 
         <plugin>

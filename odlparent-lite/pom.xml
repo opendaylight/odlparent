@@ -63,13 +63,6 @@
     </developer>
   </developers>
 
-  <prerequisites>
-    <!-- This is only used to prevent building with Maven < 3 and to appease
-         maven-dependency-plugin; our real Maven requirement is enforced by
-         the enforcer plugin. -->
-    <maven>3.0.5</maven>
-  </prerequisites>
-
   <properties>
     <nexusproxy>https://nexus.opendaylight.org/content</nexusproxy>
 

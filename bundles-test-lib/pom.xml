@@ -31,7 +31,7 @@
       <groupId>org.apache.karaf.bundle</groupId>
       <artifactId>org.apache.karaf.bundle.core</artifactId>
       <!-- karaf.version & karaf4.version are API compatible (for karaf.bundle.core) -->
-      <version>${karaf.version}</version>
+      <version>${karaf4.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>

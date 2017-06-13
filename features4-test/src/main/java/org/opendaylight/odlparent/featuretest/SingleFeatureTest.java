@@ -219,7 +219,7 @@ public class SingleFeatureTest {
 
     private String getKarafVersion() throws IOException {
         if (karafVersion == null) {
-            // We use a properties file to retrieve ${karaf.version}, instead of .versionAsInProject()
+            // We use a properties file to retrieve Karaf's version, instead of .versionAsInProject()
             // This avoids forcing all users to depend on Karaf in their POMs
             Properties singleFeatureTestProps = new Properties();
             try (InputStream singleFeatureTestInputStream = Thread.currentThread().getContextClassLoader()
