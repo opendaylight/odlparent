@@ -26,9 +26,7 @@
         <relativePath>../odlparent</relativePath>
     </parent>
 
-    <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>untested-single-feature-parent</artifactId>
-    <version>1.9.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
