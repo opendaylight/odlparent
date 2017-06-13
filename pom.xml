@@ -33,30 +33,23 @@
         <module>license</module>
 
         <module>bundles-test-lib</module>
-        <module>bundles-test</module>
         <module>bundles4-test</module>
-        <module>features-test</module>
         <module>features4-test</module>
 
         <!-- Karaf integration -->
         <module>karaf</module>
-        <module>karaf-plugin</module>
         <module>karaf4-plugin</module>
 
         <!-- Parent POMs -->
         <module>aggregator-parent</module>
         <module>bundle-parent</module>
-        <module>features-parent</module>
-        <module>single-feature3-parent</module>
         <module>untested-single-feature-parent</module>
         <module>single-feature-parent</module>
-        <module>feature3-repo-parent</module>
         <module>feature-repo-parent</module>
         <module>odlparent</module>
         <module>odlparent-lite</module>
 
         <!-- Features -->
-        <module>features</module>
         <module>features4</module>
 
         <!-- Artifacts -->
