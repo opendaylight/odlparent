@@ -9,7 +9,6 @@
   </parent>
 
   <artifactId>odl-license</artifactId>
-  <version>0.3.0-SNAPSHOT</version>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
 
   <!--

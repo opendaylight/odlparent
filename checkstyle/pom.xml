@@ -9,7 +9,6 @@
   </parent>
 
   <artifactId>checkstyle</artifactId>
-  <version>0.4.0-SNAPSHOT</version>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
 
   <!--
