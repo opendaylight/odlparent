@@ -1344,6 +1344,12 @@
         <version>${karaf.version}</version>
       </dependency>
 
+      <dependency>
+        <groupId>org.antlr</groupId>
+        <artifactId>antlr4-runtime</artifactId>
+        <version>4.7</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
@@ -1885,6 +1891,12 @@
               </goals>
             </execution>
           </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.antlr</groupId>
+          <artifactId>antlr4-maven-plugin</artifactId>
+          <version>4.7</version>
         </plugin>
       </plugins>
     </pluginManagement>
