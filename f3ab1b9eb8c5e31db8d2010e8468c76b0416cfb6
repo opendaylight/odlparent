@@ -16,6 +16,24 @@
       "revId": "f3ab1b9eb8c5e31db8d2010e8468c76b0416cfb6",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_a6ed0e8e",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-06-14T10:13:04Z",
+      "side": 0,
+      "message": "k (now raised separately in https://git.opendaylight.org/gerrit/#/c/58934/; but IMHO a bit of a waste of time to have a separate Gerrit for something so small?)",
+      "parentUuid": "1af78d9a_633158a2",
+      "revId": "f3ab1b9eb8c5e31db8d2010e8468c76b0416cfb6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
