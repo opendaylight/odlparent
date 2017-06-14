@@ -34,7 +34,7 @@
 
         <module>bundles-test-lib</module>
         <module>bundles4-test</module>
-        <module>features4-test</module>
+        <module>features-test</module>
 
         <!-- Karaf integration -->
         <module>karaf</module>
@@ -50,7 +50,7 @@
         <module>odlparent-lite</module>
 
         <!-- Features -->
-        <module>features4</module>
+        <module>features</module>
 
         <!-- Artifacts -->
         <module>odlparent-artifacts</module>
