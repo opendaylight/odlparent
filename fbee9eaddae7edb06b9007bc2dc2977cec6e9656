@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af78d9a_17e40a3a",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1381,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-06-14T14:34:58Z",
+      "side": 1,
+      "message": "This should remain as-is.",
+      "revId": "fbee9eaddae7edb06b9007bc2dc2977cec6e9656",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_77d0ee53",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1670,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-06-14T14:34:58Z",
+      "side": 1,
+      "message": "As above.",
+      "revId": "fbee9eaddae7edb06b9007bc2dc2977cec6e9656",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
