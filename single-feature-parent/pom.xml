@@ -43,7 +43,6 @@
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <properties>
-        <karaf.version>${karaf4.version}</karaf.version>
         <jacoco.skip>true</jacoco.skip>
         <skip.karaf.featureTest>false</skip.karaf.featureTest>
     </properties>
@@ -52,7 +51,7 @@
         <!-- Test the generated features.xml -->
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>features4-test</artifactId>
+            <artifactId>features-test</artifactId>
             <version>1.9.1-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
@@ -65,7 +64,7 @@
         <dependency>
             <groupId>org.apache.karaf.bundle</groupId>
             <artifactId>org.apache.karaf.bundle.core</artifactId>
-            <version>${karaf4.version}</version>
+            <version>${karaf.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- Force SLF4J to test scope -->
@@ -83,7 +82,7 @@
                 <version>${maven.surefire.version}</version>
                 <configuration>
                     <dependenciesToScan>
-                        <dependency>org.opendaylight.odlparent:features4-test</dependency>
+                        <dependency>org.opendaylight.odlparent:features-test</dependency>
                     </dependenciesToScan>
                     <additionalClasspathElements>
                         <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>

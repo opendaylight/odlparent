@@ -31,7 +31,6 @@
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <properties>
-        <karaf.version>${karaf4.version}</karaf.version>
         <checkDependencyChange>false</checkDependencyChange>
         <failOnDependencyChange>false</failOnDependencyChange>
     </properties>
@@ -47,7 +46,7 @@
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <version>${karaf4.plugin.version}</version>
+                <version>${karaf.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration combine.children="append">
                     <simplifyBundleDependencies>true</simplifyBundleDependencies>
