@@ -10,9 +10,6 @@
   <artifactId>opendaylight-karaf-empty</artifactId>
   <packaging>pom</packaging>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
-  <prerequisites>
-    <maven>3.1.1</maven>
-  </prerequisites>
   <dependencies>
     <dependency>
       <!-- scope is compile so all features (there is only one) are installed
