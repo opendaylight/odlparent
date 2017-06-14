@@ -1189,6 +1189,12 @@
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
+        <artifactId>pax-exam-container-forked</artifactId>
+        <version>${exam.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-container-karaf</artifactId>
         <version>${exam.version}</version>
         <scope>test</scope>
@@ -1197,6 +1203,31 @@
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-container-native</artifactId>
         <version>${exam.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.ops4j.pax.exam</groupId>
+        <artifactId>pax-exam-extender-service</artifactId>
+        <version>${exam.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.ops4j.pax.exam</groupId>
+        <artifactId>pax-exam-inject</artifactId>
+        <version>${exam.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.ops4j.pax.exam</groupId>
+        <artifactId>pax-exam-invoker-junit</artifactId>
+        <version>${exam.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.ops4j.pax.exam</groupId>
+        <artifactId>pax-exam-features</artifactId>
+        <version>${exam.version}</version>
+        <type>xml</type>
         <scope>test</scope>
       </dependency>
       <dependency>
