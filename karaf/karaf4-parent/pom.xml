@@ -92,7 +92,7 @@
         <!-- ODL configuration -->
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>opendaylight-karaf4-resources</artifactId>
+            <artifactId>opendaylight-karaf-resources</artifactId>
         </dependency>
     </dependencies>
 
@@ -146,7 +146,7 @@
                         <configuration>
                             <outputDirectory>${project.build.directory}/assembly</outputDirectory>
                             <groupId>org.opendaylight.odlparent</groupId>
-                            <includeArtifactIds>opendaylight-karaf4-resources</includeArtifactIds>
+                            <includeArtifactIds>opendaylight-karaf-resources</includeArtifactIds>
                             <excludes>META-INF\/**</excludes>
                             <excludeTransitive>true</excludeTransitive>
                             <ignorePermissions>false</ignorePermissions>
@@ -162,7 +162,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>org.opendaylight.odlparent</groupId>
-                                    <artifactId>opendaylight-karaf4-resources</artifactId>
+                                    <artifactId>opendaylight-karaf-resources</artifactId>
                                     <type>properties</type>
                                     <classifier>config</classifier>
                                     <overWrite>true</overWrite>

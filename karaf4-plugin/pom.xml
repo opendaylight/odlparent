@@ -57,7 +57,7 @@
     </dependency>
     <dependency>
       <groupId>org.opendaylight.odlparent</groupId>
-      <artifactId>features4-test</artifactId>
+      <artifactId>features-test</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
