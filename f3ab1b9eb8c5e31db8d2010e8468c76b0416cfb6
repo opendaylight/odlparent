@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af78d9a_633158a2",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-06-14T07:22:37Z",
+      "side": 0,
+      "message": "This is unrelated to the Karaf 3 removal.",
+      "revId": "f3ab1b9eb8c5e31db8d2010e8468c76b0416cfb6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}

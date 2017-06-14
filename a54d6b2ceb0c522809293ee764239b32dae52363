@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af78d9a_43037cb8",
+        "filename": "bundles-test-lib/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-06-14T07:22:37Z",
+      "side": 1,
+      "message": "Please adjust the comment here.",
+      "revId": "a54d6b2ceb0c522809293ee764239b32dae52363",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_c3264c68",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-06-14T07:22:37Z",
+      "side": 1,
+      "message": "You need to deal with this if you drop karaf.version.",
+      "revId": "a54d6b2ceb0c522809293ee764239b32dae52363",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
