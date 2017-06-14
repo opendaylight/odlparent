@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl4-akka-system-2.4">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl-akka-system-2.4">
     <feature version="0.0.0">
-        <feature prerequisite="false" dependency="false">odl4-akka-scala-2.11</feature>
+        <feature prerequisite="false" dependency="false">odl-akka-scala-2.11</feature>
         <bundle>mvn:com.typesafe.akka/akka-actor_2.11/2.4.18</bundle>
         <bundle>mvn:com.typesafe.akka/akka-osgi_2.11/2.4.18</bundle>
         <bundle>mvn:com.typesafe.akka/akka-slf4j_2.11/2.4.18</bundle>

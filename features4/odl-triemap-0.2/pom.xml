@@ -19,7 +19,7 @@
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl4-triemap-0.2</artifactId>
+    <artifactId>odl-triemap-0.2</artifactId>
     <version>1.9.0-SNAPSHOT</version>
 
     <packaging>feature</packaging>

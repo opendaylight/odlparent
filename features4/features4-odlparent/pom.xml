@@ -25,7 +25,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-netty-4</artifactId>
+            <artifactId>odl-netty-4</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
@@ -33,7 +33,7 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-guava-18</artifactId>
+            <artifactId>odl-guava-18</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
@@ -41,7 +41,7 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-guava-21</artifactId>
+            <artifactId>odl-guava-21</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
@@ -49,7 +49,7 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-lmax-3</artifactId>
+            <artifactId>odl-lmax-3</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
@@ -57,7 +57,7 @@
 
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl4-triemap-0.2</artifactId>
+            <artifactId>odl-triemap-0.2</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>

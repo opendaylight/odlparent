@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl4-akka-persistence-2.4">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl-akka-persistence-2.4">
     <feature version="0.0.0">
-        <feature prerequisite="false" dependency="false">odl4-akka-leveldb-0.7</feature>
-        <feature prerequisite="false" dependency="false">odl4-akka-system-2.4</feature>
+        <feature prerequisite="false" dependency="false">odl-akka-leveldb-0.7</feature>
+        <feature prerequisite="false" dependency="false">odl-akka-system-2.4</feature>
         <bundle>mvn:com.typesafe.akka/akka-persistence_2.11/2.4.18</bundle>
         <bundle>mvn:com.typesafe.akka/akka-protobuf_2.11/2.4.18</bundle>
     </feature>

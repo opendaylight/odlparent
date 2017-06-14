@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl4-netty-4">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl-netty-4">
     <feature version="0.0.0">
         <bundle>mvn:io.netty/netty-buffer/4.1.8.Final</bundle>
         <bundle>mvn:io.netty/netty-codec-http/4.1.8.Final</bundle>

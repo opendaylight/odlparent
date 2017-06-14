@@ -25,42 +25,42 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-akka-all</artifactId>
+            <artifactId>odl-akka-all</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-akka-scala-${scala.version}</artifactId>
+            <artifactId>odl-akka-scala-${scala.version}</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-akka-system-2.4</artifactId>
+            <artifactId>odl-akka-system-2.4</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-akka-clustering-2.4</artifactId>
+            <artifactId>odl-akka-clustering-2.4</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-akka-leveldb-0.7</artifactId>
+            <artifactId>odl-akka-leveldb-0.7</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl4-akka-persistence-2.4</artifactId>
+            <artifactId>odl-akka-persistence-2.4</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
