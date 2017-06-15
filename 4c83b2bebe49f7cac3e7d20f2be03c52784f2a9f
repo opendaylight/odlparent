@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af78d9a_fa479e1b",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-06-15T14:15:41Z",
+      "side": 1,
+      "message": "How about an inline comment here like:\n\n\u003c!-- When changing this version, adapt antlr4-maven-plugin (below) as well --\u003e",
+      "revId": "4c83b2bebe49f7cac3e7d20f2be03c52784f2a9f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_5a5512c5",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1898,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-06-15T14:15:41Z",
+      "side": 1,
+      "message": "How about an inline comment here like:\n\n\u003c!-- When changing this version, adapt antlr4-runtime (above) as well --\u003e",
+      "revId": "4c83b2bebe49f7cac3e7d20f2be03c52784f2a9f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
