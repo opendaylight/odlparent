@@ -362,6 +362,7 @@
             <skipIT>true</skipIT>
             <skipITs>true</skipITs>
             <skip.karaf.featureTest>true</skip.karaf.featureTest>
+            <skip.karaf4.featureTest>true</skip.karaf4.featureTest>
             <jacoco.skip>true</jacoco.skip>
             <maven.javadoc.skip>true</maven.javadoc.skip>
             <maven.source.skip>true</maven.source.skip>

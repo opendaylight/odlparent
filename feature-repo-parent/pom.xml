@@ -38,7 +38,7 @@
 
     <properties>
         <karaf.version>${karaf4.version}</karaf.version>
-        <skip.karaf.featureTest>false</skip.karaf.featureTest>
+        <skip.karaf4.featureTest>false</skip.karaf4.featureTest>
         <jacoco.skip>true</jacoco.skip>
     </properties>
 
@@ -69,7 +69,7 @@
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <skip>${skip.karaf.featureTest}</skip>
+                    <skip>${skip.karaf4.featureTest}</skip>
                     <dependenciesToScan>
                         <dependency>org.opendaylight.odlparent:features4-test</dependency>
                     </dependenciesToScan>
