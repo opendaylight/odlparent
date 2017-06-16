@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af78d9a_8f4e19c0",
+        "filename": "karaf/karaf-branding/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-06-16T14:17:53Z",
+      "side": 1,
+      "message": "it would probably be better for the future if we could just ditch the version here?  I saw it\u0027s dependencyManagement is defined in odlparent and not in odlparent-lite which is the parent of this artifact - but perhaps we should just move dependencyManagement for maven-bundle-plugin from odlparent up into odlparent-lite? Or at least the property for it?",
+      "revId": "8b75729917d81b8ab57c4b2c2393118a4232b304",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
