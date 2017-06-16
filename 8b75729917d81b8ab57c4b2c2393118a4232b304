@@ -16,6 +16,24 @@
       "revId": "8b75729917d81b8ab57c4b2c2393118a4232b304",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af78d9a_2fd8c5ee",
+        "filename": "karaf/karaf-branding/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-06-16T14:30:28Z",
+      "side": 1,
+      "message": "I think we discussed moving the management up in the past and decided against it, but we can revisit that of course. We really need to get rid of the property...",
+      "parentUuid": "1af78d9a_8f4e19c0",
+      "revId": "8b75729917d81b8ab57c4b2c2393118a4232b304",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
