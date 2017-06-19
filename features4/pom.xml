@@ -40,7 +40,6 @@
 
         <!-- General features -->
         <module>features4-odlparent</module>
-        <module>odl-guava-18</module>
         <module>odl-guava-22</module>
         <module>odl-lmax-3</module>
         <module>odl-netty-4</module>
