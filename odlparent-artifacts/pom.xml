@@ -211,13 +211,6 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-guava-18</artifactId>
-                <version>1.9.1-SNAPSHOT</version>
-                <classifier>features</classifier>
-                <type>xml</type>
-            </dependency>
-            <dependency>
-                <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-guava-22</artifactId>
                 <version>1.9.1-SNAPSHOT</version>
                 <classifier>features</classifier>
