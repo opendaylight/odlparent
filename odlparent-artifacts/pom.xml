@@ -89,13 +89,6 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-guava-18</artifactId>
-                <version>${project.version}</version>
-                <classifier>features</classifier>
-                <type>xml</type>
-            </dependency>
-            <dependency>
-                <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-guava-22</artifactId>
                 <version>${project.version}</version>
                 <classifier>features</classifier>
