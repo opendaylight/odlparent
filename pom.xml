@@ -38,7 +38,7 @@
 
         <!-- Karaf integration -->
         <module>karaf</module>
-        <module>karaf4-plugin</module>
+        <module>karaf-plugin</module>
 
         <!-- Parent POMs -->
         <module>aggregator-parent</module>
