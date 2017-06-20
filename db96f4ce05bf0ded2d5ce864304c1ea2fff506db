@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af78d9a_5b4b4ab0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-06-20T09:33:15Z",
+      "side": 1,
+      "message": "default framework implementation. I suspect switching from Equinox to Felix is going to be painful.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 20
+      },
+      "revId": "db96f4ce05bf0ded2d5ce864304c1ea2fff506db",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
