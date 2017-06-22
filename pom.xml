@@ -10,9 +10,9 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>aggregator-parent</artifactId>
+        <artifactId>odlparent-lite</artifactId>
         <version>4.0.0-SNAPSHOT</version>
-        <relativePath>aggregator-parent</relativePath>
+        <relativePath>odlparent-lite</relativePath>
     </parent>
 
     <artifactId>odlparent-aggregator</artifactId>
@@ -25,6 +25,11 @@
         <tag>HEAD</tag>
         <url>https://wiki.opendaylight.org/view/ODL_Root_Parent:Main</url>
     </scm>
+
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <maven.install.skip>true</maven.install.skip>
+    </properties>
 
     <modules>
         <!-- odlparent tools -->
@@ -43,7 +48,6 @@
         <module>karaf-util</module>
 
         <!-- Parent POMs -->
-        <module>aggregator-parent</module>
         <module>bundle-parent</module>
         <module>untested-single-feature-parent</module>
         <module>single-feature-parent</module>
