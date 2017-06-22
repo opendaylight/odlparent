@@ -13,14 +13,19 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>aggregator-parent</artifactId>
+        <artifactId>odlparent-lite</artifactId>
         <version>4.0.0-SNAPSHOT</version>
-        <relativePath>../aggregator-parent</relativePath>
+        <relativePath>../odlparent-lite</relativePath>
     </parent>
 
     <artifactId>features-aggregator</artifactId>
     <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+        <maven.install.skip>true</maven.install.skip>
+    </properties>
 
     <modules>
         <!-- Akka features -->

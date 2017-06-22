@@ -86,6 +86,12 @@
          and is required so that downstream users of the archetype-packaging extension can use this (and get the same version
          as the maven-archetype-plugin), because there is no "extensionManagement" in Maven -->
     <maven.archetype.plugin.version>3.0.1</maven.archetype.plugin.version>
+
+    <!-- This property allows deployments to be skipped in child modules -->
+    <maven.deploy.skip>false</maven.deploy.skip>
+
+    <!-- This property allows installations to be skipped in child modules -->
+    <maven.install.skip>false</maven.install.skip>
   </properties>
 
   <build>
@@ -106,6 +112,9 @@
         <plugin>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>2.8.2</version>
+          <configuration>
+            <skip>${maven.deploy.skip}</skip>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-help-plugin</artifactId>
@@ -114,6 +123,9 @@
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
+          <configuration>
+            <skip>${maven.install.skip}</skip>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
