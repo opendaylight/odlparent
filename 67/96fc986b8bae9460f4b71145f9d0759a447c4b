@@ -1,0 +1,7 @@
+Code-Review+2: Robert Varga <nite@hq.sk>
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Submitted-by: Thanh Ha <thanh.ha@linuxfoundation.org>
+Submitted-at: Thu, 29 Jun 2017 16:28:54 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/59699
+Project: odlparent
+Branch: refs/heads/2.0.x
