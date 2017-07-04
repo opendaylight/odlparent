@@ -210,6 +210,35 @@
                 </executions>
             </plugin>
             <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>fix-permissions</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <chmod perm="755">
+                                    <fileset dir="${project.build.directory}/assembly/bin">
+                                        <!-- Ensure that all the shell scripts are executable -->
+                                        <include name="client"/>
+                                        <include name="instance"/>
+                                        <include name="karaf"/>
+                                        <include name="setenv"/>
+                                        <include name="shell"/>
+                                        <include name="start"/>
+                                        <include name="status"/>
+                                        <include name="stop"/>
+                                    </fileset>
+                                </chmod>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
                 <version>${karaf.plugin.version}</version>
