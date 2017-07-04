@@ -83,6 +83,10 @@
             <!-- for https://bugs.opendaylight.org/show_bug.cgi?id=4290 -->
             <artifactId>org.osgi.service.event</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+        </dependency>
 
         <!-- ODL Branding -->
         <dependency>
@@ -103,6 +107,23 @@
                 <configuration>
                     <skip>true</skip>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>karaf-plugin</artifactId>
+                <version>2.1.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>populate-local-repo</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>populate-local-repo</goal>
+                        </goals>
+                        <configuration>
+                            <localRepo>${project.build.directory}/assembly/system</localRepo>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -161,23 +182,6 @@
                             </artifactItems>
                             <overWriteReleases>true</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>karaf-plugin</artifactId>
-                <version>2.1.0-SNAPSHOT</version>
-                <executions>
-                    <execution>
-                        <id>populate-local-repo</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>populate-local-repo</goal>
-                        </goals>
-                        <configuration>
-                            <localRepo>${project.build.directory}/assembly/system</localRepo>
                         </configuration>
                     </execution>
                 </executions>
