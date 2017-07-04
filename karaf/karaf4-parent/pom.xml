@@ -105,6 +105,23 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>karaf-plugin</artifactId>
+                <version>2.1.0-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>populate-local-repo</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>populate-local-repo</goal>
+                        </goals>
+                        <configuration>
+                            <localRepo>${project.build.directory}/assembly/system</localRepo>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
@@ -161,23 +178,6 @@
                             </artifactItems>
                             <overWriteReleases>true</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>karaf-plugin</artifactId>
-                <version>2.1.0-SNAPSHOT</version>
-                <executions>
-                    <execution>
-                        <id>populate-local-repo</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>populate-local-repo</goal>
-                        </goals>
-                        <configuration>
-                            <localRepo>${project.build.directory}/assembly/system</localRepo>
                         </configuration>
                     </execution>
                 </executions>
