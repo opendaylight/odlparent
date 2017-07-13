@@ -27,6 +27,8 @@
     <properties>
         <!-- Projects can override this to add their own boot feature -->
         <karaf.localFeature>standard</karaf.localFeature>
+        <karaf.archiveZip>true</karaf.archiveZip>
+        <karaf.archiveTagGz>true</karaf.archiveTagGz>
     </properties>
 
     <dependencyManagement>
@@ -272,6 +274,8 @@
                         <feature>${karaf.localFeature}</feature>
                     </bootFeatures>
                     <javase>1.8</javase>
+                    <archiveTarGz>${karaf.archiveTarGz}</archiveTarGz>
+                    <archiveZip>${karaf.archiveZip}</archiveZip>
                 </configuration>
             </plugin>
         </plugins>
