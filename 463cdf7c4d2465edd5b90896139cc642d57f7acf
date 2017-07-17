@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da2a55be_7378cb8f",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-07-17T07:58:59Z",
+      "side": 1,
+      "message": "Could this go closer to the existing grizzly2 dependency, say just after the Jersey 1.17 dependencies?",
+      "revId": "463cdf7c4d2465edd5b90896139cc642d57f7acf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_f33cbbc1",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-07-17T07:58:59Z",
+      "side": 1,
+      "message": "This one’s already in dependency management, line 356 (but with a more recent version).",
+      "revId": "463cdf7c4d2465edd5b90896139cc642d57f7acf",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
