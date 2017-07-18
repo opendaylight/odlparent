@@ -22,6 +22,30 @@
       "revId": "81a307e360d1cdee5f40042ed02942ffa7a03371",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da2a55be_a235c6dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-07-18T12:47:52Z",
+      "side": 1,
+      "message": "That’s a good point. See https://git.opendaylight.org/gerrit/59388 too...",
+      "parentUuid": "da2a55be_df01b507",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 60
+      },
+      "revId": "81a307e360d1cdee5f40042ed02942ffa7a03371",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
