@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da2a55be_df01b507",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-07-18T12:30:23Z",
+      "side": 1,
+      "message": "Is this even recommended for aggregators?\n\nMy vague feeling after reading Maven Centeral Requirements [0] is they wish the software to be re-buildable easily by users.\nIf they want source jars in there, I guess they will not like us for hiding our aggregators.\n\n[0] http://central.sonatype.org/pages/requirements.html",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 60
+      },
+      "revId": "81a307e360d1cdee5f40042ed02942ffa7a03371",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
