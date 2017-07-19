@@ -209,7 +209,7 @@ public class SingleFeatureTest {
             propagateSystemProperty(BUNDLES_DIAG_FORCE_PROP),
             propagateSystemProperty(BUNDLES_DIAG_TIMEOUT_PROP),
             // Needed for Agrona/aeron.io
-            systemPackages("com.sun.media.sound", "sun.nio.ch"),
+            systemPackages("com.sun.media.sound", "sun.net", "sun.nio.ch"),
         };
     }
 

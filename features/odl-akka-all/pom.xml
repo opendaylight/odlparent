@@ -35,14 +35,14 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-system-2.4</artifactId>
+            <artifactId>odl-akka-system-2.5</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-clustering-2.4</artifactId>
+            <artifactId>odl-akka-clustering-2.5</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
@@ -56,7 +56,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-persistence-2.4</artifactId>
+            <artifactId>odl-akka-persistence-2.5</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
