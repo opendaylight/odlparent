@@ -43,7 +43,6 @@
         <module>odl-guava-22</module>
         <module>odl-lmax-3</module>
         <module>odl-netty-4</module>
-        <module>odl-triemap-0.2</module>
 
         <!-- Test features -->
     </modules>

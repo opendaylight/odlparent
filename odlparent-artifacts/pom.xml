@@ -108,13 +108,6 @@
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
-            <dependency>
-                <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-triemap-0.2</artifactId>
-                <version>${project.version}</version>
-                <classifier>features</classifier>
-                <type>xml</type>
-            </dependency>
 
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
