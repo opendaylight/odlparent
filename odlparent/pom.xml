@@ -420,13 +420,9 @@
       </dependency>
       <dependency>
         <groupId>org.apache.shiro</groupId>
-        <artifactId>shiro-core</artifactId>
-        <version>1.3.2</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.shiro</groupId>
-        <artifactId>shiro-web</artifactId>
-        <version>1.3.2</version>
+        <artifactId>shiro-features</artifactId>
+        <version>1.4.0</version>
+        <type>pom</type>
       </dependency>
 
       <!-- Plugin integration -->
