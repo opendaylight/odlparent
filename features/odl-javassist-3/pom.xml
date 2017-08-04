@@ -19,11 +19,11 @@
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl-netty-4</artifactId>
+    <artifactId>odl-javassist-3</artifactId>
     <version>2.0.3-SNAPSHOT</version>
     <packaging>feature</packaging>
 
-    <name>OpenDaylight :: Netty</name>
+    <name>OpenDaylight :: Javassist</name>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>
@@ -32,27 +32,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-codec-http</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-handler</artifactId>
-        </dependency>
-        <!-- Here we need to depend on all available native epoll implementations; we can't limit ourselves to the build
-        platform and we can't require the build platform to have an implementation (e.g. OS X) -->
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-transport-native-epoll</artifactId>
-            <classifier>linux-x86_64</classifier>
-        </dependency>
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-javassist-3</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
         </dependency>
     </dependencies>
 
