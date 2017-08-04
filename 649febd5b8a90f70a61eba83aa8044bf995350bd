@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba1f61a0_c473e1af",
+        "filename": "features/odl-netty-4/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-08-04T15:11:35Z",
+      "side": 1,
+      "message": "Might be worth adding a comment here to explain why we make odl-netty-4 depend on odl-javassist-3 (it’s in the commit message, but having it in the code makes it harder to miss).",
+      "revId": "649febd5b8a90f70a61eba83aa8044bf995350bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
