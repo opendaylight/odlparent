@@ -28,7 +28,7 @@
         <!-- Projects can override this to add their own boot feature -->
         <karaf.localFeature>standard</karaf.localFeature>
         <karaf.archiveZip>true</karaf.archiveZip>
-        <karaf.archiveTagGz>true</karaf.archiveTagGz>
+        <karaf.archiveTarGz>true</karaf.archiveTarGz>
     </properties>
 
     <dependencyManagement>
