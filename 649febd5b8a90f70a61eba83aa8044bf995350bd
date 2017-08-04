@@ -16,6 +16,24 @@
       "revId": "649febd5b8a90f70a61eba83aa8044bf995350bd",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_c481214c",
+        "filename": "features/odl-netty-4/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-08-04T15:18:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba1f61a0_c473e1af",
+      "revId": "649febd5b8a90f70a61eba83aa8044bf995350bd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
