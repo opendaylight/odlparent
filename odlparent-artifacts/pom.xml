@@ -30,6 +30,13 @@
                 <version>${project.version}</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>opendaylight-karaf-empty</artifactId>
+                <version>${project.version}</version>
+                <scope>provided</scope>
+                <type>zip</type>
+            </dependency>
 
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
