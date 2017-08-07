@@ -70,6 +70,10 @@ public class SingleFeatureTest {
     private static final String BUNDLES_DIAG_FORCE_PROP = "sft.diag.force";
     private static final String BUNDLES_DIAG_TIMEOUT_PROP = "sft.diag.timeout";
 
+    // Maximum heap size
+    private static final String HEAP_MAX_PROP = "sft.heap.max";
+    private static final String DEFAULT_HEAP_MAX = "2g";
+
     private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
             "log4j.logger.org.opendaylight.odlparent.featuretest";
     private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
@@ -125,7 +129,7 @@ public class SingleFeatureTest {
     private String karafDistroVersion;
 
     @ProbeBuilder
-    public TestProbeBuilder probeConfiguration(TestProbeBuilder probe) {
+    public TestProbeBuilder probeConfiguration(final TestProbeBuilder probe) {
         // add this to test Karaf Commands, according to green Karaf book
         // also see http://iocanel.blogspot.ch/2012/01/advanced-integration-testing-with-pax.html
         // probe.setHeader(org.osgi.framework.Constants.DYNAMICIMPORT_PACKAGE, "*;status=provisional");
@@ -152,9 +156,11 @@ public class SingleFeatureTest {
      */
     @Configuration
     public Option[] config() throws IOException {
+        final String envMaxHeap = System.getenv(HEAP_MAX_PROP);
+        final String maxHeap = envMaxHeap != null ? envMaxHeap : DEFAULT_HEAP_MAX;
+
         return new Option[] {
-            // TODO: Find a way to inherit memory limits from Maven options.
-            new VMOption("-Xmx2g"),
+            new VMOption("-Xmx" + maxHeap),
             new VMOption("-XX:+HeapDumpOnOutOfMemoryError"),
             new VMOption("-XX:OnOutOfMemoryError=\"kill -3 %p\""),
             // inspired by org.apache.commons.lang.SystemUtils
@@ -213,7 +219,7 @@ public class SingleFeatureTest {
         };
     }
 
-    private String getNewJFRFile() throws IOException {
+    private static String getNewJFRFile() throws IOException {
         return File.createTempFile("SingleFeatureTest-Karaf-JavaFlightRecorder", ".jfr").getAbsolutePath();
     }
 
