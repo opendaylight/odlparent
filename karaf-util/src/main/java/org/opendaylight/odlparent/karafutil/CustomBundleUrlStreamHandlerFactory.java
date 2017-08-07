@@ -19,7 +19,7 @@
  * limitations under the License.
  */
 
-package org.opendaylight.odlparent.featuretest;
+package org.opendaylight.odlparent.karafutil;
 
 import java.net.URLStreamHandler;
 import java.net.URLStreamHandlerFactory;
