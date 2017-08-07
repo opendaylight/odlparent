@@ -53,6 +53,11 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>org.opendaylight.odlparent</groupId>
+      <artifactId>karaf-util</artifactId>
+      <version>${project.version}</version>
+    </dependency>
     <!-- BEWARE of adding additional dependencies here...
          It will cause weird issues e.g. in integration/distribution/features/repos/distribution -->
     <dependency>
