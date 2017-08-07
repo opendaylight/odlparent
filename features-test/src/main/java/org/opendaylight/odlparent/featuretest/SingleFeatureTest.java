@@ -154,7 +154,7 @@ public class SingleFeatureTest {
     public Option[] config() throws IOException {
         return new Option[] {
             // TODO: Find a way to inherit memory limits from Maven options.
-            new VMOption("-Xmx2g"),
+            new VMOption("-Xmx4g"),
             new VMOption("-XX:+HeapDumpOnOutOfMemoryError"),
             new VMOption("-XX:OnOutOfMemoryError=\"kill -3 %p\""),
             // inspired by org.apache.commons.lang.SystemUtils
