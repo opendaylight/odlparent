@@ -95,9 +95,8 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.karaf</groupId>
-            <artifactId>apache-karaf</artifactId>
-            <version>${karaf.version}</version>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>opendaylight-karaf-empty</artifactId>
             <type>zip</type>
         </dependency>
         <!-- BEWARE of adding additional dependencies here...
