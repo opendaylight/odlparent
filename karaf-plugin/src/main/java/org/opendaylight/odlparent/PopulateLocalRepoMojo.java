@@ -38,7 +38,7 @@ import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
-import org.opendaylight.odlparent.featuretest.CustomBundleUrlStreamHandlerFactory;
+import org.opendaylight.odlparent.karafutil.CustomBundleUrlStreamHandlerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
