@@ -162,7 +162,6 @@ public class SingleFeatureTest {
         return new Option[] {
             new VMOption("-Xmx" + maxHeap),
             new VMOption("-XX:+HeapDumpOnOutOfMemoryError"),
-            new VMOption("-XX:OnOutOfMemoryError=\"kill -3 %p\""),
             // inspired by org.apache.commons.lang.SystemUtils
             when(System.getProperty("os.name").toLowerCase().startsWith("linux")).useOptions(
                 // This prevents low entropy issues on Linux to affect Java random numbers
