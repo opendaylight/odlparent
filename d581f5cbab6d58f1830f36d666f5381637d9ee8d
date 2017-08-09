@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba1f61a0_50a7954f",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-08-09T20:40:58Z",
+      "side": 1,
+      "message": "try a run with this bit ditched.",
+      "range": {
+        "startLine": 160,
+        "startChar": 12,
+        "endLine": 160,
+        "endChar": 66
+      },
+      "revId": "d581f5cbab6d58f1830f36d666f5381637d9ee8d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
