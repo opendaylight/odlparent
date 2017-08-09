@@ -22,6 +22,30 @@
       "revId": "511b6a554cc010ae78ce870c6a526f4aceb375ac",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_3a95a240",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2046
+      },
+      "writtenOn": "2017-08-09T15:19:02Z",
+      "side": 1,
+      "message": "I agree, but that is above my current Java skill level.",
+      "parentUuid": "ba1f61a0_9fd80055",
+      "range": {
+        "startLine": 156,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 35
+      },
+      "revId": "511b6a554cc010ae78ce870c6a526f4aceb375ac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
