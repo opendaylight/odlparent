@@ -156,7 +156,7 @@ public class SingleFeatureTest {
      */
     @Configuration
     public Option[] config() throws IOException {
-        final String envMaxHeap = System.getenv(HEAP_MAX_PROP);
+        final String envMaxHeap = System.getProperty(HEAP_MAX_PROP);
         final String maxHeap = envMaxHeap != null ? envMaxHeap : DEFAULT_HEAP_MAX;
 
         return new Option[] {
