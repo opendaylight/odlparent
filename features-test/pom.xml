@@ -96,6 +96,11 @@
         <!-- BEWARE of adding additional dependencies here...
              It will cause weird issues e.g. in integration/distribution/features/repos/distribution -->
         <dependency>
+          <groupId>org.opendaylight.odlparent</groupId>
+          <artifactId>karaf-util</artifactId>
+          <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>bundles4-test</artifactId>
             <version>${project.version}</version>
