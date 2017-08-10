@@ -106,7 +106,7 @@
 
     <akka.version>2.5.3</akka.version>
     <scala.version>2.12</scala.version>
-    <scala.micro.version>2</scala.micro.version>
+    <scala.micro.version>3</scala.micro.version>
     <leveldb.version>0.7</leveldb.version>
 
     <!-- Default Sonar configuration -->
@@ -1132,7 +1132,7 @@
       <dependency>
         <groupId>org.scala-lang.modules</groupId>
         <artifactId>scala-parser-combinators_${scala.version}</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.6</version>
       </dependency>
       <dependency>
         <groupId>org.iq80.leveldb</groupId>
