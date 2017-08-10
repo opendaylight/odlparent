@@ -37,6 +37,7 @@
         <module>findbugs</module>
         <module>spotbugs</module>
         <module>license</module>
+        <module>log4j4tests</module>
 
         <!-- Features test (SFT) -->
         <module>bundles-test-lib</module>

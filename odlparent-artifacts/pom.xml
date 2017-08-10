@@ -17,6 +17,14 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+              <groupId>org.opendaylight.odlparent</groupId>
+              <artifactId>log4j4tests</artifactId>
+              <!-- Do NOT use ${project.version} here, as this is a default dependency,
+                   so under another parent POM, it would change and break -->
+              <version>4.0.0-SNAPSHOT</version>
+              <scope>test</scope>
+            </dependency>
             <!-- ODL Branding -->
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>

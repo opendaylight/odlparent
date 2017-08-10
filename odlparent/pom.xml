@@ -1060,11 +1060,21 @@
     </dependency>
 
     <!--
-          Testing output should be routed through slf4j-simple.
+          Testing output should be routed through log4j (NOT slf4j-simple, so that we can capture output).
     -->
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.opendaylight.odlparent</groupId>
+      <artifactId>log4j4tests</artifactId>
       <scope>test</scope>
     </dependency>
 
