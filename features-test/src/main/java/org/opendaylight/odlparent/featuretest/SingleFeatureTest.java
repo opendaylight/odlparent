@@ -74,6 +74,10 @@ public class SingleFeatureTest {
     private static final String HEAP_MAX_PROP = "sft.heap.max";
     private static final String DEFAULT_HEAP_MAX = "2g";
 
+    // Path for placing heap dump file.
+    private static final String HEAP_DUMP_PATH_PROP = "sft.heap.dump.path";
+    private static final String DEFAULT_HEAP_DUMP_PATH = "/dev/null";
+
     private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
             "log4j.logger.org.opendaylight.odlparent.featuretest";
     private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
@@ -158,11 +162,13 @@ public class SingleFeatureTest {
     public Option[] config() throws IOException {
         final String envMaxHeap = System.getenv(HEAP_MAX_PROP);
         final String maxHeap = envMaxHeap != null ? envMaxHeap : DEFAULT_HEAP_MAX;
+        final String envHeapDumpPath = System.getenv(HEAP_DUMP_PATH_PROP);
+        final String heapDumpPath = envHeapDumpPath != null ? envHeapDumpPath : DEFAULT_HEAP_DUMP_PATH;
 
         return new Option[] {
             new VMOption("-Xmx" + maxHeap),
             new VMOption("-XX:+HeapDumpOnOutOfMemoryError"),
-            new VMOption("-XX:OnOutOfMemoryError=\"kill -3 %p\""),
+            new VMOption("-XX:HeapDumpPath=" + heapDumpPath),
             // inspired by org.apache.commons.lang.SystemUtils
             when(System.getProperty("os.name").toLowerCase().startsWith("linux")).useOptions(
                 // This prevents low entropy issues on Linux to affect Java random numbers
