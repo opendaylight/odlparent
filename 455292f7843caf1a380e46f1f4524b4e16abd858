@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba1f61a0_9103c50e",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1441,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-08-13T18:07:55Z",
+      "side": 1,
+      "message": "should be in -artifacts",
+      "range": {
+        "startLine": 1439,
+        "startChar": 0,
+        "endLine": 1441,
+        "endChar": 39
+      },
+      "revId": "455292f7843caf1a380e46f1f4524b4e16abd858",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
