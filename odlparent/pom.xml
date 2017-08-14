@@ -1375,6 +1375,23 @@
         <version>3.1.2</version>
       </dependency>
 
+      <!-- jung, a graph library -->
+      <dependency>
+        <groupId>net.sf.jung</groupId>
+        <artifactId>jung-api</artifactId>
+        <version>2.1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.jung</groupId>
+        <artifactId>jung-algorithms</artifactId>
+        <version>2.1.1</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.jung</groupId>
+        <artifactId>jung-graph-impl</artifactId>
+        <version>2.1.1</version>
+      </dependency>
+
       <!-- Karaf console support -->
       <dependency>
         <groupId>org.apache.karaf.shell</groupId>
