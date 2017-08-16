@@ -42,6 +42,9 @@ local.properties
 # TeXlipse plugin
 .texlipse
 
+# FindBugs Eclipse plugin
+.fbExcludeFilterFile
+
 
 ### https://raw.github.com/github/gitignore/master/Global/jetbrains.gitignore
 
