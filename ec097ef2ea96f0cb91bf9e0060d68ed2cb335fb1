@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba1f61a0_3cc8d721",
+        "filename": "checkstyle/src/main/resources/odl_checks.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-08-17T22:02:06Z",
+      "side": 1,
+      "message": "I am not sure I agree with this check. What the example of antipattern fails to take into account is:\n\ncatch (RuntimeException e) {\n    LOG.debug(\"Failed to do {} with {}, propagating\", foo, bar, e);\n    throw e;\n}\n\ne.g. the log message is disabled by default and we expect the caller to handle the exception (somehow). It provides useful context in the case the caller does not (and leads to thread death, at which point you have only the exception and no further context). Not doing the debug will still point finger at the caller, but the context provided by that log message will be lost.",
+      "range": {
+        "startLine": 258,
+        "startChar": 65,
+        "endLine": 258,
+        "endChar": 86
+      },
+      "revId": "ec097ef2ea96f0cb91bf9e0060d68ed2cb335fb1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
