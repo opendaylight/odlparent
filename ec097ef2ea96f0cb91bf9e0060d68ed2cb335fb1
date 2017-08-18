@@ -22,6 +22,30 @@
       "revId": "ec097ef2ea96f0cb91bf9e0060d68ed2cb335fb1",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_ac3c96e3",
+        "filename": "checkstyle/src/main/resources/odl_checks.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-08-18T14:29:34Z",
+      "side": 1,
+      "message": "Is there any other situation where you’d want to log and throw? It seems to me we could enable this rule and add exceptions to last-chance handlers.",
+      "parentUuid": "ba1f61a0_3cc8d721",
+      "range": {
+        "startLine": 258,
+        "startChar": 65,
+        "endLine": 258,
+        "endChar": 86
+      },
+      "revId": "ec097ef2ea96f0cb91bf9e0060d68ed2cb335fb1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
