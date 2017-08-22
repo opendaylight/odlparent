@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba1f61a0_b3f223d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-08-22T11:11:28Z",
+      "side": 1,
+      "message": "Do you know / would you be willing to spend a cycle to document on https://wiki.opendaylight.org/view/BestPractices/Coding_Guidelines how we could let projects \"opt in\" to ENFORCE error prone, and FAIL for violations? \n\nFTR we are now doing for Checkstyle in many many projects (real success story!) and have simple how to doc for the same with FindBugs (much less adopted, unfortunately; likely cauz it\u0027s \"hard work\" to get a project to pass, as a lot of message to manually review; hopefully ErrorProne is better).\n\nPersonally I LOVE this and would *WANT* to make at least the projects I\u0027m more closely involved in, such as infrautils and genius, not just fill up the log (nobody reads that!) but actually actionably enforce it.",
+      "revId": "235d5966aed00177c56a08f7ab2966fd243787c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_9316ffef",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1494,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-08-22T11:11:28Z",
+      "side": 1,
+      "message": "seems to be virtually identical to https://git.opendaylight.org/gerrit/#/c/58762/ - Abandon that one, and let\u0027s focus on this on here?",
+      "revId": "235d5966aed00177c56a08f7ab2966fd243787c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_f3d49b21",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1517,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-08-22T11:11:28Z",
+      "side": 1,
+      "message": "let\u0027s straight go for the latest 2.1.0 instead of this older 2.0.21 ?",
+      "revId": "235d5966aed00177c56a08f7ab2966fd243787c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
