@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba1f61a0_d386b764",
+        "filename": "checkstyle/src/main/resources/odl_checks.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-08-22T10:47:23Z",
+      "side": 1,
+      "message": "given that the discussion we\u0027re having here (below) is only about EitherLogOrThrowCheck, but there doesn\u0027t seem to be any objection to AvoidHidingCauseExceptionCheck - let me split this change into two, see https://git.opendaylight.org/gerrit/#/c/62145/ for AvoidHidingCauseExceptionCheck (I\u0027ll remove this line here), and let us focus on AvoidHidingCauseExceptionCheck here.",
+      "revId": "ec097ef2ea96f0cb91bf9e0060d68ed2cb335fb1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba1f61a0_3cc8d721",
         "filename": "checkstyle/src/main/resources/odl_checks.xml",
         "patchSetId": 4
@@ -37,6 +54,30 @@
       "side": 1,
       "message": "Is there any other situation where you’d want to log and throw? It seems to me we could enable this rule and add exceptions to last-chance handlers.",
       "parentUuid": "ba1f61a0_3cc8d721",
+      "range": {
+        "startLine": 258,
+        "startChar": 65,
+        "endLine": 258,
+        "endChar": 86
+      },
+      "revId": "ec097ef2ea96f0cb91bf9e0060d68ed2cb335fb1",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba1f61a0_13aa0fd4",
+        "filename": "checkstyle/src/main/resources/odl_checks.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-08-22T10:47:23Z",
+      "side": 1,
+      "message": "@Robert, typically if I thought foot \u0026 bar where relevant to understand the root cause of the problem, then I think I would throw new SomeException(\"Failed to do \" + foo + \" with \" + bar, e) instead of your LOG.debug(..., e) and throw e;\n\nAlso re. the \"in the case the caller does not (and leads to thread death, at which point you have only the exception and no further context\" problem (I know what you mean) in mind really is another larger problem, which we should solve, but which should not let us prevent enabling this rule here.  To solve that problem, we need to (a) hunt down ALL usages of thread factories, and make ALL of them use the setUncaughtExceptionHandler().. how do we do this? Just grep all (kernel project) code? Any volunteers?  Or is there any way we could enforce it?  FYI there are some IMHO neat utilities in infrautils around this now, see the ThreadFactoryProvider or directly the LoggingThreadUncaughtExceptionHandler, which we could use use; and (b) we need to make sure that nobody just ignores returned Future (or CompletionStage, and others..) - how? FindBugs, and/or errorprone, and @CheckReturnValue ?  How can we get started to become more serious about this, everywhere?\n\nI\u0027m with Stephen, and think this is one of those 20/80% kind of discussions - the rule is useful in many cases - and there will be some rare cases where you\u0027ll consciosuly want to use a @SuppressWarnings(\"checkstyle:EitherLogOrThrowCheck\") - which is fine, exceptionally.",
+      "parentUuid": "ba1f61a0_ac3c96e3",
       "range": {
         "startLine": 258,
         "startChar": 65,
