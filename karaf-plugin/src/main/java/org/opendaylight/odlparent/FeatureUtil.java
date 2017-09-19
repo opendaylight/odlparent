@@ -230,10 +230,20 @@ public final class FeatureUtil {
      * @throws FileNotFoundException if a file is missing.
      */
     public static Features readFeature(Artifact artifact) throws FileNotFoundException {
-        File file = artifact.getFile();
+        return readFeature(artifact.getFile());
+    }
+
+    /**
+     * Unmarshal the features in the given file.
+     *
+     * @param file The file.
+     * @return The features.
+     * @throws FileNotFoundException if a file is missing.
+     */
+    public static Features readFeature(File file) throws FileNotFoundException {
         FileInputStream stream = new FileInputStream(file);
         Features result = JaxbUtil.unmarshal(file.toURI().toString(), stream, false);
-        LOG.trace("readFeature({}) returns {} without resolving first", artifact, result.getName());
+        LOG.trace("readFeature({}) returns {} without resolving first", file, result.getName());
         return result;
     }
 
