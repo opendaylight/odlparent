@@ -105,8 +105,6 @@
     <osgi.core.version>5.0.0</osgi.core.version>
 
     <akka.version>2.5.4</akka.version>
-    <scala.version>2.12</scala.version>
-    <scala.micro.version>3</scala.micro.version>
     <leveldb.version>0.7</leveldb.version>
 
     <!-- Default Sonar configuration -->
@@ -989,74 +987,74 @@
       <!-- Akka -->
       <dependency>
         <groupId>com.typesafe</groupId>
-        <artifactId>ssl-config-akka_${scala.version}</artifactId>
+        <artifactId>ssl-config-akka_2.12</artifactId>
         <version>0.2.1</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe</groupId>
-        <artifactId>ssl-config-core_${scala.version}</artifactId>
+        <artifactId>ssl-config-core_2.12</artifactId>
         <version>0.2.1</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-actor_${scala.version}</artifactId>
+        <artifactId>akka-actor_2.12</artifactId>
         <version>${akka.version}</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-cluster_${scala.version}</artifactId>
+        <artifactId>akka-cluster_2.12</artifactId>
         <version>${akka.version}</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-osgi_${scala.version}</artifactId>
+        <artifactId>akka-osgi_2.12</artifactId>
         <version>${akka.version}</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-persistence_${scala.version}</artifactId>
+        <artifactId>akka-persistence_2.12</artifactId>
         <version>${akka.version}</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-persistence-tck_${scala.version}</artifactId>
+        <artifactId>akka-persistence-tck_2.12</artifactId>
         <version>${akka.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-protobuf_${scala.version}</artifactId>
+        <artifactId>akka-protobuf_2.12</artifactId>
         <version>${akka.version}</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-remote_${scala.version}</artifactId>
+        <artifactId>akka-remote_2.12</artifactId>
         <version>${akka.version}</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-slf4j_${scala.version}</artifactId>
+        <artifactId>akka-slf4j_2.12</artifactId>
         <version>${akka.version}</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-stream_${scala.version}</artifactId>
+        <artifactId>akka-stream_2.12</artifactId>
         <version>${akka.version}</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
-        <artifactId>akka-testkit_${scala.version}</artifactId>
+        <artifactId>akka-testkit_2.12</artifactId>
         <version>${akka.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.scala-lang.modules</groupId>
-        <artifactId>scala-java8-compat_${scala.version}</artifactId>
+        <artifactId>scala-java8-compat_2.12</artifactId>
         <version>0.8.0</version>
       </dependency>
       <dependency>
         <groupId>org.scala-lang.modules</groupId>
-        <artifactId>scala-parser-combinators_${scala.version}</artifactId>
+        <artifactId>scala-parser-combinators_2.12</artifactId>
         <version>1.0.6</version>
       </dependency>
       <dependency>
@@ -1101,12 +1099,12 @@
       <dependency>
         <groupId>org.scala-lang</groupId>
         <artifactId>scala-library</artifactId>
-        <version>${scala.version}.${scala.micro.version}</version>
+        <version>2.12.3</version>
       </dependency>
       <dependency>
         <groupId>org.scala-lang</groupId>
         <artifactId>scala-reflect</artifactId>
-        <version>${scala.version}.${scala.micro.version}</version>
+        <version>2.12.3</version>
       </dependency>
 
       <!-- LMAX Disruptor -->

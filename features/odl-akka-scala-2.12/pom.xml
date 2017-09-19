@@ -41,7 +41,7 @@
         </dependency>
         <dependency>
             <groupId>org.scala-lang.modules</groupId>
-            <artifactId>scala-java8-compat_${scala.version}</artifactId>
+            <artifactId>scala-java8-compat_2.12</artifactId>
         </dependency>
     </dependencies>
 
