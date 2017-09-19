@@ -1,0 +1,31 @@
+--- /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/bin/inc.orig	2017-09-19 11:49:03.217548319 +0200
++++ /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/bin/inc	2017-09-19 11:50:32.797822567 +0200
+@@ -257,6 +257,7 @@
+     fi
+ 
+     DEFAULT_JAVA_OPTS="-Xms${JAVA_MIN_MEM} -Xmx${JAVA_MAX_MEM} -XX:+UnlockDiagnosticVMOptions "
++    DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError"
+ 
+     #Set the JVM_VENDOR specific JVM flags
+     if [ "${JVM_VENDOR}" = "SUN" ]; then
+@@ -285,6 +286,13 @@
+         fi
+     fi
+ 
++    # Add default security file option
++    if [ "x$ODL_JAVA_SECURITY_PROPERTIES" != "x" ]; then
++        DEFAULT_JAVA_OPTS="-Djava.security.properties="${ODL_JAVA_SECURITY_PROPERTIES}" $DEFAULT_JAVA_OPTS"
++    else
++        DEFAULT_JAVA_OPTS="-Djava.security.properties="${KARAF_ETC}/odl.java.security" $DEFAULT_JAVA_OPTS"
++    fi
++
+     DEFAULT_JAVA_DEBUG_PORT="5005"
+     if [ "x${JAVA_DEBUG_PORT}" = "x" ]; then
+         JAVA_DEBUG_PORT="${DEFAULT_JAVA_DEBUG_PORT}"
+@@ -316,4 +324,4 @@
+             CLASSPATH=$(cygpath --path --windows "${CLASSPATH}")
+         fi
+     fi
+-}
+\ No newline at end of file
++}
