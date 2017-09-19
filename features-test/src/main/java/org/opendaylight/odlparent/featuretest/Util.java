@@ -20,7 +20,7 @@ public final class Util {
 
     /**
      * <p>Convert a Description to a Description that includes information about repoUrl, featureName, and
-     * featureVersion</p>
+     * featureVersion.</p>
      * <p>This is done so that when a test fails, we can get information about which repoUrl, featureName, and
      * featureVersion can come back with the Failure.</p>
      *
