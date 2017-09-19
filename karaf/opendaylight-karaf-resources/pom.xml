@@ -66,6 +66,11 @@
                        failonerror="true" ignorewhitespace="true"/>
                 <copy file="${project.build.directory}/assembly/bin/instance.bat"
                       tofile="${project.build.directory}/classes/bin/instance.bat"/>
+                <patch patchfile="${project.basedir}/src/main/patches/karaf-inc-${karaf.version}.patch"
+                       originalfile="${project.build.directory}/assembly/bin/inc"
+                       failonerror="true"/>
+                <copy file="${project.build.directory}/assembly/bin/inc"
+                      tofile="${project.build.directory}/classes/bin/inc"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-karaf-${karaf.version}.patch"
                        originalfile="${project.build.directory}/assembly/bin/karaf"
                        failonerror="true"/>
@@ -95,10 +100,10 @@
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-paxweb.patch"
-                       originalfile="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/4.3.4/pax-web-features-4.3.4-features.xml"
+                       originalfile="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.7/pax-web-features-6.0.7-features.xml"
                        failonerror="true"/>
-                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/4.3.4/pax-web-features-4.3.4-features.xml"
-                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/4.3.4/pax-web-features-4.3.4-features.xml"/>
+                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.7/pax-web-features-6.0.7-features.xml"
+                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/6.0.7/pax-web-features-6.0.7-features.xml"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-etc-startup-properties-${karaf.version}.patch"
                        originalfile="${project.build.directory}/assembly/etc/startup.properties"
                        failonerror="true"/>
