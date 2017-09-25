@@ -1,6 +1,6 @@
-diff -urN a/pax-web-features-4.3.0-features.xml b/pax-web-features-4.3.0-features.xml
---- system/org/ops4j/pax/web/pax-web-features/4.3.0/pax-web-features-4.3.0-features.xml	2017-05-05 01:32:43.260023036 +0200
-+++ system/org/ops4j/pax/web/pax-web-features/4.3.0/pax-web-features-4.3.0-features.xml	2017-05-05 01:35:46.437890587 +0200
+diff -urN a/pax-web-features-4.3.4-features.xml b/pax-web-features-4.3.4-features.xml
+--- system/org/ops4j/pax/web/pax-web-features/4.3.4/pax-web-features-4.3.4-features.xml	2017-05-05 01:32:43.260023036 +0200
++++ system/org/ops4j/pax/web/pax-web-features/4.3.4/pax-web-features-4.3.4-features.xml	2017-05-05 01:35:46.437890587 +0200
 @@ -8,7 +8,7 @@
          <bundle dependency="true" start-level="30">mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/1.1.1</bundle>
  		<bundle dependency="true" start-level="30">mvn:javax.annotation/javax.annotation-api/1.2</bundle>

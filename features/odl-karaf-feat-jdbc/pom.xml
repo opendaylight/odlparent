@@ -31,6 +31,13 @@
             <type>xml</type>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <!-- Ensure the dependency is in the local repo, for SFT -->
+            <groupId>org.apache.karaf.jdbc</groupId>
+            <artifactId>org.apache.karaf.jdbc.core</artifactId>
+            <version>4.0.10</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
