@@ -17,7 +17,7 @@
 
   <properties>
     <stream>master</stream>
-    <nexus.site.url>dav:https://nexus.opendaylight.org/content/sites/site/${project.groupId}/${stream}/</nexus.site.url>
+    <nexus.site.url>dav:https://nexus.opendaylight.org/content/sites/javadoc/${stream}/${project.groupId}/</nexus.site.url>
   </properties>
 
   <build>
@@ -35,7 +35,7 @@
         <artifactId>maven-site-plugin</artifactId>
         <version>3.6</version>
         <configuration>
-          <inputDirectory>${project.build.directory}/staged-site</inputDirectory>
+          <inputDirectory>${project.build.directory}/site/apidocs</inputDirectory>
         </configuration>
       </plugin>
     </plugins>
