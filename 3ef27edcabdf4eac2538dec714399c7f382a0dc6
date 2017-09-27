@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba1f61a0_90883872",
+        "filename": "deploy-site.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-09-27T10:36:19Z",
+      "side": 1,
+      "message": "actually... this is wrong, isn\u0027t it?  In ODL of course we do project specific versioning, not global release train wide, so this does need to be the other way around? Like it used to.. ;-) I\u0027ll change it back!",
+      "revId": "3ef27edcabdf4eac2538dec714399c7f382a0dc6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
