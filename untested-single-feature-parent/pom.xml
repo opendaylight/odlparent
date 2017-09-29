@@ -79,6 +79,7 @@
                         <excludedArtifactId>org.osgi.enterprise</excludedArtifactId>
                         <!-- Bouncy Castle -->
                         <excludedArtifactId>bcprov-jdk15on</excludedArtifactId>
+                        <excludedArtifactId>bcprov-ext-jdk15on</excludedArtifactId>
                         <excludedArtifactId>bcpkix-jdk15on</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
