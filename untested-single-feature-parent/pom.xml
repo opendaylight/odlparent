@@ -31,8 +31,8 @@
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <properties>
-        <checkDependencyChange>false</checkDependencyChange>
-        <failOnDependencyChange>false</failOnDependencyChange>
+        <checkDependencyChange>true</checkDependencyChange>
+        <failOnDependencyChange>true</failOnDependencyChange>
     </properties>
 
     <build>
