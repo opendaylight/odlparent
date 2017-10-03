@@ -22,6 +22,30 @@
       "revId": "08fae8fab8a3ac1f0d6ad2a5623943a236986c9b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_5c3a3937",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 2114,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-10-03T10:17:50Z",
+      "side": 1,
+      "message": "Robert, this one is a simple misunderstanding.. indeed in https://bugs.opendaylight.org/show_bug.cgi?id\u003d9170 this was clarified. But this change is a Draft/WIP, and I\u0027ve only added you and Stephen so you peek at what I\u0027m cooking up, if interested (feel totally free to remove yourself as a reviewer, if this bothers you!).  So yes absolutely, my plan now very much is to release these EEA to Central; watch https://github.com/lastnpe/eclipse-null-eea-augments/issues/29 about that.  However before that I\u0027m still gaining a bit more experience with using these, e.g. in https://git.opendaylight.org/gerrit/#/c/63838/, and completing many more EEA (possibly automated..), then release, then switch to non-SNAPSHOT here! Voilà, that\u0027s the story about this... ;-)",
+      "parentUuid": "9a245df4_361206b5",
+      "range": {
+        "startLine": 2114,
+        "startChar": 33,
+        "endLine": 2114,
+        "endChar": 47
+      },
+      "revId": "08fae8fab8a3ac1f0d6ad2a5623943a236986c9b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
