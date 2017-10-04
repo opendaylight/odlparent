@@ -49,6 +49,7 @@
                 <version>${karaf.plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration combine.children="append">
+                    <enableGeneration>true</enableGeneration>
                     <simplifyBundleDependencies>true</simplifyBundleDependencies>
                     <checkDependencyChange>${checkDependencyChange}</checkDependencyChange>
                     <logDependencyChanges>true</logDependencyChanges>
