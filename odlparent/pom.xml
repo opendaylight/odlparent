@@ -531,7 +531,9 @@
         <groupId>org.eclipse.jdt</groupId>
         <artifactId>org.eclipse.jdt.annotation</artifactId>
         <version>2.1.0</version>
-        <scope>provided</scope>
+        <!-- Must be <scope>compile instead of provided because it does not only contain annotations,
+             but also the utility class org.eclipse.jdt.annotation.Checks which can be used at runtime. -->
+        <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>com.google.code.gson</groupId>
