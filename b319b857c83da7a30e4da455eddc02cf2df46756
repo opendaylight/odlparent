@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_e2e7f9e2",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-10-07T19:45:10Z",
+      "side": 1,
+      "message": "well... does that mean we retain eclipse annotations in production environments by being packaged into features?\n\nWhat use are they there (besides bloating class/constant pool)?",
+      "range": {
+        "startLine": 534,
+        "startChar": 0,
+        "endLine": 536,
+        "endChar": 30
+      },
+      "revId": "b319b857c83da7a30e4da455eddc02cf2df46756",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
