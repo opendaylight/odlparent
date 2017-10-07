@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_22f8f17b",
+        "filename": "null-analysis-ecj-settings/src/main/resources/org.eclipse.jdt.core.prefs",
+        "patchSetId": 17
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2017-10-07T19:53:19Z",
+      "side": 1,
+      "message": "Whoa. Can this be documented in-line? At least a pointer to where all these are described would be nice...\n\n... because this is structured data and there really should be a documented model for it somewhere -- we need as close a pointer as possible.\n\nOtherwise this is just a bunch of unspecced arcane magic incantations.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "34530353608d3f99d544de5fd471a9fb07faff83",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
