@@ -22,6 +22,30 @@
       "revId": "b319b857c83da7a30e4da455eddc02cf2df46756",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_785b9f54",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-10-16T18:03:36Z",
+      "side": 1,
+      "message": "Please re-read the inline comment: The *utility* (not annotation!) class org.eclipse.jdt.annotation.Checks, see https://help.eclipse.org/oxygen/index.jsp?topic\u003d%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fannotation%2FChecks.html, which can be used at runtime.  So yes, this will go into production environments by being packaged into features.  If you have a (big?) problem with that (but why?), we could also just copy/paste it somewhere into e.g. infrautils, but that seems a shame, to me?",
+      "parentUuid": "9a245df4_e2e7f9e2",
+      "range": {
+        "startLine": 534,
+        "startChar": 0,
+        "endLine": 536,
+        "endChar": 30
+      },
+      "revId": "b319b857c83da7a30e4da455eddc02cf2df46756",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
