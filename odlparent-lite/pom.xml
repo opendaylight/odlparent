@@ -117,7 +117,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.10.4</version>
+          <version>3.0.0-M1</version>
           <configuration>
             <!-- Keep things quiet except for warnings/errors -->
             <quiet>true</quiet>
