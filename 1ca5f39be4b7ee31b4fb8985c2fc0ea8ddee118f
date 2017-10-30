@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_8de1bc9c",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1741,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-10-30T17:29:44Z",
+      "side": 1,
+      "message": "I was wondering if this shouldn\u0027t this be spotbugsXmlOutputDirectory, according to https://github.com/spotbugs/spotbugs-maven-plugin/blob/spotbugs/src/main/groovy/org/codehaus/mojo/findbugs/FindBugsMojo.groovy#L98, but then realized that was done just 10 days ago, after the release of 3.1.0-RC6.. so we\u0027ll flip it on the next bump.\n\nBut while pondering this, it occured to me that we really should \"self test\" odlparent, so how about actually switching to adopting this in odlparent\u0027s own bundles4-test/pom.xml ./bundles-test-lib/pom.xml? You know, just because of those people who lecture other people about how they should be using any change they introduce immediately in the same change... ;-) Let me try to push a follow-up change with that (and see if it works); can I -1 this from going in until I\u0027ve convinced myself of that?",
+      "revId": "1ca5f39be4b7ee31b4fb8985c2fc0ea8ddee118f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
