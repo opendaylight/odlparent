@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Enumeration;
@@ -113,11 +115,13 @@ public class PopulateLocalRepoMojo
         try {
             Set<Artifact> startupArtifacts = readStartupProperties();
             aetherUtil.installArtifacts(startupArtifacts);
-            Set<Artifact> featureArtifacts = readFeatureCfg();
+            Set<Artifact> featureArtifacts = new LinkedHashSet<>();
+            Set<Features> features = new LinkedHashSet<>();
+            readFeatureCfg(featureArtifacts, features);
             featureArtifacts.addAll(
                     aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
                             new KarafFeaturesDependencyFilter()));
-            Set<Features> features = FeatureUtil.readFeatures(featureArtifacts);
+            features.addAll(FeatureUtil.readFeatures(featureArtifacts));
             // Do not provide FeatureUtil.featuresRepositoryToCoords(features)) as existingCoords
             // to findAllFeaturesRecursively, as those coords are not resolved yet, and it would lead to Bug 6187.
             features.addAll(FeatureUtil.findAllFeaturesRecursively(aetherUtil, features));
@@ -138,24 +142,32 @@ public class PopulateLocalRepoMojo
         }
     }
 
-    private Set<Artifact> readFeatureCfg() throws ArtifactResolutionException {
-        Set<Artifact> artifacts = new LinkedHashSet<>();
-        File file = new File(localRepo.getParentFile().toString() + "/etc/org.apache.karaf.features.cfg");
+    private void readFeatureCfg(Set<Artifact> artifacts, Set<Features> features) throws ArtifactResolutionException {
+        String karafHome = localRepo.getParent();
+        File file = new File(karafHome + "/etc/org.apache.karaf.features.cfg");
         Properties prop = new Properties();
         try {
             prop.load(new FileInputStream(file));
             String featuresRepositories = prop.getProperty("featuresRepositories");
             List<String> result = Arrays.asList(featuresRepositories.split(","));
             for (String mvnUrl : result) {
-                artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(mvnUrl))));
+                String fixedUrl = mvnUrl.replace("${karaf.home}", karafHome);
+                if (fixedUrl.startsWith("file:")) {
+                    try {
+                        // Local feature file
+                        features.add(FeatureUtil.readFeature(new File(new URI(fixedUrl))));
+                    } catch (URISyntaxException e) {
+                        LOG.info("Could not resolve URI: {}", fixedUrl, e);
+                    }
+                } else {
+                    artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(fixedUrl))));
+                }
             }
         } catch (FileNotFoundException e) {
             LOG.info("Could not find properties file: {}", file.getAbsolutePath(), e);
         } catch (IOException e) {
             LOG.info("Could not read properties file: {}", file.getAbsolutePath(), e);
         }
-
-        return artifacts;
     }
 
     private Set<Artifact> readStartupProperties() throws ArtifactResolutionException {
