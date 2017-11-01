@@ -244,6 +244,12 @@
              value="Method name ''{0}'' must match pattern ''{1}''."/>
         </module>
         <module name="SingleLineJavadoc"/>
+
+        <module name="HiddenField">
+            <property name="ignoreConstructorParameter" value="true" />
+            <property name="ignoreSetter" value="true" />
+            <property name="setterCanReturnItsClass" value="true" />
+        </module>
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
         <module name="FinalClass"/>
