@@ -248,6 +248,7 @@
         <module name="EqualsHashCode"/>
         <module name="FinalClass"/>
         <module name="HideUtilityClassConstructor"/>
+        <module name="InnerAssignment"/>
 
         <!-- Checks for Exception Handling Anti-Patterns -->
         <module name="IllegalCatch"/>
