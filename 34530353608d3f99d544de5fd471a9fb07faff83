@@ -22,6 +22,30 @@
       "revId": "34530353608d3f99d544de5fd471a9fb07faff83",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_9278acf3",
+        "filename": "null-analysis-ecj-settings/src/main/resources/org.eclipse.jdt.core.prefs",
+        "patchSetId": 17
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-11-02T03:01:12Z",
+      "side": 1,
+      "message": "http://help.eclipse.org/oxygen/index.jsp?topic\u003d%2Forg.eclipse.jdt.doc.user%2Ftasks%2Ftask-using_batch_compiler.htm",
+      "parentUuid": "9a245df4_22f8f17b",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "34530353608d3f99d544de5fd471a9fb07faff83",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
