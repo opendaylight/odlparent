@@ -104,7 +104,6 @@
     <osgi.core.version>5.0.0</osgi.core.version>
 
     <akka.version>2.5.9</akka.version>
-    <leveldb.version>0.7</leveldb.version>
 
     <!-- Default Sonar configuration -->
     <sonar-jacoco-listeners.version>3.8</sonar-jacoco-listeners.version>
@@ -780,16 +779,6 @@
         <groupId>org.scala-lang.modules</groupId>
         <artifactId>scala-parser-combinators_2.12</artifactId>
         <version>1.0.6</version>
-      </dependency>
-      <dependency>
-        <groupId>org.iq80.leveldb</groupId>
-        <artifactId>leveldb</artifactId>
-        <version>${leveldb.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.fusesource.leveldbjni</groupId>
-        <artifactId>leveldbjni-all</artifactId>
-        <version>1.8-odl</version>
       </dependency>
       <dependency>
         <groupId>org.uncommons.maths</groupId>
