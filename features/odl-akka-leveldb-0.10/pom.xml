@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- Copyright © 2016 Red Hat, Inc. and others.  All rights reserved.
+ Copyright © 2017 Red Hat, Inc. and others.  All rights reserved.
 
  This program and the accompanying materials are made available under the
  terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -19,11 +19,11 @@
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl-akka-leveldb-0.7</artifactId>
+    <artifactId>odl-akka-leveldb-0.10</artifactId>
     <version>4.0.0-SNAPSHOT</version>
     <packaging>feature</packaging>
 
-    <name>LevelDB 0.7</name>
+    <name>LevelDB 0.10</name>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>
@@ -41,13 +41,13 @@
         <dependency>
             <groupId>org.iq80.leveldb</groupId>
             <artifactId>leveldb</artifactId>
-            <version>0.7</version>
+            <version>0.10</version>
             <exclusions>
-              <exclusion>
-                <!-- To avoid classpath duplicates, because leveldbjni-all shades a (not bit identical version of) the 13 API classes in org.iq80.leveldb -->
-                <groupId>org.iq80.leveldb</groupId>
-                <artifactId>leveldb-api</artifactId>
-              </exclusion>
+                <exclusion>
+                    <!-- To avoid classpath duplicates, because leveldbjni-all shades a (not bit identical version of) the 13 API classes in org.iq80.leveldb -->
+                    <groupId>org.iq80.leveldb</groupId>
+                    <artifactId>leveldb-api</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
