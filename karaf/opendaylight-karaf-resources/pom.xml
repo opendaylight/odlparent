@@ -100,10 +100,10 @@
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-paxweb.patch"
-                       originalfile="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.6/pax-web-features-6.0.6-features.xml"
+                       originalfile="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.7/pax-web-features-6.0.7-features.xml"
                        failonerror="true"/>
-                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.6/pax-web-features-6.0.6-features.xml"
-                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/6.0.6/pax-web-features-6.0.6-features.xml"/>
+                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.7/pax-web-features-6.0.7-features.xml"
+                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/6.0.7/pax-web-features-6.0.7-features.xml"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-etc-startup-properties-${karaf.version}.patch"
                        originalfile="${project.build.directory}/assembly/etc/startup.properties"
                        failonerror="true"/>
