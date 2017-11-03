@@ -417,10 +417,6 @@
             <artifactId>org.eclipse.xtext.xbase.lib</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.fusesource.leveldbjni</groupId>
-            <artifactId>leveldbjni-all</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.glassfish</groupId>
             <artifactId>javax.json</artifactId>
         </dependency>
@@ -443,10 +439,6 @@
         <dependency>
             <groupId>org.immutables</groupId>
             <artifactId>value</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.iq80.leveldb</groupId>
-            <artifactId>leveldb</artifactId>
         </dependency>
         <dependency>
             <groupId>org.javassist</groupId>
