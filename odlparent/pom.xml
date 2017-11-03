@@ -279,16 +279,6 @@
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>xml-apis</groupId>
-        <artifactId>xml-apis</artifactId>
-        <version>1.4.01</version>
-      </dependency>
-      <dependency>
-        <groupId>xerces</groupId>
-        <artifactId>xercesImpl</artifactId>
-        <version>2.11.0</version>
-      </dependency>
-      <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-core</artifactId>
         <version>1.2.3</version>
@@ -516,11 +506,6 @@
       </dependency>
 
       <dependency>
-        <groupId>com.sun.xml.txw2</groupId>
-        <artifactId>txw2</artifactId>
-        <version>20110809</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
         <version>3.0.0</version>
@@ -565,74 +550,7 @@
         <artifactId>commons-net</artifactId>
         <version>3.6</version>
       </dependency>
-      <dependency>
-        <groupId>eclipselink</groupId>
-        <artifactId>javax.persistence</artifactId>
-        <version>2.0.4.v201112161009</version>
-      </dependency>
-      <dependency>
-        <groupId>eclipselink</groupId>
-        <artifactId>javax.resource</artifactId>
-        <version>1.5.0.v200906010428</version>
-      </dependency>
 
-      <dependency>
-        <groupId>org.eclipse.tycho</groupId>
-        <artifactId>org.eclipse.osgi</artifactId>
-        <version>3.9.1.v20130814-1242</version>
-      </dependency>
-
-      <!-- Gemini Web -->
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.gemini.web.core</artifactId>
-        <version>2.2.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.gemini.web.extender</artifactId>
-        <version>2.2.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.gemini.web.tomcat</artifactId>
-        <version>2.2.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.kernel.equinox.extensions</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.common</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.io</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.math</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.osgi</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.osgi.manifest</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>geminiweb</groupId>
-        <artifactId>org.eclipse.virgo.util.parser.manifest</artifactId>
-        <version>3.6.0.RELEASE</version>
-      </dependency>
       <!-- Netty -->
       <dependency>
         <groupId>io.netty</groupId>
@@ -684,99 +602,9 @@
         <version>1.1.1</version>
       </dependency>
       <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.activation</artifactId>
-        <version>1.1.0.v201211130549</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.annotation</artifactId>
-        <version>1.1.0.v201209060031</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.ejb</artifactId>
-        <version>3.1.1.v201204261316</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.el</artifactId>
-        <version>2.2.0.v201108011116</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.mail.glassfish</artifactId>
-        <version>1.4.1.v201108011116</version>
-      </dependency>
-      <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
         <version>3.1.0</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.servlet.jsp.jstl</artifactId>
-        <version>1.2.0.v201105211821</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.servlet.jsp.jstl.impl</artifactId>
-        <version>1.2.0.v201210211230</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>javax.xml.rpc</artifactId>
-        <version>1.1.0.v201005080400</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.catalina</artifactId>
-        <version>7.0.53.v201406061610</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.catalina.ha</artifactId>
-        <version>7.0.53.v201406070630</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.catalina.tribes</artifactId>
-        <version>7.0.53.v201406070630</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.coyote</artifactId>
-        <version>7.0.53.v201406070630</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.el</artifactId>
-        <version>7.0.53.v201406060720</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.jasper</artifactId>
-        <version>7.0.53.v201406070630</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.juli.extras</artifactId>
-        <version>7.0.53.v201406060720</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.tomcat.api</artifactId>
-        <version>7.0.53.v201406060720</version>
-      </dependency>
-      <dependency>
-        <groupId>orbit</groupId>
-        <artifactId>org.apache.tomcat.util</artifactId>
-        <version>7.0.53.v201406070630</version>
-      </dependency>
-      <dependency>
-        <groupId>org.aopalliance</groupId>
-        <artifactId>com.springsource.org.aopalliance</artifactId>
-        <version>1.0.0</version>
       </dependency>
       <dependency>
         <groupId>org.apache.felix</groupId>
@@ -790,21 +618,8 @@
       </dependency>
       <dependency>
         <groupId>org.apache.felix</groupId>
-        <artifactId>org.apache.felix.fileinstall</artifactId>
-        <version>3.5.4</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.felix</groupId>
         <artifactId>org.apache.felix.metatype</artifactId>
         <version>1.1.2</version>
-      </dependency>
-      <!-- felix webconsole -->
-      <dependency>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>org.apache.felix.webconsole</artifactId>
-        <version>4.2.14</version>
-        <!-- the all bundle includes all the necessary plugins -->
-        <classifier>all</classifier>
       </dependency>
       <dependency>
         <groupId>org.bouncycastle</groupId>
@@ -835,12 +650,6 @@
         <groupId>org.codehaus.jettison</groupId>
         <artifactId>jettison</artifactId>
         <version>1.3.8</version>
-      </dependency>
-      <!-- equinox http service bridge -->
-      <dependency>
-        <groupId>org.eclipse.equinox.http</groupId>
-        <artifactId>servlet</artifactId>
-        <version>1.0.0-v20070606</version>
       </dependency>
       <!-- To upgrade org.eclipse.persistence dependencies to 2.6.0+, we need to ensure all downstreams consumers
          pull in javax.validation first:
@@ -912,78 +721,6 @@
         <groupId>org.ow2.asm</groupId>
         <artifactId>asm-all</artifactId>
         <version>5.1</version>
-      </dependency>
-      <!-- Visual VM hook -->
-      <dependency>
-        <groupId>org.ow2.chameleon.management</groupId>
-        <artifactId>chameleon-mbeans</artifactId>
-        <version>1.0.0</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-aop</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-beans</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-core</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-expression</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-tx</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-web</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-webmvc</artifactId>
-        <version>3.2.17.RELEASE</version>
-      </dependency>
-      <!-- Spring security -->
-      <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-config</artifactId>
-        <version>3.2.9.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-core</artifactId>
-        <version>3.2.9.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-taglibs</artifactId>
-        <version>3.2.9.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-web</artifactId>
-        <version>3.2.9.RELEASE</version>
-      </dependency>
-      <dependency>
-        <groupId>virgomirror</groupId>
-        <artifactId>org.eclipse.jdt.core.compiler.batch</artifactId>
-        <version>3.8.0.I20120518-2145</version>
       </dependency>
 
       <!-- Configuration library -->
