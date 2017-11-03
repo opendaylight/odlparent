@@ -1122,8 +1122,7 @@
       <dependency>
         <groupId>com.lmax</groupId>
         <artifactId>disruptor</artifactId>
-        <!-- If this is updated, the version in features.xml needs to be changed too -->
-        <version>3.3.6</version>
+        <version>3.3.7</version>
       </dependency>
 
       <!-- Add Pax Exam -->
