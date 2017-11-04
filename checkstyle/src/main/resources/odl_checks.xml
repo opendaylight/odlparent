@@ -74,7 +74,6 @@
         </module>
         <module name="ParenPad" />
         <module name="OneStatementPerLine"/>
-        <module name="TrailingComment" />
         <module name="MultipleVariableDeclarations"/>
         <module name="ArrayTypeStyle"/>
         <module name="MissingSwitchDefault"/>

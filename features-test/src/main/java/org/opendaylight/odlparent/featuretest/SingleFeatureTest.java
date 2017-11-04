@@ -124,8 +124,7 @@ public class SingleFeatureTest {
     private BundleContext bundleContext;
 
     @Inject @NonNull
-    // NOT BundleStateService, see checkBundleStatesDiag()
-    private BundleService bundleService;
+    private BundleService bundleService; // NOT BundleStateService, see checkBundleStatesDiag()
 
     @Inject @NonNull
     private FeaturesService featuresService;
