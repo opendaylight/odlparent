@@ -50,8 +50,7 @@ public final class ReflectionUtil {
 
     private static Stream<Class<?>> getDeclaredAndAnonymousInnerClass(Class<?> clazz) {
         List<Class<?>> anonymousInnerClasses = new ArrayList<>();
-        // add self; will get skipped if empty() below!
-        anonymousInnerClasses.add(clazz);
+        anonymousInnerClasses.add(clazz); // add self; will get skipped if empty() below!
         anonymousInnerClasses.addAll(Arrays.asList(clazz.getDeclaredClasses()));
         ClassLoader classLoader = clazz.getClassLoader();
         String className = clazz.getCanonicalName();
