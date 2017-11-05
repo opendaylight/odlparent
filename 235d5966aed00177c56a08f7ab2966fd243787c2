@@ -36,6 +36,40 @@
     },
     {
       "key": {
+        "uuid": "9a245df4_b10cc0ee",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1496,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-11-05T13:57:21Z",
+      "side": 1,
+      "message": "https://git.opendaylight.org/gerrit/#/c/65150/",
+      "revId": "235d5966aed00177c56a08f7ab2966fd243787c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_31e61016",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1504,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-11-05T13:57:21Z",
+      "side": 1,
+      "message": "I\u0027m not 100% convinced we want this (I\u0027ll try to \"feel\" it whie practicing)",
+      "revId": "235d5966aed00177c56a08f7ab2966fd243787c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba1f61a0_f3d49b21",
         "filename": "odlparent/pom.xml",
         "patchSetId": 1
