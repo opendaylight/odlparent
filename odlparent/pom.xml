@@ -1260,6 +1260,7 @@
             <showWarnings>true</showWarnings>
             <compilerArgs>
               <arg>-parameters</arg>
+              <arg>-Xlint:deprecation</arg>
             </compilerArgs>
           </configuration>
         </plugin>
