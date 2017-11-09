@@ -1368,18 +1368,6 @@
         <version>2.1.9</version>
       </dependency>
 
-      <!-- Metrics -->
-      <dependency>
-        <groupId>io.dropwizard.metrics</groupId>
-        <artifactId>metrics-core</artifactId>
-        <version>3.1.2</version>
-      </dependency>
-      <dependency>
-        <groupId>io.dropwizard.metrics</groupId>
-        <artifactId>metrics-graphite</artifactId>
-        <version>3.1.2</version>
-      </dependency>
-
       <!-- Karaf console support -->
       <dependency>
         <groupId>org.apache.karaf.shell</groupId>
