@@ -749,11 +749,6 @@
       <!-- Akka -->
       <dependency>
         <groupId>com.typesafe</groupId>
-        <artifactId>ssl-config-akka_2.12</artifactId>
-        <version>0.2.1</version>
-      </dependency>
-      <dependency>
-        <groupId>com.typesafe</groupId>
         <artifactId>ssl-config-core_2.12</artifactId>
         <version>0.2.1</version>
       </dependency>
@@ -985,12 +980,6 @@
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-server</artifactId>
         <version>9.2.19.v20160908</version>
-      </dependency>
-      <dependency>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-servlet-tester</artifactId>
-        <version>9.2.19.v20160908</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>

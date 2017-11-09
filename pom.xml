@@ -32,10 +32,6 @@
         <module>findbugs</module>
         <module>license</module>
 
-        <module>bundles-test-lib</module>
-        <module>bundles4-test</module>
-        <module>features-test</module>
-
         <!-- Karaf integration -->
         <module>karaf</module>
         <module>karaf-plugin</module>
@@ -55,6 +51,12 @@
 
         <!-- Artifacts -->
         <module>odlparent-artifacts</module>
+
+        <!-- Tests -->
+        <module>bundles-test-lib</module>
+        <module>bundles4-test</module>
+        <module>features-test</module>
+        <module>odlparent-dependency-check</module>
     </modules>
 
     <profiles>
