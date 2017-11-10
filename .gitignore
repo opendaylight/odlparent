@@ -81,3 +81,6 @@ target-ide/
 
 # ./tox.ini Python packages used e.g. by http://coala.io
 .tox/
+
+# Sphinx build directory
+_build
