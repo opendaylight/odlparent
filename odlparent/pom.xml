@@ -961,13 +961,6 @@
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-wrap</artifactId>
         <version>2.5.3</version>
-        <exclusions>
-          <exclusion>
-            <!-- because pax-url-aether already includes a different version of classes in this artifact -->
-            <groupId>org.ops4j.pax.url</groupId>
-            <artifactId>pax-url-commons</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
 
       <dependency>
