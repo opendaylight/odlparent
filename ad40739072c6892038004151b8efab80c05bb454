@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_10c64168",
+        "filename": "odlparent-dependency-check/update-dependencies",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-11-14T11:12:06Z",
+      "side": 1,
+      "message": "holy moly! ;) neato.",
+      "revId": "ad40739072c6892038004151b8efab80c05bb454",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a245df4_f0c28d51",
+        "filename": "pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-11-14T11:12:06Z",
+      "side": 1,
+      "message": "I find grouping these like this a bit confusing.. these 3 are not at all \"self tests\" of odlparent, in the same sense as odlparent-dependency-check is. (They are my stuff we use in SFT to test other projects features, also odlparent\u0027s, but not only.)  \n\nDo you want to leave these 3 where they are, with a new header \u003c!-- Features Test code \u0026 POM --\u003e, and then this new odlparent-dependency-check as you have heree with a new header \u003c!-- odlparent self testing --\u003e - there could be more like this, later, we spoke about this once?",
+      "revId": "ad40739072c6892038004151b8efab80c05bb454",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
