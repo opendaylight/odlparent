@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.1.xsd">
+    <suppress>
+        <!-- json isn’t affected by CVE-2008-0732 which is a SUSE-specific init script bug -->
+        <notes><![CDATA[
+   file name: json-20090211_1.jar
+   ]]></notes>
+        <gav regex="true">^org\.apache\.geronimo\.bundles:json:.*$</gav>
+        <cve>CVE-2008-0732</cve>
+    </suppress>
+    <suppress>
+        <!-- This isn’t git -->
+        <gav regex="true">^org\.eclipse\.persistence:org\.eclipse\.persistence\..*$</gav>
+        <cpe>cpe:/a:git:git</cpe>
+    </suppress>
+    <suppress>
+        <!-- We’ve fixed CVE-2015-1778 -->
+        <gav regex="true">^org\.opendaylight\..*$</gav>
+        <cve>CVE-2015-1778</cve>
+    </suppress>
+    <suppress>
+        <!-- RC4... -->
+        <notes><![CDATA[
+   file name: jaxb-api-2.2.2.jar
+   ]]></notes>
+        <gav regex="true">^javax\.xml\.bind:jaxb-api:.*$</gav>
+        <cpe>cpe:/a:oracle:glassfish</cpe>
+    </suppress>
+    <suppress>
+        <!-- Fixed after Pax 20140703 -->
+        <gav regex="true">^org\.ops4j\.pax\..*$</gav>
+        <cve>CVE-2015-1193</cve>
+    </suppress>
+    <suppress>
+        <!-- Fixed after Pax 20140703 -->
+        <gav regex="true">^org\.ops4j\.pax\..*$</gav>
+        <cve>CVE-2015-1194</cve>
+    </suppress>
+    <suppress>
+        <!-- 9.2.22 fixes CVE-2017-9735 -->
+        <gav regex="true">^org\.eclipse\.jetty:.*$</gav>
+        <cve>CVE-2017-9735</cve>
+    </suppress>
+</suppressions>
