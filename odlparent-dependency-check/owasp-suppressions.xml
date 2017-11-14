@@ -36,4 +36,9 @@
         <gav regex="true">^org\.ops4j\.pax\..*$</gav>
         <cve>CVE-2015-1194</cve>
     </suppress>
+    <suppress>
+        <!-- 9.2.22 fixes CVE-2017-9735 -->
+        <gav regex="true">^org\.eclipse\.jetty:.*$</gav>
+        <cve>CVE-2017-9735</cve>
+    </suppress>
 </suppressions>
