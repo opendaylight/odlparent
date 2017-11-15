@@ -1626,6 +1626,21 @@
                   </action>
                 </pluginExecution>
 
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.basepom.maven</groupId>
+                    <artifactId>
+                      duplicate-finder-maven-plugin
+                    </artifactId>
+                    <versionRange>[1.2.1,)</versionRange>
+                    <goals>
+                      <goal>check</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
               </pluginExecutions>
             </lifecycleMappingMetadata>
           </configuration>

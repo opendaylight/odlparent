@@ -21,6 +21,12 @@
   <artifactId>bundles-test-lib</artifactId>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
 
+  <properties>
+    <!-- Opt-in to our optional code quality checks -->
+    <pmd.cpd.fail>true</pmd.cpd.fail>                    <!-- Copy/paste detection -->
+    <duplicate-finder.skip>false</duplicate-finder.skip> <!-- Classpath duplicates -->
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.osgi</groupId>
