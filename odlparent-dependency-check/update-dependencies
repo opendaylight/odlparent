@@ -24,7 +24,7 @@ FNR == NR && predeps
 FNR == NR && postdeps {
   footer=footer "\n" $0
 }
-FNR < NR && !/org.opendaylight.odlparent/ {
+FNR < NR && !/org.opendaylight/ {
   printf "        <dependency>\n"
   printf "            <groupId>%s</groupId>\n", $1
   printf "            <artifactId>%s</artifactId>\n", $2

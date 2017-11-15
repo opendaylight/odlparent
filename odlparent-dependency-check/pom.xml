@@ -511,10 +511,6 @@
             <artifactId>mockito-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.opendaylight.controller.thirdparty</groupId>
-            <artifactId>com.sun.jersey.jersey-servlet</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.ops4j.pax.cdi</groupId>
             <artifactId>pax-cdi-api</artifactId>
         </dependency>
