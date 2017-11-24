@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a245df4_1d12ac08",
+        "filename": "karaf/test-distribution/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-11-24T12:43:05Z",
+      "side": 1,
+      "message": "LOL ;)",
+      "revId": "ce354ad25c6a2ae1b3d9b15075e6c50db9b5235b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
