@@ -299,27 +299,13 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>23.3-jre</version>
-        <exclusions>
-          <exclusion>
-            <groupId>com.google.code.findbugs</groupId>
-            <!-- Use com.google.code.findbugs:annotations instead of jsr305 -->
-            <artifactId>jsr305</artifactId>
-          </exclusion>
-        </exclusions>
+        <version>23.5-jre</version>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
-        <version>23.3-jre</version>
+        <version>23.5-jre</version>
         <scope>test</scope>
-        <exclusions>
-          <exclusion>
-            <groupId>com.google.code.findbugs</groupId>
-            <!-- Use com.google.code.findbugs:annotations instead of jsr305 -->
-            <artifactId>jsr305</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
       <dependency>
         <groupId>com.mycila.guice.extensions</groupId>
@@ -1975,7 +1961,7 @@
         <configuration>
           <links>
             <link>http://doc.akka.io/japi/akka/${akka.version}/</link>
-            <link>https://google.github.io/guava/releases/23.3-jre/api/docs/</link>
+            <link>https://google.github.io/guava/releases/23.5-jre/api/docs/</link>
             <link>http://netty.io/4.1/api/</link>
           </links>
         </configuration>
