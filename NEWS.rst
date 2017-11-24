@@ -5,6 +5,11 @@ ODL Parent release notes
 Version 3.0.1
 -------------
 
+This version fixes the following issues:
+
+* Karaf pulls in an invalid Hibernate feature repository, breaking downstream
+  dependencies pulling in the “war” feature. ``populate-local-repo`` corrects
+  the repository dependency.
 
 
 Version 3.0.0
