@@ -299,7 +299,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>23.3-jre</version>
+        <version>23.5-jre</version>
         <exclusions>
           <exclusion>
             <groupId>com.google.code.findbugs</groupId>
@@ -311,7 +311,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
-        <version>23.3-jre</version>
+        <version>23.5-jre</version>
         <scope>test</scope>
         <exclusions>
           <exclusion>
@@ -1975,7 +1975,7 @@
         <configuration>
           <links>
             <link>http://doc.akka.io/japi/akka/${akka.version}/</link>
-            <link>https://google.github.io/guava/releases/23.3-jre/api/docs/</link>
+            <link>https://google.github.io/guava/releases/23.5-jre/api/docs/</link>
             <link>http://netty.io/4.1/api/</link>
           </links>
         </configuration>
