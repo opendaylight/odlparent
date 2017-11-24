@@ -26,7 +26,7 @@
         <!-- Project local features -->
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-guava-23</artifactId>
+            <artifactId>features-odlparent</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>

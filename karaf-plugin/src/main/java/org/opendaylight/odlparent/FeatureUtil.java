@@ -70,6 +70,14 @@ public final class FeatureUtil {
     public static String toCoord(final URL url) throws MalformedURLException {
         String repository = url.toString();
         String unwrappedRepo = WRAP_PATTERN.matcher(repository).replaceFirst("");
+
+        // FIXME: this is a hack to deal with broken upstream repo and should be removed once karaf moves
+        //        to hibernate-validator-osgi-features-5.4.2+
+        if ("mvn:com.thoughtworks.paranamer:paranamer:2.8".equals(unwrappedRepo)) {
+            LOG.info("Working around broken hibernate-validator-osgi-karaf-features...");
+            unwrappedRepo = "mvn:com.thoughtworks.paranamer/paranamer/2.8";
+        }
+
         Parser parser = new Parser(unwrappedRepo);
         String coord = MVN_PATTERN.matcher(parser.getGroup()).replaceFirst("") + ":" + parser.getArtifact();
         if (parser.getType() != null) {
