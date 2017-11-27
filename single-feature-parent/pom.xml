@@ -94,6 +94,10 @@
                         <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
                     </additionalClasspathElements>
                     <skip>${skip.karaf.featureTest}</skip>
+                    <systemPropertyVariables>
+                      <!-- This fixed https://jira.opendaylight.org/browse/CONTROLLER-1799 -->
+                      <org.ops4j.pax.url.mvn.localRepository>${settings.localRepository}</org.ops4j.pax.url.mvn.localRepository>
+                    </systemPropertyVariables>
                 </configuration>
                 <executions>
                     <execution>
