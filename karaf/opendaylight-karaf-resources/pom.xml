@@ -11,7 +11,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
-    <version>3.0.1-SNAPSHOT</version>
+    <version>3.0.2-SNAPSHOT</version>
     <relativePath>../../odlparent</relativePath>
   </parent>
   <artifactId>opendaylight-karaf-resources</artifactId>
@@ -206,7 +206,7 @@
       <plugin>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>karaf-plugin</artifactId>
-        <version>3.0.1-SNAPSHOT</version>
+        <version>3.0.2-SNAPSHOT</version>
         <executions>
           <execution>
             <id>populate-local-repo</id>
