@@ -20,11 +20,11 @@ import org.hamcrest.Description;
  * @author Michael Vorburger.ch
  */
 // intentionally just package-local
-class BundleServiceSummaryMatcher extends BaseMatcher<BundleDiagInfosImpl> {
+class BundleServiceSummaryMatcher extends BaseMatcher<BundleDiagInfos> {
 
     @Override
     public boolean matches(Object item) {
-        SystemState systemState = ((BundleDiagInfosImpl) item).getSystemState();
+        SystemState systemState = ((BundleDiagInfos) item).getSystemState();
         return systemState.equals(Active) || systemState.equals(Stopping) || systemState.equals(Failure);
     }
 
