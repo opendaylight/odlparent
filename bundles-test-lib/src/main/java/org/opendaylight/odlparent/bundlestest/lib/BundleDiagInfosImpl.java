@@ -22,6 +22,7 @@ import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.bundle.core.BundleState;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.Version;
 
 /**
  * {@link BundleDiagInfos} implementation.
@@ -43,19 +44,23 @@ final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
     private final List<String> nokBundleStateInfoTexts;
     private final List<String> whitelistedBundleStateInfoTexts;
     private final Map<BundleState, Integer> bundleStatesCounters;
+    private final Map<BundleSymbolicNameWithVersion, BundleState> bundlesStateMap;
 
     private BundleDiagInfosImpl(List<String> okBundleStateInfoTexts, List<String> nokBundleStateInfoTexts,
-            List<String> whitelistedBundleStateInfoTexts, Map<BundleState, Integer> bundleStatesCounters) {
+            List<String> whitelistedBundleStateInfoTexts, Map<BundleState, Integer> bundleStatesCounters,
+            Map<BundleSymbolicNameWithVersion, BundleState> bundlesStateMap) {
         this.okBundleStateInfoTexts = immutableCopyOf(okBundleStateInfoTexts);
         this.nokBundleStateInfoTexts = immutableCopyOf(nokBundleStateInfoTexts);
         this.whitelistedBundleStateInfoTexts = immutableCopyOf(whitelistedBundleStateInfoTexts);
         this.bundleStatesCounters = immutableCopyOf(bundleStatesCounters);
+        this.bundlesStateMap = immutableCopyOf(bundlesStateMap);
     }
 
     public static BundleDiagInfos forContext(BundleContext bundleContext, BundleService bundleService) {
         List<String> okBundleStateInfoTexts = new ArrayList<>();
         List<String> nokBundleStateInfoTexts = new ArrayList<>();
         List<String> whitelistedBundleStateInfoTexts = new ArrayList<>();
+        Map<BundleSymbolicNameWithVersion, BundleState> bundlesStateMap = new HashMap<>();
         Map<BundleState, Integer> bundleStatesCounters = new EnumMap<>(BundleState.class);
         for (BundleState bundleState : BundleState.values()) {
             bundleStatesCounters.put(bundleState, 0);
@@ -63,10 +68,15 @@ final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
 
         for (Bundle bundle : bundleContext.getBundles()) {
             String bundleSymbolicName = bundle.getSymbolicName();
+            Version version = bundle.getVersion();
+            BundleSymbolicNameWithVersion bundleSymbolicNameWithVersion
+                = new BundleSymbolicNameWithVersion(bundleSymbolicName, version);
+
             BundleInfo karafBundleInfo = bundleService.getInfo(bundle);
             BundleState karafBundleState = karafBundleInfo.getState();
+            bundlesStateMap.put(bundleSymbolicNameWithVersion, karafBundleState);
 
-            String bundleStateDiagText = "OSGi state = " + bundleStatetoText(bundle.getState())
+            String bundleStateDiagText = "OSGi state = " + bundleStateToText(bundle.getState())
                 + ", Karaf bundleState = " + karafBundleState;
             String diagText = bundleService.getDiag(bundle);
             if (!diagText.isEmpty()) {
@@ -98,10 +108,10 @@ final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
         }
 
         return new BundleDiagInfosImpl(okBundleStateInfoTexts, nokBundleStateInfoTexts,
-                whitelistedBundleStateInfoTexts, bundleStatesCounters);
+                whitelistedBundleStateInfoTexts, bundleStatesCounters, bundlesStateMap);
     }
 
-    private static String bundleStatetoText(int state) {
+    private static String bundleStateToText(int state) {
         switch (state) {
             case Bundle.INSTALLED:
                 return "Installed";
@@ -160,18 +170,23 @@ final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
     }
 
     @Override
+    public Map<BundleSymbolicNameWithVersion, BundleState> getBundlesStateMap() {
+        return bundlesStateMap;
+    }
+
+    @Override
     public List<String> getNokBundleStateInfoTexts() {
-        return immutableCopyOf(nokBundleStateInfoTexts);
+        return nokBundleStateInfoTexts;
     }
 
     @Override
     public List<String> getOkBundleStateInfoTexts() {
-        return immutableCopyOf(okBundleStateInfoTexts);
+        return okBundleStateInfoTexts;
     }
 
     @Override
     public List<String> getWhitelistedBundleStateInfoTexts() {
-        return immutableCopyOf(whitelistedBundleStateInfoTexts);
+        return whitelistedBundleStateInfoTexts;
     }
 
     @Override
@@ -183,7 +198,7 @@ final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
         return Collections.unmodifiableList(new ArrayList<>(stringList));
     }
 
-    private Map<BundleState, Integer> immutableCopyOf(Map<BundleState, Integer> map) {
+    private <K, V> Map<K, V> immutableCopyOf(Map<K, V> map) {
         return Collections.unmodifiableMap(new HashMap<>(map));
     }
 
