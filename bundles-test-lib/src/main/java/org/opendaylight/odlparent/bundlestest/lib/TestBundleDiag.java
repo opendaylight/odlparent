@@ -71,7 +71,7 @@ public class TestBundleDiag {
                     .until(this::getBundleDiagInfos, new BundleServiceSummaryMatcher());
 
             // If we're here then either BundleServiceSummaryMatcher quit because of Active, Failure or Stopping..
-            BundleDiagInfosImpl bundleInfos = getBundleDiagInfos();
+            BundleDiagInfos bundleInfos = getBundleDiagInfos();
             SystemState systemState = bundleInfos.getSystemState();
             if (systemState.equals(SystemState.Failure) || systemState.equals(SystemState.Stopping)) {
                 LOG.error("diag failure; BundleService reports bundle(s) which failed or are already stopping"
@@ -89,13 +89,13 @@ public class TestBundleDiag {
             // typically due to bundles still in BundleState GracePeriod or Waiting
             LOG.error("diag failure; BundleService reports bundle(s) which are still not active"
                     + " (details in following INFO and ERROR log messages...)");
-            BundleDiagInfosImpl bundleInfos = getBundleDiagInfos();
+            BundleDiagInfos bundleInfos = getBundleDiagInfos();
             logBundleDiagInfos(bundleInfos);
             throw new SystemStateFailureException("diag timeout; some bundles are still not active:", bundleInfos, e);
         }
     }
 
-    private void logBundleDiagInfos(BundleDiagInfosImpl bundleInfos) {
+    private void logBundleDiagInfos(BundleDiagInfos bundleInfos) {
         try {
             logOSGiServices();
         } catch (IllegalStateException e) {
@@ -112,7 +112,7 @@ public class TestBundleDiag {
         }
     }
 
-    private BundleDiagInfosImpl getBundleDiagInfos() {
+    private BundleDiagInfos getBundleDiagInfos() {
         return BundleDiagInfosImpl.forContext(bundleContext, bundleService);
     }
 
