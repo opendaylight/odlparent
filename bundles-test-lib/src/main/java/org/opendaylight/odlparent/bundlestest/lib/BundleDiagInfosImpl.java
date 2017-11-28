@@ -52,7 +52,7 @@ final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
         this.bundleStatesCounters = immutableCopyOf(bundleStatesCounters);
     }
 
-    public static BundleDiagInfosImpl forContext(BundleContext bundleContext, BundleService bundleService) {
+    public static BundleDiagInfos forContext(BundleContext bundleContext, BundleService bundleService) {
         List<String> okBundleStateInfoTexts = new ArrayList<>();
         List<String> nokBundleStateInfoTexts = new ArrayList<>();
         List<String> whitelistedBundleStateInfoTexts = new ArrayList<>();
