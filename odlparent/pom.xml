@@ -974,22 +974,22 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-client</artifactId>
-        <version>9.2.19.v20160908</version>
+        <version>9.3.21.v20170918</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-server</artifactId>
-        <version>9.2.19.v20160908</version>
+        <version>9.3.21.v20170918</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-servlets</artifactId>
-        <version>9.2.19.v20160908</version>
+        <version>9.3.21.v20170918</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-webapp</artifactId>
-        <version>9.2.19.v20160908</version>
+        <version>9.3.21.v20170918</version>
       </dependency>
 
       <dependency>
