@@ -59,6 +59,10 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
     <!-- BEWARE of adding additional dependencies here...
          It will cause weird issues e.g. in integration/distribution/features/repos/distribution -->
     <dependency>

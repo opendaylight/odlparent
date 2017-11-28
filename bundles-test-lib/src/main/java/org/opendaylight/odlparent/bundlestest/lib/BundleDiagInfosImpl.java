@@ -7,14 +7,15 @@
  */
 package org.opendaylight.odlparent.bundlestest.lib;
 
+import static com.google.common.collect.ImmutableList.builderWithExpectedSize;
 import static org.apache.karaf.bundle.core.BundleState.Active;
 import static org.apache.karaf.bundle.core.BundleState.Installed;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.apache.karaf.bundle.core.BundleInfo;
@@ -32,30 +33,29 @@ import org.osgi.framework.BundleContext;
 final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
     private static final long serialVersionUID = 1L;
 
-    private static final Map<String, BundleState> WHITELISTED_BUNDLES;
+    private static final ImmutableMap<String, BundleState> WHITELISTED_BUNDLES = ImmutableMap.of(
+            "slf4j.log4j12", Installed);
+    private static final int WHITELIST_SIZE = WHITELISTED_BUNDLES.size();
 
-    static {
-        WHITELISTED_BUNDLES = new HashMap<>();
-        WHITELISTED_BUNDLES.put("slf4j.log4j12", Installed);
-    }
+    private final ImmutableList<String> okBundleStateInfoTexts;
+    private final ImmutableList<String> nokBundleStateInfoTexts;
+    private final ImmutableList<String> whitelistedBundleStateInfoTexts;
+    private final ImmutableMap<BundleState, Integer> bundleStatesCounters;
 
-    private final List<String> okBundleStateInfoTexts;
-    private final List<String> nokBundleStateInfoTexts;
-    private final List<String> whitelistedBundleStateInfoTexts;
-    private final Map<BundleState, Integer> bundleStatesCounters;
-
-    private BundleDiagInfosImpl(List<String> okBundleStateInfoTexts, List<String> nokBundleStateInfoTexts,
-            List<String> whitelistedBundleStateInfoTexts, Map<BundleState, Integer> bundleStatesCounters) {
-        this.okBundleStateInfoTexts = immutableCopyOf(okBundleStateInfoTexts);
-        this.nokBundleStateInfoTexts = immutableCopyOf(nokBundleStateInfoTexts);
-        this.whitelistedBundleStateInfoTexts = immutableCopyOf(whitelistedBundleStateInfoTexts);
-        this.bundleStatesCounters = immutableCopyOf(bundleStatesCounters);
+    private BundleDiagInfosImpl(ImmutableList<String> okBundleStateInfoTexts,
+            ImmutableList<String> nokBundleStateInfoTexts, ImmutableList<String> whitelistedBundleStateInfoTexts,
+            ImmutableMap<BundleState, Integer> bundleStatesCounters) {
+        this.okBundleStateInfoTexts = okBundleStateInfoTexts;
+        this.nokBundleStateInfoTexts = nokBundleStateInfoTexts;
+        this.whitelistedBundleStateInfoTexts = whitelistedBundleStateInfoTexts;
+        this.bundleStatesCounters = bundleStatesCounters;
     }
 
     public static BundleDiagInfos forContext(BundleContext bundleContext, BundleService bundleService) {
-        List<String> okBundleStateInfoTexts = new ArrayList<>();
-        List<String> nokBundleStateInfoTexts = new ArrayList<>();
-        List<String> whitelistedBundleStateInfoTexts = new ArrayList<>();
+        int bundles = bundleContext.getBundles().length;
+        ImmutableList.Builder<String> okBundleStateInfoTexts = builderWithExpectedSize(bundles);
+        ImmutableList.Builder<String> nokBundleStateInfoTexts = builderWithExpectedSize(bundles);
+        ImmutableList.Builder<String> whitelistedBundleStateInfoTexts = builderWithExpectedSize(WHITELIST_SIZE);
         Map<BundleState, Integer> bundleStatesCounters = new EnumMap<>(BundleState.class);
         for (BundleState bundleState : BundleState.values()) {
             bundleStatesCounters.put(bundleState, 0);
@@ -66,7 +66,7 @@ final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
             BundleInfo karafBundleInfo = bundleService.getInfo(bundle);
             BundleState karafBundleState = karafBundleInfo.getState();
 
-            String bundleStateDiagText = "OSGi state = " + bundleStatetoText(bundle.getState())
+            String bundleStateDiagText = "OSGi state = " + bundleStateToText(bundle.getState())
                 + ", Karaf bundleState = " + karafBundleState;
             String diagText = bundleService.getDiag(bundle);
             if (!diagText.isEmpty()) {
@@ -97,11 +97,11 @@ final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
             }
         }
 
-        return new BundleDiagInfosImpl(okBundleStateInfoTexts, nokBundleStateInfoTexts,
-                whitelistedBundleStateInfoTexts, bundleStatesCounters);
+        return new BundleDiagInfosImpl(okBundleStateInfoTexts.build(), nokBundleStateInfoTexts.build(),
+                whitelistedBundleStateInfoTexts.build(), Maps.immutableEnumMap(bundleStatesCounters));
     }
 
-    private static String bundleStatetoText(int state) {
+    private static String bundleStateToText(int state) {
         switch (state) {
             case Bundle.INSTALLED:
                 return "Installed";
@@ -161,30 +161,22 @@ final class BundleDiagInfosImpl implements BundleDiagInfos, Serializable {
 
     @Override
     public List<String> getNokBundleStateInfoTexts() {
-        return immutableCopyOf(nokBundleStateInfoTexts);
+        return nokBundleStateInfoTexts;
     }
 
     @Override
     public List<String> getOkBundleStateInfoTexts() {
-        return immutableCopyOf(okBundleStateInfoTexts);
+        return okBundleStateInfoTexts;
     }
 
     @Override
     public List<String> getWhitelistedBundleStateInfoTexts() {
-        return immutableCopyOf(whitelistedBundleStateInfoTexts);
+        return whitelistedBundleStateInfoTexts;
     }
 
     @Override
     public String toString() {
         return getFullDiagnosticText();
-    }
-
-    private List<String> immutableCopyOf(List<String> stringList) {
-        return Collections.unmodifiableList(new ArrayList<>(stringList));
-    }
-
-    private Map<BundleState, Integer> immutableCopyOf(Map<BundleState, Integer> map) {
-        return Collections.unmodifiableMap(new HashMap<>(map));
     }
 
 }
