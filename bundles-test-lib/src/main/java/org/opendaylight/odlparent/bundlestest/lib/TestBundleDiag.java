@@ -11,6 +11,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 import java.util.concurrent.TimeUnit;
+import java.util.function.BiConsumer;
 import org.apache.karaf.bundle.core.BundleService;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
@@ -50,16 +51,23 @@ public class TestBundleDiag {
      * @author Michael Vorburger, based on guidance from Christian Schneider
      */
     public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) throws SystemStateFailureException {
+        checkBundleDiagInfos(timeout, timeoutUnit, (timeInfo, bundleDiagInfos) ->
+            LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
+                    timeInfo.getElapsedTimeInMS() / 1000, timeInfo.getRemainingTimeInMS() / 1000,
+                    bundleDiagInfos.getFullDiagnosticText()));
+    }
+
+    public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit,
+            BiConsumer<TimeInfo, BundleDiagInfos> awaitingListener) throws SystemStateFailureException {
         LOG.info("checkBundleDiagInfos() started...");
         try {
             Awaitility.await("checkBundleDiagInfos")
                 .pollDelay(0, MILLISECONDS)
                 .pollInterval(1, SECONDS)
                 .atMost(timeout, timeoutUnit)
-                    .conditionEvaluationListener(
-                        condition -> LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
-                            condition.getElapsedTimeInMS() / 1000, condition.getRemainingTimeInMS() / 1000,
-                            ((BundleDiagInfosImpl) condition.getValue()).getFullDiagnosticText()))
+                    .conditionEvaluationListener(condition -> awaitingListener.accept(
+                            new TimeInfo(condition.getElapsedTimeInMS(), condition.getRemainingTimeInMS()),
+                            (BundleDiagInfosImpl) condition.getValue()))
                     .until(this::getBundleDiagInfos, new BundleServiceSummaryMatcher());
 
             // If we're here then either BundleServiceSummaryMatcher quit because of Active, Failure or Stopping..
