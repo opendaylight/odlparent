@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a1969be_d48273ff",
+        "filename": "bundles-test-lib/src/main/java/org/opendaylight/odlparent/bundlestest/lib/BundleSymbolicNameWithVersion.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2017-12-04T16:24:34Z",
+      "side": 1,
+      "message": "If you use instanceof in equals(), wouldn’t it be better to make the class final?",
+      "revId": "77a9f4b7140f6f2c2e409d7199cd5b3c710a37ee",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
