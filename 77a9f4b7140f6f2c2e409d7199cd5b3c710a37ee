@@ -16,6 +16,24 @@
       "revId": "77a9f4b7140f6f2c2e409d7199cd5b3c710a37ee",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a1969be_b49ed754",
+        "filename": "bundles-test-lib/src/main/java/org/opendaylight/odlparent/bundlestest/lib/BundleSymbolicNameWithVersion.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2017-12-04T16:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a1969be_d48273ff",
+      "revId": "77a9f4b7140f6f2c2e409d7199cd5b3c710a37ee",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
