@@ -10,6 +10,7 @@ package org.opendaylight.odlparent.bundlestest.lib;
 import static java.util.Objects.requireNonNull;
 
 import java.io.Serializable;
+import javax.annotation.Nonnull;
 
 /**
  * Bundle's symbolic name + its version.
@@ -19,7 +20,10 @@ import java.io.Serializable;
 public final class BundleSymbolicNameWithVersion implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Nonnull
     private final String symbolicName;
+
+    @Nonnull
     private final String version;
 
     public BundleSymbolicNameWithVersion(String symbolicName, String version) {
@@ -49,20 +53,13 @@ public final class BundleSymbolicNameWithVersion implements Serializable {
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        if (!(obj instanceof BundleSymbolicNameWithVersion)) {
-            return false;
-        }
-        BundleSymbolicNameWithVersion other = (BundleSymbolicNameWithVersion) obj;
-        if (!symbolicName.equals(other.symbolicName)) {
-            return false;
-        }
-        if (!version.equals(other.version)) {
-            return false;
-        }
-        return true;
+
+        BundleSymbolicNameWithVersion that = (BundleSymbolicNameWithVersion) obj;
+
+        return symbolicName.equals(that.symbolicName) && version.equals(that.version);
     }
 
     @Override

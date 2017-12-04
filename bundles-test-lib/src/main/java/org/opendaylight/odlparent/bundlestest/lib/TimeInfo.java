@@ -12,7 +12,7 @@ package org.opendaylight.odlparent.bundlestest.lib;
  *
  * @author Michael Vorburger.ch
  */
-public class TimeInfo {
+public final class TimeInfo {
 
     private final long elapsedTimeInMS;
     private final long remainingTimeInMS;
@@ -44,20 +44,13 @@ public class TimeInfo {
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        if (!(obj instanceof TimeInfo)) {
-            return false;
-        }
-        TimeInfo other = (TimeInfo) obj;
-        if (elapsedTimeInMS != other.elapsedTimeInMS) {
-            return false;
-        }
-        if (remainingTimeInMS != other.remainingTimeInMS) {
-            return false;
-        }
-        return true;
+
+        TimeInfo timeInfo = (TimeInfo) obj;
+
+        return elapsedTimeInMS == timeInfo.elapsedTimeInMS && remainingTimeInMS == timeInfo.remainingTimeInMS;
     }
 
     @Override
