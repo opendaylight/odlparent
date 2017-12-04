@@ -44,14 +44,24 @@ final class BundleDiagInfosImpl implements BundleDiagInfos {
     private final Map<BundleState, Integer> bundleStatesCounters;
     private final Map<BundleSymbolicNameWithVersion, BundleState> bundlesStateMap;
 
+    /**
+     * Create an instance. The collections provided as arguments will be kept as-is; it’s up to the caller
+     * to ensure they’re handled defensively, as appropriate.
+     *
+     * @param okBundleStateInfoTexts information about bundles in OK state.
+     * @param nokBundleStateInfoTexts information about bundles not in OK state.
+     * @param whitelistedBundleStateInfoTexts information about whitelisted bundles.
+     * @param bundleStatesCounters bundle state counters.
+     * @param bundlesStateMap bundle state map (state of each bundle).
+     */
     private BundleDiagInfosImpl(List<String> okBundleStateInfoTexts, List<String> nokBundleStateInfoTexts,
             List<String> whitelistedBundleStateInfoTexts, Map<BundleState, Integer> bundleStatesCounters,
             Map<BundleSymbolicNameWithVersion, BundleState> bundlesStateMap) {
-        this.okBundleStateInfoTexts = immutableCopyOf(okBundleStateInfoTexts);
-        this.nokBundleStateInfoTexts = immutableCopyOf(nokBundleStateInfoTexts);
-        this.whitelistedBundleStateInfoTexts = immutableCopyOf(whitelistedBundleStateInfoTexts);
-        this.bundleStatesCounters = immutableCopyOf(bundleStatesCounters);
-        this.bundlesStateMap = immutableCopyOf(bundlesStateMap);
+        this.okBundleStateInfoTexts = okBundleStateInfoTexts;
+        this.nokBundleStateInfoTexts = nokBundleStateInfoTexts;
+        this.whitelistedBundleStateInfoTexts = whitelistedBundleStateInfoTexts;
+        this.bundleStatesCounters = bundleStatesCounters;
+        this.bundlesStateMap = bundlesStateMap;
     }
 
     public static BundleDiagInfos forContext(BundleContext bundleContext, BundleService bundleService) {
@@ -104,8 +114,10 @@ final class BundleDiagInfosImpl implements BundleDiagInfos {
             }
         }
 
-        return new BundleDiagInfosImpl(okBundleStateInfoTexts, nokBundleStateInfoTexts,
-                whitelistedBundleStateInfoTexts, bundleStatesCounters, bundlesStateMap);
+        return new BundleDiagInfosImpl(Collections.unmodifiableList(okBundleStateInfoTexts),
+                Collections.unmodifiableList(nokBundleStateInfoTexts),
+                Collections.unmodifiableList(whitelistedBundleStateInfoTexts),
+                Collections.unmodifiableMap(bundleStatesCounters), Collections.unmodifiableMap(bundlesStateMap));
     }
 
     private static String bundleStateToText(int state) {
@@ -189,14 +201,6 @@ final class BundleDiagInfosImpl implements BundleDiagInfos {
     @Override
     public String toString() {
         return getFullDiagnosticText();
-    }
-
-    private List<String> immutableCopyOf(List<String> stringList) {
-        return Collections.unmodifiableList(new ArrayList<>(stringList));
-    }
-
-    private <K, V> Map<K, V> immutableCopyOf(Map<K, V> map) {
-        return Collections.unmodifiableMap(new HashMap<>(map));
     }
 
 }
