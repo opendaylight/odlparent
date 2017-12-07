@@ -19,6 +19,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
 import javax.annotation.RegEx;
+import org.apache.karaf.features.BundleInfo;
+import org.apache.karaf.features.Conditional;
 import org.apache.karaf.features.internal.model.Bundle;
 import org.apache.karaf.features.internal.model.ConfigFile;
 import org.apache.karaf.features.internal.model.Feature;
@@ -145,6 +147,16 @@ public final class FeatureUtil {
         Set<String> result = new LinkedHashSet<>();
         if (feature.getBundle() != null) {
             result.addAll(bundlesToCoords(feature.getBundle()));
+        }
+        if (feature.getConditional() != null) {
+            for (Conditional conditional : feature.getConditional()) {
+                if (conditional.getBundles() != null) {
+                    for (BundleInfo bundleInfo : conditional.getBundles()) {
+                        result.add(toCoord(new URL(bundleInfo.getLocation())));
+                    }
+                }
+            }
+            // TODO Dependencies
         }
         if (feature.getConfigfile() != null) {
             result.addAll(configFilesToCoords(feature.getConfigfile()));
