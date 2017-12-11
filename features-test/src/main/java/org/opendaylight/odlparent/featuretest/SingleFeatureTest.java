@@ -188,6 +188,7 @@ public class SingleFeatureTest {
             logLevel(LogLevel.INFO),
             mvnLocalRepoOption(),
             mavenBundle("org.apache.aries.quiesce", "org.apache.aries.quiesce.api", "1.0.0"),
+            mavenBundle("org.apache.aries.blueprint", "org.apache.aries.blueprint.core.compatibility", "1.0.0"),
             editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
                     LogLevel.INFO.name()),
             editConfigurationFilePut("etc/config.properties", "karaf.framework", "equinox"),
