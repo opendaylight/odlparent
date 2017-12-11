@@ -91,11 +91,17 @@
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-ext-jdk15on</artifactId>
+            <artifactId>bcpkix-jdk15on</artifactId>
         </dependency>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcpkix-jdk15on</artifactId>
+            <artifactId>bcprov-ext-jdk15on</artifactId>
+        </dependency>
+
+        <!-- Optional dependency of karaf.config.core -->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.metatype</artifactId>
         </dependency>
 
         <!-- ODL Branding -->
@@ -126,11 +132,6 @@
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
             <version>1.4.4</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.aries.quiesce</groupId>
-            <artifactId>org.apache.aries.quiesce.api</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
