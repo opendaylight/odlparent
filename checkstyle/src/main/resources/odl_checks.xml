@@ -246,6 +246,7 @@
         <module name="SingleLineJavadoc"/>
 
         <module name="HiddenField">
+            <property name="ignoreAbstractMethods" value="true" />
             <property name="ignoreConstructorParameter" value="true" />
             <property name="ignoreSetter" value="true" />
             <property name="setterCanReturnItsClass" value="true" />
