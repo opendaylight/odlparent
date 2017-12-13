@@ -269,5 +269,15 @@
             <property name="forbiddenImportsExcludesRegexp" value="" />
             <message key="forbid.certain.imports" value="Use ''java.nio.charset.StandardCharsets'' instead of ''{0}''" />
         </module>
+
+        <!-- Checks for logging -->
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LoggerVariableNameCheck" />
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LoggerVariableModifiersCheck" />
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LoggerMustBeSlf4jCheck" />
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LoggerFactoryClassParameterCheck" />
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LogMessageConcatenationCheck" />
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LogMessagePlaceholderCountCheck" />
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LoggerDeclarationsCountCheck"/>
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LogMessageExtractorCheck"/>
     </module>
 </module>

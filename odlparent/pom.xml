@@ -41,7 +41,6 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- Java Versions -->
-    <!-- FIXME: confirm these two are picked by maven-compiler-plugin -->
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <java.version.source>${maven.compiler.source}</java.version.source>
@@ -138,7 +137,8 @@
       <dependency>
         <groupId>com.puppycrawl.tools</groupId>
         <artifactId>checkstyle</artifactId>
-        <!-- This should match the plugin management on maven-checkstyle-plugin below -->
+        <!-- This should match the plugin management on maven-checkstyle-plugin below,
+             as well as the one in checkstyle-odl-checks for the logging rules. -->
         <version>8.4</version>
       </dependency>
 
@@ -1133,6 +1133,11 @@
               <artifactId>checkstyle</artifactId>
               <!-- This should match the dependency management on com.puppycrawl.tools:checkstyle above -->
               <version>8.4</version>
+            </dependency>
+            <dependency>
+              <groupId>org.opendaylight.odlparent</groupId>
+              <artifactId>checkstyle-odl-checks</artifactId>
+              <version>3.0.2-SNAPSHOT</version>
             </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
