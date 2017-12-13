@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+
+<module name="Checker">
+
+    <module name="TreeWalker">
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LoggerVariableNameCheck" />
+    </module>
+
+    <module name="TreeWalker">
+      <module name="org.opendaylight.odlparent.checkstyle.logging.LoggerVariableModifiersCheck" />
+    </module>
+
+     <module name="TreeWalker">
+      <module name="org.opendaylight.odlparent.checkstyle.logging.LoggerMustBeSlf4jCheck" />
+    </module>
+
+    <module name="TreeWalker">
+      <module name="org.opendaylight.odlparent.checkstyle.logging.LoggerFactoryClassParameterCheck" />
+    </module>
+
+   <module name="TreeWalker">
+      <module name="org.opendaylight.odlparent.checkstyle.logging.LogMessageConcatenationCheck" />
+    </module>
+
+    <module name="TreeWalker">
+      <module name="org.opendaylight.odlparent.checkstyle.logging.LogMessagePlaceholderCountCheck" />
+    </module>
+
+    <module name="TreeWalker">
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LoggerDeclarationsCountCheck"/>
+    </module>
+
+    <module name="TreeWalker">
+        <module name="org.opendaylight.odlparent.checkstyle.logging.LogMessageExtractorCheck"/>
+    </module>
+
+</module>

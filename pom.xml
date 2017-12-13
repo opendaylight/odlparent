@@ -28,6 +28,7 @@
 
     <modules>
         <!-- odlparent tools -->
+        <module>checkstyle-odl-checks</module>
         <module>checkstyle</module>
         <module>findbugs</module>
         <module>license</module>
