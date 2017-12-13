@@ -117,7 +117,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.0.0-M1</version>
+          <version>3.0.0</version>
           <configuration>
             <!-- Keep things quiet except for warnings/errors -->
             <quiet>true</quiet>
@@ -148,7 +148,7 @@
             <detectLinks>false</detectLinks> <!-- TODO: It should work once https://issues.apache.org/jira/browse/MJAVADOC-427 is solved -->
             <detectOfflineLinks>true</detectOfflineLinks>
 <!-- Links are commented out due to build performance impact
-     which has been observed since upgrading maven-javadoc-plugin 2.10.4 to 3.0.0-M1,
+     which has been observed since upgrading maven-javadoc-plugin 2.10.4 to 3.0.0,
      see https://jira.opendaylight.org/browse/ODLPARENT-121.
 
             <links>
