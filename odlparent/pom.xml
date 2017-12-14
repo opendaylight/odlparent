@@ -1411,6 +1411,14 @@
             </dependency>
           </dependencies>
           <configuration>
+            <plugins>
+              <plugin>
+                <groupId>jp.skypencil.findbugs.slf4j</groupId>
+                <artifactId>bug-pattern</artifactId>
+                <!-- NOTE: This version MUST be kept in sync with the same version in the new spotbugs-maven-plugin below -->
+                <version>1.4.0</version>
+              </plugin>
+            </plugins>
             <!--
               Enables analysis which takes more memory but finds more bugs.
               If you run out of memory, changes the value of the effort element
@@ -1427,8 +1435,8 @@
             <xmlOutput>true</xmlOutput>
             <!-- Configures the directory in which the XML report is created -->
             <findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory>
-            </configuration>
-            <executions>
+          </configuration>
+          <executions>
               <!--
                 Ensures that FindBugs inspects source code when project is compiled.
               -->
@@ -1439,7 +1447,7 @@
                   <goal>check</goal>
                 </goals>
               </execution>
-            </executions>
+          </executions>
         </plugin>
         <plugin>
           <groupId>com.github.spotbugs</groupId>
@@ -1458,6 +1466,14 @@
             </dependency>
           </dependencies>
           <configuration>
+            <plugins>
+              <plugin>
+                <groupId>jp.skypencil.findbugs.slf4j</groupId>
+                <artifactId>bug-pattern</artifactId>
+                <!-- NOTE: This version MUST be kept in sync with the same version in the old findbugs-maven-plugin above -->
+                <version>1.4.0</version>
+              </plugin>
+            </plugins>
             <!--
               Enables analysis which takes more memory but finds more bugs.
               If you run out of memory, changes the value of the effort element

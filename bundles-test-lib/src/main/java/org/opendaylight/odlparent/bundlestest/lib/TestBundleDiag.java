@@ -81,7 +81,7 @@ public class TestBundleDiag {
 
             } else {
                 // Inform the developer of the green SystemState.Active
-                LOG.info(bundleInfos.getFullDiagnosticText());
+                LOG.info("diag successful; system state active ({})", bundleInfos.getFullDiagnosticText());
             }
 
         } catch (ConditionTimeoutException e) {
