@@ -5,6 +5,33 @@ ODL Parent release notes
 Version 3.0.2
 -------------
 
+This version fixes the following issues:
+
+* SingleFeatureTest uses the configured local Maven repository for Pax Exam.
+
+* JavaDoc links are disabled for now to `speed up builds`_. A new
+  ``javadoc-links`` profile enables the links.
+
+* Conditional feature dependencies are processed, ensuring our
+  `distribution is complete`_.
+
+* Startup features are `adjusted for Karaf 4.1`_, avoiding unnecessary
+  refreshes.
+
+* The ``hiddenField`` Checkstyle check is disabled for abstract methods.
+
+* The default logging configuration uses Log4J2, which is the new default in
+  Karaf 4.1.
+
+.. _speed up builds: https://jira.opendaylight.org/browse/ODLPARENT-121
+.. _distribution is complete: https://jira.opendaylight.org/browse/ODLPARENT-133
+.. _adjusted for Karaf 4.1: https://jira.opendaylight.org/browse/ODLPARENT-134
+
+This version upgrades the following dependencies or plugins:
+
+* ``maven-enforcer-plugin`` 1.4.1 → 3.0.0-M1
+
+* ``maven-javadoc-plugin`` 3.0.0-M1 → 3.0.0
 
 Version 3.0.1
 -------------
