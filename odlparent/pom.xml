@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>3.0.2-SNAPSHOT</version>
+    <version>3.0.3-SNAPSHOT</version>
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
@@ -125,7 +125,7 @@
       <dependency>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-artifacts</artifactId>
-        <version>3.0.2-SNAPSHOT</version>
+        <version>3.0.3-SNAPSHOT</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -1137,12 +1137,12 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>3.0.2-SNAPSHOT</version>
+              <version>3.0.3-SNAPSHOT</version>
             </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>odl-license</artifactId>
-              <version>3.0.2-SNAPSHOT</version>
+              <version>3.0.3-SNAPSHOT</version>
             </dependency>
             <dependency>
               <groupId>com.github.sevntu-checkstyle</groupId>
@@ -1271,7 +1271,7 @@
                   <artifactItem>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>odl-license</artifactId>
-                    <version>3.0.2-SNAPSHOT</version>
+                    <version>3.0.3-SNAPSHOT</version>
                   </artifactItem>
                 </artifactItems>
                 <outputDirectory>${project.build.outputDirectory}</outputDirectory>
@@ -1407,7 +1407,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>findbugs</artifactId>
-              <version>3.0.2-SNAPSHOT</version>
+              <version>3.0.3-SNAPSHOT</version>
             </dependency>
           </dependencies>
           <configuration>
@@ -1454,7 +1454,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>findbugs</artifactId>
-              <version>3.0.2-SNAPSHOT</version>
+              <version>3.0.3-SNAPSHOT</version>
             </dependency>
           </dependencies>
           <configuration>
