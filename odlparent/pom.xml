@@ -1725,8 +1725,9 @@
                  we use resources not dependencies (see https://github.com/basepom/duplicate-finder-maven-plugin/wiki/Classpath%20Exceptions)
                  also ignore: -->
             <ignoredResourcePatterns>
-              <ignoredResourcePattern>org/opendaylight/blueprint/autowire.xml$</ignoredResourcePattern>
+              <ignoredResourcePattern>org/opendaylight/blueprint/.*\.xml$</ignoredResourcePattern>
               <ignoredResourcePattern>OSGI-OPT/bnd.bnd$</ignoredResourcePattern>
+              <ignoredResourcePattern>WEB-INF/web.xml</ignoredResourcePattern>
               <ignoredResourcePattern>README.*$</ignoredResourcePattern>
               <ignoredResourcePattern>.*\.html$</ignoredResourcePattern>
               <ignoredResourcePattern>reference.conf</ignoredResourcePattern>
