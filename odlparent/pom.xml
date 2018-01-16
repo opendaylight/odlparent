@@ -392,39 +392,39 @@
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-core</artifactId>
-        <version>1.17</version>
+        <version>1.19.4</version>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-json</artifactId>
-        <version>1.17</version>
+        <version>1.19.4</version>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-server</artifactId>
-        <version>1.17</version>
+        <version>1.19.4</version>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-servlet</artifactId>
-        <version>1.17</version>
+        <version>1.19.4</version>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey.jersey-test-framework</groupId>
         <artifactId>jersey-test-framework-grizzly2</artifactId>
-        <version>1.17</version>
+        <version>1.19.4</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey.jersey-test-framework</groupId>
         <artifactId>jersey-test-framework-inmemory</artifactId>
-        <version>1.17</version>
+        <version>1.19.4</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.sun.jersey</groupId>
         <artifactId>jersey-client</artifactId>
-        <version>1.17</version>
+        <version>1.19.4</version>
       </dependency>
       <dependency>
         <groupId>org.opendaylight.controller.thirdparty</groupId>
