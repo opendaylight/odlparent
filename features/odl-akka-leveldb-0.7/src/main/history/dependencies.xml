@@ -4,7 +4,6 @@
         <feature prerequisite="false" dependency="false">odl-guava-23</feature>
         <feature prerequisite="false" dependency="false">wrap</feature>
         <bundle>mvn:org.fusesource.leveldbjni/leveldbjni-all/1.8-odl</bundle>
-        <bundle>wrap:mvn:org.iq80.leveldb/leveldb-api/0.7</bundle>
         <bundle>wrap:mvn:org.iq80.leveldb/leveldb/0.7</bundle>
     </feature>
 </features>
