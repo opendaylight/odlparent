@@ -41,6 +41,13 @@
         <dependency>
             <groupId>org.iq80.leveldb</groupId>
             <artifactId>leveldb</artifactId>
+            <exclusions>
+              <exclusion>
+                <!-- To avoid classpath duplicates, because leveldbjni-all shades a (not bit identical version of) the 13 API classes in org.iq80.leveldb -->
+                <groupId>org.iq80.leveldb</groupId>
+                <artifactId>leveldb-api</artifactId>
+              </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.fusesource.leveldbjni</groupId>
