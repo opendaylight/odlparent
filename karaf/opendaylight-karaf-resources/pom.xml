@@ -119,6 +119,7 @@ mvn\:org.apache.felix/org.apache.felix.metatype/1.1.6 = 8
 mvn\:org.bouncycastle/bcprov-jdk15on/1.58 = 14
 mvn\:org.bouncycastle/bcpkix-jdk15on/1.58 = 14
 mvn\:org.bouncycastle/bcprov-ext-jdk15on/1.58 = 14
+mvn\:org.ow2.asm/asm-all/5.0.4 = 14
 mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.0.0 = 14
                 </echo>
                 <copy file="${project.build.directory}/assembly/etc/startup.properties"

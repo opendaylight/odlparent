@@ -61,6 +61,8 @@
                         <excludedArtifactId>org.apache.aries.blueprint.core</excludedArtifactId>
                         <!-- Aries Quiesce -->
                         <excludedArtifactId>org.apache.aries.quiesce.api</excludedArtifactId>
+                        <!-- ASM -->
+                        <excludedArtifactId>asm-all</excludedArtifactId>
                         <!-- jline -->
                         <excludedArtifactId>jline</excludedArtifactId>
                         <!-- SLF4J -->
