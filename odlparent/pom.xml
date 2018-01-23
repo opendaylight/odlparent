@@ -106,7 +106,7 @@
 
     <akka.version>2.4.18</akka.version>
     <scala.version>2.11</scala.version>
-    <scala.micro.version>11</scala.micro.version>
+    <scala.micro.version>12</scala.micro.version>
     <leveldb.version>0.7</leveldb.version>
 
     <!-- Default Sonar configuration -->

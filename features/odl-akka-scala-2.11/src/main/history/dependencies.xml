@@ -2,7 +2,7 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl-akka-scala-2.11">
     <feature version="0.0.0">
         <bundle>mvn:org.scala-lang.modules/scala-java8-compat_2.11/0.8.0</bundle>
-        <bundle>mvn:org.scala-lang/scala-library/2.11.11</bundle>
-        <bundle>mvn:org.scala-lang/scala-reflect/2.11.11</bundle>
+        <bundle>mvn:org.scala-lang/scala-library/2.11.12</bundle>
+        <bundle>mvn:org.scala-lang/scala-reflect/2.11.12</bundle>
     </feature>
 </features>
