@@ -82,7 +82,9 @@
               <configLocation>check-license.xml</configLocation>
               <includeResources>false</includeResources>
               <includeTestResources>false</includeTestResources>
-              <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+              <sourceDirectories>
+                <directory>${project.build.sourceDirectory}</directory>
+              </sourceDirectories>
               <excludes>
                 <!-- Skip Apache Licensed files -->
                 org/opendaylight/odlparent/PopulateLocalRepoMojo.java
