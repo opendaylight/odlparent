@@ -255,6 +255,7 @@
         <artifactId>metainf-services</artifactId>
         <version>1.7</version>
         <optional>true</optional>
+        <scope>provided</scope>
       </dependency>
 
       <!--
