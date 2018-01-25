@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl-akka-clustering-2.5">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-akka-clustering-2.5">
     <feature version="0.0.0">
-        <feature prerequisite="false" dependency="false">odl-akka-system-2.5</feature>
+        <feature>odl-akka-system-2.5</feature>
         <bundle>mvn:com.typesafe.akka/akka-cluster_2.12/2.5.9</bundle>
         <bundle>mvn:com.typesafe.akka/akka-protobuf_2.12/2.5.9</bundle>
         <bundle>mvn:com.typesafe.akka/akka-remote_2.12/2.5.9</bundle>
