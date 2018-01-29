@@ -93,6 +93,36 @@ DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
         </Arg>
     </Call>
 
+    <Call name="addConnector">
+        <Arg>
+            <New class="org.eclipse.jetty.server.ServerConnector">
+                <Arg name="server">
+                    <Ref refid="Server" />
+                </Arg>
+                <Arg name="factories">
+                    <Array type="org.eclipse.jetty.server.ConnectionFactory">
+                        <Item>
+                            <New class="org.eclipse.jetty.server.HttpConnectionFactory">
+                                <Arg name="config">
+                                    <Ref refid="http-legacy"/>
+                                </Arg>
+                            </New>
+                        </Item>
+                    </Array>
+                </Arg>
+                <Set name="host">
+                    <Property name="jetty.host"/>
+                </Set>
+                <Set name="port">
+                    <Property name="jetty.port" default="8087"/>
+                </Set>
+                <Set name="idleTimeout">
+                    <Property name="http.timeout" default="300000"/>
+                </Set>
+                <Set name="name">jetty-legacy</Set>
+            </New>
+        </Arg>
+    </Call>
     <!-- =========================================================== -->
     <!-- Configure Authentication Realms -->
     <!-- Realms may be configured for the entire server here, or -->
