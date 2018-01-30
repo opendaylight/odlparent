@@ -660,6 +660,10 @@
             <artifactId>spring-osgi-mock</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.threeten</groupId>
+            <artifactId>threeten-extra</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.uncommons.maths</groupId>
             <artifactId>uncommons-maths</artifactId>
         </dependency>
