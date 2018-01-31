@@ -327,7 +327,6 @@
         <artifactId>mycila-guice-jsr250</artifactId>
         <!-- Make sure this version is in sync with the guice one below -->
         <version>4.0.rc1</version>
-        <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.google.inject</groupId>
