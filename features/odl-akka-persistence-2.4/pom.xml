@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature3-parent</artifactId>
-        <version>1.8.3-SNAPSHOT</version>
+        <version>1.8.3-Carbon</version>
         <relativePath>../../single-feature3-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-akka-persistence-2.4</artifactId>
-    <version>1.8.3-SNAPSHOT</version>
+    <version>1.8.3-Carbon</version>
     <packaging>feature</packaging>
 
     <name>Akka Persistence</name>
@@ -29,7 +29,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>odl-akka-leveldb-0.7</artifactId>
-            <version>1.8.3-SNAPSHOT</version>
+            <version>1.8.3-Carbon</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>

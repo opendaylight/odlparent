@@ -22,13 +22,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>1.8.3-SNAPSHOT</version>
+        <version>1.8.3-Carbon</version>
         <relativePath>../odlparent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>untested-single-feature-parent</artifactId>
-    <version>1.8.3-SNAPSHOT</version>
+    <version>1.8.3-Carbon</version>
     <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 

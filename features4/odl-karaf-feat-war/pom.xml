@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>1.8.3-SNAPSHOT</version>
+        <version>1.8.3-Carbon</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
