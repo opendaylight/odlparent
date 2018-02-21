@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51a60cb5_ad2daae4",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1243,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2018-02-21T14:13:10Z",
+      "side": 1,
+      "message": "I like having execution ids which reflect what’s going on ;-). I think we need two: one to check, and another to build the signatures for downstream use...",
+      "revId": "4ebdb30c4cedfb55faf259b32da1445e3cdf43b2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
