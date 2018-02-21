@@ -1464,6 +1464,11 @@
                 <!-- NOTE: This version MUST be kept in sync with the same version in the old findbugs-maven-plugin above -->
                 <version>1.4.0</version>
               </plugin>
+              <plugin>
+                       <groupId>com.h3xstream.findsecbugs</groupId>
+                       <artifactId>findsecbugs-plugin</artifactId>
+                       <version>LATEST</version> 
+              </plugin>
             </plugins>
             <!--
               Enables analysis which takes more memory but finds more bugs.
@@ -1481,6 +1486,7 @@
             <xmlOutput>true</xmlOutput>
             <!-- Configures the directory in which the XML report is created -->
             <findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory>
+            <includeFilterFile>${session.executionRootDirectory}/spotbugs-security-include.xml</includeFilterFile>
           </configuration>
           <executions>
             <!--
