@@ -1268,6 +1268,11 @@
                 <artifactId>bug-pattern</artifactId>
                 <version>1.5.0</version>
               </plugin>
+              <plugin>
+                <groupId>com.h3xstream.findsecbugs</groupId>
+                <artifactId>findsecbugs-plugin</artifactId>
+                <version>1.11.0</version>
+              </plugin>
             </plugins>
             <!--
               Enables analysis which takes more memory but finds more bugs.
@@ -1280,6 +1285,8 @@
             <!-- Build doesn't fail if problems are found -->
             <failOnError>${odlparent.spotbugs.enforce}</failOnError>
             <skip>${odlparent.spotbugs.skip}</skip>
+            <!-- References the included findsecbugs rules -->
+            <includeFilterFile>spotbugs-security-include.xml</includeFilterFile>
             <!-- References the excluded rules -->
             <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
             <!-- Produces XML report -->
