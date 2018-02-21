@@ -1506,6 +1506,11 @@
                 <!-- NOTE: This version MUST be kept in sync with the same version in the old findbugs-maven-plugin above, if possible -->
                 <version>1.4.2</version>
               </plugin>
+              <plugin>
+                <groupId>com.h3xstream.findsecbugs</groupId>
+                <artifactId>findsecbugs-plugin</artifactId>
+                <version>1.9.0</version>
+              </plugin>
             </plugins>
             <!--
               Enables analysis which takes more memory but finds more bugs.
@@ -1517,6 +1522,8 @@
             <threshold>Low</threshold>
             <!-- Build doesn't fail if problems are found -->
             <failOnError>false</failOnError>
+            <!-- References the included findsecbugs rules -->
+            <includeFilterFile>spotbugs-security-include.xml</includeFilterFile>
             <!-- References the excluded rules -->
             <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
             <!-- Produces XML report -->
