@@ -11,6 +11,8 @@
     <Or>
       <!-- Anonymous inner classes are very common in ODL. -->
       <Bug pattern="SIC_INNER_SHOULD_BE_STATIC_ANON" />
+      <!-- Supress CRLF_INJECTION_LOGS in findsecbugs -->
+      <Bug pattern="CRLF_INJECTION_LOGS" />
 
       <!-- We use static slf4j Logger (this rule is from KengoTODA/findbugs-slf4j jp.skypencil.findbugs.slf4:bug-pattern) -->
       <Bug pattern="SLF4J_LOGGER_SHOULD_BE_NON_STATIC" />
