@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-lite</artifactId>
-        <version>1.8.3-SNAPSHOT</version>
+        <version>1.8.4-SNAPSHOT</version>
         <relativePath>../odlparent-lite/pom.xml</relativePath>
     </parent>
 
@@ -21,104 +21,104 @@
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>karaf.branding</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
             </dependency>
             <!-- ODL configuration -->
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>opendaylight-karaf4-resources</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <scope>provided</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>features-odlparent</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>features-akka</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-akka-all</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-akka-clustering-2.4</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-akka-leveldb-0.7</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-akka-persistence-2.4</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-akka-scala-2.11</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-akka-system-2.4</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-guava-18</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-guava-19</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-lmax-3</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-netty-4</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-triemap-0.2</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
@@ -126,7 +126,7 @@
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>features4-odlparent</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
@@ -134,28 +134,28 @@
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-karaf-feat-feature</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-karaf-feat-jdbc</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-karaf-feat-jetty</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-karaf-feat-war</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
@@ -163,84 +163,84 @@
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>features4-akka</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-akka-all</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-akka-clustering-2.4</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-akka-leveldb-0.7</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-akka-persistence-2.4</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-akka-scala-2.11</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-akka-system-2.4</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-guava-18</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-guava-21</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-lmax-3</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-netty-4</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl4-triemap-0.2</artifactId>
-                <version>1.8.3-SNAPSHOT</version>
+                <version>1.8.4-SNAPSHOT</version>
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
