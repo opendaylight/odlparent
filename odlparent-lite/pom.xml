@@ -75,13 +75,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <!-- This property is used in the pluginManagement and the q profile as well as -D set e.g. in releng/builder by c/53426
-         to emulate a future "maven.gitcommitid.skip", which only a future not-yet-available-on-Maven-central maven-git-commit-id-plugin release has.
-         (If we ever upgrade the version of the maven-git-commit-id-plugin we use, then this and re. pluginManagement config could be removed; BUT then
-          the q profile and all -D in releng/builder etc. else would have to be changed from this "gitid.skip" to "maven.gitcommitid.skip.)
-      -->
-    <gitid.skip>false</gitid.skip>
-
     <!-- This version property instead of just direct version in pluginManagement is the exception that confirms the rule
          and is required so that downstream users of the archetype-packaging extension can use this (and get the same version
          as the maven-archetype-plugin), because there is no "extensionManagement" in Maven -->
@@ -312,7 +305,7 @@
       <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
-        <version>2.2.2</version>
+        <version>2.2.4</version>
         <executions>
           <execution>
             <id>get-git-infos</id>
@@ -322,7 +315,6 @@
           </execution>
         </executions>
         <configuration>
-          <skip>${gitid.skip}</skip>
           <failOnNoGitDirectory>false</failOnNoGitDirectory>
           <generateGitPropertiesFile>true</generateGitPropertiesFile>
           <generateGitPropertiesFilename>${project.build.outputDirectory}/META-INF/git.properties</generateGitPropertiesFilename>
@@ -383,7 +375,7 @@
         <enforcer.skip>true</enforcer.skip>
         <duplicate-finder.skip>true</duplicate-finder.skip>
         <mdsal.skip.verbose>true</mdsal.skip.verbose> <!-- Bug 6236 -->
-        <gitid.skip>true</gitid.skip>
+        <maven.gitcommitid.skip>true</maven.gitcommitid.skip>
         <modernizer.skip>true</modernizer.skip>
       </properties>
     </profile>
