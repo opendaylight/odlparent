@@ -25,6 +25,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Properties;
@@ -106,6 +107,13 @@ public class PopulateLocalRepoMojo
      */
     private File localRepo;
 
+    /**
+     * A <code>List</code> of artifacts to exclude from <code>system</code> directory population.
+     *
+     * @parameter
+     */
+    private List<String> excludedArtifacts;
+
     private AetherUtil aetherUtil;
 
     @Override
@@ -129,7 +137,9 @@ public class PopulateLocalRepoMojo
                 LOG.info("Feature repository discovered recursively: {}", feature.getName());
             }
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
-            artifacts.addAll(featureArtifacts);
+            if (excludedArtifacts != null) {
+                artifacts = removeExcludedArtifacts(artifacts);
+            }
 
             for (Artifact artifact : artifacts) {
                 LOG.debug("Artifact to be installed: {}", artifact.toString());
@@ -140,6 +150,18 @@ public class PopulateLocalRepoMojo
         } catch (Exception e) {
             throw new MojoExecutionException("Failed to execute", e);
         }
+    }
+
+    private Set<Artifact> removeExcludedArtifacts(final Set<Artifact> featureArtifacts) {
+        final Set<Artifact> artifacts = new HashSet<>();
+        for (Artifact artifact : featureArtifacts) {
+            if(!excludedArtifacts.contains(artifact.toString())) {
+                artifacts.add(artifact);
+            } else {
+                LOG.debug("Not Installing: {}", artifact.toString());
+            }
+        }
+        return artifacts;
     }
 
     private void readFeatureCfg(Set<Artifact> artifacts, Set<Features> features) throws ArtifactResolutionException {

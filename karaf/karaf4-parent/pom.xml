@@ -157,6 +157,7 @@
                         </goals>
                         <configuration>
                             <localRepo>${project.build.directory}/assembly/system</localRepo>
+                            <excludedArtifacts>mysql:mysql-connector-java:jar:5.1.34</excludedArtifacts>
                         </configuration>
                     </execution>
                 </executions>
