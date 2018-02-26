@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56ad40fb_8cd3ff2d",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-02-26T20:37:21Z",
+      "side": 1,
+      "message": "this odlparent/pom.xml is the wrong POM (this is just the root with \u003cmodules\u003e for all of odlparent itself); this instead needs to go into odlparent/odlparent/pom.xml (which is the parent POM of all ODL Java projects, where you want this), where you\u0027ll find we already have a spotbugs-maven-plugin, to which you\u0027ll want to add this, instead of here...",
+      "revId": "88ca4e620a335f8c2164c3a5deed0d35450ef9dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aa9d0625_8c788eb8",
+        "filename": "spotbugs-security-exclude.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-02-26T20:37:21Z",
+      "side": 1,
+      "message": "(a) are you sure you want to match \u003cBug category\u003d\"SECURITY\"/\u003e for both include and exclude?  (b) I think you\u0027ll want to add this to findbugs/src/main/resources, not as lone files in the root of odlparent (because that would not be found anymore when you build another ODL project with this change)",
+      "revId": "88ca4e620a335f8c2164c3a5deed0d35450ef9dc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
