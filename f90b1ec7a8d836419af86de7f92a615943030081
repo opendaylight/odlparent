@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "78eeb5e6_a8ec1fbc",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2018-02-27T16:32:08Z",
+      "side": 1,
+      "message": "Probably, I can look into this.",
+      "parentUuid": "7fe4f8a5_0996b48c",
+      "revId": "f90b1ec7a8d836419af86de7f92a615943030081",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "70d3b980_da412980",
         "filename": "karaf/karaf4-parent/pom.xml",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2018-02-27T09:51:27Z",
       "side": 1,
       "message": "I\u0027m unfortunately not crystal clear what is coming how from where, but could not a regular Maven standard \u003cexclusions\u003e be placed on some \u003cdependency\u003e instead?  Like which.. Karaf core.. feature.. something actually has the mysql-connector-java as dependency - could we just exclude it there?",
+      "revId": "f90b1ec7a8d836419af86de7f92a615943030081",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9011416f_2a370787",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 3635
+      },
+      "writtenOn": "2018-02-27T16:32:08Z",
+      "side": 1,
+      "message": "Don\u0027t think so, I tried to do that, but it appears that it is a tertiary dependency and doesn\u0027t end up getting excluded from the build.  I added the exclusion to the karaf standard features dependency, and still saw it appear in the system directory-- even with maven-enforcer-plugin set to exclude it as well.\n\nTrying to figure this out in release timeframe is a bit wasteful;  could we get this in as is and then re-evaluate using a more standard plugin than our homegrown one?  I would gladly change the format of this so it isn\u0027t a \"magic String\" as you said earlier?",
+      "parentUuid": "70d3b980_da412980",
       "revId": "f90b1ec7a8d836419af86de7f92a615943030081",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
