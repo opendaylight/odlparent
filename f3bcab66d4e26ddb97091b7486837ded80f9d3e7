@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "89b417a6_3be1d995",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-02-27T08:05:25Z",
+      "side": 1,
+      "message": "apparently the word \"Upgrade\" makes a stupid Koala (tox) sad, so let\u0027s just use \"bump\" instead...",
+      "revId": "f3bcab66d4e26ddb97091b7486837ded80f9d3e7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
