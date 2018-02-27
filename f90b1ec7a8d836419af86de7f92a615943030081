@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7fe4f8a5_0996b48c",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-02-27T09:51:27Z",
+      "side": 1,
+      "message": "Isn\u0027t there something else than String already available in the Maven Mojo API to define inline GAV like dependencies instead of having to use magic Strings like e.g. \"mysql:mysql-connector-java:jar:5.1.34\" ?",
+      "revId": "f90b1ec7a8d836419af86de7f92a615943030081",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "70d3b980_da412980",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-02-27T09:51:27Z",
+      "side": 1,
+      "message": "I\u0027m unfortunately not crystal clear what is coming how from where, but could not a regular Maven standard \u003cexclusions\u003e be placed on some \u003cdependency\u003e instead?  Like which.. Karaf core.. feature.. something actually has the mysql-connector-java as dependency - could we just exclude it there?",
+      "revId": "f90b1ec7a8d836419af86de7f92a615943030081",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
