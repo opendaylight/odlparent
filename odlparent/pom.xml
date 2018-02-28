@@ -103,7 +103,7 @@
     <!-- Used by controller, snbi; see also centinel, dlux, toolkit -->
     <osgi.core.version>5.0.0</osgi.core.version>
 
-    <akka.version>2.5.4</akka.version>
+    <akka.version>2.5.10</akka.version>
     <leveldb.version>0.7</leveldb.version>
 
     <!-- Default Sonar configuration -->
