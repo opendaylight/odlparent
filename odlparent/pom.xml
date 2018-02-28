@@ -98,7 +98,7 @@
 
     <!-- Supporting Libraries -->
     <!-- Used by controller -->
-    <bouncycastle.version>1.58</bouncycastle.version>
+    <bouncycastle.version>1.59</bouncycastle.version>
 
     <!-- Used by controller, snbi; see also centinel, dlux, toolkit -->
     <osgi.core.version>5.0.0</osgi.core.version>
