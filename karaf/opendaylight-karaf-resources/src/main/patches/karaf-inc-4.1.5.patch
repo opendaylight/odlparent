@@ -1,5 +1,18 @@
 --- /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/bin/inc.orig	2017-09-19 11:49:03.217548319 +0200
 +++ /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/bin/inc	2017-09-19 11:50:32.797822567 +0200
+@@ -213,7 +213,11 @@
+         | awk '{print substr($3,2,length($3)-2)}' \
+         | awk '{print substr($1, 3, 3)}' \
+         | sed -e 's;\.;;g')
+-    if [ "x${VERSION}" = "x" ]; then
++    MAJOR_VERSION=$("${JAVA}" -version 2>&1 \
++        |awk -F '"' '/version/ {print $2}' \
++        |cut -b 1)
++    if [ "${MAJOR_VERSION}" -ge "9" ]; then
+        VERSION=90
++       warn "Running OpenDaylight on Java 9 is not supported"
+     fi
+     if [ "${VERSION}" -lt "80" ]; then
 @@ -257,6 +257,7 @@
      fi
  
