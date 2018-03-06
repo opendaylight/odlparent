@@ -1,0 +1,7 @@
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+2: Michael Vorburger <vorburger@redhat.com>
+Submitted-by: Michael Vorburger <vorburger@redhat.com>
+Submitted-at: Tue, 06 Mar 2018 15:01:18 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/69135
+Project: odlparent
+Branch: refs/heads/3.0.x
