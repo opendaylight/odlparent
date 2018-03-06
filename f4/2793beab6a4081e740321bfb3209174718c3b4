@@ -1,0 +1,7 @@
+Code-Review+2: Thanh Ha <thanh.ha@linuxfoundation.org>
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Submitted-by: Michael Vorburger <vorburger@redhat.com>
+Submitted-at: Tue, 06 Mar 2018 15:00:12 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/69133
+Project: odlparent
+Branch: refs/heads/3.0.x
