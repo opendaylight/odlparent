@@ -388,6 +388,7 @@
         <duplicate-finder.skip>true</duplicate-finder.skip>
         <mdsal.skip.verbose>true</mdsal.skip.verbose> <!-- Bug 6236 -->
         <maven.gitcommitid.skip>true</maven.gitcommitid.skip>
+        <modernizer.skip>true</modernizer.skip>
       </properties>
     </profile>
     <profile>
