@@ -1384,7 +1384,7 @@
               <version>3.1.0-SNAPSHOT</version>
             </dependency>
           </dependencies>
-          <configuration>
+          <configuration combine.children="append">
             <!--
               Enables analysis which takes more memory but finds more bugs.
               If you run out of memory, changes the value of the effort element
@@ -1431,7 +1431,7 @@
               <version>3.1.0-SNAPSHOT</version>
             </dependency>
           </dependencies>
-          <configuration>
+          <configuration combine.children="append">
             <!--
               Enables analysis which takes more memory but finds more bugs.
               If you run out of memory, changes the value of the effort element
