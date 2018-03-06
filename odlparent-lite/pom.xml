@@ -384,6 +384,7 @@
         <duplicate-finder.skip>true</duplicate-finder.skip>
         <mdsal.skip.verbose>true</mdsal.skip.verbose> <!-- Bug 6236 -->
         <gitid.skip>true</gitid.skip>
+        <modernizer.skip>true</modernizer.skip>
       </properties>
     </profile>
     <profile>
