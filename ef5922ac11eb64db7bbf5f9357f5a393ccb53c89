@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "73763418_4b608b15",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1468,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-03-09T16:05:54Z",
+      "side": 1,
+      "message": "nit pick: use only 2 spaces to indent this, like everything else here",
+      "revId": "ef5922ac11eb64db7bbf5f9357f5a393ccb53c89",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f8082d7_2d791267",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1489,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-03-09T16:05:54Z",
+      "side": 1,
+      "message": "${session.executionRootDirectory}/ will not be found anymore when you build another ODL project with this change (it only works for odlparent itself).  Instead, you\u0027ll want to add this to findbugs/src/main/resources, not as lone files in the root of odlparent, and then just use \u003cincludeFilterFile\u003espotbugs-security-include.xml; that will work, just like \u003cexcludeFilterFile\u003efindbugs-exclude.xml above does (and BTW how about moving this new line 5 lines up just so that it\u0027s right under the related includeFilterFile?",
+      "revId": "ef5922ac11eb64db7bbf5f9357f5a393ccb53c89",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
