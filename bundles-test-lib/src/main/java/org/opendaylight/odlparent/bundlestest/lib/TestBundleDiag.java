@@ -10,6 +10,7 @@ package org.opendaylight.odlparent.bundlestest.lib;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
 import org.apache.karaf.bundle.core.BundleService;
@@ -27,6 +28,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author Michael Vorburger.ch
  */
+@SuppressFBWarnings("CRLF_INJECTION_LOGS") // multi-line logs are internal, without input from untrusted external source
 public class TestBundleDiag {
 
     private static final Logger LOG = LoggerFactory.getLogger(TestBundleDiag.class);
