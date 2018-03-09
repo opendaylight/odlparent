@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f7c99024_f5f2cd04",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1468,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-03-09T16:58:34Z",
+      "side": 1,
+      "message": "just picked up on this (sorry I had not yet noticed it before..), this is - curious, in Maven land.  What is this version?  Probably intended as their \"latest\" version, like a SNAPSHOT?  According to https://stackoverflow.com/questions/45567787/maven-release-and-latest-version-numbers, this is not (no longer) even really properly supported by Maven.  We do need stable fixed versions to all external dependencies in odlparent.  I don\u0027t know anything about how they findsecbugs-plugin guys release their stuff, but in a quick search on http://search.maven.org find that their latest is the 1.7.1 (from 07-Aug-2017) - so how about we just \u003cversion\u003e1.7.1 instead here?",
+      "revId": "511acb2254988881b07b1eea188351554cf97fd4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
