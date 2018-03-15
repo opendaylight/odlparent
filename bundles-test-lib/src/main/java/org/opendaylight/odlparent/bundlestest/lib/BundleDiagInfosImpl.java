@@ -9,6 +9,7 @@ package org.opendaylight.odlparent.bundlestest.lib;
 
 import static org.apache.karaf.bundle.core.BundleState.Active;
 import static org.apache.karaf.bundle.core.BundleState.Installed;
+import static org.apache.karaf.bundle.core.BundleState.Waiting;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,6 +37,7 @@ final class BundleDiagInfosImpl implements BundleDiagInfos {
     static {
         WHITELISTED_BUNDLES = new HashMap<>();
         WHITELISTED_BUNDLES.put("slf4j.log4j12", Installed);
+        WHITELISTED_BUNDLES.put("org.apache.karaf.scr.management", Waiting); // ODLPARENT-144
     }
 
     private final List<String> okBundleStateInfoTexts;
