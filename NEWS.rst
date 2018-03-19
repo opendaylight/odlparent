@@ -5,6 +5,64 @@ ODL Parent release notes
 Version 3.0.3
 -------------
 
+This version fixes the following issues:
+
+* `ODLPARENT-136`_: ``features-test`` needs ``org.osgi.compendium``.
+
+* Jackson dependencies are declared using ``jackson-bom`` to ensure all they
+  remain consistent.
+
+* ``find-duplicate-classpath-entries`` is run in the “verify” phase rather than
+  the “validate” phase, which is too early.
+
+* The version of Jetty we pull in is now aligned with that declared in Karaf,
+  resolving a number of restart and dependency issues.
+
+* Pulling in the ``wrap`` feature unconditionally is no longer necessary, so
+  ``karaf4-parent`` no longer does so.
+
+* ``metainf-services`` are declared with scope “provided” to avoid their being
+  included in downstream features (it’s a build-time dependency only).
+
+* ``leveldb-api`` is excluded from ``odl-akka-leveldb-0.7``, and ``jsr250-api``
+  from ``enunciate-core-annotations``, to avoid duplicate having classes on the
+  classpath.
+
+* Since the ``ssh`` feature is excluded from generated features, our Karaf
+  need to enable it at boot in all cases.
+
+* ``bundle-test-lib`` is now a bundle.
+
+* Since we use static SLF4J loggers, the ``SLF4J_LOGGER_SHOULD_BE_NON_STATIC``
+  rule needs to be disabled in our FindBugs configuration (this allows
+  downstream projects to enable ``findbugs-slf4j`` without having to deal with
+  all the resulting false-positives).
+
+* ``org.apache.karaf.scr.management`` is white-listed in SFT to avoid failures
+  apparently related to that component (which we don’t care about).
+
+.. _ODLPARENT-136: https://jira.opendaylight.org/browse/ODLPARENT-136
+
+This version upgrades the following third-party dependencies:
+
+* `Antlr 4.7 → 4.7.1`_
+
+* `BouncyCastle 1.58 → 1.59`_
+
+* Jersey 1.17 → 1.19.4 (additionally available as the ``odl-jersey-1`` feature)
+
+* Jolokia 1.3.7 → 1.5.0
+
+* Karaf 4.1.3 → 4.1.5; release notes:
+
+  * `Karaf 4.1.4`_
+  * `Karaf 4.1.5`_
+
+.. _Antlr 4.7 → 4.7.1: https://github.com/antlr/antlr4/releases/tag/4.7.1
+.. _BouncyCastle 1.58 → 1.59: https://www.bouncycastle.org/releasenotes.html
+.. _Karaf 4.1.4: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12341702
+.. _Karaf 4.1.5: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12342294
+
 Version 3.0.2
 -------------
 
