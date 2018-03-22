@@ -2,6 +2,102 @@
 ODL Parent release notes
 ========================
 
+Version 3.1.0
+-------------
+
+This version fixes the following issues:
+
+* Mycila dependencies are now “compile” scoped rather than “test”; this allows
+  child projects to use Guice with Mycila more easily.
+
+* The duplicate finder now ignores ``web.xml`` and BluePrint XML files.
+
+This version includes the following improvements:
+
+* The ``-Pq`` profile skips Maven Modernizer, in preparation for its future
+  integration (and its use in child projects).
+
+* An OWASP profile, ``-Powasp`` is available for vulnerability checking.
+
+* A new ``odl-jackson-2.8`` feature provides Jackson 2.8 to child projects.
+
+The following third-party dependencies have been added to dependency management:
+
+* `ThreeTen-Extra <http://www.threeten.org/threeten-extra/>`_
+
+The following third-party dependencies have been upgraded:
+
+* Aeron 1.2.5 → 1.7.0; release notes:
+
+  * `1.3.0 <https://github.com/real-logic/aeron/releases/tag/1.3.0>`_
+  * `1.4.0 <https://github.com/real-logic/aeron/releases/tag/1.4.0>`_
+  * `1.5.0 <https://github.com/real-logic/aeron/releases/tag/1.5.0>`_
+  * `1.5.1 <https://github.com/real-logic/aeron/releases/tag/1.5.1>`_
+  * `1.5.2 <https://github.com/real-logic/aeron/releases/tag/1.5.2>`_
+  * `1.6.0 <https://github.com/real-logic/aeron/releases/tag/1.6.0>`_
+  * `1.7.0 <https://github.com/real-logic/aeron/releases/tag/1.7.0>`_
+
+* Agrona 0.9.5 → 0.9.12; release notes:
+
+  * `0.9.6 <https://github.com/real-logic/Agrona/releases/tag/0.9.6>`_
+  * `0.9.7 <https://github.com/real-logic/Agrona/releases/tag/0.9.7>`_
+  * `0.9.8 <https://github.com/real-logic/Agrona/releases/tag/0.9.8>`_
+  * `0.9.9 <https://github.com/real-logic/Agrona/releases/tag/0.9.9>`_
+  * `0.9.10 <https://github.com/real-logic/Agrona/releases/tag/0.9.10>`_
+  * `0.9.11 <https://github.com/real-logic/Agrona/releases/tag/0.9.11>`_
+  * `0.9.12 <https://github.com/real-logic/Agrona/releases/tag/0.9.12>`_
+
+* Akka 2.5.5 → 2.5.11; release notes:
+
+  * `2.5.6 <https://akka.io/blog/news/2017/09/28/akka-2.5.6-released>`_
+  * `2.5.7 <https://akka.io/blog/news/2017/11/17/akka-2.5.7-released>`_
+  * `2.5.8 <https://akka.io/blog/news/2017/12/08/akka-2.5.8-released>`_
+  * `2.5.9 <https://akka.io/blog/news/2018/01/11/akka-2.5.9-released-2.4.x-end-of-life>`_
+  * `2.5.10 <https://akka.io/blog/news/2018/02/23/akka-2.5.10-released>`_
+  * `2.5.11 <https://akka.io/blog/news/2018/02/28/akka-2.5.11-released>`_
+
+* Commons Lang 3 `3.6 → 3.7 <http://www.apache.org/dist/commons/lang/RELEASE-NOTES.txt>`_
+
+* Guava 23.3 → 23.6; release notes:
+
+  * `23.4 <https://github.com/google/guava/releases/tag/v23.4>`_
+  * `23.5 <https://github.com/google/guava/releases/tag/v23.5>`_
+  * `23.6 <https://github.com/google/guava/releases/tag/v23.6>`_
+
+* H2 database `1.4.193 → 1.4.196 <http://www.h2database.com/html/changelog.html>`_
+
+* Jacoco `0.7.9 → 0.8.0 <https://github.com/jacoco/jacoco/releases/tag/v0.8.0>`_
+
+* Javassist `3.21.0 → 3.22.0 <https://github.com/jboss-javassist/javassist/compare/rel_3_21_0_ga...rel_3_22_0_ga>`_
+
+* lmax-disruptor 3.3.7 → 3.3.10; release notes:
+
+  * `3.3.8 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.3.8>`_
+  * `3.3.9 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.3.9>`_
+  * `3.3.10 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.3.10>`_
+
+* Netty 4.1.16 → 4.1.22; release notes:
+
+  * `4.1.17 <http://netty.io/news/2017/11/08/4-0-53-Final-4-1-17-Final.html>`_
+  * `4.1.18 <http://netty.io/news/2017/12/11/4-0-54-Final-4-1-18-Final.html>`_
+  * `4.1.19 <http://netty.io/news/2017/12/18/4-1-19-Final.html>`_
+  * `4.1.20 <http://netty.io/news/2018/01/22/4-0-55-Final-4-1-20-Final.html>`_
+  * `4.1.21 <http://netty.io/news/2018/02/05/4-0-56-Final-4-1-21-Final.html>`_
+  * `4.1.22 <http://netty.io/news/2018/02/21/4-1-22-Final.html>`_
+
+* Scala `2.12.4 → 2.12.5 <http://www.scala-lang.org/news/2.12.5>`_
+
+* Typesafe Config `0.2.1 → 0.2.2 <https://github.com/typesafehub/config/blob/master/NEWS.md>`_
+
+The following Maven plugins have been upgraded:
+
+* FindBugs 3.0.4 → 3.0.5
+
+* Git commit id 2.2.2 → 2.2.4; release notes:
+
+  * `2.2.3 <https://github.com/ktoso/maven-git-commit-id-plugin/releases/tag/v2.2.3>`_
+  * `2.2.4 <https://github.com/ktoso/maven-git-commit-id-plugin/releases/tag/v2.2.4>`_
+
 Version 3.0.3
 -------------
 
