@@ -42,8 +42,8 @@
   </organization>
 
   <issueManagement>
-    <system>Bugzilla</system>
-    <url>https://bugs.opendaylight.org/</url>
+    <system>JIRA</system>
+    <url>https://jira.opendaylight.org/</url>
   </issueManagement>
 
   <ciManagement>
