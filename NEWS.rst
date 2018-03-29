@@ -2,6 +2,16 @@
 ODL Parent release notes
 ========================
 
+Version 3.1.1
+-------------
+
+This version fixes the following issues:
+
+* `ODLPARENT-146 <https://jira.opendaylight.org/browse/ODLPARENT-146>`_:
+  Guava 23.6 switched from @Nullable to @NullableDecl, which causes false
+  positives in FindBugs’ ``NP_NONNULL_PARAM_VIOLATION`` rule; we’re
+  disabling the rule for now.
+
 Version 3.1.0
 -------------
 
