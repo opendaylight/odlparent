@@ -35,6 +35,7 @@
         <!-- odlparent tools -->
         <module>checkstyle</module>
         <module>findbugs</module>
+        <module>spotbugs</module>
         <module>license</module>
 
         <!-- Features test (SFT) -->
