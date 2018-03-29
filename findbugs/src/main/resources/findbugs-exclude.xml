@@ -14,6 +14,9 @@
 
       <!-- We use static slf4j Logger (this rule is from KengoTODA/findbugs-slf4j jp.skypencil.findbugs.slf4:bug-pattern) -->
       <Bug pattern="SLF4J_LOGGER_SHOULD_BE_NON_STATIC" />
+
+      <!-- Guava 23.6+ uses @NullableDecl which FindBugs doesn't know about; fixed in SpotBugs 3.1.2+ -->
+      <Bug pattern="NP_NONNULL_PARAM_VIOLATION" />
     </Or>
   </Match>
 </FindBugsFilter>
