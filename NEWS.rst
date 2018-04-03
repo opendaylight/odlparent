@@ -7,6 +7,9 @@ Version 3.1.1
 
 This version fixes the following issues:
 
+* `ODLPARENT-137 <https://jira.opendaylight.org/browse/ODLPARENT-137>`_:
+  restore the OpenDaylight prompt.
+
 * `ODLPARENT-146 <https://jira.opendaylight.org/browse/ODLPARENT-146>`_:
   Guava 23.6 switched from @Nullable to @NullableDecl, which causes false
   positives in FindBugs’ ``NP_NONNULL_PARAM_VIOLATION`` rule; we’re
