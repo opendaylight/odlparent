@@ -123,7 +123,14 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-guava-23</artifactId>
+                <artifactId>odl-guava</artifactId>
+                <version>${project.version}</version>
+                <classifier>features</classifier>
+                <type>xml</type>
+            </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>odl-guava-25</artifactId>
                 <version>${project.version}</version>
                 <classifier>features</classifier>
                 <type>xml</type>

@@ -33,7 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-guava-23</artifactId>
+            <artifactId>odl-guava-25</artifactId>
             <version>${project.version}</version>
             <type>xml</type>
             <classifier>features</classifier>
@@ -62,7 +62,7 @@
                 <artifactId>karaf-maven-plugin</artifactId>
                 <configuration>
                     <dependencyFeatures>
-                        <dependencyFeature>odl-guava-23</dependencyFeature>
+                        <dependencyFeature>odl-guava-25</dependencyFeature>
                     </dependencyFeatures>
                 </configuration>
             </plugin>
