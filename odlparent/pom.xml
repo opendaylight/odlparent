@@ -78,9 +78,9 @@
     <!-- Used in aaa, alto, bgpcep, bier, controller, coretutorials, genius, infrautils, iotdm,
          l2switch, lacp, netconf, netide, netvirt, nic, ocpplugin, ovsdb, persistence, snbi, sxp,
          tsdr, unimgr, vtn -->
-    <karaf.version>4.1.5</karaf.version>
+    <karaf.version>4.2.0</karaf.version>
     <!-- Used in sxp -->
-    <karaf.plugin.version>4.1.5</karaf.plugin.version>
+    <karaf.plugin.version>4.2.0</karaf.plugin.version>
     <!-- Used in lispflowmapping, snmp4sdn, vtn -->
     <projectinfo>2.8.1</projectinfo>
     <!-- Used in of-config; see also snmp4sdn -->
@@ -698,8 +698,8 @@
       </dependency>
       <dependency>
         <groupId>org.ow2.asm</groupId>
-        <artifactId>asm-all</artifactId>
-        <version>5.1</version>
+        <artifactId>asm</artifactId>
+        <version>6.0</version>
       </dependency>
 
       <!-- Configuration library -->
@@ -1060,7 +1060,7 @@
       <dependency>
         <groupId>org.apache.aries.blueprint</groupId>
         <artifactId>org.apache.aries.blueprint.core</artifactId>
-        <version>1.7.1</version>
+        <version>1.9.0</version>
       </dependency>
 
     </dependencies>
