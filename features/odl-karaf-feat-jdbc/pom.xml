@@ -31,6 +31,12 @@
             <type>xml</type>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.jdbc</groupId>
+            <artifactId>org.apache.karaf.jdbc.core</artifactId>
+            <version>${karaf.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
