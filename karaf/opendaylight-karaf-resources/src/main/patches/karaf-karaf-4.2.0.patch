@@ -1,0 +1,37 @@
+--- target/assembly/bin/karaf.orig	2018-04-03 17:00:44.381395302 +0200
++++ target/assembly/bin/karaf	2018-04-03 17:11:52.346032789 +0200
+@@ -170,6 +170,13 @@
+         KARAF_EXEC=""
+     fi
+ 
++    # Use /dev/urandom to avoid blocking on /dev/random
++    # See http://www.2uo.de/myths-about-urandom/ to understand why this is safe (as long as your VM provisioning seeds
++    # the PRNG)
++    # The /dev/./urandom workaround is necessary because of https://bugs.openjdk.java.net/browse/JDK-6202721
++    NON_BLOCKING_PRNG=
++    [ -c /dev/urandom -a -r /dev/urandom ] && NON_BLOCKING_PRNG=-Djava.security.egd=file:/dev/./urandom
++
+     debug=false
+     debugs=false
+     nodebug=false
+@@ -271,8 +278,12 @@
+         fi
+ 
+         if [ "${ROOT_INSTANCE_RUNNING}" = "false" ] || [ "${CHECK_ROOT_INSTANCE_RUNNING}" = "false" ] ; then
++            # Using command line arguments as java arguments
++            # (as opposed to arguments for $MAIN)
++            # FIXME: document this in the user guide
+             if [ "${VERSION}" -gt "8" ]; then
+                 ${KARAF_EXEC} "${JAVA}" ${JAVA_OPTS} \
++                    "$NON_BLOCKING_PRNG" \
+                     --add-exports=java.base/org.apache.karaf.specs.locator=java.xml,java.xml.ws,ALL-UNNAMED \
+                     --patch-module java.base=lib/endorsed/org.apache.karaf.specs.locator-4.2.0.jar \
+                     --patch-module java.xml=lib/endorsed/org.apache.karaf.specs.java.xml-4.2.0.jar \
+@@ -305,6 +316,7 @@
+                     ${MAIN} "$@"
+             else
+                 ${KARAF_EXEC} "${JAVA}" ${JAVA_OPTS} \
++                    "$NON_BLOCKING_PRNG" \
+                     -Djava.endorsed.dirs="${JAVA_ENDORSED_DIRS}" \
+                     -Djava.ext.dirs="${JAVA_EXT_DIRS}" \
+                     -Dkaraf.instances="${KARAF_HOME}/instances" \
