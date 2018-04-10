@@ -1,0 +1,8 @@
+Code-Review+2: Robert Varga <nite@hq.sk>
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Code-Review+2: Stephen Kitt <skitt@redhat.com>
+Submitted-by: Robert Varga <nite@hq.sk>
+Submitted-at: Tue, 10 Apr 2018 09:07:02 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/70334
+Project: odlparent
+Branch: refs/heads/master
