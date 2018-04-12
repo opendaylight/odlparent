@@ -77,8 +77,6 @@ public class SingleFeatureTest {
     private static final String HEAP_DUMP_PATH_PROP = "sft.heap.dump.path";
     private static final String DEFAULT_HEAP_DUMP_PATH = "/dev/null";
 
-    private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
-            "log4j.logger.org.opendaylight.odlparent.featuretest";
     private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
 
     /*
@@ -193,8 +191,6 @@ public class SingleFeatureTest {
             configureConsole().ignoreLocalConsole(),
             logLevel(LogLevel.INFO),
             mvnLocalRepoOption(),
-            editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
-                    LogLevel.INFO.name()),
             editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
 
             // TODO ODLPARENT-148: We change the karaf.log location because it's very useful for this to be preserved
