@@ -78,7 +78,7 @@ public class SingleFeatureTest {
     private static final String HEAP_DUMP_PATH_PROP = "sft.heap.dump.path";
     private static final String DEFAULT_HEAP_DUMP_PATH = "/dev/null";
 
-    private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST =
+    private static final String LOG4J_LOGGER_ORG_OPENDAYLIGHT_ODLPARENT_FEATURETEST =
             "log4j.logger.org.opendaylight.odlparent.featuretest";
     private static final Logger LOG = LoggerFactory.getLogger(SingleFeatureTest.class);
 
@@ -189,7 +189,7 @@ public class SingleFeatureTest {
             mvnLocalRepoOption(),
             mavenBundle("org.apache.aries.quiesce", "org.apache.aries.quiesce.api", "1.0.0"),
             mavenBundle("org.apache.aries.blueprint", "org.apache.aries.blueprint.core.compatibility", "1.0.0"),
-            editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
+            editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_ODLPARENT_FEATURETEST,
                     LogLevel.INFO.name()),
             editConfigurationFilePut("etc/config.properties", "karaf.framework", "equinox"),
             editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
