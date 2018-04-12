@@ -165,6 +165,13 @@ public class SingleFeatureTest {
         final String envHeapDumpPath = System.getProperty(HEAP_DUMP_PATH_PROP);
         final String heapDumpPath = envHeapDumpPath != null ? envHeapDumpPath : DEFAULT_HEAP_DUMP_PATH;
 
+        // ODLPARENT-148 must use getAbsoluteFile(), because the current working directory changes;
+        // when this runs from maven-surefire-plugin, it's the Maven project directory (where src/ and target/ are),
+        // but when Pax Exam runs Karaf with the options we configure below, then the it's ./target/pax/6f...6c/;
+        // so because we don't want this to be ./target/pax/6f...6c/target/SFT/karaf.log but target/SFT/karaf.log:
+        final File karafLogFile = new File("target/SFT/karaf.log").getAbsoluteFile();
+        karafLogFile.getParentFile().mkdir();
+
         return new Option[] {
             new VMOption("-Xmx" + maxHeap),
             new VMOption("-XX:+HeapDumpOnOutOfMemoryError"),
@@ -193,6 +200,15 @@ public class SingleFeatureTest {
                     LogLevel.INFO.name()),
             editConfigurationFilePut("etc/config.properties", "karaf.framework", "equinox"),
             editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
+
+            // TODO ODLPARENT-148: We change the karaf.log location because it's very useful for this to be preserved
+            // even if one does not use "-Dkaraf.keep.unpack=true", which on build server is typically not feasible,
+            // because that leads to excessive disk space consumption (full karaf dist; what we really want is the log)
+            // replace default "${karaf.data}/log/karaf.log" by "target/SFT/karaf.log"
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j2.appender.rolling.fileName",
+                    karafLogFile.getPath()),
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j2.appender.rolling.filePattern",
+                    karafLogFile.getPath() + ".%i"),
 
              /*
               * Disables external snapshot repositories.
