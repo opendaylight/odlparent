@@ -192,7 +192,6 @@ public class SingleFeatureTest {
             editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
                     LogLevel.INFO.name()),
             editConfigurationFilePut("etc/config.properties", "karaf.framework", "equinox"),
-            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
 
              /*
               * Disables external snapshot repositories.
