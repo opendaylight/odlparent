@@ -195,7 +195,6 @@ public class SingleFeatureTest {
             mvnLocalRepoOption(),
             editConfigurationFilePut(ORG_OPS4J_PAX_LOGGING_CFG, LOG4J_LOGGER_ORG_OPENDAYLIGHT_YANGTOOLS_FEATURETEST,
                     LogLevel.INFO.name()),
-            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j.rootLogger", "INFO, stdout, osgi:*"),
 
             // TODO ODLPARENT-148: We change the karaf.log location because it's very useful for this to be preserved
             // even if one does not use "-Dkaraf.keep.unpack=true", which on build server is typically not feasible,
