@@ -33,7 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-core</artifactId>
+            <artifactId>jersey-client</artifactId>
         </dependency>
         <dependency>
             <groupId>com.sun.jersey</groupId>
