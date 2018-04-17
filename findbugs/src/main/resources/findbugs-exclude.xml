@@ -17,6 +17,9 @@
 
       <!-- Guava 23.6+ uses @NullableDecl which FindBugs doesn't know about; fixed in SpotBugs 3.1.2+ -->
       <Bug pattern="NP_NONNULL_PARAM_VIOLATION" />
+      <Bug pattern="NP_NULL_PARAM_DEREF" />
+      <Bug pattern="NP_PARAMETER_MUST_BE_NONNULL_BUT_MARKED_AS_NULLABLE" />
+      <Bug pattern="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE" />
     </Or>
   </Match>
 </FindBugsFilter>
