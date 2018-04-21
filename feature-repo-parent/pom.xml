@@ -26,13 +26,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>1.8.4-SNAPSHOT</version>
+        <version>1.8.4-Carbon</version>
         <relativePath>../odlparent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>feature-repo-parent</artifactId>
-    <version>1.8.4-SNAPSHOT</version>
+    <version>1.8.4-Carbon</version>
     <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>features4-test</artifactId>
-            <version>1.8.4-SNAPSHOT</version>
+            <version>1.8.4-Carbon</version>
             <scope>test</scope>
         </dependency>
         <!-- Force SLF4J to test scope -->

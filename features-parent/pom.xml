@@ -23,7 +23,7 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>1.8.4-SNAPSHOT</version>
+        <version>1.8.4-Carbon</version>
         <relativePath>../odlparent</relativePath>
     </parent>
 
@@ -280,7 +280,7 @@
                             <!-- Remove these properties when a better fix to Bug 6523 appears. -->
                             <karaf.distro.groupId>org.opendaylight.odlparent</karaf.distro.groupId>
                             <karaf.distro.artifactId>opendaylight-karaf-empty</karaf.distro.artifactId>
-                            <karaf.distro.version>1.8.4-SNAPSHOT</karaf.distro.version>
+                            <karaf.distro.version>1.8.4-Carbon</karaf.distro.version>
                         </systemPropertyVariables>
                         <dependenciesToScan>
                             <dependency>org.opendaylight.odlparent:features-test</dependency>
@@ -364,14 +364,14 @@
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>features-test</artifactId>
-            <version>1.8.4-SNAPSHOT</version>
+            <version>1.8.4-Carbon</version>
             <scope>test</scope>
         </dependency>
         <!-- Remove this dependency when a better fix for Bug 6523 appears. -->
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>opendaylight-karaf-empty</artifactId>
-            <version>1.8.4-SNAPSHOT</version>
+            <version>1.8.4-Carbon</version>
             <type>zip</type>
             <scope>test</scope>
         </dependency>
