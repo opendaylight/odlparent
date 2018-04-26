@@ -11,7 +11,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
-    <version>1.8.4-SNAPSHOT</version>
+    <version>1.8.5-SNAPSHOT</version>
     <relativePath>../../odlparent</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
@@ -20,7 +20,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
   <name>ODL :: odlparent :: ${project.artifactId}</name>
 
   <properties>
-    <branding.version>1.8.4-SNAPSHOT</branding.version>
+    <branding.version>1.8.5-SNAPSHOT</branding.version>
     <karaf.localFeature>standard</karaf.localFeature>
     <!--  Karaf Maven plugin 3.0.3 reinstalls already installed
           boot features to container, which could be observed
@@ -90,7 +90,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     <dependency>
       <groupId>org.opendaylight.odlparent</groupId>
       <artifactId>opendaylight-karaf-resources</artifactId>
-      <version>1.8.4-SNAPSHOT</version>
+      <version>1.8.5-SNAPSHOT</version>
     </dependency>
 
     <!-- Aries Proxy 1.0.5 contains important bug fixes -->
@@ -394,7 +394,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
         <plugin>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>karaf-plugin</artifactId>
-            <version>1.8.4-SNAPSHOT</version>
+            <version>1.8.5-SNAPSHOT</version>
             <executions>
                 <execution>
                     <id>populate-local-repo</id>
