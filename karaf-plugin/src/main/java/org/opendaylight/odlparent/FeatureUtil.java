@@ -26,6 +26,7 @@ import org.apache.karaf.features.internal.model.ConfigFile;
 import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.features.internal.model.JaxbUtil;
+import org.apache.maven.plugin.MojoExecutionException;
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.ops4j.pax.url.mvn.internal.Parser;
@@ -191,7 +192,12 @@ public final class FeatureUtil {
     public static Set<String> bundlesToCoords(final List<Bundle> bundles) throws MalformedURLException {
         Set<String> result = new LinkedHashSet<>();
         for (Bundle bundle : bundles) {
-            result.add(toCoord(new URL(bundle.getLocation())));
+            try {
+                result.add(toCoord(new URL(bundle.getLocation())));
+            } catch (MalformedURLException e) {
+                LOG.error("Invalid URL {}", bundle.getLocation(), e);
+                throw e;
+            }
         }
         LOG.trace("bundlesToCoords({}) returns {}", bundles, result);
         return result;
@@ -202,16 +208,25 @@ public final class FeatureUtil {
      *
      * @param features The feature.
      * @return The artifact coordinates.
-     * @throws MalformedURLException if a URL is malformed.
+     * @throws MojoExecutionException if an error occurs during processing.
      */
-    public static Set<String> featuresToCoords(final Features features) throws MalformedURLException {
+    public static Set<String> featuresToCoords(final Features features) throws MojoExecutionException {
         Set<String> result = new LinkedHashSet<>();
         if (features.getRepository() != null) {
-            result.addAll(featuresRepositoryToCoords(features));
+            try {
+                result.addAll(featuresRepositoryToCoords(features));
+            } catch (MalformedURLException e) {
+                throw new MojoExecutionException("Feature " + features.getName() + " has an invalid repository URL", e);
+            }
         }
         if (features.getFeature() != null) {
             for (Feature feature : features.getFeature()) {
-                result.addAll(featureToCoords(feature));
+                try {
+                    result.addAll(featureToCoords(feature));
+                } catch (MalformedURLException e) {
+                    throw new MojoExecutionException("Feature " + feature.getName() + " in " + features.getName()
+                            + " contains an invalid or missing URL", e);
+                }
             }
         }
         LOG.trace("featuresToCoords({}) returns {}", features.getName(), result);
@@ -224,9 +239,9 @@ public final class FeatureUtil {
      *
      * @param features The features.
      * @return The artifact coordinates.
-     * @throws MalformedURLException if a URL is malformed.
+     * @throws MojoExecutionException if an error occurs during processing.
      */
-    public static Set<String> featuresToCoords(final Set<Features> features) throws MalformedURLException {
+    public static Set<String> featuresToCoords(final Set<Features> features) throws MojoExecutionException {
         Set<String> result = new LinkedHashSet<>();
         for (Features feature : features) {
             result.addAll(featuresToCoords(feature));
