@@ -102,7 +102,6 @@
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-etc-startup-properties-${karaf.version}.patch"
                        originalfile="${project.build.directory}/assembly/etc/startup.properties"
                        failonerror="true"/>
-                <echo file="${project.build.directory}/assembly/etc/system.properties" append="true">mvn\:org.osgi/org.osgi.service.event/1.3.1 = 8</echo>
                 <copy file="${project.build.directory}/assembly/etc/startup.properties"
                       tofile="${project.build.directory}/classes/etc/startup.properties"/>
                 <fixcrlf srcdir="${project.build.directory}/classes/bin"
