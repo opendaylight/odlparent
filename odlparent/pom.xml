@@ -203,7 +203,7 @@
       <dependency>
         <groupId>org.powermock</groupId>
         <artifactId>powermock-api-support</artifactId>
-        <version>1.6.4</version>
+        <version>1.7.4</version>
         <scope>test</scope>
       </dependency>
       <dependency>
