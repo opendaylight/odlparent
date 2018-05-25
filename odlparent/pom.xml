@@ -805,7 +805,7 @@
       <dependency>
         <groupId>org.agrona</groupId>
         <artifactId>agrona</artifactId>
-        <version>0.9.12</version>
+        <version>0.9.18</version>
       </dependency>
       <dependency>
         <groupId>io.aeron</groupId>
