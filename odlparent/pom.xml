@@ -74,7 +74,7 @@
     <!-- Used in of-config, snmp4sdn -->
     <failsafe.version>2.20.1</failsafe.version>
     <!-- Used in genius, neutron, of-config, ovsdb, persistence, snmp4sdn, usc, vtn -->
-    <jacoco.version>0.8.0</jacoco.version>
+    <jacoco.version>0.8.1</jacoco.version>
     <!-- Used in aaa, alto, bgpcep, bier, controller, coretutorials, genius, infrautils, iotdm,
          l2switch, lacp, netconf, netide, netvirt, nic, ocpplugin, ovsdb, persistence, snbi, sxp,
          tsdr, unimgr, vtn -->
