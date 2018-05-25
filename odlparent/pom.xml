@@ -465,7 +465,7 @@
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1u2</version>
         <exclusions>
           <!-- We'd like (have) to eventually exclude :jsr305 here as well, because
                the types of this artifact are already shaded inside the :annotations artifact.
