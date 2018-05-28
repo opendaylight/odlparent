@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e2b91143_7475cdd9",
+        "filename": "features/features-odlparent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-05-28T23:04:18Z",
+      "side": 0,
+      "message": "Does it make sense to retain a compatibility feature, which would actually pull in the latest (3.0.0,4) feature?",
+      "range": {
+        "startLine": 36,
+        "startChar": 24,
+        "endLine": 36,
+        "endChar": 36
+      },
+      "revId": "85b4fce2bb56a0f61b75db66789d3c0b1c6daf56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
