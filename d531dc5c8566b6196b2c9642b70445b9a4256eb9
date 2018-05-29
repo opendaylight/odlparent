@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4d4cda7_8c73b0a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-05-29T08:37:30Z",
+      "side": 1,
+      "message": "This change is not visible, plus this is not really a helpful commit message.",
+      "range": {
+        "startLine": 7,
+        "startChar": 29,
+        "endLine": 7,
+        "endChar": 36
+      },
+      "revId": "d531dc5c8566b6196b2c9642b70445b9a4256eb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
