@@ -300,7 +300,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <version>23.6-jre</version>
+        <version>23.6.1-jre</version>
         <exclusions>
           <exclusion>
             <groupId>com.google.code.findbugs</groupId>
@@ -312,7 +312,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
-        <version>23.6-jre</version>
+        <version>23.6.1-jre</version>
         <scope>test</scope>
         <exclusions>
           <exclusion>
