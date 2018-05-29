@@ -103,7 +103,7 @@
     <!-- Used by controller, snbi; see also centinel, dlux, toolkit -->
     <osgi.core.version>5.0.0</osgi.core.version>
 
-    <akka.version>2.5.11</akka.version>
+    <akka.version>2.5.13</akka.version>
     <leveldb.version>0.7</leveldb.version>
 
     <!-- Default Sonar configuration -->
@@ -734,7 +734,7 @@
       <dependency>
         <groupId>com.typesafe</groupId>
         <artifactId>ssl-config-core_2.12</artifactId>
-        <version>0.2.2</version>
+        <version>0.2.4</version>
       </dependency>
       <dependency>
         <groupId>com.typesafe.akka</groupId>
@@ -796,7 +796,7 @@
       <dependency>
         <groupId>org.scala-lang.modules</groupId>
         <artifactId>scala-parser-combinators_2.12</artifactId>
-        <version>1.0.7</version>
+        <version>1.1.1</version>
       </dependency>
       <dependency>
         <groupId>org.iq80.leveldb</groupId>
@@ -823,17 +823,17 @@
       <dependency>
         <groupId>org.agrona</groupId>
         <artifactId>agrona</artifactId>
-        <version>0.9.12</version>
+        <version>0.9.18</version>
       </dependency>
       <dependency>
         <groupId>io.aeron</groupId>
         <artifactId>aeron-client</artifactId>
-        <version>1.7.0</version>
+        <version>1.9.3</version>
       </dependency>
       <dependency>
         <groupId>io.aeron</groupId>
         <artifactId>aeron-driver</artifactId>
-        <version>1.7.0</version>
+        <version>1.9.3</version>
       </dependency>
 
       <!-- Scala -->
