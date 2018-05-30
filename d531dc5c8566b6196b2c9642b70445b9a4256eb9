@@ -22,6 +22,30 @@
       "revId": "d531dc5c8566b6196b2c9642b70445b9a4256eb9",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "41156dbc_c070ce95",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-05-30T14:37:02Z",
+      "side": 1,
+      "message": "That change was Draft just because it fails to build anyway, but I\u0027ve published it now.  The commit message is hopefully more helpful if you read it in the context of c/72221 ?",
+      "parentUuid": "f4d4cda7_8c73b0a4",
+      "range": {
+        "startLine": 7,
+        "startChar": 29,
+        "endLine": 7,
+        "endChar": 36
+      },
+      "revId": "d531dc5c8566b6196b2c9642b70445b9a4256eb9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
