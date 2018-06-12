@@ -79,6 +79,12 @@
             <artifactId>slf4j-api</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <!-- required due to https://jira.opendaylight.org/browse/ODLPARENT-136 -->
+            <artifactId>org.osgi.compendium</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
