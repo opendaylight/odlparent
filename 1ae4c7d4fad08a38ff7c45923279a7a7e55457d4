@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f84f4a7d_dcf84910",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/SingleFeatureTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-06-12T17:31:54Z",
+      "side": 0,
+      "message": "conflict with https://git.opendaylight.org/gerrit/#/c/71685/",
+      "revId": "1ae4c7d4fad08a38ff7c45923279a7a7e55457d4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
