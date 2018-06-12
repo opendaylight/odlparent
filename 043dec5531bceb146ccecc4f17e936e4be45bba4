@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "396a6e66_97d91fb1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-06-12T20:31:25Z",
+      "side": 1,
+      "message": "3.1.0 is out",
+      "range": {
+        "startLine": 7,
+        "startChar": 29,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "043dec5531bceb146ccecc4f17e936e4be45bba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c58dcd7e_69e523d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-06-12T20:31:25Z",
+      "side": 1,
+      "message": "encapsulate non-trivial links in \u003c\u003e, as in:\n\u003chttps:/very@weird%3E/url\u003e",
+      "range": {
+        "startLine": 9,
+        "startChar": 15,
+        "endLine": 9,
+        "endChar": 140
+      },
+      "revId": "043dec5531bceb146ccecc4f17e936e4be45bba4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
