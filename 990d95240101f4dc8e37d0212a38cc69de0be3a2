@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9038f6ae_d620715a",
+        "filename": "features/odl-apache-commons-text/src/main/history/dependencies.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-06-12T17:24:31Z",
+      "side": 1,
+      "message": "Stephen, is simply this the required right thing to do here?",
+      "revId": "990d95240101f4dc8e37d0212a38cc69de0be3a2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
