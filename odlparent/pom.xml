@@ -49,7 +49,7 @@
 
     <!-- Maven plugin versions, in the 'canonical' format -->
     <!-- Used in controller, didm, ocpplugin, openflowplugin, persistence -->
-    <maven.bundle.version>3.3.0</maven.bundle.version>
+    <maven.bundle.version>3.5.0</maven.bundle.version>
     <!-- Used in didm, l2switch, lacp, persistence; see also controller -->
     <maven.compile.plugin.version>3.7.0</maven.compile.plugin.version>
     <!-- Used in snbi, tsdr -->
