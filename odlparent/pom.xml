@@ -48,8 +48,6 @@
     <java.version.target>${maven.compiler.target}</java.version.target>
 
     <!-- Maven plugin versions, in the 'canonical' format -->
-    <!-- Used in controller, didm, ocpplugin, openflowplugin, persistence -->
-    <maven.bundle.version>3.3.0</maven.bundle.version>
     <!-- Used in didm, l2switch, lacp, persistence; see also controller -->
     <maven.compile.plugin.version>3.7.0</maven.compile.plugin.version>
     <!-- Used in snbi, tsdr -->
@@ -60,9 +58,6 @@
     <!-- Later versions break tests in downstream projects -->
     <maven.surefire.version>2.18.1</maven.surefire.version>
 
-    <!-- Maven plugin versions, in random formats -->
-    <!-- Used in alto, controller, didm, tsdr; see also vpnservice -->
-    <bundle.plugin.version>${maven.bundle.version}</bundle.plugin.version>
     <!-- Used in packetcable -->
     <odl.checkstyle.version>3.0.0-SNAPSHOT</odl.checkstyle.version>
     <!-- Used in l2switch, lacp, netide, ocpplugin, openflowjava, openflowplugin, snbi, tsdr -->
@@ -1329,7 +1324,7 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>${maven.bundle.version}</version>
+          <version>3.5.0</version>
           <extensions>true</extensions>
           <configuration>
             <instructions>
