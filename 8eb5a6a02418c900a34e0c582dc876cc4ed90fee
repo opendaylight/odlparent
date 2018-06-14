@@ -22,6 +22,30 @@
       "revId": "8eb5a6a02418c900a34e0c582dc876cc4ed90fee",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a6adec49_6b6c293e",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-06-14T11:49:10Z",
+      "side": 1,
+      "message": "Done, but hope you saw bundle.plugin.version below?  I\u0027ve also removed that.",
+      "parentUuid": "5c523985_2e7cd4c6",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 54
+      },
+      "revId": "8eb5a6a02418c900a34e0c582dc876cc4ed90fee",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
