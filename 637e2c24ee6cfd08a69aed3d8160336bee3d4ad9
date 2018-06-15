@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ac026b3_7d90be4d",
+        "filename": "bundle-parent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 3443
+      },
+      "writtenOn": "2018-06-15T09:01:43Z",
+      "side": 1,
+      "message": "\u003cscope\u003etest\u003c/scope\u003e?",
+      "revId": "637e2c24ee6cfd08a69aed3d8160336bee3d4ad9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
