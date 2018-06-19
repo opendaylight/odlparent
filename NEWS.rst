@@ -2,6 +2,84 @@
 ODL Parent release notes
 ========================
 
+Version 3.1.2
+-------------
+
+This version fixes the following issues:
+
+* `INFRAUTILS-41 <https://jira.opendaylight.org/browse/INFRAUTILS-41>`_:
+  ``jre.properties`` includes ``com.sun.management`` so that it can be
+  enabled if necessary. (This doesn’t add a dependency on
+  ``com.sun.management``, it allows bundles to use it if it is present.)
+
+* `ODLPARENT-136 <https://jira.opendaylight.org/browse/ODLPARENT-136>`_:
+  ``SingleFeatureTest`` pulls in ``org.osgi.compendium``.
+
+* `ODLPARENT-144 <https://jira.opendaylight.org/browse/ODLPARENT-144>`_:
+  ``org.apache.karaf.scr.management`` is whitelisted so that it no longer
+  affects ``SingleFeatureTest``.
+
+* `ODLPARENT-146 <https://jira.opendaylight.org/browse/ODLPARENT-146>`_:
+  null-related FindBugs checks which produce false-positives with Guava 23.6
+  and later are disabled, so that this really is fully backwards-compatible
+  with 3.0 and later.
+
+* `ODLPARENT-148 <https://jira.opendaylight.org/browse/ODLPARENT-148>`_:
+  ``SingleFeatureTest`` preserves ``target/SFT/karaf.log``.
+
+This version includes the following improvements:
+
+* ``custom.properties`` no longer includes OVSDB-specific configuration.
+
+* The ``odl-jersey-1`` feature includes the Jersey client.
+
+* Redundant bundle dependency declarations in ``SingleFeatureTest`` have been
+  removed (these are declarations which are also present in our base Karaf
+  distribution).
+
+* Build errors involving invalid feature or bundle URLs now indicate which
+  feature is at fault.
+
+* Obsolete Log4J overrides have been removed from ``SingleFeatureTest``.
+
+When building using JDK 9 or 10, the default settings have been changed as
+follows to avoid errors or extraneous warnings:
+
+* SFT is disabled (it needs Karaf 4.2 or later);
+
+* Javadocs are generated as HTML 4;
+
+* SpotBugs is disabled on JDK 10 or later;
+
+* FindBugs is disabled on JDK 9 or later.
+
+The following third-party dependencies have been upgraded:
+
+* `EclipseLink Moxy JAXB 2.6.2 → 2.7.1 <https://www.eclipse.org/eclipselink/releases/2.7.php>`_.
+
+* `Google Truth 0.36 → 0.40 <https://github.com/google/truth/releases>`_.
+
+* `Gson 2.8.2 → 2.8.5 <https://github.com/google/gson/blob/master/CHANGELOG.md>`_.
+
+* `Guava 23.6 → 23.6.1 <https://github.com/google/guava/compare/v23.6...v23.6.1>`_.
+  This addresses CVE-2018-10237 (that’s the only change in this release).
+
+* `Jacoco Maven plugin 0.8.0 → 0.8.1 <https://github.com/jacoco/jacoco/releases/tag/v0.8.1>`_.
+
+* JDT annotations 2.1.0 → 2.1.150.
+
+* `Scala 2.12.5 → 2.12.6 <https://github.com/scala/scala/releases/tag/v2.12.6>`_.
+
+* `Scala Parser Combinators 1.0.6 → 1.0.7 <https://github.com/scala/scala-parser-combinators/releases/tag/v1.0.7>`_.
+
+* `Sevntu 1.24.2 → 1.29.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.29.0>`_.
+
+* `Xtext and Xtend 2.13.0 → 2.14.0 <https://github.com/eclipse/xtext/blob/website-master/xtend-website/_posts/releasenotes/2018-05-23-version-2-14-0.md>`_.
+
+The following Maven plugin has been upgraded:
+
+* `Javadoc 3.0.0 → 3.0.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12342283>`_.
+
 Version 3.1.1
 -------------
 
