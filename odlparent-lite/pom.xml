@@ -501,6 +501,26 @@
         </plugins>
       </build>
     </profile>
+
+    <profile>
+      <!-- On JDK9-and-later specify html4 javadoc -->
+      <id>jdk9-javadoc</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration combine.children="append">
+              <additionalOptions>
+                <additionalOption>-html4</additionalOption>
+              </additionalOptions>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
   </profiles>
 
   <distributionManagement>
