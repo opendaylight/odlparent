@@ -1965,21 +1965,18 @@
     </plugins>
   </reporting>
 
-  <!--
-    Maven Site Configuration
+  <profiles>
+    <profile>
+      <!-- On JDK10-and-later spotbugs fails -->
+      <id>jdk10-spotbugs</id>
+      <activation>
+        <jdk>[10,)</jdk>
+      </activation>
 
-    The following configuration is necessary for maven-site-plugin to
-    correctly identify the correct deployment path for OpenDaylight Maven
-    sites.
-  -->
-  <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
-
-  <distributionManagement>
-    <site>
-      <id>opendaylight-site</id>
-      <url>${nexus.site.url}/${project.artifactId}/</url>
-    </site>
-  </distributionManagement>
-
+      <properties>
+        <spotbugs.skip>true</spotbugs.skip>
+      </properties>
+    </profile>
+  </profiles>
 </project>
 
