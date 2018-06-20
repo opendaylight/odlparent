@@ -102,6 +102,30 @@
                 <configuration>
                     <enableGeneration>true</enableGeneration>
                 </configuration>
+
+                <dependencies>
+                    <!-- These are required to make the plugin work with JDK 9. 4.2.x should not need these. -->
+                    <dependency>
+                        <groupId>javax.xml.bind</groupId>
+                        <artifactId>jaxb-api</artifactId>
+                        <version>2.2.11</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.sun.xml.bind</groupId>
+                        <artifactId>jaxb-core</artifactId>
+                        <version>2.2.11</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.sun.xml.bind</groupId>
+                        <artifactId>jaxb-impl</artifactId>
+                        <version>2.2.11</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>activation</artifactId>
+                        <version>1.1.1</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
         <pluginManagement>
@@ -134,21 +158,4 @@
           </plugins>
         </pluginManagement>
     </build>
-
-    <!--
-        Maven Site Configuration
-
-        The following configuration is necessary for maven-site-plugin to
-        correctly identify the correct deployment path for OpenDaylight Maven
-        sites.
-    -->
-    <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
-
-    <distributionManagement>
-        <site>
-            <id>opendaylight-site</id>
-            <url>${nexus.site.url}/${project.artifactId}/</url>
-        </site>
-    </distributionManagement>
-
 </project>
