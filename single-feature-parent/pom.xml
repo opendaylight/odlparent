@@ -117,20 +117,16 @@
         </plugins>
     </build>
 
-    <!--
-        Maven Site Configuration
+    <profiles>
+        <profile>
+            <activation>
+                <jdk>[9,)</jdk>
+            </activation>
 
-        The following configuration is necessary for maven-site-plugin to
-        correctly identify the correct deployment path for OpenDaylight Maven
-        sites.
-    -->
-    <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
-
-    <distributionManagement>
-        <site>
-            <id>opendaylight-site</id>
-            <url>${nexus.site.url}/${project.artifactId}/</url>
-        </site>
-    </distributionManagement>
-
+            <properties>
+                <!-- Karaf 4.1.x does not suppert JVM 9+ and will fail, hence we disable SFT by default -->
+                <skip.karaf.featureTest>true</skip.karaf.featureTest>
+            </properties>
+        </profile>
+    </profiles>
 </project>
