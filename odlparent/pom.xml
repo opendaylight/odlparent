@@ -50,8 +50,6 @@
     <!-- Maven plugin versions, in the 'canonical' format -->
     <!-- Used in didm, l2switch, lacp, persistence; see also controller -->
     <maven.compile.plugin.version>3.7.0</maven.compile.plugin.version>
-    <!-- Used in snbi, tsdr -->
-    <maven.javadoc.version>3.0.1</maven.javadoc.version>
     <!-- Used in snmp -->
     <maven.plugin.version>3.5</maven.plugin.version>
     <!-- Used in controller, iotdm, neutron, of-config -->
