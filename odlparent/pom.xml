@@ -1967,6 +1967,26 @@
 
   <profiles>
     <profile>
+      <!-- On JDK9-and-later findbugs fails -->
+      <id>jdk9-findbugs</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>findbugs-maven-plugin</artifactId>
+            <configuration combine.children="append">
+              <skip>true</skip>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+
+    <profile>
       <!-- On JDK10-and-later spotbugs fails -->
       <id>jdk10-spotbugs</id>
       <activation>
