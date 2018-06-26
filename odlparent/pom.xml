@@ -788,11 +788,6 @@
         <artifactId>uncommons-maths</artifactId>
         <version>1.2.2a</version>
       </dependency>
-      <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-java</artifactId>
-        <version>2.5.0</version>
-      </dependency>
 
       <!-- Aeron, required by Akka -->
       <dependency>
