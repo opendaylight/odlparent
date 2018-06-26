@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
     <version>4.0.0-SNAPSHOT</version>
     <relativePath>../../odlparent-lite</relativePath>
   </parent>
+
   <artifactId>karaf.branding</artifactId>
   <packaging>bundle</packaging>
   <name>OpenDaylight :: Karaf :: Branding</name>
@@ -17,7 +18,7 @@
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.5.1</version>
         <extensions>true</extensions>
         <configuration>
           <instructions>
