@@ -1501,6 +1501,16 @@
               </configuration>
             </execution>
           </executions>
+
+          <!-- This is needed because upstream got broken by their inconsistency: pulling in old core,
+               but using ranges for other components. No wonder it blew up. -->
+          <dependencies>
+            <dependency>
+              <groupId>org.eclipse.platform</groupId>
+              <artifactId>org.eclipse.equinox.common</artifactId>
+              <version>3.10.0</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
