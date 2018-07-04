@@ -1385,7 +1385,8 @@
               <plugin>
                 <groupId>jp.skypencil.findbugs.slf4j</groupId>
                 <artifactId>bug-pattern</artifactId>
-                <!-- NOTE: This version MUST be kept in sync with the same version in the new spotbugs-maven-plugin below -->
+                <!-- NOTE: This version SHOULD be kept in sync with the same version in the new spotbugs-maven-plugin below,
+                     but 1.4.1 broke compability with (the version we use of) FindBugs, so must keep this at 1.4.0. -->
                 <version>1.4.0</version>
               </plugin>
             </plugins>
@@ -1440,8 +1441,8 @@
               <plugin>
                 <groupId>jp.skypencil.findbugs.slf4j</groupId>
                 <artifactId>bug-pattern</artifactId>
-                <!-- NOTE: This version MUST be kept in sync with the same version in the old findbugs-maven-plugin above -->
-                <version>1.4.0</version>
+                <!-- NOTE: This version MUST be kept in sync with the same version in the old findbugs-maven-plugin above, if possible -->
+                <version>1.4.1</version>
               </plugin>
             </plugins>
             <!--
