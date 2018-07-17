@@ -129,14 +129,11 @@
 
       <!-- Testing Dependencies -->
       <!-- JUnit, Hamcrest, Mockito and PowerMock need to be kept in sync -->
-      <!-- Need to stick to JUnit 4.11 until
-           https://github.com/jayway/powermock/issues/560 is fixed (either in
-           PowerMock or with a new JUnit release) -->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
-        <version>4.11</version>
+        <version>4.13</version>
         <scope>test</scope>
       </dependency>
       <dependency>
