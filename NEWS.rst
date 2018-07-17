@@ -7,6 +7,18 @@ Version 3.1.2
 
 This version fixes the following issues:
 
+* `ODLPARENT-156 <https://jira.opendaylight.org/browse/ODLPARENT-156>`_:
+  ``xtend-maven-plugin``’s dependencies end up pulling in conflicting
+  dependencies. ODL Parent now constrains part of its dependency tree to avoid
+  this.
+
+This version adds ``odl-jackson-2.8`` to ``odlparent-artifacts``.
+
+Version 3.1.2
+-------------
+
+This version fixes the following issues:
+
 * `INFRAUTILS-41 <https://jira.opendaylight.org/browse/INFRAUTILS-41>`_:
   ``jre.properties`` includes ``com.sun.management`` so that it can be
   enabled if necessary. (This doesn’t add a dependency on
