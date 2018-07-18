@@ -1506,9 +1506,9 @@
                but using ranges for other components. No wonder it blew up. -->
           <dependencies>
             <dependency>
-              <groupId>org.eclipse.platform</groupId>
-              <artifactId>org.eclipse.equinox.common</artifactId>
-              <version>3.10.0</version>
+              <groupId>org.eclipse.jdt</groupId>
+              <artifactId>org.eclipse.jdt.core</artifactId>
+              <version>3.13.102</version>
             </dependency>
           </dependencies>
         </plugin>
