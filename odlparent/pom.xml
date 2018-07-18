@@ -1055,20 +1055,20 @@
   </dependencyManagement>
 
   <dependencies>
-    <!-- Karaf provides SL4FJ encapsulation -->
+    <!--
+         We expect slf4j-api to be provided by the platform.
+         Karaf provides it, other containers need to provide it themselves.
+    -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <scope>provided</scope>
     </dependency>
 
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <scope>test</scope>
-    </dependency>
-
-    <!-- Enable useful code quality annotations everywhere -->
+    <!--
+          Enable useful code quality annotations everywhere. Since these annotations
+          are not required at runtime.
+    -->
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>annotations</artifactId>
@@ -1078,6 +1078,29 @@
       <groupId>org.eclipse.jdt</groupId>
       <artifactId>org.eclipse.jdt.annotation</artifactId>
       <scope>provided</scope>
+    </dependency>
+
+    <!--
+          Testing output should be routed through slf4j-simple.
+    -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!--
+          Unit tests can use JUnit + Mockito + Hamcrest by default.
+    -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
