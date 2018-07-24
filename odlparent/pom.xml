@@ -97,8 +97,8 @@
     <releaseplugin.version>2.5.3</releaseplugin.version>
 
     <!-- Supporting Libraries -->
-    <!-- Used by controller -->
-    <bouncycastle.version>1.59</bouncycastle.version>
+    <!-- Only used internally -->
+    <bouncycastle.version>1.60</bouncycastle.version>
 
     <!-- Used by controller, snbi; see also centinel, dlux, toolkit -->
     <osgi.core.version>5.0.0</osgi.core.version>
