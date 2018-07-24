@@ -81,7 +81,7 @@
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
-    <bouncycastle.version>1.59</bouncycastle.version>
+    <bouncycastle.version>1.60</bouncycastle.version>
 
     <!-- Used by snbi; see also bier, dlux, iotdm, tsdr, unimgr -->
     <osgi.core.version>5.0.0</osgi.core.version>
