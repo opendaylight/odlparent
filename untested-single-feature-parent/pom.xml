@@ -46,7 +46,7 @@
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <version>${karaf.plugin.version}</version>
+                <version>${karaf.version}</version>
                 <extensions>true</extensions>
                 <configuration combine.children="append">
                     <enableGeneration>true</enableGeneration>
