@@ -194,7 +194,7 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
              as the karaf4-parent will do this again                -->
         <groupId>org.apache.karaf.tooling</groupId>
         <artifactId>karaf-maven-plugin</artifactId>
-        <version>${karaf.plugin.version}</version>
+        <version>${karaf.version}</version>
         <executions>
           <execution>
             <id>process-resources</id>
