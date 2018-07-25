@@ -16,6 +16,24 @@
       "revId": "7480259c40a974bb3c56c488d68a4f84c00d9e61",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aca37998_6b5f0813",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2018-07-25T08:40:18Z",
+      "side": 1,
+      "message": "Indeed, I meant to do that and then forgot! Thanks for catching it.",
+      "parentUuid": "54f95542_cacf3223",
+      "revId": "7480259c40a974bb3c56c488d68a4f84c00d9e61",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
