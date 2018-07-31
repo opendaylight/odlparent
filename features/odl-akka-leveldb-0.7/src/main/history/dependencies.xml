@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-akka-leveldb-0.7">
     <feature version="0.0.0">
-        <feature>odl-guava-25</feature>
+        <feature>odl-guava</feature>
         <feature>wrap</feature>
         <bundle>mvn:org.fusesource.leveldbjni/leveldbjni-all/1.8-odl</bundle>
         <bundle>wrap:mvn:org.iq80.leveldb/leveldb/0.7</bundle>

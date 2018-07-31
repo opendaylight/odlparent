@@ -33,7 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-guava-23</artifactId>
+            <artifactId>odl-guava</artifactId>
             <version>${project.version}</version>
             <type>xml</type>
             <classifier>features</classifier>

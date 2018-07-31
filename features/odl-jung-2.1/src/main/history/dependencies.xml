@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-jung-2.1">
     <feature version="0.0.0">
-        <feature>odl-guava-25</feature>
+        <feature>odl-guava</feature>
         <feature>wrap</feature>
         <bundle>wrap:mvn:net.sf.jung/jung-algorithms/2.1.1</bundle>
         <bundle>wrap:mvn:net.sf.jung/jung-api/2.1.1</bundle>
