@@ -622,10 +622,17 @@
             <artifactId>uncommons-maths</artifactId>
         </dependency>
         <dependency>
-            <groupId>xmlunit</groupId>
-            <artifactId>xmlunit</artifactId>
+            <groupid>org.xmlunit</groupid>
+            <artifactid>xmlunit-core</artifactid>
         </dependency>
-
+        <dependency>
+            <groupid>org.xmlunit</groupid>
+            <artifactid>xmlunit-matchers</artifactid>
+        </dependency>
+        <dependency>
+            <groupid>org.xmlunit</groupid>
+            <artifactid>xmlunit-legacy</artifactid>
+        </dependency>
     </dependencies>
 
     <build>
