@@ -1060,11 +1060,12 @@
     </dependency>
 
     <!--
-          Testing output should be routed through slf4j-simple.
+          Testing output: route through log4j2. By default the output goes to console,
+          but can be reconfigured if need be (for purposes of capturing output).
     -->
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
       <scope>test</scope>
     </dependency>
 
