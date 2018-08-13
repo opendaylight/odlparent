@@ -1365,7 +1365,6 @@
             <scanPaths>
               <scanPath>${project.groupId}</scanPath>
             </scanPaths>
-            <generatedDir>org/opendaylight/blueprint/</generatedDir>
           </configuration>
           <executions>
             <execution>
@@ -1387,6 +1386,10 @@
                    so that the build doesn't fail if there is no .../.git/ - so git.properties is effectively optional;
                    and so the '-' there is needed to make the maven-bundle-plugin if that resource is not present.  -->
               <Include-Resource>{maven-resources},${project.build.directory}/classes/LICENSE,META-INF/git.properties=-${project.build.directory}/classes/META-INF/git.properties</Include-Resource>
+
+              <!-- Based on https://dev.eclipse.org/mhonarc/lists/equinox-dev/msg01088.html we do want
+                   to generate Import-Service and Export-Service headers. -->
+              <_removeheaders>Import-Service,Export-Service</_removeheaders>
             </instructions>
           </configuration>
         </plugin>
