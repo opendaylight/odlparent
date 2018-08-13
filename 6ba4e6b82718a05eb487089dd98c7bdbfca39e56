@@ -22,6 +22,30 @@
       "revId": "6ba4e6b82718a05eb487089dd98c7bdbfca39e56",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e1610c47_37abedd2",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1854,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-08-13T16:01:23Z",
+      "side": 1,
+      "message": "No, because this change does not yet include using \u003cconfiguration\u003e\u003cgeneratedDir\u003e ... my suggestion is that we revert what we broke (see c/75070), that we then bump but keep as-is (this change), and that you then (possibly) in a separate future change see how to use generatedDir but make it behave as it does today, if you like.  We did too much in 1 change in c/73672, IMHO.",
+      "parentUuid": "67e65fa2_5462563f",
+      "range": {
+        "startLine": 1851,
+        "startChar": 0,
+        "endLine": 1854,
+        "endChar": 66
+      },
+      "revId": "6ba4e6b82718a05eb487089dd98c7bdbfca39e56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
