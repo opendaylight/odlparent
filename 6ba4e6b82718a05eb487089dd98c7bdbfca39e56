@@ -46,6 +46,30 @@
       "revId": "6ba4e6b82718a05eb487089dd98c7bdbfca39e56",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "abce6458_7b7658e3",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1854,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-08-13T17:44:01Z",
+      "side": 1,
+      "message": "So why can\u0027t infrautils change \u003cconfiguration/\u003e to whatever it needs?\n\nOr should we just kill the autoplacement here and have controller (or mdsal once we can move blueprint) provide an override in a dedicated parent pom?",
+      "parentUuid": "e1610c47_37abedd2",
+      "range": {
+        "startLine": 1851,
+        "startChar": 0,
+        "endLine": 1854,
+        "endChar": 66
+      },
+      "revId": "6ba4e6b82718a05eb487089dd98c7bdbfca39e56",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
