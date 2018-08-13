@@ -22,6 +22,30 @@
       "revId": "c43cc2d4b35d9615dc2d1bdcf460946fd34e91ee",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0f711ae8_ba6902b6",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-08-13T15:56:33Z",
+      "side": 0,
+      "message": "Erm... but this change is a (pure) \"git revert\" - I\u0027m not going to tweak it - that\u0027s not how we do such things?  We broke things (for infrautils) re. blueprint-maven-plugin in 7f6d863443f88fd6102ae2d45d0deeca0e08ddad.  This reverts it so that things work again like before.  https://git.opendaylight.org/gerrit/#/c/75071/ then proposes how to bump it and keep the existing funtionality.  I think you are wanting to suggest an alternative solution?  Then please do go ahead and raise a counter proposal to c/75071 re-introducing what you think needs to be done - but do merge this revert, first?  Or just raise another change which doesn\u0027t revert but fixes things, if you prefer.  But I\u0027m not going to change this revert - that\u0027s not correct, and possibly very confusing in the future.",
+      "parentUuid": "fc4c2c07_65541e9e",
+      "range": {
+        "startLine": 1295,
+        "startChar": 12,
+        "endLine": 1295,
+        "endChar": 68
+      },
+      "revId": "c43cc2d4b35d9615dc2d1bdcf460946fd34e91ee",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
