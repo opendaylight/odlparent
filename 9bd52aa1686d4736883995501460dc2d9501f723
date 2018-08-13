@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c7a6dde_1cb5907f",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-08-13T10:09:42Z",
+      "side": 1,
+      "message": "this comment linking to an unresolved issue makes me think that this is probably not a good idea?  If you have new information re. this matter, could I invite you to more clearly outline this in the Commit Message of this change, and -if truly resolved (you tested this?)- remove this old inline TODO comment here?",
+      "revId": "9bd52aa1686d4736883995501460dc2d9501f723",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
