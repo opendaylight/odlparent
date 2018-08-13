@@ -1322,7 +1322,6 @@
             <scanPaths>
               <scanPath>org.opendaylight</scanPath>
             </scanPaths>
-            <generatedDir>org/opendaylight/blueprint/</generatedDir>
           </configuration>
           <executions>
             <execution>
