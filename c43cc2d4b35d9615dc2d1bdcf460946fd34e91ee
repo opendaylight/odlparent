@@ -70,6 +70,30 @@
       "revId": "c43cc2d4b35d9615dc2d1bdcf460946fd34e91ee",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64505879_dc19d036",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-08-13T19:28:09Z",
+      "side": 0,
+      "message": "What? I\u0027ve explained to you why we broke it, in both the commit comment on this change (\"because it breaks infrautils by assuming that all generated\nBP XML must be in org/opendaylight/blueprint... but that is\nactually not an oldparent but controller thing,\nso not valid for and breaking infrautils.\") and on https://lists.opendaylight.org/pipermail/odlparent-dev/2018-August/001912.html, but happy to repeat it here, again: \n\nhttps://git.opendaylight.org/gerrit/#/c/73672/ breaks things which currently work.   The \"removes a chunk of\nunneeded antrun\" part of that change, which was done in addition to the bump which it advertised, broke things.  That antrun was there for a reason, it was conditional to the presence of src/main/resources/org/opendaylight/blueprint and that change removed that.\n\nIt\u0027s not controller that breaks.  Infrautils of course in theory could do something by overriding that generatedDir back to its default - but as I\u0027ve already expressed on mailing list thread, that is wrong because it worked before and we don\u0027t want to force a downstream project to adapt to a breaking change in odlparent that was made for no strong reason? I mean sure removing the antrun is \"nice\", but we don\u0027t have to do that to bump the blueprint-maven-plugin. I\u0027m trying to understand why you are so hellbent on \"forcing\" the removal of the antrun - anything I am missing which you would like to share?\n\nAnd even more importantlym having to remember to override \u003cconfiguration\u003e\u003cgeneratedDir\u003e in all infrautils projects, more importantly future ones than the existing ones, is going to cause pain down the road.\n\nBut https://git.opendaylight.org/gerrit/#/c/75175/ should do the trick.  I hope we can merge the now 3 changes I have proposed to help you unblock https://git.opendaylight.org/gerrit/#/c/74891/ and move on with our lives.",
+      "parentUuid": "5e2b2db2_24c74cae",
+      "range": {
+        "startLine": 1295,
+        "startChar": 12,
+        "endLine": 1295,
+        "endChar": 68
+      },
+      "revId": "c43cc2d4b35d9615dc2d1bdcf460946fd34e91ee",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
