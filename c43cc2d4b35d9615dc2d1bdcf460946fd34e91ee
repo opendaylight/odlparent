@@ -46,6 +46,30 @@
       "revId": "c43cc2d4b35d9615dc2d1bdcf460946fd34e91ee",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5e2b2db2_24c74cae",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-08-13T17:42:01Z",
+      "side": 0,
+      "message": "I want to understand what broke. What are we doing wrong? Did controller break? Is there something infrautils can do?\n\nI am against a plain revert without understanding (and that understanding captured in the commit: either as in-file comments or a commit message.",
+      "parentUuid": "0f711ae8_ba6902b6",
+      "range": {
+        "startLine": 1295,
+        "startChar": 12,
+        "endLine": 1295,
+        "endChar": 68
+      },
+      "revId": "c43cc2d4b35d9615dc2d1bdcf460946fd34e91ee",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
