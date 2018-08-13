@@ -34,6 +34,24 @@
       "revId": "ad7d94ef31c334d26b1dcc744d436d5d382e266c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "56b48f2f_0ded50f5",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2018-08-13T20:25:00Z",
+      "side": 0,
+      "message": "\u003e Whoa... hang on a sec now - won\u0027t this just completely break any\n \u003e existing BP XML which is manually been put into org/opendaylight/blueprint\n \u003e in many modules in many projects?\n \u003e \n \u003e More importantly, our custom BP Extender is not going kick in\n \u003e anymore, to read and process the custom ODL BP XML extension\n \u003e elements - because we look only in \"org/opendaylight/blueprint/ in\n \u003e https://github.com/opendaylight/controller/blob/a6af137c30470b86d4bc624d4c48cb686495a182/opendaylight/blueprint/src/main/java/org/opendaylight/controller/blueprint/BlueprintBundleTracker.java\n\nIf the generated BP XML is put in the standard OSGI-INF dir then the Aries bundle tracker will deploy it.\n\n \u003e \n \u003e Or was this change meant to go together with a change to\n \u003e BlueprintBundleTracker in controller?  And a magical UNIX command\n \u003e moving all existing hand written BP XML for all projects when they\n \u003e adopt odlparent 4 ?  Then I could be fine with it.\n\nWe can leave the BlueprintBundleTracker as is to handle backwards compatibility. We just need to change the BlueprintBundleTracker to also look in the standard OSGI-INF dir when handling a restart. \n\n \u003e \n \u003e But https://lists.opendaylight.org/pipermail/odlparent-dev/2018-August/001915.html\n \u003e seems easier, to me.",
+      "parentUuid": "53fc27d3_cfc0c9d5",
+      "revId": "ad7d94ef31c334d26b1dcc744d436d5d382e266c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
