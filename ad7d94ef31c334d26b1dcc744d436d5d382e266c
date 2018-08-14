@@ -106,6 +106,24 @@
       "revId": "ad7d94ef31c334d26b1dcc744d436d5d382e266c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31ed9838_38787616",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2018-08-14T13:24:27Z",
+      "side": 0,
+      "message": "\u003e But without this line, the auto generated BP XML will go into\n \u003e \"OSGI-INF/blueprint/\" instead.  And hand-written ones will remain\n \u003e in org/opendaylight/blueprint.  Therefore they won\u0027t be loaded by\n \u003e the same extender.  Which won\u0027t work.  That was the whole point of\n \u003e why we had the antrun in th first place.  \n\nyes - this would break downstream in that manner. We\u0027d need to first migrate downstream to OSGI-INF/blueprint.\n\n\u003e And just moving the\n \u003e hand-written ones from src/main/resources/org/opendaylight/blueprint\n \u003e to OSGI-INF/blueprint won\u0027t work either - because then they will be\n \u003e loaded by the standard BP extender, not by our (your!) custom ODL\n \u003e one - so any RPC and what not extension tags will be ignored.\n \u003e \n\nActually no - the custom BP tags are not related to the  BlueprintBundleTracker or whatever component/extender actually loads the XML. The only thing we\u0027d lose by using the standard OSGI-INF is the ability to restart blueprint containers (failed or otherwise). But this can easily be fixed by having BlueprintBundleTracker also look in OSGI-INF/blueprint (I\u0027ll push a patch for that first chance I get).\n\n \u003e How about we stop arguing here and at least pretend like we\n \u003e actually are real engineers and just run builds for changes we make\n \u003e to detect impacts, and actually see failures?  (I cannot\n \u003e participate anymore in this \"hey let\u0027s break some stuff in\n \u003e odlparent and then when projects bump somehow the impacts will be\n \u003e dealt with\" way of working.)\n\nI didn\u0027t think I was arguing and already agreed that this change should first be tested downstream (see my previous comment \"however I think we should understand if/how this change could affect/break downstream projects\").",
+      "parentUuid": "d2afe26e_0be98600",
+      "revId": "ad7d94ef31c334d26b1dcc744d436d5d382e266c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
