@@ -45,5 +45,9 @@
             <groupId>org.apache.sshd</groupId>
             <artifactId>sshd-netty</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.i2p.crypto</groupId>
+            <artifactId>eddsa</artifactId>
+        </dependency>
     </dependencies>
 </project>
