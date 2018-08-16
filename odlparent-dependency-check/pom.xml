@@ -299,6 +299,10 @@
             <artifactId>junit-dep</artifactId>
         </dependency>
         <dependency>
+            <groupId>net.i2p.crypto</groupId>
+            <artifactId>eddsa</artifactId>
+        </dependency>
+        <dependency>
             <groupId>net.java.dev.stax-utils</groupId>
             <artifactId>stax-utils</artifactId>
         </dependency>
