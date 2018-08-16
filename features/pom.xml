@@ -40,6 +40,7 @@
 
         <!-- General features -->
         <module>features-odlparent</module>
+        <module>odl-apache-sshd</module>
         <module>odl-guava-23</module>
         <module>odl-jackson-2.8</module>
         <module>odl-javassist-3</module>
