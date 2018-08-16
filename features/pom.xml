@@ -50,6 +50,7 @@
         <module>odl-apache-commons-lang3</module>
         <module>odl-apache-commons-net</module>
         <module>odl-apache-commons-text</module>
+        <module>odl-apache-sshd</module>
         <module>odl-guava</module>
         <module>odl-guava-25</module>
         <module>odl-jackson-2.9</module>
