@@ -371,6 +371,14 @@
             <artifactId>shiro-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.sshd</groupId>
+            <artifactId>sshd-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sshd</groupId>
+            <artifactId>sshd-netty</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.awaitility</groupId>
             <artifactId>awaitility</artifactId>
         </dependency>
@@ -671,7 +679,6 @@
             <groupId>xmlunit</groupId>
             <artifactId>xmlunit</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>

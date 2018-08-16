@@ -67,8 +67,6 @@
                         <!-- SLF4J -->
                         <excludedArtifactId>slf4j-api</excludedArtifactId>
                         <excludedArtifactId>jcl-over-slf4j</excludedArtifactId>
-                        <!-- sshd -->
-                        <excludedArtifactId>sshd-core</excludedArtifactId>
                         <!-- Karaf artifacts -->
                         <!-- TODO Rework this once Karaf supports wildcards here -->
                         <excludedArtifactId>org.apache.karaf.jaas.config</excludedArtifactId>

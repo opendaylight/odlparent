@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl-apache-sshd">
+    <feature version="0.0.0">
+        <feature prerequisite="false" dependency="false">odl-netty-4</feature>
+        <bundle>mvn:org.apache.sshd/sshd-core/2.0.0</bundle>
+        <bundle>mvn:org.apache.sshd/sshd-netty/2.0.0</bundle>
+    </feature>
+</features>
