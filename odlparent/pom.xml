@@ -87,8 +87,8 @@
     <jacoco.version>0.8.1</jacoco.version>
     <!-- Used in aaa, controller, coretutorials, integration/distribution, l2switch, lacp, lispflowmapping, netide,
          nic, openflowplugin, ovsdb, persistence, sfc, snbi, snmp4sdn?, sxp, topoprocessing, unimgr, vtn -->
-    <karaf.version>4.1.5</karaf.version>
-    <karaf.plugin.version>4.1.5</karaf.plugin.version>
+    <karaf.version>4.1.6</karaf.version>
+    <karaf.plugin.version>4.1.6</karaf.plugin.version>
     <!-- Used in lispflowmapping, snmp4sdn, vtn -->
     <projectinfo>2.8.1</projectinfo>
     <!-- Used in of-config; see also snmp4sdn -->
@@ -958,22 +958,22 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-client</artifactId>
-        <version>9.3.21.v20170918</version>
+        <version>9.3.24.v20180605</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-server</artifactId>
-        <version>9.3.21.v20170918</version>
+        <version>9.3.24.v20180605</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-servlets</artifactId>
-        <version>9.3.21.v20170918</version>
+        <version>9.3.24.v20180605</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-webapp</artifactId>
-        <version>9.3.21.v20170918</version>
+        <version>9.3.24.v20180605</version>
       </dependency>
 
       <dependency>

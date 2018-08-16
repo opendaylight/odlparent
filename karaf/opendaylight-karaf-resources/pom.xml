@@ -107,10 +107,10 @@
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-paxweb.patch"
-                       originalfile="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.9/pax-web-features-6.0.9-features.xml"
+                       originalfile="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
                        failonerror="true"/>
-                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.9/pax-web-features-6.0.9-features.xml"
-                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/6.0.9/pax-web-features-6.0.9-features.xml"/>
+                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
+                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"/>
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
                 <echo file="${project.build.directory}/assembly/etc/startup.properties" append="true">
 # The following are added by opendaylight-karaf-resources
