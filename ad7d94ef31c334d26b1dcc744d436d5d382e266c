@@ -160,6 +160,24 @@
       "revId": "ad7d94ef31c334d26b1dcc744d436d5d382e266c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4bf1a707_64049a3b",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 1842
+      },
+      "writtenOn": "2018-08-20T15:14:40Z",
+      "side": 0,
+      "message": "\u003e Tom, so you are saying that with controller \"as-is\" (no code\n \u003e changes), custom BP tags will just be loaded from OSGI-INF/blueprint?\n\nIt doesn\u0027t matter from where or how the XML is loaded - in the end, it\u0027s the same Aries code that parses and  processes the XML and invokes the namespace handlers.",
+      "parentUuid": "21bff8c3_4c77cd8c",
+      "revId": "ad7d94ef31c334d26b1dcc744d436d5d382e266c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
