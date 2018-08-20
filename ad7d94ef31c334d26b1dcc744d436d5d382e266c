@@ -124,6 +124,24 @@
       "revId": "ad7d94ef31c334d26b1dcc744d436d5d382e266c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2d8eed63_ed489fbb",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-08-20T08:19:03Z",
+      "side": 0,
+      "message": "for i in `find . -name \\*.xml | fgrep src/main/resources/org/opendaylight/blueprint`; do\n    olddir\u003d`dirname \"$i\"`\n    newdir\u003d`echo \"$olddir\" | sed s#org/opendaylight/blueprint#OSGI-INF/blueprint#`\n    mkdir -p \"$newdir\"\n    git mv \"$i\" \"$newdir\"\ndone\n\nis all that it takes to migrate downstreams.",
+      "parentUuid": "d2afe26e_0be98600",
+      "revId": "ad7d94ef31c334d26b1dcc744d436d5d382e266c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
