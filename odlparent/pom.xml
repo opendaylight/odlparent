@@ -52,7 +52,7 @@
     <!-- Used in neutron, ovsdb -->
     <jacoco.version>0.8.1</jacoco.version>
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.2.0</karaf.version>
+    <karaf.version>4.2.1</karaf.version>
     <!-- Used in bgpcep, lispflowmapping -->
     <projectinfo>2.8.1</projectinfo>
 
@@ -544,7 +544,7 @@
       <dependency>
         <groupId>org.apache.felix</groupId>
         <artifactId>org.apache.felix.metatype</artifactId>
-        <version>1.1.6</version>
+        <version>1.2.0</version>
       </dependency>
       <dependency>
         <groupId>org.bouncycastle</groupId>
@@ -663,7 +663,7 @@
       <dependency>
         <groupId>org.ow2.asm</groupId>
         <artifactId>asm</artifactId>
-        <version>6.0</version>
+        <version>6.2.1</version>
       </dependency>
 
       <!-- Configuration library -->
@@ -921,22 +921,22 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-client</artifactId>
-        <version>9.3.21.v20170918</version>
+        <version>9.4.11.v20180605</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-server</artifactId>
-        <version>9.3.21.v20170918</version>
+        <version>9.4.11.v20180605</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-servlets</artifactId>
-        <version>9.3.21.v20170918</version>
+        <version>9.4.11.v20180605</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-webapp</artifactId>
-        <version>9.3.21.v20170918</version>
+        <version>9.4.11.v20180605</version>
       </dependency>
 
       <dependency>
