@@ -1,6 +1,6 @@
---- /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/bin/inc.orig	2017-09-19 11:49:03.217548319 +0200
-+++ /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/bin/inc	2017-09-19 11:50:32.797822567 +0200
-@@ -257,6 +257,7 @@
+--- target/assembly/bin/inc.orig	2018-08-21 16:15:40.146423070 +0200
++++ target/assembly/bin/inc	2018-08-21 16:15:43.798408830 +0200
+@@ -271,6 +271,7 @@
      fi
  
      DEFAULT_JAVA_OPTS="-Xms${JAVA_MIN_MEM} -Xmx${JAVA_MAX_MEM} -XX:+UnlockDiagnosticVMOptions "
@@ -22,9 +22,3 @@
      DEFAULT_JAVA_DEBUG_PORT="5005"
      if [ "x${JAVA_DEBUG_PORT}" = "x" ]; then
          JAVA_DEBUG_PORT="${DEFAULT_JAVA_DEBUG_PORT}"
-@@ -316,4 +324,4 @@
-             CLASSPATH=$(cygpath --path --windows "${CLASSPATH}")
-         fi
-     fi
--}
-+}
