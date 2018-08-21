@@ -103,16 +103,11 @@
                        failonerror="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-paxweb.patch"
-                       originalfile="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.0.0/pax-web-features-7.0.0-features.xml"
-                       failonerror="true"/>
-                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.0.0/pax-web-features-7.0.0-features.xml"
-                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/7.0.0/pax-web-features-7.0.0-features.xml"/>
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
                 <echo file="${project.build.directory}/assembly/etc/startup.properties" append="true">
 # The following are added by opendaylight-karaf-resources
 mvn\:org.osgi/org.osgi.service.event/1.3.1 = 7
-mvn\:org.apache.felix/org.apache.felix.metatype/1.1.6 = 8
+mvn\:org.apache.felix/org.apache.felix.metatype/1.2.0 = 8
 mvn\:org.bouncycastle/bcprov-jdk15on/${bouncycastle.version} = 14
 mvn\:org.bouncycastle/bcpkix-jdk15on/${bouncycastle.version} = 14
 mvn\:org.bouncycastle/bcprov-ext-jdk15on/${bouncycastle.version} = 14
