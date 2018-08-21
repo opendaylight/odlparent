@@ -1,6 +1,6 @@
---- target/assembly/bin/karaf.orig	2018-04-03 17:00:44.381395302 +0200
-+++ target/assembly/bin/karaf	2018-04-03 17:11:52.346032789 +0200
-@@ -170,6 +170,13 @@
+--- target/assembly/bin/karaf.orig	2018-08-21 16:19:40.864484503 +0200
++++ target/assembly/bin/karaf	2018-08-21 16:21:38.375026326 +0200
+@@ -181,6 +181,13 @@
          KARAF_EXEC=""
      fi
  
@@ -14,7 +14,7 @@
      debug=false
      debugs=false
      nodebug=false
-@@ -271,8 +278,12 @@
+@@ -282,8 +289,12 @@
          fi
  
          if [ "${ROOT_INSTANCE_RUNNING}" = "false" ] || [ "${CHECK_ROOT_INSTANCE_RUNNING}" = "false" ] ; then
@@ -24,10 +24,10 @@
              if [ "${VERSION}" -gt "8" ]; then
                  ${KARAF_EXEC} "${JAVA}" ${JAVA_OPTS} \
 +                    "$NON_BLOCKING_PRNG" \
-                     --add-exports=java.base/org.apache.karaf.specs.locator=java.xml,java.xml.ws,ALL-UNNAMED \
-                     --patch-module java.base=lib/endorsed/org.apache.karaf.specs.locator-4.2.0.jar \
-                     --patch-module java.xml=lib/endorsed/org.apache.karaf.specs.java.xml-4.2.0.jar \
-@@ -305,6 +316,7 @@
+                     --add-reads=java.xml=java.logging \
+                     --patch-module java.base=lib/endorsed/org.apache.karaf.specs.locator-4.2.1.jar \
+                     --patch-module java.xml=lib/endorsed/org.apache.karaf.specs.java.xml-4.2.1.jar \
+@@ -313,6 +324,7 @@
                      ${MAIN} "$@"
              else
                  ${KARAF_EXEC} "${JAVA}" ${JAVA_OPTS} \
