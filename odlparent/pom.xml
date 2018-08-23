@@ -49,8 +49,6 @@
 
     <!-- Used in openflowplugin -->
     <enforcer.version>3.0.0-M1</enforcer.version>
-    <!-- Used in controller, infrautils, openflowplugin -->
-    <exam.version>4.12.0</exam.version>
     <!-- Used in neutron, ovsdb -->
     <jacoco.version>0.8.1</jacoco.version>
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
@@ -803,68 +801,68 @@
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-container-forked</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-container-karaf</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-container-native</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-extender-service</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-inject</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-invoker-junit</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-features</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <type>xml</type>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-junit4</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-link-mvn</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-link-assembly</artifactId>
-        <version>${exam.version}</version>
+        <version>4.12.0</version>
         <scope>test</scope>
       </dependency>
 
