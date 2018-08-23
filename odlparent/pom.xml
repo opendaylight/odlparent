@@ -1317,7 +1317,7 @@
           <!-- Support Blueprint XML construction using annotations -->
           <groupId>org.apache.aries.blueprint</groupId>
           <artifactId>blueprint-maven-plugin</artifactId>
-          <version>1.10.0</version>
+          <version>1.9.0</version>
           <configuration>
             <scanPaths>
               <scanPath>org.opendaylight</scanPath>
