@@ -1021,7 +1021,7 @@
       <dependency>
         <groupId>org.threeten</groupId>
         <artifactId>threeten-extra</artifactId>
-        <version>1.3.2</version>
+        <version>1.4</version>
       </dependency>
 
       <!-- When updating this version, consider antl4-maven-plugin below -->
