@@ -50,7 +50,7 @@
     <!-- Used in openflowplugin -->
     <enforcer.version>3.0.0-M1</enforcer.version>
     <!-- Used in neutron, ovsdb -->
-    <jacoco.version>0.8.1</jacoco.version>
+    <jacoco.version>0.8.2</jacoco.version>
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
     <karaf.version>4.2.1</karaf.version>
     <!-- Used in bgpcep, lispflowmapping -->
