@@ -57,20 +57,6 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.karaf.tooling</groupId>
-                <artifactId>karaf-maven-plugin</artifactId>
-                <configuration>
-                    <dependencyFeatures>
-                        <dependencyFeature>odl-guava-25</dependencyFeature>
-                    </dependencyFeatures>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
     <!--
         Maven Site Configuration
 
