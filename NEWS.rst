@@ -2,6 +2,347 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.0
+-------------
+
+This is a major upgrade from version 3, with breaking changes; projects will
+need to make changes to upgrade to this version.
+
+ODL Parent 4 requires Maven 3.5.3 or later; this is needed in particular to
+enable SpotBugs support with current versions of the SpotBugs plugin.
+
+Known issues
+~~~~~~~~~~~~
+
+This release’s SpotBugs support doesn’t handle Guava 25.1 correctly, resulting
+in false-positives regarding null handling; see
+`ODLPARENT-161 <https://jira.opendaylight.org/browse/ODLPARENT-161>`_ for
+details. Until this is fixed, you can either continue using FindBugs (which is
+configured to ignore a number of null-handling warnings), or switch to
+SpotBugs and suppress the appropriate warnings.
+
+We are planning on upgrading Akka during the 4.x cycle, even if it results in
+a technically breaking upgrade. This is currently blocked on an OSGi bug in
+Akka; see `Akka issue 25579 <https://github.com/akka/akka/issues/25579>`_ for
+details.
+
+Blueprint and OSGi service handling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Previous releases used an OpenDaylight-specific directory for Blueprint XML
+files, ``org/opendaylight/blueprint``. It turned out this wasn’t useful, so
+version 4 uses the default directory, ``OSGI-INF/blueprint``.
+
+The Maven bundle plugin is now configured to omit the ``Import-Service`` and
+``Export-Service`` headers, since they are deprecated, unnecessary in
+OpenDaylight, and liable to cause issues.
+
+With previous releases of OpenDaylight, projects were encouraged to use Pax
+CDI API annotations to describe their Blueprint beans, services and injections;
+with version 4, Blueprint annotations should be used instead:
+
+* modules should depend on
+  ``org.apache.aries.blueprint:blueprint-maven-plugin-annotation``, with the
+  ``<optional>true</optional>`` flag, instead of
+  ``org.ops4j.pax.cdi:pax-cdi-api``;
+
+* ``@OsgiServiceProvider`` and ``@OsgiService`` on bean definitions are
+  replaced by ``@Service``;
+
+* ``@OsgiService`` at injection points is replaced by ``@Reference``;
+
+* service lists can be injected using ``@ReferenceList``.
+
+See `this Gerrit patch <https://git.opendaylight.org/gerrit/75699>`_ for an
+example.
+
+Compiler settings
+~~~~~~~~~~~~~~~~~
+
+Builds now warn about unchecked type uses (such as raw types where generics
+are available).
+
+JUnit and Mockito are always available as test dependencies and no longer need
+to be declared in POMs.
+
+New build profiles
+~~~~~~~~~~~~~~~~~~
+
+An OWASP profile is now available to run OWASP’s dependency checker; this will
+check all third-party dependencies against the NVD vulnerability database. To
+enable this, run Maven with ``-Powasp``.
+
+Build profile changes
+~~~~~~~~~~~~~~~~~~~~~
+
+``-Pq`` now skips Modernizer.
+
+New features
+~~~~~~~~~~~~
+
+``odl-akka-leveldb-0.10`` wraps LevelDB 0.10 for Akka.
+
+``odl-apache-commons-codec`` wraps Apache Commons Codec.
+
+``odl-apache-commons-lang3`` wraps Apache Commons Lang 3.
+
+``odl-apache-commons-net`` wraps Apache Commons Net.
+
+``odl-apache-commons-text`` wraps Apache Commons Text.
+
+``odl-apache-sshd`` wraps Apache SSHD.
+
+``odl-guava`` provides the default ODL version of Guava; it should be used
+instead of ``odl-guava-23`` or the new ``odl-guava-25``.
+
+``odl-jackson-2.9`` wraps Jackson 2.9.
+
+New FindBugs and SpotBugs settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FindBugs and SpotBugs are configured with
+`the SLF4J extension <http://kengotoda.github.io/findbugs-slf4j/>`_ (version
+1.4.0 for FindBugs, 1.4.1 for SpotBugs). This will flag misused SLF4J calls, in
+particular message templates which don’t match the arguments, and invalid
+placeholders (*e.g.* ``%s`` instead of ``{}``).
+
+Deleted artifacts
+~~~~~~~~~~~~~~~~~
+
+``aggregator-parent`` was unusable outside ``odlparent`` and has been removed.
+Instead, the ``maven.deploy.skip`` and ``maven.install.skip`` properties are
+available to disable deploying and installing artifacts.
+
+Upstream version upgrades
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This version upgrades the following third-party dependencies:
+
+* Aeron 1.7.0 → 1.9.3:
+
+  * `1.8.0 <https://github.com/real-logic/aeron/releases/tag/1.8.0>`_.
+  * `1.8.1 <https://github.com/real-logic/aeron/releases/tag/1.8.1>`_.
+  * `1.8.2 <https://github.com/real-logic/aeron/releases/tag/1.8.2>`_.
+  * `1.9.0 <https://github.com/real-logic/aeron/releases/tag/1.9.0>`_.
+  * `1.9.1 <https://github.com/real-logic/aeron/releases/tag/1.9.1>`_.
+  * `1.9.2 <https://github.com/real-logic/aeron/releases/tag/1.9.2>`_.
+  * `1.9.3 <https://github.com/real-logic/aeron/releases/tag/1.9.3>`_.
+
+* Agrona 0.9.12 → 0.9.21:
+
+  * `0.9.13 <https://github.com/real-logic/agrona/releases/tag/0.9.13>`_.
+  * `0.9.14 <https://github.com/real-logic/agrona/releases/tag/0.9.14>`_.
+  * `0.9.15 <https://github.com/real-logic/agrona/releases/tag/0.9.15>`_.
+  * `0.9.16 <https://github.com/real-logic/agrona/releases/tag/0.9.16>`_.
+  * `0.9.17 <https://github.com/real-logic/agrona/releases/tag/0.9.17>`_.
+  * `0.9.18 <https://github.com/real-logic/agrona/releases/tag/0.9.18>`_.
+  * `0.9.19 <https://github.com/real-logic/agrona/releases/tag/0.9.19>`_.
+  * `0.9.20 <https://github.com/real-logic/agrona/releases/tag/0.9.20>`_.
+  * `0.9.21 <https://github.com/real-logic/agrona/releases/tag/0.9.21>`_.
+
+* Akka 2.5.11 → 2.5.14:
+
+  * `2.5.12 <https://akka.io/blog/news/2018/04/13/akka-2.5.12-released>`_.
+  * `2.5.13 <https://akka.io/blog/news/2018/06/08/akka-2.5.13-released>`_.
+  * `2.5.14 <https://akka.io/blog/news/2018/07/13/akka-2.5.14-released>`_.
+
+* ASM 5.1 → 6.2.1 (synchronised with Karaf).
+
+* Bouncy Castle `1.59 → 1.60 <https://www.bouncycastle.org/releasenotes.html>`_.
+
+* Checkstyle `8.4 → 8.12 <http://checkstyle.sourceforge.net/releasenotes.html#Release_8.12>`_.
+
+* Commons Lang `3.7 → 3.8 <http://www.apache.org/dist/commons/lang/RELEASE-NOTES.txt>`_.
+
+* Commons Text 1.1 → 1.4:
+
+  * `1.2 <https://commons.apache.org/proper/commons-text/release-notes/RELEASE-NOTES-1.2.txt>`_.
+  * `1.3 <https://commons.apache.org/proper/commons-text/release-notes/RELEASE-NOTES-1.3.txt>`_.
+  * `1.4 <https://commons.apache.org/proper/commons-text/release-notes/RELEASE-NOTES-1.4.txt>`_.
+
+* Eclipse JDT annotations 2.1.150 → 2.2.0.
+
+* EclipseLink Moxy JAXB `2.7.1 → 2.7.3 <https://www.eclipse.org/eclipselink/releases/2.7.php>`_.
+
+* Enunciate core annotations
+  `2.10.1 → 2.11.1 <https://github.com/stoicflame/enunciate/releases>`_.
+
+* Felix Metatype 1.1.6 → 1.2.0 (synchronised with Karaf).
+
+* Google Truth `0.40 → 0.42 <https://github.com/google/truth/releases>`_.
+
+* Guava 23.6.1 → 25.1:
+
+  * `23.4 <https://github.com/google/guava/releases/tag/v23.4>`_.
+  * `23.5 <https://github.com/google/guava/releases/tag/v23.5>`_.
+  * `23.6 <https://github.com/google/guava/releases/tag/v23.6>`_.
+  * `24.0 <https://github.com/google/guava/releases/tag/v24.0>`_.
+  * `24.1 <https://github.com/google/guava/releases/tag/v24.1>`_.
+  * `25.0 <https://github.com/google/guava/releases/tag/v25.0>`_.
+  * `25.1 <https://github.com/google/guava/releases/tag/v25.1>`_.
+
+* Immutables `2.5.6 → 2.7.1 <https://github.com/immutables/immutables/blob/master/README.md#changelog>`_.
+
+* Jackson 2.8.9 → 2.9.6:
+
+  * `2.9 feature overview <https://medium.com/@cowtowncoder/jackson-2-9-features-b2a19029e9ff>`_.
+  * `2.9 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9>`_.
+  * `2.9.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.1>`_.
+  * `2.9.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.2>`_.
+  * `2.9.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.3>`_.
+  * `2.9.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.4>`_.
+  * `2.9.5 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.5>`_.
+  * `2.9.6 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.6>`_.
+
+* JaCoCo `0.8.1 → 0.8.2 <https://github.com/jacoco/jacoco/releases/tag/v0.8.2>`_.
+
+* Javassist 3.22.0 → 3.23.1. This provides compatibility with Java 9 and later,
+  and `fixes a file handle leak <https://github.com/jboss-javassist/javassist/issues/165>`_.
+
+* Jettison 1.3.8 → 1.4.0.
+
+* Jetty 9.3.21 → 9.4.11 (synchronised with Karaf):
+
+  * `9.4.0 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00097.html>`_.
+  * `9.4.1 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00100.html>`_.
+  * `9.4.2 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00101.html>`_.
+  * `9.4.3 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00102.html>`_.
+  * `9.4.4 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00105.html>`_.
+  * `9.4.5 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00107.html>`_.
+  * `9.4.6 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00109.html>`_.
+  * `9.4.7 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00111.html>`_.
+  * `9.4.8 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00114.html>`_.
+  * `9.4.9 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00117.html>`_.
+  * `9.4.10 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00119.html>`_.
+  * `9.4.11 <https://dev.eclipse.org/mhonarc/lists/jetty-announce/msg00122.html>`_.
+
+* Jolokia OSGi `1.5.0 → 1.6.0 <https://jolokia.org/changes-report.html#a1.6.0>`_.
+
+* Karaf 4.1.5 → 4.2.1:
+
+  * `4.1.6 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12342748>`_.
+  * `4.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12342945>`_.
+
+* LMAX Disruptor 3.3.10 → 3.4.1:
+
+  * `3.4.0 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.4.0>`_.
+  * `3.4.1 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.4.1>`_.
+
+* META-INF services 1.7 → 1.8.
+
+* Mockito 1.10.19 → 2.20.1; see
+  `What’s new in Mockito 2 <https://github.com/mockito/mockito/wiki/What%27s-new-in-Mockito-2>`_
+  for upgrade instructions and
+  `the list of issues you might run into <https://asolntsev.github.io/en/2016/10/11/mockito-2.1/>`_.
+
+* Netty 4.1.22 → 4.1.28:
+
+  * `4.1.17 <http://netty.io/news/2017/11/08/4-0-53-Final-4-1-17-Final.html>`_.
+  * `4.1.18 <http://netty.io/news/2017/12/11/4-0-54-Final-4-1-18-Final.html>`_.
+  * `4.1.19 <http://netty.io/news/2017/12/18/4-1-19-Final.html>`_.
+  * `4.1.20 <http://netty.io/news/2018/01/22/4-0-55-Final-4-1-20-Final.html>`_.
+  * `4.1.21 <http://netty.io/news/2018/02/05/4-0-56-Final-4-1-21-Final.html>`_.
+  * `4.1.22 <http://netty.io/news/2018/02/21/4-1-22-Final.html>`_.
+  * `4.1.23 <http://netty.io/news/2018/04/04/4-1-23-Final.html>`_.
+  * `4.1.24 <http://netty.io/news/2018/04/19/4-1-24-Final.html>`_.
+  * `4.1.25 <http://netty.io/news/2018/05/14/4-1-25-Final.html>`_.
+  * `4.1.26 <http://netty.io/news/2018/07/10/4-1-26-Final.html>`_.
+  * `4.1.27 <http://netty.io/news/2018/07/11/4-1-27-Final.html>`_.
+  * `4.1.28 <http://netty.io/news/2018/07/27/4-1-28-Final.html>`_.
+
+* Pax Exam 4.11.0 → 4.12.0.
+
+* Pax URL 2.5.3 → 2.5.4, which only fixes
+  `a potential NullPointerException <https://ops4j1.jira.com/browse/PAXURL-346>`_.
+
+* PowerMock 1.6.4 → 1.7.4:
+
+  * `1.6.5 <https://github.com/powermock/powermock/releases/tag/powermock-1.6.5>`_.
+  * `1.6.6 <https://github.com/powermock/powermock/releases/tag/powermock-1.6.6>`_.
+  * `1.7.0 <https://github.com/powermock/powermock/releases/tag/powermock-1.7.0>`_.
+  * `1.7.1 <https://github.com/powermock/powermock/releases/tag/powermock-1.7.1>`_.
+  * `1.7.2 <https://github.com/powermock/powermock/releases/tag/powermock-1.7.2>`_.
+  * `1.7.3 <https://github.com/powermock/powermock/releases/tag/powermock-1.7.3>`_.
+  * `1.7.4 <https://github.com/powermock/powermock/releases/tag/powermock-1.7.4>`_.
+
+* Scala parser combinators 1.0.7 → 1.1.1:
+
+  * `1.1.0 <https://github.com/scala/scala-parser-combinators/releases/tag/v1.1.0>`_.
+  * `1.1.1 <https://github.com/scala/scala-parser-combinators/releases/tag/v1.1.1>`_.
+
+* SpotBugs `3.1.0 → 3.1.6 <https://github.com/spotbugs/spotbugs/blob/3.1.6/CHANGELOG.md>`_.
+
+* Threeten Extra `1.3.2 → 1.4 <https://github.com/ThreeTen/threeten-extra/releases>`_.
+
+* Typesafe SSL config 0.2.2 → 0.2.4:
+
+  * `0.2.3 <https://github.com/lightbend/ssl-config/releases/tag/v0.2.3>`_.
+  * `0.2.4 <https://github.com/lightbend/ssl-config/releases/tag/v0.2.4>`_.
+
+* Wagon HTTP
+  `2.10 → 3.1.0 <https://lists.apache.org/thread.html/96024c54db7680697cb066e22a37b0ed5b4498386714a8a9ae1ec9cd@%3Cannounce.maven.apache.org%3E>`_.
+
+* XMLUnit `1.6 → 2.6.2 <https://github.com/xmlunit/xmlunit/blob/master/RELEASE_NOTES.md>`_.
+
+Upstream version additions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following upstream dependencies have been added to dependency management:
+
+* Apache SSHD 2.0.0, with EdDSA and Netty support (EdDSA is provided by ``net.i2p.crypto:eddsa``).
+
+* Blueprint annotations (``org.apache.aries.blueprint:blueprint-maven-plugin-annotation``).
+
+* Log4J2.
+
+* Pax Web 7.2.3 (synchronised with Karaf).
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following upstream dependencies have been removed from dependency management:
+
+* Google Protobuf.
+
+* Our repackaging of Jersey Servlet.
+
+* JUnit’s ``junit-dep``, which has long been obsolete.
+
+* LevelDB (which is still available as features).
+
+* Pax CDI API — Blueprint annotations should be used instead.
+
+Plugin version upgrades
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The following plugins have been upgraded:
+
+* Blueprint 1.4.0 → 1.10.0.
+
+* Build helper 1.12 → 3.0.0.
+
+* Bundle plugin 3.5.0 → 4.0.0.
+
+* Checkstyle
+  `2.17 → 3.0.0 <https://mail-archives.apache.org/mod_mbox/maven-announce/201801.mbox/%3Cop.zchs68akkdkhrr%40desktop-2khsk44.mshome.net%3E>`_.
+
+* Duplicate finder
+  `1.2.1 → 1.3.0 <https://github.com/basepom/duplicate-finder-maven-plugin/blob/master/CHANGES.md>`_.
+
+* Git commit id `2.2.4 → 2.2.5 <https://github.com/ktoso/maven-git-commit-id-plugin/releases/tag/v2.2.5>`_.
+
+* Jacoco Maven plugin `0.8.1 → 0.8.2 <https://github.com/jacoco/jacoco/releases/tag/v0.8.2>`_.
+
+* Javadoc `3.0.0 → 3.0.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12342283>`_.
+
+* PMD 3.8 → 3.10.0:
+
+  * `3.10.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12342689&styleName=Text&projectId=12317621>`_.
+
+* Sevntu `1.29.0 → 1.32.0 <http://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.32.0>`_.
+
+* SpotBugs 3.1.0-RC6 → 3.1.6 (see the SpotBugs changes above).
+
 Version 3.1.3
 -------------
 
