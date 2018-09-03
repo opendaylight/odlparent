@@ -77,6 +77,7 @@
                         <excludedArtifactId>org.osgi.compendium</excludedArtifactId>
                         <excludedArtifactId>org.osgi.core</excludedArtifactId>
                         <excludedArtifactId>org.osgi.enterprise</excludedArtifactId>
+                        <excludedArtifactId>osgi.cmpn</excludedArtifactId>
                         <!-- Bouncy Castle -->
                         <excludedArtifactId>bcprov-jdk15on</excludedArtifactId>
                         <excludedArtifactId>bcprov-ext-jdk15on</excludedArtifactId>
