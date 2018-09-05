@@ -979,12 +979,6 @@
         <version>1</version>
         <optional>true</optional>
       </dependency>
-      <dependency>
-        <groupId>org.ops4j.pax.cdi</groupId>
-        <artifactId>pax-cdi-api</artifactId>
-        <version>1.0.0</version>
-        <optional>true</optional>
-      </dependency>
 
       <!-- Cassandra -->
       <dependency>
