@@ -71,6 +71,9 @@
     <!-- Opt-in code quality checks -->
     <pmd.cpd.fail>false</pmd.cpd.fail>                  <!-- Copy/paste detection -->
     <duplicate-finder.skip>true</duplicate-finder.skip> <!-- Classpath duplicates -->
+
+    <!-- Redirect test output to files (overridable) -->
+    <redirectTestOutput>true</redirectTestOutput>
   </properties>
 
   <dependencyManagement>
@@ -1318,7 +1321,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.18.1</version>
           <configuration>
-            <redirectTestOutputToFile>true</redirectTestOutputToFile>
+            <redirectTestOutputToFile>${redirectTestOutput}</redirectTestOutputToFile>
             <trimStackTrace>false</trimStackTrace>
           </configuration>
         </plugin>
