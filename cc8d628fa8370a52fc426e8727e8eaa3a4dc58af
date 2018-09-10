@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82b48f1c_766cb04e",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-09-10T09:59:13Z",
+      "side": 1,
+      "message": "how about actually naming this \"maven.test.redirectTestOutputToFile\", like the original \u003chttp://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#redirectTestOutputToFile\u003e so that -D \"just works\" for end-users, without having to know the name of this property?",
+      "revId": "cc8d628fa8370a52fc426e8727e8eaa3a4dc58af",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
