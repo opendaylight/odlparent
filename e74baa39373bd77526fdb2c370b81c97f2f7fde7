@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38c39d7d_67aaeb15",
+        "filename": "NEWS.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-09-11T14:10:39Z",
+      "side": 1,
+      "message": "Since the delta is against 3.1.3, this should be 4.1.5 -- 4.1.6 is slewed for 3.1.4.",
+      "range": {
+        "startLine": 208,
+        "startChar": 9,
+        "endLine": 208,
+        "endChar": 14
+      },
+      "revId": "e74baa39373bd77526fdb2c370b81c97f2f7fde7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
