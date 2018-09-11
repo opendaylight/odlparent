@@ -49,8 +49,6 @@
 
     <!-- Used in openflowplugin -->
     <enforcer.version>3.0.0-M1</enforcer.version>
-    <!-- Used in neutron, ovsdb -->
-    <jacoco.version>0.8.2</jacoco.version>
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
     <karaf.version>4.2.1</karaf.version>
     <!-- Used in bgpcep, lispflowmapping -->
@@ -60,11 +58,16 @@
     <!-- Only used internally -->
     <bouncycastle.version>1.60</bouncycastle.version>
 
+    <!-- JaCoCo configuration, by default tied to Sonar configuration, but can be overridden separately
+         to allow projects to report Sonar values from the entire project. -->
+    <jacoco.destFile>${project.build.directory}/code-coverage/jacoco.exec</jacoco.destFile>
+
     <!-- Default Sonar configuration -->
     <sonar-jacoco-listeners.version>3.8</sonar-jacoco-listeners.version>
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-    <sonar.jacoco.reportPath>${project.build.directory}/code-coverage/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.jacoco.reportPath>${jacoco.dataFile}</sonar.jacoco.reportPath>
     <sonar.jacoco.itReportPath>${project.build.directory}/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
+
     <!-- Note: This list should match jacoco-maven-plugin's exclusion list below -->
     <sonar.exclusions>**/gen/**,**/generated-sources/**,**/generated-test-sources/**,**/yang-gen/**,**/yang-gen-config/**,**/yang-gen-sal/**,**/yang-gen-code/**,**/pax/**</sonar.exclusions>
 
@@ -1677,7 +1680,6 @@
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
-          <version>${jacoco.version}</version>
           <configuration>
             <!-- Note: This exclusion list should match <sonar.exclusions>
                        property above -->
@@ -1825,7 +1827,7 @@
               <goal>prepare-agent</goal>
             </goals>
             <configuration>
-              <destFile>${sonar.jacoco.reportPath}</destFile>
+              <destFile>${jacoco.destFile}</destFile>
             </configuration>
           </execution>
         </executions>
