@@ -1633,7 +1633,6 @@
                     <versionRange>[0.7.0,)</versionRange>
                     <goals>
                       <goal>prepare-agent</goal>
-                      <goal>report</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
@@ -1827,15 +1826,6 @@
             </goals>
             <configuration>
               <destFile>${sonar.jacoco.reportPath}</destFile>
-            </configuration>
-          </execution>
-          <execution>
-            <id>post-unit-test</id>
-            <goals>
-              <goal>report</goal>
-            </goals>
-            <configuration>
-              <dataFile>${sonar.jacoco.reportPath}</dataFile>
             </configuration>
           </execution>
         </executions>
