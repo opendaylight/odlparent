@@ -1829,15 +1829,6 @@
               <destFile>${sonar.jacoco.reportPath}</destFile>
             </configuration>
           </execution>
-          <execution>
-            <id>post-unit-test</id>
-            <goals>
-              <goal>report</goal>
-            </goals>
-            <configuration>
-              <dataFile>${sonar.jacoco.reportPath}</dataFile>
-            </configuration>
-          </execution>
         </executions>
       </plugin>
 
