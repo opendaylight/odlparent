@@ -85,6 +85,9 @@
 
     <!-- This property allows installations to be skipped in child modules -->
     <maven.install.skip>false</maven.install.skip>
+
+    <!-- Used in neutron, ovsdb -->
+    <jacoco.version>0.8.2</jacoco.version>
   </properties>
 
   <build>
@@ -268,6 +271,11 @@
               </pluginExecutions>
             </lifecycleMappingMetadata>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${jacoco.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
