@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2fa1cefe_d104b586",
+        "filename": "NEWS.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-09-12T13:40:15Z",
+      "side": 1,
+      "message": "Unless I\u0027m totally missing something? \n\nIf you did have to change any @OsgiService on bean definitions, not at at injection points, in https://git.opendaylight.org/gerrit/75699, then that would seem like it was originally wrong .. was there such a case?",
+      "revId": "9e7f2082c72b92462c0ceb481a1c834fd016fa9a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
