@@ -22,6 +22,30 @@
       "revId": "e74baa39373bd77526fdb2c370b81c97f2f7fde7",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27c8004e_48ac8854",
+        "filename": "NEWS.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-09-12T13:25:15Z",
+      "side": 1,
+      "message": "Done - so I\u0027ll take it this is good for you now, and merge it.",
+      "parentUuid": "38c39d7d_67aaeb15",
+      "range": {
+        "startLine": 208,
+        "startChar": 9,
+        "endLine": 208,
+        "endChar": 14
+      },
+      "revId": "e74baa39373bd77526fdb2c370b81c97f2f7fde7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
