@@ -46,8 +46,7 @@ with version 4, Blueprint annotations should be used instead:
   ``<optional>true</optional>`` flag, instead of
   ``org.ops4j.pax.cdi:pax-cdi-api``;
 
-* ``@OsgiServiceProvider`` and ``@OsgiService`` on bean definitions are
-  replaced by ``@Service``;
+* ``@OsgiServiceProvider`` on bean definitions are replaced by ``@Service``;
 
 * ``@OsgiService`` at injection points is replaced by ``@Reference``;
 
