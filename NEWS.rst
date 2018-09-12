@@ -8,6 +8,9 @@ Version 4.0.0
 This is a major upgrade from version 3, with breaking changes; projects will
 need to make changes to upgrade to this version.
 
+`This Wiki page <https://wiki.opendaylight.org/view/Neon_platform_upgrade>`_
+has detailed step-by-step migration instructions.
+
 ODL Parent 4 requires Maven 3.5.3 or later; this is needed in particular to
 enable SpotBugs support with current versions of the SpotBugs plugin.
 
