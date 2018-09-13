@@ -20,9 +20,9 @@ Known issues
 This release’s SpotBugs support doesn’t handle Guava 25.1 correctly, resulting
 in false-positives regarding null handling; see
 `ODLPARENT-161 <https://jira.opendaylight.org/browse/ODLPARENT-161>`_ for
-details. Until this is fixed, you can either continue using FindBugs (which is
-configured to ignore a number of null-handling warnings), or switch to
-SpotBugs and suppress the appropriate warnings.
+details. Until this is fixed, the corresponding warnings are disabled, which
+matches our existing FindBugs configuration (which suffers from the a variant
+of this, with the same consequences).
 
 We are planning on upgrading Akka during the 4.x cycle, even if it results in
 a technically breaking upgrade. This is currently blocked on an OSGi bug in

@@ -15,8 +15,8 @@
       <!-- We use static slf4j Logger (this rule is from KengoTODA/findbugs-slf4j jp.skypencil.findbugs.slf4:bug-pattern) -->
       <Bug pattern="SLF4J_LOGGER_SHOULD_BE_NON_STATIC" />
 
-      <!-- Guava 23.6+ uses @NullableDecl which FindBugs doesn't know about. This is supposed to be fixed in SpotBugs 3.1.2+,
-           but downstreams seem to triggering it - see https://github.com/spotbugs/spotbugs/issues/743 -->
+      <!-- Guava 25.1+ uses the Checker Framework's @Nullable which SpotBugs doesn't handle correctly, even though it's
+           supposed to; see https://github.com/spotbugs/spotbugs/issues/743 -->
       <Bug pattern="NP_NONNULL_PARAM_VIOLATION" />
       <Bug pattern="NP_NULL_PARAM_DEREF" />
       <Bug pattern="NP_PARAMETER_MUST_BE_NONNULL_BUT_MARKED_AS_NULLABLE" />
