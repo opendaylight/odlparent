@@ -48,7 +48,7 @@
     <java.version.target>${maven.compiler.target}</java.version.target>
 
     <!-- Used in openflowplugin -->
-    <enforcer.version>3.0.0-M1</enforcer.version>
+    <enforcer.version>3.0.0-M2</enforcer.version>
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
     <karaf.version>4.2.1</karaf.version>
     <!-- Used in bgpcep, lispflowmapping -->
