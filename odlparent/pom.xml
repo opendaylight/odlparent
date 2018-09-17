@@ -65,7 +65,7 @@
     <!-- Default Sonar configuration -->
     <sonar-jacoco-listeners.version>3.8</sonar-jacoco-listeners.version>
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
-    <sonar.jacoco.reportPath>${jacoco.dataFile}</sonar.jacoco.reportPath>
+    <sonar.jacoco.reportPath>${jacoco.destFile}</sonar.jacoco.reportPath>
     <sonar.jacoco.itReportPath>${project.build.directory}/code-coverage/jacoco-it.exec</sonar.jacoco.itReportPath>
 
     <!-- Note: This list should match jacoco-maven-plugin's exclusion list below -->
