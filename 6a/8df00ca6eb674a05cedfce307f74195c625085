@@ -1,0 +1,7 @@
+Code-Review+2: Thanh Ha (zxiiro) <thanh.ha@linuxfoundation.org>
+Verified+1: jenkins-releng <jenkins-releng@opendaylight.org>
+Submitted-by: Stephen Kitt <skitt@redhat.com>
+Submitted-at: Mon, 17 Sep 2018 15:20:35 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/76177
+Project: odlparent
+Branch: refs/heads/master
