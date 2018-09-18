@@ -1352,6 +1352,15 @@
           <groupId>org.apache.aries.blueprint</groupId>
           <artifactId>blueprint-maven-plugin</artifactId>
           <version>1.10.0</version>
+          <!-- TODO remove dependencies when we bump from 1.10.0 to 1.11.0 (or 1.10.1);
+             see https://jira.opendaylight.org/browse/ODLPARENT-167 & https://jira.apache.org/jira/browse/ARIES-1826 -->
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.xbean</groupId>
+              <artifactId>xbean-finder-shaded</artifactId>
+              <version>4.9</version>
+            </dependency>
+          </dependencies>
           <configuration>
             <scanPaths>
               <scanPath>${project.groupId}</scanPath>
