@@ -3,7 +3,6 @@
     <Or>
       <Package name="~.*protobuff\.messages.*" />
       <Package name="~org\.opendaylight\.yang\.gen\..*" />
-      <Package name="~org\.opendaylight\.controller\.config\.yang\.config\..*" />
     </Or>
   </Match>
 
