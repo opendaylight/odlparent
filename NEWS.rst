@@ -2,6 +2,84 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.1
+-------------
+
+This is a bug-fix and minor upstream bump upgrade from version 4.0.0.
+
+Bug fixes
+~~~~~~~~~
+
+The JaCoCo execution profile was incorrect, breaking Sonar; the report is now
+written correctly, so that Sonar can find it.
+
+The Blueprint Maven plugin fails when it encounters Java 9 classes; this is
+fixed by forcefully upgrading its dependency on xbean-finder. See
+`ODLPARENT-167 <https://jira.opendaylight.org/browse/ODLPARENT-167>`__ for
+details.
+
+Upstream version upgrades
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* SpotBugs `3.1.6 → 3.1.7 <https://github.com/spotbugs/spotbugs/blob/release-3.1/CHANGELOG.md>`__.
+
+Upstream version additions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Mockito Inline is added alongside Mockito Core, to ensure that the versions
+  are kept in sync.
+
+Plugin version upgrades
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* Clean `3.0.0 → 3.1.0 <https://blog.soebes.de/blog/2018/04/14/apache-maven-clean-plugin-version-3-dot-1-0-released/>`__.
+
+* Compiler `3.7.0 → 3.8.0 <https://blog.soebes.de/blog/2018/07/30/apache-maven-compiler-plugin-version-3-dot-8-0-released/>`__.
+
+* Dependency 3.0.2 → 3.1.1:
+
+  * `3.1.0 <https://blog.soebes.de/blog/2018/04/06/apache-maven-dependency-plugin-version-3-dot-1-0-released/>`__.
+  * `3.1.1 <https://blog.soebes.de/blog/2018/05/24/apache-maven-dependency-plugin-version-3-dot-1-1-released/>`__.
+
+* Dependency Check `3.3.1 → 3.3.2 <https://github.com/jeremylong/DependencyCheck/blob/master/RELEASE_NOTES.md>`__.
+
+* Enforcer `3.0.0-M1 → 3.0.0-M2 <https://mail-archives.apache.org/mod_mbox/maven-announce/201806.mbox/%3Cop.zko9b2vhkdkhrr%40desktop-2khsk44.dynamic.ziggo.nl%3E>`__.
+
+* Failsafe 2.20.1 → 2.22:
+
+  * `2.21 <https://blog.soebes.de/blog/2018/03/06/apache-maven-surefire-plugin-version-2-dot-21-released/>`__.
+  * `2.22 <https://blog.soebes.de/blog/2018/06/16/apache-maven-surefire-plugin-version-2-dot-22-released/>`__.
+
+* Help 2.2 → 3.1.0:
+
+  * `3.0.0 <https://blog.soebes.de/blog/2018/03/18/apache-maven-help-plugin-version-3-dot-0-0-released/>`__.
+  * `3.0.1 <https://blog.soebes.de/blog/2018/03/28/apache-maven-help-plugin-version-3-dot-0-1-released/>`__.
+  * `3.1.0 <https://blog.soebes.de/blog/2018/06/09/apache-maven-help-plugin-version-3-dot-1-0-released/>`__.
+
+* Invoker 2.0.0 → 3.1.0:
+
+  * `3.0.0 <https://blog.soebes.de/blog/2017/05/24/apache-maven-invoker-plugin-version-3-dot-0-0-released/>`__.
+  * `3.1.0 <https://blog.soebes.de/blog/2018/05/31/apache-maven-invoker-plugin-version-3-dot-1-0-released/>`__.
+
+* JAR `3.0.2 → 3.1.0 <https://blog.soebes.de/blog/2018/04/10/apache-maven-jar-plugin-version-3-dot-1-dot-0-released/>`__.
+
+* Project Info Reports `2.9 → 3.0.0 <https://blog.soebes.de/blog/2018/06/27/apache-maven-project-info-reports-plugin-3-dot-0-0-released/>`__.
+
+* Resources `3.0.1 → 3.1.0 <https://blog.soebes.de/blog/2018/05/01/apache-maven-resources-plugin-version-3-dot-1-0-released/>`__.
+
+* Shade `3.1.0 → 3.2.0 <https://blog.soebes.de/blog/2018/09/13/apache-maven-shade-plugin-version-3-dot-2-0-released/>`__.
+
+* Site `3.7 → 3.7.1 <https://blog.soebes.de/blog/2018/04/29/apache-maven-site-plugin-version-3-dot-7-1-released/>`__.
+
+* Surefire 2.18.1 → 2.22.0:
+
+  * `2.19 <https://blog.soebes.de/blog/2015/10/19/apache-maven-surefire-plugin-version-2-dot-19-released/>`__.
+  * `2.19.1 <https://blog.soebes.de/blog/2016/01/03/apache-maven-surefire-plugin-version-2-dot-19-dot-1-released/>`__.
+  * `2.20 <https://blog.soebes.de/blog/2017/04/12/apache-maven-surefire-plugin-version-2-dot-20-released/>`__.
+  * `2.21 <https://blog.soebes.de/blog/2018/03/06/apache-maven-surefire-plugin-version-2-dot-21-released/>`__.
+  * `2.22 <https://blog.soebes.de/blog/2018/06/16/apache-maven-surefire-plugin-version-2-dot-22-released/>`__.
+
+
 Version 4.0.0
 -------------
 
