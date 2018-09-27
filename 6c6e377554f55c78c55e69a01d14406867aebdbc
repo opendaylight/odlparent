@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f059a995_e9bcbd9a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-09-27T12:21:34Z",
+      "side": 1,
+      "message": "could we clarify what version we are upgrading from here?",
+      "revId": "6c6e377554f55c78c55e69a01d14406867aebdbc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de50f732_1d190d89",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-09-27T12:21:34Z",
+      "side": 1,
+      "message": "as seen in NEUTRON-197 ...",
+      "revId": "6c6e377554f55c78c55e69a01d14406867aebdbc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f39c934d_a5d3ebf4",
+        "filename": "odlparent-dependency-check/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-09-27T12:21:34Z",
+      "side": 1,
+      "message": "did you mean to remove this?",
+      "revId": "6c6e377554f55c78c55e69a01d14406867aebdbc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
