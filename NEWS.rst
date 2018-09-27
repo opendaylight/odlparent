@@ -2,6 +2,47 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.2
+-------------
+
+This is a bug-fix and minor upstream bump upgrade from version 4.0.1.
+
+Bug fixes
+~~~~~~~~~
+
+Previous releases overrode Karaf’s ``jre.properties``; this is no longer
+necessary, and was causing failures with Java 9 and later (our version of
+``jre.properties`` didn’t have the appropriate settings for anything after
+Java 8). This release drops that override. See
+`ODLPARENT-168 <https://jira.opendaylight.org/browse/ODLPARENT-168>`__ for
+details.
+
+Upstream version upgrades
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Commons Lang `3.8 → 3.8.1 <http://www.apache.org/dist/commons/lang/RELEASE-NOTES.txt>`__.
+
+* Jackson `2.9.6 → 2.9.7 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.7>`__.
+
+* Netty `4.1.28 → 4.1.29 <http://netty.io/news/2018/08/24/4-1-29-Final.html>`__.
+
+Plugin version upgrades
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* JAR `3.0.2 → 3.1.0 <https://blog.soebes.de/blog/2018/04/10/apache-maven-jar-plugin-version-3-dot-1-dot-0-released>`__.
+
+* Javadoc `3.0.0 → 3.0.1 <https://blogs.apache.org/maven/entry/apache-maven-javadoc-plugin-version>`__.
+
+* Jersey `2.22.2 → 2.25.1 <https://jersey.github.io/release-notes/2.25.html>`__,
+  along with Glassfish JSON 1.0.4 → 1.1.2.
+
+* Plugin 3.5 → 3.5.2:
+
+  * `3.5.1 <https://blog.soebes.de/blog/2018/01/22/apache-maven-plugin-tools-version-3-dot-5-1-released/>`__.
+  * `3.5.2 <https://blog.soebes.de/blog/2018/05/26/apache-mave-plugin-tools-version-3-dot-5-2-released/>`__.
+
+* Resources `3.0.1 → 3.1.0 <https://blogs.apache.org/maven/entry/apache-maven-resources-plugin-version>`__.
+
 Version 4.0.1
 -------------
 
