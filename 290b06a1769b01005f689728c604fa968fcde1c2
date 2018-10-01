@@ -16,6 +16,24 @@
       "revId": "290b06a1769b01005f689728c604fa968fcde1c2",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebcb1a6_d84f4eae",
+        "filename": "features/odl-akka-clustering-2.5/src/main/history/dependencies.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-10-01T11:34:37Z",
+      "side": 1,
+      "message": "Akka is using 0.2.4, 0.3.2 indicates potential incompatibility -\u003e no.",
+      "parentUuid": "bc9a623e_09133551",
+      "revId": "290b06a1769b01005f689728c604fa968fcde1c2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
