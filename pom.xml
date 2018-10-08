@@ -64,6 +64,7 @@
 
         <!-- Self-tests -->
         <module>odlparent-dependency-check</module>
+        <module>odlparent-nullness-check</module>
     </modules>
 
     <profiles>

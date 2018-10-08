@@ -61,5 +61,6 @@
         <module>odl-netty-4</module>
 
         <!-- Test features -->
+        <module>odl-nullness-check</module>
     </modules>
 </project>
