@@ -63,6 +63,7 @@
         <module>odlparent-artifacts</module>
 
         <!-- Self-tests -->
+        <module>odlparent-bundle-check</module>
         <module>odlparent-dependency-check</module>
     </modules>
 
