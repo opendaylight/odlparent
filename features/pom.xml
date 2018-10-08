@@ -50,5 +50,6 @@
         <module>odl-netty-4</module>
 
         <!-- Test features -->
+        <module>odl-bundle-test</module>
     </modules>
 </project>
