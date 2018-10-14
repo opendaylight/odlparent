@@ -1065,6 +1065,35 @@
         <artifactId>eddsa</artifactId>
         <version>0.3.0</version>
       </dependency>
+
+      <!-- JAXB for Java 11+ -->
+      <!-- Since we need to run on Java 8, this should be 2.2.8, but unfortunately karaf-4.2.1 has a bad definition
+           in its jre.properties.
+           FIXME: correct this once we upgrade karaf to 4.2.2+
+           FIXME: bump this to 2.3.0 once we require Java 9+
+      -->
+      <dependency>
+        <groupId>javax.xml.bind</groupId>
+        <artifactId>jaxb-api</artifactId>
+        <version>2.2.1</version>
+        <exclusions>
+          <exclusion>
+            <!-- Provided by JRE -->
+            <groupId>javax.xml.stream</groupId>
+            <artifactId>stax-api</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-core</artifactId>
+        <version>2.2.1</version>
+      </dependency>
+      <dependency>
+        <groupId>com.sun.xml.bind</groupId>
+        <artifactId>jaxb-impl</artifactId>
+        <version>2.2.1</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
