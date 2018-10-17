@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "632cd1fe_ab50e488",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1097,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2018-10-17T12:07:41Z",
+      "side": 1,
+      "message": "What\u0027s the bad definition? I imagine 4.1.6 has the same problem (its jre.properties only has more properties than the 4.2.1 version, apart from the JDK 10/11 stuff).",
+      "revId": "4164acd61bd13d100d6425e2db088a2971838d1d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
