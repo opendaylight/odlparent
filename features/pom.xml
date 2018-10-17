@@ -46,6 +46,7 @@
 
         <!-- General features -->
         <module>features-odlparent</module>
+        <module>odl-antlr4</module>
         <module>odl-apache-commons-codec</module>
         <module>odl-apache-commons-lang3</module>
         <module>odl-apache-commons-net</module>

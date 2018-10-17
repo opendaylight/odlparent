@@ -25,6 +25,13 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>odl-antlr4</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>odl-apache-commons-codec</artifactId>
             <classifier>features</classifier>
             <type>xml</type>

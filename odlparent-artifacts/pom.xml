@@ -102,6 +102,13 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>odl-antlr4</artifactId>
+                <version>${project.version}</version>
+                <classifier>features</classifier>
+                <type>xml</type>
+            </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-apache-commons-codec</artifactId>
                 <version>${project.version}</version>
                 <classifier>features</classifier>
