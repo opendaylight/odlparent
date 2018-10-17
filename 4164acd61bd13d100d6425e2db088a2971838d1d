@@ -34,6 +34,24 @@
       "revId": "4164acd61bd13d100d6425e2db088a2971838d1d",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eddd82bc_43c69a03",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1097,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2018-10-17T16:37:09Z",
+      "side": 1,
+      "message": "Oh right, for some reason I didn\u0027t see that in jre.properties :-/. It\u0027s the same in 4.1.6, so this is good for 3.1.x.",
+      "parentUuid": "4ed02573_66c56ab2",
+      "revId": "4164acd61bd13d100d6425e2db088a2971838d1d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
