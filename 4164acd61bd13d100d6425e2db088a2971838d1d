@@ -16,6 +16,24 @@
       "revId": "4164acd61bd13d100d6425e2db088a2971838d1d",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ed02573_66c56ab2",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1097,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-10-17T14:43:30Z",
+      "side": 1,
+      "message": "jre.properties is specifying 2.2.1 as the javax.xml.bind package version, hence if we use 2.2.8, we won\u0027t be able to load our bundles. See https://github.com/apache/karaf/pull/613/commits/04ce8e1ba73b433ed71649cb150fe5d722039653",
+      "parentUuid": "632cd1fe_ab50e488",
+      "revId": "4164acd61bd13d100d6425e2db088a2971838d1d",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
