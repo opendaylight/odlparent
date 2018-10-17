@@ -234,6 +234,14 @@
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
+
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>odl-stax2-api</artifactId>
+                <version>${project.version}</version>
+                <classifier>features</classifier>
+                <type>xml</type>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
