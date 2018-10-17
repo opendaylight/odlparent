@@ -144,7 +144,7 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-jackson-2.8</artifactId>
+                <artifactId>odl-jackson-2.9</artifactId>
                 <version>${project.version}</version>
                 <classifier>features</classifier>
                 <type>xml</type>
