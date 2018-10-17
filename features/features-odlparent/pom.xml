@@ -25,8 +25,31 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-netty-4</artifactId>
-            <version>${project.version}</version>
+            <artifactId>odl-apache-commons-codec</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-apache-commons-lang3</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-apache-commons-net</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-apache-commons-text</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-apache-sshd</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
@@ -34,14 +57,19 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>odl-guava</artifactId>
-            <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>odl-guava-25</artifactId>
-            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-jackson-2.9</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
@@ -49,7 +77,6 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>odl-javassist-3</artifactId>
-            <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
@@ -57,23 +84,13 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>odl-jersey-1</artifactId>
-            <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-lmax-3</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-apache-sshd</artifactId>
-            <version>${project.version}</version>
+            <artifactId>odl-jung-2.1</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
@@ -81,21 +98,32 @@
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>odl-karaf-feat-jdbc</artifactId>
-            <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>odl-karaf-feat-jetty</artifactId>
-            <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>odl-karaf-feat-war</artifactId>
-            <version>${project.version}</version>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-lmax-3</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-netty-4</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
