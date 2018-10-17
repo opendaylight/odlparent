@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-ws-rs-api">
+    <feature version="0.0.0">
+        <bundle>mvn:javax.ws.rs/javax.ws.rs-api/2.0.1</bundle>
+    </feature>
+</features>

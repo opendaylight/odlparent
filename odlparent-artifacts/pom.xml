@@ -242,6 +242,14 @@
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
+
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>odl-ws-rs-api</artifactId>
+                <version>${project.version}</version>
+                <classifier>features</classifier>
+                <type>xml</type>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
