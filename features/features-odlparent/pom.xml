@@ -144,6 +144,13 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>odl-servlet-api</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>odl-stax2-api</artifactId>
             <classifier>features</classifier>
             <type>xml</type>

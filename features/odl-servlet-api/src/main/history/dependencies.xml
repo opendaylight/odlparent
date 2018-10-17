@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-servlet-api">
+    <feature version="0.0.0">
+        <bundle>mvn:javax.servlet/javax.servlet-api/3.1.0</bundle>
+    </feature>
+</features>
