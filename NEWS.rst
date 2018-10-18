@@ -2,6 +2,56 @@
 ODL Parent release notes
 ========================
 
+Version 3.1.4
+-------------
+
+This version includes the following improvements:
+
+* A new ``odl-apache-sshd`` feature encapsulates Apache SSHD, with support for
+  ed25519 keys.
+
+* Our override of ``jre.properties`` is removed; it prevented our distribution
+  from working on JREs later than version 8 at all. (We don’t yet support
+  version 9 or later as a whole.)
+
+* The quick profile skips SpotBugs.
+
+* JSR-305 annotations are now declared as optional.
+
+* JAXB modules are filtered from generated features.
+
+The following third-party dependencies have been upgraded:
+
+* `BouncyCastle 1.59 → 1.60 <http://bouncycastle.org/releasenotes.html>`_
+  (including fixes for CVE-2018-1000180 and CVE-2018-1000613).
+
+* Jackson 2.8.9 → 2.8.11.20180608:
+
+  * `2.8.10 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.8.10>`_.
+  * `2.8.11 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.8.11>`_.
+  * `Micro-patches <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.8>`_.
+
+* Javassist 3.22.0-GA → 3.23.1-GA, with fixes for
+  `two <https://github.com/jboss-javassist/javassist/issues/165>`_
+  `issues <https://github.com/jboss-javassist/javassist/issues/171>`_
+  relevant to us.
+
+* `Karaf 4.1.5 → 4.1.6 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12342748>`_,
+  with Jetty 9.3.21.v20170918 → 9.3.24.v20180605.
+
+* Netty 4.1.22 → 4.1.:
+
+  * `4.1.23 <https://netty.io/news/2018/04/04/4-1-23-Final.html>`_.
+  * `4.1.24 <https://netty.io/news/2018/04/19/4-1-24-Final.html>`_.
+  * `4.1.25 <https://netty.io/news/2018/05/14/4-1-25-Final.html>`_.
+  * `4.1.26 <https://netty.io/news/2018/07/10/4-1-26-Final.html>`_.
+  * `4.1.27 <https://netty.io/news/2018/07/11/4-1-27-Final.html>`_.
+  * `4.1.28 <https://netty.io/news/2018/07/27/4-1-28-Final.html>`_.
+  * `4.1.29 <https://netty.io/news/2018/08/24/4-1-29-Final.html>`_.
+  * `4.1.30 <https://netty.io/news/2018/09/28/4-1-30-Final.html>`_.
+
+* `Scala 2.12.6 → 2.12.7 <https://github.com/scala/scala/releases/tag/v2.12.7>`_.
+
 Version 3.1.3
 -------------
 
