@@ -85,6 +85,8 @@
                         <excludedArtifactId>jaxb-api</excludedArtifactId>
                         <excludedArtifactId>jaxb-core</excludedArtifactId>
                         <excludedArtifactId>jaxb-impl</excludedArtifactId>
+                        <!-- javax.annotation -->
+                        <excludedArtifactId>activation</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
 
