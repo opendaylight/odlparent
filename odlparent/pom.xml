@@ -1457,7 +1457,7 @@
                 <groupId>jp.skypencil.findbugs.slf4j</groupId>
                 <artifactId>bug-pattern</artifactId>
                 <!-- NOTE: This version MUST be kept in sync with the same version in the old findbugs-maven-plugin above, if possible -->
-                <version>1.4.1</version>
+                <version>1.4.2</version>
               </plugin>
             </plugins>
             <!--
