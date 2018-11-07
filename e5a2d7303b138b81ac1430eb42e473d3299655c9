@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d38cbf96_ea0f9e51",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1491,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-11-07T11:11:17Z",
+      "side": 1,
+      "message": "This also needed to be bumped, which https://git.opendaylight.org/gerrit/#/c/77552/ does.",
+      "revId": "e5a2d7303b138b81ac1430eb42e473d3299655c9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
