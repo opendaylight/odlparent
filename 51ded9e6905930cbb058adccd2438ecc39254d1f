@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "231a997c_7f738af7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-11-26T22:04:19Z",
+      "side": 1,
+      "message": "There are: https://blog.soebes.de/blog/2018/11/12/apache-maven-shade-plugin-version-3-dot-2-1-released/",
+      "range": {
+        "startLine": 11,
+        "startChar": 10,
+        "endLine": 11,
+        "endChar": 26
+      },
+      "revId": "51ded9e6905930cbb058adccd2438ecc39254d1f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
