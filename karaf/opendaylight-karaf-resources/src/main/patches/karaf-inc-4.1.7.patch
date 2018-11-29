@@ -23,10 +23,3 @@
      DEFAULT_JAVA_DEBUG_PORT="5005"
      if [ "x${JAVA_DEBUG_PORT}" = "x" ]; then
          JAVA_DEBUG_PORT="${DEFAULT_JAVA_DEBUG_PORT}"
-@@ -316,4 +324,4 @@
-             CLASSPATH=$(cygpath --path --windows "${CLASSPATH}")
-         fi
-     fi
--}
-\ No newline at end of file
-+}
