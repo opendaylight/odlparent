@@ -1818,6 +1818,9 @@
               <ignoredResourcePattern>.*\.html$</ignoredResourcePattern>
               <ignoredResourcePattern>reference.conf</ignoredResourcePattern>
             </ignoredResourcePatterns>
+            <ignoredClassPatterns>
+              <ignoredClassPattern>META-INF.versions.*$</ignoredClassPattern>
+            </ignoredClassPatterns>
             <ignoredDependencies>
               <ignoredDependency>
                 <groupId>org.slf4j</groupId>
