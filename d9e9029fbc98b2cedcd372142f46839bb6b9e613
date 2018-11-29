@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65670090_75d1a181",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1822,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2018-11-29T21:21:40Z",
+      "side": 1,
+      "message": "just curious why META-INF/versions/... is an ignoredClassPattern whereas e.g. WEB-INF/web.xml \u0026 Co. are ignoredResourcePattern ... I\u0027m guessing because under META-INF/versions/ there are .class files?  I\u0027m assuming you tested that this works like this, so happy to merge it.",
+      "revId": "d9e9029fbc98b2cedcd372142f46839bb6b9e613",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
