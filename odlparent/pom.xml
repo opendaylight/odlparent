@@ -1779,7 +1779,7 @@
       <plugin>
         <groupId>org.basepom.maven</groupId>
         <artifactId>duplicate-finder-maven-plugin</artifactId>
-        <version>1.3.0</version>
+        <version>1.3.1</version>
         <executions>
           <execution>
             <id>find-duplicate-classpath-entries</id>
@@ -1808,9 +1808,6 @@
               <ignoredResourcePattern>.*\.html$</ignoredResourcePattern>
               <ignoredResourcePattern>reference.conf</ignoredResourcePattern>
             </ignoredResourcePatterns>
-            <ignoredClassPatterns>
-              <ignoredClassPattern>META-INF.versions.*$</ignoredClassPattern>
-            </ignoredClassPatterns>
             <ignoredDependencies>
               <ignoredDependency>
                 <groupId>org.slf4j</groupId>
