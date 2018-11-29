@@ -87,8 +87,8 @@
     <jacoco.version>0.8.1</jacoco.version>
     <!-- Used in aaa, controller, coretutorials, integration/distribution, l2switch, lacp, lispflowmapping, netide,
          nic, openflowplugin, ovsdb, persistence, sfc, snbi, snmp4sdn?, sxp, topoprocessing, unimgr, vtn -->
-    <karaf.version>4.1.6</karaf.version>
-    <karaf.plugin.version>4.1.6</karaf.plugin.version>
+    <karaf.version>4.1.7</karaf.version>
+    <karaf.plugin.version>4.1.7</karaf.plugin.version>
     <!-- Used in lispflowmapping, snmp4sdn, vtn -->
     <projectinfo>2.8.1</projectinfo>
     <!-- Used in of-config; see also snmp4sdn -->
@@ -1094,16 +1094,13 @@
       </dependency>
 
       <!-- JAXB for Java 11+ -->
-      <!-- Since we need to run on Java 8, this should be 2.2.8, but unfortunately karaf-4.2.1 has a bad definition
-           in its jre.properties.
-           FIXME: bump this to 2.2.8 once we upgrade karaf to 4.2.2+
-           FIXME: bump this to 2.3.0 once we require Java 9+
+      <!-- FIXME: bump this to 2.3.0 once we require Java 9+
            FIXME: bump this to whatever karaf provides once we require Java 11+
       -->
       <dependency>
         <groupId>javax.xml.bind</groupId>
         <artifactId>jaxb-api</artifactId>
-        <version>2.2.1</version>
+        <version>2.2.8</version>
         <exclusions>
           <exclusion>
             <!-- Provided by JRE -->
