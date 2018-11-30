@@ -16,6 +16,24 @@
       "revId": "d9e9029fbc98b2cedcd372142f46839bb6b9e613",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "63007b68_661e31af",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1822,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2018-11-30T08:24:04Z",
+      "side": 1,
+      "message": "Exactly, these are classes.",
+      "parentUuid": "65670090_75d1a181",
+      "revId": "d9e9029fbc98b2cedcd372142f46839bb6b9e613",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
