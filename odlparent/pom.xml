@@ -991,17 +991,17 @@
       <dependency>
           <groupId>org.eclipse.xtend</groupId>
           <artifactId>org.eclipse.xtend.lib</artifactId>
-          <version>2.14.0</version>
+          <version>2.16.0.M3</version>
       </dependency>
       <dependency>
           <groupId>org.eclipse.xtend</groupId>
           <artifactId>org.eclipse.xtend.lib.macro</artifactId>
-          <version>2.14.0</version>
+          <version>2.16.0.M3</version>
       </dependency>
       <dependency>
           <groupId>org.eclipse.xtext</groupId>
           <artifactId>org.eclipse.xtext.xbase.lib</artifactId>
-          <version>2.14.0</version>
+          <version>2.16.0.M3</version>
       </dependency>
 
       <!-- Annotations -->
@@ -1523,7 +1523,7 @@
           <groupId>org.eclipse.xtend</groupId>
           <artifactId>xtend-maven-plugin</artifactId>
           <!-- NOTE: This version MUST be kept in sync with the Xtend version in <dependencyManagement> -->
-          <version>2.14.0</version>
+          <version>2.16.0.M3</version>
           <executions>
             <execution>
               <goals>
@@ -1536,16 +1536,6 @@
               </configuration>
             </execution>
           </executions>
-
-          <!-- This is needed because upstream got broken by their inconsistency: pulling in old core,
-               but using ranges for other components. No wonder it blew up. -->
-          <dependencies>
-            <dependency>
-              <groupId>org.eclipse.platform</groupId>
-              <artifactId>org.eclipse.equinox.common</artifactId>
-              <version>3.10.0</version>
-            </dependency>
-          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
