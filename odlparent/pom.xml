@@ -964,6 +964,13 @@
         <scope>test</scope>
       </dependency>
 
+      <!-- javax.annotation, aligned with Karaf's jetty feature 1.2 -->
+      <dependency>
+        <groupId>javax.annotation</groupId>
+        <artifactId>javax.annotation-api</artifactId>
+        <version>1.2</version>
+      </dependency>
+
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-client</artifactId>
