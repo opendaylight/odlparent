@@ -16,6 +16,24 @@
       "revId": "70b38ab4aae9304d2f89b140cdda29cbf3d76c55",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff5c7379_bc1a7ff9",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1566,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2018-12-03T10:41:17Z",
+      "side": 0,
+      "message": "Tested with mdsal, works without a glitch.",
+      "parentUuid": "7db2ca52_447f8f98",
+      "revId": "70b38ab4aae9304d2f89b140cdda29cbf3d76c55",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
