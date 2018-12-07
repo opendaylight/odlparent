@@ -49,7 +49,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-leveldb-0.7</artifactId>
+            <artifactId>odl-akka-leveldb-0.10</artifactId>
             <version>${project.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
