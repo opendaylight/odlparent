@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-akka-persistence-2.5">
     <feature version="0.0.0">
-        <feature>odl-akka-leveldb-0.7</feature>
+        <feature>odl-akka-leveldb-0.10</feature>
         <feature>odl-akka-system-2.5</feature>
         <bundle>mvn:com.typesafe.akka/akka-persistence_2.12/2.5.19</bundle>
         <bundle>mvn:com.typesafe.akka/akka-protobuf_2.12/2.5.19</bundle>
