@@ -91,6 +91,8 @@
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <!-- FIXME: remove this override once we have 3.0.0 or pax-exam with PAXEXAM-920 fixed -->
+                <version>2.19.1</version>
                 <configuration>
                     <dependenciesToScan>
                         <dependency>org.opendaylight.odlparent:features-test</dependency>
