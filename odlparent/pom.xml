@@ -811,68 +811,68 @@
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-container-forked</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-container-karaf</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-container-native</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-extender-service</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-inject</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-invoker-junit</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-features</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <type>xml</type>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-junit4</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-link-mvn</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>
         <artifactId>pax-exam-link-assembly</artifactId>
-        <version>4.12.0</version>
+        <version>4.13.1</version>
         <scope>test</scope>
       </dependency>
 
