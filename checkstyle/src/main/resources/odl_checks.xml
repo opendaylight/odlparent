@@ -257,7 +257,9 @@
         <module name="HideUtilityClassConstructor"/>
 
         <!-- Checks for Exception Handling Anti-Patterns -->
-        <module name="IllegalCatch"/>
+        <module name="IllegalCatch">
+            <property name="illegalClassNames" value="NullPointerException, java.lang.NullPointerException, java.lang.Throwable, RuntimeException, Error, Throwable, java.lang.Error, java.lang.RuntimeException, Exception, java.lang.Exception" />
+        </module>
         <module name="IllegalThrows" />
         <module name="MutableException"/>
         <module name="com.github.sevntu.checkstyle.checks.coding.AvoidHidingCauseExceptionCheck" />
