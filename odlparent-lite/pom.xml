@@ -522,6 +522,23 @@
         </plugins>
       </build>
     </profile>
+
+    <profile>
+      <!-- Disable plugins which are not useful for sonar -->
+      <id>sonar-only</id>
+      <activation>
+        <property>
+          <name>sonar</name>
+        </property>
+      </activation>
+      <properties>
+        <checkstyle.skip>true</checkstyle.skip>
+        <duplicate-finder.skip>true</duplicate-finder.skip>
+        <skip.karaf.featureTest>true</skip.karaf.featureTest>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <maven.source.skip>true</maven.source.skip>
+      </properties>
+    </profile>
   </profiles>
 
   <distributionManagement>
