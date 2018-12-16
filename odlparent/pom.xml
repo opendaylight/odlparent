@@ -50,7 +50,7 @@
     <!-- Used in openflowplugin -->
     <enforcer.version>3.0.0-M2</enforcer.version>
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.2.1</karaf.version>
+    <karaf.version>4.2.2</karaf.version>
     <!-- Used in bgpcep, lispflowmapping -->
     <projectinfo>2.8.1</projectinfo>
 
@@ -595,7 +595,7 @@
       <dependency>
         <groupId>org.apache.felix</groupId>
         <artifactId>org.apache.felix.metatype</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.2</version>
       </dependency>
       <dependency>
         <groupId>org.bouncycastle</groupId>
@@ -714,7 +714,7 @@
       <dependency>
         <groupId>org.ow2.asm</groupId>
         <artifactId>asm</artifactId>
-        <version>6.2.1</version>
+        <version>7.0</version>
       </dependency>
 
       <!-- Configuration library -->
@@ -934,7 +934,7 @@
         <groupId>org.ops4j.pax.web</groupId>
         <artifactId>pax-web-api</artifactId>
         <!-- Note: keep this version synchronized with karaf -->
-        <version>7.2.3</version>
+        <version>7.2.5</version>
       </dependency>
 
       <dependency>
@@ -967,22 +967,22 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-client</artifactId>
-        <version>9.4.11.v20180605</version>
+        <version>9.4.12.v20180830</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-server</artifactId>
-        <version>9.4.11.v20180605</version>
+        <version>9.4.12.v20180830</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-servlets</artifactId>
-        <version>9.4.11.v20180605</version>
+        <version>9.4.12.v20180830</version>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-webapp</artifactId>
-        <version>9.4.11.v20180605</version>
+        <version>9.4.12.v20180830</version>
       </dependency>
 
       <dependency>
@@ -1076,7 +1076,7 @@
       <dependency>
         <groupId>org.apache.aries.blueprint</groupId>
         <artifactId>org.apache.aries.blueprint.core</artifactId>
-        <version>1.9.0</version>
+        <version>1.10.1</version>
       </dependency>
       <dependency>
         <groupId>org.apache.aries.blueprint</groupId>
@@ -1103,16 +1103,14 @@
       </dependency>
 
       <!-- JAXB for Java 11+ -->
-      <!-- Since we need to run on Java 8, this should be 2.2.8, but unfortunately karaf-4.2.1 has a bad definition
-           in its jre.properties.
-           FIXME: bump this to 2.2.8 once we upgrade karaf to 4.2.2+
+      <!--
            FIXME: bump this to 2.3.0 once we require Java 9+
            FIXME: bump this to whatever karaf provides once we require Java 11+
       -->
       <dependency>
         <groupId>javax.xml.bind</groupId>
         <artifactId>jaxb-api</artifactId>
-        <version>2.2.1</version>
+        <version>2.2.8</version>
         <exclusions>
           <exclusion>
             <!-- Provided by JRE -->
