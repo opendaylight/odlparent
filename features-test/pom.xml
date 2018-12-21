@@ -93,6 +93,17 @@
             <artifactId>org.osgi.core</artifactId>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>opendaylight-karaf-empty</artifactId>
+            <type>zip</type>
+            <exclusions>
+              <exclusion>
+                <groupId>*</groupId>
+                <artifactId>*</artifactId>
+              </exclusion>
+            </exclusions>
+        </dependency>
         <!-- BEWARE of adding additional dependencies here...
              It will cause weird issues e.g. in integration/distribution/features/repos/distribution -->
         <dependency>
@@ -209,45 +220,4 @@
         </plugins>
     </build>
 
-    <!-- We use profiles to handle the different archives which are user-configurable.
-         We need at least one archive to be built. -->
-    <profiles>
-        <profile>
-            <id>zip</id>
-            <activation>
-                <property>
-                    <name>karaf.archiveZip</name>
-                    <value>true</value>
-                </property>
-            </activation>
-            <dependencies>
-                <dependency>
-                    <groupId>org.opendaylight.odlparent</groupId>
-                    <artifactId>opendaylight-karaf-empty</artifactId>
-                    <type>zip</type>
-                    <exclusions>
-                        <exclusion>
-                            <groupId>*</groupId>
-                            <artifactId>*</artifactId>
-                        </exclusion>
-                    </exclusions>
-                </dependency>
-            </dependencies>
-            <properties>
-                <archive.extension>zip</archive.extension>
-            </properties>
-        </profile>
-        <profile>
-            <id>tarGz</id>
-            <activation>
-                <property>
-                    <name>karaf.archiveTarGz</name>
-                    <value>true</value>
-                </property>
-            </activation>
-            <properties>
-                <archive.extension>tar.gz</archive.extension>
-            </properties>
-        </profile>
-    </profiles>
 </project>
