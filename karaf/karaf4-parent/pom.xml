@@ -275,7 +275,8 @@
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <version>${karaf.version}</version>
+                <!-- Workaround for KARAF-6057 -->
+                <version>4.2.1</version>
                 <executions>
                     <execution>
                         <id>process-resources</id>
