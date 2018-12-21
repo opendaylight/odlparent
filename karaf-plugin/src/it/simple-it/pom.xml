@@ -12,7 +12,7 @@
 
   <groupId>org.opendaylight.odlparent.it</groupId>
   <artifactId>simple-it</artifactId>
-  <version>3.1.5-SNAPSHOT</version>
+  <version>3.1.6-SNAPSHOT</version>
 
   <description>A simple IT verifying the basic use case.</description>
 
