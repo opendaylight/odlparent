@@ -1,3 +1,5 @@
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.opendaylight.odlparent/odlparent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.opendaylight.odlparent/odlparent)
+
 ## ODLParent Project
 
 Details regarding this project repo can be found on the project page
