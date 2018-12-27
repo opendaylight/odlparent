@@ -47,6 +47,7 @@ import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.ProbeBuilder;
 import org.ops4j.pax.exam.TestProbeBuilder;
+import org.ops4j.pax.exam.karaf.container.internal.JavaVersionUtil;
 import org.ops4j.pax.exam.karaf.options.LogLevelOption.LogLevel;
 import org.ops4j.pax.exam.options.extra.VMOption;
 import org.osgi.framework.BundleContext;
@@ -116,6 +117,35 @@ public class SingleFeatureTest {
             + "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, "
             + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
 
+    private static final String KARAF_VERSION = System.getProperty("karaf.version", "4.2.2");
+
+    private static final VMOption[] JDK9PLUS_VMOPIONS = new VMOption[] {
+        new VMOption("--add-reads=java.xml=java.logging"),
+        new VMOption("--add-exports=java.base/org.apache.karaf.specs.locator=java.xml,ALL-UNNAMED"),
+        new VMOption("--patch-module"),
+        new VMOption("java.base=lib/endorsed/org.apache.karaf.specs.locator-" + KARAF_VERSION + ".jar"),
+        new VMOption("--patch-module"),
+        new VMOption("java.xml=lib/endorsed/org.apache.karaf.specs.java.xml-" + KARAF_VERSION + ".jar"),
+        new VMOption("--add-opens"),
+        new VMOption("java.base/java.security=ALL-UNNAMED"),
+        new VMOption("--add-opens"),
+        new VMOption("java.base/java.net=ALL-UNNAMED"),
+        new VMOption("--add-opens"),
+        new VMOption("java.base/java.lang=ALL-UNNAMED"),
+        new VMOption("--add-opens"),
+        new VMOption("java.base/java.util=ALL-UNNAMED"),
+        new VMOption("--add-opens"),
+        new VMOption("java.naming/javax.naming.spi=ALL-UNNAMED"),
+        new VMOption("--add-opens"),
+        new VMOption("java.rmi/sun.rmi.transport.tcp=ALL-UNNAMED"),
+        new VMOption("--add-exports=java.base/sun.net.www.protocol.http=ALL-UNNAMED"),
+        new VMOption("--add-exports=java.base/sun.net.www.protocol.https=ALL-UNNAMED"),
+        new VMOption("--add-exports=java.base/sun.net.www.protocol.jar=ALL-UNNAMED"),
+        new VMOption("--add-exports=jdk.naming.rmi/com.sun.jndi.url.rmi=ALL-UNNAMED"),
+        new VMOption("-classpath"),
+        new VMOption("lib/jdk9plus/*" + File.pathSeparator + "lib/boot/*")
+    };
+
     @Inject @NonNull
     private BundleContext bundleContext;
 
@@ -168,7 +198,7 @@ public class SingleFeatureTest {
         final File karafLogFile = new File("target/SFT/karaf.log").getAbsoluteFile();
         karafLogFile.getParentFile().mkdir();
 
-        return new Option[] {
+        final Option[] baseConfig = new Option[] {
             new VMOption("-Xmx" + maxHeap),
             new VMOption("-XX:+HeapDumpOnOutOfMemoryError"),
             new VMOption("-XX:HeapDumpPath=" + heapDumpPath),
@@ -230,6 +260,14 @@ public class SingleFeatureTest {
             // Needed for Agrona/aeron.io
             systemPackages("com.sun.media.sound", "sun.net", "sun.nio.ch"),
         };
+
+        if (JavaVersionUtil.getMajorVersion() <= 8) {
+            return baseConfig;
+        }
+
+        final Option[] jdk9plus = Arrays.copyOf(baseConfig, baseConfig.length + JDK9PLUS_VMOPIONS.length);
+        System.arraycopy(JDK9PLUS_VMOPIONS, 0, jdk9plus, baseConfig.length, JDK9PLUS_VMOPIONS.length);
+        return jdk9plus;
     }
 
     private static String getNewJFRFile() throws IOException {
