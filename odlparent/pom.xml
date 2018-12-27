@@ -1102,6 +1102,14 @@
         <version>0.3.0</version>
       </dependency>
 
+      <!-- TrieMap library -->
+      <dependency>
+        <groupId>tech.pantheon.triemap</groupId>
+        <artifactId>bom</artifactId>
+        <version>1.0.4</version>
+        <scope>import</scope>
+      </dependency>
+
       <!-- JAXB for Java 11+ -->
       <!--
            FIXME: bump this to 2.3.0 once we require Java 9+
