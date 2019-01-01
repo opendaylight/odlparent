@@ -153,7 +153,7 @@
               </tag>
               <!-- end HelpMojo support -->
             </tags>
-            <detectLinks>false</detectLinks> <!-- TODO: It should work once https://issues.apache.org/jira/browse/MJAVADOC-427 is solved -->
+            <detectLinks>true</detectLinks>
             <detectOfflineLinks>true</detectOfflineLinks>
           </configuration>
           <executions>
