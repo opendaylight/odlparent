@@ -2,6 +2,11 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.7
+-------------
+
+This is a bug-fix release, correcting the ``triemap`` import declaration.
+
 Version 4.0.6
 -------------
 
