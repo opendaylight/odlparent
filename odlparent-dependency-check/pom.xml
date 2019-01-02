@@ -692,6 +692,16 @@
             <artifactId>xmlunit-matchers</artifactId>
         </dependency>
         <dependency>
+            <groupId>tech.pantheon.triemap</groupId>
+            <artifactId>triemap</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tech.pantheon.triemap</groupId>
+            <artifactId>pt-triemap</artifactId>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+        <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
         </dependency>
