@@ -2,6 +2,84 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.8
+-------------
+
+This is a bug-fix and minor upstream bump upgrade from version 4.0.7.
+
+Bug fixes
+~~~~~~~~~
+
+* ``bcprov-ext-jdk15on`` is a superset of ``bcprov-jdk15on``, so there’s no
+  need to ship both; we now only ship the former. In addition, we install the
+  Bouncy Castle JARs in ``lib/boot`` so that they continue to be available on
+  the boot classpath (JDK 9 removes the extension mechanism which was used
+  previously), and provide the corresponding bundles from the boot classpath
+  instead of using separate JARs in the system repository. (See
+  `ODLPARENT-183 <https://jira.opendaylight.org/browse/ODLPARENT-183>`__ and
+  `ODLPARENT-185 <https://jira.opendaylight.org/browse/ODLPARENT-185>`__.)
+
+* A dependency check has been added to ensure that we don’t run into the
+  TrieMap dependency bug in 4.0.6 again.
+
+* Dependencies pulled in by features are now checked for convergence, and
+  ``karaf-plugin`` warns when it finds diverging dependencies (the same
+  artifact with two different versions). Upstream-provided features are
+  patched to avoid the following divergences (and upgrade some dependencies in
+  the process):
+
+  * Aries utilities 1.1.0/1.1.3 (upgraded to 1.1.3).
+  * Commons Beanutils 1.8.3/1.9.3 (upgraded to 1.9.3).
+  * Commons Codec 1.8/1.10 (upgraded to 1.11).
+  * ``javax.mail`` 1.4.4/1.4.7 (upgraded to 1.4.7).
+
+  (See `ODLPARENT-189 <https://jira.opendaylight.org/browse/ODLPARENT-189>`__.)
+
+* Recent versions of the SpotBugs Maven plugin use SLF4J 1.8 beta 2, which
+  can’t use the 1.7.25 implementation we provide; we therefore provide an
+  implementation of 1.8 beta 2 when SpotBugs is used. (See
+  `ODLPARENT-184 <https://jira.opendaylight.org/browse/ODLPARENT-184>`__.)
+
+New features
+~~~~~~~~~~~~
+
+* ``odl-dropwizard-metrics`` provides Dropwizard Metrics (which are also
+  available in dependency management).
+
+* ``enunciate-maven-plugin`` is added as the replacement for
+  ``maven-enunciate-plugin``.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following dependencies are no longer provided by the JVM, starting with
+version 11, but we make them available via dependency management for projects
+which need them:
+
+* ``javax.annotation-api``.
+
+* JAXB (``jaxb-core``, ``jaxb-impl``).
+
+The following dependencies have been upgraded:
+
+* Checkstyle `8.15 → 8.16 <https://checkstyle.org/releasenotes.html#Release_8.16>`__.
+
+* Dependency Check `4.0.0 → 4.0.2 <https://github.com/jeremylong/DependencyCheck/blob/master/RELEASE_NOTES.md>`__.
+
+* ``git-commit-id`` `2.2.5 → 2.2.6 <https://github.com/ktoso/maven-git-commit-id-plugin/releases>`__.
+
+* Immutables 2.7.1 → 2.7.3:
+
+  * `2.7.2 <https://github.com/immutables/immutables#272-2018-11-05>`__.
+  * `2.7.3 <https://github.com/immutables/immutables#273-2018-11-10>`__.
+
+  (2.7.4 breaks our Javadocs.)
+
+* Jackson `2.9.7 → 2.9.8 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.8>`__.
+
+* SpotBugs
+  `3.1.9 → 3.1.10 <https://github.com/spotbugs/spotbugs/blob/d13e4210b8a5148714ced2562325742fc1fb1baf/CHANGELOG.md>`__.
+
 Version 4.0.7
 -------------
 
