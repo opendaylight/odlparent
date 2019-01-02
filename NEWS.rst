@@ -2,6 +2,33 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.8
+-------------
+
+This is a bug-fix and minor upstream bump upgrade from version 4.0.7.
+
+Bug fixes
+~~~~~~~~~
+
+* The Javadoc plugin ``detectLinks`` feature has been enabled, since we’ve
+  upgraded to a version of the plugin which avoids the bugs we ran into
+  previously.
+
+* ``bcprov-ext-jdk15on`` is a superset of ``bcprov-jdk15on``, so there’s no
+  need to ship both; we now only ship the former. In addition, we install the
+  Bouncy Castle JARs in ``lib/boot`` so that they continue to be loaded as
+  extensions with JDK 9 and later.
+
+* A dependency check has been added to ensure that we don’t run into the
+  TrieMap dependency bug in 4.0.6 again.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* JAXB is available under dependency management, so that projects can easily
+  declare dependencies on the corresponding JARs (which are no longer
+  provided by the JVM, starting with version 11).
+
 Version 4.0.7
 -------------
 
