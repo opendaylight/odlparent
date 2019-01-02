@@ -3,7 +3,7 @@
     <feature version="0.0.0">
         <bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/2.8.0</bundle>
         <bundle>mvn:com.fasterxml.jackson.core/jackson-core/2.8.11</bundle>
-        <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/2.8.11.2</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/2.8.11.3</bundle>
         <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-xml/2.8.11</bundle>
         <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.8.11</bundle>
         <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.8.11</bundle>
