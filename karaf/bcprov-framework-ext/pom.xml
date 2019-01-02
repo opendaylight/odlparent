@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vi: set et smarttab sw=4 tabstop=4: -->
+<!--
+ Copyright © 2019 Pantheon Technologies, s.r.o. and others.  All rights reserved.
+
+ This program and the accompanying materials are made available under the
+ terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ and is available at http://www.eclipse.org/legal/epl-v10.html
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>bundle-parent</artifactId>
+        <version>4.0.8-SNAPSHOT</version>
+        <relativePath>../../bundle-parent</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>bcprov-framework-ext</artifactId>
+    <packaging>bundle</packaging>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-ext-jdk15on</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-dependencies</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <includes>**/MANIFEST.MF</includes>
+                            <includeArtifactIds>bcprov-ext-jdk15on</includeArtifactIds>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>filter-manifest-plugin</artifactId>
+                <version>${project.version}</version>
+                <executions>
+                    <execution>
+                        <id>filter-manifest</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>filter-manifest</goal>
+                        </goals>
+                        <configuration>
+                            <inputFile>${project.build.directory}/dependency/META-INF/MANIFEST.MF</inputFile>
+                            <outputFile>${project.build.directory}/MANIFEST.MF</outputFile>
+                            <retainedAttributes>
+                                <retainedAttribute>Export-Package</retainedAttribute>
+                            </retainedAttributes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <_include>${project.build.directory}/MANIFEST.MF</_include>
+                        <Fragment-Host>system.bundle;extension:=framework</Fragment-Host>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

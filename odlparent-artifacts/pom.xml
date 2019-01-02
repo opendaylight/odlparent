@@ -37,6 +37,18 @@
                 <type>zip</type>
             </dependency>
 
+            <!-- BouncyCastle/Karaf/OSGi glue -->
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>bcpkix-framework-ext</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>bcprov-framework-ext</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>features-odlparent</artifactId>
