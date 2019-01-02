@@ -2,6 +2,22 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.6
+-------------
+
+This is a bug-fix and minor upstream packaging upgrade from version 4.0.5.
+
+Bug fixes
+~~~~~~~~~
+
+Single-feature-test was broken with JDK 9 and later and Karaf 4.2.2; this
+release adds the additional JVM configuration needed.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This release adds the ``triemap`` BOM to dependency management.
+
 Version 4.0.5
 -------------
 
