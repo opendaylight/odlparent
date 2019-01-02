@@ -684,6 +684,12 @@
             <artifactId>xmlunit-matchers</artifactId>
         </dependency>
         <dependency>
+            <groupId>tech.pantheon.triemap</groupId>
+            <artifactId>bom</artifactId>
+            <type>pom</type>
+            <version>1.0.4</version>
+        </dependency>
+        <dependency>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
         </dependency>

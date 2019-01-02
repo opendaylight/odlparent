@@ -32,6 +32,15 @@
             <type>xml</type>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- TrieMap provides a feature, this checks that BOM works -->
+        <dependency>
+            <groupId>tech.pantheon.triemap</groupId>
+            <artifactId>pt-triemap</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
