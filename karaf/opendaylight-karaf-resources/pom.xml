@@ -145,13 +145,6 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
                 <!-- Needs to be copied to lib/ext in order to start bouncy provider for mina sshd -->
                 <artifactItem>
                     <groupId>org.bouncycastle</groupId>
-                    <artifactId>bcprov-jdk15on</artifactId>
-                    <version>${bouncycastle.version}</version>
-                    <outputDirectory>target/classes/lib/ext</outputDirectory>
-                    <destFileName>bcprov-jdk15on-${bouncycastle.version}.jar</destFileName>
-                </artifactItem>
-                <artifactItem>
-                    <groupId>org.bouncycastle</groupId>
                     <artifactId>bcprov-ext-jdk15on</artifactId>
                     <version>${bouncycastle.version}</version>
                     <outputDirectory>target/classes/lib/ext</outputDirectory>
