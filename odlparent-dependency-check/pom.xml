@@ -212,6 +212,22 @@
             <artifactId>aeron-driver</artifactId>
         </dependency>
         <dependency>
+            <groupid>io.dropwizard.metrics</groupid>
+            <artifactid>metrics-core</artifactid>
+        </dependency>
+        <dependency>
+            <groupid>io.dropwizard.metrics</groupid>
+            <artifactid>metrics-healthchecks</artifactid>
+        </dependency>
+        <dependency>
+            <groupid>io.dropwizard.metrics</groupid>
+            <artifactid>metrics-jmx</artifactid>
+        </dependency>
+        <dependency>
+            <groupid>io.dropwizard.metrics</groupid>
+            <artifactid>metrics-jvm</artifactid>
+        </dependency>
+        <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
         </dependency>
