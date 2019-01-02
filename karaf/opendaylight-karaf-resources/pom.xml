@@ -141,19 +141,19 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
             <phase>generate-resources</phase>
             <configuration>
               <artifactItems>
-                <!-- Needs to be copied to lib/ext in order to start bouncy provider for mina sshd -->
+                <!-- Needs to be copied to lib/boot in order have it accessible to Main class -->
                 <artifactItem>
                     <groupId>org.bouncycastle</groupId>
                     <artifactId>bcprov-ext-jdk15on</artifactId>
                     <version>${bouncycastle.version}</version>
-                    <outputDirectory>target/classes/lib/ext</outputDirectory>
+                    <outputDirectory>target/classes/lib/boot</outputDirectory>
                     <destFileName>bcprov-ext-jdk15on-${bouncycastle.version}.jar</destFileName>
                 </artifactItem>
                 <artifactItem>
                     <groupId>org.bouncycastle</groupId>
                     <artifactId>bcpkix-jdk15on</artifactId>
                     <version>${bouncycastle.version}</version>
-                    <outputDirectory>target/classes/lib/ext</outputDirectory>
+                    <outputDirectory>target/classes/lib/boot</outputDirectory>
                     <destFileName>bcpkix-jdk15on-${bouncycastle.version}.jar</destFileName>
                 </artifactItem>
               </artifactItems>
