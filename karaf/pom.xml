@@ -19,6 +19,8 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
   <packaging>pom</packaging>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
   <modules>
+    <module>bcpkix-framework-ext</module>
+    <module>bcprov-framework-ext</module>
     <module>karaf-branding</module>
     <module>karaf4-parent</module>
     <module>opendaylight-karaf-resources</module>

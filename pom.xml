@@ -51,6 +51,9 @@
         <module>odlparent</module>
         <module>odlparent-lite</module>
 
+        <!-- Manifest filtering plugin -->
+        <module>filter-manifest-plugin</module>
+
         <!-- Features -->
         <module>features</module>
 
