@@ -85,14 +85,6 @@
             <!-- for https://bugs.opendaylight.org/show_bug.cgi?id=4290 -->
             <artifactId>org.osgi.service.event</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcpkix-jdk15on</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-ext-jdk15on</artifactId>
-        </dependency>
 
         <!-- Optional dependency of karaf.config.core -->
         <dependency>
@@ -109,6 +101,18 @@
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>opendaylight-karaf-resources</artifactId>
+        </dependency>
+
+        <!-- BouncyCastle Framework Extension Bundles -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>bcpkix-framework-ext</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>bcprov-framework-ext</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
