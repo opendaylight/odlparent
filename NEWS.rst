@@ -2,6 +2,13 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.4
+-------------
+
+This is a bug-fix release, reverting the change made in 4.0.3 to handle
+building with either ``zip`` or ``tar.gz`` Karaf archives (which breaks
+builds in our infrastructure, without the empty Karaf archive).
+
 Version 4.0.3
 -------------
 
