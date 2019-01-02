@@ -2,6 +2,13 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.5
+-------------
+
+This is a bug-fix release: the Karaf Maven plugin, in version 4.2.2, is
+`broken <https://issues.apache.org/jira/browse/KARAF-6057>`__ in some cases we
+need in OpenDaylight; we revert to 4.2.1 in ``karaf4-parent`` to avoid this.
+
 Version 4.0.4
 -------------
 
