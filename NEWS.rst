@@ -2,6 +2,161 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.3
+-------------
+
+This is a bug-fix and minor upstream bump upgrade from version 4.0.2.
+
+Bug fixes
+~~~~~~~~~
+
+* Our FindBugs configuration for JDK 9 and later caused the plugin to run
+  everywhere; instead, this version defines the ``findbugs.skip`` property to
+  disable the plugin in modules where it would be used otherwise.
+
+* The PowerMock declarations in dependency management missed
+  ``powermock-api-mockito2``, which is necessary for modules using PowerMock
+  with Mockito 2.
+
+* The “quick” profile (``-Pq``) now skips SpotBugs.
+
+* JSR-305 annotations are now optional, which fixes a number of issues when
+  building with newer JDKs.
+
+* We provide JAXB with JDK 11 and later (where it is no longer provided by the
+  base platform).
+
+* ``odlparent-artifacts`` has been updated to accurately represent the
+  artifacts provided.
+
+* ``javax.activation`` is now excluded from generated features (it’s provided
+  on Karaf’s boot classpath).
+
+* When the build is configured to build Karaf distributions in ``tar.gz``
+  archives, but not ``zip`` archives, ``features-test`` used to fail; it will
+  now used whichever is available
+  (`ODLPARENT-174 <https://jira.opendaylight.org/browse/ODLPARENT-174>`__).
+
+* Explicit GCs are disabled by default, so that calls to ``System.gc()`` are
+  ignored
+  (`ODLPARENT-175 <https://jira.opendaylight.org/browse/ODLPARENT-175>`__).
+
+* Null checks are disabled in SpotBugs because of bad interactions with newer
+  annotations and the bytecode produces by JDK 11 and later for
+  ``try``-with-resources.
+
+* Akka Persistence expects LevelDB 0.10, so we now pull in that version
+  instead of 0.7.
+
+Dependency convergence
+~~~~~~~~~~~~~~~~~~~~~~
+
+A number of dependencies have been added or constrained so that projects using
+this parent can enforce dependency convergence:
+
+* Karaf’s ``framework`` feature is used as an import POM, so that we converge
+  by default on the versions used in Karaf.
+
+* The following dependencies have been added to dependency management:
+
+  * ``commons-beanutils``
+  * the Checker Framework
+  * Error Prone annotations
+  * ``javax.activation``
+  * ``xml-apis``
+
+New features
+~~~~~~~~~~~~
+
+The following Karaf features have been added:
+
+* ``odl-antlr4`` (providing ``antlr4-runtime``);
+
+* ``odl-gson`` (providing ``gson``);
+
+* ``odl-jersey-2`` (providing Jersey client, server, and container servlet,
+  along with the necessary feature dependencies);
+
+* ``odl-servlet-api`` (providing ``javax.servlet-api``);
+
+* ``odl-stax2-api`` (providing ``stax2-api``);
+
+* ``odl-ws-rs-api`` (providing ``javax.ws.rs-api``);
+
+A new ``sonar-jacoco-aggregate`` profile can be used to produce Sonar reports
+with aggregated JaCoCo reports. Additionally, Sonar builds (run with
+``-Dsonar``) are detected and run with a number of irrelevant plugins disabled.
+
+Upstream version upgrades
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Akka 2.5.14 → 2.5.19 (and related ``ssl-config``, Aeron and Agrona upgrades):
+
+  * `2.5.15 <https://akka.io/blog/news/2018/08/24/akka-2.5.15-released>`__.
+  * `2.5.16 <https://akka.io/blog/news/2018/08/29/akka-2.5.16-security-fix-released>`__.
+  * `2.5.17 <https://akka.io/blog/news/2018/09/27/akka-2.5.17-released>`__.
+  * `2.5.18 <https://akka.io/blog/news/2018/10/07/akka-2.5.18-released>`__.
+  * `2.5.19 <https://akka.io/blog/news/2018/12/07/akka-2.5.19-released>`__.
+
+* Commons Text `1.4 → 1.6 <http://www.apache.org/dist/commons/text/RELEASE-NOTES.txt>`__.
+
+* Eclipse JDT annotations 2.2.0 → 2.2.100.
+
+* Javassist 3.23.1 → 3.24.0.
+
+* Karaf 4.2.1 → 4.2.2, with related upgrades.
+
+* LMAX Disruptor `3.4.1 → 3.4.2 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.4.2>`__.
+
+* Mockito `2.20.1 → 2.23.4 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md>`__.
+
+* Netty 4.1.29 → 4.1.31:
+
+  * `4.1.30 <https://netty.io/news/2018/09/28/4-1-30-Final.html>`__.
+  * `4.1.31 <https://netty.io/news/2018/10/30/4-1-31-Final.html>`__.
+
+* Pax Exam 4.12.0 → 4.13.1.
+
+* Scala 2.12.6 → 2.12.8:
+
+  * `2.12.7 <https://github.com/scala/scala/releases/tag/v2.12.7>`__.
+  * `2.12.8 <https://github.com/scala/scala/releases/tag/v2.12.8>`__.
+
+* Wagon HTTP 3.1.0 → 3.2.0.
+
+* Xtend `2.14.0 → 2.16.0 <https://www.eclipse.org/xtend/releasenotes.html>`__.
+
+Plugin version upgrades
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* Asciidoctor `1.5.6 → 1.5.7.1 <https://github.com/asciidoctor/asciidoctor-maven-plugin/releases>`__
+  (with related AsciidoctorJ upgrades).
+
+* Bundle 4.0.0 → 4.1.0.
+
+* Checkstyle `8.12 → 8.15 <https://checkstyle.org/releasenotes.html#Release_8.13>`__.
+
+* DependencyCheck `3.3.2 → 4.0.0 <https://github.com/jeremylong/DependencyCheck/blob/master/RELEASE_NOTES.md>`__.
+
+* Failsafe / Surefire `2.22.0 → 2.22.1 <https://blogs.apache.org/maven/entry/apache-maven-surefire-plugin-version1>`__.
+
+* Help 3.1.0 → 3.1.1.
+
+* JAR 3.1.0 → 3.1.1.
+
+* PMD `3.10.0 → 3.11.0 <https://blogs.apache.org/maven/entry/apache-maven-pmd-plugin-3>`__.
+
+* Remote Resources `1.5 → 1.6.0 <https://blogs.apache.org/maven/entry/apache-maven-remote-resources-plugin>`__.
+
+* Shade
+  `3.2.0 → 3.2.1 <https://blog.soebes.de/blog/2018/11/12/apache-maven-shade-plugin-version-3-dot-2-1-released/>`__.
+
+* SpotBugs `3.1.6 → 3.1.9 <https://github.com/spotbugs/spotbugs/blob/release-3.1/CHANGELOG.md>`__.
+
+* XBean finder 4.9 → 4.12.
+
+* XTend 2.14.0 → 2.16.0.
+
 Version 4.0.2
 -------------
 
