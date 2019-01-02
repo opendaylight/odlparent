@@ -220,6 +220,12 @@
             <artifactId>aeron-driver</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.dropwizard.metrics</groupId>
+            <artifactId>metrics-bom</artifactId>
+            <type>pom</type>
+            <version>4.0.5</version>
+        </dependency>
+        <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
         </dependency>
