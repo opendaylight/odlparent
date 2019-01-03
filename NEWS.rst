@@ -2,6 +2,35 @@
 ODL Parent release notes
 ========================
 
+Version 3.1.5
+-------------
+
+This version includes the following improvements and bug fixes:
+
+* ``javax.activation`` is now excluded from generated features (it’s provided
+  on Karaf’s boot classpath).
+
+* Explicit GCs are disabled by default, so that calls to ``System.gc()`` are
+  ignored
+  (`ODLPARENT-175 <https://jira.opendaylight.org/browse/ODLPARENT-175>`__).
+
+The following third-party dependencies have been upgraded:
+
+* Javassist 3.23.1 → 3.24.0.
+
+* Karaf 4.1.6 → 4.1.7, except in ``karaf4-parent`` where version 4.1.7 of the Karaf
+  Maven plugin `breaks the build <https://issues.apache.org/jira/browse/KARAF-6057>`__.
+
+* Netty `4.1.30 → 4.1.31 <https://netty.io/news/2018/10/30/4-1-31-Final.html>`__.
+
+* Scala `2.12.7 → 2.12.8 <https://github.com/scala/scala/releases/tag/v2.12.8>`__.
+
+* Xtend `2.14.0 → 2.16.0 <https://www.eclipse.org/xtend/releasenotes.html>`__.
+
+The following Maven plugin has been upgraded:
+
+* Remote Resources `1.5 → 1.6.0 <https://blogs.apache.org/maven/entry/apache-maven-remote-resources-plugin>`__.
+
 Version 3.1.4
 -------------
 
