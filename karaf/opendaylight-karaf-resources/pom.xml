@@ -98,11 +98,16 @@
                        failonerror="true"/>
                 <copy file="${project.build.directory}/assembly/bin/setenv.bat"
                       tofile="${project.build.directory}/classes/bin/setenv.bat"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-quiesce-${karaf.version}.patch"
+                <patch patchfile="${project.basedir}/src/main/patches/standard.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
+                <patch patchfile="${project.basedir}/src/main/patches/pax-web-features.patch"
+                       originalfile="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.5/pax-web-features-7.2.5-features.xml"
+                       failonerror="true"/>
+                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.5/pax-web-features-7.2.5-features.xml"
+                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/7.2.5/pax-web-features-7.2.5-features.xml"/>
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
                 <echo file="${project.build.directory}/assembly/etc/startup.properties" append="true">
 # The following are added by opendaylight-karaf-resources
