@@ -16,10 +16,12 @@
 
 package org.opendaylight.odlparent;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -33,7 +35,6 @@ import java.util.Set;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
@@ -101,7 +102,8 @@ public class PopulateLocalRepoMojo
     private AetherUtil aetherUtil;
 
     @Override
-    public void execute() throws MojoExecutionException, MojoFailureException {
+    @SuppressFBWarnings("REC_CATCH_EXCEPTION")
+    public void execute() throws MojoExecutionException {
 
         aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos, localRepo);
         try {
@@ -150,8 +152,8 @@ public class PopulateLocalRepoMojo
         String karafHome = localRepo.getParent();
         File file = new File(karafHome + "/etc/org.apache.karaf.features.cfg");
         Properties prop = new Properties();
-        try {
-            prop.load(new FileInputStream(file));
+        try (InputStream is = new FileInputStream(file)) {
+            prop.load(is);
             String featuresRepositories = prop.getProperty("featuresRepositories");
             for (String mvnUrl : featuresRepositories.split(",")) {
                 String fixedUrl = mvnUrl.replace("${karaf.home}", karafHome);
@@ -177,8 +179,8 @@ public class PopulateLocalRepoMojo
         Set<Artifact> artifacts = new LinkedHashSet<>();
         File file = new File(localRepo.getParentFile().toString() + "/etc/startup.properties");
         Properties prop = new Properties();
-        try {
-            prop.load(new FileInputStream(file));
+        try (InputStream is = new FileInputStream(file)) {
+            prop.load(is);
             Enumeration<Object> mvnUrls = prop.keys();
             while (mvnUrls.hasMoreElements()) {
                 String mvnUrl = (String) mvnUrls.nextElement();
