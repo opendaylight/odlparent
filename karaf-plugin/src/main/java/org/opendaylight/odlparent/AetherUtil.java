@@ -97,7 +97,7 @@ public class AetherUtil {
         try {
             result = repoSystem.resolveArtifact(repoSession, request);
         } catch (ArtifactResolutionException e) {
-            LOG.warn("Unable to resolve artifact: {}", e.getMessage(), e);
+            LOG.warn("Unable to resolve artifact", e);
             return null;
         }
         LOG.trace("resolveArtifacts({}) returns {}", artifact, result.getArtifact());
