@@ -9,8 +9,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>odlparent</artifactId>
     <groupId>org.opendaylight.odlparent</groupId>
+    <artifactId>odlparent</artifactId>
     <version>4.0.8-SNAPSHOT</version>
     <relativePath>../odlparent/</relativePath>
   </parent>
@@ -74,26 +74,17 @@
         <executions>
           <execution>
             <id>check-license</id>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <phase>process-sources</phase>
             <configuration>
-              <configLocation>check-license.xml</configLocation>
-              <includeResources>false</includeResources>
-              <includeTestResources>false</includeTestResources>
-              <sourceDirectories>
-                <directory>${project.build.sourceDirectory}</directory>
-              </sourceDirectories>
               <excludes>
                 <!-- Skip Apache Licensed files -->
                 org/opendaylight/odlparent/PopulateLocalRepoMojo.java
               </excludes>
-              <failsOnError>false</failsOnError>
-              <consoleOutput>true</consoleOutput>
             </configuration>
           </execution>
         </executions>
+        <configuration>
+          <propertyExpansion>checkstyle.violationSeverity=error</propertyExpansion>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-plugin-plugin</artifactId>
