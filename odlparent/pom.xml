@@ -612,6 +612,8 @@
         <artifactId>bcprov-ext-jdk15on</artifactId>
         <version>${bouncycastle.version}</version>
       </dependency>
+
+      <!-- FIXME: ODLPARENT-190: remove this declaration -->
       <dependency>
         <groupId>org.codehaus.enunciate</groupId>
         <artifactId>enunciate-core-annotations</artifactId>
@@ -631,15 +633,10 @@
       <dependency>
         <groupId>com.webcohesion.enunciate</groupId>
         <artifactId>enunciate-core-annotations</artifactId>
+        <!-- This must be aligned with the version of enunciate-maven-plugin specified below -->
         <version>2.11.1</version>
-        <exclusions>
-          <exclusion>
-            <!-- see above -->
-            <groupId>javax.annotation</groupId>
-            <artifactId>jsr250-api</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
+
       <dependency>
         <groupId>org.codehaus.jettison</groupId>
         <artifactId>jettison</artifactId>
@@ -1471,12 +1468,20 @@
           </executions>
         </plugin>
 
+        <!-- FIXME: ODLPARENT-190: remove this plugin declaration -->
         <plugin>
           <groupId>org.codehaus.enunciate</groupId>
           <artifactId>maven-enunciate-plugin</artifactId>
           <!-- This must be aligned with the version of enunciate-core-annotations specified above -->
           <version>1.31</version>
         </plugin>
+        <plugin>
+          <groupId>com.webcohesion.enunciate</groupId>
+          <artifactId>enunciate-maven-plugin</artifactId>
+          <!-- This must be aligned with the version of enunciate-core-annotations specified above -->
+          <version>2.11.1</version>
+        </plugin>
+
         <plugin>
           <groupId>org.codehaus.groovy.maven</groupId>
           <artifactId>gmaven-plugin</artifactId>
