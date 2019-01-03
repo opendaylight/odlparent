@@ -23,7 +23,6 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -31,7 +30,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
-
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -41,7 +39,6 @@ import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.repository.RemoteRepository;
-import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.opendaylight.odlparent.karafutil.CustomBundleUrlStreamHandlerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,8 +51,10 @@ import org.slf4j.LoggerFactory;
  * @goal populate-local-repo
  * @phase prepare-package
  */
+// URL.setURLStreamHandlerFactory throws an Error directly, so we can’t do any better than this...
+@SuppressWarnings("checkstyle:IllegalCatch")
 public class PopulateLocalRepoMojo
-        extends AbstractMojo {
+    extends AbstractMojo {
     private static final Logger LOG = LoggerFactory.getLogger(PopulateLocalRepoMojo.class);
 
     static {
@@ -121,8 +120,8 @@ public class PopulateLocalRepoMojo
             Set<Features> features = new LinkedHashSet<>();
             readFeatureCfg(featureArtifacts, features);
             featureArtifacts.addAll(
-                    aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
-                            new KarafFeaturesDependencyFilter()));
+                aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
+                    new KarafFeaturesDependencyFilter()));
             features.addAll(FeatureUtil.readFeatures(featureArtifacts));
             // Do not provide FeatureUtil.featuresRepositoryToCoords(features)) as existingCoords
             // to findAllFeaturesRecursively, as those coords are not resolved yet, and it would lead to Bug 6187.
@@ -150,15 +149,14 @@ public class PopulateLocalRepoMojo
         }
     }
 
-    private void readFeatureCfg(Set<Artifact> artifacts, Set<Features> features) throws ArtifactResolutionException {
+    private void readFeatureCfg(Set<Artifact> artifacts, Set<Features> features) {
         String karafHome = localRepo.getParent();
         File file = new File(karafHome + "/etc/org.apache.karaf.features.cfg");
         Properties prop = new Properties();
         try {
             prop.load(new FileInputStream(file));
             String featuresRepositories = prop.getProperty("featuresRepositories");
-            List<String> result = Arrays.asList(featuresRepositories.split(","));
-            for (String mvnUrl : result) {
+            for (String mvnUrl : featuresRepositories.split(",")) {
                 String fixedUrl = mvnUrl.replace("${karaf.home}", karafHome);
                 if (fixedUrl.startsWith("file:")) {
                     try {
@@ -178,15 +176,15 @@ public class PopulateLocalRepoMojo
         }
     }
 
-    private Set<Artifact> readStartupProperties() throws ArtifactResolutionException {
+    private Set<Artifact> readStartupProperties() {
         Set<Artifact> artifacts = new LinkedHashSet<>();
         File file = new File(localRepo.getParentFile().toString() + "/etc/startup.properties");
         Properties prop = new Properties();
         try {
             prop.load(new FileInputStream(file));
             Enumeration<Object> mvnUrls = prop.keys();
-            while(mvnUrls.hasMoreElements()) {
-                String mvnUrl = (String)mvnUrls.nextElement();
+            while (mvnUrls.hasMoreElements()) {
+                String mvnUrl = (String) mvnUrls.nextElement();
                 Artifact artifact = aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(mvnUrl)));
                 artifacts.add(artifact);
             }
