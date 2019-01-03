@@ -153,8 +153,6 @@
               </tag>
               <!-- end HelpMojo support -->
             </tags>
-            <detectLinks>true</detectLinks>
-            <detectOfflineLinks>true</detectOfflineLinks>
           </configuration>
           <executions>
             <execution>
