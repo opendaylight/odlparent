@@ -32,6 +32,10 @@ import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugins.annotations.Component;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
@@ -41,14 +45,10 @@ import org.opendaylight.odlparent.karafutil.CustomBundleUrlStreamHandlerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-// TODO: Use org.apache.maven.plugin.annotations.* to allow more flexibility for non-ODL consumers.
-
 /**
  * Mojo populating the local repository by delegating to Aether.
- *
- * @goal populate-local-repo
- * @phase prepare-package
  */
+@Mojo(name = "populate-local-repo", defaultPhase = LifecyclePhase.PREPARE_PACKAGE)
 // URL.setURLStreamHandlerFactory throws an Error directly, so we can’t do any better than this...
 @SuppressWarnings("checkstyle:IllegalCatch")
 public class PopulateLocalRepoMojo
@@ -68,41 +68,32 @@ public class PopulateLocalRepoMojo
 
     /**
      * The Maven project being built.
-     *
-     * @component
-     * @required
-     * @readonly
      */
+    @Parameter(defaultValue = "${project}", readonly = true, required = true)
     private MavenProject project;
 
     /**
      * The entry point to Aether, i.e. the component doing all the work.
-     *
-     * @component
      */
+    @Component
     private RepositorySystem repoSystem;
 
     /**
      * The current repository/network configuration of Maven.
-     *
-     * @parameter default-value="${repositorySystemSession}"
-     * @readonly
      */
+    @Parameter(defaultValue = "${repositorySystemSession}", readonly = true)
     private RepositorySystemSession repoSession;
 
     /**
      * The project's remote repositories to use for the resolution of plugins and their dependencies.
-     *
-     * @parameter default-value="${project.remoteProjectRepositories}"
-     * @readonly
      */
+    @Parameter(defaultValue = "${project.remoteProjectRepositories}", readonly = true)
     private List<RemoteRepository> remoteRepos;
 
     /**
      * The local repository to use for the resolution of plugins and their dependencies.
-     *
-     * @parameter
      */
+    @Parameter
     private File localRepo;
 
     private AetherUtil aetherUtil;
