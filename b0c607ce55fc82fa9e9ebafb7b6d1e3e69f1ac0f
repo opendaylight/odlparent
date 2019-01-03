@@ -45,6 +45,30 @@
       "revId": "b0c607ce55fc82fa9e9ebafb7b6d1e3e69f1ac0f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79b3a8db_388dc0be",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2019-01-03T17:32:11Z",
+      "side": 1,
+      "message": "errr.. conflict !\u003d null \u0026\u0026 !conflict.equals(artifact.getVersion()",
+      "parentUuid": "7441014e_f404ffbe",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 17
+      },
+      "revId": "b0c607ce55fc82fa9e9ebafb7b6d1e3e69f1ac0f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
