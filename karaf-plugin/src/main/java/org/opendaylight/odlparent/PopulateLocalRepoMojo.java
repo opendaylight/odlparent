@@ -24,8 +24,10 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import org.apache.karaf.features.internal.model.Features;
@@ -121,8 +123,14 @@ public class PopulateLocalRepoMojo
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
             artifacts.addAll(featureArtifacts);
 
+            Map<Gace, String> gaceVersions = new HashMap<>();
             for (Artifact artifact : artifacts) {
                 LOG.debug("Artifact to be installed: {}", artifact.toString());
+                Gace gace = new Gace(artifact);
+                String duplicate = gaceVersions.putIfAbsent(gace, artifact.getVersion());
+                if (duplicate != null && !duplicate.equals(artifact.getVersion())) {
+                    LOG.warn("Duplicate versions for {}, {} and {}", gace, duplicate, artifact.getVersion());
+                }
             }
             if (localRepo != null) {
                 aetherUtil.installArtifacts(artifacts);
