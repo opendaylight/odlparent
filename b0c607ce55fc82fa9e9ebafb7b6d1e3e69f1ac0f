@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11d1c762_0187c716",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2019-01-03T17:30:37Z",
+      "side": 1,
+      "message": "Use a proper DTO to side-step String concatenations (and save memory, I suspect)",
+      "range": {
+        "startLine": 129,
+        "startChar": 16,
+        "endLine": 129,
+        "endChar": 27
+      },
+      "revId": "b0c607ce55fc82fa9e9ebafb7b6d1e3e69f1ac0f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7441014e_f404ffbe",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2019-01-03T17:30:37Z",
+      "side": 1,
+      "message": "String conflict \u003d gaceVersions.putIfAbsent(gace, artifact.getVersion());\nif (conflict !\u003d null) {\n    LOG.warn();\n}",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 17
+      },
+      "revId": "b0c607ce55fc82fa9e9ebafb7b6d1e3e69f1ac0f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
