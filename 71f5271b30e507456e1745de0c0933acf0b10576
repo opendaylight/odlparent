@@ -16,6 +16,29 @@
       "revId": "71f5271b30e507456e1745de0c0933acf0b10576",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "94079a54_0c018e00",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2019-01-04T18:20:50Z",
+      "side": 1,
+      "message": "these are only used during actual execution, hence I think we should go the opposite way and make them locals in execute().",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 36
+      },
+      "revId": "71f5271b30e507456e1745de0c0933acf0b10576",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
