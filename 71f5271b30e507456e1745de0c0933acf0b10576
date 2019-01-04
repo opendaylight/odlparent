@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "298d6d6b_e42737df",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/AetherUtil.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2019-01-04T17:00:39Z",
+      "side": 1,
+      "message": "Drive-by clean-up here...",
+      "revId": "71f5271b30e507456e1745de0c0933acf0b10576",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
