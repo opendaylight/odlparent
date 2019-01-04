@@ -72,7 +72,7 @@ public class AetherUtil {
      */
     public Set<Artifact> resolveDependencies(List<Dependency> dependencies, DependencyFilter filter)
             throws DependencyResolutionException {
-        Set<Artifact> artifacts = new LinkedHashSet<Artifact>();
+        Set<Artifact> artifacts = new LinkedHashSet<>();
         CollectRequest collectRequest = new CollectRequest();
         collectRequest.setDependencies(dependencies);
         collectRequest.setRepositories(remoteRepos);
@@ -122,7 +122,7 @@ public class AetherUtil {
      * @return The resolved artifacts. Unresolvable coordinates are skipped without error.
      */
     public Set<Artifact> resolveArtifacts(Set<String> coords) {
-        Set<Artifact> result = new LinkedHashSet<Artifact>();
+        Set<Artifact> result = new LinkedHashSet<>();
         for (String coord : coords) {
             Artifact artifact = resolveArtifact(coord);
             if (artifact != null) {
@@ -151,7 +151,7 @@ public class AetherUtil {
      * @return The corresponding dependencies.
      */
     public List<Dependency> toDependencies(List<String> coords) {
-        List<Dependency> result = new ArrayList<Dependency>();
+        List<Dependency> result = new ArrayList<>();
         for (String coord : coords) {
             result.add(toDependency(coord));
         }
