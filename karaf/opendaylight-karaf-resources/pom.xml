@@ -102,14 +102,18 @@
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-quiesce-${karaf.version}.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-javax-mail-${karaf.version}.patch"
-                       originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
-                       failonerror="true"/>
+                <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
+                         token="commons-codec/commons-codec/1.10" value="commons-codec/commons-codec/1.11" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-paxweb.patch"
-                       originalfile="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
-                       failonerror="true"/>
+                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
+                         token="javax.mail/mail/1.4.4" value="javax.mail/mail/1.4.5" failOnNoReplacements="true"/>
+                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
+                         token="commons-codec/commons-codec/1.8" value="commons-codec/commons-codec/1.11" failOnNoReplacements="true"/>
+                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
+                         token="commons-collections/commons-collections/3.2.1" value="commons-collections/commons-collections/3.2.2" failOnNoReplacements="true"/>
+                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
+                         token="org.apache.aries/org.apache.aries.util/1.1.0" value="org.apache.aries/org.apache.aries.util/1.1.3" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
                       tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"/>
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
