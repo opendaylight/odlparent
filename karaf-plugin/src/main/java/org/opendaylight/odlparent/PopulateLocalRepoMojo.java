@@ -54,8 +54,7 @@ import org.slf4j.LoggerFactory;
 @Mojo(name = "populate-local-repo", defaultPhase = LifecyclePhase.PREPARE_PACKAGE)
 // URL.setURLStreamHandlerFactory throws an Error directly, so we can’t do any better than this...
 @SuppressWarnings("checkstyle:IllegalCatch")
-public class PopulateLocalRepoMojo
-    extends AbstractMojo {
+public class PopulateLocalRepoMojo extends AbstractMojo {
     private static final Logger LOG = LoggerFactory.getLogger(PopulateLocalRepoMojo.class);
 
     static {
@@ -99,26 +98,25 @@ public class PopulateLocalRepoMojo
     @Parameter
     private File localRepo;
 
-    private AetherUtil aetherUtil;
-
     @Override
     @SuppressFBWarnings("REC_CATCH_EXCEPTION")
     public void execute() throws MojoExecutionException {
 
-        aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos, localRepo);
+        AetherUtil aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos, localRepo);
+        FeatureUtil featureUtil = new FeatureUtil(aetherUtil, localRepo);
         try {
-            Set<Artifact> startupArtifacts = readStartupProperties();
+            Set<Artifact> startupArtifacts = readStartupProperties(aetherUtil);
             aetherUtil.installArtifacts(startupArtifacts);
             Set<Artifact> featureArtifacts = new LinkedHashSet<>();
             Set<Features> features = new LinkedHashSet<>();
-            readFeatureCfg(featureArtifacts, features);
+            readFeatureCfg(aetherUtil, featureUtil, featureArtifacts, features);
             featureArtifacts.addAll(
                 aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
                     new KarafFeaturesDependencyFilter()));
-            features.addAll(FeatureUtil.readFeatures(featureArtifacts));
+            features.addAll(featureUtil.readFeatures(featureArtifacts));
             // Do not provide FeatureUtil.featuresRepositoryToCoords(features)) as existingCoords
             // to findAllFeaturesRecursively, as those coords are not resolved yet, and it would lead to Bug 6187.
-            features.addAll(FeatureUtil.findAllFeaturesRecursively(aetherUtil, features));
+            features.addAll(featureUtil.findAllFeaturesRecursively(features));
             for (Features feature : features) {
                 LOG.info("Feature repository discovered recursively: {}", feature.getName());
             }
@@ -142,7 +140,8 @@ public class PopulateLocalRepoMojo
         }
     }
 
-    private void readFeatureCfg(Set<Artifact> artifacts, Set<Features> features) {
+    private void readFeatureCfg(AetherUtil aetherUtil, FeatureUtil featureUtil, Set<Artifact> artifacts,
+            Set<Features> features) {
         String karafHome = localRepo.getParent();
         File file = new File(karafHome + "/etc/org.apache.karaf.features.cfg");
         Properties prop = new Properties();
@@ -154,7 +153,7 @@ public class PopulateLocalRepoMojo
                 if (fixedUrl.startsWith("file:")) {
                     try {
                         // Local feature file
-                        features.add(FeatureUtil.readFeature(new File(new URI(fixedUrl))));
+                        features.add(featureUtil.readFeature(new File(new URI(fixedUrl))));
                     } catch (URISyntaxException e) {
                         LOG.info("Could not resolve URI: {}", fixedUrl, e);
                     }
@@ -169,7 +168,7 @@ public class PopulateLocalRepoMojo
         }
     }
 
-    private Set<Artifact> readStartupProperties() {
+    private Set<Artifact> readStartupProperties(AetherUtil aetherUtil) {
         Set<Artifact> artifacts = new LinkedHashSet<>();
         File file = new File(localRepo.getParentFile().toString() + "/etc/startup.properties");
         Properties prop = new Properties();
