@@ -13,6 +13,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -28,7 +29,6 @@ import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.features.internal.model.JaxbUtil;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.eclipse.aether.artifact.Artifact;
-import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.ops4j.pax.url.mvn.internal.Parser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,8 +43,12 @@ public final class FeatureUtil {
     private static final String VERSION_STRIP_PATTERN_STR = "\\$.*$";
     private static final Pattern VERSION_STRIP_PATTERN = Pattern.compile(VERSION_STRIP_PATTERN_STR);
 
-    private FeatureUtil() {
-        throw new UnsupportedOperationException();
+    private final AetherUtil aetherUtil;
+    private final File localRepo;
+
+    public FeatureUtil(AetherUtil aetherUtil, File localRepo) {
+        this.aetherUtil = aetherUtil;
+        this.localRepo = localRepo;
     }
 
     /**
@@ -257,7 +261,7 @@ public final class FeatureUtil {
      * @return The features.
      * @throws FileNotFoundException if a file is missing.
      */
-    public static Set<Features> readFeatures(final Set<Artifact> featureArtifacts) throws FileNotFoundException {
+    public Set<Features> readFeatures(final Set<Artifact> featureArtifacts) throws FileNotFoundException {
         Set<Features> result = new LinkedHashSet<>();
         for (Artifact artifact : featureArtifacts) {
             result.add(readFeature(artifact));
@@ -273,7 +277,7 @@ public final class FeatureUtil {
      * @return The features.
      * @throws FileNotFoundException if a file is missing.
      */
-    public static Features readFeature(final Artifact artifact) throws FileNotFoundException {
+    public Features readFeature(final Artifact artifact) throws FileNotFoundException {
         return readFeature(artifact.getFile());
     }
 
@@ -284,8 +288,9 @@ public final class FeatureUtil {
      * @return The features.
      * @throws FileNotFoundException if a file is missing.
      */
-    public static Features readFeature(final File file) throws FileNotFoundException {
-        FileInputStream stream = new FileInputStream(file);
+    public Features readFeature(final File file) throws FileNotFoundException {
+        File localFile = getFileInLocalRepo(file);
+        FileInputStream stream = new FileInputStream(localFile != null ? localFile : file);
         Features result = JaxbUtil.unmarshal(file.toURI().toString(), stream, false);
         LOG.trace("readFeature({}) returns {} without resolving first", file, result.getName());
         return result;
@@ -294,14 +299,11 @@ public final class FeatureUtil {
     /**
      * Unmarshal the features matching the given artifact coordinates.
      *
-     * @param aetherUtil The Aether resolver.
      * @param coords The artifact coordinates.
      * @return The features.
-     * @throws ArtifactResolutionException if the coordinates can't be resolved.
      * @throws FileNotFoundException if a file is missing.
      */
-    public static Features readFeature(final AetherUtil aetherUtil, final String coords)
-            throws ArtifactResolutionException, FileNotFoundException {
+    public Features readFeature(final String coords) throws FileNotFoundException {
         Artifact artifact = aetherUtil.resolveArtifact(coords);
         Features result = readFeature(artifact);
         LOG.trace("readFeature({}) returns {} after resolving first", coords, result.getName());
@@ -311,17 +313,14 @@ public final class FeatureUtil {
     /**
      * Unmarshals all the features starting from the given feature.
      *
-     * @param aetherUtil The Aether resolver.
      * @param features The starting features.
      * @param existingCoords The artifact coordinates which have already been unmarshalled.
      * @return The features.
      * @throws MalformedURLException if a URL is malformed.
      * @throws FileNotFoundException if a file is missing.
-     * @throws ArtifactResolutionException if artifact coordinates can't be resolved.
      */
-    public static Set<Features> findAllFeaturesRecursively(
-            final AetherUtil aetherUtil, final Features features, final Set<String> existingCoords)
-            throws MalformedURLException, FileNotFoundException, ArtifactResolutionException {
+    public Set<Features> findAllFeaturesRecursively(final Features features, final Set<String> existingCoords)
+            throws MalformedURLException, FileNotFoundException {
         LOG.debug("findAllFeaturesRecursively({}) starts", features.getName());
         LOG.trace("findAllFeaturesRecursively knows about these coords: {}", existingCoords);
         Set<Features> result = new LinkedHashSet<>();
@@ -330,11 +329,10 @@ public final class FeatureUtil {
             if (!existingCoords.contains(coord)) {
                 LOG.trace("findAllFeaturesRecursively() going to add {}", coord);
                 existingCoords.add(coord);
-                Features feature = FeatureUtil.readFeature(aetherUtil, coord);
+                Features feature = readFeature(coord);
                 result.add(feature);
                 LOG.debug("findAllFeaturesRecursively() added {}", coord);
-                result.addAll(findAllFeaturesRecursively(aetherUtil, FeatureUtil.readFeature(aetherUtil, coord),
-                        existingCoords));
+                result.addAll(findAllFeaturesRecursively(readFeature(coord), existingCoords));
             } else {
                 LOG.trace("findAllFeaturesRecursively() skips known {}", coord);
             }
@@ -345,20 +343,17 @@ public final class FeatureUtil {
     /**
      * Unmarshals all the features starting from the given features.
      *
-     * @param aetherUtil The Aether resolver.
      * @param features The starting features.
      * @param existingCoords The artifact coordinates which have already been unmarshalled.
      * @return The features.
      * @throws MalformedURLException if a URL is malformed.
      * @throws FileNotFoundException if a file is missing.
-     * @throws ArtifactResolutionException if artifact coordinates can't be resolved.
      */
-    public static Set<Features> findAllFeaturesRecursively(
-            final AetherUtil aetherUtil, final Set<Features> features, final Set<String> existingCoords)
-            throws MalformedURLException, FileNotFoundException, ArtifactResolutionException {
+    public Set<Features> findAllFeaturesRecursively(final Set<Features> features, final Set<String> existingCoords)
+            throws MalformedURLException, FileNotFoundException {
         Set<Features> result = new LinkedHashSet<>();
         for (Features feature : features) {
-            result.addAll(findAllFeaturesRecursively(aetherUtil, feature, existingCoords));
+            result.addAll(findAllFeaturesRecursively(feature, existingCoords));
         }
         return result;
     }
@@ -366,16 +361,26 @@ public final class FeatureUtil {
     /**
      * Unmarshals all the features (including known ones) starting from the given features.
      *
-     * @param aetherUtil The Aether resolver.
      * @param features The starting features.
      * @return The features.
      * @throws MalformedURLException if a URL is malformed.
      * @throws FileNotFoundException if a file is missing.
-     * @throws ArtifactResolutionException if artifact coordinates can't be resolved.
      */
-    public static Set<Features> findAllFeaturesRecursively(final AetherUtil aetherUtil, final Set<Features> features)
-            throws MalformedURLException, FileNotFoundException, ArtifactResolutionException {
-        return findAllFeaturesRecursively(aetherUtil, features, new LinkedHashSet<String>());
+    public Set<Features> findAllFeaturesRecursively(final Set<Features> features)
+            throws MalformedURLException, FileNotFoundException {
+        return findAllFeaturesRecursively(features, new LinkedHashSet<>());
     }
 
+    private File getFileInLocalRepo(File file) {
+        Path filePath = file.toPath();
+        Path parent = filePath.getParent();
+        while (parent != null) {
+            File candidate = new File(localRepo, parent.relativize(filePath).toString());
+            if (candidate.exists()) {
+                return candidate;
+            }
+            parent = parent.getParent();
+        }
+        return null;
+    }
 }
