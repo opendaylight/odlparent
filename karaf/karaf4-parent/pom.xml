@@ -114,26 +114,6 @@
             <artifactId>bcprov-framework-ext</artifactId>
             <scope>runtime</scope>
         </dependency>
-
-        <!-- Patched dependencies (see opendaylight-karaf-resources) -->
-        <dependency>
-            <groupId>org.ow2.asm</groupId>
-            <artifactId>asm-all</artifactId>
-            <version>5.0.4</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
-            <version>3.2.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4.4</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
