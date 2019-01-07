@@ -104,6 +104,8 @@
                        failonerror="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                          token="commons-codec/commons-codec/1.10" value="commons-codec/commons-codec/1.11" failOnNoReplacements="true"/>
+                <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
+                         token="9.3.21.v20170918" value="9.3.24.v20180605" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
