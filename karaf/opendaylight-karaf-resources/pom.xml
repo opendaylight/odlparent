@@ -113,6 +113,9 @@
                          token="javax.mail/mail/1.4.4" value="javax.mail/mail/1.4.5" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
                          token="commons-codec/commons-codec/1.8" value="commons-codec/commons-codec/1.11" failOnNoReplacements="true"/>
+                <!-- https://www.cvedetails.com/cve/CVE-2014-0114/ -->
+                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
+                         token="commons-beanutils/commons-beanutils/1.8.3" value="commons-beanutils/commons-beanutils/1.9.3" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
                          token="commons-collections/commons-collections/3.2.1" value="commons-collections/commons-collections/3.2.2" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/6.0.11/pax-web-features-6.0.11-features.xml"
