@@ -35,11 +35,6 @@ Bug fixes
 
   (See `ODLPARENT-189 <https://jira.opendaylight.org/browse/ODLPARENT-189>`__.)
 
-* Recent versions of the SpotBugs Maven plugin use SLF4J 1.8 beta 2, which
-  can’t use the 1.7.25 implementation we provide; we therefore provide an
-  implementation of 1.8 beta 2 when SpotBugs is used. (See
-  `ODLPARENT-184 <https://jira.opendaylight.org/browse/ODLPARENT-184>`__.)
-
 New features
 ~~~~~~~~~~~~
 
