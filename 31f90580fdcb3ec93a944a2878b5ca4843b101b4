@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6cca8985_73348b3c",
+        "filename": "NEWS.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2019-01-09T08:49:14Z",
+      "side": 1,
+      "message": "Yeah, I work my way through the commits to write these (with a moving tag), I removed this paragraph when I got to the revert commit ;-).",
+      "parentUuid": "978ac85c_513e5d9a",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "31f90580fdcb3ec93a944a2878b5ca4843b101b4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "951ebb30_27b05476",
         "filename": "NEWS.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-01-08T10:48:48Z",
       "side": 1,
       "message": "\"as extensions\" is a bit misleading, as JDK9 removed the \"extensions mechanism\"",
+      "range": {
+        "startLine": 19,
+        "startChar": 71,
+        "endLine": 20,
+        "endChar": 12
+      },
+      "revId": "31f90580fdcb3ec93a944a2878b5ca4843b101b4",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83122eb6_110d95f1",
+        "filename": "NEWS.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2019-01-09T08:49:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "951ebb30_27b05476",
       "range": {
         "startLine": 19,
         "startChar": 71,
