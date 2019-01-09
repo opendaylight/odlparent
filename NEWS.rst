@@ -2,6 +2,11 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.9
+-------------
+
+This is a bug-fix upgrade from version 4.0.8.
+
 Version 4.0.8
 -------------
 
