@@ -121,6 +121,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
                 LOG.info("Feature repository discovered recursively: {}", feature.getName());
             }
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
+            featureUtil.removeLocalArtifacts(artifacts);
             artifacts.addAll(featureArtifacts);
 
             Map<Gace, String> gaceVersions = new HashMap<>();
