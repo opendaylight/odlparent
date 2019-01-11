@@ -7,6 +7,21 @@ Version 4.0.9
 
 This is a bug-fix upgrade from version 4.0.8.
 
+Bug fixes
+~~~~~~~~~
+
+* ``karaf-plugin`` invocation in ``karaf4-parent`` caused previously
+  patched features to be overwritten with their stock versions, referencing
+  bundles which were not populated in the local resitory. (See
+  `ODLPARENT-194 <https://jira.opendaylight.org/browse/ODLPARENT-194>`__.)
+
+* ``karaf-plugin`` version in ``karaf4-parent`` is now provided through
+  ``dependencyManagement`` so downstreams can override it without needing
+  to repeat its configuration.
+
+* ``karaf-plugin`` no longer reads features twice when running discovery,
+  speeding up the process a bit.
+
 Version 4.0.8
 -------------
 
