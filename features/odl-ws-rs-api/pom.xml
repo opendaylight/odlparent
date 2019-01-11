@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Javax WS RS API</name>
+    <description>Java API for RESTful Web Services</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

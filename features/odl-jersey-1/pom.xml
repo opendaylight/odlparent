@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Jersey 1.x</name>
+    <description>Jersey 1.x (legacy)</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

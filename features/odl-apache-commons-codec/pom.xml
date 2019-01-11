@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Apache Commons Codec</name>
+    <description>Apache commons-codec</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

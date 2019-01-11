@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: ANTLRv4 Runtime</name>
+    <description>ANTLR v4</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

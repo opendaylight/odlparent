@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: StAX2 API</name>
+    <description>StAX2 API</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

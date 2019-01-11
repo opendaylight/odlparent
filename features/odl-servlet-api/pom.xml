@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Servlet API</name>
+    <description>Java servlet API 3.1.x</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

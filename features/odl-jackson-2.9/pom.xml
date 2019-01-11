@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Jackson 2.9.x</name>
+    <description>Jackson 2.9</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Apache Commons Text</name>
+    <description>Apache commons-text</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

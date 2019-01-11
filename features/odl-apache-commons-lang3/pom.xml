@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Apache Commons Lang 3</name>
+    <description>Apache commons-lang3</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

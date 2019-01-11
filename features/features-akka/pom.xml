@@ -20,7 +20,9 @@
 
     <artifactId>features-akka</artifactId>
     <packaging>feature</packaging>
+
     <name>ODL :: odlparent :: ${project.artifactId}</name>
+    <description>Akka.io features</description>
 
     <dependencies>
         <dependency>

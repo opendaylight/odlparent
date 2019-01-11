@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Apache SSHD</name>
+    <description>Apache SSHD library 2.x</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Dropwizard.io Metrics</name>
+    <description>Dropwizard Metrics 4.x</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

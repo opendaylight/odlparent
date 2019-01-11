@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Netty</name>
+    <description>Netty 4.x</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

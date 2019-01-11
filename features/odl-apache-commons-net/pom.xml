@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Apache Commons Net</name>
+    <description>Apache commons-net</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

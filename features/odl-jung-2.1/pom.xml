@@ -24,6 +24,7 @@
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: JUNG</name>
+    <description>JUNG: Java Universal Network/Graph Framework</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

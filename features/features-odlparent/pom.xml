@@ -20,7 +20,9 @@
 
     <artifactId>features-odlparent</artifactId>
     <packaging>feature</packaging>
+
     <name>ODL :: odlparent :: ${project.artifactId}</name>
+    <description>OpenDaylight third-party features</description>
 
     <dependencies>
         <dependency>
