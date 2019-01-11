@@ -15,6 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -369,6 +370,17 @@ public final class FeatureUtil {
     public Set<Features> findAllFeaturesRecursively(final Set<Features> features)
             throws MalformedURLException, FileNotFoundException {
         return findAllFeaturesRecursively(features, new LinkedHashSet<>());
+    }
+
+    void removeLocalArtifacts(Set<Artifact> artifacts) {
+        Iterator<Artifact> it = artifacts.iterator();
+        while (it.hasNext()) {
+            Artifact artifact = it.next();
+            if (getFileInLocalRepo(artifact.getFile()) != null) {
+                LOG.trace("Removing artifact {}", artifact);
+                it.remove();
+            }
+        }
     }
 
     private File getFileInLocalRepo(File file) {
