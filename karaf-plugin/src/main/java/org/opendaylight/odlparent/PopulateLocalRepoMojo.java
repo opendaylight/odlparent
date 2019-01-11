@@ -126,7 +126,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
 
             Map<Gace, String> gaceVersions = new HashMap<>();
             for (Artifact artifact : artifacts) {
-                LOG.debug("Artifact to be installed: {}", artifact.toString());
+                LOG.debug("Artifact to be installed: {}", artifact);
                 Gace gace = new Gace(artifact);
                 String duplicate = gaceVersions.putIfAbsent(gace, artifact.getVersion());
                 if (duplicate != null && !duplicate.equals(artifact.getVersion())) {
