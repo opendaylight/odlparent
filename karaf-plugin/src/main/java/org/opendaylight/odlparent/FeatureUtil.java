@@ -332,7 +332,7 @@ public final class FeatureUtil {
                 Features feature = readFeature(coord);
                 result.add(feature);
                 LOG.debug("findAllFeaturesRecursively() added {}", coord);
-                result.addAll(findAllFeaturesRecursively(readFeature(coord), existingCoords));
+                result.addAll(findAllFeaturesRecursively(feature, existingCoords));
             } else {
                 LOG.trace("findAllFeaturesRecursively() skips known {}", coord);
             }
