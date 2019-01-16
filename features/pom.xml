@@ -65,6 +65,7 @@
         <module>odl-netty-4</module>
         <module>odl-servlet-api</module>
         <module>odl-stax2-api</module>
+        <module>odl-woodstox</module>
         <module>odl-ws-rs-api</module>
 
         <!-- Test features -->

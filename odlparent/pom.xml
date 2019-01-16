@@ -465,11 +465,19 @@
         <version>1.1</version>
       </dependency>
 
+      <!-- These three need to be consistent:
+        jackson-2.9 needs woodstox-5.0.x
+        woodstox-5.0 needs stax2-api-3.1.x
+        -->
       <dependency>
         <groupId>org.codehaus.woodstox</groupId>
         <artifactId>stax2-api</artifactId>
-        <!-- Needs to match jackson's idea of import -->
         <version>3.1.4</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.woodstox</groupId>
+        <artifactId>woodstox-core</artifactId>
+        <version>5.0.3</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson</groupId>
