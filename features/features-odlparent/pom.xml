@@ -173,6 +173,13 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>odl-woodstox</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>odl-ws-rs-api</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
