@@ -2,6 +2,51 @@
 ODL Parent release notes
 ========================
 
+Version 3.1.6
+-------------
+
+This version includes the following improvements and bug fixes:
+
+* ``karaf-plugin`` version in ``karaf4-parent`` is now provided through
+  plugin management so downstreams can override it without needing
+  to repeat its configuration.
+
+* ``karaf-plugin`` no longer reads features twice when running discovery,
+  speeding up the process a bit.
+
+* ``bcprov-ext-jdk15on`` is a superset of ``bcprov-jdk15on``, so there’s no
+  need to ship both; we now only ship the former. In addition, we install the
+  Bouncy Castle JARs in ``lib/boot`` so that they continue to be available on
+  the boot classpath (JDK 9 removes the extension mechanism which was used
+  previously), and provide the corresponding bundles from the boot classpath
+  instead of using separate JARs in the system repository. (See
+  `ODLPARENT-183 <https://jira.opendaylight.org/browse/ODLPARENT-183>`__ and
+  `ODLPARENT-185 <https://jira.opendaylight.org/browse/ODLPARENT-185>`__.)
+
+* Dependencies pulled in by features are now checked for convergence, and
+  ``karaf-plugin`` warns when it finds diverging dependencies (the same
+  artifact with two different versions). Upstream-provided features are
+  patched to avoid the following divergences (and upgrade some dependencies in
+  the process):
+
+  * Aries utilities 1.1.0/1.1.3 (upgraded to 1.1.3).
+  * ASM 5.0.2/5.2 (upgraded to 5.2).
+  * Commons Beanutils 1.8.3/1.9.3 (upgraded to 1.9.3).
+  * Commons Codec 1.8/1.10 (upgraded to 1.11).
+  * Commons Collections 3.2.1/3.2.2 (upgraded to 3.2.2).
+  * ``javax.mail`` 1.4.4/1.4.5 (upgraded to 1.4.5).
+  * Jetty 9.3.21/9.3.24 (upgraded to 9.3.24).
+
+  (See `ODLPARENT-189 <https://jira.opendaylight.org/browse/ODLPARENT-189>`__.)
+
+The following third-party dependency has been upgraded:
+
+* Jackson 2.8.11.2 → 2.8.11.3 (fixing CVE-2018-14721 and CVE-2018-19362).
+
+The following Maven plugin has been upgraded:
+
+* ``git-commit-id`` `2.2.4 → 2.2.6 <https://github.com/git-commit-id/maven-git-commit-id-plugin/releases>`__.
+
 Version 3.1.5
 -------------
 
