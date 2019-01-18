@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>3.1.6-SNAPSHOT</version>
+    <version>3.1.6</version>
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
@@ -72,7 +72,7 @@
          toolkit -->
     <checkstyle.version>2.17</checkstyle.version>
     <!-- Used in controller, packetcable -->
-    <odl.checkstyle.version>3.1.6-SNAPSHOT</odl.checkstyle.version>
+    <odl.checkstyle.version>3.1.6</odl.checkstyle.version>
     <!-- Used in snmp4sdn; see also toolkit -->
     <compiler.version>${maven.compile.plugin.version}</compiler.version>
     <!-- Used in controller, l2switch, netide, openflowjava, openflowplugin, snbi, tsdr, ttp; see also toolkit -->
@@ -125,7 +125,7 @@
       <dependency>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-artifacts</artifactId>
-        <version>3.1.6-SNAPSHOT</version>
+        <version>3.1.6</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -1163,12 +1163,12 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>3.1.6-SNAPSHOT</version>
+              <version>3.1.6</version>
             </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>odl-license</artifactId>
-              <version>3.1.6-SNAPSHOT</version>
+              <version>3.1.6</version>
             </dependency>
             <dependency>
               <groupId>com.github.sevntu-checkstyle</groupId>
@@ -1297,7 +1297,7 @@
                   <artifactItem>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>odl-license</artifactId>
-                    <version>3.1.6-SNAPSHOT</version>
+                    <version>3.1.6</version>
                   </artifactItem>
                 </artifactItems>
                 <outputDirectory>${project.build.outputDirectory}</outputDirectory>
@@ -1433,7 +1433,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>findbugs</artifactId>
-              <version>3.1.6-SNAPSHOT</version>
+              <version>3.1.6</version>
             </dependency>
           </dependencies>
           <configuration>
@@ -1480,7 +1480,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>findbugs</artifactId>
-              <version>3.1.6-SNAPSHOT</version>
+              <version>3.1.6</version>
             </dependency>
           </dependencies>
           <configuration>
