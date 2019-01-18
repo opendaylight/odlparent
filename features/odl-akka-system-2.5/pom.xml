@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>4.0.9-SNAPSHOT</version>
+        <version>4.0.10-SNAPSHOT</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-akka-system-2.5</artifactId>
-    <version>4.0.9-SNAPSHOT</version>
+    <version>4.0.10-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>Akka Actor Framework System Bundles</name>
