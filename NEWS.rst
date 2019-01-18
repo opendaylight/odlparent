@@ -27,6 +27,12 @@ Bug fixes
   implementation of 1.8 beta 2 when SpotBugs is used. (See
   `ODLPARENT-184 <https://jira.opendaylight.org/browse/ODLPARENT-184>`__.)
 
+New features
+~~~~~~~~~~~~
+
+* ``odl-woodstox`` wraps the Woodstox StAX implementation which is imposed on
+  us by Karaf.
+
 Version 4.0.8
 -------------
 
