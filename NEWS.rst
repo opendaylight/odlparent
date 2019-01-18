@@ -2,6 +2,9 @@
 ODL Parent release notes
 ========================
 
+Version 3.1.7
+-------------
+
 Version 3.1.6
 -------------
 
