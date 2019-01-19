@@ -1079,7 +1079,7 @@
       <dependency>
         <groupId>org.antlr</groupId>
         <artifactId>antlr4-runtime</artifactId>
-        <version>4.7.1</version>
+        <version>4.7.2</version>
       </dependency>
       <!-- Aries' Blueprint version should be kept in sync to the version actually
            used by our ${karaf[4].version} ... please bump this when increasing that.
@@ -1827,7 +1827,7 @@
         <plugin>
           <groupId>org.antlr</groupId>
           <artifactId>antlr4-maven-plugin</artifactId>
-          <version>4.7.1</version>
+          <version>4.7.2</version>
         </plugin>
       </plugins>
     </pluginManagement>
