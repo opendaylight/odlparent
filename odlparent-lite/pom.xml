@@ -478,6 +478,13 @@
     <profile>
       <!-- Javadocs with links -->
       <id>javadoc-links</id>
+        <activation>
+          <property>
+            <!-- Note our link section is broken with javadoc-3.0.1,
+                 hence you may want to downgrade to 3.0.0 or upgrade to 3.1.0. -->
+            <name>odlparent.javadoc-links</name>
+          </property>
+        </activation>
       <build>
         <plugins>
           <plugin>
