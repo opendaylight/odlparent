@@ -50,7 +50,7 @@
     <!-- Used in openflowplugin -->
     <enforcer.version>3.0.0-M2</enforcer.version>
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.2.2</karaf.version>
+    <karaf.version>4.2.5</karaf.version>
     <!-- Used in bgpcep, lispflowmapping -->
     <projectinfo>2.8.1</projectinfo>
 
@@ -391,7 +391,7 @@
       <dependency>
         <groupId>javax.annotation</groupId>
         <artifactId>javax.annotation-api</artifactId>
-        <version>1.2</version>
+        <version>1.3</version>
         <optional>true</optional>
       </dependency>
       <dependency>
@@ -883,7 +883,7 @@
         <groupId>org.ops4j.pax.web</groupId>
         <artifactId>pax-web-api</artifactId>
         <!-- Note: keep this version synchronized with karaf -->
-        <version>7.2.5</version>
+        <version>7.2.8</version>
       </dependency>
 
       <dependency>
