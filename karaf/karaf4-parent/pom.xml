@@ -264,8 +264,7 @@
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <!-- Revert to ${karaf.version} once the POM deployment issue is fixed -->
-                <version>4.2.1</version>
+                <version>${karaf.version}</version>
                 <executions>
                     <execution>
                         <id>process-resources</id>
