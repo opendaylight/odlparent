@@ -3,7 +3,7 @@
 @@ -48,6 +48,7 @@
          <bundle start-level="20">mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.api/1.0.1</bundle>
          <bundle start-level="20">mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.cm/1.3.1</bundle>
-         <bundle start-level="20">mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.core/1.10.1</bundle>
+         <bundle start-level="20">mvn:org.apache.aries.blueprint/org.apache.aries.blueprint.core/1.10.2</bundle>
 +        <bundle start-level="20">mvn:org.apache.aries.quiesce/org.apache.aries.quiesce.api/1.0.0</bundle>
          <conditional>
              <condition>bundle</condition>
