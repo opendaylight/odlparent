@@ -546,37 +546,37 @@
         <artifactId>netty-all</artifactId>
         <!-- If these are updated, the version in features.xml needs to be changed too -->
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
-        <version>4.1.31.Final</version>
+        <version>4.1.33.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-buffer</artifactId>
-        <version>4.1.31.Final</version>
+        <version>4.1.33.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec</artifactId>
-        <version>4.1.31.Final</version>
+        <version>4.1.33.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-codec-http</artifactId>
-        <version>4.1.31.Final</version>
+        <version>4.1.33.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-common</artifactId>
-        <version>4.1.31.Final</version>
+        <version>4.1.33.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-handler</artifactId>
-        <version>4.1.31.Final</version>
+        <version>4.1.33.Final</version>
       </dependency>
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-transport</artifactId>
-        <version>4.1.31.Final</version>
+        <version>4.1.33.Final</version>
       </dependency>
       <!-- Here we need to define all available native epoll implementations; we can't limit ourselves to the build
       platform and we can't require the build platform to have an implementation (e.g. OS X) -->
@@ -584,7 +584,7 @@
         <groupId>io.netty</groupId>
         <artifactId>netty-transport-native-epoll</artifactId>
         <classifier>linux-x86_64</classifier>
-        <version>4.1.31.Final</version>
+        <version>4.1.33.Final</version>
       </dependency>
       <dependency>
         <groupId>javax.ws.rs</groupId>
