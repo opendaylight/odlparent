@@ -2,15 +2,15 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-akka-clustering-2.5">
     <feature version="0.0.0">
         <feature>odl-akka-system-2.5</feature>
-        <bundle>mvn:com.typesafe.akka/akka-cluster_2.12/2.5.19</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-protobuf_2.12/2.5.19</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-remote_2.12/2.5.19</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-stream_2.12/2.5.19</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-cluster_2.12/2.5.21</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-protobuf_2.12/2.5.21</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-remote_2.12/2.5.21</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-stream_2.12/2.5.21</bundle>
         <bundle>mvn:com.typesafe/ssl-config-core_2.12/0.3.6</bundle>
-        <bundle>mvn:io.aeron/aeron-client/1.12.0</bundle>
-        <bundle>mvn:io.aeron/aeron-driver/1.12.0</bundle>
+        <bundle>mvn:io.aeron/aeron-client/1.15.2</bundle>
+        <bundle>mvn:io.aeron/aeron-driver/1.15.2</bundle>
         <bundle>mvn:io.netty/netty/3.10.6.Final</bundle>
-        <bundle>mvn:org.agrona/agrona/0.9.27</bundle>
+        <bundle>mvn:org.agrona/agrona/0.9.32</bundle>
         <bundle>mvn:org.reactivestreams/reactive-streams/1.0.1</bundle>
         <bundle>mvn:org.scala-lang.modules/scala-parser-combinators_2.12/1.1.1</bundle>
     </feature>
