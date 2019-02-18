@@ -103,13 +103,13 @@
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
-                         token="commons-codec/commons-codec/1.10" value="commons-codec/commons-codec/1.11" failOnNoReplacements="true"/>
+                         token="commons-codec/commons-codec/1.10" value="commons-codec/commons-codec/1.12" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.5/pax-web-features-7.2.5-features.xml"
                          token="commons-beanutils/commons-beanutils/1.8.3" value="commons-beanutils/commons-beanutils/1.9.3" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.5/pax-web-features-7.2.5-features.xml"
-                         token="commons-codec/commons-codec/1.8" value="commons-codec/commons-codec/1.11" failOnNoReplacements="true"/>
+                         token="commons-codec/commons-codec/1.8" value="commons-codec/commons-codec/1.12" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.5/pax-web-features-7.2.5-features.xml"
                          token="javax.mail/mail/1.4.4" value="javax.mail/mail/1.4.7" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.5/pax-web-features-7.2.5-features.xml"
