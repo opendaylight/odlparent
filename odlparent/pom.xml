@@ -448,13 +448,6 @@
         <type>pom</type>
       </dependency>
 
-      <!-- TODO do we really need resteasy ? -->
-      <dependency>
-        <groupId>org.jboss.resteasy</groupId>
-        <artifactId>jaxrs-api</artifactId>
-        <version>3.0.12.Final</version>
-      </dependency>
-
       <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
