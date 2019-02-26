@@ -106,12 +106,6 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-jersey-1</artifactId>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>odl-jersey-2</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
