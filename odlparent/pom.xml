@@ -627,23 +627,6 @@
         <version>${bouncycastle.version}</version>
       </dependency>
 
-      <!-- FIXME: ODLPARENT-190: remove this declaration -->
-      <dependency>
-        <groupId>org.codehaus.enunciate</groupId>
-        <artifactId>enunciate-core-annotations</artifactId>
-        <!-- This must be aligned with the version of maven-enunciate-plugin specified below -->
-        <version>1.31</version>
-        <exclusions>
-          <exclusion>
-            <!-- JSR 250 API has 6 very old versions of javax.annotation @PreDestroy & Co.
-                 which are in core rt.jar since Java 6; it also has Java EE @DataSourceDefinition
-                 and @RunAs and @PermitAll & Co. which we do not require
-                 (or at least not from jsr250-api via enunciate) -->
-            <groupId>javax.annotation</groupId>
-            <artifactId>jsr250-api</artifactId>
-          </exclusion>
-        </exclusions>
-      </dependency>
       <dependency>
         <groupId>com.webcohesion.enunciate</groupId>
         <artifactId>enunciate-core-annotations</artifactId>
@@ -1497,13 +1480,6 @@
           </executions>
         </plugin>
 
-        <!-- FIXME: ODLPARENT-190: remove this plugin declaration -->
-        <plugin>
-          <groupId>org.codehaus.enunciate</groupId>
-          <artifactId>maven-enunciate-plugin</artifactId>
-          <!-- This must be aligned with the version of enunciate-core-annotations specified above -->
-          <version>1.31</version>
-        </plugin>
         <plugin>
           <groupId>com.webcohesion.enunciate</groupId>
           <artifactId>enunciate-maven-plugin</artifactId>
