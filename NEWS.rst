@@ -2,8 +2,26 @@
 ODL Parent release notes
 ========================
 
-Version 4.0.10
---------------
+Version 5.0.0
+-------------
+
+This is a major upgrade from version 4, with breaking changes; projects will
+need to make changes to upgrade to this version.
+
+Deleted artifacts
+~~~~~~~~~~~~~~~~~
+
+``findbugs`` has been removed, as its only purpose was to provide FindBugs
+rule definitions. Equivalent definitions are available in ``spotbugs``.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following upstream dependencies have been removed from dependency management:
+
+* org.jboss.resteasy/jaxrs-api
+
+* cassandra-driver-core
 
 Version 4.0.9
 -------------
