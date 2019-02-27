@@ -2,8 +2,156 @@
 ODL Parent release notes
 ========================
 
-Version 4.0.10
---------------
+Version 5.0.0
+-------------
+
+This is a major upgrade from version 4, with breaking changes; projects will
+need to make changes to upgrade to this version.
+
+The most significant change is `ODLPARENT-198 <https://jira.opendaylight.org/browse/ODLPARENT-198>`__,
+which removes JSR305 from default dependencies and does not present it at class path by default.
+
+Deleted artifacts
+~~~~~~~~~~~~~~~~~
+
+``findbugs`` has been removed, as its only purpose was to provide FindBugs
+rule definitions. Equivalent definitions are available in ``spotbugs``.
+
+Bug fixes
+~~~~~~~~~
+
+* ``blueprint-maven-plugin`` used to scan the entire classpath, resulting in potential conflicts
+  across projects. Scanning is now limited to ``${project.groupId}``, limiting conflict domain
+  to single project. See `ODLPARENT-109 <https://jira.opendaylight.org/browse/ODLPARENT-109>`__.
+
+* ``bundle-maven-plugin`` configuration ignored generated ServiceLoader service entries,
+  which has now been fixed. See `ODLPARENT-197 <https://jira.opendaylight.org/browse/ODLPARENT-197>`__.
+
+* Bundle tests are now enabled by default. See `ODLPARENT-158 <https://jira.opendaylight.org/browse/ODLPARENT-158>`__
+  and `ODLPARENT-80 <https://jira.opendaylight.org/browse/ODLPARENT-80>`__ for details.
+
+* Karaf log file rollover was not explictly set up, leading to inability to easily override
+  the defaults. See `ODLPARENT-153 <https://jira.opendaylight.org/browse/ODLPARENT-153>`__ for details.
+
+* Karaf log file used to use default maximum 16MiB file size, this has now been increased to 64MiB.
+  See `ODLPARENT-154 <https://jira.opendaylight.org/browse/ODLPARENT-154>`__.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following upstream dependencies have been removed from dependency management:
+
+* cassandra-driver-core
+
+* org.codehaus.enunciate/enunciate-core-annotations
+
+* org.jboss.resteasy/jaxrs-api
+
+* org.json/json
+
+* org.osgi/org.osgi.compendium
+
+Removed features
+~~~~~~~~~~~~~~~~
+
+* odl-jersey-1
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following dependencies have been upgraded:
+
+* apache-sshd `2.0.0 → 2.2.0 <https://github.com/apache/mina-sshd/compare/sshd-2.0.0...sshd-2.2.0>`__
+
+* Aeron 1.12.0 → 1.15.3, release notes:
+  * `1.13.0 <https://github.com/real-logic/aeron/releases/tag/1.13.0>`__
+  * `1.14.0 <https://github.com/real-logic/aeron/releases/tag/1.14.0>`__
+  * `1.15.0 <https://github.com/real-logic/aeron/releases/tag/1.15.0>`__
+  * `1.15.1 <https://github.com/real-logic/aeron/releases/tag/1.15.1>`__
+  * `1.15.2 <https://github.com/real-logic/aeron/releases/tag/1.15.2>`__
+  * `1.15.3 <https://github.com/real-logic/aeron/releases/tag/1.15.3>`__
+
+* Agrona 0.9.27 → 0.9.33, release notes:
+  * `0.9.28 <https://github.com/real-logic/agrona/releases/tag/0.9.28>`__
+  * `0.9.29 <https://github.com/real-logic/agrona/releases/tag/0.9.29>`__
+  * `0.9.30 <https://github.com/real-logic/agrona/releases/tag/0.9.30>`__
+  * `0.9.31 <https://github.com/real-logic/agrona/releases/tag/0.9.31>`__
+  * `0.9.32 <https://github.com/real-logic/agrona/releases/tag/0.9.32>`__
+  * `0.9.33 <https://github.com/real-logic/agrona/releases/tag/0.9.33>`__
+
+* Akka 2.5.19 → 2.5.21, release notes:
+  * `2.5.20 <https://akka.io/blog/news/2019/01/29/akka-2.5.20-released>`__
+  * `2.5.21 <https://akka.io/blog/news/2019/02/13/akka-2.5.21-released>`__
+
+* antl4r `4.7.1 → 4.7.2 <https://github.com/antlr/antlr4/releases/tag/4.7.2>`__
+
+* asciidoctorj-diagram 1.5.11 → 1.5.12
+
+* Bouncy Castle `1.60 → 1.61 <http://www.bouncycastle.org/releasenotes.html>`__
+
+* checkstyle 8.16 → 8.18, release notes:
+  * `8.17 <http://checkstyle.sourceforge.net/releasenotes.html#Release_8.17>`__
+  * `8.18 <http://checkstyle.sourceforge.net/releasenotes.html#Release_8.18>`__
+
+* commons-codec `1.11 → 1.12 <http://www.apache.org/dist/commons/codec/RELEASE-NOTES.txt>`__
+
+* Google Error Prone 2.3.2 → 2.3.3
+
+* Google Guava 25.1 → 27.1, release notes:
+  * `26.0 <https://github.com/google/guava/releases/tag/v26.0>`__
+  * `27.0 <https://github.com/google/guava/releases/tag/v27.0>`__
+  * `27.0.1 <https://github.com/google/guava/releases/tag/v27.0.1>`__
+  * `27.1 <https://github.com/google/guava/releases/tag/v27.1>`__
+
+* Google Truth `0.42 → 0.43 <https://github.com/google/truth/releases/tag/release_0_43>`__
+
+* h2 database `1.4.196 → 1.4.199 <http://www.h2database.com/html/changelog.html>`__
+
+* Immutables `2.7.3 → 2.7.5 <https://github.com/immutables/immutables/#changelog>`__
+
+* Javassist `3.24.0-GA → 3.24.1-GA <https://github.com/jboss-javassist/javassist/releases/tag/rel_3_24_1_ga>`__
+
+* log4j2 `2.11.1 → 2.11.2 <https://github.com/apache/logging-log4j2/blob/log4j-2.11.2/RELEASE-NOTES.md>`__
+
+* Mockito 2.23.4 → 2.25.0, release notes:
+  * `2.24.0 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2240>`__
+  * `2.25.0 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2250>`__
+
+* Netty 4.1.32 → 4.1.34, release notes:
+  * `4.1.32 <https://netty.io/news/2018/11/29/4-1-32-Final.html>`__
+  * `4.1.33 <https://netty.io/news/2019/01/21/4-1-33-Final.html>`__
+  * `4.1.34 <https://netty.io/news/2019/03/08/4-1-34-Final.html>`__
+
+* OSGi 5.0.0 → 6.0.0
+
+* Powermockito 1.7.4 → 2.0.0, release notes:
+  * `2.0.0-beta.5 <https://github.com/powermock/powermock/releases/tag/powermock-2.0.0-beta.5>`__
+  * `2.0.0-RC.1 <https://github.com/powermock/powermock/releases/tag/powermock-2.0.0-RC.1>`__
+  * `2.0.0 <https://github.com/powermock/powermock/releases/tag/powermock-2.0.0>`__
+
+* SpotBugs `3.1.9 → 3.1.12 <https://github.com/spotbugs/spotbugs/blob/3.1.12/CHANGELOG.md>`__
+
+* ThreeTen `1.4.0 → 1.5.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.5.0>`__
+
+* Xtend `2.16.0 → 2.17.0 <http://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/03/05/version-2-17-0>`__
+
+Plugin removals
+~~~~~~~~~~~~~~~
+
+* gmaven-plugin
+
+* maven-findbugs-plugin
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+
+* jacoco-maven-plugin `0.8.2 → 0.8.3 <https://github.com/jacoco/jacoco/releases/tag/v0.8.3>`__
+
+* maven-invoker-plugin `3.1.0 → 3.2.0 <https://mail-archives.apache.org/mod_mbox/maven-announce/201901.mbox/%3Cop.zvzdg9tbkdkhrr@desktop-2khsk44%3E>`__
+
+* maven-javadoc-plugin `3.0.1 → 3.1.0 <https://mail-archives.apache.org/mod_mbox/maven-announce/201903.mbox/%3C6064d830-474c-4b43-afef-99502c3a305a%40getmailbird.com%3E>`__
+
+* spotbugs-maven-plugin 3.1.8 → 3.1.11
 
 Version 4.0.9
 -------------
