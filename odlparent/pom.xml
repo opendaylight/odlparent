@@ -1366,7 +1366,7 @@
           </dependencies>
           <configuration>
             <scanPaths>
-              <scanPath>org.opendaylight</scanPath>
+              <scanPath>${project.groupId}</scanPath>
             </scanPaths>
           </configuration>
           <executions>
