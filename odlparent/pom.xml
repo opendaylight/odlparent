@@ -446,6 +446,9 @@
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
         <version>3.0.0</version>
+        <scope>provided</scope>
+        <!-- Contains retention=RUNTIME annotations, which are not really needed -->
+        <optional>true</optional>
         <exclusions>
           <!-- We'd like (have) to eventually exclude :jsr305 here as well, because
                the types of this artifact are already shaded inside the :annotations artifact.
@@ -1102,13 +1105,6 @@
           Enable useful code quality annotations everywhere. Since these annotations
           are not required at runtime.
     -->
-    <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>annotations</artifactId>
-      <scope>provided</scope>
-      <!-- Contains retention=RUNTIME annotations, which are not really needed -->
-      <optional>true</optional>
-    </dependency>
     <dependency>
       <groupId>org.eclipse.jdt</groupId>
       <artifactId>org.eclipse.jdt.annotation</artifactId>
