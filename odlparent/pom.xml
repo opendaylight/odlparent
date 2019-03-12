@@ -286,8 +286,8 @@
         <version>25.1-jre</version>
         <exclusions>
           <exclusion>
+            <!-- Do not leak JSR305 onto the classpath by default -->
             <groupId>com.google.code.findbugs</groupId>
-            <!-- Use com.google.code.findbugs:annotations instead of jsr305 -->
             <artifactId>jsr305</artifactId>
           </exclusion>
         </exclusions>
@@ -299,8 +299,8 @@
         <scope>test</scope>
         <exclusions>
           <exclusion>
+            <!-- Do not leak JSR305 onto the classpath by default -->
             <groupId>com.google.code.findbugs</groupId>
-            <!-- Use com.google.code.findbugs:annotations instead of jsr305 -->
             <artifactId>jsr305</artifactId>
           </exclusion>
         </exclusions>
@@ -443,23 +443,27 @@
       </dependency>
 
       <dependency>
-        <groupId>com.google.code.findbugs</groupId>
-        <artifactId>annotations</artifactId>
-        <version>3.0.0</version>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-annotations</artifactId>
+        <version>3.1.9</version>
+        <scope>provided</scope>
+        <!-- Contains retention=RUNTIME annotations, which are not really needed -->
+        <optional>true</optional>
         <exclusions>
-          <!-- We'd like (have) to eventually exclude :jsr305 here as well, because
-               the types of this artifact are already shaded inside the :annotations artifact.
-               This state is a temporary solution to allow all projects to gradually switch over
-               switch their <dependency><groupId>com.google.code.findbugs from
-               <artifactId>jsr305 to <artifactId>annotations in all pom.xml.
-               The target solution is https://git.opendaylight.org/gerrit/#/c/47337/
-            -->
           <exclusion>
-            <groupId>net.jcip</groupId>
-            <!-- The types of this artifact are already shaded inside the :annotations artifact -->
-            <artifactId>jcip-annotations</artifactId>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
           </exclusion>
         </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>jsr305</artifactId>
+        <version>3.0.2</version>
+        <scope>provided</scope>
+        <!-- Contains retention=RUNTIME annotations, which are not really needed -->
+        <optional>true</optional>
       </dependency>
       <dependency>
         <groupId>org.eclipse.jdt</groupId>
@@ -1103,16 +1107,15 @@
           are not required at runtime.
     -->
     <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>annotations</artifactId>
-      <scope>provided</scope>
-      <!-- Contains retention=RUNTIME annotations, which are not really needed -->
-      <optional>true</optional>
-    </dependency>
-    <dependency>
       <groupId>org.eclipse.jdt</groupId>
       <artifactId>org.eclipse.jdt.annotation</artifactId>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.spotbugs</groupId>
+      <artifactId>spotbugs-annotations</artifactId>
+      <scope>provided</scope>
+      <optional>true</optional>
     </dependency>
 
     <!--
@@ -1707,17 +1710,10 @@
             <configuration>
               <rules>
                 <bannedDependencies>
-                  <message>Please always use mockito-core instead of mockito-all, and findbugs:annotations instead of findbugs:jsr305 (see https://bugs.opendaylight.org/show_bug.cgi?id=7662 &amp; https://bugs.opendaylight.org/show_bug.cgi?id=7663)</message>
+                  <message>Please always use mockito-core instead of mockito-all (see https://bugs.opendaylight.org/show_bug.cgi?id=7662), and spotbugs:annotations instead of findbugs:annotations</message>
                   <excludes>
                     <exclude>org.mockito:mockito-all</exclude>
-                    <!-- https://github.com/facebook/facebook-oss-pom/blob/master/pom.xml#L331-L336 -->
-                    <!-- Clashes with com.google.code.findbugs:annotations and having both jars -->
-                    <!-- as a dependency then clashes with the dependency checker (because it   -->
-                    <!-- is not very good at handling annotations). Use the annotations jar     -->
-                    <!-- instead which has all jsr305 annotations and the additional findbugs   -->
-                    <!-- stuff. -->
-                    <exclude>com.google.code.findbugs:jsr305</exclude>
-                    <exclude>net.jcip:jcip-annotations</exclude>
+                    <exclude>com.google.code.findbugs:annotations</exclude>
                   </excludes>
                 </bannedDependencies>
               </rules>
