@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 Pantheon Technologies, s.r.o. and others.  All rights reserved.
+ * Copyright (c) 2019 PANTHEON.tech, s.r.o. and others.  All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -7,9 +7,9 @@
  */
 package org.opendaylight.odlparent.bundle;
 
-import javax.annotation.Nonnull;
+import org.checkerframework.checker.regex.qual.Regex;
 
-public interface JavaxAnnotations {
-
-    @Nonnull Object nonNullMethodReturn();
+public interface CheckerAnnotations {
+    @Regex
+    String REGEX = ".*";
 }
