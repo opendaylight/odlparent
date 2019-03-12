@@ -5,7 +5,6 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-
 package org.opendaylight.odlparent;
 
 import java.io.File;
@@ -20,7 +19,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
-import javax.annotation.RegEx;
 import org.apache.karaf.features.BundleInfo;
 import org.apache.karaf.features.Conditional;
 import org.apache.karaf.features.internal.model.Bundle;
@@ -29,6 +27,7 @@ import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.features.internal.model.JaxbUtil;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.checkerframework.checker.regex.qual.Regex;
 import org.eclipse.aether.artifact.Artifact;
 import org.ops4j.pax.url.mvn.internal.Parser;
 import org.slf4j.Logger;
@@ -40,7 +39,7 @@ public final class FeatureUtil {
     private static final Pattern MVN_PATTERN = Pattern.compile("mvn:", Pattern.LITERAL);
     private static final Pattern WRAP_PATTERN = Pattern.compile("wrap:", Pattern.LITERAL);
 
-    @RegEx
+    @Regex
     private static final String VERSION_STRIP_PATTERN_STR = "\\$.*$";
     private static final Pattern VERSION_STRIP_PATTERN = Pattern.compile(VERSION_STRIP_PATTERN_STR);
 
