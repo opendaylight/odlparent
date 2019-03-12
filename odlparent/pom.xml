@@ -443,9 +443,27 @@
       </dependency>
 
       <dependency>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-annotations</artifactId>
+        <version>3.1.8</version>
+        <scope>provided</scope>
+        <!-- Contains retention=RUNTIME annotations, which are not really needed -->
+        <optional>true</optional>
+        <exclusions>
+          <exclusion>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
         <groupId>com.google.code.findbugs</groupId>
         <artifactId>annotations</artifactId>
         <version>3.0.0</version>
+        <scope>provided</scope>
+        <!-- Contains retention=RUNTIME annotations, which are not really needed -->
+        <optional>true</optional>
         <exclusions>
           <!-- We'd like (have) to eventually exclude :jsr305 here as well, because
                the types of this artifact are already shaded inside the :annotations artifact.
@@ -1103,16 +1121,15 @@
           are not required at runtime.
     -->
     <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>annotations</artifactId>
-      <scope>provided</scope>
-      <!-- Contains retention=RUNTIME annotations, which are not really needed -->
-      <optional>true</optional>
-    </dependency>
-    <dependency>
       <groupId>org.eclipse.jdt</groupId>
       <artifactId>org.eclipse.jdt.annotation</artifactId>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.spotbugs</groupId>
+      <artifactId>spotbugs-annotations</artifactId>
+      <scope>provided</scope>
+      <optional>true</optional>
     </dependency>
 
     <!--
