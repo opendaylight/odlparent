@@ -26,10 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.EnumSet;
-import java.util.List;
 import java.util.Properties;
 import javax.inject.Inject;
 import org.apache.karaf.bundle.core.BundleService;
@@ -67,7 +64,6 @@ public class SingleFeatureTest {
     private static final String KEEP_UNPACK_DIRECTORY_PROP = "karaf.keep.unpack";
     private static final String PROFILE_PROP = "karaf.featureTest.profile";
     private static final String BUNDLES_DIAG_SKIP_PROP = "sft.diag.skip";
-    private static final String BUNDLES_DIAG_FORCE_PROP = "sft.diag.force";
     private static final String BUNDLES_DIAG_TIMEOUT_PROP = "sft.diag.timeout";
 
     // Maximum heap size
@@ -227,7 +223,6 @@ public class SingleFeatureTest {
             propagateSystemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP),
             propagateSystemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP),
             propagateSystemProperty(BUNDLES_DIAG_SKIP_PROP),
-            propagateSystemProperty(BUNDLES_DIAG_FORCE_PROP),
             propagateSystemProperty(BUNDLES_DIAG_TIMEOUT_PROP),
             // Needed for Agrona/aeron.io
             systemPackages("com.sun.media.sound", "sun.net", "sun.nio.ch"),
@@ -436,29 +431,14 @@ public class SingleFeatureTest {
                 "Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(), isInstalled);
         LOG.info("Successfully installed feature {} {}", getFeatureName(), getFeatureVersion());
 
-        if (!Boolean.getBoolean(BUNDLES_DIAG_SKIP_PROP)
-                && (Boolean.getBoolean(BUNDLES_DIAG_FORCE_PROP)
-                    || !BLACKLISTED_BROKEN_FEATURES.contains(getFeatureName()))) {
+        if (!Boolean.getBoolean(BUNDLES_DIAG_SKIP_PROP)) {
             LOG.info("new TestBundleDiag().checkBundleDiagInfos() STARTING");
             Integer timeOutInSeconds = Integer.getInteger(BUNDLES_DIAG_TIMEOUT_PROP, 5 * 60);
             new TestBundleDiag(bundleContext, bundleService).checkBundleDiagInfos(timeOutInSeconds, SECONDS);
             LOG.info("new TestBundleDiag().checkBundleDiagInfos() ENDED");
         } else {
-            LOG.warn("SKIPPING TestBundleDiag because system property {} is true or feature is blacklisted: {}",
-                    BUNDLES_DIAG_SKIP_PROP, getFeatureName());
+            LOG.warn("SKIPPING TestBundleDiag because system property {} is true: {}", BUNDLES_DIAG_SKIP_PROP,
+                getFeatureName());
         }
     }
-
-    // TODO remove this when all issues linked to parent https://bugs.opendaylight.org/show_bug.cgi?id=7582 are resolved
-    private static final List<String> BLACKLISTED_BROKEN_FEATURES = new ArrayList<>(Arrays.asList(
-            // integration/distribution/features-test due to DOMRpcService
-            // see https://bugs.opendaylight.org/show_bug.cgi?id=7595
-            "odl-integration-all",
-            // controller/features/mdsal/ due to IllegalStateException: ./configuration/initial/akka.conf is missing
-            // see https://bugs.opendaylight.org/show_bug.cgi?id=7583
-            "odl-mdsal-broker-local",
-            "odl-mdsal-clustering-commons",
-            "odl-mdsal-distributed-datastore",
-            "odl-mdsal-remoterpc-connector"
-    ));
 }
