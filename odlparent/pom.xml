@@ -158,13 +158,13 @@
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
-        <version>0.42</version>
+        <version>0.43</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>com.google.truth.extensions</groupId>
         <artifactId>truth-java8-extension</artifactId>
-        <version>0.42</version>
+        <version>0.43</version>
         <scope>test</scope>
       </dependency>
       <dependency>
