@@ -34,7 +34,7 @@
     <dependencies>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-guava-25</artifactId>
+            <artifactId>odl-guava-27</artifactId>
             <type>xml</type>
             <classifier>features</classifier>
         </dependency>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-guava">
     <feature version="0.0.0">
-        <feature>odl-guava-25</feature>
+        <feature>odl-guava-27</feature>
     </feature>
 </features>
