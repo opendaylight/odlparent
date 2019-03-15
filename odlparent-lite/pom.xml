@@ -125,8 +125,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <!-- FIXME: when bumping to 3.1.0 review javadoc-links profile -->
-          <version>3.0.1</version>
+          <version>3.1.0</version>
           <configuration combine.children="append">
             <!-- Keep things quiet except for warnings/errors -->
             <quiet>true</quiet>
@@ -493,20 +492,18 @@
           <plugin>
             <artifactId>maven-javadoc-plugin</artifactId>
             <configuration combine.children="append">
-              <!-- FIXME: these links do not have a trailing slash as a workaround for
-                          https://issues.apache.org/jira/browse/MJAVADOC-532 -->
               <links>
-                <link>https://junit.org/junit4/javadoc/4.11</link>
-                <link>http://hamcrest.org/JavaHamcrest/javadoc/2.1</link>
-                <link>http://google.github.io/truth/api/0.43</link>
-                <link>https://www.slf4j.org/apidocs</link>
-                <link>https://xerces.apache.org/xerces2-j/javadocs/api</link>
-                <link>https://google.github.io/guava/releases/27.1-jre/api/docs</link>
-                <link>http://doc.akka.io/japi/akka/2.5.21</link>
-                <link>http://netty.io/4.1/api</link>
-                <link>https://commons.apache.org/proper/commons-lang/javadocs/api-2.6</link>
-                <link>https://commons.apache.org/proper/commons-lang/javadocs/api-3.8.1</link>
-                <link>https://commons.apache.org/proper/commons-codec/apidocs</link>
+                <link>https://junit.org/junit4/javadoc/4.11/</link>
+                <link>http://hamcrest.org/JavaHamcrest/javadoc/2.1/</link>
+                <link>http://google.github.io/truth/api/0.43/</link>
+                <link>https://www.slf4j.org/apidocs/</link>
+                <link>https://xerces.apache.org/xerces2-j/javadocs/api/</link>
+                <link>https://google.github.io/guava/releases/27.1-jre/api/docs/</link>
+                <link>http://doc.akka.io/japi/akka/2.5.21/</link>
+                <link>http://netty.io/4.1/api/</link>
+                <link>https://commons.apache.org/proper/commons-lang/javadocs/api-2.6/</link>
+                <link>https://commons.apache.org/proper/commons-lang/javadocs/api-3.8.1/</link>
+                <link>https://commons.apache.org/proper/commons-codec/apidocs/</link>
               </links>
             </configuration>
           </plugin>
