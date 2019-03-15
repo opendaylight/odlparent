@@ -516,10 +516,13 @@
     </profile>
 
     <profile>
-      <!-- On JDK9-and-later specify html4 javadoc -->
+      <!-- On JDK9-and-later specify html4 javadoc, if requested-->
       <id>jdk9-javadoc</id>
       <activation>
         <jdk>[9,)</jdk>
+        <file>
+          <exists>odl-javadoc-html5-optout</exists>
+        </file>
       </activation>
       <build>
         <plugins>
