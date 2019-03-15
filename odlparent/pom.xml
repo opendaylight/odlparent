@@ -287,9 +287,16 @@
 
       <dependency>
         <groupId>com.google.guava</groupId>
-        <artifactId>guava</artifactId>
+        <artifactId>guava-bom</artifactId>
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
-        <version>25.1-jre</version>
+        <version>27.1-jre</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
         <exclusions>
           <exclusion>
             <!-- Do not leak JSR305 onto the classpath by default -->
@@ -301,7 +308,6 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
-        <version>25.1-jre</version>
         <scope>test</scope>
         <exclusions>
           <exclusion>
@@ -311,6 +317,7 @@
           </exclusion>
         </exclusions>
       </dependency>
+
       <dependency>
         <groupId>com.mycila.guice.extensions</groupId>
         <artifactId>mycila-guice-jsr250</artifactId>
