@@ -484,9 +484,9 @@
       <!-- Javadocs with links -->
       <id>javadoc-links</id>
         <activation>
-          <property>
-            <name>odlparent.javadoc-links</name>
-          </property>
+          <file>
+            <exists>odl-javadoc-links-optin</exists>
+          </file>
         </activation>
       <build>
         <plugins>
