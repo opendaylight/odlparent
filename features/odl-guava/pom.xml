@@ -23,8 +23,7 @@
     <version>5.0.0-SNAPSHOT</version>
     <packaging>feature</packaging>
 
-    <name>OpenDaylight :: default Guava feature</name>
-    <description>Guava: Google Core Libraries for Java</description>
+    <name>OpenDaylight :: Guava 27.1</name>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>
@@ -33,11 +32,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-guava-25</artifactId>
-            <type>xml</type>
-            <classifier>features</classifier>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
         </dependency>
     </dependencies>
-
 </project>

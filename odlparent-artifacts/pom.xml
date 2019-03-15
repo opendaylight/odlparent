@@ -170,13 +170,6 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-guava-25</artifactId>
-                <version>${project.version}</version>
-                <classifier>features</classifier>
-                <type>xml</type>
-            </dependency>
-            <dependency>
-                <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-jackson-2.9</artifactId>
                 <version>${project.version}</version>
                 <classifier>features</classifier>
