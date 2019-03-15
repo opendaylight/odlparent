@@ -85,7 +85,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-guava-25</artifactId>
+            <artifactId>odl-guava-27</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
