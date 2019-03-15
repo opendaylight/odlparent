@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-guava">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-guava-25">
     <feature version="0.0.0">
-        <feature>odl-guava-25</feature>
+        <feature>wrap</feature>
+        <bundle>mvn:com.google.guava/failureaccess/1.0.1</bundle>
+        <bundle>mvn:com.google.guava/guava/27.1-jre</bundle>
+        <bundle>wrap:mvn:com.google.errorprone/error_prone_annotations/2.3.3</bundle>
+        <bundle>wrap:mvn:com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava</bundle>
+        <bundle>wrap:mvn:com.google.j2objc/j2objc-annotations/1.1</bundle>
+        <bundle>wrap:mvn:org.checkerframework/checker-qual/2.5.8</bundle>
+        <bundle>wrap:mvn:org.codehaus.mojo/animal-sniffer-annotations/1.17</bundle>
     </feature>
 </features>
