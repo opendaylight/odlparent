@@ -41,7 +41,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- Java Versions -->
-    <!-- FIXME: confirm these two are picked by maven-compiler-plugin -->
+    <!-- FIXME: remove these in favor of maven.compiler.release once we require JDK9+ -->
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <java.version.source>${maven.compiler.source}</java.version.source>
@@ -1349,8 +1349,6 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
           <configuration>
-            <source>1.8</source>
-            <target>1.8</target>
             <showWarnings>true</showWarnings>
             <compilerArgs>
               <arg>-parameters</arg>
@@ -2039,6 +2037,22 @@
   </reporting>
 
   <profiles>
+    <profile>
+      <id>jdk9-compile</id>
+      <activation>
+        <jdk>[9,)</jdk>
+        <property>
+          <!-- Unless the release is overridden by a system property -->
+          <name>!maven.compiler.release</name>
+        </property>
+      </activation>
+
+      <!-- For JDK9+ we want to pass -release to javac -->
+      <properties>
+        <maven.compiler.release>8</maven.compiler.release>
+      </properties>
+    </profile>
+
     <profile>
       <!-- On JDK9-and-later findbugs fails -->
       <id>jdk9-findbugs</id>
