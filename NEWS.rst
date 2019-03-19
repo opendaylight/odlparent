@@ -56,6 +56,8 @@ Removed features
 
 * odl-jersey-1
 
+* ``features-akka`` feature repository has been integrated into ``features-odlparent``
+
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

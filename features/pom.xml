@@ -28,16 +28,6 @@
     </properties>
 
     <modules>
-        <!-- Akka features -->
-        <module>features-akka</module>
-        <module>odl-akka-all</module>
-        <module>odl-akka-clustering-2.5</module>
-        <module>odl-akka-leveldb-0.7</module>
-        <module>odl-akka-leveldb-0.10</module>
-        <module>odl-akka-persistence-2.5</module>
-        <module>odl-akka-scala-2.12</module>
-        <module>odl-akka-system-2.5</module>
-
         <!-- Proxy features for Karaf-provided features -->
         <module>odl-karaf-feat-feature</module>
         <module>odl-karaf-feat-jdbc</module>
@@ -46,6 +36,13 @@
 
         <!-- General features -->
         <module>features-odlparent</module>
+        <module>odl-akka-all</module>
+        <module>odl-akka-clustering-2.5</module>
+        <module>odl-akka-leveldb-0.7</module>
+        <module>odl-akka-leveldb-0.10</module>
+        <module>odl-akka-persistence-2.5</module>
+        <module>odl-akka-scala-2.12</module>
+        <module>odl-akka-system-2.5</module>
         <module>odl-antlr4</module>
         <module>odl-apache-commons-codec</module>
         <module>odl-apache-commons-lang3</module>
