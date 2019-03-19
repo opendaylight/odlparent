@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "057a441d_d0988e2d",
+        "filename": "NEWS.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2019-03-19T08:55:04Z",
+      "side": 1,
+      "message": "There’s a mismatch here ;-). The link is also missing underscores after the closing quote.",
+      "revId": "affcfe1d2bf77603cb1550f0a0245ff7f1843103",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80bf18_23923553",
+        "filename": "NEWS.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2019-03-19T08:55:04Z",
+      "side": 1,
+      "message": "s/fixes/fixed/.",
+      "revId": "affcfe1d2bf77603cb1550f0a0245ff7f1843103",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "81a35b67_cfe11f20",
+        "filename": "NEWS.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2019-03-19T08:55:04Z",
+      "side": 1,
+      "message": "Mismatch here too.",
+      "revId": "affcfe1d2bf77603cb1550f0a0245ff7f1843103",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
