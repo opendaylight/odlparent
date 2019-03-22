@@ -48,12 +48,6 @@
     </properties>
 
     <dependencies>
-        <!-- We now end up needing our Karaf branding somehow -->
-        <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>karaf.branding</artifactId>
-            <scope>test</scope>
-        </dependency>
         <!-- Test the generated features.xml -->
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
