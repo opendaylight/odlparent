@@ -97,12 +97,6 @@
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>opendaylight-karaf-empty</artifactId>
             <type>zip</type>
-            <exclusions>
-              <exclusion>
-                <groupId>*</groupId>
-                <artifactId>*</artifactId>
-              </exclusion>
-            </exclusions>
         </dependency>
         <!-- BEWARE of adding additional dependencies here...
              It will cause weird issues e.g. in integration/distribution/features/repos/distribution -->
