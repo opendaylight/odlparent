@@ -36,6 +36,11 @@ Bug fixes
 * Karaf log file used to use default maximum 16MiB file size, this has now been increased to 64MiB.
   See `ODLPARENT-154 <https://jira.opendaylight.org/browse/ODLPARENT-154>`__.
 
+* ``features-test`` excluded opendaylight-karaf-empty's transitive dependencies, leading
+  to the need to re-declare them in single-feature-parent. This re-declaration was forgotten
+  in for ``bcpkix-framework-ext`` and ``bcprov-framework-ext`` bundles, which lead to them
+  not being present in the local repository. See `ODLPARENT-130 <https://jira.opendaylight.org/browse/ODLPARENT-130>`__.
+
 Upstream version removals
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
