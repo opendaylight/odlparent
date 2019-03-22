@@ -34,7 +34,7 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>untested-single-feature-parent</artifactId>
-        <version>5.0.0-SNAPSHOT</version>
+        <version>5.0.0</version>
         <relativePath>../untested-single-feature-parent</relativePath>
     </parent>
 
@@ -52,13 +52,13 @@
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>features-test</artifactId>
-            <version>5.0.0-SNAPSHOT</version>
+            <version>5.0.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>bundles-test-lib</artifactId>
-            <version>5.0.0-SNAPSHOT</version>
+            <version>5.0.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
