@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Copyright © 2019 Red Hat, Inc. and others.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Eclipse Public License v1.0 which accompanies this distribution,
+# and is available at http://www.eclipse.org/legal/epl-v10.html
+
+# Find modules using JSR 305
+for module in $(git grep -lf ${0%/*}/jsr305.txt |
+                awk -F/ '{ for (i = NF; i > 0; i--) { if ($i == "src") { NF = i - 1; print; next } } }' OFS="/" |
+		sort -u); do
+    # If they don't already pull in jsr305...
+    if ! grep -q jsr305 ${module}/pom.xml; then
+	# ... add the dependency
+	xmlstarlet ed -P -L -N mvn=http://maven.apache.org/POM/4.0.0 \
+		   -s /mvn:project/mvn:dependencies -t elem -n dependencyTMP -v "" \
+		   -s //dependencyTMP -t elem -n groupId -v "com.google.code.findbugs" \
+		   -s //dependencyTMP -t elem -n artifactId -v "jsr305" \
+		   -s //dependencyTMP -t elem -n optional -v "true" \
+		   -r //dependencyTMP -v dependency \
+		   ${module}/pom.xml
+    fi
+done
