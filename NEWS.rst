@@ -87,6 +87,8 @@ Plugin upgrades
 
 * maven-javadoc-plugin `3.0.1 → 3.1.0 <https://mail-archives.apache.org/mod_mbox/maven-announce/201903.mbox/%3C6064d830-474c-4b43-afef-99502c3a305a%40getmailbird.com%3E>`__
 
+* maven-plugin-plugin `3.5.2 → 3.6.0 <https://blogs.apache.org/maven/entry/apache-maven-plugin-tools-version1>__
+
 Version 4.0.9
 -------------
 
