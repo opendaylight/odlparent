@@ -16,7 +16,9 @@ import org.junit.runner.Description;
 
 public final class Util {
 
-    private Util() {}
+    private Util() {
+
+    }
 
     /**
      * <p>Convert a Description to a Description that includes information about repoUrl, featureName, and
