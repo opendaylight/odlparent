@@ -40,8 +40,11 @@ public class ReflectionUtilTest {
     @SuppressWarnings("unused")
     private final InnerNonStaticClass anoymousInnerClass = new InnerNonStaticClass() { };
 
-    private static class InnerStaticClass { }
+    private static class InnerStaticClass {
 
-    private class InnerNonStaticClass { }
+    }
 
+    private class InnerNonStaticClass {
+
+    }
 }
