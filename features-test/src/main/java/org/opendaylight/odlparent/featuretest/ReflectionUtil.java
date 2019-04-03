@@ -22,7 +22,9 @@ import org.ops4j.pax.exam.TestProbeBuilder;
  */
 public final class ReflectionUtil {
 
-    private ReflectionUtil() {}
+    private ReflectionUtil() {
+
+    }
 
     public static void addAllClassesInSameAndSubPackageOfClass(TestProbeBuilder probe, Class<?> clazz) {
         addAllClassesInSameAndSubPackageOfPackage(probe, clazz.getPackage().getName());
