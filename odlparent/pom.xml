@@ -1193,7 +1193,7 @@
             <dependency>
               <groupId>com.github.sevntu-checkstyle</groupId>
               <artifactId>sevntu-checkstyle-maven-plugin</artifactId>
-              <version>1.32.0</version>
+              <version>1.33.0</version>
             </dependency>
           </dependencies>
           <configuration>
