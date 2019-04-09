@@ -45,15 +45,16 @@ The following dependencies have been upgraded:
   * `0.9.32 <https://github.com/real-logic/agrona/releases/tag/0.9.32>`__
   * `0.9.33 <https://github.com/real-logic/agrona/releases/tag/0.9.33>`__
 
-* Akka 2.5.19 → 2.5.21, release notes:
+* Akka 2.5.19 → 2.5.22, release notes:
   * `2.5.20 <https://akka.io/blog/news/2019/01/29/akka-2.5.20-released>`__
   * `2.5.21 <https://akka.io/blog/news/2019/02/13/akka-2.5.21-released>`__
+  * `2.5.21 <https://akka.io/blog/news/2019/04/03/akka-2.5.22-released>`__
 
 * antl4r `4.7.1 → 4.7.2 <https://github.com/antlr/antlr4/releases/tag/4.7.2>`__
 
 * apache-sshd `2.0.0 → 2.2.0 <https://github.com/apache/mina-sshd/compare/sshd-2.0.0...sshd-2.2.0>`__
 
-* asciidoctorj-diagram 1.5.11 → 1.5.12
+* asciidoctorj-diagram 1.5.11 → 1.5.16
 
 * Bouncy Castle `1.60 → 1.61 <http://www.bouncycastle.org/releasenotes.html>`__
 
@@ -74,9 +75,23 @@ The following dependencies have been upgraded:
   * `4.1.33 <https://netty.io/news/2019/01/21/4-1-33-Final.html>`__
   * `4.1.34 <https://netty.io/news/2019/03/08/4-1-34-Final.html>`__
 
+* reactive-streams `1.0.1 → 1.0.2 <https://www.lightbend.com/blog/update-reactive-streams-102-released>`__
+
+* scala-parser-combinators `1.1.1 → 1.1.2 <https://github.com/scala/scala-parser-combinators/releases/tag/v1.1.2>`__
+
+* Sevntu `1.32.0 → 1.33.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.33.0>`__
+
 * ThreeTen `1.4.0 → 1.5.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.5.0>`__
 
-* Xtend `2.16.0 → 2.17.0 <http://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/03/05/version-2-17-0>`__
+* typesafe/config `1.3.2 → 1.3.3 <https://github.com/lightbend/config/releases/tag/v1.3.3>`__
+
+* typesafe/ssl-config `0.3.6 → 0.3.7 <https://github.com/lightbend/ssl-config/releases/tag/v0.3.7>`__
+
+* XBean finder `4.12 → 4.13 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12344253&projectId=12310312>`__
+
+* Xtend 2.16.0 → 2.17.1, release notes:
+  * `2.17.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/03/05/version-2-17-0>`__
+  * `2.17.1 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/04/03/version-2-17-1>`__
 
 Plugin upgrades
 ~~~~~~~~~~~~~~~
