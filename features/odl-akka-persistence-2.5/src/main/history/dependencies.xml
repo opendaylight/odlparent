@@ -3,7 +3,7 @@
     <feature version="0.0.0">
         <feature>odl-akka-leveldb-0.10</feature>
         <feature>odl-akka-system-2.5</feature>
-        <bundle>mvn:com.typesafe.akka/akka-persistence_2.12/2.5.21</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-protobuf_2.12/2.5.21</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-persistence_2.12/2.5.22</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-protobuf_2.12/2.5.22</bundle>
     </feature>
 </features>
