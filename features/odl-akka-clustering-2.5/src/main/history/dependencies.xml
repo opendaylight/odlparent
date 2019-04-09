@@ -12,6 +12,6 @@
         <bundle>mvn:io.netty/netty/3.10.6.Final</bundle>
         <bundle>mvn:org.agrona/agrona/0.9.33</bundle>
         <bundle>mvn:org.reactivestreams/reactive-streams/1.0.2</bundle>
-        <bundle>mvn:org.scala-lang.modules/scala-parser-combinators_2.12/1.1.1</bundle>
+        <bundle>mvn:org.scala-lang.modules/scala-parser-combinators_2.12/1.1.2</bundle>
     </feature>
 </features>
