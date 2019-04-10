@@ -423,6 +423,10 @@
             <artifactId>jetty-webapp</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-server</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.antlr</artifactId>
         </dependency>
