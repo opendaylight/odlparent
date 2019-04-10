@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbd3ccea_421087cc",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2019-04-10T09:16:23Z",
+      "side": 1,
+      "message": "Hmm... this is expanding quite quickly. I wonder if it would make sense to import org.eclipse.jetty/jetty-bom/9.4.12.v20180830 instead of gradually replicating it here.\n\nStephen, what do you think?",
+      "range": {
+        "startLine": 916,
+        "startChar": 0,
+        "endLine": 940,
+        "endChar": 19
+      },
+      "revId": "59f6b8bf87437c160c308d16a028075fd9de615f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
