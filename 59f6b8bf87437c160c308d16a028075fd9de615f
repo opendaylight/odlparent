@@ -22,6 +22,30 @@
       "revId": "59f6b8bf87437c160c308d16a028075fd9de615f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b340b25c_822c82a3",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2019-04-10T09:27:07Z",
+      "side": 1,
+      "message": "Seems sensible, the Jetty BOM is well-scoped — https://git.opendaylight.org/gerrit/81527",
+      "parentUuid": "dbd3ccea_421087cc",
+      "range": {
+        "startLine": 916,
+        "startChar": 0,
+        "endLine": 940,
+        "endChar": 19
+      },
+      "revId": "59f6b8bf87437c160c308d16a028075fd9de615f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
