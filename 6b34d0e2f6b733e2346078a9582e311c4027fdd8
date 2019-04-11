@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1b9763_1728fb23",
+        "filename": "scripts/bump-odl-version",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2019-04-11T17:22:27Z",
+      "side": 1,
+      "message": "I had to change *.xml to pom.xml in order for this script to deal with malformed xml payloads in yangtools repo.",
+      "revId": "6b34d0e2f6b733e2346078a9582e311c4027fdd8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6aeb0aa1_f3ec7011",
+        "filename": "scripts/bump-odl-version",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2019-04-11T17:22:27Z",
+      "side": 1,
+      "message": "Some xml projects inherits groupId from parent: https://git.opendaylight.org/gerrit/gitweb?p\u003dyangtools.git;a\u003dblob;f\u003ddocs/pom.xml;h\u003def9c9991a9232a05c1ec28cb9d7d764358518f67;hb\u003drefs/heads/master\nfor this you may need a line like: xmlstarlet ed -P -L -N mvn\u003dhttp://maven.apache.org/POM/4.0.0 -u //mvn:version[../mvn:parent/mvn:groupId\u003d\\\"org.opendaylight.${project}\\\" and not(../mvn:groupId)] -v ${target} ${file}",
+      "revId": "6b34d0e2f6b733e2346078a9582e311c4027fdd8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
