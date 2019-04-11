@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Copyright © 2019 Red Hat, Inc. and others.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Eclipse Public License v1.0 which accompanies this distribution,
+# and is available at http://www.eclipse.org/legal/epl-v10.html
+
+if [ $# -ne 3 ]; then
+    echo "Usage: $0 <project> <current version> <target version>"
+    echo "Bumps all dependencies on the given project from <current version>"
+    echo "to <target version>."
+    echo "E.g. $0 odlparent 3.0.2 3.1.0-SNAPSHOT"
+    exit 1
+fi
+
+project=$1
+curver=$2
+target=$3
+
+# We use find/grep instead of git grep to allow running this on
+# multiple repositories
+for file in $(find . -type f -name pom.xml | xargs grep -l ${curver})
+do
+    echo -n Processing ${file}...
+    xmlstarlet ed -P -L -N mvn=http://maven.apache.org/POM/4.0.0 -u //mvn:version[../mvn:groupId=\"org.opendaylight.${project}\"] -v ${target} ${file}
+    echo " done."
+done
