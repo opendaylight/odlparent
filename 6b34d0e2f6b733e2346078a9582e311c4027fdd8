@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "d5a72828_3bb80456",
+        "filename": "scripts/bump-odl-version",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2019-04-12T17:17:19Z",
+      "side": 1,
+      "message": "10:13:14 ./yang/yang-data-codec-gson/src/test/resources/bug8927/xml/complex_array.xml:3.11: xmlns: URI bug8927.test is not absolute\n10:13:14 \u003cfoo xmlns\u003d\"bug8927.test\"\u003e\n10:13:14                          ^\n10:13:14 ./yang/yang-data-codec-gson/src/test/resources/bug8927/xml/complex_array.xml:4.29: xmlns: URI bug8927.test is not absolute\n10:13:14     \u003calarm-information xmlns\u003d\"bug8927.test\"\u003e\n10:13:14                                            ^\n10:13:14 ./yang/yang-data-codec-gson/src/test/resources/bug8927/xml/complex_array_with_other_elements.xml:3.11: xmlns: URI bug8927.test is not absolute\n10:13:14 \u003cfoo xmlns\u003d\"bug8927.test\"\u003e\n10:13:14                          ^\n10:13:14 ./yang/yang-data-codec-gson/src/test/resources/bug8927/xml/complex_array_with_other_elements.xml:4.29: xmlns: URI bug8927.test is not absolute\n10:13:14     \u003calarm-information xmlns\u003d\"bug8927.test\"\u003e\n10:13:14                                            ^\n10:13:14 ./yang/yang-data-codec-gson/src/test/resources/bug8927/xml/input.xml:3.11: xmlns: URI bug8927.test is not absolute\n10:13:14 \u003cfoo xmlns\u003d\"bug8927.test\"\u003e\n10:13:14                          ^\n10:13:14 ./yang/yang-data-codec-gson/src/test/resources/bug8927/xml/input.xml:4.29: xmlns: URI bug8927.test is not absolute\n10:13:14     \u003calarm-information xmlns\u003d\"bug8927.test\"\u003e\n10:13:14                                            ^\n10:13:14 ./yang/yang-data-codec-gson/src/test/resources/bug8927/xml/input4.xml:2.12: xmlns: URI complexjson is not absolute\n10:13:14 \u003croot xmlns\u003d\"complexjson\"\u003e\n10:13:14                          ^\n10:13:14 ./yang/yang-data-codec-gson/src/test/resources/bug8927/xml/input4.xml:43.1: Premature end of data in tag root line 42\n10:13:14 ./yang/yang-data-codec-gson/src/test/resources/bug8927/xml/input4.xml:43.1: Premature end of data in tag root line 2",
+      "parentUuid": "fadc09a5_0d1135e0",
+      "revId": "6b34d0e2f6b733e2346078a9582e311c4027fdd8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6aeb0aa1_f3ec7011",
         "filename": "scripts/bump-odl-version",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "The script doesn’t make this clear currently (I’ll push a better version shortly), but it bumps dependency versions, so I think inherited groupIds shouldn’t be relevant.",
       "parentUuid": "6aeb0aa1_f3ec7011",
+      "revId": "6b34d0e2f6b733e2346078a9582e311c4027fdd8",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3bf6c658_88247e26",
+        "filename": "scripts/bump-odl-version",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 797
+      },
+      "writtenOn": "2019-04-12T17:17:19Z",
+      "side": 1,
+      "message": "Oh, I use the script to bump own project version as well, if it is only dependencies it is fine as it is.",
+      "parentUuid": "094d0c6a_52fea22f",
       "revId": "6b34d0e2f6b733e2346078a9582e311c4027fdd8",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
