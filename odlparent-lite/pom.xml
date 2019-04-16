@@ -503,7 +503,7 @@
                 <link>http://doc.akka.io/japi/akka/2.5.22/</link>
                 <link>http://netty.io/4.1/api/</link>
                 <link>https://commons.apache.org/proper/commons-lang/javadocs/api-2.6/</link>
-                <link>https://commons.apache.org/proper/commons-lang/javadocs/api-3.8.1/</link>
+                <link>https://commons.apache.org/proper/commons-lang/javadocs/api-3.9/</link>
                 <link>https://commons.apache.org/proper/commons-codec/apidocs/</link>
               </links>
             </configuration>
