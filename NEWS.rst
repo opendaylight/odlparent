@@ -5,6 +5,36 @@ ODL Parent release notes
 Version 3.1.7
 -------------
 
+This is a bug-fix upgrade from version 3.1.6.
+
+Bug fixes
+~~~~~~~~~
+
+* ``blueprint-maven-plugin`` used to scan the entire classpath, resulting in potential conflicts
+  across projects. Scanning is now limited to ``${project.groupId}``, limiting conflict domain
+  to single project. See `ODLPARENT-109 <https://jira.opendaylight.org/browse/ODLPARENT-109>`__.
+
+* ``features-test`` excluded opendaylight-karaf-empty's transitive dependencies, leading
+  to the need to re-declare them in single-feature-parent. This re-declaration was forgotten
+  in for ``bcpkix-framework-ext`` and ``bcprov-framework-ext`` bundles, which lead to them
+  not being present in the local repository. See `ODLPARENT-130 <https://jira.opendaylight.org/browse/ODLPARENT-130>`__.
+
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following dependencies have been upgraded:
+
+* Bouncy Castle `1.60 → 1.61 <http://www.bouncycastle.org/releasenotes.html>`__
+
+* h2 database `1.4.196 → 1.4.199 <http://www.h2database.com/html/changelog.html>`__
+
+* Javassist `3.24.0-GA → 3.24.1-GA <https://github.com/jboss-javassist/javassist/releases/tag/rel_3_24_1_ga>`__
+
+* Xtend 2.16.0 → 2.17.1, release notes:
+  * `2.17.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/03/05/version-2-17-0>`__
+  * `2.17.1 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/04/03/version-2-17-1>`__
+
 Version 3.1.6
 -------------
 
