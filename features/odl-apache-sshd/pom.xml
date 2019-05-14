@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>3.1.7-SNAPSHOT</version>
+        <version>3.1.8-SNAPSHOT</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-apache-sshd</artifactId>
-    <version>3.1.7-SNAPSHOT</version>
+    <version>3.1.8-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Apache SSHD</name>
