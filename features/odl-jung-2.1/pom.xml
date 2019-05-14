@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>3.1.7-SNAPSHOT</version>
+        <version>3.1.7</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-jung-2.1</artifactId>
-    <version>3.1.7-SNAPSHOT</version>
+    <version>3.1.7</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: JUNG</name>
