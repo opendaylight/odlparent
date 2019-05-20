@@ -1365,7 +1365,6 @@
             <scanPaths>
               <scanPath>${project.groupId}</scanPath>
             </scanPaths>
-            <generatedDir>org/opendaylight/blueprint/</generatedDir>
           </configuration>
           <executions>
             <execution>
