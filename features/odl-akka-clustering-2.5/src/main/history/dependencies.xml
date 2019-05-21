@@ -2,10 +2,10 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-akka-clustering-2.5">
     <feature version="0.0.0">
         <feature>odl-akka-system-2.5</feature>
-        <bundle>mvn:com.typesafe.akka/akka-cluster_2.12/2.5.22</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-protobuf_2.12/2.5.22</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-remote_2.12/2.5.22</bundle>
-        <bundle>mvn:com.typesafe.akka/akka-stream_2.12/2.5.22</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-cluster_2.12/2.5.23</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-protobuf_2.12/2.5.23</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-remote_2.12/2.5.23</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-stream_2.12/2.5.23</bundle>
         <bundle>mvn:com.typesafe/ssl-config-core_2.12/0.3.7</bundle>
         <bundle>mvn:io.aeron/aeron-client/1.15.3</bundle>
         <bundle>mvn:io.aeron/aeron-driver/1.15.3</bundle>
