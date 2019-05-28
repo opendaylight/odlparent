@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-caffeine-2">
+    <feature version="0.0.0">
+        <feature>odl-guava</feature>
+        <feature>wrap</feature>
+        <bundle>mvn:com.github.ben-manes.caffeine/caffeine/2.7.0</bundle>
+        <bundle>mvn:com.github.ben-manes.caffeine/guava/2.7.0</bundle>
+    </feature>
+</features>

@@ -49,6 +49,7 @@
         <module>odl-apache-commons-net</module>
         <module>odl-apache-commons-text</module>
         <module>odl-apache-sshd</module>
+        <module>odl-caffeine-2</module>
         <module>odl-dropwizard-metrics</module>
         <module>odl-gson</module>
         <module>odl-guava</module>
