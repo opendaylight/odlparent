@@ -313,6 +313,18 @@
         </exclusions>
       </dependency>
 
+      <!-- Caffeine plus bridges to Guava and JCache -->
+      <dependency>
+        <groupId>com.github.ben-manes.caffeine</groupId>
+        <artifactId>caffeine</artifactId>
+        <version>2.7.0</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.ben-manes.caffeine</groupId>
+        <artifactId>guava</artifactId>
+        <version>2.7.0</version>
+      </dependency>
+
       <dependency>
         <groupId>com.mycila.guice.extensions</groupId>
         <artifactId>mycila-guice-jsr250</artifactId>
