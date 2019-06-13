@@ -4,6 +4,28 @@ ODL Parent release notes
 
 Version 4.0.11
 --------------
+This is a bug-fix upgrade from version 4.0.10.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following dependencies have been upgraded:
+
+* Akka `2.5.22 → 2.5.23 <https://akka.io/blog/news/2019/05/21/akka-2.5.23-released>`__
+
+* Bouncy Castle `1.61 → 1.62 <http://www.bouncycastle.org/releasenotes.html>`__
+
+* commons-lang3 `3.8.1 → 3.9 <http://www.apache.org/dist/commons/lang/RELEASE-NOTES.txt>`__
+
+* Jackson `2.9.8 → 2.9.9 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.9>`__
+
+* Jolokia `1.6.0 → 1.6.1 <https://jolokia.org/changes-report.html#a1.6.1>`__
+
+* maven-surefire-plugin 2.22.1 → 2.22.2
+
+* Netty 4.1.34 → 4.1.36, release notes:
+  * `4.1.35 <https://netty.io/news/2019/04/17/4-1-35-Final.html>`__
+  * `4.1.36 <https://netty.io/news/2019/04/30/4-1-36-Final.html>`__
 
 Version 4.0.10
 --------------
