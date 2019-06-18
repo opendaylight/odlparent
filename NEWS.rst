@@ -2,6 +2,60 @@
 ODL Parent release notes
 ========================
 
+Version 5.0.1
+-------------
+
+This is a bug-fix upgrade from version 5.0.0.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following dependencies have been upgraded:
+
+* Akka 2.5.21 → 2.5.23, release notes:
+  * `2.5.22 <https://akka.io/blog/news/2019/04/03/akka-2.5.22-released>`__
+  * `2.5.23 <https://akka.io/blog/news/2019/05/21/akka-2.5.23-released>`__
+
+* asciidoctorj-diagram 1.5.12 → 1.5.16
+
+* Bouncy Castle `1.61 → 1.62 <http://www.bouncycastle.org/releasenotes.html>`__
+
+* commons-lang3 `3.8.1 → 3.9 <http://www.apache.org/dist/commons/lang/RELEASE-NOTES.txt>`__
+
+* Jackson `2.9.8 → 2.9.9 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.9>`__
+
+* Jolokia `1.6.0 → 1.6.1 <https://jolokia.org/changes-report.html#a1.6.1>`__
+
+* maven-surefire-plugin `3.5.2 → 3.6.0 <https://blogs.apache.org/maven/entry/apache-maven-plugin-tools-version1>`__
+
+* maven-surefire-plugin 2.22.1 → 2.22.2
+
+* Mockito `2.25.0 → 2.25.1 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2251>`__
+
+* Netty 4.1.34 → 4.1.36, release notes:
+  * `4.1.35 <https://netty.io/news/2019/04/17/4-1-35-Final.html>`__
+  * `4.1.36 <https://netty.io/news/2019/04/30/4-1-36-Final.html>`__
+
+* Reactive Streams `1.0.1 → 1.0.2 <https://www.lightbend.com/blog/update-reactive-streams-102-released>`__
+
+* scala-parser-combinators `1.1.1 → 1.1.2 <https://github.com/scala/scala-parser-combinators/releases/tag/v1.1.2>`__
+
+* Sevntu `1.32.0 → 1.33.0 <http://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.33.0>`__
+
+* Typesafe Config `1.3.2 → 1.3.3 <https://github.com/lightbend/config/releases/tag/v1.3.3>`__
+
+* XBean finder 4.12 → 4.14, release notes:
+  * `4.13 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12344253&projectId=12310312>`__
+  * `4.14 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12345220>`__
+
+* Xtend `2.17.0 → 2.17.1 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/04/03/version-2-17-1>`__
+
+New features
+~~~~~~~~~~~~
+
+* ``odl-caffeine-2`` provides a pre-packaged feature for the Caffeine caching framework,
+  along with the Guava compabitility layer.
+
 Version 5.0.0
 -------------
 
