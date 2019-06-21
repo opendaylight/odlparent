@@ -2,6 +2,18 @@
 ODL Parent release notes
 ========================
 
+Version 3.1.8
+=============
+
+This is a bug-fix upgrade from version 3.1.7.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following dependencies have been upgraded:
+
+* Bouncy Castle `1.61 → 1.62 <http://www.bouncycastle.org/releasenotes.html>`__
+
 Version 3.1.7
 -------------
 
