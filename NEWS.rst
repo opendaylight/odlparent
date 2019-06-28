@@ -17,17 +17,46 @@ The following dependencies have been upgraded:
 
 * commons-lang3 `3.8.1 → 3.9 <http://www.apache.org/dist/commons/lang/RELEASE-NOTES.txt>`__
 
+* JaCoCo `0.8.3 → 0.8.4 <https://github.com/jacoco/jacoco/releases/tag/v0.8.4>`__
+
 * Jackson `2.9.8 → 2.9.9 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.9>`__
 
-* Jolokia `1.6.0 → 1.6.1 <https://jolokia.org/changes-report.html#a1.6.1>`__
-
-* maven-surefire-plugin 2.22.1 → 2.22.2
+* Jolokia 1.6.0 → 1.6.2, release notes:
+  * `1.6.1 <https://jolokia.org/changes-report.html#a1.6.1>`__
+  * `1.6.2 <https://jolokia.org/changes-report.html#a1.6.2>`__
 
 * Netty 4.1.34 → 4.1.36, release notes:
   * `4.1.35 <https://netty.io/news/2019/04/17/4-1-35-Final.html>`__
   * `4.1.36 <https://netty.io/news/2019/04/30/4-1-36-Final.html>`__
 
+* triemap `1.0.4 → 1.0.5 <https://github.com/PantheonTechnologies/triemap/releases/tag/triemap-1.0.5>`__
+
 * XBean finder `4.13 → 4.14 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12345220>`__
+
+* xmlunit `2.6.2 → 2.6.3 <https://github.com/xmlunit/xmlunit/releases/tag/v2.6.3>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+
+* maven-archetype-plugin 3.0.1 → 3.1.1, release notes:
+  * `3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122&version=12340346>`__
+  * `3.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122&version=12345450>`__
+
+* maven-bundle-plugin `4.1.0 → 4.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12345047>`__
+
+* maven-checkstyle-plugin `3.1.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12342397>`__
+
+* maven-compiler-plugin `3.8.0 → 3.8.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12343484>`__
+
+* maven-help-plugin `3.1.1 → 3.2.0 <https://blog.soebes.de/blog/2019/04/22/apache-maven-help-plugin-version-3-dot-2-0-released/>`__
+
+* maven-jar-plugin `3.1.1 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12344629>`__
+
+* maven-plugin-plugin `3.5.2 → 3.6.0 <https://blogs.apache.org/maven/entry/apache-maven-plugin-tools-version1>`__
+
+* maven-source-plugin `3.0.1 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924&version=12336941>`__
+
+* maven-surefire-plugin 2.22.1 → 2.22.2
 
 Version 4.0.10
 --------------
