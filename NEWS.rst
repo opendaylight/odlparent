@@ -26,10 +26,6 @@ The following dependencies have been upgraded:
 
 * Jolokia `1.6.0 → 1.6.1 <https://jolokia.org/changes-report.html#a1.6.1>`__
 
-* maven-surefire-plugin `3.5.2 → 3.6.0 <https://blogs.apache.org/maven/entry/apache-maven-plugin-tools-version1>`__
-
-* maven-surefire-plugin 2.22.1 → 2.22.2
-
 * Mockito `2.25.0 → 2.25.1 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2251>`__
 
 * Netty 4.1.34 → 4.1.36, release notes:
@@ -49,6 +45,29 @@ The following dependencies have been upgraded:
   * `4.14 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12345220>`__
 
 * Xtend `2.17.0 → 2.17.1 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/04/03/version-2-17-1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+
+* maven-archetype-plugin 3.0.1 → 3.1.1, release notes:
+  * `3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122&version=12340346>`__
+  * `3.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122&version=12345450>`__
+
+* maven-bundle-plugin `4.1.0 → 4.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12345047>`__
+
+* maven-checkstyle-plugin `3.1.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12342397>`__
+
+* maven-compiler-plugin `3.8.0 → 3.8.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12343484>`__
+
+* maven-help-plugin `3.1.1 → 3.2.0 <https://blog.soebes.de/blog/2019/04/22/apache-maven-help-plugin-version-3-dot-2-0-released/>`__
+
+* maven-jar-plugin `3.1.1 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12344629>`__
+
+* maven-plugin-plugin `3.5.2 → 3.6.0 <https://blogs.apache.org/maven/entry/apache-maven-plugin-tools-version1>`__
+
+* maven-source-plugin `3.0.1 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924&version=12336941>`__
+
+* maven-surefire-plugin 2.22.1 → 2.22.2
 
 New features
 ~~~~~~~~~~~~
