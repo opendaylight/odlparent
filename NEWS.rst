@@ -22,15 +22,23 @@ The following dependencies have been upgraded:
 
 * commons-lang3 `3.8.1 → 3.9 <http://www.apache.org/dist/commons/lang/RELEASE-NOTES.txt>`__
 
+* JaCoCo `0.8.3 → 0.8.4 <https://github.com/jacoco/jacoco/releases/tag/v0.8.4>`__
+
 * Jackson `2.9.8 → 2.9.9 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.9>`__
 
-* Jolokia `1.6.0 → 1.6.1 <https://jolokia.org/changes-report.html#a1.6.1>`__
+* Jolokia 1.6.0 → 1.6.2, release notes:
+  * `1.6.1 <https://jolokia.org/changes-report.html#a1.6.1>`__
+  * `1.6.2 <https://jolokia.org/changes-report.html#a1.6.2>`__
 
 * Mockito `2.25.0 → 2.25.1 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2251>`__
 
 * Netty 4.1.34 → 4.1.36, release notes:
   * `4.1.35 <https://netty.io/news/2019/04/17/4-1-35-Final.html>`__
   * `4.1.36 <https://netty.io/news/2019/04/30/4-1-36-Final.html>`__
+
+* PowerMock 2.0.0 → 2.0.2, release notes:
+  * `2.0.1 <https://github.com/powermock/powermock/releases/tag/powermock-2.0.1>`__
+  * `2.0.2 <https://github.com/powermock/powermock/releases/tag/powermock-2.0.2>`__
 
 * Reactive Streams `1.0.1 → 1.0.2 <https://www.lightbend.com/blog/update-reactive-streams-102-released>`__
 
@@ -40,9 +48,13 @@ The following dependencies have been upgraded:
 
 * Typesafe Config `1.3.2 → 1.3.3 <https://github.com/lightbend/config/releases/tag/v1.3.3>`__
 
+* triemap `1.0.4 → 1.0.5 <https://github.com/PantheonTechnologies/triemap/releases/tag/triemap-1.0.5>`__
+
 * XBean finder 4.12 → 4.14, release notes:
   * `4.13 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12344253&projectId=12310312>`__
   * `4.14 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12345220>`__
+
+* xmlunit `2.6.2 → 2.6.3 <https://github.com/xmlunit/xmlunit/releases/tag/v2.6.3>`__
 
 * Xtend `2.17.0 → 2.17.1 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/04/03/version-2-17-1>`__
 
@@ -68,6 +80,12 @@ Plugin upgrades
 * maven-source-plugin `3.0.1 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924&version=12336941>`__
 
 * maven-surefire-plugin 2.22.1 → 2.22.2
+
+New plugins
+~~~~~~~~~~~
+
+* ``modernizer-maven-plugin`` declared, allowing downstreams to more easily activate it,
+  and so detect code which should be updated to more modern equivalent.
 
 New features
 ~~~~~~~~~~~~
