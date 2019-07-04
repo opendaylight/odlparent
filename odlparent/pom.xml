@@ -913,6 +913,11 @@
       </dependency>
       <dependency>
         <groupId>org.xmlunit</groupId>
+        <artifactId>xmlunit-assertj</artifactId>
+        <version>2.6.3</version>
+      <scope>test</scope>
+      <dependency>
+        <groupId>org.xmlunit</groupId>
         <artifactId>xmlunit-matchers</artifactId>
         <version>2.6.3</version>
         <scope>test</scope>
