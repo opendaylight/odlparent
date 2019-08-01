@@ -41,11 +41,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- Java Versions -->
-    <!-- FIXME: remove these in favor of maven.compiler.release once we require JDK9+ -->
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <java.version.source>${maven.compiler.source}</java.version.source>
-    <java.version.target>${maven.compiler.target}</java.version.target>
+    <maven.compiler.release>11</maven.compiler.release>
 
     <!-- Used in openflowplugin -->
     <enforcer.version>3.0.0-M2</enforcer.version>
@@ -1898,24 +1894,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <profiles>
-    <profile>
-      <id>jdk9-compile</id>
-      <activation>
-        <jdk>[9,)</jdk>
-        <property>
-          <!-- Unless the release is overridden by a system property -->
-          <name>!maven.compiler.release</name>
-        </property>
-      </activation>
-
-      <!-- For JDK9+ we want to pass -release to javac -->
-      <properties>
-        <maven.compiler.release>8</maven.compiler.release>
-      </properties>
-    </profile>
-  </profiles>
 
   <reporting>
     <plugins>
