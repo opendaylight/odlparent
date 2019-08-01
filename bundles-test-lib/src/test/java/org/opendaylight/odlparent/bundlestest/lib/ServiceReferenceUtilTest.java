@@ -10,8 +10,8 @@ package org.opendaylight.odlparent.bundlestest.lib;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
@@ -43,7 +43,7 @@ public class ServiceReferenceUtilTest {
 
     private static final class TestServiceReference implements ServiceReference<Object> {
 
-        private final Map<String, Object> properties = Maps.newHashMap();
+        private final Map<String, Object> properties = new HashMap<>();
 
         TestServiceReference() {
             properties.put("property1", "value1");

@@ -1817,6 +1817,10 @@
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
       </plugin>
+      <plugin>
+        <groupId>org.gaul</groupId>
+        <artifactId>modernizer-maven-plugin</artifactId>
+      </plugin>
 
       <!-- Jacoco / Sonar -->
       <plugin>
