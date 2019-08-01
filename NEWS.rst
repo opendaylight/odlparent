@@ -2,6 +2,12 @@
 ODL Parent release notes
 ========================
 
+Version 6.0.0
+-------------
+This is a major upgrade from version 5, with breaking changes; projects will
+need to make changes to upgrade to this version.
+
+
 Version 5.0.1
 -------------
 
