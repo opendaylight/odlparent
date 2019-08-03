@@ -1,0 +1,5 @@
+---
+distribution_type: 'maven'
+version: '4.0.12'
+project: 'odlparent'
+log_dir: 'odlparent-maven-stage-4.0.x/152'
