@@ -40,7 +40,7 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-persistence_2.12</artifactId>
+            <artifactId>akka-persistence_2.13</artifactId>
         </dependency>
     </dependencies>
 

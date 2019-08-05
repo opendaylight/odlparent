@@ -33,7 +33,7 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-scala-2.12</artifactId>
+            <artifactId>odl-akka-scala-2.13</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
