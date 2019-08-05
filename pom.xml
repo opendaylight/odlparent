@@ -64,6 +64,9 @@
         <!-- Artifacts -->
         <module>odlparent-artifacts</module>
 
+        <!-- Aggragated javadocs -->
+        <module>docs</module>
+
         <!-- Self-tests -->
         <module>odlparent-bundle-check</module>
         <module>odlparent-dependency-check</module>
