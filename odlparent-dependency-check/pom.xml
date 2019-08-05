@@ -117,43 +117,43 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_2.12</artifactId>
+            <artifactId>akka-actor_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-cluster_2.12</artifactId>
+            <artifactId>akka-cluster_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-osgi_2.12</artifactId>
+            <artifactId>akka-osgi_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-persistence_2.12</artifactId>
+            <artifactId>akka-persistence_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-persistence-tck_2.12</artifactId>
+            <artifactId>akka-persistence-tck_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-protobuf_2.12</artifactId>
+            <artifactId>akka-protobuf_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-remote_2.12</artifactId>
+            <artifactId>akka-remote_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-slf4j_2.12</artifactId>
+            <artifactId>akka-slf4j_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-stream_2.12</artifactId>
+            <artifactId>akka-stream_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-testkit_2.12</artifactId>
+            <artifactId>akka-testkit_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe</groupId>
@@ -161,7 +161,7 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe</groupId>
-            <artifactId>ssl-config-core_2.12</artifactId>
+            <artifactId>ssl-config-core_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.webcohesion.enunciate</groupId>
@@ -570,11 +570,11 @@
         </dependency>
         <dependency>
             <groupId>org.scala-lang.modules</groupId>
-            <artifactId>scala-java8-compat_2.12</artifactId>
+            <artifactId>scala-java8-compat_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>org.scala-lang.modules</groupId>
-            <artifactId>scala-parser-combinators_2.12</artifactId>
+            <artifactId>scala-parser-combinators_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
