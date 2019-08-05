@@ -1456,7 +1456,7 @@
           <artifactId>modernizer-maven-plugin</artifactId>
           <version>1.8.0</version>
           <configuration>
-            <javaVersion>1.11</javaVersion>
+            <javaVersion>1.8</javaVersion>
           </configuration>
 
           <executions>
