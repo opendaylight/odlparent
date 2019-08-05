@@ -919,6 +919,17 @@
         <scope>test</scope>
       </dependency>
 
+      <!-- Annotations for modernizer-maven-plugin -->
+      <dependencies>
+        <dependency>
+          <groupId>org.gaul</groupId>
+          <artifactId>modernizer-maven-annotations</artifactId>
+          <!-- This should match the plugin version below -->
+          <version>1.8.0</version>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-bom</artifactId>
@@ -1117,6 +1128,11 @@
       <artifactId>spotbugs-annotations</artifactId>
       <scope>provided</scope>
       <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.gaul</groupId>
+      <artifactId>modernizer-maven-annotations</artifactId>
+      <scope>provided</scope>
     </dependency>
 
     <!--
