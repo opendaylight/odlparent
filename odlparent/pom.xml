@@ -1218,7 +1218,8 @@
             <excludes>
               org/opendaylight/yang/gen/**,
               **/protobuff/messages/**,
-              **/thrift/gen/*.java
+              **/thrift/gen/*.java,
+              **/module-info.java
             </excludes>
             <failsOnError>false</failsOnError>
             <consoleOutput>true</consoleOutput>
