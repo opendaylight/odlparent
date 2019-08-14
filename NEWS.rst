@@ -2,6 +2,30 @@
 ODL Parent release notes
 ========================
 
+Version 3.1.9
+=============
+This is a bug-fix/security upgrade from version 3.1.8.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+The following dependencies have been upgraded:
+
+* commons-beanutils `1.9.3 → 1.9.4 <https://www.apache.org/dist/commons/beanutils/RELEASE-NOTES.txt>`__
+
+* jackson-databind `2.9.9 → 2.9.9.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9#micro-patches>`__
+
+* netty 4.1.31 → 4.1.39, release notes:
+  * `4.1.32 <https://netty.io/news/2018/11/29/4-1-32-Final.html>`__
+  * `4.1.33 <https://netty.io/news/2019/01/21/4-1-33-Final.html>`__
+  * `4.1.34 <https://netty.io/news/2019/03/08/4-1-34-Final.html>`__
+  * `4.1.35 <https://netty.io/news/2019/04/17/4-1-35-Final.html>`__
+  * `4.1.36 <https://netty.io/news/2019/04/30/4-1-36-Final.html>`__
+  * `4.1.37 <https://netty.io/news/2019/06/28/4-1-37-Final.html>`__
+  * `4.1.38 <https://netty.io/news/2019/07/24/4-1-38-Final.html>`__
+  * `4.1.39 <https://netty.io/news/2019/08/13/4-1-39-Final.html>`__
+
+* Scala `2.12.8 → 2.12.9 <https://github.com/scala/scala/releases/tag/v2.12.9>`__
+
 Version 3.1.8
 =============
 
