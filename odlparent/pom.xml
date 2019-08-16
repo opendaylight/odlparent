@@ -1303,6 +1303,7 @@
                 </artifactItems>
                 <outputDirectory>${project.build.outputDirectory}</outputDirectory>
                 <excludes>META-INF/**</excludes>
+                <silent>true</silent>
               </configuration>
             </execution>
           </executions>
