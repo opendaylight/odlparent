@@ -14,6 +14,8 @@ dependencies have been upgraded:
 
 * Akka `2.5.23 → 2.5.24 <https://akka.io/blog/news/2019/08/09/akka-2.5.24-released>`__
 
+* commons-beanutils `1.9.3 → 1.9.4 <https://www.apache.org/dist/commons/beanutils/RELEASE-NOTES.txt>`__
+
 * commons-codec `1.12 → 1.13 <http://www.apache.org/dist/commons/codec/RELEASE-NOTES.txt>`__
 
 * commons-text `1.6 → 1.7 <https://commons.apache.org/proper/commons-text/changes-report.html#a1.7>`__
