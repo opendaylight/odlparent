@@ -83,6 +83,16 @@
          set to 'true' in pom.xml of project which desires to completely skip
          execution. -->
     <odlparent.modernizer.skip>false</odlparent.modernizer.skip>
+
+    <!-- Opt-out from spotbugs-maven-plugin failing the build on violations. Defaults
+         to true. Set to 'false' in pom.xml of project which desires to not enforce
+         no reported violations. -->
+    <odlparent.spotbugs.enforce>true</odlparent.spotbugs.enforce>
+
+    <!-- Opt-out from running spotbugs-maven-plugin at all. Defaults to false,
+         set to 'true' in pom.xml of project which desires to completely skip
+         execution. -->
+    <odlparent.spotbugs.skip>false</odlparent.spotbugs.skip>
   </properties>
 
   <dependencyManagement>
@@ -1524,7 +1534,8 @@
             <!-- Reports all bugs (other values are medium and max) -->
             <threshold>Low</threshold>
             <!-- Build doesn't fail if problems are found -->
-            <failOnError>false</failOnError>
+            <failOnError>${odlparent.spotbugs.enforce}</failOnError>
+            <skip>${odlparent.spotbugs.skip}</skip>
             <!-- References the excluded rules -->
             <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
             <!-- Produces XML report -->
@@ -1839,6 +1850,10 @@
       <plugin>
         <groupId>org.gaul</groupId>
         <artifactId>modernizer-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
       </plugin>
 
       <!-- Jacoco / Sonar -->
