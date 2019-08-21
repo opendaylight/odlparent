@@ -87,9 +87,6 @@
             </configuration>
           </execution>
         </executions>
-        <configuration>
-          <propertyExpansion>checkstyle.violationSeverity=error</propertyExpansion>
-        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-plugin-plugin</artifactId>
