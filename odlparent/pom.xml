@@ -73,6 +73,10 @@
 
     <!-- Redirect test output to files (overridable) -->
     <maven.test.redirectTestOutputToFile>true</maven.test.redirectTestOutputToFile>
+
+    <!-- Opt-in into maven-modernizer-plugin failing the build on violations. Defaults
+         to false, expected to be overridden by users wishing to enable enforcement. -->
+    <odlparent.modernizer.enforce>false</odlparent.modernizer.enforce>
   </properties>
 
   <dependencyManagement>
@@ -1459,6 +1463,7 @@
           <version>1.8.0</version>
           <configuration>
             <javaVersion>1.8</javaVersion>
+            <failOnViolations>${odlparent.modernizer.enforce}</failOnViolations>
           </configuration>
 
           <executions>
