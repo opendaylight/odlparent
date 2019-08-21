@@ -73,6 +73,16 @@
 
     <!-- Redirect test output to files (overridable) -->
     <maven.test.redirectTestOutputToFile>true</maven.test.redirectTestOutputToFile>
+
+    <!-- Opt-in into modernizer-maven-plugin failing the build on violations. Defaults
+         to false. Set to 'true' in pom.xml of project which desires to enforce
+         no reported violations. -->
+    <odlparent.modernizer.enforce>false</odlparent.modernizer.enforce>
+
+    <!-- Opt-out from running modernizer-maven-plugin at all. Defaults to false,
+         set to 'true' in pom.xml of project which desires to completely skip
+         execution. -->
+    <odlparent.modernizer.skip>false</odlparent.modernizer.skip>
   </properties>
 
   <dependencyManagement>
@@ -1459,6 +1469,8 @@
           <version>1.8.0</version>
           <configuration>
             <javaVersion>1.8</javaVersion>
+            <failOnViolations>${odlparent.modernizer.enforce}</failOnViolations>
+            <skip>${odlparent.modernizer.skip}</skip>
           </configuration>
 
           <executions>
