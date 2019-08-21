@@ -22,6 +22,10 @@
     <packaging>bundle</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
+    <properties>
+        <odlparent.spotbugs.enforce>false</odlparent.spotbugs.enforce>
+    </properties>
+
     <dependencies>
         <!-- Dependencies for pax exam karaf container -->
         <dependency>
