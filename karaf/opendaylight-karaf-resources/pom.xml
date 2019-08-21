@@ -156,7 +156,7 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
-            <id>copy</id>
+            <id>copy-framework-extensions</id>
             <goals>
               <goal>copy</goal>
             </goals>
@@ -179,6 +179,7 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
                     <destFileName>bcpkix-jdk15on-${bouncycastle.version}.jar</destFileName>
                 </artifactItem>
               </artifactItems>
+              <silent>true</silent>
             </configuration>
           </execution>
         </executions>

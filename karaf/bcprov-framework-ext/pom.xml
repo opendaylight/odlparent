@@ -45,6 +45,7 @@
                         <configuration>
                             <includes>**/MANIFEST.MF</includes>
                             <includeArtifactIds>bcprov-ext-jdk15on</includeArtifactIds>
+                            <silent>true</silent>
                         </configuration>
                     </execution>
                 </executions>
