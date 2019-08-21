@@ -75,12 +75,6 @@
           </instructions>
         </configuration>
       </plugin>
-      <plugin>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-          <propertyExpansion>checkstyle.violationSeverity=error</propertyExpansion>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 
