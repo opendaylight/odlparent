@@ -139,7 +139,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>copy</id>
+                        <id>apply-branding</id>
                         <goals>
                             <goal>copy</goal>
                         </goals>
@@ -154,6 +154,7 @@
                                     <destFileName>karaf.branding-3.0.0-SNAPSHOT.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
+                            <silent>true</silent>
                         </configuration>
                     </execution>
                     <execution>
@@ -169,6 +170,7 @@
                             <excludes>META-INF\/**</excludes>
                             <excludeTransitive>true</excludeTransitive>
                             <ignorePermissions>false</ignorePermissions>
+                            <silent>true</silent>
                         </configuration>
                     </execution>
                     <execution>
