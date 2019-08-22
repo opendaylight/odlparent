@@ -99,6 +99,11 @@
          no reported violations. -->
     <odlparent.spotbugs.enforce>true</odlparent.spotbugs.enforce>
 
+    <!-- Flag controlling whether SpotBugs should run in a forked JVM. Defaults to
+         false to keep a hot VM around. Set to 'true' to have the analysis run in a
+         forked JVM. -->
+    <odlparent.spotbugs.fork>false</odlparent.spotbugs.fork>
+
     <!-- Opt-out from running spotbugs-maven-plugin at all. Defaults to false,
          set to 'true' in pom.xml of project which desires to completely skip
          execution. -->
@@ -1541,6 +1546,8 @@
             <xmlOutput>true</xmlOutput>
             <!-- Configures the directory in which the XML report is created -->
             <findbugsXmlOutputDirectory>${project.build.directory}/spotbugs</findbugsXmlOutputDirectory>
+            <!-- Do not run spotbugs in a separate JVM -->
+            <fork>${odlparent.spotbugs.fork}</fork>
           </configuration>
           <executions>
             <!--
