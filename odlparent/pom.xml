@@ -79,11 +79,6 @@
          no reported violations. -->
     <odlparent.checkstyle.enforce>true</odlparent.checkstyle.enforce>
 
-    <!-- Opt-out from running maven-checkstyle-plugin at all. Defaults to false,
-         set to 'true' in pom.xml of project which desires to completely skip
-         execution. -->
-    <odlparent.checkstyle.skip>false</odlparent.checkstyle.skip>
-
     <!-- Opt-in into modernizer-maven-plugin failing the build on violations. Defaults
          to false. Set to 'true' in pom.xml of project which desires to enforce
          no reported violations. -->
@@ -98,11 +93,6 @@
          to true. Set to 'false' in pom.xml of project which desires to not enforce
          no reported violations. -->
     <odlparent.spotbugs.enforce>true</odlparent.spotbugs.enforce>
-
-    <!-- Opt-out from running spotbugs-maven-plugin at all. Defaults to false,
-         set to 'true' in pom.xml of project which desires to completely skip
-         execution. -->
-    <odlparent.spotbugs.skip>false</odlparent.spotbugs.skip>
   </properties>
 
   <dependencyManagement>

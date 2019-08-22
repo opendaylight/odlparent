@@ -86,6 +86,16 @@
     <!-- This property allows installations to be skipped in child modules -->
     <maven.install.skip>false</maven.install.skip>
 
+    <!-- Opt-out from running maven-checkstyle-plugin at all. Defaults to false,
+         set to 'true' in pom.xml of project which desires to completely skip
+         execution. -->
+    <odlparent.checkstyle.skip>false</odlparent.checkstyle.skip>
+
+    <!-- Opt-out from running spotbugs-maven-plugin at all. Defaults to false,
+         set to 'true' in pom.xml of project which desires to completely skip
+         execution. -->
+    <odlparent.spotbugs.skip>false</odlparent.spotbugs.skip>
+
     <!-- Used in neutron, ovsdb -->
     <jacoco.version>0.8.4</jacoco.version>
   </properties>
@@ -375,8 +385,8 @@
         <jacoco.skip>true</jacoco.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <maven.source.skip>true</maven.source.skip>
-        <checkstyle.skip>true</checkstyle.skip>
-        <spotbugs.skip>true</spotbugs.skip>
+        <odlparent.checkstyle.skip>true</odlparent.checkstyle.skip>
+        <odlparent.spotbugs.skip>true</odlparent.spotbugs.skip>
         <pmd.skip>true</pmd.skip>
         <cpd.skip>true</cpd.skip>
         <maven.site.skip>true</maven.site.skip>
