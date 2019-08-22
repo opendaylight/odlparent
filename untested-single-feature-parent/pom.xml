@@ -83,8 +83,7 @@
                         <excludedArtifactId>bcpkix-jdk15on</excludedArtifactId>
                         <!-- JAXB -->
                         <excludedArtifactId>jaxb-api</excludedArtifactId>
-                        <excludedArtifactId>jaxb-core</excludedArtifactId>
-                        <excludedArtifactId>jaxb-impl</excludedArtifactId>
+                        <excludedArtifactId>jaxb-runtime</excludedArtifactId>
                         <!-- javax.annotation -->
                         <excludedArtifactId>activation</excludedArtifactId>
                     </excludedArtifactIds>
