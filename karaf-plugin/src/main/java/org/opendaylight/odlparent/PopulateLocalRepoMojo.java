@@ -150,13 +150,15 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             prop.load(is);
             String featuresRepositories = prop.getProperty("featuresRepositories");
             for (String mvnUrl : featuresRepositories.split(",")) {
-                String fixedUrl = mvnUrl.replace("${karaf.home}", karafHome);
+                String fixedUrl = mvnUrl
+                        .replace("${karaf.home}", karafHome)
+                        .replace("${karaf.etc}", karafHome + "/etc");
                 if (fixedUrl.startsWith("file:")) {
                     try {
                         // Local feature file
                         features.add(featureUtil.readFeature(new File(new URI(fixedUrl))));
                     } catch (URISyntaxException e) {
-                        LOG.info("Could not resolve URI: {}", fixedUrl, e);
+                        throw new IllegalArgumentException("Could not resolve URI: " + fixedUrl, e);
                     }
                 } else {
                     artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(fixedUrl))));
