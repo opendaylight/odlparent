@@ -156,7 +156,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
                         // Local feature file
                         features.add(featureUtil.readFeature(new File(new URI(fixedUrl))));
                     } catch (URISyntaxException e) {
-                        LOG.info("Could not resolve URI: {}", fixedUrl, e);
+                        throw new IllegalArgumentException("Could not resolve URI: " + fixedUrl, e);
                     }
                 } else {
                     artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(fixedUrl))));
