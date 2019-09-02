@@ -12,7 +12,9 @@ Third-party dependencies
 The dependency on `xmlunit-assertj` has been added and the following
 dependencies have been upgraded:
 
-* Akka `2.5.23 → 2.5.24 <https://akka.io/blog/news/2019/08/09/akka-2.5.24-released>`__
+* Akka 2.5.23 → 2.5.25, release notes:
+  * `2.5.24 <https://akka.io/blog/news/2019/08/09/akka-2.5.24-released>`__
+  * `2.5.25 <https://akka.io/blog/news/2019/08/20/akka-2.5.25-released>`__
 
 * commons-beanutils `1.9.3 → 1.9.4 <https://www.apache.org/dist/commons/beanutils/RELEASE-NOTES.txt>`__
 
