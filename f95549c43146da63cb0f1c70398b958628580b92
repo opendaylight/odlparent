@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "74dcdcb4_d9a26e87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2019-09-03T07:53:24Z",
+      "side": 1,
+      "message": "Something’s missing here ;-)",
+      "revId": "f95549c43146da63cb0f1c70398b958628580b92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
