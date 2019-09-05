@@ -16,6 +16,24 @@
       "revId": "6d61244d806358311b41f7028241aeeb684c3f69",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a561d44_a4b03444",
+        "filename": "features-odlparent/src/main/features/features.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2019-09-05T14:48:51Z",
+      "side": 1,
+      "message": "Right, but that is a separate patch",
+      "parentUuid": "9a561d44_2630b69d",
+      "revId": "6d61244d806358311b41f7028241aeeb684c3f69",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
