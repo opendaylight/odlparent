@@ -7,6 +7,120 @@ Version 6.0.0
 This is a major upgrade from version 5, with breaking changes; projects will
 need to make changes to upgrade to this version.
 
+Java 11 is required
+~~~~~~~~~~~~~~~~~~~
+This release sets ``maven.compiler.release=11`` and enforces that the JDK used to build
+is Java 11+. As there may be issues with various maven plugins when faced with JDK9+
+constructs and JDK11+ classes, target release can be controlled on a per-artifact
+basis (i.e. target Java 10 with ``maven.compiler.release=10`` property).
+
+This release has been validated with ``openjdk-11.0.4`` and is not supported on any lower
+version. As usual, we recommend using latest available JDK/JRE for Java 11 during development
+and deployment.
+
+Checkstyle/SpotBugs/Modernizer run by default
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+With this release code artifacts always run ``maven-checkstyle-plugin``, ``spotbugs-maven-plugin``
+and ``modernizer-maven-plugin``. Checkstyle and SpotBugs run in enforcing mode, i.e. will fail
+build if any violations are found. Modernizer is configured to report Java 8-compatible constructs
+and will not fail the build unless instructed to do so.
+
+Behavior of each of these is controlled via a maven property on a per-artifact basis:
+* ``odlparent.checkstyle.enforce`` controls checkstyle enforcement: defaults to ``true``, but can be set to ``false``
+* ``odlparent.checkstyle.skip`` controls checkstyle invocation: defaults to ``false``, but can be set to ``true``
+* ``odlparent.spotbugs.enforce`` controls SpotBugs enforcement: defaults to ``true``, but can be set to ``false``
+* ``odlparent.spotbugs.skip`` controls SpotBugs invocation: defaults to ``false``, but can be set to ``true``
+* ``odlparent.modernizer.enforce`` controls modernizer enforcement: defaults to ``false``, but can be set to ``true``
+* ``odlparent.modernizer.skip`` controls modernizer invocation: defaults to ``false``, but can be set to ``true``
+* ``odlparent.modernizer.target`` controls modernizer Java version: defaults to ``1.8``, but can be set to ``1.11``
+  or similar
+
+Bug fixes
+~~~~~~~~~
+
+* ``blueprint container`` had ``org.apache.aries.blueprint.preemptiveShutdown`` set to false
+  to enable it to work with Config Subsystem. As that component is long gone, this property has
+  been removed as part of `ODLPARENT-34 <https://jira.opendaylight.org/browse/ODLPARENT-34>`__.
+  Furthermore, system properties related to Config Subsystem/NETCONF integration have been removed
+  as well.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following upstream dependencies have been removed from dependency management:
+
+* com.google.code.findbugs/jsr305
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The dependency on `xmlunit-assertj` and `modernizer-maven-annotations` has been added and the following
+dependencies have been upgraded:
+
+* Akka 2.5.23 → 2.5.25, release notes:
+  * `2.5.24 <https://akka.io/blog/news/2019/08/09/akka-2.5.24-released>`__
+  * `2.5.25 <https://akka.io/blog/news/2019/08/20/akka-2.5.25-released>`__
+
+* apache-sshd `2.2.0 → 2.3.0 <https://github.com/apache/mina-sshd/blob/master/docs/changes/2.3.0.md>`__
+
+* Bouncy Castle `1.62 → 1.63 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* commons-beanutils `1.9.3 → 1.9.4 <https://www.apache.org/dist/commons/beanutils/RELEASE-NOTES.txt>`__
+
+* commons-codec `1.12 → 1.13 <http://www.apache.org/dist/commons/codec/RELEASE-NOTES.txt>`__
+
+* commons-text 1.6 → 1.8, release notes:
+  * `1.7 <https://commons.apache.org/proper/commons-text/changes-report.html#a1.7>`__
+  * `1.8 <https://commons.apache.org/proper/commons-text/changes-report.html#a1.8>`__
+
+* Checkstyle 8.18 → 8.20, release notes:
+  * `8.19 <https://checkstyle.org/releasenotes.html#Release_8.19>`__
+  * `8.20 <https://checkstyle.org/releasenotes.html#Release_8.20>`__
+
+* jackson-databind `2.9.9 → 2.9.9.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9#micro-patches>`__
+
+* jaxb-api 2.2.8 → 2.3.0, aligning it with Karaf-provided version
+
+* Netty 4.1.36 → 4.1.39, release notes:
+  * `4.1.37 <https://netty.io/news/2019/06/28/4-1-37-Final.html>`__
+  * `4.1.38 <https://netty.io/news/2019/07/24/4-1-38-Final.html>`__
+  * `4.1.39 <https://netty.io/news/2019/08/13/4-1-39-Final.html>`__
+
+* Sevntu 1.32.0 → 1.35.0, release notes:
+  * `1.33.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.33.0>`__
+  * `1.34.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.34.0>`__
+  * `1.34.1 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.34.1>`__
+  * `1.35.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.35.0>`__
+
+* Scala 2.12.8 → 2.12.9, release notes:
+  * `2.12.9 <https://github.com/scala/scala/releases/tag/v2.12.9>`__
+  * `2.12.10 <https://github.com/scala/scala/releases/tag/v2.12.10>`__
+
+* slf4j `1.7.25 → 1.7.28 <https://www.slf4j.org/news.html>`__
+
+* triemap `1.0.5 → 1.0.6 <https://github.com/PantheonTechnologies/triemap/releases/tag/triemap-1.0.6>`__
+
+* typesafe/ssl-config `0.3.7 → 0.3.8 <https://github.com/lightbend/ssl-config/compare/v0.3.7...v0.3.8>`__
+
+* Xtend 1.17.1 → 1.19.0, release notes:
+  * `1.18.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/06/04/version-2-18-0>`__
+  * `1.19.0 <https://www.eclipse.org/Xtext/releasenotes.html#/releasenotes/2019/09/03/version-2-19-0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+
+* git-commit-id-plugin 2.2.6 → 3.0.1, release notes:
+  * `3.0.0 <https://github.com/git-commit-id/maven-git-commit-id-plugin/releases/tag/v3.0.0>`__
+  * `3.0.1 <https://github.com/git-commit-id/maven-git-commit-id-plugin/releases/tag/v3.0.1>`__
+
+* maven-javadoc-plugin `3.1.0 → 3.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12345060>`__
+
+* pmd-maven-plugin `3.11.0 → 3.12.0 <https://blogs.apache.org/maven/entry/apache-maven-pmd-plugin-version1>`__
+
+* spotbugs-maven-plugin 3.1.11  → 3.1.12.2, release notes:
+  * `3.1.12 <https://github.com/spotbugs/spotbugs-maven-plugin/compare/spotbugs-maven-plugin-3.1.11...spotbugs-maven-plugin-3.1.12>`__
+  * `3.1.12.1 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-3.1.12.1>`__
+  * `3.1.12.2 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-3.1.12.2>`__
 
 Version 5.0.1
 -------------
