@@ -20,7 +20,9 @@ dependencies have been upgraded:
 
 * commons-codec `1.12 → 1.13 <http://www.apache.org/dist/commons/codec/RELEASE-NOTES.txt>`__
 
-* commons-text `1.6 → 1.7 <https://commons.apache.org/proper/commons-text/changes-report.html#a1.7>`__
+* commons-text 1.6 → 1.8, release notes:
+  * `1.7 <https://commons.apache.org/proper/commons-text/changes-report.html#a1.7>`__
+  * `1.8 <https://commons.apache.org/proper/commons-text/changes-report.html#a1.8>`__
 
 * Checkstyle 8.18 → 8.20, release notes:
   * `8.19 <https://checkstyle.org/releasenotes.html#Release_8.19>`__
@@ -43,6 +45,10 @@ dependencies have been upgraded:
 * triemap `1.0.5 → 1.0.6 <https://github.com/PantheonTechnologies/triemap/releases/tag/triemap-1.0.6>`__
 
 * typesafe/ssl-config `0.3.7 → 0.3.8 <https://github.com/lightbend/ssl-config/compare/v0.3.7...v0.3.8>`__
+
+* Xtend 1.17.1 → 1.19.0, release notes:
+  * `1.18.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/06/04/version-2-18-0>`__
+  * `1.19.0 <https://www.eclipse.org/Xtext/releasenotes.html#/releasenotes/2019/09/03/version-2-19-0>`__
 
 Plugin upgrades
 ~~~~~~~~~~~~~~~
