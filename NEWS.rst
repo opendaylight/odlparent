@@ -40,7 +40,9 @@ dependencies have been upgraded:
   * `1.34.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.34.0>`__
   * `1.34.1 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.34.1>`__
 
-* Scala `2.12.8 → 2.12.9 <https://github.com/scala/scala/releases/tag/v2.12.9>`__
+* Scala 2.12.8 → 2.12.10, release notes:
+  * `2.12.9 <https://github.com/scala/scala/releases/tag/v2.12.9>`__
+  * `2.12.10 <https://github.com/scala/scala/releases/tag/v2.12.10>`__
 
 * typesafe/ssl-config `0.3.7 → 0.3.8 <https://github.com/lightbend/ssl-config/compare/v0.3.7...v0.3.8>`__
 
