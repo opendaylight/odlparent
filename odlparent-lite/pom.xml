@@ -355,6 +355,8 @@
             <always>true</always>
             <tags>true</tags>
           </gitDescribe>
+          <!-- trust the working directory -->
+          <offline>true</offline>
         </configuration>
       </plugin>
     </plugins>
