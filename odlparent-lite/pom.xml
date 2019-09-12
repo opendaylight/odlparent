@@ -317,7 +317,7 @@
       <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
-        <version>2.2.6</version>
+        <version>3.0.1</version>
         <executions>
           <execution>
             <id>get-git-infos</id>
@@ -335,6 +335,8 @@
             <always>true</always>
             <tags>true</tags>
           </gitDescribe>
+          <!-- trust the working directory -->
+          <offline>true</offline>
         </configuration>
       </plugin>
     </plugins>
