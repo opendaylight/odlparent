@@ -59,6 +59,8 @@ dependencies have been upgraded:
   * `2.5.24 <https://akka.io/blog/news/2019/08/09/akka-2.5.24-released>`__
   * `2.5.25 <https://akka.io/blog/news/2019/08/20/akka-2.5.25-released>`__
 
+* apache-sshd `2.2.0 → 2.3.0 <https://github.com/apache/mina-sshd/compare/sshd-2.2.0...sshd-2.3.0>`__
+
 * commons-beanutils `1.9.3 → 1.9.4 <https://www.apache.org/dist/commons/beanutils/RELEASE-NOTES.txt>`__
 
 * commons-codec `1.12 → 1.13 <http://www.apache.org/dist/commons/codec/RELEASE-NOTES.txt>`__
