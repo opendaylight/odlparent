@@ -84,6 +84,11 @@
          no reported violations. -->
     <odlparent.modernizer.enforce>false</odlparent.modernizer.enforce>
 
+    <!-- Target release for modernizer-maven-plugin. It defaults to '1.8',
+         meaning Java 8, but can be set to any version in pom.xml of project
+         which desires to override it (such as '1.11' for Java 11). -->
+    <odlparent.modernizer.target>1.8</odlparent.modernizer.target>
+
     <!-- Opt-out from spotbugs-maven-plugin failing the build on violations. Defaults
          to true. Set to 'false' in pom.xml of project which desires to not enforce
          no reported violations. -->
@@ -1461,7 +1466,7 @@
           <artifactId>modernizer-maven-plugin</artifactId>
           <version>1.9.0</version>
           <configuration>
-            <javaVersion>1.8</javaVersion>
+            <javaVersion>${odlparent.modernizer.target}</javaVersion>
             <failOnViolations>${odlparent.modernizer.enforce}</failOnViolations>
             <skip>${odlparent.modernizer.skip}</skip>
           </configuration>
