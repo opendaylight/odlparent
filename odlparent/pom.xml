@@ -1606,7 +1606,7 @@
                     <artifactId>maven-dependency-plugin</artifactId>
                     <versionRange>[2.10,)</versionRange>
                     <goals>
-                      <goal>unpack</goal>
+                      <goal>copy</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
