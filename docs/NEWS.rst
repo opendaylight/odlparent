@@ -29,6 +29,7 @@ build if any violations are found. Modernizer is configured to report Java 8-com
 and will not fail the build unless instructed to do so.
 
 Behavior of each of these is controlled via a maven property on a per-artifact basis:
+
 * ``odlparent.checkstyle.enforce`` controls checkstyle enforcement: defaults to ``true``, but can be set to ``false``
 * ``odlparent.checkstyle.skip`` controls checkstyle invocation: defaults to ``false``, but can be set to ``true``
 * ``odlparent.spotbugs.enforce`` controls SpotBugs enforcement: defaults to ``true``, but can be set to ``false``
