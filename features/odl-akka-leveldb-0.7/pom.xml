@@ -34,7 +34,6 @@
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>odl-guava</artifactId>
-            <version>${project.version}</version>
             <type>xml</type>
             <classifier>features</classifier>
         </dependency>
@@ -51,9 +50,8 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.fusesource.leveldbjni</groupId>
+            <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>leveldbjni-all</artifactId>
-            <version>1.8-odl</version>
         </dependency>
     </dependencies>
 
