@@ -49,6 +49,13 @@
                 <version>${project.version}</version>
             </dependency>
 
+            <!-- Legacy leveldbjni-all hack -->
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>leveldbjni-all</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>features-odlparent</artifactId>

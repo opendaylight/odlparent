@@ -3,7 +3,7 @@
     <feature version="0.0.0">
         <feature>odl-guava</feature>
         <feature>wrap</feature>
-        <bundle>mvn:org.fusesource.leveldbjni/leveldbjni-all/1.8-odl</bundle>
+        <bundle>mvn:org.opendaylight.odlparent/leveldbjni-all/${project.version}</bundle>
         <bundle>wrap:mvn:org.iq80.leveldb/leveldb/0.10</bundle>
     </feature>
 </features>
