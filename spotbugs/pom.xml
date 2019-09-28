@@ -11,21 +11,6 @@
   <artifactId>spotbugs</artifactId>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.1.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
-
   <scm>
     <connection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</connection>
     <developerConnection>scm:git:ssh://git.opendaylight.org:29418/odlparent.git</developerConnection>
