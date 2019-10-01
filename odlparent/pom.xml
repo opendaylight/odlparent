@@ -335,8 +335,11 @@
         <groupId>com.google.inject</groupId>
         <artifactId>guice</artifactId>
         <!-- Make sure this version is in sync with the one used by mycila-guice-jsr250 above
-             by checking it here: https://github.com/mycila/guice/blob/master/pom.xml#L103 -->
-        <version>4.1.0</version>
+             by checking it here: https://github.com/mycila/guice/blob/master/pom.xml#L103.
+
+             Well, mycila is dead as a dodo and we need to support Java 11. This is the best
+             we can do in the interim. -->
+        <version>4.2.2</version>
       </dependency>
       <dependency>
         <groupId>commons-beanutils</groupId>
