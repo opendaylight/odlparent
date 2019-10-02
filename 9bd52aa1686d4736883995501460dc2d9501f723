@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "d12bf2b7_1b46969f",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2019-10-02T05:43:25Z",
+      "side": 1,
+      "message": "https://junit.org/junit4/javadoc/4.12/ ?",
+      "revId": "9bd52aa1686d4736883995501460dc2d9501f723",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5c7a6dde_1cb5907f",
         "filename": "odlparent/pom.xml",
         "patchSetId": 10
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "5c7a6dde_1cb5907f",
+      "revId": "9bd52aa1686d4736883995501460dc2d9501f723",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "41a7f36e_ec9281dc",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5867
+      },
+      "writtenOn": "2019-10-02T05:43:25Z",
+      "side": 1,
+      "message": "Thanks for also having removed this obsolete inline comment for future clarity.",
+      "parentUuid": "ec23e995_282f36d1",
       "revId": "9bd52aa1686d4736883995501460dc2d9501f723",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": false
