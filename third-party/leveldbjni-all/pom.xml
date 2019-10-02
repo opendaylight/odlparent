@@ -43,8 +43,8 @@
                 </executions>
             </plugin>
             <plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<configuration>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
                     <archive>
                         <manifestEntries>
                             <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
@@ -62,9 +62,9 @@
                             <Embed-Transitive>true</Embed-Transitive>
                             <Export-Package>org.fusesource.leveldbjni;uses:="org.iq80.leveldb";version="1.8",org.iq80.leveldb;version="0.6"</Export-Package>
                         </manifestEntries>
-					</archive>
-				</configuration>
-			</plugin>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
