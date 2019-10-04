@@ -152,7 +152,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             for (String mvnUrl : featuresRepositories.split(",")) {
                 String fixedUrl = mvnUrl
                         .replace("${karaf.home}", karafHome)
-                        .replace("${karaf.etc}", karafHome + "/etc");
+                        .replace("${karaf.etc}", karafHome + File.pathSeparatorChar + "etc");
                 if (fixedUrl.startsWith("file:")) {
                     try {
                         // Local feature file
