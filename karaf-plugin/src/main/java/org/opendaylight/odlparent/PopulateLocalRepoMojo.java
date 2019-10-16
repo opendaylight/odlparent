@@ -143,16 +143,23 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
 
     private void readFeatureCfg(AetherUtil aetherUtil, FeatureUtil featureUtil, Set<Artifact> artifacts,
             Set<Features> features) {
-        String karafHome = localRepo.getParent();
-        File file = new File(karafHome + "/etc/org.apache.karaf.features.cfg");
-        Properties prop = new Properties();
+        // Create file structure
+        final File karafHome = localRepo.getParentFile();
+        final File karafEtc = new File(karafHome, "etc");
+        final File file = new File(karafEtc, "org.apache.karaf.features.cfg");
+
+        final Properties prop = new Properties();
         try (InputStream is = new FileInputStream(file)) {
             prop.load(is);
-            String featuresRepositories = prop.getProperty("featuresRepositories");
+
+            // Note this performs path seaparator translation
+            final String karafHomePath = karafHome.toURI().getPath();
+            final String karafEtcPath = karafEtc.toURI().getPath();
+            final String featuresRepositories = prop.getProperty("featuresRepositories");
             for (String mvnUrl : featuresRepositories.split(",")) {
-                String fixedUrl = mvnUrl
-                        .replace("${karaf.home}", karafHome)
-                        .replace("${karaf.etc}", karafHome + File.pathSeparatorChar + "etc");
+                final String fixedUrl = mvnUrl
+                        .replace("${karaf.home}", karafHomePath)
+                        .replace("${karaf.etc}", karafEtcPath);
                 if (fixedUrl.startsWith("file:")) {
                     try {
                         // Local feature file
@@ -173,7 +180,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
 
     private Set<Artifact> readStartupProperties(AetherUtil aetherUtil) {
         Set<Artifact> artifacts = new LinkedHashSet<>();
-        File file = new File(localRepo.getParentFile().toString() + "/etc/startup.properties");
+        File file = new File(new File(localRepo.getParentFile(), "etc"), "startup.properties");
         Properties prop = new Properties();
         try (InputStream is = new FileInputStream(file)) {
             prop.load(is);
