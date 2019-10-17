@@ -19,7 +19,7 @@ Bug fixes
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Bouncy Castle `1.62 → 1.63 <http://www.bouncycastle.org/releasenotes.html>`__
+* Bouncy Castle `1.62 → 1.64 <http://www.bouncycastle.org/releasenotes.html>`__
 
 * apache-sshd `2.2.0 → 2.3.0 <https://github.com/apache/mina-sshd/blob/master/docs/changes/2.3.0.md>`__
 
