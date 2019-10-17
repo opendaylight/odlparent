@@ -4,6 +4,62 @@ ODL Parent release notes
 
 Version 6.0.1
 -------------
+This is a security/bug-fix upgrade from version 6.0.1.
+
+Bug fixes
+~~~~~~~~~
+* ``karaf-plugin`` ignored exceptions coming from its failure to resolve ${karaf.etc} variable. This
+  has now been fixed and the URL handling has been revised to fix build on Windows. See
+  `ODLPARENT-214 <https://jira.opendaylight.org/browse/ODLPARENT-214>`__ for details.
+
+* ``leveldb-jni`` jar, which has been seeded to nexus.opendaylight.org long time ago is not published
+  in Maven Central. This has been resolved by repackaging this jar and publishing it from odlparent.
+  See `ODLPARENT-210 <https://jira.opendaylight.org/browse/ODLPARENT-210>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Bouncy Castle `1.63 → 1.64 <http://www.bouncycastle.org/releasenotes.html>`__
+
+* Jackson `2.9.9 → 2.9.10 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.10>`__
+
+* Javassist 3.24.1-GA → 3.26.0-GA
+
+* Guice 4.1.0 → 4.2.2, release notes:
+  * `4.2.0 <https://github.com/google/guice/wiki/Guice42>`__
+  * `4.2.1 <https://github.com/google/guice/wiki/Guice421>`__
+  * `4.2.2 <https://github.com/google/guice/wiki/Guice422>`__
+
+* Mockito 2.25.1 → 2.28.2, release notes:
+  * `2.25.2 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2252>`__
+  * `2.25.3 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2253>`__
+  * `2.25.4 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2254>`__
+  * `2.25.5 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2255>`__
+  * `2.25.6 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2256>`__
+  * `2.25.7 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2257>`__
+  * `2.26.1 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2261>`__
+  * `2.26.2 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2262>`__
+  * `2.27.1 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2271>`__
+  * `2.27.2 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2272>`__
+  * `2.27.3 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2273>`__
+  * `2.27.4 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2274>`__
+  * `2.27.5 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2275>`__
+  * `2.28.0 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2280>`__
+
+* Netty 4.1.39 → 4.1.42, release notes:
+  * `4.1.41 <https://netty.io/news/2019/09/12/4-1-41-Final.html>`__
+  * `4.1.42 <https://netty.io/news/2019/09/25/4-1-42-Final.html>`__
+
+* pt-triemap `1.0.6 → 1.1.0 <https://github.com/PantheonTechnologies/triemap/releases/tag/triemap-1.1.0>`__
+
+* reactive-streams `1.0.2 → 1.0.3 <http://www.reactive-streams.org/announce-1.0.3>`__
+
+* stax2-api `3.1.4 → 4.2 <https://github.com/FasterXML/stax2-api/blob/master/release-notes/VERSION>`__
+
+* woodstox-core 5.0.3 → 5.3.0, release notes:
+  * `5.1.0 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-5.1>`__
+  * `5.2.0 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-5.2>`__
+  * `5.3.0 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-5.3>`__
 
 Version 6.0.0
 -------------
