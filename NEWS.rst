@@ -2,6 +2,12 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.13
+--------------
+This is a security/bug-fix upgrade from version 4.0.12.
+
+
+
 Version 4.0.12
 --------------
 This is a security/bug-fix upgrade from version 4.0.11.
