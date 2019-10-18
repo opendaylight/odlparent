@@ -2,6 +2,49 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.13
+--------------
+This is a security/bug-fix upgrade from version 4.0.12.
+
+Bug fixes
+~~~~~~~~~
+* ``karaf-plugin`` ignored exceptions coming from its failure to resolve ${karaf.etc} variable. This
+  has now been fixed and the URL handling has been revised to fix build on Windows. See
+  `ODLPARENT-214 <https://jira.opendaylight.org/browse/ODLPARENT-214>`__ for details.
+
+* ``leveldb-jni`` jar, which has been seeded to nexus.opendaylight.org long time ago is not published
+  in Maven Central. This has been resolved by repackaging this jar and publishing it from odlparent.
+  See `ODLPARENT-210 <https://jira.opendaylight.org/browse/ODLPARENT-210>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* apache-sshd `2.2.0 → 2.3.0 <https://github.com/apache/mina-sshd/blob/master/docs/changes/2.3.0.md>`__
+
+* Bouncy Castle `1.62 → 1.64 <http://www.bouncycastle.org/releasenotes.html>`__
+
+* Guice 4.1.0 → 4.2.2, release notes:
+  * `4.2.0 <https://github.com/google/guice/wiki/Guice42>`__
+  * `4.2.1 <https://github.com/google/guice/wiki/Guice421>`__
+  * `4.2.2 <https://github.com/google/guice/wiki/Guice422>`__
+
+* Jackson `2.9.9 → 2.9.10 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9.10>`__
+
+* Javassist 3.24.1-GA → 3.26.0-GA
+
+* Netty 4.1.39 → 4.1.42, release notes:
+  * `4.1.41 <https://netty.io/news/2019/09/12/4-1-41-Final.html>`__
+  * `4.1.42 <https://netty.io/news/2019/09/25/4-1-42-Final.html>`__
+
+* reactive-streams `1.0.2 → 1.0.3 <http://www.reactive-streams.org/announce-1.0.3>`__
+
+* stax2-api `3.1.4 → 4.2 <https://github.com/FasterXML/stax2-api/blob/master/release-notes/VERSION>`__
+
+* woodstox-core 5.0.3 → 5.3.0, release notes:
+  * `5.1.0 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-5.1>`__
+  * `5.2.0 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-5.2>`__
+  * `5.3.0 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-5.3>`__
+
 Version 4.0.12
 --------------
 This is a security/bug-fix upgrade from version 4.0.11.
