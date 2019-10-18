@@ -10,20 +10,27 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>odlparent-lite</artifactId>
+        <artifactId>odlparent</artifactId>
         <version>5.0.3-SNAPSHOT</version>
-        <relativePath>../../odlparent-lite</relativePath>
+        <relativePath>../../odlparent</relativePath>
     </parent>
 
     <artifactId>leveldbjni-all</artifactId>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
     <packaging>jar</packaging>
 
+    <properties>
+        <!-- Repackaged third-party code, implies questionable code quality -->
+        <odlparent.checkstyle.skip>true</odlparent.checkstyle.skip>
+        <odlparent.modernizer.skip>true</odlparent.modernizer.skip>
+        <odlparent.spotbugs.skip>true</odlparent.spotbugs.skip>
+    </properties>
+
     <build>
         <plugins>
+            <!-- We do not want to compile anything -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
                 <executions>
                     <execution>
                         <id>default-compile</id>
@@ -31,6 +38,21 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- Third-party code: disable license check -->
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>check-license</id>
+                        <configuration>
+                            <excludes>
+                                org/fusesource/leveldbjni/All.java
+                            </excludes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
@@ -74,19 +96,6 @@
                         </manifestEntries>
                     </archive>
                 </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.1.0</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
