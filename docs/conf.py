@@ -10,15 +10,11 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
+import xml.etree.ElementTree as ET
+
 from docs_conf.conf import *
 
-# Append to intersphinx_mapping
-#intersphinx_mapping['odl-releng-builder'] = ('http://docs.opendaylight.org/projects/releng-builder/en/latest/', None)
-
-linkcheck_ignore = [
-    # Ignore jenkins because it's often slow to respond.
-    'https://jenkins.opendaylight.org/releng',
-    'https://jenkins.opendaylight.org/sandbox',
-]
-
-nitpicky = True
+data = ET.parse('pom.xml')
+mdsal_version = data.getroot().find('*//{http://maven.apache.org/POM/4.0.0}version').text
+version = mdsal_version
+release = mdsal_version
