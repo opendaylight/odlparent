@@ -239,6 +239,7 @@
         <!-- Generates immutable implementations, builders, the works -->
         <groupId>org.immutables</groupId>
         <artifactId>value</artifactId>
+        <!-- Keep this version in sync with annotationProcessorPaths declaration below -->
         <version>2.7.5</version>
         <!-- Must be provided; scope=test here breaks APT in Eclipse :( -->
         <scope>provided</scope>
@@ -1303,6 +1304,14 @@
               <arg>-Xlint:deprecation</arg>
               <arg>-Xlint:unchecked</arg>
             </compilerArgs>
+            <annotationProcessorPaths>
+              <dependency>
+                <groupId>org.immutables</groupId>
+                <artifactId>value</artifactId>
+                <!-- Keep this version in sync with dependency declaration above -->
+                <version>2.7.5</version>
+              </dependency>
+            </annotationProcessorPaths>
           </configuration>
         </plugin>
         <plugin>
