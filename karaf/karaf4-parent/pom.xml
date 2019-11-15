@@ -195,38 +195,6 @@
                             <overWriteSnapshots>true</overWriteSnapshots>
                         </configuration>
                     </execution>
-                    <execution>
-                        <!-- Override karaf-4.2.6+ use of pax-logging-1.10.2+ -->
-                        <id>add-pax-logging-1.10.1</id>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <phase>prepare-package</phase>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>org.ops4j.pax.logging</groupId>
-                                    <artifactId>pax-logging-api</artifactId>
-                                    <version>1.10.1</version>
-                                    <outputDirectory>${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-api/1.10.1</outputDirectory>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>org.ops4j.pax.logging</groupId>
-                                    <artifactId>pax-logging-logback</artifactId>
-                                    <version>1.10.1</version>
-                                    <outputDirectory>${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-logback/1.10.1</outputDirectory>
-                                </artifactItem>
-                                <artifactItem>
-                                    <groupId>org.ops4j.pax.logging</groupId>
-                                    <artifactId>pax-logging-log4j2</artifactId>
-                                    <version>1.10.1</version>
-                                    <outputDirectory>${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-log4j2/1.10.1</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                            <overWriteReleases>true</overWriteReleases>
-                            <overWriteSnapshots>true</overWriteSnapshots>
-                        </configuration>
-                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -290,23 +258,6 @@
                                         <exclude name="contrib/*"/>
                                     </fileset>
                                 </chmod>
-                            </target>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>remove-pax-logging-1.10.2</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <delete dir="${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-api/1.10.2"
-                                    includeemptydirs="true"/>
-                                <delete dir="${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-logback/1.10.2"
-                                    includeemptydirs="true"/>
-                                <delete dir="${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-log4j2/1.10.2"
-                                    includeemptydirs="true"/>
                             </target>
                         </configuration>
                     </execution>
