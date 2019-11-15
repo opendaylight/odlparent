@@ -196,8 +196,8 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <!-- Override karaf-4.2.5 mis-bump of Equinox -->
-                        <id>add-equinox-3.12</id>
+                        <!-- Override karaf-4.2.6+ use of pax-logging-1.10.2+ -->
+                        <id>add-pax-logging-1.10.1</id>
                         <goals>
                             <goal>copy</goal>
                         </goals>
@@ -205,10 +205,22 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>org.eclipse.platform</groupId>
-                                    <artifactId>org.eclipse.osgi</artifactId>
-                                    <version>3.12.100</version>
-                                    <outputDirectory>${project.build.directory}/assembly/system/org/eclipse/platform/org.eclipse.osgi/3.12.100</outputDirectory>
+                                    <groupId>org.ops4j.pax.logging</groupId>
+                                    <artifactId>pax-logging-api</artifactId>
+                                    <version>1.10.1</version>
+                                    <outputDirectory>${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-api/1.10.1</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.ops4j.pax.logging</groupId>
+                                    <artifactId>pax-logging-logback</artifactId>
+                                    <version>1.10.1</version>
+                                    <outputDirectory>${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-logback/1.10.1</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.ops4j.pax.logging</groupId>
+                                    <artifactId>pax-logging-log4j2</artifactId>
+                                    <version>1.10.1</version>
+                                    <outputDirectory>${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-log4j2/1.10.1</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                             <overWriteReleases>true</overWriteReleases>
@@ -282,14 +294,18 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>remove-equinox-3.13</id>
+                        <id>remove-pax-logging-1.10.2</id>
                         <phase>prepare-package</phase>
                         <goals>
                             <goal>run</goal>
                         </goals>
                         <configuration>
                             <target>
-                                <delete dir="${project.build.directory}/assembly/system/org/eclipse/platform/org.eclipse.osgi/3.13.300"
+                                <delete dir="${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-api/1.10.2"
+                                    includeemptydirs="true"/>
+                                <delete dir="${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-logback/1.10.2"
+                                    includeemptydirs="true"/>
+                                <delete dir="${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-log4j2/1.10.2"
                                     includeemptydirs="true"/>
                             </target>
                         </configuration>
@@ -299,8 +315,7 @@
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
-                <!-- Revert to ${karaf.version} once the POM deployment issue is fixed -->
-                <version>4.2.1</version>
+                <version>${karaf.version}</version>
                 <executions>
                     <execution>
                         <id>process-resources</id>
