@@ -86,12 +86,12 @@
                        failonerror="true" ignorewhitespace="true"/>
                 <copy file="${project.build.directory}/assembly/bin/instance.bat"
                       tofile="${project.build.directory}/classes/bin/instance.bat"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-inc-${karaf.version}.patch"
+                <patch patchfile="${project.basedir}/src/main/patches/karaf-inc.patch"
                        originalfile="${project.build.directory}/assembly/bin/inc"
                        failonerror="true"/>
                 <copy file="${project.build.directory}/assembly/bin/inc"
                       tofile="${project.build.directory}/classes/bin/inc"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-karaf-${karaf.version}.patch"
+                <patch patchfile="${project.basedir}/src/main/patches/karaf-karaf.patch"
                        originalfile="${project.build.directory}/assembly/bin/karaf"
                        failonerror="true"/>
                 <copy file="${project.build.directory}/assembly/bin/karaf"
@@ -101,7 +101,7 @@
                        failonerror="true"/>
                 <copy file="${project.build.directory}/assembly/bin/karaf.bat"
                       tofile="${project.build.directory}/classes/bin/karaf.bat"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-setenv-${karaf.version}.patch"
+                <patch patchfile="${project.basedir}/src/main/patches/karaf-setenv.patch"
                        originalfile="${project.build.directory}/assembly/bin/setenv"
                        failonerror="true"/>
                 <copy file="${project.build.directory}/assembly/bin/setenv"
@@ -111,7 +111,7 @@
                        failonerror="true"/>
                 <copy file="${project.build.directory}/assembly/bin/setenv.bat"
                       tofile="${project.build.directory}/classes/bin/setenv.bat"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-quiesce-${karaf.version}.patch"
+                <patch patchfile="${project.basedir}/src/main/patches/karaf-quiesce.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
