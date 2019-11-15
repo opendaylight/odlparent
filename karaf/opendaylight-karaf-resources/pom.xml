@@ -114,21 +114,10 @@
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-quiesce.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
-                <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
+                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.11/pax-web-features-7.2.11-features.xml"
                          token="commons-codec/commons-codec/1.11" value="commons-codec/commons-codec/1.13" failOnNoReplacements="true"/>
-                <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
-                         token="org.apache.commons/commons-lang3/3.8.1" value="org.apache.commons/commons-lang3/3.9" failOnNoReplacements="true"/>
-                <!-- fixes https://issues.apache.org/jira/browse/ARIES-1923 -->
-                <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
-                         token="org.apache.aries.proxy/org.apache.aries.proxy/1.1.4" value="org.apache.aries.proxy/org.apache.aries.proxy/1.1.6" failOnNoReplacements="true"/>
-                <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
-                      tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
-                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.8/pax-web-features-7.2.8-features.xml"
-                         token="commons-beanutils/commons-beanutils/1.8.3" value="commons-beanutils/commons-beanutils/1.9.4" failOnNoReplacements="true"/>
-                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.8/pax-web-features-7.2.8-features.xml"
-                         token="commons-codec/commons-codec/1.11" value="commons-codec/commons-codec/1.13" failOnNoReplacements="true"/>
-                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.8/pax-web-features-7.2.8-features.xml"
-                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/7.2.8/pax-web-features-7.2.8-features.xml"/>
+                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.11/pax-web-features-7.2.11-features.xml"
+                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/7.2.11/pax-web-features-7.2.11-features.xml"/>
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
                 <echo file="${project.build.directory}/assembly/etc/startup.properties" append="true">
 # The following are added by opendaylight-karaf-resources
@@ -140,10 +129,6 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
                 </echo>
                 <copy file="${project.build.directory}/assembly/etc/startup.properties"
                       tofile="${project.build.directory}/classes/etc/startup.properties"/>
-                <replace file="${project.build.directory}/assembly/etc/config.properties"
-                         token="org.eclipse.platform/org.eclipse.osgi/3.13.300" value="org.eclipse.platform/org.eclipse.osgi/3.12.100" failOnNoReplacements="true"/>
-                <copy file="${project.build.directory}/assembly/etc/config.properties"
-                      tofile="${project.build.directory}/classes/etc/config.properties"/>
                 <fixcrlf srcdir="${project.build.directory}/classes/bin"
                          includes="*.bat" eol="crlf"/>
               </target>
