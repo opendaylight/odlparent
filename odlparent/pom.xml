@@ -46,7 +46,7 @@
     <!-- Used in openflowplugin -->
     <enforcer.version>3.0.0-M2</enforcer.version>
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.2.2</karaf.version>
+    <karaf.version>4.2.5</karaf.version>
     <!-- Used in bgpcep, lispflowmapping -->
     <projectinfo>2.8.1</projectinfo>
 
