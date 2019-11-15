@@ -193,6 +193,26 @@
                             <overWriteSnapshots>true</overWriteSnapshots>
                         </configuration>
                     </execution>
+                    <execution>
+                        <!-- Override karaf-4.2.5 mis-bump of Equinox -->
+                        <id>add-equinox-3.12</id>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.eclipse.platform</groupId>
+                                    <artifactId>org.eclipse.osgi</artifactId>
+                                    <version>3.12.100</version>
+                                    <outputDirectory>${project.build.directory}/assembly/system/org/eclipse/platform/org.eclipse.osgi/3.12.100</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                            <overWriteReleases>true</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -256,6 +276,19 @@
                                         <exclude name="contrib/*"/>
                                     </fileset>
                                 </chmod>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>remove-equinox-3.13</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <delete dir="${project.build.directory}/assembly/system/org/eclipse/platform/org.eclipse.osgi/3.13.300"
+                                    includeemptydirs="true"/>
                             </target>
                         </configuration>
                     </execution>
