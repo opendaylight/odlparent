@@ -84,8 +84,10 @@
                         <!-- JAXB -->
                         <excludedArtifactId>jaxb-api</excludedArtifactId>
                         <excludedArtifactId>jaxb-runtime</excludedArtifactId>
+                        <excludedArtifactId>jakarta.xml.bind-api</excludedArtifactId>
                         <!-- javax.annotation -->
                         <excludedArtifactId>activation</excludedArtifactId>
+                        <excludedArtifactId>jakarta.activation-api</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
             </plugin>
