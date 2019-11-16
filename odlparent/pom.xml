@@ -50,7 +50,7 @@
     <!-- Used in openflowplugin -->
     <enforcer.version>3.0.0-M2</enforcer.version>
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.2.7</karaf.version>
+    <karaf.version>4.2.8-SNAPSHOT</karaf.version>
     <!-- Used in bgpcep, lispflowmapping -->
     <projectinfo>2.8.1</projectinfo>
 
@@ -898,7 +898,7 @@
         <groupId>org.ops4j.pax.web</groupId>
         <artifactId>pax-web-api</artifactId>
         <!-- Note: keep this version synchronized with karaf -->
-        <version>7.2.11</version>
+        <version>7.2.12</version>
       </dependency>
 
       <dependency>
@@ -946,7 +946,7 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-bom</artifactId>
-        <version>9.4.20.v20190813</version>
+        <version>9.4.22.v20191022</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
