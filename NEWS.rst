@@ -2,6 +2,32 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.14
+--------------
+This is a security/bug-fix upgrade from version 4.0.13.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Akka `2.5.25 → 2.5.26 <https://akka.io/blog/news/2019/10/17/akka-2.5.26-released>`__
+
+* Aries Blueprint Core `1.10.1 → 1.10.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310981&version=12345020>`__
+
+* H2 database `1.4.199 → 1.4.200 <http://www.h2database.com/html/changelog.html>`__
+
+* JaCoCo `0.8.4 → 0.8.5 <https://github.com/jacoco/jacoco/releases/tag/v0.8.5>`__
+
+* Karaf 4.2.2 → 4.2.6, release notes:
+  * `4.2.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12344587>`__
+  * `4.2.4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12344856>`__
+  * `4.2.5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12345153>`__
+  * `4.2.6 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12345365>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+
+* maven-bundle-plugin `4.1.0 → 4.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12345491>`__
+
 Version 4.0.13
 --------------
 This is a security/bug-fix upgrade from version 4.0.12.
