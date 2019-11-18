@@ -56,8 +56,7 @@ import org.slf4j.LoggerFactory;
 public class SingleFeatureTest {
 
     private static final String MAVEN_REPO_LOCAL = "maven.repo.local";
-    private static final String ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY = "org.ops4j.pax.url.mvn.localRepository";
-    private static final String ORG_OPS4J_PAX_URL_MVN_REPOSITORIES = "org.ops4j.pax.url.mvn.repositories";
+
     private static final String ETC_ORG_OPS4J_PAX_URL_MVN_CFG = "etc/org.ops4j.pax.url.mvn.cfg";
     private static final String ETC_ORG_OPS4J_PAX_LOGGING_CFG = "etc/org.ops4j.pax.logging.cfg";
 
@@ -189,6 +188,10 @@ public class SingleFeatureTest {
             logLevel(LogLevel.INFO),
             mvnLocalRepoOption(),
 
+            // Make sure karaf's default repository is consulted before anything else
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, "org.ops4j.pax.url.mvn.defaultRepositories",
+                "file:${karaf.home}/${karaf.default.repository}@id=system.repository"),
+
             // TODO ODLPARENT-148: We change the karaf.log location because it's very useful for this to be preserved
             // even if one does not use "-Dkaraf.keep.unpack=true", which on build server is typically not feasible,
             // because that leads to excessive disk space consumption (full karaf dist; what we really want is the log)
@@ -308,15 +311,15 @@ public class SingleFeatureTest {
      * @return Edit Configuration option which removes external snapshot repositories.
      */
     private static Option disableExternalSnapshotRepositories() {
-        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_REPOSITORIES,
-                EXTERNAL_DEFAULT_REPOSITORIES);
+        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG,
+            "org.ops4j.pax.url.mvn.repositories", EXTERNAL_DEFAULT_REPOSITORIES);
     }
 
     protected Option mvnLocalRepoOption() {
         String mvnRepoLocal = System.getProperty(MAVEN_REPO_LOCAL, "");
         LOG.info("mvnLocalRepo \"{}\"", mvnRepoLocal);
-        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY,
-                mvnRepoLocal);
+        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG,
+            "org.ops4j.pax.url.mvn.localRepository", mvnRepoLocal);
     }
 
     protected Option getKarafDistroOption() throws IOException {
