@@ -59,8 +59,6 @@ import org.slf4j.LoggerFactory;
 public class SingleFeatureTest {
 
     private static final String MAVEN_REPO_LOCAL = "maven.repo.local";
-    private static final String ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY = "org.ops4j.pax.url.mvn.localRepository";
-    private static final String ORG_OPS4J_PAX_URL_MVN_REPOSITORIES = "org.ops4j.pax.url.mvn.repositories";
     private static final String ETC_ORG_OPS4J_PAX_URL_MVN_CFG = "etc/org.ops4j.pax.url.mvn.cfg";
     private static final String ETC_ORG_OPS4J_PAX_LOGGING_CFG = "etc/org.ops4j.pax.logging.cfg";
 
@@ -104,19 +102,6 @@ public class SingleFeatureTest {
      * Property file used to store the Karaf distribution version.
      */
     private static final String PROPERTIES_FILENAME = "singlefeaturetest.properties";
-
-    /**
-     * <p>List of Karaf 3.0.4 default maven repositories with snapshot repositories excluded.</p>
-     * <p>Unfortunately this must be hard-coded since declarative model which uses Options,
-     * does not allow us to read value, parse it (properties has allways
-     * problems with lists) and construct replacement string which does
-     * not contains snapshots.</p>
-     * <p>When updating Karaf, check this against org.ops4j.pax.url.mvn.cfg in the Karaf distribution.</p>
-     */
-    private static final String EXTERNAL_DEFAULT_REPOSITORIES = "http://repo1.maven.org/maven2@id=central, "
-            + "http://repository.springsource.com/maven/bundles/release@id=spring.ebr.release, "
-            + "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, "
-            + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
 
     @Inject @NonNull
     private BundleContext bundleContext;
@@ -191,7 +176,6 @@ public class SingleFeatureTest {
             when(Boolean.getBoolean(KEEP_UNPACK_DIRECTORY_PROP)).useOptions(keepRuntimeFolder()),
             configureConsole().ignoreLocalConsole(),
             logLevel(LogLevel.INFO),
-            mvnLocalRepoOption(),
 
             // TODO ODLPARENT-148: We change the karaf.log location because it's very useful for this to be preserved
             // even if one does not use "-Dkaraf.keep.unpack=true", which on build server is typically not feasible,
@@ -202,27 +186,39 @@ public class SingleFeatureTest {
             editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j2.appender.rolling.filePattern",
                     karafLogFile.getPath() + ".%i"),
 
-             /*
-              * Disables external snapshot repositories.
-              *
-              * Pax URL and Karaf by default always search for new version of snapshots
-              * in all snapshots repository, even if that snapshots does not belong to that
-              * repository and maven is invoked even with -nsu (no snapshot update)
-              * or offline mode.
-              *
-              * This is also true for OpenDaylight snapshot artefacts - pax url tries
-              * to resolve them from third-party repositories, even if they are not present
-              * there - this increases time which takes for features to install.
-              *
-              * For more complex projects this actually means several HTTP GETs for each
-              * snapshot bundle referenced, even if the bundle is already present
-              * in local maven repository.
-              *
-              * In order to speed-up installation and remove unnecessary network traffic,
-              * which fails for obvious reasons, external snapshot repositories are
-              * removed.
-              */
-            disableExternalSnapshotRepositories(),
+            /*
+             * Disables external repositories.
+             *
+             * Pax URL and Karaf by default always search for new version of snapshots
+             * in all snapshots repository, even if that snapshots does not belong to that
+             * repository and maven is invoked even with -nsu (no snapshot update)
+             * or offline mode.
+             *
+             * This is also true for OpenDaylight snapshot artefacts - pax url tries
+             * to resolve them from third-party repositories, even if they are not present
+             * there - this increases time which takes for features to install.
+             *
+             * For more complex projects this actually means several HTTP GETs for each
+             * snapshot bundle referenced, even if the bundle is already present
+             * in local maven repository.
+             *
+             * In order to speed-up installation and remove unnecessary network traffic,
+             * which fails for obvious reasons, external snapshot repositories are
+             * removed.
+             *
+             * Furthermore everything really required should be readily available when we
+             * run this test, hence we can safely disable *all* repositories except the distro-local
+             * ones.
+             */
+            disableExternalRepositories(),
+            // Ensure local repository is set to the distribution's system folder, so that pre-populated content
+            // is resolved from there.
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG,
+                "org.ops4j.pax.url.mvn.localRepository", "${karaf.home}/${karaf.default.repository}"),
+            // Allow leaking default maven repository as a remote
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG,
+                "org.ops4j.pax.url.mvn.defaultLocalRepoAsRemote", "true"),
+
             propagateSystemProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP),
             propagateSystemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP),
             propagateSystemProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP),
@@ -312,16 +308,21 @@ public class SingleFeatureTest {
      *
      * @return Edit Configuration option which removes external snapshot repositories.
      */
-    private static Option disableExternalSnapshotRepositories() {
-        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_REPOSITORIES,
-                EXTERNAL_DEFAULT_REPOSITORIES);
-    }
+    private static Option disableExternalRepositories() {
+        final StringBuilder sb = new StringBuilder()
+                // Default system repository
+                .append("file:${karaf.home}/${karaf.default.repository}@id=system.repository")
+                // Downloaded kars, not really needed
+                .append(", file:${karaf.data}/kar@id=kar.repository@multi");
 
-    protected Option mvnLocalRepoOption() {
-        String mvnRepoLocal = System.getProperty(MAVEN_REPO_LOCAL, "");
-        LOG.info("mvnLocalRepo \"{}\"", mvnRepoLocal);
-        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, ORG_OPS4J_PAX_URL_MVN_LOCAL_REPOSITORY,
-                mvnRepoLocal);
+        // if there is an override of local repository, add that as well
+        final String mvnRepoLocal = System.getProperty(MAVEN_REPO_LOCAL);
+        if (mvnRepoLocal != null) {
+            sb.append(", file:").append(mvnRepoLocal);
+        }
+
+        return editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG,
+            "org.ops4j.pax.url.mvn.repositories", sb.toString());
     }
 
     protected Option getKarafDistroOption() throws IOException {
