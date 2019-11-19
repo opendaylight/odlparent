@@ -108,7 +108,7 @@
         <groupId>com.puppycrawl.tools</groupId>
         <artifactId>checkstyle</artifactId>
         <!-- This should match the plugin management on maven-checkstyle-plugin below -->
-        <version>8.20</version>
+        <version>8.26</version>
       </dependency>
 
       <!-- Testing Dependencies -->
@@ -1198,7 +1198,7 @@
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
               <!-- This should match the dependency management on com.puppycrawl.tools:checkstyle above -->
-              <version>8.20</version>
+              <version>8.26</version>
             </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
@@ -1212,8 +1212,8 @@
             </dependency>
             <dependency>
               <groupId>com.github.sevntu-checkstyle</groupId>
-              <artifactId>sevntu-checkstyle-maven-plugin</artifactId>
-              <version>1.35.0</version>
+              <artifactId>sevntu-checks</artifactId>
+              <version>1.36.0</version>
             </dependency>
           </dependencies>
           <configuration>
