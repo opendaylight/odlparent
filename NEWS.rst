@@ -6,6 +6,13 @@ Version 4.0.14
 --------------
 This is a security/bug-fix upgrade from version 4.0.13.
 
+Bug fixes
+~~~~~~~~~
+* ``single-feature-parent`` was setting up Karaf repositories incorrectly, leading to
+  the test using unpatched Karaf resources. This has now been fixed and the test run
+  is using environment equivalent to the contents of the distribution. See
+  `ODLPARENT-209 <https://jira.opendaylight.org/browse/ODLPARENT-209>`__ for details.
+
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -27,6 +34,10 @@ Plugin upgrades
 ~~~~~~~~~~~~~~~
 
 * maven-bundle-plugin `4.1.0 → 4.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12345491>`__
+
+* maven-jar-plugin `3.1.2 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12345503>`__
+
+* maven-source-plugin `3.1.0 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924&version=12345522>`__
 
 Version 4.0.13
 --------------
