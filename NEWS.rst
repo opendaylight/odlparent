@@ -2,6 +2,63 @@
 ODL Parent release notes
 ========================
 
+Version 5.0.4
+-------------
+This is a security/bug-fix upgrade from version 5.0.3.
+
+Bug fixes
+~~~~~~~~~
+* ``single-feature-parent`` was setting up Karaf repositories incorrectly, leading to
+  the test using unpatched Karaf resources. This has now been fixed and the test run
+  is using environment equivalent to the contents of the distribution. See
+  `ODLPARENT-209 <https://jira.opendaylight.org/browse/ODLPARENT-209>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Akka `2.5.25 → 2.5.26 <https://akka.io/blog/news/2019/10/17/akka-2.5.26-released>`__
+
+* H2 database `1.4.199 → 1.4.200 <http://www.h2database.com/html/changelog.html>`__
+
+* Hamcrest `2.1 → 2.2 <https://github.com/hamcrest/JavaHamcrest/releases/tag/v2.2>`__
+
+* JaCoCo `0.8.4 → 0.8.5 <https://github.com/jacoco/jacoco/releases/tag/v0.8.5>`__
+
+* Karaf 4.2.2 → 4.2.6, release notes:
+  * `4.2.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12344587>`__
+  * `4.2.4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12344856>`__
+  * `4.2.5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12345153>`__
+  * `4.2.6 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12345365>`__
+
+* Mockito 2.25.1 → 2.28.2, release notes:
+  * `2.25.2 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2252>`__
+  * `2.25.3 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2253>`__
+  * `2.25.4 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2254>`__
+  * `2.25.5 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2255>`__
+  * `2.25.6 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2256>`__
+  * `2.25.7 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2257>`__
+  * `2.26.1 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2261>`__
+  * `2.26.2 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2262>`__
+  * `2.27.1 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2271>`__
+  * `2.27.2 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2272>`__
+  * `2.27.3 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2273>`__
+  * `2.27.4 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2274>`__
+  * `2.27.5 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2275>`__
+  * `2.28.0 <https://github.com/mockito/mockito/blob/release/2.x/doc/release-notes/official.md#2280>`__
+
+* Powermock `2.0.2 → 2.0.4 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#204>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+
+* maven-bundle-plugin `4.1.0 → 4.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12345491>`__
+
+* maven-jar-plugin `3.1.2 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12345503>`__
+
+* maven-source-plugin `3.1.0 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924&version=12345522>`__
+
+* modernizer-maven-plugin `1.9.0 → 2.0.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.0.0>`__
+
 Version 5.0.3
 -------------
 This is a security/bug-fix upgrade from version 5.0.2.
