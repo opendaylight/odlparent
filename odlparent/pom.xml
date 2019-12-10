@@ -260,6 +260,7 @@
         <!-- Generates META-INF/services entries for ServiceLoader -->
         <groupId>org.kohsuke.metainf-services</groupId>
         <artifactId>metainf-services</artifactId>
+        <!-- Keep this version in sync with annotationProcessorPaths declaration below -->
         <version>1.8</version>
         <optional>true</optional>
         <scope>provided</scope>
@@ -1322,6 +1323,12 @@
                 <artifactId>value</artifactId>
                 <!-- Keep this version in sync with dependency declaration above -->
                 <version>2.7.5</version>
+              </dependency>
+              <dependency>
+                <groupId>org.kohsuke.metainf-services</groupId>
+                <artifactId>metainf-services</artifactId>
+                <!-- Keep this version in sync with dependency declaration above -->
+                <version>1.8</version>
               </dependency>
             </annotationProcessorPaths>
           </configuration>

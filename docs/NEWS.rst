@@ -2,6 +2,16 @@
 ODL Parent release notes
 ========================
 
+Version 6.0.3
+-------------
+This is a bug-fix upgrade from version 6.0.2.
+
+Bug fixes
+~~~~~~~~~
+* The fix for `ODLPARENT-216 <https://jira.opendaylight.org/browse/ODLPARENT-216>`__ ended up
+  breaking ``org.kohsuke.metainf-services`` integration. While this could be fixed in downstreams
+  by adding proper </annotationProcessorPaths> entry, it is a regression from 6.0.1.
+
 Version 6.0.2
 -------------
 This is a security/bug-fix upgrade from version 6.0.1.
