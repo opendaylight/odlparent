@@ -184,7 +184,7 @@ public class SingleFeatureTest {
             ),
             getKarafDistroOption(),
             when(Boolean.getBoolean(KEEP_UNPACK_DIRECTORY_PROP)).useOptions(keepRuntimeFolder()),
-            configureConsole().ignoreLocalConsole(),
+            configureConsole().ignoreLocalConsole().ignoreRemoteShell(),
             logLevel(LogLevel.INFO),
             mvnLocalRepoOption(),
 
