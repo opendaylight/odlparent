@@ -58,6 +58,9 @@
         <!-- Manifest filtering plugin -->
         <module>filter-manifest-plugin</module>
 
+        <!-- Extra file packaging plugin -->
+        <module>extra-files-plugin</module>
+
         <!-- Features -->
         <module>features</module>
 
