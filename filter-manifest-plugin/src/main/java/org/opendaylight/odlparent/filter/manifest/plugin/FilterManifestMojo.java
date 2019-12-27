@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Mojo processing filtering an input Manifest file into an output, retaining only selected entries.
  */
-@Mojo(name = "filter-manifest")
+@Mojo(name = "filter-manifest", threadSafe = true)
 public class FilterManifestMojo extends AbstractMojo {
     private static final Logger LOG = LoggerFactory.getLogger(FilterManifestMojo.class);
 
