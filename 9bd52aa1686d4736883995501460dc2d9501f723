@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d9cf445d_e9538eb1",
+        "filename": "odlparent-lite/pom.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2020-01-03T13:30:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d12bf2b7_1b46969f",
+      "revId": "9bd52aa1686d4736883995501460dc2d9501f723",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c7a6dde_1cb5907f",
         "filename": "odlparent/pom.xml",
         "patchSetId": 10
