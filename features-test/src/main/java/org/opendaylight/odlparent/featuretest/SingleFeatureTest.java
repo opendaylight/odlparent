@@ -108,7 +108,7 @@ public class SingleFeatureTest {
      * not contains snapshots.</p>
      * <p>When updating Karaf, check this against org.ops4j.pax.url.mvn.cfg in the Karaf distribution.</p>
      */
-    private static final String EXTERNAL_DEFAULT_REPOSITORIES = "http://repo1.maven.org/maven2@id=central, "
+    private static final String EXTERNAL_DEFAULT_REPOSITORIES = "https://repo1.maven.org/maven2@id=central, "
             + "http://repository.springsource.com/maven/bundles/release@id=spring.ebr.release, "
             + "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, "
             + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
