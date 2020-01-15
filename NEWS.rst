@@ -2,6 +2,27 @@
 ODL Parent release notes
 ========================
 
+Version 5.0.5
+-------------
+This is a bug-fix upgrade from version 5.0.4.
+
+Bug fixes
+~~~~~~~~~
+* ``single-feature-test`` was using outdated repositories, including Maven Central,
+  which `broke on Jan 15, 2020 <https://support.sonatype.com/hc/en-us/articles/360041287334-Central-501-HTTPS-Required>`__.
+  This has been corrected.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* netty 4.1.42 → 4.1.44, release notes:
+  * `4.1.43 <https://netty.io/news/2019/10/24/4-1-43-Final.html>`__
+  * `4.1.44 <https://netty.io/news/2019/12/18/4-1-44-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-archetype-plugin `3.1.1 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122&version=12345957>`__
+
 Version 5.0.4
 -------------
 This is a security/bug-fix upgrade from version 5.0.3.
