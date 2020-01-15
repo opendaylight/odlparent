@@ -2,6 +2,16 @@
 ODL Parent release notes
 ========================
 
+Version 4.0.15
+--------------
+This is a bug-fix upgrade from version 4.0.14.
+
+Bug fixes
+~~~~~~~~~
+* ``single-feature-test`` was using outdated repositories, including Maven Central,
+  which `broke on Jan 15, 2020 <https://support.sonatype.com/hc/en-us/articles/360041287334-Central-501-HTTPS-Required>`__.
+  This has been corrected.
+
 Version 4.0.14
 --------------
 This is a security/bug-fix upgrade from version 4.0.13.
