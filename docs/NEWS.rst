@@ -2,6 +2,38 @@
 ODL Parent release notes
 ========================
 
+Version 6.0.4
+-------------
+This is a bug-fix upgrade from version 6.0.3.
+
+Bug fixes
+~~~~~~~~~
+* ``single-feature-test`` was using outdated repositories, including Maven Central,
+  which `broke on Jan 15, 2020 <https://support.sonatype.com/hc/en-us/articles/360041287334-Central-501-HTTPS-Required>`__.
+  This has been corrected.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+* JUnit 4.11 → 4.113, release notes:
+  * `4.12 <https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.12.md>`__
+  * `4.13 <https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.13.md>`__
+
+* log4j2 2.11.2 → 2.13.0, release notes:
+  * `2.12.0 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.13.0>`__
+  * `2.12.1 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.12.1>`__
+  * `2.13.0 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.13.0>`__
+
+* netty 4.1.42 → 4.1.44, release notes:
+  * `4.1.43 <https://netty.io/news/2019/10/24/4-1-43-Final.html>`__
+  * `4.1.44 <https://netty.io/news/2019/12/18/4-1-44-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-assembly-plugin 2.2-beta5 → 3.2.0
+
+* maven-archetype-plugin `3.1.1 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122&version=12345957>`__
+
 Version 6.0.3
 -------------
 This is a bug-fix upgrade from version 6.0.2.
