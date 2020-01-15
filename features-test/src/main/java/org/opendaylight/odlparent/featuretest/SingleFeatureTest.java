@@ -105,17 +105,14 @@ public class SingleFeatureTest {
     private static final String PROPERTIES_FILENAME = "singlefeaturetest.properties";
 
     /**
-     * <p>List of Karaf 3.0.4 default maven repositories with snapshot repositories excluded.</p>
+     * <p>List of Karaf 4.2.6 default maven repositories with snapshot repositories excluded.</p>
      * <p>Unfortunately this must be hard-coded since declarative model which uses Options,
-     * does not allow us to read value, parse it (properties has allways
+     * does not allow us to read value, parse it (properties has always
      * problems with lists) and construct replacement string which does
      * not contains snapshots.</p>
      * <p>When updating Karaf, check this against org.ops4j.pax.url.mvn.cfg in the Karaf distribution.</p>
      */
-    private static final String EXTERNAL_DEFAULT_REPOSITORIES = "http://repo1.maven.org/maven2@id=central, "
-            + "http://repository.springsource.com/maven/bundles/release@id=spring.ebr.release, "
-            + "http://repository.springsource.com/maven/bundles/external@id=spring.ebr.external, "
-            + "http://zodiac.springsource.com/maven/bundles/release@id=gemini ";
+    private static final String EXTERNAL_DEFAULT_REPOSITORIES = "https://repo1.maven.org/maven2@id=central ";
 
     @Inject @NonNull
     private BundleContext bundleContext;
