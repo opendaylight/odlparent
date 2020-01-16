@@ -24,9 +24,10 @@ Third-party dependencies
   * `2.12.1 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.12.1>`__
   * `2.13.0 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.13.0>`__
 
-* netty 4.1.42 → 4.1.44, release notes:
+* netty 4.1.42 → 4.1.45, release notes:
   * `4.1.43 <https://netty.io/news/2019/10/24/4-1-43-Final.html>`__
   * `4.1.44 <https://netty.io/news/2019/12/18/4-1-44-Final.html>`__
+  * `4.1.45 <https://netty.io/news/2020/01/13/4-1-45-Final.html>`__
 
 Plugin upgrades
 ~~~~~~~~~~~~~~~
