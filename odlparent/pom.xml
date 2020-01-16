@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>4.0.15-SNAPSHOT</version>
+    <version>4.0.15</version>
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
@@ -85,7 +85,7 @@
       <dependency>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-artifacts</artifactId>
-        <version>4.0.15-SNAPSHOT</version>
+        <version>4.0.15</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -1242,12 +1242,12 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>4.0.15-SNAPSHOT</version>
+              <version>4.0.15</version>
             </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>odl-license</artifactId>
-              <version>4.0.15-SNAPSHOT</version>
+              <version>4.0.15</version>
             </dependency>
             <dependency>
               <groupId>com.github.sevntu-checkstyle</groupId>
@@ -1375,7 +1375,7 @@
                   <artifactItem>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>odl-license</artifactId>
-                    <version>4.0.15-SNAPSHOT</version>
+                    <version>4.0.15</version>
                   </artifactItem>
                 </artifactItems>
                 <outputDirectory>${project.build.outputDirectory}</outputDirectory>
@@ -1525,7 +1525,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>findbugs</artifactId>
-              <version>4.0.15-SNAPSHOT</version>
+              <version>4.0.15</version>
             </dependency>
           </dependencies>
           <configuration>
@@ -1581,7 +1581,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>spotbugs</artifactId>
-              <version>4.0.15-SNAPSHOT</version>
+              <version>4.0.15</version>
             </dependency>
             <dependency>
               <!-- The SpotBugs Maven plugin uses SLF4J 1.8 beta 2 -->
