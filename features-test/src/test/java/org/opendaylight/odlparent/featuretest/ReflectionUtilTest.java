@@ -24,14 +24,14 @@ public class ReflectionUtilTest {
     public void testGetClasses() {
         assertThat(ReflectionUtil.getClasses(getClass().getClassLoader(), "org.awaitility")
                 .collect(Collectors.toList()))
-                .containsAllOf(org.awaitility.Awaitility.class, org.awaitility.core.ConditionTimeoutException.class);
+                .containsAtLeast(org.awaitility.Awaitility.class, org.awaitility.core.ConditionTimeoutException.class);
     }
 
     @Test
     public void testGetInnerClasses() {
         List<Class<?>> innerClasses = ReflectionUtil.getClasses(
                 getClass().getClassLoader(), getClass().getPackage().getName()).collect(Collectors.toList());
-        assertThat(innerClasses).containsAllOf(getClass(), InnerStaticClass.class, InnerNonStaticClass.class);
+        assertThat(innerClasses).containsAtLeast(getClass(), InnerStaticClass.class, InnerNonStaticClass.class);
         assertThat(innerClasses.stream().anyMatch(
             clazz -> clazz.getName().endsWith(getClass().getSimpleName() + "$1"))).isTrue();
         assertThat(innerClasses).containsNoDuplicates();
