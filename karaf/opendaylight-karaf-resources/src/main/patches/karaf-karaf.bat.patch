@@ -3,7 +3,7 @@
 @@ -45,6 +45,12 @@
      set JAVA_MAX_MEM=512M
  )
- 
+
 +rem Check if Windows version == 10.0 to override
 +rem Equinox property fixing karaf startup
 +rem TODO: Remove this hack when we update Karaf to a compatible version
@@ -11,12 +11,12 @@
 +if "%WIN_VERSION%" == "10.0" set KARAF_WIN10_FIX=-Dorg.osgi.framework.os.name=Win32
 +
  goto BEGIN
- 
+
  :warn
 @@ -248,6 +254,12 @@
      set DEFAULT_JAVA_OPTS=%DEFAULT_JAVA_OPTS% -XX:MaxPermSize=%JAVA_MAX_PERM_MEM%
  )
- 
+
 +if not "%ODL_JAVA_SECURITY_PROPERTIES%" == "" (
 +    set DEFAULT_JAVA_OPTS=-Djava.security.properties=%ODL_JAVA_SECURITY_PROPERTIES% %DEFAULT_JAVA_OPTS%
 +) else (
@@ -24,5 +24,5 @@
 +)
 +
  if "%JAVA_OPTS%" == "" set JAVA_OPTS=%DEFAULT_JAVA_OPTS%
- 
+
  if "%EXTRA_JAVA_OPTS%" == "" goto :KARAF_EXTRA_JAVA_OPTS_END

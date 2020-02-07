@@ -9,7 +9,7 @@
 @@ -291,6 +291,13 @@
          fi
      fi
- 
+
 +    # Add default security file option
 +    if [ "x$ODL_JAVA_SECURITY_PROPERTIES" != "x" ]; then
 +        DEFAULT_JAVA_OPTS="-Djava.security.properties=${ODL_JAVA_SECURITY_PROPERTIES} $DEFAULT_JAVA_OPTS"

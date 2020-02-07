@@ -3,7 +3,7 @@
 @@ -181,6 +181,13 @@
          KARAF_EXEC=""
      fi
- 
+
 +    # Use /dev/urandom to avoid blocking on /dev/random
 +    # See http://www.2uo.de/myths-about-urandom/ to understand why this is safe (as long as your VM provisioning seeds
 +    # the PRNG)
@@ -16,7 +16,7 @@
      nodebug=false
 @@ -282,8 +289,12 @@
          fi
- 
+
          if [ "${ROOT_INSTANCE_RUNNING}" = "false" ] || [ "${CHECK_ROOT_INSTANCE_RUNNING}" = "false" ] ; then
 +            # Using command line arguments as java arguments
 +            # (as opposed to arguments for $MAIN)
