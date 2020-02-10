@@ -15,7 +15,7 @@ Bug fixes
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-* JUnit 4.11 → 4.113, release notes:
+* JUnit 4.11 → 4.13, release notes:
   * `4.12 <https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.12.md>`__
   * `4.13 <https://github.com/junit-team/junit4/blob/master/doc/ReleaseNotes4.13.md>`__
 
