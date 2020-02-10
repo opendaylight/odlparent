@@ -19,7 +19,7 @@
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl-akka-persistence-2.5</artifactId>
+    <artifactId>odl-akka-persistence-2.6</artifactId>
     <version>7.0.0-SNAPSHOT</version>
     <packaging>feature</packaging>
 
@@ -33,8 +33,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-system-2.5</artifactId>
-            <version>${project.version}</version>
+            <artifactId>odl-akka-system-2.6</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
