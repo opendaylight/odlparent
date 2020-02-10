@@ -2,6 +2,20 @@
 ODL Parent release notes
 ========================
 
+Version 6.0.5
+-------------
+This is a bug-fix upgrade from version 6.0.4.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Akka 2.5.26 → 2.5.29, release notes:
+  * `2.5.27 <https://akka.io/blog/news/2019/12/10/akka-2.5.27-released>`__
+  * `2.5.29 <https://akka.io/blog/news/2020/01/28/akka-2.5.29-released>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-source-plugin `3.2.0 → 3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924&version=12346480>`__
+
 Version 6.0.4
 -------------
 This is a bug-fix upgrade from version 6.0.3.
