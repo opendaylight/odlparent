@@ -96,13 +96,6 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-caffeine-2</artifactId>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>odl-dropwizard-metrics</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
