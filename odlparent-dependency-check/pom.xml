@@ -80,10 +80,6 @@
             <artifactId>guava-testlib</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.google.truth.extensions</groupId>
             <artifactId>truth-java8-extension</artifactId>
         </dependency>
@@ -122,10 +118,6 @@
         <dependency>
             <groupId>commons-net</groupId>
             <artifactId>commons-net</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.mycila.guice.extensions</groupId>
-            <artifactId>mycila-guice-jsr250</artifactId>
         </dependency>
         <dependency>
             <groupId>com.puppycrawl.tools</groupId>
