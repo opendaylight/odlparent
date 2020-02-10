@@ -39,19 +39,19 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-system-2.5</artifactId>
+            <artifactId>odl-akka-system-2.6</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-clustering-2.5</artifactId>
+            <artifactId>odl-akka-clustering-2.6</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-persistence-2.5</artifactId>
+            <artifactId>odl-akka-persistence-2.6</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
