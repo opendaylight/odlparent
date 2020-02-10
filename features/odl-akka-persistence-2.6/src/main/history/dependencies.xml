@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-akka-persistence-2.6">
+    <feature version="0.0.0">
+        <feature>odl-akka-system-2.6</feature>
+        <feature>wrap</feature>
+        <bundle>mvn:com.google.protobuf/protobuf-java/3.10.0</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-persistence_2.12/2.6.3</bundle>
+        <bundle>mvn:com.typesafe.akka/akka-stream_2.12/2.6.3</bundle>
+        <bundle>mvn:com.typesafe/ssl-config-core_2.12/0.4.1</bundle>
+        <bundle>mvn:org.reactivestreams/reactive-streams/1.0.3</bundle>
+        <bundle>mvn:org.scala-lang.modules/scala-parser-combinators_2.12/1.1.2</bundle>
+        <bundle>wrap:mvn:com.typesafe.akka/akka-protobuf-v3_2.12/2.6.3</bundle>
+    </feature>
+</features>
