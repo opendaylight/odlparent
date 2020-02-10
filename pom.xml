@@ -71,9 +71,6 @@
         <module>odlparent-bundle-check</module>
         <module>odlparent-dependency-check</module>
         <module>tests</module>
-
-        <!-- Third-party stuff -->
-        <module>third-party</module>
     </modules>
 
     <profiles>
