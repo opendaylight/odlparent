@@ -51,12 +51,6 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-akka-leveldb-0.10</artifactId>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>odl-akka-persistence-2.5</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
