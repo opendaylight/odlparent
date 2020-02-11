@@ -231,12 +231,12 @@
             <dependency>
               <groupId>org.asciidoctor</groupId>
               <artifactId>asciidoctor-maven-plugin</artifactId>
-              <version>1.5.7.1</version>
+              <version>1.5.8</version>
             </dependency>
             <dependency>
               <groupId>org.asciidoctor</groupId>
               <artifactId>asciidoctorj-diagram</artifactId>
-              <version>1.5.16</version>
+              <version>1.5.18</version>
             </dependency>
           </dependencies>
         </plugin>
