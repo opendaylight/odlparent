@@ -18,17 +18,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.opendaylight.odlparent.karafutil;
 
 import java.net.URLStreamHandler;
 import java.net.URLStreamHandlerFactory;
-
 import org.apache.karaf.deployer.blueprint.BlueprintURLHandler;
 import org.apache.karaf.deployer.features.FeatureURLHandler;
 
 public class CustomBundleUrlStreamHandlerFactory implements URLStreamHandlerFactory {
-
     private static final String MVN_URI_PREFIX = "mvn";
     private static final String WRAP_URI_PREFIX = "wrap";
     private static final String FEATURE_URI_PREFIX = "feature";
@@ -49,5 +46,4 @@ public class CustomBundleUrlStreamHandlerFactory implements URLStreamHandlerFact
                 return null;
         }
     }
-
 }
