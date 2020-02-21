@@ -117,10 +117,6 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_2.13</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-cluster_2.13</artifactId>
         </dependency>
         <dependency>
@@ -137,19 +133,7 @@
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-protobuf_2.13</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-remote_2.13</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-slf4j_2.13</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-stream_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
@@ -166,6 +150,22 @@
         <dependency>
             <groupId>com.webcohesion.enunciate</groupId>
             <artifactId>enunciate-core-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.wayofquality.blended</groupId>
+            <artifactId>akka-actor_2.13</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.wayofquality.blended</groupId>
+            <artifactId>akka-protobuf_2.13</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.wayofquality.blended</groupId>
+            <artifactId>akka-slf4j_2.13</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.wayofquality.blended</groupId>
+            <artifactId>akka-stream_2.13</artifactId>
         </dependency>
         <dependency>
             <groupId>io.aeron</groupId>
