@@ -39,11 +39,11 @@
             <type>xml</type>
         </dependency>
         <dependency>
-            <groupId>com.typesafe.akka</groupId>
+            <groupId>de.wayofquality.blended</groupId>
             <artifactId>akka-actor_2.13</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.typesafe.akka</groupId>
+            <groupId>de.wayofquality.blended</groupId>
             <artifactId>akka-slf4j_2.13</artifactId>
             <exclusions>
                 <exclusion>
