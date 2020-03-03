@@ -17,6 +17,7 @@ import static org.ops4j.pax.exam.CoreOptions.systemPackages;
 import static org.ops4j.pax.exam.CoreOptions.when;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.configureConsole;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.editConfigurationFilePut;
+import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.features;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDistributionConfiguration;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
@@ -226,6 +227,10 @@ public class SingleFeatureTest {
             propagateSystemProperty(BUNDLES_DIAG_TIMEOUT_PROP),
             // Needed for Agrona/aeron.io
             systemPackages("com.sun.media.sound", "sun.net", "sun.nio.ch"),
+
+            // Install SCR
+            features(maven().groupId("org.apache.karaf.features").artifactId("standard").type("xml")
+                .classifier("features").versionAsInProject(), "scr"),
         };
 
         if (JavaVersionUtil.getMajorVersion() <= 8) {
