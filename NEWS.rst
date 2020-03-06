@@ -2,6 +2,45 @@
 ODL Parent release notes
 ========================
 
+Version 5.0.6
+-------------
+This is a bug-fix upgrade from version 5.0.5.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Akka 2.5.26 → 2.5.29, release notes:
+  * `2.5.27 <https://akka.io/blog/news/2019/12/10/akka-2.5.27-released>`__
+  * `2.5.29 <https://akka.io/blog/news/2020/01/28/akka-2.5.29-released>`__
+
+* Checkstyle 8.20 → 8.26, release notes:
+  * `8.21 <https://checkstyle.org/releasenotes.html#Release_8.21>`__
+  * `8.22 <https://checkstyle.org/releasenotes.html#Release_8.22>`__
+  * `8.23 <https://checkstyle.org/releasenotes.html#Release_8.23>`__
+  * `8.24 <https://checkstyle.org/releasenotes.html#Release_8.24>`__
+  * `8.25 <https://checkstyle.org/releasenotes.html#Release_8.25>`__
+  * `8.26 <https://checkstyle.org/releasenotes.html#Release_8.26>`__
+
+* commons-codec `1.13 → 1.14 <https://commons.apache.org/proper/commons-codec/changes-report.html#a1.14>`__
+
+* Jackson `2.9.10 → 2.9.10.20200223 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9#micro-patches>`__
+
+* scala-java8-compat 0.8.0 → 0.9.1, release notes:
+  * `0.9.0 <https://github.com/scala/scala-java8-compat/releases/tag/v0.9.0>`__
+  * `0.9.1 <https://github.com/scala/scala-java8-compat/releases/tag/v0.9.1>`__
+
+* Sevntu 1.32.0 → 1.37.1, release notes:
+  * `1.33.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.33.0>`__
+  * `1.34.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.34.0>`__
+  * `1.34.1 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.34.1>`__
+  * `1.35.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.35.0>`__
+  * `1.36.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.36.0>`__
+  * `1.37.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.37.0>`__
+  * `1.37.1 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.37.1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-source-plugin `3.2.0 → 3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924&version=12346480>`__
+
 Version 5.0.5
 -------------
 This is a bug-fix upgrade from version 5.0.4.
