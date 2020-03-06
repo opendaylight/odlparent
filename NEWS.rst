@@ -12,13 +12,16 @@ Third-party dependencies
   * `2.5.27 <https://akka.io/blog/news/2019/12/10/akka-2.5.27-released>`__
   * `2.5.29 <https://akka.io/blog/news/2020/01/28/akka-2.5.29-released>`__
 
-* Checkstyle 8.20 → 8.26, release notes:
+* Checkstyle 8.20 → 8.29, release notes:
   * `8.21 <https://checkstyle.org/releasenotes.html#Release_8.21>`__
   * `8.22 <https://checkstyle.org/releasenotes.html#Release_8.22>`__
   * `8.23 <https://checkstyle.org/releasenotes.html#Release_8.23>`__
   * `8.24 <https://checkstyle.org/releasenotes.html#Release_8.24>`__
   * `8.25 <https://checkstyle.org/releasenotes.html#Release_8.25>`__
   * `8.26 <https://checkstyle.org/releasenotes.html#Release_8.26>`__
+  * `8.27 <https://checkstyle.org/releasenotes.html#Release_8.27>`__
+  * `8.28 <https://checkstyle.org/releasenotes.html#Release_8.28>`__
+  * `8.29 <https://checkstyle.org/releasenotes.html#Release_8.29>`__
 
 * commons-codec `1.13 → 1.14 <https://commons.apache.org/proper/commons-codec/changes-report.html#a1.14>`__
 
