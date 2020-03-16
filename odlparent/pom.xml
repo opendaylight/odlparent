@@ -57,6 +57,7 @@
     <!-- JaCoCo configuration, by default tied to Sonar configuration, but can be overridden separately
          to allow projects to report Sonar values from the entire project. -->
     <jacoco.destFile>${project.build.directory}/code-coverage/jacoco.exec</jacoco.destFile>
+    <jacoco.dataFile>${jacoco.destFile}</jacoco.dataFile>
 
     <!-- Default Sonar configuration -->
     <sonar-jacoco-listeners.version>3.8</sonar-jacoco-listeners.version>
@@ -1861,9 +1862,12 @@
             <goals>
               <goal>prepare-agent</goal>
             </goals>
-            <configuration>
-              <destFile>${jacoco.destFile}</destFile>
-            </configuration>
+          </execution>
+          <execution>
+            <id>report</id>
+            <goals>
+              <goal>report</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
