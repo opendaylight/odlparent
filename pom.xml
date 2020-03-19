@@ -58,6 +58,9 @@
         <!-- Manifest filtering plugin -->
         <module>filter-manifest-plugin</module>
 
+        <!-- Logging Markers -->
+        <module>logging-markers</module>
+
         <!-- Features -->
         <module>features</module>
 
