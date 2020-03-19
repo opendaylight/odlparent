@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9deaff99_fcc4fa38",
+        "filename": "logging-markers/src/main/java/org/opendaylight/odlparent/Markers.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2020-03-19T20:16:13Z",
+      "side": 1,
+      "message": "javadoc",
+      "range": {
+        "startLine": 10,
+        "startChar": 19,
+        "endLine": 10,
+        "endChar": 27
+      },
+      "revId": "b845d7e7dde75ed75f7edb6c0fb0b0f6610eaa68",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d98f098_5847cde7",
+        "filename": "logging-markers/src/main/java/org/opendaylight/odlparent/Markers.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2020-03-19T20:16:13Z",
+      "side": 1,
+      "message": "javadoc",
+      "range": {
+        "startLine": 15,
+        "startChar": 37,
+        "endLine": 15,
+        "endChar": 49
+      },
+      "revId": "b845d7e7dde75ed75f7edb6c0fb0b0f6610eaa68",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af5d23d3_f8194a42",
+        "filename": "logging-markers/src/main/java/org/opendaylight/odlparent/Markers.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2020-03-19T20:16:13Z",
+      "side": 1,
+      "message": "@NonNull",
+      "range": {
+        "startLine": 15,
+        "startChar": 17,
+        "endLine": 15,
+        "endChar": 18
+      },
+      "revId": "b845d7e7dde75ed75f7edb6c0fb0b0f6610eaa68",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db51c9d6_3f6272f4",
+        "filename": "logging-markers/src/main/java/org/opendaylight/odlparent/Markers.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2020-03-19T20:16:13Z",
+      "side": 1,
+      "message": "extra space",
+      "revId": "b845d7e7dde75ed75f7edb6c0fb0b0f6610eaa68",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2fac5fd7_79543a88",
+        "filename": "logging-markers/src/main/java/org/opendaylight/odlparent/Markers.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2020-03-19T20:16:13Z",
+      "side": 1,
+      "message": "INSTANCE",
+      "range": {
+        "startLine": 16,
+        "startChar": 35,
+        "endLine": 16,
+        "endChar": 48
+      },
+      "revId": "b845d7e7dde75ed75f7edb6c0fb0b0f6610eaa68",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
