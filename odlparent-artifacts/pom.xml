@@ -36,7 +36,12 @@
                 <version>${project.version}</version>
                 <type>zip</type>
             </dependency>
-
+            <!-- Logging Markers -->
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>logging-markers</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!-- BouncyCastle/Karaf/OSGi glue -->
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
