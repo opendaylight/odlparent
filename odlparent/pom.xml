@@ -43,8 +43,6 @@
     <!-- Java Versions -->
     <maven.compiler.release>11</maven.compiler.release>
 
-    <!-- Used in openflowplugin -->
-    <enforcer.version>3.0.0-M3</enforcer.version>
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
     <karaf.version>4.2.8</karaf.version>
     <!-- Used in bgpcep, lispflowmapping -->
@@ -1286,10 +1284,6 @@
               </dependency>
             </annotationProcessorPaths>
           </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-enforcer-plugin</artifactId>
-          <version>${enforcer.version}</version>
         </plugin>
         <plugin>
           <artifactId>maven-failsafe-plugin</artifactId>

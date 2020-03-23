@@ -136,6 +136,10 @@
           </configuration>
         </plugin>
         <plugin>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>3.0.0-M3</version>
+        </plugin>
+        <plugin>
           <artifactId>maven-help-plugin</artifactId>
           <version>3.2.0</version>
         </plugin>
@@ -322,7 +326,6 @@
     <plugins>
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.0.0-M3</version>
         <executions>
           <execution>
             <id>enforce-maven</id>
