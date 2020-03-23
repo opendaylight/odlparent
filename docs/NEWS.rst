@@ -2,6 +2,195 @@
 ODL Parent release notes
 ========================
 
+Version 7.0.0
+-------------
+This is a major upgrade from version 6, with breaking changes; downstream projects may need to make changes to upgrade
+to this version.
+
+Property removals
+~~~~~~~~~~~~~~~~~
+* ``enforcer.version`` and ``projectinfo`` properties were removed. These properties do not serve any legal purpose as
+  the plugins referenced by them are declared in ``pluginManagement`` section.
+
+Dependency declaration removals
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ``immutables.org/value`` dependency declaration was removed. Downstream projects should rely on the artifact
+  with ``<classifier>annotations</classifier``, which remains declared.
+  See `ODLPARENT-217 <https://jira.opendaylight.org/browse/ODLPARENT-217>`__ for details.
+
+* ``com.google.inject/guice`` and ``com.mycila.guice.extensions/mycila-guice-jsr250`` dependency declarations were
+  removed. These declarations are only used in a single downstream project, ``infrautils``, which is the primary
+  project providing services around them. As such, these should be inherited by downstreams from there.
+  See `ODLPARENT-212 <https://jira.opendaylight.org/browse/ODLPARENT-212>`__  for details.
+
+* ``org.apache.shiro/shiro-core`` and ``org.apache.shiro/shiro-web`` dependency declarations were removed. These
+  declarations were only used by a single downstream project, ``aaa``. That project cannot upgrade these dependencies
+  without requiring cascading changes, as the declaration in odlparent serves as a global override affecting all
+  aaa downstreams.
+
+Feature removals
+~~~~~~~~~~~~~~~~
+* ``odl-akka-leveldb-0.10`` feature was removed. This feature provided leveldb-backed implementation of Akka
+  Persistence, which is not supported for production environments by upstream. Furthermore this feature relied on a
+  custom-built binary, which we do not have a means to reproduce -- limiting our portability. The controller project,
+  which is the only downstream user of persistence provides an alternative implementation, hence we are removing this
+  historical baggage. See `ODLPARENT-213 <https://jira.opendaylight.org/browse/ODLPARENT-213>`__ for details.
+
+* ``odl-caffeine-2`` feature was removed. This feature provided a ``JSR-107 JCache`` implementation, an API deemed to
+  be problematic where high-performance and correctness in required.
+
+New features
+~~~~~~~~~~~~
+
+New features:
+    Add OSGi Declarative Services to startup
+
+    Downstreams are using not only blueprint, but also SCR. Installing
+    SCR from a a standalone feature (as a dependency) causes pax-logging
+    rewire, hence we want to install this at startup time.
+
+    JIRA: ODLPARENT-227
+
+
+
+
+
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Akka `2.5.29 → 2.5.30 <https://akka.io/blog/news/2020/03/12/akka-2.5.30-released>`__
+
+* Checkstyle 8.26 → 8.29, release notes:
+  * `8.27 <https://checkstyle.org/releasenotes.html#Release_8.27>`__
+  * `8.28 <https://checkstyle.org/releasenotes.html#Release_8.28>`__
+  * `8.29 <https://checkstyle.org/releasenotes.html#Release_8.29>`__
+
+
+    Bump Asciidoctor to the latest 1.5
+
+    Changes:
+    https://github.com/asciidoctor/asciidoctor/releases/tag/v1.5.8
+
+
+    Bump Google Truth 0.43 → 1.0.1
+    
+    https://github.com/google/truth/releases/tag/release_0_44
+    https://github.com/google/truth/releases/tag/release_0_45
+    https://github.com/google/truth/releases/tag/release_0_46
+    https://github.com/google/truth/releases/tag/release_1_0_rc1
+    https://github.com/google/truth/releases/tag/release_1_0_rc2
+    https://github.com/google/truth/releases/tag/release_1_0
+    https://github.com/google/truth/releases/tag/release_1_0_1
+
+
+    Bump Guava to 28.2
+    
+    https://github.com/google/guava/releases/tag/v28.0
+    https://github.com/google/guava/releases/tag/v28.1
+    https://github.com/google/guava/releases/tag/v28.2
+    
+    Bump Log4J 2.13.0 → 2.13.1
+
+    Changes:
+    https://logging.apache.org/log4j/2.x/changes-report.html#a2.13.1
+
+    Bump sevntu to 1.37.1
+    
+    https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.37.0
+    https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.37.1
+
+    Bump scala-java8-compat to 0.9.1
+
+    https://github.com/scala/scala-java8-compat/releases/tag/v0.9.0
+    https://github.com/scala/scala-java8-compat/releases/tag/v0.9.1
+
+    Bump Scala to 2.13.1
+    
+    This bumps Scala references to 2.13.1, adjusting Akka to use this
+    version.
+
+
+    Upgrade to karaf-4.2.8
+    
+    Release notes:
+    https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12345539
+    https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12345539
+    This includes some important upgrades:
+    - javax.annotation-api from 1.3 to 1.3.1
+    - jackson from 2.9.10 to 2.10.2
+    - jetty from 9.4.18.v20190429 to 9.4.22.v20191022
+
+
+        Update jdt-annotations to 2.2.400
+
+    Bump javassist to 3.27.0-GA
+    
+    https://github.com/jboss-javassist/javassist/compare/rel_3_26_0_ga...rel_3_27_0_ga
+
+    Bump Netty to 4.1.48
+    
+    https://netty.io/news/2020/02/28/4-1-46-Final.html
+    https://netty.io/news/2020/03/09/4-1-47-Final.html
+    https://netty.io/news/2020/03/17/4-1-48-Final.html
+
+    Bump antlr to 4.8-1
+    
+    https://github.com/antlr/antlr4/releases/tag/4.8
+
+
+
+
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+    Bump maven-shade-plugin to 3.2.2
+    
+    https://blogs.apache.org/maven/entry/apache-maven-shade-plugin-version3
+
+    Bump maven-checkstyle-plugin to 3.1.1
+
+    https://blogs.apache.org/maven/entry/apache-maven-checkstyle-plugin-version1
+
+    Bump maven-checkstyle-plugin to 3.1.1
+    
+    https://blogs.apache.org/maven/entry/apache-maven-checkstyle-plugin-version1
+
+        Bump maven-dependency-plugin to 3.1.2
+
+    https://blogs.apache.org/maven/entry/apache-maven-dependency-plugin-version2
+
+    Bump maven-javadoc-plugin to 3.2.0
+    
+    https://blogs.apache.org/maven/entry/apache-maven-javadoc-plugin-version1
+
+    Bump jp.skypencil.findbugs.slf4j to 1.5.0
+    
+    https://github.com/KengoTODA/findbugs-slf4j/blob/master/CHANGELOG.md#150---2019-07-04
+
+
+        Bump maven-pmd-plugin to 3.13.0
+
+    https://blogs.apache.org/maven/entry/apache-maven-pmd-plugin-version2
+
+    This bumps used pmd to 6.21.0:
+    https://pmd.github.io/2019/04/28/PMD-6.14.0/
+    https://pmd.github.io/2019/05/26/PMD-6.15.0/
+    https://pmd.github.io/2019/06/30/PMD-6.16.0/
+    https://pmd.github.io/2019/07/28/PMD-6.17.0/
+    https://pmd.github.io/2019/09/15/PMD-6.18.0/
+    https://pmd.github.io/2019/10/31/PMD-6.19.0/
+    https://pmd.github.io/2019/11/29/PMD-6.20.0/
+    https://pmd.github.io/2020/01/24/PMD-6.21.0/
+
+        Bump enforcer to 3.0.0-M3
+
+    https://blogs.apache.org/maven/entry/apache-maven-enforcer-version-3
+
+        Bump modernizer plugin to 2.1.0
+
+    https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.1.0
+
+
 Version 6.0.5
 -------------
 This is a bug-fix upgrade from version 6.0.4.
