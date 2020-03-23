@@ -1053,7 +1053,7 @@
       <dependency>
         <groupId>io.dropwizard.metrics</groupId>
         <artifactId>metrics-bom</artifactId>
-        <version>4.0.7</version>
+        <version>4.1.5</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
