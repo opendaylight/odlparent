@@ -45,8 +45,6 @@
 
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
     <karaf.version>4.2.8</karaf.version>
-    <!-- Used in bgpcep, lispflowmapping -->
-    <projectinfo>2.8.1</projectinfo>
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
@@ -1885,7 +1883,6 @@
       <!-- FIXME: activate this
       <plugin>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>${projectinfo}</version>
       </plugin-->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
