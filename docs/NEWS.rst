@@ -2,6 +2,122 @@
 ODL Parent release notes
 ========================
 
+Version 7.0.0
+-------------
+This is a major upgrade from version 6, with breaking changes; downstream projects may need to make changes to upgrade
+to this version.
+
+Property removals
+~~~~~~~~~~~~~~~~~
+* ``enforcer.version`` and ``projectinfo`` properties were removed. These properties do not serve any legal purpose as
+  the plugins referenced by them are declared in ``pluginManagement`` section.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The following upstream dependencies have been removed from dependency management:
+
+* ``immutables.org/value`` without ``<classifier>annotations</classifier>``
+
+* ``com.google.inject/guice``
+
+* ``com.mycila.guice.extensions/mycila-guice-jsr250``
+
+* ``org.apache.shiro/shiro-core``
+
+* ``org.apache.shiro/shiro-web``
+
+Feature removals
+~~~~~~~~~~~~~~~~
+* ``odl-akka-leveldb-0.10`` feature was removed. This feature provided leveldb-backed implementation of Akka
+  Persistence, which is not supported for production environments by upstream. Furthermore this feature relied on a
+  custom-built binary, which we do not have a means to reproduce -- limiting our portability. The controller project,
+  which is the only downstream user of persistence provides an alternative implementation, hence we are removing this
+  historical baggage. See `ODLPARENT-213 <https://jira.opendaylight.org/browse/ODLPARENT-213>`__ for details.
+
+* ``odl-caffeine-2`` feature was removed. This feature provided a ``JSR-107 JCache`` implementation, an API deemed to
+  be problematic where high-performance and correctness in required.
+
+New features
+~~~~~~~~~~~~
+* OSGi R6 Declarative Services enabled in Karaf. The ``scr`` feature is now part of startup features, hence Service
+  Component Runtime can be used without incurring an additional refresh.
+  See `ODLPARENT-227 <https://jira.opendaylight.org/browse/ODLPARENT-227>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Akka `2.5.29 → 2.5.30 <https://akka.io/blog/news/2020/03/12/akka-2.5.30-released>`__
+
+* antl4r `4.7.2 → 4.8-1 <https://github.com/antlr/antlr4/releases/tag/4.8>`__
+
+* Asciidoctor `1.5.7.1 → 1.5.8 <https://github.com/asciidoctor/asciidoctor/releases/tag/v1.5.8>`__
+
+* Checkstyle 8.26 → 8.29, release notes:
+  * `8.27 <https://checkstyle.org/releasenotes.html#Release_8.27>`__
+  * `8.28 <https://checkstyle.org/releasenotes.html#Release_8.28>`__
+  * `8.29 <https://checkstyle.org/releasenotes.html#Release_8.29>`__
+
+* Google Truth 0.43 → 1.0.1, release notes:
+  * `0.44 <https://github.com/google/truth/releases/tag/release_0_44>`__
+  * `https://github.com/google/truth/releases/tag/release_0_45>`__
+  * `https://github.com/google/truth/releases/tag/release_0_46>`__
+  * `https://github.com/google/truth/releases/tag/release_1_0_rc1>`__
+  * `https://github.com/google/truth/releases/tag/release_1_0_rc2>`__
+  * `https://github.com/google/truth/releases/tag/release_1_0>`__
+  * `https://github.com/google/truth/releases/tag/release_1_0_1>`__
+
+* Guava 27.1 → 28.2, release notes:
+  * `28.0 <https://github.com/google/guava/releases/tag/v28.0>`__
+  * `28.1 <https://github.com/google/guava/releases/tag/v28.1>`__
+  * `28.2 <https://github.com/google/guava/releases/tag/v28.2>`__
+
+* Javassist 3.26.0 → 3.27.0
+
+* jdt-annotations 2.2.100 → 2.2.400
+
+* Karaf 4.2.6 → 4.2.8, with related upgrades, release notes:
+  * `4.2.7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12345539>`__
+  * `4.2.8 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12346100>`__
+
+* log4j2 `2.13.0 → 2.13.1 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.13.1>`__
+
+* Netty 4.1.45 → 4.1.48, release notes:
+  * `4.1.46 <https://netty.io/news/2020/02/28/4-1-46-Final.html`__
+  * `4.1.47 <https://netty.io/news/2020/03/09/4-1-47-Final.html`__
+  * `4.1.48 <https://netty.io/news/2020/03/17/4-1-48-Final.html>`__
+
+* Scala 2.12.10 → 2.13.1, release notes:
+  *  `2.13.0 <https://github.com/scala/scala/releases/tag/v2.13.0>`__
+  *  `2.13.1 <https://github.com/scala/scala/releases/tag/v2.13.1>`__
+
+* scala-java8-compat 0.8.0 → 0.9.1, release notes:
+  * `0.9.0 <https://github.com/scala/scala-java8-compat/releases/tag/v0.9.0>`__
+  * `0.9.1 <https://github.com/scala/scala-java8-compat/releases/tag/v0.9.1>`__
+
+* Sevntu 1.36.0 → 1.37.1, release notes:
+  * `1.37.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.37.0>`__
+  * `1.37.1 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.37.1>`__
+
+* woodstox-core 5.3.0 → 6.1.1
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+
+* findbugs-slf4j `1.4.0 → 1.5.0 <https://github.com/KengoTODA/findbugs-slf4j/blob/master/CHANGELOG.md#150---2019-07-04>`__
+
+* maven-checkstyle-plugin `3.1.0 → 3.1.1 <https://blogs.apache.org/maven/entry/apache-maven-checkstyle-plugin-version1>`__
+
+* maven-dependency-plugin `3.1.1 → 3.1.2 <https://blogs.apache.org/maven/entry/apache-maven-dependency-plugin-version2>`__
+
+* maven-enforcer-plugin `3.0.0-M2 → 3.0.0-M3 <https://blogs.apache.org/maven/entry/apache-maven-enforcer-version-3>`__
+
+* maven-javadoc-plugin `3.1.1 → 3.2.0 <https://blogs.apache.org/maven/entry/apache-maven-javadoc-plugin-version1>`__
+
+* maven-shade-plugin `3.2.1 → 3.2.2 <https://blogs.apache.org/maven/entry/apache-maven-shade-plugin-version3>`__
+
+* modernizer-maven-plugin `2.0.0 → 2.1.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.1.0>`__
+
+* pmd-maven-plugin `3.12.0 → 3.13.0 <https://blogs.apache.org/maven/entry/apache-maven-pmd-plugin-version2>`__
+
 Version 6.0.5
 -------------
 This is a bug-fix upgrade from version 6.0.4.
