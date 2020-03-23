@@ -419,8 +419,8 @@
       </dependency>
 
       <!-- These three need to be consistent:
-        jackson-2.9.10 needs woodstox-5.3.x
-        woodstox-5.3 needs stax2-api-4.2.x
+        jackson-2.10.2 needs woodstox-6.0.3, but we really want 6.1.1 for JDK11 fixes.
+        woodstox-5.3+ needs stax2-api-4.2.x
         -->
       <dependency>
         <groupId>org.codehaus.woodstox</groupId>
@@ -430,7 +430,7 @@
       <dependency>
         <groupId>com.fasterxml.woodstox</groupId>
         <artifactId>woodstox-core</artifactId>
-        <version>5.3.0</version>
+        <version>6.1.1</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson</groupId>
