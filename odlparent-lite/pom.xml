@@ -152,7 +152,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.1.1</version>
           <configuration combine.children="append">
             <!-- Keep things quiet except for warnings/errors -->
             <quiet>true</quiet>
