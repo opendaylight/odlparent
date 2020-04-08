@@ -302,7 +302,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
-        <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
+        <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite and docs -->
         <version>28.2-jre</version>
         <exclusions>
           <exclusion>
@@ -315,7 +315,7 @@
       <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
-        <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
+        <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite and docs -->
         <version>28.2-jre</version>
         <scope>test</scope>
         <exclusions>
@@ -335,7 +335,7 @@
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-lang3</artifactId>
-        <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
+        <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite and docs -->
         <version>3.10</version>
       </dependency>
       <dependency>
@@ -346,7 +346,7 @@
       <dependency>
         <groupId>commons-lang</groupId>
         <artifactId>commons-lang</artifactId>
-        <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
+        <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite and docs -->
         <version>2.6</version>
       </dependency>
       <dependency>
