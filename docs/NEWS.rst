@@ -2,6 +2,29 @@
 ODL Parent release notes
 ========================
 
+Version 7.0.1
+-------------
+This is a bug-fix upgrade from version 7.0.0.
+
+Bug fixes
+~~~~~~~~~
+* Upgrade of ``maven-javadoc-plugin`` is causing issues in downstream javadoc jobs and therefore it has been reverted.
+  See `ODLPARENT-229 <https://jira.opendaylight.org/browse/ODLPARENT-229>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Akka `2.5.30 → 2.5.31 <https://akka.io/blog/news/2020/03/31/akka-2.5.31-released>`__
+
+* Bouncy Castle `1.64 → 1.65 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Checkstyle `8.30 → 8.31 <https://checkstyle.org/releasenotes.html#Release_8.31>`__
+
+* commons-lang3 `3.9 → 3.10 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.10>`__
+
+* Xtend 1.19.0 → 1.21.0, release notes:
+  * `1.20.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/12/03/version-2-20-0>`__
+  * `1.21.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/03/03/version-2-21-0>`__
+
 Version 7.0.0
 -------------
 This is a major upgrade from version 6, with breaking changes; downstream projects may need to make changes to upgrade
