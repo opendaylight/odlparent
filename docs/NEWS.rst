@@ -2,6 +2,74 @@
 ODL Parent release notes
 ========================
 
+Version 6.0.6
+-------------
+This is a security/bug-fix upgrade from version 6.0.5.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Akka 2.5.29 → 2.5.31, release notes:
+  * `2.5.30 <https://akka.io/blog/news/2020/03/12/akka-2.5.30-released>`__
+  * `2.5.31 <https://akka.io/blog/news/2020/03/31/akka-2.5.31-released>`__
+
+* Bouncy Castle `1.64 → 1.65 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Checkstyle 8.26 → 8.31, release notes:
+  * `8.27 <https://checkstyle.org/releasenotes.html#Release_8.27>`__
+  * `8.28 <https://checkstyle.org/releasenotes.html#Release_8.28>`__
+  * `8.29 <https://checkstyle.org/releasenotes.html#Release_8.29>`__
+  * `8.30 <https://checkstyle.org/releasenotes.html#Release_8.30>`__
+  * `8.31 <https://checkstyle.org/releasenotes.html#Release_8.31>`__
+
+* Jackson `2.9.10.20200103 → 2.9.10.20200223 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9#micro-patches>`__
+
+* Javassist 3.26.0 → 3.27.0
+
+* jdt-annotations 2.2.100 → 2.2.400
+
+* log4j2 `2.13.0 → 2.13.1 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.13.1>`__
+
+* Netty 4.1.45 → 4.1.48, release notes:
+  * `4.1.46 <https://netty.io/news/2020/02/28/4-1-46-Final.html>`__
+  * `4.1.47 <https://netty.io/news/2020/03/09/4-1-47-Final.html>`__
+  * `4.1.48 <https://netty.io/news/2020/03/17/4-1-48-Final.html>`__
+
+* Powermock 2.0.4 → 2.0.6, release notes:
+  * `2.0.5 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#205>`__
+  * `2.0.6 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#206>`__
+
+* scala `2.12.10 → 2.12.11 <https://github.com/scala/scala/releases/tag/v2.12.11>`__
+
+* scala-java8-compat 0.8.0 → 0.9.1, release notes:
+  * `0.9.0 <https://github.com/scala/scala-java8-compat/releases/tag/v0.9.0>`__
+  * `0.9.1 <https://github.com/scala/scala-java8-compat/releases/tag/v0.9.1>`__
+
+* Sevntu 1.36.0 → 1.37.1, release notes:
+  * `1.37.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.37.0>`__
+  * `1.37.1 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.37.1>`__
+
+* Xtend 1.19.0 → 1.21.0, release notes:
+  * `1.20.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2019/12/03/version-2-20-0>`__
+  * `1.21.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/03/03/version-2-21-0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-checkstyle-plugin `3.1.0 → 3.1.1 <https://blogs.apache.org/maven/entry/apache-maven-checkstyle-plugin-version1>`__
+
+* maven-dependency-plugin `3.1.1 → 3.1.2 <https://blogs.apache.org/maven/entry/apache-maven-dependency-plugin-version2>`__
+
+* maven-enforcer-plugin `3.0.0-M2 → 3.0.0-M3 <https://blogs.apache.org/maven/entry/apache-maven-enforcer-version-3>`__
+
+* maven-shade-plugin `3.2.1 → 3.2.2 <https://blogs.apache.org/maven/entry/apache-maven-shade-plugin-version3>`__
+
+* maven-site-plugin 3.7.1 → 3.9.0, release notes:
+  * `3.8.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12343145>`__
+  * `3.9.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12345725>`__
+
+* modernizer-maven-plugin `2.0.0 → 2.1.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.1.0>`__
+
+* pmd-maven-plugin `3.12.0 → 3.13.0 <https://blogs.apache.org/maven/entry/apache-maven-pmd-plugin-version2>`__
+
 Version 6.0.5
 -------------
 This is a bug-fix upgrade from version 6.0.4.
