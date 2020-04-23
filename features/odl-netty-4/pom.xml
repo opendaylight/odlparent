@@ -47,16 +47,5 @@
             <artifactId>netty-transport-native-epoll</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
-
-        <!-- netty-common has an optional dependency on javassist, which boosts performance
-             of matchers. We want to force that dependency to be satisfied to prevent refreshes. -->
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-javassist-3</artifactId>
-            <version>${project.version}</version>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
     </dependencies>
-
 </project>
