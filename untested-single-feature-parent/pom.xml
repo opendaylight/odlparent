@@ -88,6 +88,9 @@
                         <!-- javax.annotation -->
                         <excludedArtifactId>activation</excludedArtifactId>
                         <excludedArtifactId>jakarta.activation-api</excludedArtifactId>
+
+                        <!-- Our slf4j logging markers -->
+                        <excludedArtifactId>logging-markers</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
             </plugin>
