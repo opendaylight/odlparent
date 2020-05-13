@@ -87,6 +87,8 @@
                         <excludedArtifactId>jaxb-impl</excludedArtifactId>
                         <!-- javax.annotation -->
                         <excludedArtifactId>activation</excludedArtifactId>
+                        <!-- Our slf4j logging markers -->
+                        <excludedArtifactId>logging-markers</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
             </plugin>
