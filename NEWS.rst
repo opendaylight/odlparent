@@ -2,6 +2,49 @@
 ODL Parent release notes
 ========================
 
+Version 5.0.7
+-------------
+This is a bug-fix/feature upgrade from version 5.0.6.
+
+Improvements
+~~~~~~~~~~~~
+* Infrastructure for identifying confidential log messages was added, along with
+  Karaf configuration update to routing such messages into a separate log file.
+  See `ODLPARENT-231 <https://jira.opendaylight.org/browse/ODLPARENT-231>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Akka 2.5.29 → 2.5.31, release notes:
+  * `2.5.30 <https://akka.io/blog/news/2020/03/12/akka-2.5.30-released>`__
+  * `2.5.31 <https://akka.io/blog/news/2020/03/12/akka-2.5.30-released>`__
+
+* Bouncy Castle `1.64 → 1.65 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Netty 4.1.45 → 4.1.49, release notes:
+  * `4.1.46 <https://netty.io/news/2020/02/28/4-1-46-Final.html>`__
+  * `4.1.47 <https://netty.io/news/2020/03/09/4-1-47-Final.html>`__
+  * `4.1.48 <https://netty.io/news/2020/03/17/4-1-48-Final.html>`__
+  * `4.1.48 <https://netty.io/news/2020/04/22/4-1-49-Final.html>`__
+
+* Scala `2.12.10 → <https://github.com/scala/scala/releases/tag/v2.12.11>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+
+* findbugs-slf4j `1.4.0 → 1.5.0 <https://github.com/KengoTODA/findbugs-slf4j/blob/master/CHANGELOG.md#150---2019-07-04>`__
+
+* maven-antrun-plugin `1.8 → 3.0.0 <https://blogs.apache.org/maven/entry/apache-maven-antrun-plugin-version>`__
+
+* maven-checkstyle-plugin `3.1.0 → 3.1.1 <https://blogs.apache.org/maven/entry/apache-maven-checkstyle-plugin-version1>`__
+
+* maven-dependency-plugin `3.1.1 → 3.1.2 <https://blogs.apache.org/maven/entry/apache-maven-dependency-plugin-version2>`__
+
+* maven-shade-plugin `3.2.1 → 3.2.2 <https://blogs.apache.org/maven/entry/apache-maven-shade-plugin-version3>`__
+
+* maven-site-plugin 3.7.1 → 3.9.0, release notes:
+  * `3.8.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12343145>`__
+  * `3.9.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12345725>`__
+
 Version 5.0.6
 -------------
 This is a bug-fix upgrade from version 5.0.5.
