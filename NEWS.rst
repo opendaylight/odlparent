@@ -26,7 +26,7 @@ Third-party dependencies
   * `4.1.48 <https://netty.io/news/2020/03/17/4-1-48-Final.html>`__
   * `4.1.48 <https://netty.io/news/2020/04/22/4-1-49-Final.html>`__
 
-* Scala `2.12.10 → <https://github.com/scala/scala/releases/tag/v2.12.11>`__
+* Scala `2.12.10 → 2.12.11 <https://github.com/scala/scala/releases/tag/v2.12.11>`__
 
 Plugin upgrades
 ~~~~~~~~~~~~~~~
