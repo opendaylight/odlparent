@@ -1286,7 +1286,7 @@
 
         <plugin>
           <artifactId>maven-remote-resources-plugin</artifactId>
-          <version>1.6.0</version>
+          <version>1.7.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
