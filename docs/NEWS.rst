@@ -120,6 +120,10 @@ Third-party dependencies
   * `4.1.47 <https://netty.io/news/2020/03/09/4-1-47-Final.html>`__
   * `4.1.48 <https://netty.io/news/2020/03/17/4-1-48-Final.html>`__
 
+* Powermock 2.0.4 → 2.0.6, release notes:
+  * `2.0.5 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#205>`__
+  * `2.0.6 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#206>`__
+
 * Scala 2.12.10 → 2.13.1, release notes:
   * `2.13.0 <https://github.com/scala/scala/releases/tag/v2.13.0>`__
   * `2.13.1 <https://github.com/scala/scala/releases/tag/v2.13.1>`__
