@@ -22,7 +22,6 @@
     <description>ODL Root Parent documentation</description>
 
     <dependencies>
-
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>bundles-test-lib</artifactId>
@@ -47,6 +46,10 @@
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>karaf-util</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>logging-markers</artifactId>
         </dependency>
 
         <!-- Also add dependencies we are using -->
