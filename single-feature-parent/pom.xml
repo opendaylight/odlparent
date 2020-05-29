@@ -58,7 +58,6 @@
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>bundles-test-lib</artifactId>
-            <version>7.0.2-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
