@@ -2,6 +2,73 @@
 ODL Parent release notes
 ========================
 
+Version 7.0.2
+-------------
+This is a security/bug-fix upgrade from version 7.0.1.
+
+
+Improvements
+~~~~~~~~~~~~
+* Infrastructure for identifying confidential log messages was added, along with
+  Karaf configuration update to routing such messages into a separate log file.
+  See `ODLPARENT-231 <https://jira.opendaylight.org/browse/ODLPARENT-231>`__ for details.
+
+* Netty has been disconnected from Javassist way back in its 4.1.9 release, but
+  we failed to notice. This has now been rectified by ``odl-netty-4`` not depending
+  on ``odl-javassist-3``.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle `8.31 → 8.32 <https://checkstyle.org/releasenotes.html#Release_8.32>`__
+
+* Dropwizard Metrics 4.1.5 → 4.1.9, release notes:
+  * `4.1.6 <https://github.com/dropwizard/metrics/releases/tag/v4.1.6>`__
+  * `4.1.7 <https://github.com/dropwizard/metrics/releases/tag/v4.1.7>`__
+  * `4.1.8 <https://github.com/dropwizard/metrics/releases/tag/v4.1.8>`__
+  * `4.1.9 <https://github.com/dropwizard/metrics/releases/tag/v4.1.9>`__
+
+* Enunciate 2.12.1 → 2.13.1, release notes:
+  * `2.13.0 <https://github.com/stoicflame/enunciate/releases/tag/v2.13.0>`__
+  * `2.13.1 <https://github.com/stoicflame/enunciate/releases/tag/v2.13.1>`__
+
+* Jackson 2.10.2 → 2.10.4, release notes:
+  * `2.10.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.10.3>`__
+  * `2.10.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.10.4>`__
+
+* log4j2 2.13.1 → 2.13.3, release notes:
+  * `2.13.2 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.13.2>`__
+  * `2.13.3 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.13.3>`__
+
+* Netty `4.1.48 → 4.1.49 <https://netty.io/news/2020/02/28/4-1-46-Final.html>`__
+
+* Powermock `2.0.6 → 2.0.7 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#207>`__
+
+* Scala `2.13.1 → 2.13.2 <https://github.com/scala/scala/releases/tag/v2.13.0>`__
+
+* Woodstox 6.1.1 → 6.2.1, release notes:
+  * `6.2.0 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-6.2#620-25-apr-2020>`__
+  * `6.2.1 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-6.2#621-13-may-2020>`__
+
+* xmlunit 2.6.3 → 2.7.0, release notes:
+  * `2.6.4 <https://github.com/xmlunit/xmlunit/releases/tag/v2.6.4>`__
+  * `2.7.0 <https://github.com/xmlunit/xmlunit/releases/tag/v2.7.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* builder-helper-maven-plugin `3.0.0 → 3.1.0 <https://github.com/mojohaus/build-helper-maven-plugin/issues?q=is%3Aissue+milestone%3A3.1.0+is%3Aclosed>`__
+
+* duplicate-finder-maven-plugin `1.3.0 → 1.4.0 <https://github.com/basepom/duplicate-finder-maven-plugin/releases/tag/duplicate-finder-maven-plugin-1.4.0>`__
+
+* maven-antrun-plugin `1.8 → 3.0.0 <https://blogs.apache.org/maven/entry/apache-maven-antrun-plugin-version>`__
+
+* maven-assembly-plugin `3.2.0 → 3.3.0 <https://blogs.apache.org/maven/entry/apache-maven-assembly-plugin-version1>`__
+
+* maven-invoker-plugin `3.2.0 → 3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12344863>`__
+
+* maven-remote-resources-plugin `1.6.0 → 1.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12331232>`__
+
+* maven-shade-plugin `3.2.2 → 3.2.3 <https://blogs.apache.org/maven/entry/apache-maven-shade-plugin-version4>`__
+
 Version 7.0.1
 -------------
 This is a bug-fix upgrade from version 7.0.0.
