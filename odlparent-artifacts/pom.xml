@@ -36,6 +36,11 @@
                 <version>${project.version}</version>
                 <type>zip</type>
             </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>bundles-test-lib</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!-- Logging Markers -->
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
