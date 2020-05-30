@@ -43,7 +43,7 @@ Third-party dependencies
 
 * Powermock `2.0.6 → 2.0.7 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#207>`__
 
-* Scala `2.13.1 → 2.13.2 <https://github.com/scala/scala/releases/tag/v2.13.0>`__
+* Scala `2.13.1 → 2.13.2 <https://github.com/scala/scala/releases/tag/v2.13.2>`__
 
 * Woodstox 6.1.1 → 6.2.1, release notes:
   * `6.2.0 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-6.2#620-25-apr-2020>`__
