@@ -263,6 +263,24 @@
                     </execution>
                     <execution>
                         <!-- FIXME: remove this once we have karaf-4.2.9+ -->
+                        <id>remove-pax-logging-1.11.4</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <delete dir="${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-api/1.11.4"
+                                    includeemptydirs="true" failonerror="true"/>
+                                <delete dir="${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-logback/1.11.4"
+                                    includeemptydirs="true" failonerror="true"/>
+                                <delete dir="${project.build.directory}/assembly/system/org/ops4j/pax/logging/pax-logging-log4j2/1.11.4"
+                                    includeemptydirs="true" failonerror="true"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <!-- FIXME: remove this once we have karaf-4.2.9+ -->
                         <id>remove-scr-2.1.16</id>
                         <phase>prepare-package</phase>
                         <goals>
