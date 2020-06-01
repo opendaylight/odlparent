@@ -86,11 +86,15 @@
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-instance.patch"
                        originalfile="${project.build.directory}/assembly/bin/instance"
                        failonerror="true"/>
+                <replace file="${project.build.directory}/assembly/bin/instance"
+                         token="1.11.4" value="1.11.6" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/bin/instance"
                       tofile="${project.build.directory}/classes/bin/instance"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-instance.bat.patch"
                        originalfile="${project.build.directory}/assembly/bin/instance.bat"
                        failonerror="true" ignorewhitespace="true"/>
+                <replace file="${project.build.directory}/assembly/bin/instance.bat"
+                         token="1.11.4" value="1.11.6" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/bin/instance.bat"
                       tofile="${project.build.directory}/classes/bin/instance.bat"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-inc.patch"
@@ -121,6 +125,18 @@
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-quiesce.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
+                <replace file="${project.build.directory}/assembly/bin/shell"
+                         token="1.11.4" value="1.11.6" failOnNoReplacements="true"/>
+                <copy file="${project.build.directory}/assembly/bin/shell"
+                      tofile="${project.build.directory}/classes/bin/shell"/>
+                <replace file="${project.build.directory}/assembly/bin/shell.bat"
+                         token="1.11.4" value="1.11.6" failOnNoReplacements="true"/>
+                <copy file="${project.build.directory}/assembly/bin/shell.bat"
+                      tofile="${project.build.directory}/classes/bin/shell.bat"/>
+                <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"
+                         token="/1.11.4" value="/1.11.6" failOnNoReplacements="true"/>
+                <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"
+                      tofile="${project.build.directory}/classes/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"/>
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                          token="commons-codec/commons-codec/1.13" value="commons-codec/commons-codec/1.14" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
@@ -147,6 +163,8 @@ mvn\:org.opendaylight.odlparent/bcpkix-framework-ext/${project.version} = 14
 mvn\:org.opendaylight.odlparent/logging-markers/${project.version} = 14
 mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.0.0 = 14
                 </echo>
+                <replace file="${project.build.directory}/assembly/etc/startup.properties"
+                         token="/1.11.4" value="/1.11.6" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/etc/startup.properties"
                       tofile="${project.build.directory}/classes/etc/startup.properties"/>
                 <fixcrlf srcdir="${project.build.directory}/classes/bin"
