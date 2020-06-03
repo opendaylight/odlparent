@@ -144,6 +144,8 @@
                          token="org.apache.aries.proxy/org.apache.aries.proxy/1.1.4" value="org.apache.aries.proxy/org.apache.aries.proxy/1.1.6" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                          token="org.jolokia/jolokia-osgi/1.6.1" value="org.jolokia/jolokia-osgi/1.6.2" failOnNoReplacements="true"/>
+                <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
+                         token="org.apache.felix.scr/2.1.16" value="org.apache.felix.scr/2.1.20" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.2.10/pax-web-features-7.2.10-features.xml"
