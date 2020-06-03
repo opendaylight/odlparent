@@ -261,8 +261,23 @@
                             </target>
                         </configuration>
                     </execution>
+                    <execution>
+                        <!-- FIXME: remove this once we have karaf-4.2.9+ -->
+                        <id>remove-scr-2.1.16</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <delete dir="${project.build.directory}/assembly/system/org/apache/felix/org.apache.felix.scr/2.1.16"
+                                    includeemptydirs="true"/>
+                            </target>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
