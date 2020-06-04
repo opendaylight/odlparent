@@ -2,10 +2,28 @@
 ODL Parent release notes
 ========================
 
+Version 7.0.3
+-------------
+This is a security/bug-fix upgrade from version 7.0.2. Changes in this release
+pertain strictly to Karaf packaging and do not affect other runtimes.
+
+Bug fixes
+~~~~~~~~~
+* Felix SCR 2.1.16, as shipping before Karaf-4.2.9, contains a bug, which could
+  lead to NullPointerException being thrown when components were examined. This
+  has been rectified via upgrade to Felix SCR 2.1.20.
+  See `ODLPARENT-236 <https://jira.opendaylight.org/browse/ODLPARENT-236>`__ for details.
+* Karaf-4.2.8 changed packaged log4j2 version, rendering the configuration supplied
+  with ``ODLPARENT-231`` inconsistent. This has lead to a warning being printed in the
+  Karaf console on each startup. This has now been corrected.
+* Karaf-4.2.8 is packaging pax-logging-1.11.4, which embeds a a vulnerable version
+  of log4j2 (2.3.0). This would render the upgrades delivered in version 7.0.2
+  ineffective at runtime, potentially leading to exposure. This has been corrected
+  with upgrade of pax-logging to 1.11.6, which is packaging log4j2-2.3.2.
+
 Version 7.0.2
 -------------
 This is a security/bug-fix upgrade from version 7.0.1.
-
 
 Improvements
 ~~~~~~~~~~~~
