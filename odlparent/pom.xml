@@ -44,7 +44,7 @@
     <maven.compiler.release>11</maven.compiler.release>
 
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.2.8</karaf.version>
+    <karaf.version>4.2.9</karaf.version>
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
@@ -831,7 +831,7 @@
         <groupId>org.ops4j.pax.web</groupId>
         <artifactId>pax-web-api</artifactId>
         <!-- Note: keep this version synchronized with karaf -->
-        <version>7.2.14</version>
+        <version>7.2.16</version>
       </dependency>
 
       <dependency>
