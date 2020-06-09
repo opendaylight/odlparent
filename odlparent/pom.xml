@@ -660,11 +660,6 @@
         <artifactId>org.apache.aries.quiesce.api</artifactId>
         <version>1.0.0</version>
       </dependency>
-      <dependency>
-        <groupId>org.ow2.asm</groupId>
-        <artifactId>asm</artifactId>
-        <version>7.0</version>
-      </dependency>
 
       <!-- Configuration library -->
       <!-- This needs to be kept in sync with the version used by akka -->
