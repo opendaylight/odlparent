@@ -85,7 +85,11 @@
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <!-- Overridden to have TCP channel support -->
+                <version>3.0.0-M5</version>
                 <configuration>
+                    <!-- Overridden to fix corruption with SFT, where the process would hang after test -->
+                    <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory"/>
                     <dependenciesToScan>
                         <dependency>org.opendaylight.odlparent:features-test</dependency>
                     </dependenciesToScan>
