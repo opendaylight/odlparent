@@ -24,11 +24,9 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.EnumSet;
-import java.util.Properties;
 import javax.inject.Inject;
 import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.features.Feature;
@@ -91,15 +89,9 @@ public class SingleFeatureTest {
     /*
      * Property names to override defaults for karaf distro artifactId, groupId, version, and type
      */
-    private static final String KARAF_DISTRO_VERSION_PROP = "karaf.distro.version";
     private static final String KARAF_DISTRO_TYPE_PROP = "karaf.distro.type";
     private static final String KARAF_DISTRO_ARTIFACTID_PROP = "karaf.distro.artifactId";
     private static final String KARAF_DISTRO_GROUPID_PROP = "karaf.distro.groupId";
-
-    /**
-     * Property file used to store the Karaf distribution version.
-     */
-    private static final String PROPERTIES_FILENAME = "singlefeaturetest.properties";
 
     /**
      * <p>List of Karaf 4.2.6 default maven repositories with snapshot repositories excluded.</p>
@@ -120,7 +112,7 @@ public class SingleFeatureTest {
     @Inject @NonNull
     private FeaturesService featuresService;
 
-    private String karafVersion;
+    private String karafReleaseVersion;
     private String karafDistroVersion;
 
     @ProbeBuilder
@@ -237,7 +229,7 @@ public class SingleFeatureTest {
             return baseConfig;
         }
 
-        final String version = getKarafVersion();
+        final String version = getKarafReleaseVersion();
         return OptionUtils.combine(baseConfig, new VMOption[] {
             new VMOption("--add-reads=java.xml=java.logging"),
             new VMOption("--add-exports=java.base/org.apache.karaf.specs.locator=java.xml,ALL-UNNAMED"),
@@ -270,40 +262,17 @@ public class SingleFeatureTest {
         return File.createTempFile("SingleFeatureTest-Karaf-JavaFlightRecorder", ".jfr").getAbsolutePath();
     }
 
-    private String getKarafVersion() throws IOException {
-        if (karafVersion == null) {
-            // We use a properties file to retrieve Karaf's version, instead of .versionAsInProject()
-            // This avoids forcing all users to depend on Karaf in their POMs
-            Properties singleFeatureTestProps = new Properties();
-            try (InputStream singleFeatureTestInputStream = Thread.currentThread().getContextClassLoader()
-                    .getResourceAsStream(PROPERTIES_FILENAME)) {
-                if (singleFeatureTestInputStream == null) {
-                    throw new IOException("Resource not found; expected to be present on current thread classloader: "
-                            + PROPERTIES_FILENAME);
-                }
-                singleFeatureTestProps.load(singleFeatureTestInputStream);
-            }
-            karafVersion = singleFeatureTestProps.getProperty(KARAF_DISTRO_VERSION_PROP);
-
-            LOG.info("Retrieved karafVersion {} from properties file {}", karafVersion, PROPERTIES_FILENAME);
-        } else {
-            LOG.info("Retrieved karafVersion {} from system property {}", karafVersion, KARAF_DISTRO_VERSION_PROP);
+    private String getKarafReleaseVersion() throws IOException {
+        if (karafReleaseVersion == null) {
+            karafReleaseVersion = KarafConstants.karafReleaseVersion();
         }
-
-        return karafVersion;
+        return karafReleaseVersion;
     }
 
-    private String getKarafDistroVersion() throws IOException {
+    private String getKarafDistroVersion() {
         if (karafDistroVersion == null) {
-            karafDistroVersion = System.getProperty(KARAF_DISTRO_VERSION_PROP);
-            if (karafDistroVersion == null) {
-                karafDistroVersion = getKarafVersion();
-            } else {
-                LOG.info("Retrieved karafDistroVersion {} from system property {}", karafVersion,
-                        KARAF_DISTRO_VERSION_PROP);
-            }
+            karafDistroVersion = KarafConstants.karafDistroVersion();
         }
-
         return karafDistroVersion;
     }
 
