@@ -96,6 +96,8 @@ public class SingleFeatureTest {
     private static final String KARAF_DISTRO_ARTIFACTID_PROP = "karaf.distro.artifactId";
     private static final String KARAF_DISTRO_GROUPID_PROP = "karaf.distro.groupId";
 
+    private static final String KARAF_VERSION_PROP = "karaf.version";
+
     /**
      * Property file used to store the Karaf distribution version.
      */
