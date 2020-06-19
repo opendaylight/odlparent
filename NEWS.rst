@@ -2,6 +2,33 @@
 ODL Parent release notes
 ========================
 
+Version 5.0.8
+-------------
+This is a security/bug-fix from version 5.0.7.
+
+Bug fixes
+~~~~~~~~~
+* Felix SCR 2.1.16, as shipping before Karaf-4.2.9, contains a bug, which could
+  lead to NullPointerException being thrown when components were examined. This
+  has been rectified via upgrade to Felix SCR 2.1.20.
+  See `ODLPARENT-236 <https://jira.opendaylight.org/browse/ODLPARENT-236>`__ for details.
+* ``Single Feature Test`` setup of the JVM for Karaf container ended up using
+  wrong versions of Karaf components, leading to a failure to initialize
+  OSGiLocator and subsequent warnings with stack traces. This has now been
+  corrected.
+  See `ODLPARENT-228 <https://jira.opendaylight.org/browse/ODLPARENT-228>`__ for details.
+* Pax-Exam setup interacts badly with pipes used by maven-surefire plugin,
+  leading to pauses lasting around 30 seconds after SFT test success.
+  This has now been worked around by using maven-surefire-plugin version 3.0.0-M5,
+  with TCP sockets used for communication.
+  See `ODLPARENT-179 <https://jira.opendaylight.org/browse/ODLPARENT-179>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* commons-io `2.6 → 2.7 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.7>`__
+
+* Jackson `2.9.10.20200223 → 2.9.10.20200411 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9#micro-patches>`__
+
 Version 5.0.7
 -------------
 This is a bug-fix/feature upgrade from version 5.0.6.
