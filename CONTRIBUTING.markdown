@@ -12,7 +12,7 @@ submit code to this project.
 
 ## Reporting a Bug
 
-OpenDaylight uses Bugzilla [5] as our issue tracking system and any feature
+OpenDaylight uses Jira [5] as our issue tracking system and any feature
 requests or bugs should be filed there under the relevant subproject. This
 project is listed under the odlparent subproject.
 
@@ -20,10 +20,10 @@ project is listed under the odlparent subproject.
 
 OpenDaylight uses several forms of public communication channels for project
 discussions and planning. Details on how to communicate can be found on our
-wiki here [5].
+wiki archive here [5].
 
-[1] <https://wiki.opendaylight.org/view/Project_list>
+[1] <https://wiki.opendaylight.org/display/ODL/Projects>
 [2] <https://git.opendaylight.org/gerrit/#/admin/projects/odlparent>
-[3] <https://wiki.opendaylight.org/view/Submit_a_Patch>
-[4] <https://bugs.opendaylight.org>
-[5] <https://wiki.opendaylight.org/view/Communication>
+[3] <https://docs.releng.linuxfoundation.org/en/latest/gerrit.html>
+[4] <https://jira.opendaylight.org>
+[5] <https://wiki-archive.opendaylight.org/view/Communication>
