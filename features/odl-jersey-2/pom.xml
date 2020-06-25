@@ -52,6 +52,18 @@
         </dependency>
 
         <dependency>
+            <groupId>org.glassfish.jersey.inject</groupId>
+            <artifactId>jersey-hk2</artifactId>
+            <exclusions>
+                <!-- Provided by org.glassfish.hk2.external/javax.inject, which is a proper bundle. That probably
+                     should also be excluded and we should rely on whatever is recommended for Karaf. -->
+                <exclusion>
+                    <groupId>javax.inject</groupId>
+                    <artifactId>javax.inject</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
             <groupId>org.glassfish.jersey.core</groupId>
             <artifactId>jersey-client</artifactId>
         </dependency>
