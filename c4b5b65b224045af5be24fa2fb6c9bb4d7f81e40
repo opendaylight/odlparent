@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "114837e3_3057ed72",
+        "filename": "CONTRIBUTING.markdown",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2020-06-25T07:11:27Z",
+      "side": 1,
+      "message": "I haven\u0027t found any equivalent on the new LFN and ODL wikis...",
+      "range": {
+        "startLine": 29,
+        "startChar": 5,
+        "endLine": 29,
+        "endChar": 61
+      },
+      "revId": "c4b5b65b224045af5be24fa2fb6c9bb4d7f81e40",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9d128462_dd9e4dae",
+        "filename": "README.markdown",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6731
+      },
+      "writtenOn": "2020-06-25T07:11:27Z",
+      "side": 1,
+      "message": "Note it is still under construction",
+      "range": {
+        "startLine": 9,
+        "startChar": 5,
+        "endLine": 9,
+        "endChar": 62
+      },
+      "revId": "c4b5b65b224045af5be24fa2fb6c9bb4d7f81e40",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    }
+  ]
+}
