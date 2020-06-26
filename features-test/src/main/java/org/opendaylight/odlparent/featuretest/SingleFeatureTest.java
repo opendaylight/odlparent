@@ -25,11 +25,17 @@ import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.karafDist
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.keepRuntimeFolder;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.logLevel;
 
+import com.google.common.annotations.VisibleForTesting;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Properties;
 import javax.inject.Inject;
 import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.features.Feature;
@@ -104,6 +110,8 @@ public class SingleFeatureTest {
      * <p>When updating Karaf, check this against org.ops4j.pax.url.mvn.cfg in the Karaf distribution.</p>
      */
     private static final String EXTERNAL_DEFAULT_REPOSITORIES = "https://repo1.maven.org/maven2@id=central ";
+
+    private static final String DEPENDENCIES_PROPERTIES = "META-INF/maven/dependencies.properties";
 
     @Inject @NonNull
     private BundleContext bundleContext;
@@ -382,6 +390,15 @@ public class SingleFeatureTest {
         //  * https://bugs.opendaylight.org/show_bug.cgi?id=7926
         bundleContext = bundleContext.getBundle(0).getBundleContext();
 
+        for (MavenDependency dep : findTestDependencies(loadMavenDependencies())) {
+            if ("xml".equals(dep.type()) && "features".equals(dep.classifier())) {
+                LOG.info("Attempting to install test dependency {} {}", dep.artifactId(), dep.version());
+                featuresService.installFeature(dep.artifactId(), dep.version(),
+                    EnumSet.of(FeaturesService.Option.Verbose));
+                LOG.info("installFeature() completed");
+            }
+        }
+
         // Acquire feature details from properties
         final String featureName = getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP);
         final String featureVersion = getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP);
@@ -407,5 +424,33 @@ public class SingleFeatureTest {
             LOG.warn("SKIPPING TestBundleDiag because system property {} is true: {}", BUNDLES_DIAG_SKIP_PROP,
                 featureName);
         }
+    }
+
+    @VisibleForTesting
+    static List<MavenDependency> findTestDependencies(final Properties dependencies) {
+        final List<MavenDependency> ret = new ArrayList<>();
+
+        for (Entry<Object, Object> entry : dependencies.entrySet()) {
+            final String key = (String) entry.getKey();
+            if (key.endsWith("/scope")) {
+                if ("test".equals(entry.getValue())) {
+                    ret.add(MavenDependency.create(dependencies, key));
+                }
+            }
+        }
+
+        return ret;
+    }
+
+    private static Properties loadMavenDependencies() throws IOException {
+        final InputStream input = Util.class.getResourceAsStream(DEPENDENCIES_PROPERTIES);
+        if (input == null) {
+            throw new IOException("Failed to find " + DEPENDENCIES_PROPERTIES);
+        }
+
+        final Properties props = new Properties();
+        props.load(input);
+        input.close();
+        return props;
     }
 }
