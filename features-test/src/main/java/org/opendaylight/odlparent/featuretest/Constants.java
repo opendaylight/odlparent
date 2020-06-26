@@ -5,7 +5,6 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-
 package org.opendaylight.odlparent.featuretest;
 
 public final class Constants {
@@ -22,4 +21,7 @@ public final class Constants {
             "org.opendaylight.featuretest.featurename";
     public static final String ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP =
             "org.opendaylight.featuretest.featureversion";
+    public static final String ORG_OPENDAYLIGHT_FEATURETEST_TESTDEPS_PROP =
+            "org.opendaylight.featuretest.testdeps";
+
 }
