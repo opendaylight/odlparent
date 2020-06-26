@@ -8,16 +8,19 @@
 package org.opendaylight.odlparent.featuretest;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
+import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_TESTDEPS_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
 import static org.ops4j.pax.exam.CoreOptions.bootDelegationPackages;
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.CoreOptions.propagateSystemProperty;
 import static org.ops4j.pax.exam.CoreOptions.systemPackages;
+import static org.ops4j.pax.exam.CoreOptions.systemProperty;
 import static org.ops4j.pax.exam.CoreOptions.when;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.configureConsole;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.editConfigurationFilePut;
@@ -30,7 +33,12 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 import javax.inject.Inject;
 import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.features.Feature;
@@ -38,6 +46,7 @@ import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
 import org.awaitility.Awaitility;
 import org.eclipse.jdt.annotation.NonNull;
+import org.eclipse.jdt.annotation.Nullable;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -117,6 +126,7 @@ public class SingleFeatureTest {
 
     private String karafReleaseVersion;
     private String karafDistroVersion;
+    private Set<String> installFeatures;
 
     @ProbeBuilder
     public TestProbeBuilder probeConfiguration(final TestProbeBuilder probe) {
@@ -135,6 +145,7 @@ public class SingleFeatureTest {
         ReflectionUtil.addAllClassesInSameAndSubPackageOfClass(probe, Awaitility.class);
         ReflectionUtil.addAllClassesInSameAndSubPackageOfPackage(probe, "com.google.common");
 
+        probe.addTest(MavenDependency.class);
         return probe;
     }
 
@@ -226,6 +237,8 @@ public class SingleFeatureTest {
             // Install SCR
             features(maven().groupId("org.apache.karaf.features").artifactId("standard").type("xml")
                 .classifier("features").versionAsInProject(), "scr"),
+            // Propagate any test dependencies
+            systemProperty(ORG_OPENDAYLIGHT_FEATURETEST_TESTDEPS_PROP).value(packTestDependencies()),
         };
 
         if (JavaVersionUtil.getMajorVersion() <= 8) {
@@ -344,6 +357,25 @@ public class SingleFeatureTest {
         featuresService.addRepository(repoUri);
         checkRepository(repoUri);
         LOG.info("Successfully loaded repository {}", repoUri);
+
+        final List<MavenDependency> testDeps = unpackTestDependencies();
+        // FIXME: add repostories!
+
+        // Acquire features as currently known
+        final Feature[] allFeatures = featuresService.listFeatures();
+
+        // Find any test dependency features and schedule them for installation
+        installFeatures = new LinkedHashSet<>();
+        for (MavenDependency dep : testDeps) {
+            assertFeaturePresent(allFeatures, dep.artifactId(), dep.version());
+            installFeatures.add(dep.artifactId());
+        }
+
+        // Acquire current feature details from properties, validate and add it to install set
+        final String featureName = getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP);
+        final String featureVersion = getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP);
+        assertFeaturePresent(allFeatures, featureName, featureVersion);
+        installFeatures.add(featureName);
     }
 
     // Give it 10 minutes max as we've seen feature install hang on jenkins.
@@ -383,12 +415,8 @@ public class SingleFeatureTest {
         //  * https://bugs.opendaylight.org/show_bug.cgi?id=7926
         bundleContext = bundleContext.getBundle(0).getBundleContext();
 
-        // Acquire feature details from properties
-        final String featureName = getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP);
-        final String featureVersion = getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP);
-
-        LOG.info("Attempting to install feature {} {}", featureName, featureVersion);
-        featuresService.installFeature(featureName, featureVersion, EnumSet.of(FeaturesService.Option.Verbose));
+        LOG.info("Attempting to install features {}", installFeatures);
+        featuresService.installFeatures(installFeatures, EnumSet.of(FeaturesService.Option.Verbose));
         LOG.info("installFeature() completed");
 
         Feature feature = featuresService.getFeature(featureName, featureVersion);
@@ -408,5 +436,57 @@ public class SingleFeatureTest {
             LOG.warn("SKIPPING TestBundleDiag because system property {} is true: {}", BUNDLES_DIAG_SKIP_PROP,
                 featureName);
         }
+    }
+
+    // For each feature we require an exact version match and do not tolarate duplicate feature versions
+    private static void assertFeaturePresent(final Feature[] allFeatures, final String artifactId,
+            final String version) {
+        boolean found = false;
+        for (Feature feature : allFeatures) {
+            if (artifactId.equals(feature.getName())) {
+                assertTrue("Feature " + feature.getName() + " does not have a version", feature.hasVersion());
+                assertEquals(version, feature.getVersion());
+                found = true;
+            }
+        }
+
+        assertTrue("Failed to find feature " + artifactId, found);
+    }
+
+    private static List<MavenDependency> unpackTestDependencies() {
+        final String value = getProperty(ORG_OPENDAYLIGHT_FEATURETEST_TESTDEPS_PROP);
+        if (value == null) {
+            return List.of();
+        }
+
+        final String[] items = value.split(",");
+        final List<MavenDependency> ret = new ArrayList<>(items.length);
+        for (String item : items) {
+            final String[] split = item.split("/");
+            assertEquals("Unexpected item " + item, 3, split.length);
+            ret.add(new MavenDependency(split[0], split[1], split[2]));
+        }
+
+        return ret;
+    }
+
+    private static @Nullable String packTestDependencies() throws IOException {
+        final Iterator<MavenDependency> it = Util.findTestDependencies().iterator();
+        if (!it.hasNext()) {
+            return null;
+        }
+
+        final StringBuilder sb = new StringBuilder();
+        appendDependency(sb, it.next());
+        while (it.hasNext()) {
+            sb.append(',');
+            appendDependency(sb, it.next());
+        }
+
+        return sb.toString();
+    }
+
+    private static void appendDependency(final StringBuilder sb, final MavenDependency dep) {
+        sb.append(dep.groupId()).append('/').append(dep.artifactId()).append('/').append(dep.version());
     }
 }
