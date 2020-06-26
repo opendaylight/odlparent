@@ -113,4 +113,39 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>disable-sft</id>
+            <activation>
+                <!-- Karaf does not have jre.properties for JDK12+ just yet -->
+                <jdk>[12,)</jdk>
+            </activation>
+
+            <properties>
+                <skip.karaf.featureTest>true</skip.karaf.featureTest>
+            </properties>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.ekryd.echo-maven-plugin</groupId>
+                        <artifactId>echo-maven-plugin</artifactId>
+                        <version>1.3.0</version>
+                        <executions>
+                            <execution>
+                                <id>UNTESTED-JDK</id>
+                                <goals>
+                                    <goal>echo</goal>
+                                </goals>
+                                <phase>test</phase>
+                                <configuration>
+                                    <message>Running on JDK newer than 11, which is not supported. Skipping feature tests.</message>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
