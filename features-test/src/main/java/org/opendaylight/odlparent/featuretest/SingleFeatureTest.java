@@ -390,6 +390,16 @@ public class SingleFeatureTest {
         //  * https://bugs.opendaylight.org/show_bug.cgi?id=7926
         bundleContext = bundleContext.getBundle(0).getBundleContext();
 
+        for (MavenDependency dep : Util.findTestDependencies(Util.loadMavenDependencies())) {
+            if ("xml".equals(dep.type()) && "features".equals(dep.classifier())) {
+                LOG.info("Attempting to install test dependency {} {}", dep.artifactId(), dep.version());
+                featuresService.installFeature(dep.artifactId(), dep.version(),
+                    EnumSet.of(FeaturesService.Option.Verbose));
+                LOG.info("installFeature() completed");
+            }
+        }
+
+
         LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
         featuresService.installFeature(getFeatureName(), getFeatureVersion(),
                 EnumSet.of(FeaturesService.Option.Verbose));

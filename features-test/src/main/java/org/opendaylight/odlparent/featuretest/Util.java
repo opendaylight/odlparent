@@ -7,12 +7,20 @@
  */
 package org.opendaylight.odlparent.featuretest;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.annotation.Annotation;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Properties;
 import org.junit.runner.Description;
 
 public final class Util {
+    private static final String DEPENDENCIES_PROPERTIES = "META-INF/maven/dependencies.properties";
+
     private Util() {
 
     }
@@ -38,5 +46,32 @@ public final class Util {
         Collection<Annotation> annotations = description.getAnnotations();
         Annotation[] annotationArray = annotations.toArray(new Annotation[annotations.size()]);
         return Description.createSuiteDescription(delegateDisplayName, annotationArray);
+    }
+
+    static List<MavenDependency> findTestDependencies(final Properties dependencies) {
+        final List<MavenDependency> ret = new ArrayList<>();
+
+        for (Entry<Object, Object> entry : dependencies.entrySet()) {
+            final String key = (String) entry.getKey();
+            if (key.endsWith("/scope")) {
+                if ("test".equals(entry.getValue())) {
+                    ret.add(MavenDependency.create(dependencies, key));
+                }
+            }
+        }
+
+        return ret;
+    }
+
+    static Properties loadMavenDependencies() throws IOException {
+        final InputStream input = Util.class.getResourceAsStream(DEPENDENCIES_PROPERTIES);
+        if (input == null) {
+            throw new IOException("Failed to find " + DEPENDENCIES_PROPERTIES);
+        }
+
+        final Properties props = new Properties();
+        props.load(input);
+        input.close();
+        return props;
     }
 }
