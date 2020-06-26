@@ -8,6 +8,9 @@
 package org.opendaylight.odlparent.featuretest;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
@@ -34,7 +37,6 @@ import org.apache.karaf.features.FeaturesService;
 import org.apache.karaf.features.Repository;
 import org.awaitility.Awaitility;
 import org.eclipse.jdt.annotation.NonNull;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -324,19 +326,17 @@ public class SingleFeatureTest {
 
     private static String getProperty(final String propName) {
         String prop = System.getProperty(propName);
-        Assert.assertTrue("Missing property :" + propName, prop != null);
+        assertNotNull("Missing property :" + propName, prop);
         return prop;
     }
 
     private void checkRepository(final URI repoUri) throws Exception {
-        Repository repo = null;
         for (Repository r : featuresService.listRepositories()) {
             if (r.getURI().equals(repoUri)) {
-                repo = r;
-                break;
+                return;
             }
         }
-        Assert.assertNotNull("Repository not found: " + repoUri, repo);
+        fail("Repository not found: " + repoUri);
     }
 
     /**
@@ -396,13 +396,11 @@ public class SingleFeatureTest {
         LOG.info("installFeature() completed");
         Feature feature = featuresService.getFeature(getFeatureName(), getFeatureVersion());
         LOG.info("getFeature() completed");
-        Assert.assertNotNull(
-                "Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null",
-                feature);
+        assertNotNull("Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null",
+            feature);
         boolean isInstalled = featuresService.isInstalled(feature);
         LOG.info("isInstalled() completed");
-        Assert.assertTrue(
-                "Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(), isInstalled);
+        assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(), isInstalled);
         LOG.info("Successfully installed feature {} {}", getFeatureName(), getFeatureVersion());
 
         if (!Boolean.getBoolean(BUNDLES_DIAG_SKIP_PROP)) {
