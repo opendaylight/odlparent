@@ -2,6 +2,30 @@
 ODL Parent release notes
 ========================
 
+Version 6.0.9
+-------------
+This is a security/bug-fix upgrade from version 6.0.9.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.65 → 1.66 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Checkstyle 8.32 → 8.34, release notes:
+  * `8.33 <https://checkstyle.org/releasenotes.html#Release_8.33>`__
+  * `8.34 <https://checkstyle.org/releasenotes.html#Release_8.34>`__
+
+* commons-lang3 `3.9 → 3.10 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.10>`__
+
+* Jackson `2.9.10.20200411 → 2.9.10.20200621 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9#micro-patches>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* builder-helper-maven-plugin `3.0.0 → 3.1.0 <https://github.com/mojohaus/build-helper-maven-plugin/issues?q=is%3Aissue+milestone%3A3.1.0+is%3Aclosed>`__
+
+* maven-shade-plugin `3.2.3 → 3.2.4 <https://blogs.apache.org/maven/entry/apache-maven-shade-plugin-version5>`__
+
+* maven-project-info-reports-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12346620>`__.
+
 Version 6.0.8
 -------------
 This is a bug-fix upgrade from version 6.0.7.
