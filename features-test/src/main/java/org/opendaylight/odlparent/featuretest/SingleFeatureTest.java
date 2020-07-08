@@ -316,14 +316,6 @@ public class SingleFeatureTest {
         return new URI(getProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP));
     }
 
-    private static String getFeatureName() {
-        return getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP);
-    }
-
-    public String getFeatureVersion() {
-        return getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP);
-    }
-
     private static String getProperty(final String propName) {
         String prop = System.getProperty(propName);
         assertNotNull("Missing property :" + propName, prop);
@@ -390,18 +382,21 @@ public class SingleFeatureTest {
         //  * https://bugs.opendaylight.org/show_bug.cgi?id=7926
         bundleContext = bundleContext.getBundle(0).getBundleContext();
 
-        LOG.info("Attempting to install feature {} {}", getFeatureName(), getFeatureVersion());
-        featuresService.installFeature(getFeatureName(), getFeatureVersion(),
-                EnumSet.of(FeaturesService.Option.Verbose));
+        // Acquire feature details from properties
+        final String featureName = getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP);
+        final String featureVersion = getProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP);
+
+        LOG.info("Attempting to install feature {} {}", featureName, featureVersion);
+        featuresService.installFeature(featureName, featureVersion, EnumSet.of(FeaturesService.Option.Verbose));
         LOG.info("installFeature() completed");
-        Feature feature = featuresService.getFeature(getFeatureName(), getFeatureVersion());
+
+        Feature feature = featuresService.getFeature(featureName, featureVersion);
         LOG.info("getFeature() completed");
-        assertNotNull("Attempt to get feature " + getFeatureName() + " " + getFeatureVersion() + "resulted in null",
-            feature);
+        assertNotNull("Attempt to get feature " + featureName + " " + featureVersion + "resulted in null", feature);
         boolean isInstalled = featuresService.isInstalled(feature);
         LOG.info("isInstalled() completed");
-        assertTrue("Failed to install Feature: " + getFeatureName() + " " + getFeatureVersion(), isInstalled);
-        LOG.info("Successfully installed feature {} {}", getFeatureName(), getFeatureVersion());
+        assertTrue("Failed to install Feature: " + featureName + " " + featureVersion, isInstalled);
+        LOG.info("Successfully installed feature {} {}", featureName, featureVersion);
 
         if (!Boolean.getBoolean(BUNDLES_DIAG_SKIP_PROP)) {
             LOG.info("new TestBundleDiag().checkBundleDiagInfos() STARTING");
@@ -410,7 +405,7 @@ public class SingleFeatureTest {
             LOG.info("new TestBundleDiag().checkBundleDiagInfos() ENDED");
         } else {
             LOG.warn("SKIPPING TestBundleDiag because system property {} is true: {}", BUNDLES_DIAG_SKIP_PROP,
-                getFeatureName());
+                featureName);
         }
     }
 }
