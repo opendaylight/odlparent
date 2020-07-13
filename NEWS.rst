@@ -2,6 +2,28 @@
 ODL Parent release notes
 ========================
 
+Version 5.0.9
+-------------
+This is a security/bug-fix from version 5.0.8.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.65 → 1.66 <http://www.bouncycastle.org/releasenotes.html>`__
+
+* Jackson `2.9.10.20200411 → 2.9.10.20200621 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.9#micro-patches>`__
+
+* Netty 4.1.49 → 4.1.51, release notes:
+  * `4.1.50 <https://netty.io/news/2020/05/13/4-1-50-Final.html>`__
+  * `4.1.51 <https://netty.io/news/2020/07/09/4-1-51-Final.html>`__
+
+* Scala `2.12.11 → 2.12.12 <https://github.com/scala/scala/releases/tag/v2.12.12>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-shade-plugin `3.2.3 → 3.2.4 <https://blogs.apache.org/maven/entry/apache-maven-shade-plugin-version5>`__
+
+* maven-project-info-reports-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12346620>`__
+
 Version 5.0.8
 -------------
 This is a security/bug-fix from version 5.0.7.
