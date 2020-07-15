@@ -2,6 +2,19 @@
 ODL Parent release notes
 ========================
 
+Version 6.0.10
+--------------
+This is a bug-fix upgrade from version 6.0.9. Aside from usual updates, it reverts
+an accidental upgrade of pax-exam.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Netty 4.1.49 → 4.1.51, release notes:
+  * `4.1.50 <https://netty.io/news/2020/05/13/4-1-50-Final.html>`__
+  * `4.1.51 <https://netty.io/news/2020/07/09/4-1-51-Final.html>`__
+
+* Scala `2.12.11 → 2.12.12 <https://github.com/scala/scala/releases/tag/v2.12.12>`__
+
 Version 6.0.9
 -------------
 This is a security/bug-fix upgrade from version 6.0.8.
