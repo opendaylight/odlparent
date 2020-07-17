@@ -2,6 +2,63 @@
 ODL Parent release notes
 ========================
 
+Version 7.0.4
+-------------
+This is a security/bug-fix upgrade from version 7.0.3.
+
+Bug fixes
+~~~~~~~~~
+* ``Single Feature Test`` setup of the JVM for Karaf container ended up using
+  wrong versions of Karaf components, leading to a failure to initialize
+  OSGiLocator and subsequent warnings with stack traces. This has now been
+  corrected.
+  See `ODLPARENT-228 <https://jira.opendaylight.org/browse/ODLPARENT-228>`__ for details.
+* Pax-Exam setup interacts badly with pipes used by maven-surefire plugin,
+  leading to pauses lasting around 30 seconds after SFT test success.
+  This has now been worked around by using maven-surefire-plugin version 3.0.0-M5,
+  with TCP sockets used for communication.
+  See `ODLPARENT-179 <https://jira.opendaylight.org/browse/ODLPARENT-179>`__ for details.
+* Our Jersey dependency was held back on version 2.25.1 during Neon upgrade cycle, mostly
+  due to large-scale incompatibilities around JAX-RS version. We have upgraded to Karaf-4.2.8+,
+  which pulls in JAX-RS 2.1, hence re-aligning to a more modern version, 2.27, is now
+  feasible.
+  See `ODLPARENT-208 <https://jira.opendaylight.org/browse/ODLPARENT-208>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.65 → 1.66 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Checkstyle 8.32 → 8.34, release notes:
+  * `8.33 <https://checkstyle.org/releasenotes.html#Release_8.33>`__
+  * `8.34 <https://checkstyle.org/releasenotes.html#Release_8.34>`__
+
+* commons-io `2.6 → 2.7 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.7>`__
+
+* Jersey 2.25.1 → 2.27, release notes:
+  * `2.26 <https://eclipse-ee4j.github.io/jersey.github.io/release-notes/2.26.html>`__
+  * `2.27 <https://eclipse-ee4j.github.io/jersey.github.io/release-notes/2.27.html>`__
+
+* Karaf `4.2.8 → 4.2.9, with related upgrades <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12345539>`__
+
+* Netty 4.1.49 → 4.1.51, release notes:
+  * `4.1.50 <https://netty.io/news/2020/05/13/4-1-50-Final.html>`__
+  * `4.1.51 <https://netty.io/news/2020/07/09/4-1-51-Final.html>`__
+
+* Scala `2.13.2 → 2.13.3 <https://github.com/scala/scala/releases/tag/v2.13.3>`__
+
+* TrieMap `1.1.0 → 1.2.0 <https://github.com/PANTHEONtech/triemap/releases/tag/triemap-1.2.0>`__
+
+* XBean finder 4.14 → 4.17, release notes:
+  * `4.15 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12345583>`__
+  * `4.16 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12345584>`__
+  * `4.17 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12346905>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-project-info-reports-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12346620>`__.
+
+* maven-shade-plugin `3.2.3 → 3.2.4 <https://blogs.apache.org/maven/entry/apache-maven-shade-plugin-version5>`__
+
 Version 7.0.3
 -------------
 This is a security/bug-fix upgrade from version 7.0.2. Changes in this release
