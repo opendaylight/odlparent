@@ -2,6 +2,18 @@
 ODL Parent release notes
 ========================
 
+Version 5.0.10
+--------------
+This is a bug-fix upgrade from version 5.0.9.
+
+Bug fixes
+~~~~~~~~~
+* ``odl-netty-4`` feature definition specified both ``x86_64`` and ``aarch64`` artifacts
+  for ``netty-native-epoll``. This actually results only in ``aarch64`` package being
+  installed, rendering epoll unavailable on ``x86_64`` architecture. This has been corrected
+  by removing the ``aarch64`` package.
+  See `ODLPARENT-240 <https://jira.opendaylight.org/browse/ODLPARENT-240>`__ for details.
+
 Version 5.0.9
 -------------
 This is a security/bug-fix from version 5.0.8.
