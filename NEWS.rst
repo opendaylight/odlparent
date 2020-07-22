@@ -2,6 +2,13 @@
 ODL Parent release notes
 ========================
 
+Version 5.0.11
+--------------
+This is a bug-fix upgrade from version 5.0.10.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 Version 5.0.10
 --------------
 This is a bug-fix upgrade from version 5.0.9.
