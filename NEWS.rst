@@ -2,6 +2,17 @@
 ODL Parent release notes
 ========================
 
+Version 5.0.11
+--------------
+This is a bug-fix upgrade from version 5.0.10.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* XBean finder 4.14 → 4.17, release notes:
+  * `4.15 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12345583>`__
+  * `4.16 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12345584>`__
+  * `4.17 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12346905>`__
+
 Version 5.0.10
 --------------
 This is a bug-fix upgrade from version 5.0.9.
