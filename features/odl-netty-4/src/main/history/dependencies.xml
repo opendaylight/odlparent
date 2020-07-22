@@ -8,7 +8,6 @@
         <bundle>mvn:io.netty/netty-handler/4.1.51.Final</bundle>
         <bundle>mvn:io.netty/netty-resolver/4.1.51.Final</bundle>
         <bundle>mvn:io.netty/netty-transport-native-epoll/4.1.51.Final/jar/linux-x86_64</bundle>
-        <bundle>mvn:io.netty/netty-transport-native-epoll/4.1.51.Final/jar/linux-aarch64</bundle>
         <bundle>mvn:io.netty/netty-transport-native-unix-common/4.1.51.Final</bundle>
         <bundle>mvn:io.netty/netty-transport/4.1.51.Final</bundle>
     </feature>
