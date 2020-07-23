@@ -28,7 +28,8 @@ import org.slf4j.LoggerFactory;
  *
  * @author Michael Vorburger.ch
  */
-@SuppressFBWarnings("CRLF_INJECTION_LOGS") // multi-line logs are internal, without input from untrusted external source
+@SuppressFBWarnings(value = "CRLF_INJECTION_LOGS",
+        justification = "multi-line logs are internal, without input from untrusted external source")
 public class TestBundleDiag {
 
     private static final Logger LOG = LoggerFactory.getLogger(TestBundleDiag.class);
@@ -42,15 +43,19 @@ public class TestBundleDiag {
     }
 
     /**
-     * Does something similar to Karaf's "diag" CLI command,
-     * and throws a {@link SystemStateFailureException} if anything incl. bundle wiring is NOK.
+     * Does something similar to Karaf's "diag" CLI command, and throws a {@link SystemStateFailureException} if
+     * anything including bundle wiring is not OK.
      *
-     * <p>The implementation is based on Karaf's BundleService, and not the BundleStateService,
-     * because each Karaf supported DI system (such as Blueprint and Declarative Services, see String constants
-     * in BundleStateService), will have a separate BundleStateService.  The BundleService however will
-     * contain the combined status of all BundleStateServices.
+     * <p>The implementation is based on Karaf's BundleService, and not the BundleStateService, because each Karaf
+     * supported DI system (such as Blueprint and Declarative Services, see String constants in BundleStateService),
+     * will have a separate BundleStateService.  The BundleService however will contain the combined status of all
+     * BundleStateServices.
+     *
      *
      * @author Michael Vorburger, based on guidance from Christian Schneider
+     * @param timeout maximum time to wait for bundles to settle
+     * @param timeoutUnit time unit of timeout
+     * @throws SystemStateFailureException if all bundles do not settle within the timeout period
      */
     public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) throws SystemStateFailureException {
         checkBundleDiagInfos(timeout, timeoutUnit, (timeInfo, bundleDiagInfos) ->

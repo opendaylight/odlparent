@@ -36,6 +36,10 @@ public final class ReflectionUtil {
 
     /**
      * Returns all classes in the named package, and its sub-packages.
+     *
+     * @param classLoader class loader which needs to be inspected
+     * @param packageName package name prefix
+     * @return a stream of classes
      */
     public static Stream<Class<?>> getClasses(ClassLoader classLoader, String packageName) {
         try {
@@ -46,7 +50,7 @@ public final class ReflectionUtil {
                      // to include all inner classes, including anonymous inner classes:
                     .flatMap(ReflectionUtil::getDeclaredAndAnonymousInnerClass);
         } catch (IOException e) {
-            throw new IllegalStateException("ClassPath.from(classLoader) failed", e);
+            throw new IllegalStateException("Failed to examine class loader " + classLoader, e);
         }
     }
 

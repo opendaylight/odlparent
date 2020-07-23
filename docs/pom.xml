@@ -21,6 +21,10 @@
     <name>${project.artifactId}</name>
     <description>ODL Root Parent documentation</description>
 
+    <properties>
+        <maven.javadoc.failOnWarnings>true</maven.javadoc.failOnWarnings>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
