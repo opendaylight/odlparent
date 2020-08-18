@@ -365,11 +365,6 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <dependency>
-        <groupId>org.glassfish</groupId>
-        <artifactId>javax.json</artifactId>
-        <version>1.1.2</version>
-      </dependency>
 
       <dependency>
         <groupId>org.checkerframework</groupId>
