@@ -46,7 +46,6 @@
         <module>odl-apache-commons-lang3</module>
         <module>odl-apache-commons-net</module>
         <module>odl-apache-commons-text</module>
-        <module>odl-apache-sshd</module>
         <module>odl-dropwizard-metrics</module>
         <module>odl-gson</module>
         <module>odl-guava</module>

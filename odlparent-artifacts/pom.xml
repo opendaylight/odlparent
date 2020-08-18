@@ -199,13 +199,6 @@
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
-            <dependency>
-                <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-apache-sshd</artifactId>
-                <version>${project.version}</version>
-                <classifier>features</classifier>
-                <type>xml</type>
-            </dependency>
 
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
