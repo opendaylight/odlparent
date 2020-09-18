@@ -36,11 +36,6 @@
 
         <!-- General features -->
         <module>features-odlparent</module>
-        <module>odl-akka-all</module>
-        <module>odl-akka-clustering-2.5</module>
-        <module>odl-akka-persistence-2.5</module>
-        <module>odl-akka-scala-2.13</module>
-        <module>odl-akka-system-2.5</module>
         <module>odl-antlr4</module>
         <module>odl-apache-commons-codec</module>
         <module>odl-apache-commons-lang3</module>

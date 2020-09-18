@@ -68,41 +68,6 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-akka-all</artifactId>
-                <version>${project.version}</version>
-                <classifier>features</classifier>
-                <type>xml</type>
-            </dependency>
-            <dependency>
-                <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-akka-clustering-2.5</artifactId>
-                <version>${project.version}</version>
-                <classifier>features</classifier>
-                <type>xml</type>
-            </dependency>
-            <dependency>
-                <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-akka-persistence-2.5</artifactId>
-                <version>${project.version}</version>
-                <classifier>features</classifier>
-                <type>xml</type>
-            </dependency>
-            <dependency>
-                <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-akka-scala-2.13</artifactId>
-                <version>${project.version}</version>
-                <classifier>features</classifier>
-                <type>xml</type>
-            </dependency>
-            <dependency>
-                <groupId>org.opendaylight.odlparent</groupId>
-                <artifactId>odl-akka-system-2.5</artifactId>
-                <version>${project.version}</version>
-                <classifier>features</classifier>
-                <type>xml</type>
-            </dependency>
-            <dependency>
-                <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-antlr4</artifactId>
                 <version>${project.version}</version>
                 <classifier>features</classifier>
