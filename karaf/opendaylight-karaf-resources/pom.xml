@@ -147,7 +147,7 @@
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                          token="org.jolokia/jolokia-osgi/1.6.1" value="org.jolokia/jolokia-osgi/1.6.2" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
-                         token="org.apache.felix.scr/2.1.16" value="org.apache.felix.scr/2.1.20" failOnNoReplacements="true"/>
+                         token="org.apache.felix.scr/2.1.16" value="org.apache.felix.scr/2.1.24" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                          token="org.apache.commons/commons-lang3/3.9" value="org.apache.commons/commons-lang3/3.10" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
