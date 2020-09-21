@@ -2,6 +2,30 @@
 ODL Parent release notes
 ========================
 
+Version 7.0.6
+-------------
+This is a bug-fix upgrade from version 7.0.5.
+
+Bug fixes
+~~~~~~~~~
+* ``Felix SCR`` implementation in versions prior to ``2.1.24`` eagerly deactivated factory
+  compontents. This has been fixed in version ``2.1.24``.
+  See `ODLPARENT-242 <https://jira.opendaylight.org/browse/ODLPARENT-242>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* commons-codec `2.14 → 2.15 <https://commons.apache.org/proper/commons-codec/changes-report.html#a1.15>`__
+
+* commons-io `2.7 → 2.8.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.8>`__
+
+* commons-lang3 `3.10 → 3.11 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.11>`__
+
+* commons-text `1.8 → 1.9 <https://commons.apache.org/proper/commons-text/changes-report.html#a1.9>`__
+
+* Xtend 2.21.0 → 2.23.0, release notes:
+  * `2.22.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/06/02/version-2-22-0>`
+  * `2.23.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/09/01/version-2-23-0>`
+
 Version 7.0.5
 -------------
 This is a bug-fix upgrade from version 7.0.4.
