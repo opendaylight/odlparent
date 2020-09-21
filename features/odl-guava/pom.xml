@@ -23,7 +23,7 @@
     <version>8.0.0-SNAPSHOT</version>
     <packaging>feature</packaging>
 
-    <name>OpenDaylight :: Guava 28.2</name>
+    <name>OpenDaylight :: Guava 29.0</name>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

@@ -301,7 +301,7 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite and docs -->
-        <version>28.2-jre</version>
+        <version>29.0-jre</version>
         <exclusions>
           <exclusion>
             <!-- Do not leak JSR305 onto the classpath by default -->
@@ -314,7 +314,7 @@
         <groupId>com.google.guava</groupId>
         <artifactId>guava-testlib</artifactId>
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite and docs -->
-        <version>28.2-jre</version>
+        <version>29.0-jre</version>
         <scope>test</scope>
         <exclusions>
           <exclusion>
