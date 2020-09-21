@@ -23,8 +23,8 @@ Third-party dependencies
 * commons-text `1.8 → 1.9 <https://commons.apache.org/proper/commons-text/changes-report.html#a1.9>`__
 
 * Xtend 2.21.0 → 2.23.0, release notes:
-  * `2.22.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/06/02/version-2-22-0>`
-  * `2.23.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/09/01/version-2-23-0>`
+  * `2.22.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/06/02/version-2-22-0>`__
+  * `2.23.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/09/01/version-2-23-0>`__
 
 Version 7.0.5
 -------------
