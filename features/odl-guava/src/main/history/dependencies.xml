@@ -4,9 +4,9 @@
         <ns2:feature>wrap</ns2:feature>
         <ns2:bundle>mvn:com.google.guava/failureaccess/1.0.1</ns2:bundle>
         <ns2:bundle>mvn:com.google.guava/guava/29.0-jre</ns2:bundle>
-        <ns2:bundle>wrap:mvn:com.google.errorprone/error_prone_annotations/2.3.3</ns2:bundle>
+        <ns2:bundle>wrap:mvn:com.google.errorprone/error_prone_annotations/2.3.34</ns2:bundle>
         <ns2:bundle>wrap:mvn:com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava</ns2:bundle>
         <ns2:bundle>wrap:mvn:com.google.j2objc/j2objc-annotations/1.3</ns2:bundle>
-        <ns2:bundle>wrap:mvn:org.checkerframework/checker-qual/2.5.8</ns2:bundle>
+        <ns2:bundle>wrap:mvn:org.checkerframework/checker-qual/2.11.1</ns2:bundle>
     </ns2:feature>
 </ns2:features>
