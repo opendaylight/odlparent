@@ -78,7 +78,7 @@
     <!-- This version property instead of just direct version in pluginManagement is the exception that confirms the rule
          and is required so that downstream users of the archetype-packaging extension can use this (and get the same version
          as the maven-archetype-plugin), because there is no "extensionManagement" in Maven -->
-    <maven.archetype.plugin.version>3.1.2</maven.archetype.plugin.version>
+    <maven.archetype.plugin.version>3.2.0</maven.archetype.plugin.version>
 
     <!-- This property allows deployments to be skipped in child modules -->
     <maven.deploy.skip>false</maven.deploy.skip>
