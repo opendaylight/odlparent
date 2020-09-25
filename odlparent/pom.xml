@@ -75,9 +75,9 @@
     <odlparent.checkstyle.enforce>true</odlparent.checkstyle.enforce>
 
     <!-- Opt-in into modernizer-maven-plugin failing the build on violations. Defaults
-         to false. Set to 'true' in pom.xml of project which desires to enforce
+         to true. Set to 'false' in pom.xml of project which desires to not enforce
          no reported violations. -->
-    <odlparent.modernizer.enforce>false</odlparent.modernizer.enforce>
+    <odlparent.modernizer.enforce>true</odlparent.modernizer.enforce>
 
     <!-- Target release for modernizer-maven-plugin. It defaults to '1.11',
          meaning Java 11, but can be set to any version in pom.xml of project
