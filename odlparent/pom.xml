@@ -79,10 +79,10 @@
          no reported violations. -->
     <odlparent.modernizer.enforce>false</odlparent.modernizer.enforce>
 
-    <!-- Target release for modernizer-maven-plugin. It defaults to '1.8',
-         meaning Java 8, but can be set to any version in pom.xml of project
-         which desires to override it (such as '1.11' for Java 11). -->
-    <odlparent.modernizer.target>1.8</odlparent.modernizer.target>
+    <!-- Target release for modernizer-maven-plugin. It defaults to '1.11',
+         meaning Java 11, but can be set to any version in pom.xml of project
+         which desires to override it (such as '1.8' for Java 8). -->
+    <odlparent.modernizer.target>1.11</odlparent.modernizer.target>
 
     <!-- Opt-out from spotbugs-maven-plugin failing the build on violations. Defaults
          to true. Set to 'false' in pom.xml of project which desires to not enforce
@@ -1206,6 +1206,20 @@
             <javaVersion>${odlparent.modernizer.target}</javaVersion>
             <failOnViolations>${odlparent.modernizer.enforce}</failOnViolations>
             <skip>${odlparent.modernizer.skip}</skip>
+
+            <exclusionPatterns>
+              <!-- We are using Guava as per normal and we have grown a large body of code
+                   around the patterns there. Furthermore the suggested replacements have
+                   different behavior, hence we do NOT want to blindly migrate. Examples
+                   include:
+
+                   - ImmutableCollection et al. are not just implementation details, they
+                     form an API contract.
+                   - ImmutableMap/ImmutableSet retain iteration order, whereas their
+                     Map.of()/Set.of() have unstable iteration order by design
+              -->
+              <exclusionPattern>com/google/common/collect/Immutable.*</exclusionPattern>
+            </exclusionPatterns>
           </configuration>
 
           <executions>
