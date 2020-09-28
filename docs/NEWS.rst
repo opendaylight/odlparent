@@ -1,6 +1,104 @@
 ========================
 ODL Parent release notes
 ========================
+Version 8.0.0
+-------------
+This is a major upgrade from version 7, with breaking changes; downstream projects may need to make changes to upgrade
+to this version.
+
+Improvements
+~~~~~~~~~~~~
+* ``modernizer-maven-plugin`` configuration has been updated to issue warnings for constructs
+  improved in all Java versions up to and including Java 11.
+
+* ``modernizer-maven-plugin`` is configured by default to fail the build when it issues any
+  warnings. This behavior can be opted-out of on a per-artifact basis by defining
+  ``odlparent.modernizer.enforce`` property to ``false``.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The following upstream dependencies have been removed from dependency management:
+
+* ``javax.json``. This dependency is used only in Neutron project, hence this version is best
+  maintained there. See `ODLPARENT-238 <https://jira.opendaylight.org/browse/ODLPARENT-238>`__
+  for details.
+
+* All ``org.eclipse.persistence`` artifacts. These dependencies are only used in Neutron,
+  which actually duplicates the declarations, hence they are best maintained there.
+  See `ODLPARENT-237 <https://jira.opendaylight.org/browse/ODLPARENT-237>`__ for details.
+
+* All ``org.apache.sshd`` and ``net.i2p.crypto`` artifacts. Overriding versions does not play
+  nice with Karaf's versions during ``feature:install``, causing issues when the installing
+  over an SSH connection. NETCONF project is providing a repackaged version in OpenDaylight
+  namespace. See `ODLPARENT-233 <https://jira.opendaylight.org/browse/ODLPARENT-233>`__ for
+  details.
+
+* ``jettison``. This dependency is used only in LISP Flow Mapping project for integration
+  tests, hence this version is best maintained there.
+  See `ODLPARENT-239 <https://jira.opendaylight.org/browse/ODLPARENT-239>`__ for details.
+
+* All ``com.typesafe``, ``io.aeron``, ``org.agrona``, ``org.scala-lang`` declarations. Akka is
+  removing their support for OSGi, with no working releases in their current ``2.6.x.`` branch.
+  Since dealing with these requires quite a bit of dance, which needs to sit outside of odlparent POM,
+  the controller project will package Akka to the extent it needs.
+  See `ODLPARENT-243 <https://jira.opendaylight.org/browse/ODLPARENT-243>`__ for details.
+
+* ``org.apache.felix.dependencymanager`` and ``org.apache.felix.dependencymanager.shell``. These
+  components are ancient, having been replaced by either Blueprint or Declarative Services. The only
+  project using these is AAA, hence it is best to maintain these declarations there.
+
+Feature removals
+~~~~~~~~~~~~~~~~
+* ``odl-apache-sshd`` feature has been removed, mirroring the removal of related dependency
+  declarations. See `ODLPARENT-233 <https://jira.opendaylight.org/browse/ODLPARENT-233>`__ for details.
+
+* ``odl-akka-all``, ``odl-akka-scala-2.13``, ``odl-akka-system-2.5``, ``odl-akka-clustering-2.5``
+  and ``odl-akka-persistence-2.5`` features. mirroring the removal of related dependency declarations.
+  See `ODLPARENT-243 <https://jira.opendaylight.org/browse/ODLPARENT-243>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* awaitility `3.0.0 → 4.0.3 <https://github.com/awaitility/awaitility/wiki/ReleaseNotes40>`__
+
+* checkstyle 8.34 → 8.36.1, release notes:
+  * `8.35 <https://checkstyle.org/releasenotes.html#Release_8.35>`__
+  * `8.36 <https://checkstyle.org/releasenotes.html#Release_8.36>`__
+  * `8.36.1 <https://checkstyle.org/releasenotes.html#Release_8.36.1>`__
+
+* commons-codec `1.14 → 1.15 <https://commons.apache.org/proper/commons-codec/changes-report.html#a1.15>`__
+
+* commons-io `2.7 → 2.8.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.8.0>`__
+
+* commons-net `3.6 → 3.7 <https://commons.apache.org/proper/commons-net/changes-report.html#a3.7>`__
+
+* dropwizard-metrics 4.1.9 → 4.1.12.1, release notes:
+  * `4.1.10 <https://github.com/dropwizard/metrics/releases/tag/v4.1.10>`__
+  * `4.1.10.1 <https://github.com/dropwizard/metrics/releases/tag/v4.1.10.1>`__
+  * `4.1.11 <https://github.com/dropwizard/metrics/releases/tag/v4.1.11>`__
+  * `4.1.12 <https://github.com/dropwizard/metrics/releases/tag/v4.1.12>`__
+  * `4.1.12.1 <https://github.com/dropwizard/metrics/releases/tag/v4.1.12.1>`__
+
+* Guava `28.2 → 29.0 <https://github.com/google/guava/releases/tag/v29.0>`__
+
+* immutables.org → 2.8.8, release notes:
+  * `2.8.0 <https://github.com/immutables/immutables/releases/tag/2.8.0>`__
+  * `2.8.1 <https://github.com/immutables/immutables/releases/tag/2.8.1>`__
+  * `2.8.2 <https://github.com/immutables/immutables/releases/tag/2.8.2>`__
+  * `2.8.3 <https://github.com/immutables/immutables/releases/tag/2.8.3>`__
+  * `2.8.4 <https://github.com/immutables/immutables/releases/tag/2.8.4>`__
+  * `2.8.8 <https://github.com/immutables/immutables/releases/tag/2.8.8>`__
+
+* mockito `3.3.3 → 3.5.11 <https://github.com/mockito/mockito/blob/release/3.x/doc/release-notes/official.md>`__
+
+* Netty `4.1.51 → 4.1.52 <https://netty.io/news/2020/09/08/4-1-52-Final.html>`__
+
+* Xtend `2.22.0 → 2.23.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/09/01/version-2-23-0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-archetype-plugin `3.1.2 → 3.2.0 <https://blogs.apache.org/maven/entry/apache-maven-archetype-plugin-version1>`__
+
+* project-info-reports-plugin `3.1.0 → 3.1.1 <https://blogs.apache.org/maven/entry/apache-maven-project-info-reports1>`__
 
 Version 7.0.5
 -------------
