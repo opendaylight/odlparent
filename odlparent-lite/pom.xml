@@ -102,7 +102,7 @@
     <odlparent.spotbugs.skip>false</odlparent.spotbugs.skip>
 
     <!-- Used in neutron, ovsdb -->
-    <jacoco.version>0.8.5</jacoco.version>
+    <jacoco.version>0.8.6</jacoco.version>
   </properties>
 
   <build>
