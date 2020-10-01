@@ -60,6 +60,7 @@
     <jacoco.dataFile>${jacoco.destFile}</jacoco.dataFile>
 
     <!-- Default Sonar configuration -->
+    <sonar.java.source>${maven.compiler.release}</sonar.java.source>
     <sonar-jacoco-listeners.version>3.8</sonar-jacoco-listeners.version>
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
     <sonar.jacoco.reportPath>${jacoco.destFile}</sonar.jacoco.reportPath>
