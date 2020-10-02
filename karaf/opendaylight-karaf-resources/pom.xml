@@ -24,6 +24,8 @@
          just have odlparent-lite not odlparent as parent, and not run Java static code analysis tools.)
       -->
     <duplicate-finder.skip>true</duplicate-finder.skip>
+    <!-- jacoco:report bombs out on BouncyCastle's JDK15 classes, it has not point anyway -->
+    <jacoco.skip>true</jacoco.skip>
   </properties>
   <dependencies>
     <dependency>
