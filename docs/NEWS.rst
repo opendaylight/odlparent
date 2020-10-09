@@ -2,6 +2,36 @@
 ODL Parent release notes
 ========================
 
+Version 7.0.7
+-------------
+This is a bug-fix upgrade from version 7.0.6.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checkstyle 8.34 → 8.36.1, release notes:
+  * `8.35 <https://checkstyle.org/releasenotes.html#Release_8.35>`__
+  * `8.36 <https://checkstyle.org/releasenotes.html#Release_8.36>`__
+  * `8.36.1 <https://checkstyle.org/releasenotes.html#Release_8.36.1>`__
+
+* commons-net `3.6 → 3.7 <https://commons.apache.org/proper/commons-net/changes-report.html#a3.7>`__
+
+* dropwizard-metrics 4.1.9 → 4.1.12.1, release notes:
+  * `4.1.10 <https://github.com/dropwizard/metrics/releases/tag/v4.1.10>`__
+  * `4.1.10.1 <https://github.com/dropwizard/metrics/releases/tag/v4.1.10.1>`__
+  * `4.1.11 <https://github.com/dropwizard/metrics/releases/tag/v4.1.11>`__
+  * `4.1.12 <https://github.com/dropwizard/metrics/releases/tag/v4.1.12>`__
+  * `4.1.12.1 <https://github.com/dropwizard/metrics/releases/tag/v4.1.12.1>`__
+
+* Netty `4.1.51 → 4.1.52 <https://netty.io/news/2020/09/08/4-1-52-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* JaCoCo `0.8.5 → 0.8.6 <https://github.com/jacoco/jacoco/releases/tag/v0.8.6>`__
+
+* maven-archetype-plugin `3.1.2 → 3.2.0 <https://blogs.apache.org/maven/entry/apache-maven-archetype-plugin-version1>`__
+
+* project-info-reports-plugin `3.1.0 → 3.1.1 <https://blogs.apache.org/maven/entry/apache-maven-project-info-reports1>`__
+
 Version 7.0.6
 -------------
 This is a bug-fix upgrade from version 7.0.5.
