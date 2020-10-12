@@ -3,12 +3,12 @@
     <feature version="0.0.0">
         <feature>odl-woodstox</feature>
         <feature>odl-ws-rs-api</feature>
-        <bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/2.10.4</bundle>
-        <bundle>mvn:com.fasterxml.jackson.core/jackson-core/2.10.4</bundle>
-        <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/2.10.4</bundle>
-        <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-xml/2.10.4</bundle>
-        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.10.4</bundle>
-        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.10.4</bundle>
-        <bundle>mvn:com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.10.4</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/2.10.5</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-core/2.10.5</bundle>
+        <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/2.10.5</bundle>
+        <bundle>mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-xml/2.10.5</bundle>
+        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.10.5</bundle>
+        <bundle>mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.10.5</bundle>
+        <bundle>mvn:com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.10.5</bundle>
     </feature>
 </features>
