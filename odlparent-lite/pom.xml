@@ -534,7 +534,7 @@
             <artifactId>maven-javadoc-plugin</artifactId>
             <configuration combine.children="append">
               <links>
-                <link>https://junit.org/junit4/javadoc/4.13/</link>
+                <link>https://junit.org/junit4/javadoc/4.13.1/</link>
                 <link>http://hamcrest.org/JavaHamcrest/javadoc/2.2/</link>
                 <link>http://google.github.io/truth/api/1.0.1/</link>
                 <link>http://www.slf4j.org/apidocs/</link>
