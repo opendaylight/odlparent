@@ -743,10 +743,19 @@
       </dependency>
 
       <!-- Annotations -->
+      <!-- FIXME: ODLPARENT-246: remove this declaration -->
       <dependency>
         <groupId>javax.inject</groupId>
         <artifactId>javax.inject</artifactId>
         <version>1</version>
+        <optional>true</optional>
+      </dependency>
+      <!-- A better alternative for javax.inject, from https://guicedee.com/ -->
+      <dependency>
+        <groupId>com.guicedee.services</groupId>
+        <artifactId>javax.inject</artifactId>
+        <version>62</version>
+        <scope>provided</scope>
         <optional>true</optional>
       </dependency>
 
