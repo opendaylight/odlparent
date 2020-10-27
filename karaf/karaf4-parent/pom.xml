@@ -262,7 +262,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <!-- FIXME: remove this once we have karaf-4.2.10+ -->
+                        <!-- FIXME: remove this once we have karaf-4.3.0+ -->
                         <id>remove-scr-2.1.20</id>
                         <phase>prepare-package</phase>
                         <goals>

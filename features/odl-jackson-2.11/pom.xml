@@ -19,12 +19,11 @@
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl-jackson-2.10</artifactId>
-    <version>8.1.0-SNAPSHOT</version>
+    <artifactId>odl-jackson-2.11</artifactId>
     <packaging>feature</packaging>
 
-    <name>OpenDaylight :: Jackson 2.10.x</name>
-    <description>Jackson 2.10</description>
+    <name>OpenDaylight :: Jackson 2.11.x</name>
+    <description>Jackson 2.11</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>
@@ -41,6 +40,12 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>odl-ws-rs-api</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-jakarta-activation-api</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
