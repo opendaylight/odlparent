@@ -50,6 +50,12 @@
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>odl-jakarta-activation-api</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
 
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
