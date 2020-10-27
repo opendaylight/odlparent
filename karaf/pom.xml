@@ -33,5 +33,6 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
         <module>opendaylight-karaf-resources</module>
         <module>opendaylight-karaf-empty</module>
         <module>test-distribution</module>
+        <module>test-static</module>
     </modules>
 </project>
