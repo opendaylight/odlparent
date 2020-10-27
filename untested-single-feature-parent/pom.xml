@@ -89,6 +89,11 @@
                         <excludedArtifactId>activation</excludedArtifactId>
                         <excludedArtifactId>jakarta.activation-api</excludedArtifactId>
 
+                        <!-- Guava's annotations -->
+                        <excludedArtifactId>error_prone_annotations</excludedArtifactId>
+                        <excludedArtifactId>j2objc-annotations</excludedArtifactId>
+                        <excludedArtifactId>listenablefuture</excludedArtifactId>
+
                         <!-- Our slf4j logging markers -->
                         <excludedArtifactId>logging-markers</excludedArtifactId>
                     </excludedArtifactIds>
