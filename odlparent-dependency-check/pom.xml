@@ -136,12 +136,12 @@
             <version>4.1.52.Final</version>
         </dependency>
         <dependency>
-            <groupId>jakarta.xml.bind</groupId>
-            <artifactId>jakarta.xml.bind-api</artifactId>
+            <groupId>jakarta.activation</groupId>
+            <artifactId>jakarta.activation-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.annotation</groupId>
