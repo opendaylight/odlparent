@@ -11,6 +11,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.collect.Lists;
 import java.util.Arrays;
+import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.Test;
@@ -79,6 +80,11 @@ public class ServiceReferenceUtilTest {
         @Override
         public int compareTo(Object reference) {
             return 0;
+        }
+
+        @Override
+        public Dictionary<String, Object> getProperties() {
+            return null;
         }
     }
 
