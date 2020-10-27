@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-jersey-2">
     <feature version="0.0.0">
+        <feature>odl-jakarta-activation-api</feature>
         <feature>odl-javassist-3</feature>
         <feature>odl-servlet-api</feature>
         <feature>odl-ws-rs-api</feature>
