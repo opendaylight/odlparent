@@ -44,7 +44,8 @@
         <module>odl-dropwizard-metrics</module>
         <module>odl-gson</module>
         <module>odl-guava</module>
-        <module>odl-jackson-2.10</module>
+        <module>odl-jackson-2.11</module>
+        <module>odl-jakarta-activation-api</module>
         <module>odl-javassist-3</module>
         <module>odl-jersey-2</module>
         <module>odl-jung-2.1</module>

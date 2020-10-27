@@ -85,9 +85,6 @@
                         <excludedArtifactId>jaxb-api</excludedArtifactId>
                         <excludedArtifactId>jaxb-runtime</excludedArtifactId>
                         <excludedArtifactId>jakarta.xml.bind-api</excludedArtifactId>
-                        <!-- javax.annotation -->
-                        <excludedArtifactId>activation</excludedArtifactId>
-                        <excludedArtifactId>jakarta.activation-api</excludedArtifactId>
 
                         <!-- Guava's annotations -->
                         <excludedArtifactId>error_prone_annotations</excludedArtifactId>
