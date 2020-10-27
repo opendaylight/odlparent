@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns2:features xmlns:ns2="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-guava">
     <ns2:feature version="0.0.0">
-        <ns2:feature>wrap</ns2:feature>
         <ns2:bundle>mvn:com.google.guava/failureaccess/1.0.1</ns2:bundle>
         <ns2:bundle>mvn:com.google.guava/guava/29.0-jre</ns2:bundle>
-        <ns2:bundle>wrap:mvn:com.google.errorprone/error_prone_annotations/2.3.4</ns2:bundle>
-        <ns2:bundle>wrap:mvn:com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava</ns2:bundle>
-        <ns2:bundle>wrap:mvn:com.google.j2objc/j2objc-annotations/1.3</ns2:bundle>
         <ns2:bundle>mvn:org.checkerframework/checker-qual/2.11.1</ns2:bundle>
     </ns2:feature>
 </ns2:features>
