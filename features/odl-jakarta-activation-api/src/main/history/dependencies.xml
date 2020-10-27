@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-jakarta-activation">
+    <feature version="0.0.0">
+        <bundle>mvn:jakarta.activation/jakarta.activation-api/1.2.2</bundle>
+    </feature>
+</features>
