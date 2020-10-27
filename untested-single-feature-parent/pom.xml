@@ -85,9 +85,6 @@
                         <excludedArtifactId>jaxb-api</excludedArtifactId>
                         <excludedArtifactId>jaxb-runtime</excludedArtifactId>
                         <excludedArtifactId>jakarta.xml.bind-api</excludedArtifactId>
-                        <!-- javax.annotation -->
-                        <excludedArtifactId>activation</excludedArtifactId>
-                        <excludedArtifactId>jakarta.activation-api</excludedArtifactId>
 
                         <!-- Our slf4j logging markers -->
                         <excludedArtifactId>logging-markers</excludedArtifactId>
