@@ -1,8 +1,8 @@
 <FindBugsFilter>
   <Match>
     <Or>
-      <Package name="~.*protobuff\.messages.*" />
       <Package name="~org\.opendaylight\.yang\.gen\..*" />
+      <Package name="~.*protobuff\.messages.*" />
     </Or>
   </Match>
 
