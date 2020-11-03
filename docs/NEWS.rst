@@ -3,6 +3,42 @@ ODL Parent release notes
 ========================
 Version 8.0.0
 -------------
+This is a minor big-fix/enhancement update from verision 8.0.0.
+
+Improvements
+~~~~~~~~~~~~
+* ``javax.inject`` is now provided by the artifact from `GuicedEE <https://guicedee.com/>`__.
+  This improves things a lot, as it is a proper jar (not MANIFEST.MF warning), it also is
+  a JPMS module, hence can be used for linkage. This dependency is properly ``scope=provided``,
+  so it should not leak into runtimes where it should not be.
+  See `ODLPARENT-247 <>https://jira.opendaylight.org/browse/ODLPARENT-247`__ for details.
+
+* Transitive dependencies of Guava are now mostly filtered from runtime, so that we do not
+  require ``wrap`` for them. We still retain checker-qual, as we are actively using those
+  and it is a proper bundle.
+  See `ODLPARENT-248 <>https://jira.opendaylight.org/browse/ODLPARENT-248`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Jackson `2.10.4 → 2.10.5 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.10.5>`__
+
+* JaCoCo `0.8.5 → 0.8.6 <https://github.com/jacoco/jacoco/releases/tag/v0.8.6>`__
+
+* JUnit `4.13.0 → 4.13.1 <https://github.com/junit-team/junit4/blob/HEAD/doc/ReleaseNotes4.13.1.md>`__
+
+* Karaf `4.2.9 → 4.2.10 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12348288>`__
+
+* Netty `4.1.52 → 4.1.53 <https://netty.io/news/2020/10/13/4-1-53-Final.html>`__
+
+* Pax-Exam `4.13.3 → 4.13.4 <https://ops4j1.jira.com/secure/ReleaseNote.jspa?projectId=10170&version=24393>`__
+
+* Woodstox 6.2.1 → 6.2.3, fixed issues:
+  * `6.2.2 <https://github.com/FasterXML/woodstox/issues/112>`__
+  * `6.2.3 <https://github.com/FasterXML/woodstox/issues/117>`__
+
+
+Version 8.0.0
+-------------
 This is a major upgrade from version 7, with breaking changes; downstream projects may need to make changes to upgrade
 to this version.
 
