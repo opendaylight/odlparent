@@ -2,6 +2,54 @@
 ODL Parent release notes
 ========================
 
+Version 6.0.12
+--------------
+This is a bug-fix upgrade from version 6.0.11.
+
+Bug fixes
+~~~~~~~~~
+* ``Felix SCR`` implementation in versions prior to ``2.1.24`` eagerly deactivated factory
+  compontents. This has been fixed in version ``2.1.24``.
+  See `ODLPARENT-242 <https://jira.opendaylight.org/browse/ODLPARENT-242>`__ for details.
+
+* ``javax.inject`` is now provided by the artifact from `GuicedEE <https://guicedee.com/>`__.
+  This improves things a lot, as it is a proper jar (not MANIFEST.MF warning), it also is
+  a JPMS module, hence can be used for linkage. This dependency is properly ``scope=provided``,
+  so it should not leak into runtimes where it should not be.
+  See `ODLPARENT-247 <https://jira.opendaylight.org/browse/ODLPARENT-247>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checkstyle 8.34 → 8.36.1, release notes:
+  * `8.35 <https://checkstyle.org/releasenotes.html#Release_8.35>`__
+  * `8.36 <https://checkstyle.org/releasenotes.html#Release_8.36>`__
+  * `8.36.1 <https://checkstyle.org/releasenotes.html#Release_8.36.1>`__
+
+* commons-io `2.7 → 2.8.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.8>`__
+
+* commons-net `3.6 → 3.7 <https://commons.apache.org/proper/commons-net/changes-report.html#a3.7>`__
+
+* commons-text `1.8 → 1.9 <https://commons.apache.org/proper/commons-text/changes-report.html#a1.9>`__
+
+* JUnit `4.13 → 4.13.1 <https://github.com/junit-team/junit4/blob/HEAD/doc/ReleaseNotes4.13.1.md>`__
+
+* Netty 4.1.51 → 4.1.53, release notes:
+  * `4.1.52 <https://netty.io/news/2020/09/08/4-1-52-Final.html>`__
+  * `4.1.53 <https://netty.io/news/2020/10/13/4-1-53-Final.html>`__
+
+* Xtend 2.21.0 → 2.23.0, release notes:
+  * `2.22.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/06/02/version-2-22-0>`__
+  * `2.23.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/09/01/version-2-23-0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* JaCoCo `0.8.5 → 0.8.6 <https://github.com/jacoco/jacoco/releases/tag/v0.8.6>`__
+
+* maven-archetype-plugin `3.1.2 → 3.2.0 <https://blogs.apache.org/maven/entry/apache-maven-archetype-plugin-version1>`__
+
+* project-info-reports-plugin `3.1.0 → 3.1.1 <https://blogs.apache.org/maven/entry/apache-maven-project-info-reports1>`__
+
+
 Version 6.0.11
 --------------
 This is a bug-fix upgrade from version 6.0.10.
