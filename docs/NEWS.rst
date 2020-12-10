@@ -2,6 +2,34 @@
 ODL Parent release notes
 ========================
 
+Version 8.0.2
+-------------
+This is a minor big-fix/enhancement update from verision 8.0.1. Most significant fix
+is the fix for mis-alignment of ``pax-web-api``, which renders pax-web integration inoperable.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checkstyle 8.36.1 → 8.38.0, release notes:
+  * `8.36.2 <https://checkstyle.org/releasenotes.html#Release_8.36.2>`__
+  * `8.37.0 <https://checkstyle.org/releasenotes.html#Release_8.37.0>`__
+  * `8.38.0 <https://checkstyle.org/releasenotes.html#Release_8.38.0>`__
+
+* commons-net 3.7 → 3.7.2, release notes:
+  * `3.7.1 <https://commons.apache.org/proper/commons-net/changes-report.html#a3.7.1>`__
+  * `3.7.2 <https://commons.apache.org/proper/commons-net/changes-report.html#a3.7.2>`__
+
+* Google Truth `1.0.1 → 1.1 <https://github.com/google/truth/releases/tag/release_1_1>`__
+
+* Netty 4.1.53 → 4.1.55, release notes:
+  * `4.1.54 <https://netty.io/news/2020/11/11/4-1-54-Final.html>`__
+  * `4.1.55 <https://netty.io/news/2020/12/08/4-1-55-Final.html>`__
+
+* Sevntu `1.37.1 → 1.38.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.38.0>`__
+
+* XBean finder `4.17 → 4.18 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12348171>`__
+
+* Xtend `2.23.0 → 2.24.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/12/01/version-2-24-0>`__
+
 Version 8.0.1
 -------------
 This is a minor big-fix/enhancement update from verision 8.0.0.
