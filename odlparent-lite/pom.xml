@@ -536,7 +536,7 @@
               <links>
                 <link>https://junit.org/junit4/javadoc/4.13.1/</link>
                 <link>http://hamcrest.org/JavaHamcrest/javadoc/2.2/</link>
-                <link>http://google.github.io/truth/api/1.0.1/</link>
+                <link>http://google.github.io/truth/api/1.1/</link>
                 <link>http://www.slf4j.org/apidocs/</link>
                 <link>https://xerces.apache.org/xerces2-j/javadocs/api/</link>
                 <link>https://google.github.io/guava/releases/29.0-jre/api/docs/</link>
