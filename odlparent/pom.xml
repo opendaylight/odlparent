@@ -845,7 +845,7 @@
         <groupId>org.ops4j.pax.web</groupId>
         <artifactId>pax-web-api</artifactId>
         <!-- Note: keep this version synchronized with karaf -->
-        <version>7.2.16</version>
+        <version>7.2.19</version>
       </dependency>
 
       <dependency>
