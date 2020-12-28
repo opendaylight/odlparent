@@ -1,5 +1,14 @@
 --- target/assembly/bin/inc	2020-10-27 09:19:51.940334549 +0100
 +++ target/assembly/bin/inc	2020-10-27 09:36:25.438005471 +0100
+@@ -190,7 +190,7 @@
+     fi
+
+     if [ "x${JAVA_HOME}" = "x" ] && [ "${darwin}" = "true" ]; then
+-        JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
++        JAVA_HOME="`/usr/libexec/java_home -v 11`"
+     fi
+     if [ "x${JAVA_HOME}" = "x" ] && [ -r /etc/gentoo-release ] ; then
+         JAVA_HOME=`java-config --jre-home`
 @@ -243,9 +243,9 @@
 
      VERSION=`"${JAVA}" -version 2>&1 | ${AWK} -F '"' '/version/ {print $2}' | sed -e 's/_.*//g; s/^1\.//g; s/\..*//g; s/-.*//g;'`
