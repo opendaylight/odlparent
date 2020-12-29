@@ -1,5 +1,14 @@
 --- target/assembly/bin/inc.orig	2018-08-21 16:15:40.146423070 +0200
 +++ target/assembly/bin/inc	2018-08-21 16:15:43.798408830 +0200
+@@ -190,7 +190,7 @@
+     fi
+
+     if [ "x${JAVA_HOME}" = "x" ] && [ "${darwin}" = "true" ]; then
+-        JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
++        JAVA_HOME="`/usr/libexec/java_home -v 11`"
+     fi
+     if [ "x${JAVA_HOME}" = "x" ] && [ -r /etc/gentoo-release ] ; then
+         JAVA_HOME=`java-config --jre-home`
 @@ -243,9 +243,9 @@
 
      VERSION=$("${JAVA}" -version 2>&1 | ${AWK} -F '"' '/version/ {print $2}' | sed -e 's/_.*//g; s/^1\.//g; s/\..*//g; s/-.*//g;')
