@@ -493,7 +493,7 @@
         <artifactId>netty-bom</artifactId>
         <!-- If these are updated, the version in features.xml needs to be changed too -->
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
-        <version>4.1.55.Final</version>
+        <version>4.1.56.Final</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
