@@ -1,6 +1,14 @@
 ========================
 ODL Parent release notes
 ========================
+Version 6.0.13
+--------------
+This is a bug-fix upgrade from version 6.0.12.
+
+Bug fixes
+~~~~~~~~~
+* When run on MacOS with multiple Java versions installed, Karaf would pick JRE8 by default.
+  This has now been fixed and we pick JRE11.
 
 Version 6.0.12
 --------------
