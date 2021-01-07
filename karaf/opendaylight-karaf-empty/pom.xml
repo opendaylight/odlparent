@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>karaf4-parent</artifactId>
-        <version>6.0.13-SNAPSHOT</version>
+        <version>6.0.14-SNAPSHOT</version>
         <relativePath>../karaf4-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>opendaylight-karaf-empty</artifactId>
-    <version>6.0.13-SNAPSHOT</version>
+    <version>6.0.14-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 

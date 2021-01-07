@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>6.0.13-SNAPSHOT</version>
+        <version>6.0.14-SNAPSHOT</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-ws-rs-api</artifactId>
-    <version>6.0.13-SNAPSHOT</version>
+    <version>6.0.14-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Javax WS RS API</name>
