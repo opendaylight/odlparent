@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>6.0.13-SNAPSHOT</version>
+        <version>6.0.13</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-guava</artifactId>
-    <version>6.0.13-SNAPSHOT</version>
+    <version>6.0.13</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Guava 27.1</name>
