@@ -1,6 +1,66 @@
 ========================
 ODL Parent release notes
 ========================
+Version 7.0.8
+-------------
+This is a bug-fix upgrade from version 7.0.6.
+
+Improvements
+~~~~~~~~~~~~
+* ``javax.inject`` is now provided by the artifact from `GuicedEE <https://guicedee.com/>`__.
+  This improves things a lot, as it is a proper jar (not MANIFEST.MF warning), it also is
+  a JPMS module, hence can be used for linkage. This dependency is properly ``scope=provided``,
+  so it should not leak into runtimes where it should not be.
+  See `ODLPARENT-247 <https://jira.opendaylight.org/browse/ODLPARENT-247>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Akka `2.5.31 → 2.5.32 <https://akka.io/blog/news/2020/10/16/akka-2.5.32-released>`__
+
+* Bouncy Castle `1.66 → 1.68 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* commons-net 3.7 → 3.7.2, release notes:
+  * `3.7.1 <https://commons.apache.org/proper/commons-net/changes-report.html#a3.7.1>`__
+  * `3.7.2 <https://commons.apache.org/proper/commons-net/changes-report.html#a3.7.2>`__
+
+* enunciate `2.13.1 → 2.13.2 <https://github.com/stoicflame/enunciate/releases/tag/v2.13.2>`__
+
+* Google Truth `1.0.1 → 1.1 <https://github.com/google/truth/releases/tag/release_1_1>`__
+
+* Jackson `2.10.4 → 2.10.5 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.10.5>`__
+
+* Jetty 9.4.28 → 9.4.31 (synchronised with Karaf):
+  * `9.4.30 <https://www.eclipse.org/lists/jetty-announce/msg00143.html>`__.
+  * `9.4.31 <https://www.eclipse.org/lists/jetty-announce/msg00145.html>`__.
+
+* JUnit `4.13.0 → 4.13.1 <https://github.com/junit-team/junit4/blob/HEAD/doc/ReleaseNotes4.13.1.md>`_
+
+* Karaf `4.2.9 → 4.2.10 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12348288>`__
+
+* Netty 4.1.52 → 4.1.56, release notes:
+  * `4.1.53 <https://netty.io/news/2020/10/13/4-1-53-Final.html>`__
+  * `4.1.54 <https://netty.io/news/2020/11/11/4-1-54-Final.html>`__
+  * `4.1.55 <https://netty.io/news/2020/12/08/4-1-55-Final.html>`__
+  * `4.1.56 <https://netty.io/news/2020/12/17/4-1-56-Final.html>`__
+
+* Pax-Exam `4.13.3 → 4.13.4 <https://ops4j1.jira.com/secure/ReleaseNote.jspa?projectId=10170&version=24393>`__
+
+* Scala `2.13.3 → 2.13.4 <https://github.com/scala/scala/releases/tag/v2.13.4>`__
+
+* Sevntu `1.37.1 → 1.38.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.38.0>`__
+
+* Woodstox 6.1.1 → 6.1.3, fixed issues:
+  * `6.1.2 <https://github.com/FasterXML/woodstox/issues/112>`__
+  * `6.1.3 <https://github.com/FasterXML/woodstox/issues/117>`__
+
+* XBean finder `4.17 → 4.18 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12348171>`__
+
+* xmlunit 2.7.0 → 2.8.2, release notes:
+  * `2.8.0 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.0>`__
+  * `2.8.1 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.1>`__
+  * `2.8.2 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.2>`__
+
+* Xtend `2.23.0 → 2.24.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/12/01/version-2-24-0>`__
 
 Version 7.0.7
 -------------
