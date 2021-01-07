@@ -2,6 +2,26 @@
 ODL Parent release notes
 ========================
 
+Version 8.0.3
+-------------
+This is a minor big-fix/enhancement update from verision 8.0.2. Most significant fix
+is the re-alignment of Jetty version with karaf, trimming down the distribution size.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.66 → 1.68 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* checkstyle `8.38 → 8.39.0 <https://checkstyle.org/releasenotes.html#Release_8.39.0>`__
+
+* enunciate `2.13.1 → 2.13.2 <https://github.com/stoicflame/enunciate/releases/tag/v2.13.2>`__
+
+* Netty `4.1.55 → 4.1.56 <>https://netty.io/news/2020/12/17/4-1-56-Final.html>`__
+
+* xmlunit 2.6.3 → 2.7.0, release notes:
+  * `2.8.0 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.0>`__
+  * `2.8.1 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.1>`__
+  * `2.8.2 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.2>`__
+
 Version 8.0.2
 -------------
 This is a minor big-fix/enhancement update from verision 8.0.1. Most significant fix
