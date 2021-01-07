@@ -17,7 +17,7 @@ Third-party dependencies
 
 * Netty `4.1.55 → 4.1.56 <https://netty.io/news/2020/12/17/4-1-56-Final.html>`__
 
-* xmlunit 2.6.3 → 2.7.0, release notes:
+* xmlunit 2.7.0 → 2.8.2, release notes:
   * `2.8.0 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.0>`__
   * `2.8.1 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.1>`__
   * `2.8.2 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.2>`__
