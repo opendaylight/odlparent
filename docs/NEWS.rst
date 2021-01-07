@@ -1,6 +1,14 @@
 ========================
 ODL Parent release notes
 ========================
+Version 8.0.2
+-------------
+This is a minor big-fix/enhancement update from verision 8.0.1. Most significant fix
+is the re-alignment of Jetty version with karaf, trimming down the distribution size.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 Version 8.0.2
 -------------
