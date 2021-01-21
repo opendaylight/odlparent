@@ -540,23 +540,30 @@
         <artifactId>jolokia-osgi</artifactId>
         <version>1.6.2</version>
       </dependency>
-      <dependency>
-        <!--
-          These are usually used through osgi.cmpn, except when you also want
-          to be a JPMS module. In that case you need to depend on these and
-          have a 'require static org.osgi.service.component.annotations;'.
-          This incurs a warning about publishing the module to a public place.
-          We do not heed that warning, as nothing in this package is seen by
-          the runtime - thus the warning can be safely ignored :)
 
-          Keep this in sync with rest of OSGi:
-          - OSGi R7 (now) = 1.4.0
-        -->
+      <!--
+        These are usually used through osgi.cmpn, except when you also want
+        to be a JPMS module. In that case you need to depend on these and
+        have a 'require static org.osgi.service.component.annotations;'.
+        This incurs a warning about publishing the module to a public place.
+        We do not heed that warning, as nothing in this package is seen by
+        the runtime - thus the warning can be safely ignored :)
+
+        Keep this in sync with rest of OSGi:
+        - OSGi R7 (now) = 1.4.0
+      -->
+      <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.component.annotations</artifactId>
         <version>1.4.0</version>
         <scope>provided</scope>
       </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.service.metatype.annotations</artifactId>
+        <version>1.4.0</version>
+      </dependency>
+
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>osgi.cmpn</artifactId>
