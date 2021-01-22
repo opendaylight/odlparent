@@ -2,6 +2,85 @@
 ODL Parent release notes
 ========================
 
+Version 8.1.0
+-------------
+This is a minor upgrade from version 8.1.0, with some potentially-breaking
+changes.
+
+The most prominent is the upgrade to Karaf 4.3.0, which brings in a host of
+updates to related components -- including OSGi Release 7 and Jackson 2.11.x.
+
+Feature updates
+~~~~~~~~~~~~~~~
+* The ``odl-jackson-2.10`` feature and artifact were renamed to ``odl-jackson-2.11``
+  to reflect the bump in Jackson version.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.66 → 1.68 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Checkstyle 8.36.1 → 8.39.0, release notes:
+  * `8.36.2 <https://checkstyle.org/releasenotes.html#Release_8.36.2>`__
+  * `8.37.0 <https://checkstyle.org/releasenotes.html#Release_8.37.0>`__
+  * `8.38.0 <https://checkstyle.org/releasenotes.html#Release_8.38.0>`__
+  * `8.39.0 <https://checkstyle.org/releasenotes.html#Release_8.39.0>`__
+
+* commons-net 3.7 → 3.7.2, release notes:
+  * `3.7.1 <https://commons.apache.org/proper/commons-net/changes-report.html#a3.7.1>`__
+  * `3.7.2 <https://commons.apache.org/proper/commons-net/changes-report.html#a3.7.2>`__
+
+* enunciate `2.13.1 → 2.13.2 <https://github.com/stoicflame/enunciate/releases/tag/v2.13.2>`__
+
+* Jackson 2.10.5 → 2.11.4, release notes:
+  * `2.11.0 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.11>`__
+  * `2.11.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.11.1>`__
+  * `2.11.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.11.2>`__
+  * `2.11.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.11.3>`__
+  * `2.11.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.11.4>`__
+
+* Karaf `4.2.10 → 4.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12343304>`__
+
+* Netty 4.1.53 → 4.1.58, release notes:
+  * `4.1.54 <https://netty.io/news/2020/11/11/4-1-54-Final.html>`__
+  * `4.1.55 <https://netty.io/news/2020/12/08/4-1-55-Final.html>`__
+  * `4.1.56 <https://netty.io/news/2020/12/17/4-1-56-Final.html>`__
+  * `4.1.57 <https://netty.io/news/2021/01/12/4-1-57-Final.html>`__
+  * `4.1.58 <https://netty.io/news/2021/01/13/4-1-58-Final.html>`__
+
+* Google Truth `1.0.1 → 1.1 <https://github.com/google/truth/releases/tag/release_1_1>`__
+
+* Powermock 2.0.7 → 2.0.9, release notes:
+  * `2.0.8 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#208>`__
+  * `2.0.9 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#209>`__
+
+* Sevntu `1.37.1 → 1.38.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.37.0>`__
+
+* XBean finder `4.17 → 4.18 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12348171>`__
+
+* xmlunit 2.7.0 → 2.8.2, release notes:
+  * `2.8.0 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.0>`__
+  * `2.8.1 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.1>`__
+  * `2.8.2 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.2>`__
+
+* Xtend `2.23.0 → 2.24.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2020/12/01/version-2-24-0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* build-helper-maven-plugin `3.1.0 → 3.2.0 <https://github.com/mojohaus/build-helper-maven-plugin/issues?q=is%3Aissue+milestone%3A3.1.0+is%3Aclosed>`__
+
+* duplicate-finder-maven-plugin `1.4.0 → 1.5.0 <https://github.com/basepom/duplicate-finder-maven-plugin/releases/tag/duplicate-finder-maven-plugin-1.5.0>`__
+
+* exec-maven-plugin `1.6.0 → 3.0.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/exec-maven-plugin-3.0.0>`__
+
+* maven-pmd-plugin `3.13.0 → 3.14.0 <https://www.mail-archive.com/announce@maven.apache.org/msg00978.html>`__
+
+* maven-resource-plugin `3.9.0 → 3.9.1 <https://www.mail-archive.com/announce@maven.apache.org/msg00972.html>`__
+
+* maven-site-plugin `3.9.0 → 3.9.1 <https://www.mail-archive.com/announce@maven.apache.org/msg00966.html>`__
+
+* versions-maven-plugin `2.7 → 2.8.1 <https://github.com/mojohaus/versions-maven-plugin/releases/tag/versions-maven-plugin-2.8.1>`__
+
+
 Version 8.0.1
 -------------
 This is a minor big-fix/enhancement update from verision 8.0.0.
