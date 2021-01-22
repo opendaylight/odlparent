@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 PANTHEON.tech, s.r.o. and others.  All rights reserved.
+
+ This program and the accompanying materials are made available under the
+ terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ and is available at http://www.eclipse.org/legal/epl-v10.html
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>odlparent</artifactId>
+        <version>8.0.4-SNAPSHOT</version>
+        <relativePath>../../odlparent</relativePath>
+    </parent>
+
+
+    <artifactId>karaf4-static-parent</artifactId>
+    <version>8.0.4-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <properties>
+        <karaf.archiveZip>true</karaf.archiveZip>
+        <karaf.archiveTarGz>true</karaf.archiveTarGz>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.karaf.features</groupId>
+                <artifactId>static</artifactId>
+                <version>${karaf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.karaf.features</groupId>
+                <artifactId>standard</artifactId>
+                <version>${karaf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.karaf.features</groupId>
+                <artifactId>framework</artifactId>
+                <version>${karaf.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk15on</artifactId>
+                <version>${bouncycastle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>${bouncycastle.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- karaf static distribution -->
+        <dependency>
+            <groupId>org.apache.karaf.features</groupId>
+            <artifactId>static</artifactId>
+            <type>kar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.features</groupId>
+            <artifactId>standard</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.services</groupId>
+            <artifactId>org.apache.karaf.services.staticcm</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.ops4j.pax.url/pax-url-aether -->
+        <dependency>
+            <groupId>org.ops4j.pax.url</groupId>
+            <artifactId>pax-url-aether</artifactId>
+            <version>2.6.2</version>
+        </dependency>
+
+        <!-- required by controller component -->
+        <dependency>
+            <groupId>org.apache.aries.quiesce</groupId>
+            <artifactId>org.apache.aries.quiesce.api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- for https://bugs.opendaylight.org/show_bug.cgi?id=4290 -->
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.event</artifactId>
+        </dependency>
+
+        <!-- Optional dependency of karaf.config.core -->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.metatype</artifactId>
+        </dependency>
+
+        <!-- ODL Branding -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>karaf.branding</artifactId>
+        </dependency>
+
+        <!-- ODL configuration -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>opendaylight-karaf-resources</artifactId>
+        </dependency>
+
+        <!-- BouncyCastle Framework Extension Bundles -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>bcpkix-framework-ext</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>bcprov-framework-ext</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.karaf.tooling</groupId>
+                    <artifactId>karaf-maven-plugin</artifactId>
+                    <version>${karaf.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-remote-resources-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>apply-branding</id>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.opendaylight.odlparent</groupId>
+                                    <artifactId>karaf.branding</artifactId>
+                                    <version>8.0.4-SNAPSHOT</version>
+                                    <outputDirectory>target/assembly/lib</outputDirectory>
+                                    <destFileName>karaf.branding-8.0.4-SNAPSHOT.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                            <silent>true</silent>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>unpack-karaf-resources</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/assembly</outputDirectory>
+                            <groupId>org.opendaylight.odlparent</groupId>
+                            <includeArtifactIds>opendaylight-karaf-resources</includeArtifactIds>
+                            <!-- Let maven plugin to configure start.properties  -->
+                            <!-- Don't apply monkey patches to artifacsts in the system repository  -->
+                            <excludes>META-INF/**,system/**,etc/startup.properties</excludes>-->
+                            <excludeTransitive>true</excludeTransitive>
+                            <ignorePermissions>false</ignorePermissions>
+                            <silent>true</silent>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>org.ops4j.pax.url.mvn.cfg</id>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <phase>prepare-package</phase>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>org.opendaylight.odlparent</groupId>
+                                    <artifactId>opendaylight-karaf-resources</artifactId>
+                                    <type>properties</type>
+                                    <classifier>config</classifier>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${project.build.directory}/assembly/etc/</outputDirectory>
+                                    <destFileName>org.ops4j.pax.url.mvn.cfg</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                            <overWriteReleases>true</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>fix-permissions</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <chmod perm="755">
+                                    <fileset dir="${project.build.directory}/assembly/bin">
+                                        <!-- Ensure that all the shell scripts are executable -->
+                                        <exclude name="*.bat"/>
+                                        <exclude name="contrib/*"/>
+                                    </fileset>
+                                </chmod>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+                <version>${karaf.version}</version>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>process-resources</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>assembly</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>package</id>
+                        <goals>
+                            <goal>archive</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <startupBundles>
+                        <bundle>mvn:org.apache.felix/org.apache.felix.fileinstall/3.6.8</bundle>
+                        <bundle>mvn:org.ops4j.pax.url/pax-url-aether/2.6.2</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/bcprov-framework-ext/8.0.4-SNAPSHOT</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/bcpkix-framework-ext/8.0.4-SNAPSHOT</bundle>
+                    </startupBundles>
+                    <startupFeatures>
+                        <feature>static-framework</feature>
+                        <feature>scr</feature>
+                        <feature>log</feature>
+                        <feature>system</feature>
+                        <!-- disable shell by default
+                        <feature>shell</feature>-->
+                        <feature>feature</feature>
+                        <feature>deployer</feature>
+                        <feature>wrap</feature>
+                        <feature>aries-blueprint</feature>
+                        <feature>eventadmin</feature>
+                    </startupFeatures>
+                    <writeProfiles>true</writeProfiles>
+                    <framework>static</framework>
+                    <useReferenceUrls>true</useReferenceUrls>
+                    <environment>static</environment>
+                    <javase>11</javase>
+                    <archiveTarGz>${karaf.archiveTarGz}</archiveTarGz>
+                    <archiveZip>${karaf.archiveZip}</archiveZip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
