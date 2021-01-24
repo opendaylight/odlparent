@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>karaf-dist-static</artifactId>
+        <version>8.1.1-SNAPSHOT</version>
+        <relativePath>../karaf-dist-static</relativePath>
+    </parent>
+
+    <artifactId>test-static</artifactId>
+    <packaging>pom</packaging>
+
+    <dependencies>
+        <!-- Project local features -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>features-odlparent</artifactId>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+                <configuration>
+                    <startupFeatures combine.children="append">
+                        <startupFeature>http-whiteboard</startupFeature>
+                        <startupFeature>shell</startupFeature>
+
+                        <startupFeature>odl-dropwizard-metrics</startupFeature>
+                        <startupFeature>odl-gson</startupFeature>
+                        <startupFeature>odl-guava</startupFeature>
+                        <startupFeature>odl-jackson-2.11</startupFeature>
+                        <startupFeature>odl-jakarta-activation-api</startupFeature>
+                        <startupFeature>odl-jetty-2</startupFeature>
+                        <!-- FIXME: needs https://issues.apache.org/jira/browse/KARAF-6573
+                        <startupFeature>odl-jung-2.1</startupFeature-->
+                        <startupFeature>odl-lmax-3</startupFeature>
+                        <startupFeature>odl-netty-4</startupFeature>
+                    </startupFeatures>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
