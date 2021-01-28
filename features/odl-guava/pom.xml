@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>8.1.1-SNAPSHOT</version>
+        <version>8.1.0</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-guava</artifactId>
-    <version>8.1.1-SNAPSHOT</version>
+    <version>8.1.0</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Guava 29.0</name>
