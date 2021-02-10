@@ -35,6 +35,9 @@ These parent projects are:
 -  ``karaf4-parent`` — the parent POM for Maven modules producing Karaf 4
    distributions
 
+-  ``karaf-dist-static`` - the parent POM for Maven modules producing Karaf 4
+   static distributions
+
 odlparent-lite
 ~~~~~~~~~~~~~~
 
@@ -347,6 +350,73 @@ This allows building a Karaf 4 distribution, typically for local testing
 purposes. Any runtime-scoped feature dependencies will be included in the
 distribution, and the ``karaf.localFeature`` property can be used to
 specify the boot feature (in addition to ``standard``).
+
+karaf-dist-static
+~~~~~~~~~~~~~~~~~
+
+This allows building a kind of immutable static distribution by adding
+this as a parent to your project's pom.xml. This pom file defines the static
+karaf framework alongside common OpenDaylight's components(branding,
+bouncycastle items, etc). The major difference to the dynamic distribution is
+that validation of features dependencies happens during the build phase and
+all of the dependencies are installed as *"reference:file:url"* into the
+*"etc/startup.properties"*. Static distribution might be the right choice when
+you need to to produce a lightweight and immutable package for your deployment.
+You can find a ``test-static`` project that inherits from ``karaf-dist-static``
+and demonstrates how this parent can be used.
+
+Generally speaking, to build a static distribution with selected for your
+purposes features, you have to follow the next two steps:
+
+1. Add features you want to be included in distribution under the
+   dependencies block.
+
+.. code:: xml
+
+    <dependencies>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>odl-dropwizard-metrics</artifactId>
+            <version>${project.version}</version>
+            <type>xml</type>
+            <classifier>features</classifier>
+        </dependency>
+    </dependencies>
+
+2. Put additional configuration for the karaf-maven-plugin about these features:
+
+.. code:: xml
+
+            <plugin>
+                <groupId>org.apache.karaf.tooling</groupId>
+                <artifactId>karaf-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <startupFeatures combine.children="append">
+                        <feature>shell</feature>
+                    </startupFeatures>
+                    <bootFeatures combine.children="append">
+                        <feature>odl-dropwizard-metrics</feature>
+                    </bootFeatures>
+                </configuration>
+            </plugin>
+
+.. note::  If you need to add something from the default karaf features
+           (like ``shell`` feature in our example), you should use
+           **<startupFeatures>** block, and not forget about
+           **combine.children="append"** attribute. Everything else can
+           be added to the bootFeatures block.
+
+
+**Known issues**
+
+* An issue with FeatureDeploymentListener.bundleChanged and NPE records in
+  log files. More details available here:
+  https://issues.apache.org/jira/browse/KARAF-6612
+
+* Some of the features might try to update configuration files, but that's
+  not supported by static distribution, so StaticConfigurationImpl.update
+  will throw UnsupportedOperationException.
 
 Features (for Karaf 3)
 ----------------------
