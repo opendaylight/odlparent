@@ -22,6 +22,30 @@
       "revId": "faa49ebb401f750e1929f3b4be02ba227d772140",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c14cd5a_5361607a",
+        "filename": "docs/developer-guide.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 8762
+      },
+      "writtenOn": "2021-02-15T14:47:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80006579_5f6b330e",
+      "range": {
+        "startLine": 378,
+        "startChar": 12,
+        "endLine": 378,
+        "endChar": 55
+      },
+      "revId": "faa49ebb401f750e1929f3b4be02ba227d772140",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
