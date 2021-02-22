@@ -970,7 +970,7 @@
              We do not need to specify the groupId. -->
         <plugin>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.1.2</version>
           <dependencies>
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
