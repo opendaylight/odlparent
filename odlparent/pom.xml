@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>8.1.1-SNAPSHOT</version>
+    <version>8.1.2-SNAPSHOT</version>
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
@@ -97,7 +97,7 @@
       <dependency>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-artifacts</artifactId>
-        <version>8.1.1-SNAPSHOT</version>
+        <version>8.1.2-SNAPSHOT</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -981,7 +981,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>8.1.1-SNAPSHOT</version>
+              <version>8.1.2-SNAPSHOT</version>
             </dependency>
             <dependency>
               <groupId>com.github.sevntu-checkstyle</groupId>
@@ -1127,7 +1127,7 @@
                   <artifactItem>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>odl-license</artifactId>
-                    <version>8.1.1-SNAPSHOT</version>
+                    <version>8.1.2-SNAPSHOT</version>
                     <type>license</type>
                     <outputDirectory>${project.build.outputDirectory}</outputDirectory>
                     <destFileName>LICENSE</destFileName>
@@ -1299,7 +1299,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>spotbugs</artifactId>
-              <version>8.1.1-SNAPSHOT</version>
+              <version>8.1.2-SNAPSHOT</version>
             </dependency>
             <dependency>
               <!-- The SpotBugs Maven plugin uses SLF4J 1.8 beta 2 -->

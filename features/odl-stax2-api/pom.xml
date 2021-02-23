@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>8.1.1-SNAPSHOT</version>
+        <version>8.1.2-SNAPSHOT</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-stax2-api</artifactId>
-    <version>8.1.1-SNAPSHOT</version>
+    <version>8.1.2-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: StAX2 API</name>
