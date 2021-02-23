@@ -2,9 +2,37 @@
 ODL Parent release notes
 ========================
 
+Version 8.1.1
+-------------
+This is a minor upgrade from version 8.1.0.
+
+Improvements
+~~~~~~~~~~~~
+* Support for building a `static Karaf distribution <https://karaf.apache.org/manual/latest/#_instances_and_distributions_goals>`__
+  has been added. It is driven by a new parent pom.xml, ``karaf-dist-static``. For more information
+  see Karaf documentation and `ODLPARENT-251 <https://jira.opendaylight.org/browse/ODLPARENT-251>`__.
+* Support for `improved documentation tags <https://bugs.openjdk.java.net/browse/JDK-8068562>`__ has
+  been added to default ``maven-javadoc-plugin`` configuration. See
+  `ODLPARENT-252 <https://jira.opendaylight.org/browse/ODLPARENT-252>`__ for more information.
+* Version declaration for ``osgi.annotation`` has been added.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* commons-net `3.7.2 → 3.8.0 <https://commons.apache.org/proper/commons-net/changes-report.html#a3.8.0>`__
+
+* Netty `4.1.58 → 4.1.59 <https://netty.io/news/2021/02/08/4-1-59-Final.html>`__
+
+* Woodstox `6.2.3 → 6.2.4 <https://github.com/FasterXML/woodstox/milestone/21?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-checkstyle-plugin `3.1.1 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12347024>`__
+
+* maven-invoker-plugin `3.2.1 → 3.2.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12346157>`__
+
 Version 8.1.0
 -------------
-This is a minor upgrade from version 8.1.0, with some potentially-breaking
+This is a minor upgrade from version 8.0.1, with some potentially-breaking
 changes.
 
 The most prominent is the upgrade to Karaf 4.3.0, which brings in a host of
