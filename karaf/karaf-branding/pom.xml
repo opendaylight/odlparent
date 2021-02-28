@@ -28,6 +28,13 @@
             <Spring-Context>*;public-context:=false</Spring-Context>
           </instructions>
         </configuration>
+        <dependencies>
+            <dependency>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>biz.aQute.bndlib</artifactId>
+                <version>5.1.0</version>
+            </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
