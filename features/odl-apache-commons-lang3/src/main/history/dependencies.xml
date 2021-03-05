@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:features xmlns:ns2="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-apache-commons-lang3">
-    <ns2:feature version="0.0.0">
-        <ns2:bundle>mvn:org.apache.commons/commons-lang3/3.11</ns2:bundle>
-    </ns2:feature>
-</ns2:features>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-apache-commons-lang3">
+    <feature version="0.0.0">
+        <bundle>mvn:org.apache.commons/commons-lang3/3.12.0</bundle>
+    </feature>
+</features>
