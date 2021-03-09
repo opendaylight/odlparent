@@ -1009,8 +1009,9 @@
             <showWarnings>true</showWarnings>
             <compilerArgs>
               <arg>-parameters</arg>
-              <arg>-Xlint:deprecation</arg>
-              <arg>-Xlint:unchecked</arg>
+              <arg>-Xlint:all</arg>
+              <!-- Disable 'No processor claimed any of these annotations' -->
+              <arg>-Xlint:-processing</arg>
             </compilerArgs>
             <annotationProcessorPaths>
               <dependency>
