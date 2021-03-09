@@ -1085,8 +1085,7 @@
             <showWarnings>true</showWarnings>
             <compilerArgs>
               <arg>-parameters</arg>
-              <arg>-Xlint:deprecation</arg>
-              <arg>-Xlint:unchecked</arg>
+              <arg>-Xlint:all</arg>
             </compilerArgs>
             <annotationProcessorPaths>
               <dependency>
