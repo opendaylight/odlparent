@@ -16,6 +16,24 @@
       "revId": "153b10bc21f99d1b794464970b2d1abfdd0b03de",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "580771f2_115ce2cb",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1746,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-03-09T18:24:53Z",
+      "side": 1,
+      "message": "yeah ... this might need some native-speaker word-smithing.\n\nStrictly speaking we do not \"support\" anything but JDK11 and here we are disabling functionality to hopefully make the unsupported environment work (as opposed to utterly failing).\n\nNot sure what to print (if anything, really)",
+      "parentUuid": "5a9fe67d_931f642f",
+      "revId": "153b10bc21f99d1b794464970b2d1abfdd0b03de",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
     }
   ]
 }
