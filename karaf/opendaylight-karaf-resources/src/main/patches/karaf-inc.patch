@@ -1,5 +1,5 @@
---- target/assembly/bin/inc.orig	2018-08-21 16:15:40.146423070 +0200
-+++ target/assembly/bin/inc	2018-08-21 16:15:43.798408830 +0200
+--- target/assembly/bin/inc.orig	2021-03-09 19:35:09.706691724 +0100
++++ target/assembly/bin/inc	2021-03-09 22:46:04.265424764 +0100
 @@ -190,7 +190,7 @@
      fi
 
@@ -11,29 +11,27 @@
          JAVA_HOME=`java-config --jre-home`
 @@ -243,9 +243,9 @@
 
-     VERSION=$("${JAVA}" -version 2>&1 | ${AWK} -F '"' '/version/ {print $2}' | sed -e 's/_.*//g; s/^1\.//g; s/\..*//g; s/-.*//g;')
+     VERSION=`"${JAVA}" -version 2>&1 | ${AWK} -F '"' '/version/ {print $2}' | sed -e 's/_.*//g; s/^1\.//g; s/\..*//g; s/-.*//g;'`
 
 -    # java must be at least version 8
 -    if [ "${VERSION}" -lt "8" ]; then
 -        die "JVM must be greater than 1.8"
-+    # java must be at least version 11 (and not newer, either)
-+    if [ "${VERSION}" -ne "11" ]; then
-+        die "JVM must be version 11"
++    # java must be at least version 11
++    if [ "${VERSION}" -lt "11" ]; then
++        die "JVM must be at least 11"
      fi
  }
 
-@@ -271,6 +271,8 @@
-     fi
+@@ -282,11 +282,20 @@
+ setupDefaults() {
 
-     DEFAULT_JAVA_OPTS="-Xms${JAVA_MIN_MEM} -Xmx${JAVA_MAX_MEM} -XX:+UnlockDiagnosticVMOptions "
+     DEFAULT_JAVA_OPTS="-XX:+UnlockDiagnosticVMOptions "
 +    DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError"
 +    DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS -XX:+DisableExplicitGC"
 
-     #Set the JVM_VENDOR specific JVM flags
-     if [ "${JVM_VENDOR}" = "SUN" ]; then
-@@ -285,6 +287,13 @@
-         fi
-     fi
+     setupVendorSepcifics
+
+     DEFAULT_JAVA_OPTS="${DEFAULT_JAVA_OPTS} ${JAVA_VENDOR_OPTS}"
 
 +    # Add default security file option
 +    if [ "x$ODL_JAVA_SECURITY_PROPERTIES" != "x" ]; then
