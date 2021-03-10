@@ -34,6 +34,24 @@
       "revId": "153b10bc21f99d1b794464970b2d1abfdd0b03de",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6b6bb2f_53ce2e0a",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1746,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2021-03-10T16:04:40Z",
+      "side": 1,
+      "message": "Ah right, I get it. Perhaps\n\n\u003cmessage\u003eSkipping SpotBugs, it fails with your JDK. Note that JDKs newer than 11 aren\u0027t supported by OpenDaylight.\u003c/message\u003e",
+      "parentUuid": "580771f2_115ce2cb",
+      "revId": "153b10bc21f99d1b794464970b2d1abfdd0b03de",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
     }
   ]
 }
