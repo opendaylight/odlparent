@@ -14,6 +14,7 @@ import static org.junit.Assert.fail;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
+import static org.ops4j.pax.exam.CoreOptions.bootDelegationPackages;
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.CoreOptions.propagateSystemProperty;
 import static org.ops4j.pax.exam.CoreOptions.systemPackages;
@@ -169,11 +170,8 @@ public class SingleFeatureTest {
                 new VMOption("-Djava.security.egd=file:/dev/./urandom")
             ),
             when(Boolean.getBoolean(PROFILE_PROP)).useOptions(
-                new VMOption("-XX:+UnlockCommercialFeatures"),
-                new VMOption("-XX:+FlightRecorder"),
-                new VMOption("-XX:FlightRecorderOptions=defaultrecording=true,dumponexit=true,dumponexitpath="
-                               + getNewJFRFile())
-            ),
+                new VMOption("-XX:StartFlightRecording=disk=true,settings=profile,dumponexit=true,filename="
+                               + getNewJFRFile())),
             getKarafDistroOption(),
             when(Boolean.getBoolean(KEEP_UNPACK_DIRECTORY_PROP)).useOptions(keepRuntimeFolder()),
             configureConsole().ignoreLocalConsole().ignoreRemoteShell(),
@@ -221,6 +219,10 @@ public class SingleFeatureTest {
             propagateSystemProperty(BUNDLES_DIAG_TIMEOUT_PROP),
             // Needed for Agrona/aeron.io
             systemPackages("com.sun.media.sound", "sun.net", "sun.nio.ch"),
+            // Needed to run akka with a java flight recorder enabled
+            // FIXME: wildcard doesn't work properly?
+            bootDelegationPackages("jdk.jfr", "jdk.jfr.consumer", "jdk.jfr.event", "jdk.jfr.event.handlers",
+                "jdk.jfr.internal.*"),
 
             // Install SCR
             features(maven().groupId("org.apache.karaf.features").artifactId("standard").type("xml")
