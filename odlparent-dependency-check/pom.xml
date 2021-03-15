@@ -140,20 +140,12 @@
             <artifactId>jakarta.activation-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>jakarta.xml.bind</groupId>
-            <artifactId>jakarta.xml.bind-api</artifactId>
-        </dependency>
-        <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.ws.rs</groupId>
@@ -192,10 +184,6 @@
             <artifactId>blueprint-maven-plugin-annotation</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.aries.blueprint</groupId>
-            <artifactId>org.apache.aries.blueprint.core</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.apache.aries.quiesce</groupId>
             <artifactId>org.apache.aries.quiesce.api</artifactId>
         </dependency>
@@ -208,22 +196,10 @@
             <artifactId>commons-text</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.metatype</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.karaf.features</groupId>
-            <artifactId>framework</artifactId>
+            <groupId>org.apache.karaf</groupId>
+            <artifactId>karaf-bom</artifactId>
             <type>pom</type>
             <version>${karaf.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.karaf.shell</groupId>
-            <artifactId>org.apache.karaf.shell.console</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.karaf.shell</groupId>
-            <artifactId>org.apache.karaf.shell.core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -284,10 +260,6 @@
         <dependency>
             <groupId>org.gaul</groupId>
             <artifactId>modernizer-maven-annotations</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.glassfish.jaxb</groupId>
-            <artifactId>jaxb-runtime</artifactId>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey</groupId>
@@ -394,10 +366,6 @@
             <artifactId>pax-url-wrap</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.ops4j.pax.web</groupId>
-            <artifactId>pax-web-api</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
         </dependency>
@@ -448,26 +416,6 @@
         <dependency>
             <groupId>org.skyscreamer</groupId>
             <artifactId>jsonassert</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>log4j-over-slf4j</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
         </dependency>
         <dependency>
             <groupId>org.sonatype.plexus</groupId>
