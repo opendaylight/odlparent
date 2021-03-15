@@ -102,10 +102,10 @@
         <type>pom</type>
       </dependency>
 
-      <!-- We import Karaf dependencies to ensure we converge by default on the versions used there -->
+      <!-- We import the Karaf BOM to ensure we converge by default on the versions used there -->
       <dependency>
-        <groupId>org.apache.karaf.features</groupId>
-        <artifactId>framework</artifactId>
+        <groupId>org.apache.karaf</groupId>
+        <artifactId>karaf-bom</artifactId>
         <version>${karaf.version}</version>
         <scope>import</scope>
         <type>pom</type>
@@ -246,32 +246,6 @@
       <!--
            Supporting Libraries
        -->
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>jcl-over-slf4j</artifactId>
-        <version>1.7.28</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.7.28</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>1.7.28</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>log4j-over-slf4j</artifactId>
-        <version>1.7.28</version>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-simple</artifactId>
-        <version>1.7.28</version>
-        <scope>test</scope>
-      </dependency>
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-core</artifactId>
@@ -492,16 +466,6 @@
         <version>1.1.1</version>
       </dependency>
       <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>3.1.0</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>org.apache.felix.metatype</artifactId>
-        <version>1.2.2</version>
-      </dependency>
-      <dependency>
         <groupId>org.bouncycastle</groupId>
         <artifactId>bcpkix-jdk15on</artifactId>
         <version>${bouncycastle.version}</version>
@@ -697,13 +661,6 @@
       </dependency>
 
       <dependency>
-        <groupId>org.ops4j.pax.web</groupId>
-        <artifactId>pax-web-api</artifactId>
-        <!-- Note: keep this version synchronized with karaf -->
-        <version>7.3.9</version>
-      </dependency>
-
-      <dependency>
         <groupId>org.springframework.osgi</groupId>
         <artifactId>spring-osgi-mock</artifactId>
         <version>1.2.1</version>
@@ -821,20 +778,6 @@
         <version>2.1.1</version>
       </dependency>
 
-      <!-- Karaf console support -->
-      <dependency>
-        <groupId>org.apache.karaf.shell</groupId>
-        <artifactId>org.apache.karaf.shell.core</artifactId>
-        <version>${karaf.version}</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.karaf.shell</groupId>
-        <artifactId>org.apache.karaf.shell.console</artifactId>
-        <version>${karaf.version}</version>
-        <scope>provided</scope>
-      </dependency>
-
       <!-- ThreeTen-Extra, date/time complements -->
       <dependency>
         <groupId>org.threeten</groupId>
@@ -847,14 +790,6 @@
         <groupId>org.antlr</groupId>
         <artifactId>antlr4-runtime</artifactId>
         <version>4.8-1</version>
-      </dependency>
-      <!-- Aries' Blueprint version should be kept in sync to the version actually
-           used by our ${karaf[4].version} ... please bump this when increasing that.
-           TODO Find a smarter way to inherit this from a (TBD..) Karaf artifacts BOM! -->
-      <dependency>
-        <groupId>org.apache.aries.blueprint</groupId>
-        <artifactId>org.apache.aries.blueprint.core</artifactId>
-        <version>1.10.2</version>
       </dependency>
       <dependency>
         <groupId>org.apache.aries.blueprint</groupId>
@@ -881,17 +816,6 @@
         <type>pom</type>
       </dependency>
 
-      <!-- JAXB for Java 11+, match this with Karaf -->
-      <dependency>
-        <groupId>jakarta.xml.bind</groupId>
-        <artifactId>jakarta.xml.bind-api</artifactId>
-        <version>2.3.2</version>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jaxb</groupId>
-        <artifactId>jaxb-runtime</artifactId>
-        <version>2.3.2</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
