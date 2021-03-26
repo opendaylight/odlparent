@@ -27,7 +27,7 @@
        see http://central.sonatype.org/pages/requirements.html
    -->
   <url>${odl.site.url}/${project.groupId}/${stream}/${project.artifactId}/</url>
-  <description>OpenDaylight is leading the transformation to Open Software Defined Networking (SDN). For more information, please see https://www.opendaylight.org</description>
+  <description>${project.artifactId}</description>
 
   <licenses>
     <license>
