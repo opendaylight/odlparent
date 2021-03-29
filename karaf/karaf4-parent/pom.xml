@@ -294,7 +294,7 @@
                         <!-- Local feature if any -->
                         <feature>${karaf.localFeature}</feature>
                     </bootFeatures>
-                    <javase>1.8</javase>
+                    <javase>${maven.compiler.release}</javase>
                     <archiveTarGz>${karaf.archiveTarGz}</archiveTarGz>
                     <archiveZip>${karaf.archiveZip}</archiveZip>
                 </configuration>
