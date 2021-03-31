@@ -545,14 +545,6 @@
         <version>7.0.0</version>
         <scope>provided</scope>
       </dependency>
-      <!-- For backwards compatibility -->
-      <!-- FIXME: 9.0.0: remove this declaration -->
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.core</artifactId>
-        <version>6.0.0</version>
-        <scope>provided</scope>
-      </dependency>
 
       <dependency>
         <groupId>org.osgi</groupId>
