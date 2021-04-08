@@ -3,6 +3,6 @@
     <ns2:feature version="0.0.0">
         <ns2:bundle>mvn:com.google.guava/failureaccess/1.0.1</ns2:bundle>
         <ns2:bundle>mvn:com.google.guava/guava/30.1.1-jre</ns2:bundle>
-        <ns2:bundle>mvn:org.checkerframework/checker-qual/2.11.1</ns2:bundle>
+        <ns2:bundle>mvn:org.checkerframework/checker-qual/3.8.0</ns2:bundle>
     </ns2:feature>
 </ns2:features>
