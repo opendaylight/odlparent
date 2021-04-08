@@ -129,7 +129,7 @@
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
-        <version>4.13.1</version>
+        <version>4.13.2</version>
         <scope>test</scope>
       </dependency>
       <dependency>
