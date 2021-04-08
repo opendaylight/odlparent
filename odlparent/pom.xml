@@ -89,6 +89,16 @@
          to true. Set to 'false' in pom.xml of project which desires to not enforce
          no reported violations. -->
     <odlparent.spotbugs.enforce>true</odlparent.spotbugs.enforce>
+
+    <!-- Opt-in into maven-dependency-plugin dependency declaration consistency
+         enforcement. Defaults to false. Set to 'true' in pom.xml of a project which
+         desires to have the consistency of its dependencies checked and enforced. -->
+    <odlparent.dependency.enforce>false</odlparent.dependency.enforce>
+
+    <!-- Opt-out from maven-dependency-plugin dependency declaration consistency
+         checking. Defaults to false. Set to 'true' in pom.xml of a project which
+         desires to not check the consistency of its dependencies. -->
+    <odlparent.dependency.skip>false</odlparent.dependency.skip>
   </properties>
 
   <dependencyManagement>
@@ -1044,6 +1054,17 @@
                   </artifactItem>
                 </artifactItems>
                 <silent>true</silent>
+              </configuration>
+            </execution>
+            <execution>
+              <id>analyze-declarations</id>
+              <goals>
+                <goal>analyze-only</goal>
+              </goals>
+              <configuration>
+                <failOnWarning>${odlparent.dependency.enforce}</failOnWarning>
+                <ignoreNonCompile>true</ignoreNonCompile>
+                <skip>${odlparent.dependency.skip}</skip>
               </configuration>
             </execution>
           </executions>
