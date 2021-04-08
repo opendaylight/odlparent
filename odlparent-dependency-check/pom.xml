@@ -183,7 +183,7 @@
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-bom</artifactId>
             <type>pom</type>
-            <version>4.1.12.1</version>
+            <version>4.1.19</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
