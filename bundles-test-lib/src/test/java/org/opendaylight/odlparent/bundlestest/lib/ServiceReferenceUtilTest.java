@@ -9,10 +9,9 @@ package org.opendaylight.odlparent.bundlestest.lib;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.common.collect.Lists;
-import java.util.Arrays;
 import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.junit.Test;
 import org.osgi.framework.Bundle;
@@ -34,7 +33,7 @@ public class ServiceReferenceUtilTest {
     public void testGetProperties() {
         assertThat(new ServiceReferenceUtil().getProperties(getServiceReference())).containsExactly(
                 "property1", "value1",
-                "property2", Arrays.asList(new String[] { "value2.1", "value2.2" }),
+                "property2", List.of("value2.1", "value2.2"),
                 "property3", null);
     }
 
@@ -48,7 +47,7 @@ public class ServiceReferenceUtilTest {
 
         TestServiceReference() {
             properties.put("property1", "value1");
-            properties.put("property2", Lists.newArrayList("value2.1", "value2.2"));
+            properties.put("property2", List.of("value2.1", "value2.2"));
             properties.put("property3", null);
         }
 
