@@ -13,14 +13,14 @@
 
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>bundle-parent</artifactId>
+    <artifactId>bnd-parent</artifactId>
     <version>9.0.7-SNAPSHOT</version>
-    <relativePath>../bundle-parent</relativePath>
+    <relativePath>../bnd-parent</relativePath>
   </parent>
 
   <artifactId>bundles-test-lib</artifactId>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
-  <packaging>bundle</packaging>
+  <packaging>jar</packaging>
 
   <properties>
     <!-- Opt-in to our optional code quality checks -->

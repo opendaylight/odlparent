@@ -547,6 +547,12 @@
         <artifactId>org.osgi.service.metatype.annotations</artifactId>
         <version>1.4.0</version>
       </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.annotation.bundle</artifactId>
+        <version>1.1.0</version>
+        <scope>provided</scope>
+      </dependency>
 
       <dependency>
         <groupId>org.osgi</groupId>
@@ -1168,6 +1174,19 @@
               <_removeheaders>Import-Service,Export-Service</_removeheaders>
             </instructions>
           </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>biz.aQute.bnd</groupId>
+          <artifactId>bnd-maven-plugin</artifactId>
+          <version>5.3.0</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>bnd-process</goal>
+              </goals>
+            </execution>
+          </executions>
         </plugin>
 
         <plugin>
