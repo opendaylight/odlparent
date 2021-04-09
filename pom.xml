@@ -48,6 +48,7 @@
         <module>karaf-util</module>
 
         <!-- Parent POMs -->
+        <module>bnd-parent</module>
         <module>bundle-parent</module>
         <module>untested-single-feature-parent</module>
         <module>single-feature-parent</module>
