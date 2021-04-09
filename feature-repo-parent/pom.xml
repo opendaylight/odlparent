@@ -37,6 +37,9 @@
     <properties>
         <skip.karaf.featureTest>true</skip.karaf.featureTest>
         <jacoco.skip>true</jacoco.skip>
+
+        <!-- We typically do not have code in feature artifacts, which throws off maven-dependency-plugin -->
+        <odlparent.dependency.skip>true</odlparent.dependency.skip>
     </properties>
 
     <dependencies>
