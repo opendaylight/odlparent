@@ -2,6 +2,105 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.0
+-------------
+This is a major upgrade from version 8, with breaking changes; downstream projects may need to make changes to upgrade
+to this version.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The following upstream dependencies have been removed from dependency management:
+
+* ``javax.inject:javax.inject``. This dependency should be provided by target runtime. Furthermore we provide the same
+  functionality via ``com.guicedee.services:javax.inject``, which is properly declared and is a JPMS module. See
+  `ODLPARENT-246 <https://jira.opendaylight.org/browse/ODLPARENT-246>`__ for more information.
+
+Improvements
+~~~~~~~~~~~~
+* The configuration of ``maven-compiler-plugin`` has been updated to expand ``javac`` warning options to include almost
+  all of them.
+* The default description in parent ``pom.xml`` has been updated to only include ``${project.artifactId}``, not a generic
+  blurb. See `ODLPARENT-244 <https://jira.opendaylight.org/browse/ODLPARENT-244>`__ for more information.
+* The ``single-feature-test`` substrate has been updated to allow Java Flight Recorder to be enabled during testing runs.
+  This feature has falled into disrepair as the JFR facility has been productized.
+* Configuration of various components has been updated to be deactivated when executing with JDK versions newer than 11,
+  so that odlparent infrastructure works out of the box with JDK 16, albeit sacrificing some validation. Most notably
+  ``SpotBugs`` and ``Single Feature Test`` are disabled, with corresponding notices displayed.
+* We now expose the ability to check dependency declaration consistency via ``maven-dependency-plugin``'s ``analyze-only``
+  goal. This functionality is enabled by default, but does not cause the build to fail when inconsistencies are found. It
+  can be disabled by on a per-artifact basis by definining ``odlparent.dependency.skip`` property to ``true``. It can also
+  be configured to fail the build on a per-artifact basis by defining ``odlparent.dependency.enforce`` property to ``true``.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Antlr 4.8-1 → 4.9.2, release notes:
+  * `4.9 <https://github.com/antlr/antlr4/releases/tag/4.9>`__
+  * `4.9.1 <https://github.com/antlr/antlr4/releases/tag/4.9.1>`__
+  * `4.9.2 <https://github.com/antlr/antlr4/releases/tag/4.9.2>`__
+
+* Checkstyle 8.39.0 → 8.40.0, release notes:
+  * `8.40.0 <https://checkstyle.org/releasenotes.html#Release_8.40.0>`__
+  * `8.41.0 <https://checkstyle.org/releasenotes.html#Release_8.41.0>`__
+  * `8.41.1 <https://checkstyle.org/releasenotes.html#Release_8.41.1>`__
+
+* commons-lang3 `3.11 → 3.12 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.12>`__
+
+* Dropwizard Metrics 4.1.12.1 → 4.1.19, release notes:
+  * `4.1.13 <https://github.com/dropwizard/metrics/releases/tag/v4.1.13>`__
+  * `4.1.14 <https://github.com/dropwizard/metrics/releases/tag/v4.1.14>`__
+  * `4.1.15 <https://github.com/dropwizard/metrics/releases/tag/v4.1.15>`__
+  * `4.1.16 <https://github.com/dropwizard/metrics/releases/tag/v4.1.16>`__
+  * `4.1.17 <https://github.com/dropwizard/metrics/releases/tag/v4.1.17>`__
+  * `4.1.18 <https://github.com/dropwizard/metrics/releases/tag/v4.1.18>`__
+  * `4.1.19 <https://github.com/dropwizard/metrics/releases/tag/v4.1.19>`__
+
+* Enunciate `2.13.2 → 2.13.2 <https://github.com/stoicflame/enunciate/releases/tag/v2.13.3>`__
+
+* Google Truth 1.1 → 1.1.2, release notes:
+  * `1.1.1 <https://github.com/google/truth/releases/tag/release_1_1_1>`__
+  * `1.1.2 <https://github.com/google/truth/releases/tag/release_1_1_2>`__
+
+* Guava 27.1 → 28.2, release notes:
+  * `30.0 <https://github.com/google/guava/releases/tag/v30.0>`__
+  * `30.1 <https://github.com/google/guava/releases/tag/v30.1>`__
+  * `30.1.1 <https://github.com/google/guava/releases/tag/v30.1.1>`__
+
+* JUnit `4.13.1 → 4.13.2 <https://github.com/junit-team/junit4/blob/HEAD/doc/ReleaseNotes4.13.2.md>`__ 
+
+* Karaf `4.3.0 → 4.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12348818>`__ 
+* Log4J 2.13.3 → 2.14.1, release notes:
+  * `2.14.0 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.14.0>`__
+  * `2.14.1 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.14.1>`__
+
+* Netty 4.1.59 → 4.1.60, release notes:
+  * `4.1.60 <https://netty.io/news/2021/03/09/4-1-60-Final.html>`__
+  * `4.1.61 <https://netty.io/news/2021/03/30/4-1-61-Final.html>`__
+  * `4.1.62 <https://netty.io/news/2021/03/31/4-1-62-Final.html>`__
+  * `4.1.63 <https://netty.io/news/2021/04/01/4-1-63-Final.html>`__
+
+* Sevntu `1.38.0 → 1.39.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.39.0>`__
+
+* ThreeTen `1.5.0 → 1.6.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.6.0>`__
+
+* Woodstox `6.2.4 → 6.2.5 <https://github.com/FasterXML/woodstox/milestone/22?closed=1>`__
+
+* Xtend `2.24.0 → 2.25.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2021/03/02/version-2-25-0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* Asciidoctor 1.5.7.1 → 2.1.0 (with related AsciidoctorJ upgrades)
+  * `2.0.0 <https://github.com/asciidoctor/asciidoctor-maven-plugin/releases/tag/asciidoctor-maven-plugin-2.0.0>`__
+  * `2.1.0 <https://github.com/asciidoctor/asciidoctor-maven-plugin/releases/tag/asciidoctor-maven-plugin-2.1.0>`__
+
+* git-commit-id-plugin 3.0.1 → 4.0.4, release notes:
+  * `4.0.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v4.0.0>`__
+  * `4.0.1 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v4.0.1>`__
+  * `4.0.2 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v4.0.2>`__
+  * `4.0.3 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v4.0.3>`__
+  * `4.0.4 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v4.0.4>`__
+
+* modernizer-maven-plugin `2.1.0 → 2.2.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.2.0>`__
+
 Version 8.1.1
 -------------
 This is a minor upgrade from version 8.1.0.
