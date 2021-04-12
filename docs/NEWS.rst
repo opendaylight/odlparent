@@ -81,7 +81,7 @@ Third-party dependencies
   * `2.0.8 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#208>`__
   * `2.0.9 <https://github.com/powermock/powermock/blob/release/2.x/docs/release-notes/official.md#209>`__
 
-* Sevntu `1.37.1 → 1.38.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.37.0>`__
+* Sevntu `1.37.1 → 1.38.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.38.0>`__
 
 * XBean finder `4.17 → 4.18 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12348171>`__
 
