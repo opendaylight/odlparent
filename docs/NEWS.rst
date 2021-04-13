@@ -38,7 +38,7 @@ Third-party dependencies
   * `4.9.1 <https://github.com/antlr/antlr4/releases/tag/4.9.1>`__
   * `4.9.2 <https://github.com/antlr/antlr4/releases/tag/4.9.2>`__
 
-* Checkstyle 8.39.0 → 8.40.0, release notes:
+* Checkstyle 8.39.0 → 8.41.1, release notes:
   * `8.40.0 <https://checkstyle.org/releasenotes.html#Release_8.40.0>`__
   * `8.41.0 <https://checkstyle.org/releasenotes.html#Release_8.41.0>`__
   * `8.41.1 <https://checkstyle.org/releasenotes.html#Release_8.41.1>`__
