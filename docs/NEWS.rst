@@ -2,6 +2,70 @@
 ODL Parent release notes
 ========================
 
+Version 8.1.2
+-------------
+This is a minor upgrade from version 8.1.1.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Antlr 4.8-1 → 4.9.2, release notes:
+  * `4.9 <https://github.com/antlr/antlr4/releases/tag/4.9>`__
+  * `4.9.1 <https://github.com/antlr/antlr4/releases/tag/4.9.1>`__
+  * `4.9.2 <https://github.com/antlr/antlr4/releases/tag/4.9.2>`__
+    
+* Checkstyle 8.39 → 8.42, release notes:
+  * `8.40 <https://checkstyle.org/releasenotes.html#Release_8.40>`__
+  * `8.41 <https://checkstyle.org/releasenotes.html#Release_8.41>`__
+  * `8.41.1 <https://checkstyle.org/releasenotes.html#Release_8.41.1>`__
+  * `8.42 <https://checkstyle.org/releasenotes.html#Release_8.42>`__
+
+* commons-lang3 `3.11 → 3.12 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.12>`__
+
+* Dropwizard Metrics 4.1.12.1 → 4.1.21, release notes:
+  * `4.1.13 <https://github.com/dropwizard/metrics/releases/tag/v4.1.13>`__
+  * `4.1.14 <https://github.com/dropwizard/metrics/releases/tag/v4.1.14>`__
+  * `4.1.15 <https://github.com/dropwizard/metrics/releases/tag/v4.1.15>`__
+  * `4.1.16 <https://github.com/dropwizard/metrics/releases/tag/v4.1.16>`__
+  * `4.1.17 <https://github.com/dropwizard/metrics/releases/tag/v4.1.17>`__
+  * `4.1.18 <https://github.com/dropwizard/metrics/releases/tag/v4.1.18>`__
+  * `4.1.19 <https://github.com/dropwizard/metrics/releases/tag/v4.1.19>`__
+  * `4.1.20 <https://github.com/dropwizard/metrics/releases/tag/v4.1.20>`__
+  * `4.1.21 <https://github.com/dropwizard/metrics/releases/tag/v4.1.21>`__
+
+* Enunciate `2.13.2 → 2.13.3 <https://github.com/stoicflame/enunciate/releases/tag/v2.13.3>`_
+
+* Google Truth 1.1 → 1.1.2, release notes:
+  * `1.1.1 <https://github.com/google/truth/releases/tag/release_1_1_1>`__
+  * `1.1.2 <https://github.com/google/truth/releases/tag/release_1_1_2>`__
+
+* JUnit `4.13.1 → 4.13.2 <https://github.com/junit-team/junit4/blob/HEAD/doc/ReleaseNotes4.13.2.md>`__
+
+* Karaf `4.3.0 → 4.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12348818>`__
+
+* Log4J 2.13.3 → 2.14.1, release notes:
+  * `2.14.0 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.14.0>`__
+  * `2.14.1 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.14.1>`__
+
+* Netty 4.1.59 → 4.1.63, release notes:
+  * `4.1.60 <https://netty.io/news/2021/03/09/4-1-60-Final.html>`__
+  * `4.1.61 <https://netty.io/news/2021/03/30/4-1-61-Final.html>`__
+  * `4.1.62 <https://netty.io/news/2021/03/31/4-1-62-Final.html>`__
+  * `4.1.63 <https://netty.io/news/2021/04/01/4-1-63-Final.html>`__
+
+* Sevntu `1.38.0 → 1.39.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.39.0>`__
+
+* ThreeTen `1.5.0 → 1.6.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.6.0>`__
+
+* Woodstox 6.2.4 → 6.2.6, release notes:
+  * `6.2.5 <https://github.com/FasterXML/woodstox/milestone/22?closed=1>`__
+  * `6.2.6 <https://github.com/FasterXML/woodstox/milestone/23?closed=1>`__
+
+* XBean finder `4.18 → 4.19 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12348824>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* modernizer-maven-plugin `2.1.0 → 2.2.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.2.0>`__
+
 Version 8.1.1
 -------------
 This is a minor upgrade from version 8.1.0.
