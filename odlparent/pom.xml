@@ -1376,6 +1376,18 @@
         </plugin>
 
         <plugin>
+          <groupId>org.basepom.maven</groupId>
+          <artifactId>duplicate-finder-maven-plugin</artifactId>
+          <version>1.5.0</version>
+        </plugin>
+
+        <plugin>
+          <groupId>com.github.ekryd.echo-maven-plugin</groupId>
+          <artifactId>echo-maven-plugin</artifactId>
+          <version>1.3.2</version>
+        </plugin>
+
+        <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
           <version>4.2.1</version>
@@ -1440,6 +1452,12 @@
               </goals>
             </execution>
           </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>com.alexecollins.maven.plugin</groupId>
+          <artifactId>script-maven-plugin</artifactId>
+          <version>1.0.0</version>
         </plugin>
 
         <plugin>
@@ -1721,7 +1739,6 @@
       <plugin>
         <groupId>org.basepom.maven</groupId>
         <artifactId>duplicate-finder-maven-plugin</artifactId>
-        <version>1.5.0</version>
         <executions>
           <execution>
             <id>find-duplicate-classpath-entries</id>
@@ -1809,7 +1826,6 @@
       <plugin>
         <groupId>com.alexecollins.maven.plugin</groupId>
         <artifactId>script-maven-plugin</artifactId>
-        <version>1.0.0</version>
         <executions>
            <execution>
              <phase>prepare-package</phase>
