@@ -1536,6 +1536,7 @@
               <ignoredResourcePattern>README.*$</ignoredResourcePattern>
               <ignoredResourcePattern>.*\.html$</ignoredResourcePattern>
               <ignoredResourcePattern>reference.conf</ignoredResourcePattern>
+              <ignoredResourcePattern>.api_description</ignoredResourcePattern>
             </ignoredResourcePatterns>
             <ignoredDependencies>
               <ignoredDependency>
