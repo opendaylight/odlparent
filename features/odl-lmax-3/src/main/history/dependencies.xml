@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-lmax-3">
     <feature version="0.0.0">
-        <bundle>mvn:com.lmax/disruptor/3.4.2</bundle>
+        <bundle>mvn:com.lmax/disruptor/3.4.4</bundle>
     </feature>
 </features>
