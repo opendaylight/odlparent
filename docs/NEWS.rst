@@ -2,6 +2,37 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.1
+-------------
+This is a minor upgrade from version 9.0.0.
+
+Bug fixes
+~~~~~~~~~
+The upgrade of ``duplicate-finder-maven-plugin`` ended up triggering build failures on ``.api_description``
+files packaged in artifacts. This regression has now been fixed.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle `8.41 → 8.42 <https://checkstyle.org/releasenotes.html#Release_8.42>`__.
+
+* Dropwizard Metrics 4.1.19 → 4.1.21, release notes:
+  * `4.1.20 <https://github.com/dropwizard/metrics/releases/tag/v4.1.20>`__
+  * `4.1.21 <https://github.com/dropwizard/metrics/releases/tag/v4.1.21>`__
+
+* LMAX Disruptor 3.4.2 → 3.4.4, release notes:
+  * `3.4.3 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.4.3>`__
+  * `3.4.3 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.4.4>`__
+
+* Woodstox `6.2.5 → 6.2.6 <https://github.com/FasterXML/woodstox/milestone/23?closed=1>`__
+
+* XBean finder `4.18 → 4.19 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12348824>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-bundle-plugin 4.2.1 → 5.1.2, release notes:
+  * `5.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12346016>`__
+  * `5.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12350026>`__
+
 Version 9.0.0
 -------------
 This is a major upgrade from version 8, with breaking changes; downstream projects may need to make changes to upgrade
