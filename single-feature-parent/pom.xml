@@ -120,8 +120,8 @@
         <profile>
             <id>disable-sft</id>
             <activation>
-                <!-- Karaf does not have jre.properties for JDK16+ just yet -->
-                <jdk>[16,)</jdk>
+                <!-- Karaf does not have jre.properties for JDK17+ just yet -->
+                <jdk>[17,)</jdk>
             </activation>
 
             <properties>
