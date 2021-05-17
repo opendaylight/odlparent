@@ -1,6 +1,15 @@
 ========================
 ODL Parent release notes
 ========================
+Version 7.0.10
+--------------
+This is a bug-fix upgrade from version 7.0.9.
+
+Improvements
+~~~~~~~~~~~~
+* The upgrade of ``commons-lang3`` done in version 7.0.9 did not take into account Karaf feature
+  packaging. This omission would cause two versions of commons-lang3 jar to be included in Karaf
+  distribution artifacts, leading to unnecessary bloat. This has now been fixed.
 
 Version 7.0.9
 -------------
