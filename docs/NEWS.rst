@@ -1,9 +1,118 @@
 ========================
 ODL Parent release notes
 ========================
+
+Version 7.0.9
+-------------
+This is a bug-fix upgrade from version 7.0.8.
+
+Improvements
+~~~~~~~~~~~~
+* Support for `improved documentation tags <https://bugs.openjdk.java.net/browse/JDK-8068562>`__ has
+  been added to default ``maven-javadoc-plugin`` configuration. See
+  `ODLPARENT-252 <https://jira.opendaylight.org/browse/ODLPARENT-252>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Antlr 4.8-1 → 4.9.2, release notes:
+  * `4.9 <https://github.com/antlr/antlr4/releases/tag/4.9>`__
+  * `4.9.1 <https://github.com/antlr/antlr4/releases/tag/4.9.1>`__
+  * `4.9.2 <https://github.com/antlr/antlr4/releases/tag/4.9.2>`__
+
+* Apache SSHD 2.3.0 → 2.5.1, release notes:
+  * `2.4.0 <https://github.com/apache/mina-sshd/blob/master/docs/changes/2.4.0.md>`__
+  * `2.5.0 <https://github.com/apache/mina-sshd/blob/master/docs/changes/2.5.0.md>`__
+  * `2.5.1 <https://github.com/apache/mina-sshd/blob/master/docs/changes/2.5.1.md>`__
+
+* commons-lang3 `3.11 → 3.12 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.12>`__
+
+* Dropwizard Metrics 4.1.12.1 → 4.1.21, release notes:
+  * `4.1.13 <https://github.com/dropwizard/metrics/releases/tag/v4.1.13>`__
+  * `4.1.14 <https://github.com/dropwizard/metrics/releases/tag/v4.1.14>`__
+  * `4.1.15 <https://github.com/dropwizard/metrics/releases/tag/v4.1.15>`__
+  * `4.1.16 <https://github.com/dropwizard/metrics/releases/tag/v4.1.16>`__
+  * `4.1.17 <https://github.com/dropwizard/metrics/releases/tag/v4.1.17>`__
+  * `4.1.18 <https://github.com/dropwizard/metrics/releases/tag/v4.1.18>`__
+  * `4.1.19 <https://github.com/dropwizard/metrics/releases/tag/v4.1.19>`__
+  * `4.1.20 <https://github.com/dropwizard/metrics/releases/tag/v4.1.20>`__
+  * `4.1.21 <https://github.com/dropwizard/metrics/releases/tag/v4.1.21>`__
+
+* Enunciate `2.13.2 → 2.13.3 <https://github.com/stoicflame/enunciate/releases/tag/v2.13.3>`__
+
+* Google Truth 1.1 → 1.1.2, release notes:
+  * `1.1.1 <https://github.com/google/truth/releases/tag/release_1_1_1>`__
+  * `1.1.2 <https://github.com/google/truth/releases/tag/release_1_1_2>`__
+
+* Jetty 9.4.31.v20200723 → 9.4.38.v20210224, release notes:
+  * `9.4.32.v20200930 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.32.v20200930>`__
+  * `9.4.33.v20201020 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.33.v20201020>`__
+  * `9.4.34.v20201102 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.34.v20201102>`__
+  * `9.4.35.v20201120 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.35.v20201120>`__
+  * `9.4.36.v20210114 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.36.v20210114>`__
+  * `9.4.37.v20210219 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.37.v20210219>`__
+  * `9.4.38.v20210224 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.38.v20210224>`__
+
+* JUnit 4.13.0 → 4.13.2, release notes:
+  * `4.13.1 <https://github.com/junit-team/junit4/blob/HEAD/doc/ReleaseNotes4.13.1.md>`__
+  * `4.13.2 <https://github.com/junit-team/junit4/blob/HEAD/doc/ReleaseNotes4.13.2.md>`__
+
+* Karaf `4.2.10 → 4.2.11 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12348692>`__
+
+* LMAX Disruptor 3.4.2 → 3.4.4, release notes:
+  * `3.4.3 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.4.3>`__
+  * `3.4.3 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.4.4>`__
+
+* Netty 4.1.56 → 4.1.63, release notes:
+  * `4.1.57 <https://netty.io/news/2021/01/12/4-1-57-Final.html>`__
+  * `4.1.58 <https://netty.io/news/2021/01/13/4-1-58-Final.html>`__
+  * `4.1.59 <https://netty.io/news/2021/02/08/4-1-59-Final.html>`__
+  * `4.1.60 <https://netty.io/news/2021/03/09/4-1-60-Final.html>`__
+  * `4.1.61 <https://netty.io/news/2021/03/30/4-1-61-Final.html>`__
+  * `4.1.62 <https://netty.io/news/2021/03/31/4-1-62-Final.html>`__
+  * `4.1.63 <https://netty.io/news/2021/04/01/4-1-63-Final.html>`__
+
+* Scala 2.13.4 → 2.13.6, release notes:
+  * `2.13.5 <https://github.com/scala/scala/releases/tag/v2.13.5>`__
+  * `2.13.6 <https://github.com/scala/scala/releases/tag/v2.13.6>`__
+
+* Sevntu `1.38.0 → 1.39.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.39.0>`__
+
+* ThreeTen `1.5.0 → 1.6.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.6.0>`__
+
+* Woodstox 6.2.4 → 6.2.6, release notes:
+  * `6.2.4 <https://github.com/FasterXML/woodstox/milestone/21?closed=1>`__
+  * `6.2.5 <https://github.com/FasterXML/woodstox/milestone/22?closed=1>`__
+  * `6.2.6 <https://github.com/FasterXML/woodstox/milestone/23?closed=1>`__
+
+* XBean finder `4.18 → 4.19 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310312&version=12348824>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* build-helper-maven-plugin `3.1.0 → 3.2.0 <https://github.com/mojohaus/build-helper-maven-plugin/issues?q=is%3Aissue+milestone%3A3.1.0+is%3Aclosed>`__
+
+* duplicate-finder-maven-plugin `1.4.0 → 1.5.0 <https://github.com/basepom/duplicate-finder-maven-plugin/releases/tag/duplicate-finder-maven-plugin-1.5.0>`__
+
+* exec-maven-plugin `1.6.0 → 3.0.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/exec-maven-plugin-3.0.0>`__
+
+* maven-bundle-plugin 4.2.1 → 5.1.2, release notes:
+  * `5.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12346016>`__
+  * `5.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12350026>`__
+
+* maven-checkstyle-plugin `3.1.1 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12347024>`__
+
+* maven-invoker-plugin `3.2.1 → 3.2.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12346157>`__
+
+* maven-pmd-plugin `3.13.0 → 3.14.0 <https://www.mail-archive.com/announce@maven.apache.org/msg00978.html>`__
+
+* maven-site-plugin `3.9.0 → 3.9.1 <https://www.mail-archive.com/announce@maven.apache.org/msg00966.html>`__
+
+* modernizer-maven-plugin `2.1.0 → 2.2.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.2.0>`__
+
+* versions-maven-plugin `2.7 → 2.8.1 <https://github.com/mojohaus/versions-maven-plugin/releases/tag/versions-maven-plugin-2.8.1>`__
+
 Version 7.0.8
 -------------
-This is a bug-fix upgrade from version 7.0.6.
+This is a bug-fix upgrade from version 7.0.7.
 
 Improvements
 ~~~~~~~~~~~~
