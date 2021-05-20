@@ -132,8 +132,8 @@
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
                 <echo file="${project.build.directory}/assembly/etc/startup.properties" append="true">
 # The following are added by opendaylight-karaf-resources
-mvn\:org.osgi/org.osgi.service.event/1.3.1 = 7
-mvn\:org.apache.felix/org.apache.felix.metatype/1.2.2 = 8
+mvn\:org.osgi/org.osgi.service.event/1.4.0 = 7
+mvn\:org.apache.felix/org.apache.felix.metatype/1.2.4 = 8
 mvn\:org.opendaylight.odlparent/bcprov-framework-ext/${project.version} = 14
 mvn\:org.opendaylight.odlparent/bcpkix-framework-ext/${project.version} = 14
 mvn\:org.opendaylight.odlparent/logging-markers/${project.version} = 14
