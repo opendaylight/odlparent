@@ -2,6 +2,44 @@
 ODL Parent release notes
 ========================
 
+Version 8.1.3
+-------------
+This is a minor upgrade from version 8.1.2.
+
+Bug fixes
+~~~~~~~~~
+* The upgrade of ``duplicate-finder-maven-plugin`` ended up triggering build failures on ``.api_description``
+  files packaged in artifacts. This regression has now been fixed.
+
+* The upgrade to Karaf 4.3.0 caused a slight misalignment of ``org.apache.felix.metatype``
+  and ``org.osgi.service.event`` versions, leading to an unnecessary rewiring of the container
+  most notably during Single Feature Test. This has now been corrected.
+  See `ODLPARENT-253 <https://jira.opendaylight.org/browse/ODLPARENT-253>`__ for more information.
+
+* ``stax-utils`` component has a default dependency on ``com.bea.xml:jsr174-ri``, which is not
+  resolvable from Maven Central. This artifact is not needed with modern JRE versions, hence add
+  an explicit exclusion.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Jetty 9.4.38.v20210224 → 9.4.40.v20210413, release notes:
+  * `9.4.39.v20210325 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.39.v20210325>`__
+  * `9.4.40.v20210413 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.40.v20210413>`__
+
+* Karaf `4.3.1 → 4.3.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12349968>`__
+
+* LMAX Disruptor 3.4.2 → 3.4.4, release notes:
+  * `3.4.3 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.4.3>`__
+  * `3.4.3 <https://github.com/LMAX-Exchange/disruptor/releases/tag/3.4.4>`__
+
+* Netty `4.1.63 → 4.1.65 <https://netty.io/news/2021/05/19/4-1-65-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-bundle-plugin 4.2.1 → 5.1.2, release notes:
+  * `5.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12346016>`__
+  * `5.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12350026>`__
+
 Version 8.1.2
 -------------
 This is a minor upgrade from version 8.1.1.
