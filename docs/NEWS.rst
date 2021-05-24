@@ -2,6 +2,27 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.2
+-------------
+This is a minor upgrade from version 9.0.1.
+
+Bug fixes
+~~~~~~~~~
+* The upgrade to Karaf 4.3.0 caused a slight misalignment of ``org.apache.felix.metatype``
+  and ``org.osgi.service.event`` versions, leading to an unnecessary rewiring of the container
+  most notably during Single Feature Test. This has now been corrected.
+  See `ODLPARENT-253 <https://jira.opendaylight.org/browse/ODLPARENT-253>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Jetty 9.4.38.v20210224 → 9.4.40.v20210413, release notes:
+  * `9.4.39.v20210325 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.39.v20210325>`__
+  * `9.4.40.v20210413 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.40.v20210413>`__
+
+* Karaf `4.3.1 → 4.3.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12349968>`__
+
+* Netty `4.1.63 → 4.1.65 <https://netty.io/news/2021/05/19/4-1-65-Final.html>`__
+
 Version 9.0.1
 -------------
 This is a minor upgrade from version 9.0.0.
