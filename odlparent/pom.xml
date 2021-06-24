@@ -1239,12 +1239,6 @@
                 <minimumTokens>101</minimumTokens>
                 <printFailingErrors>true</printFailingErrors>
                 <excludeRoots>
-                  <!-- FIXME: this should be a wildcard, but PMD is brain-damaged and does
-                              not understand path prefixes nor wildcards. Details are available
-                              at http://stackoverflow.com/questions/15647771/pmd-exclude-not-working
-                              Hence people introducing new generated sources have to include
-                              PMD config too.
-                   -->
                   <excludeRoot>${project.build.directory}/generated-sources</excludeRoot>
                   <excludeRoot>${project.build.directory}/generated-test-sources</excludeRoot>
                 </excludeRoots>
