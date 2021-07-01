@@ -61,6 +61,9 @@
         <!-- Logging Markers -->
         <module>logging-markers</module>
 
+        <!-- Netty bootstrap shim -->
+        <module>netty-bootstrap</module>
+
         <!-- Features -->
         <module>features</module>
 
