@@ -1,6 +1,21 @@
 ========================
 ODL Parent release notes
 ========================
+Version 7.0.11
+--------------
+This is a bug-fix upgrade from version 7.0.10.
+
+Bug fixes
+~~~~~~~~~
+* The upgrade to Karaf 4.2.11 caused a slight misalignment of ``org.apache.felix.metatype``
+  versions, leading to an unnecessary rewiring of the container most notably during Single Feature
+  Test.  This has now been corrected.
+  See `ODLPARENT-253 <https://jira.opendaylight.org/browse/ODLPARENT-253>`__ for more information.
+
+* ``stax-utils`` component has a default dependency on ``com.bea.xml:jsr174-ri``, which is not
+  resolvable from Maven Central. This artifact is not needed with modern JRE versions, hence add
+  an explicit exclusion.
+
 Version 7.0.10
 --------------
 This is a bug-fix upgrade from version 7.0.9.
