@@ -13,12 +13,12 @@ Third-party dependencies
 * Bouncy Castle `1.68 → 1.69 <https://www.bouncycastle.org/releasenotes.html>`__
 
 * Checkstyle 8.42 → 8.45.1, release notes:
-  * `8.43 <https://checkstyle.org/releasenotes.html#Release_8.43>`__.
-  * `8.44 <https://checkstyle.org/releasenotes.html#Release_8.44>`__.
-  * `8.45 <https://checkstyle.org/releasenotes.html#Release_8.45>`__.
-  * `8.45.1 <https://checkstyle.org/releasenotes.html#Release_8.45.1>`__.
+  * `8.43 <https://checkstyle.org/releasenotes.html#Release_8.43>`__
+  * `8.44 <https://checkstyle.org/releasenotes.html#Release_8.44>`__
+  * `8.45 <https://checkstyle.org/releasenotes.html#Release_8.45>`__
+  * `8.45.1 <https://checkstyle.org/releasenotes.html#Release_8.45.1>`__
 
-* commons-io 2.8.0 → 2.10.0, release notes:
+* commons-io 2.8.0 → 2.11.0, release notes:
   * `2.9.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.9.0>`__
   * `2.10.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.10.0>`__
   * `2.11.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.11.0>`__
@@ -47,7 +47,7 @@ Plugin upgrades
 ~~~~~~~~~~~~~~~
 * git-commit-id-plugin `4.0.4 → 4.0.5 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v4.0.5>`__
 
-* Jacoco Maven plugin `0.8.6 → 0.8.7 <https://github.com/jacoco/jacoco/releases/tag/v0.8.7>`__.
+* Jacoco Maven plugin `0.8.6 → 0.8.7 <https://github.com/jacoco/jacoco/releases/tag/v0.8.7>`__
 
 * maven-dependency-plugin `3.1.2 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12348705>`__
 
