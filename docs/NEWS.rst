@@ -2,6 +2,59 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.3
+-------------
+This is a minor upgrade from version 9.0.2.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* awaitility `4.0.3 → 4.1.0 <https://raw.githubusercontent.com/awaitility/awaitility/master/changelog.txt>`__
+
+* Bouncy Castle `1.68 → 1.69 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Checkstyle 8.42 → 8.45.1, release notes:
+  * `8.43 <https://checkstyle.org/releasenotes.html#Release_8.43>`__.
+  * `8.44 <https://checkstyle.org/releasenotes.html#Release_8.44>`__.
+  * `8.45 <https://checkstyle.org/releasenotes.html#Release_8.45>`__.
+  * `8.45.1 <https://checkstyle.org/releasenotes.html#Release_8.45.1>`__.
+
+* commons-io 2.8.0 → 2.10.0, release notes:
+  * `2.9.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.9.0>`__
+  * `2.10.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.10.0>`__
+  * `2.11.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.11.0>`__
+
+* Dropwizard Metrics 4.1.21 → 4.1.25, release notes:
+  * `4.1.22 <https://github.com/dropwizard/metrics/releases/tag/v4.1.22>`__
+  * `4.1.23 <https://github.com/dropwizard/metrics/releases/tag/v4.1.23>`__
+  * `4.1.24 <https://github.com/dropwizard/metrics/releases/tag/v4.1.24>`__
+  * `4.1.25 <https://github.com/dropwizard/metrics/releases/tag/v4.1.25>`__
+
+* Google Truth `1.1.2 → 1.1.3 <https://github.com/google/truth/releases/tag/release_1_1_3>`__
+
+* logback 1.2.3 → 1.2.5, release notes:
+  * `1.2.4 <https://jira.qos.ch/issues/?jql=project+%3D+LOGBACK+AND+fixVersion+%3D+1.2.4>`__
+  * `1.2.5 <https://jira.qos.ch/issues/?jql=project+%3D+LOGBACK+AND+fixVersion+%3D+1.2.5>`__
+
+* Netty 4.1.65 → 4.1.67, release notes:
+  * `4.1.66 <https://netty.io/news/2021/07/16/4-1-66-Final.html>`__
+  * `4.1.67 <https://netty.io/news/2021/08/16/4-1-67-Final.html>`__
+
+* Sevntu `1.39.0 → 1.40.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.40.0>`__
+
+* ThreeTen `1.6.0 → 1.7.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.7.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* git-commit-id-plugin `4.0.4 → 4.0.5 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v4.0.5>`__
+
+* Jacoco Maven plugin `0.8.6 → 0.8.7 <https://github.com/jacoco/jacoco/releases/tag/v0.8.7>`__.
+
+* maven-dependency-plugin `3.1.2 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12348705>`__
+
+* maven-plugin-plugin `3.6.0 → 3.6.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820&version=12344365>`__
+
+* project-info-reports-plugin `3.1.1 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12349521>`__
+
 Version 9.0.2
 -------------
 This is a minor upgrade from version 9.0.1.
