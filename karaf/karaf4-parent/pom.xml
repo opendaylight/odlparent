@@ -114,6 +114,11 @@
             <artifactId>bcprov-framework-ext</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>bcutil-framework-ext</artifactId>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>

@@ -28,6 +28,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     <modules>
         <module>bcpkix-framework-ext</module>
         <module>bcprov-framework-ext</module>
+        <module>bcutil-framework-ext</module>
         <module>karaf-branding</module>
         <module>karaf-dist-static</module>
         <module>karaf4-parent</module>
