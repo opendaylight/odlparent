@@ -58,6 +58,11 @@
                 <artifactId>bcprov-framework-ext</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>bcutil-framework-ext</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
