@@ -496,6 +496,11 @@
         <artifactId>bcprov-ext-jdk15on</artifactId>
         <version>${bouncycastle.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcutil-jdk15on</artifactId>
+        <version>${bouncycastle.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.webcohesion.enunciate</groupId>
