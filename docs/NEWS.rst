@@ -2,6 +2,18 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.4
+-------------
+This is a minor upgrade from version 9.0.3.
+
+Bug fixes
+~~~~~~~~~
+The upgrade to Bouncy Castle 1.69 turned out to be broken due to some code movement and introduction of a new
+``bcutil-jdk15on`` artifact. It has also highlighted duplicate packaging, where Karaf's features would install
+version 1.66, while we have been on a newer version for some time. Both these issues have now ween resolved.
+See `ODLPARENT-254 <https://jira.opendaylight.org/browse/ODLPARENT-254>`__ for more information.
+
+
 Version 9.0.3
 -------------
 This is a minor upgrade from version 9.0.2.
