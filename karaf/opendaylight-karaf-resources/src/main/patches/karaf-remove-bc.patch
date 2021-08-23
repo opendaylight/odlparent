@@ -1,0 +1,19 @@
+--- system/org/apache/karaf/features/standard/4.3.2/standard-4.3.2-features.xml.orig	2021-08-23 13:17:26.231520995 +0200
++++ system/org/apache/karaf/features/standard/4.3.2/standard-4.3.2-features.xml	2021-08-23 13:20:50.730969216 +0200
+@@ -992,8 +993,6 @@
+         <bundle start-level="30">mvn:org.apache.sshd/sshd-osgi/2.5.1</bundle>
+         <bundle start-level="30">mvn:org.apache.sshd/sshd-scp/2.5.1</bundle>
+         <bundle start-level="30">mvn:org.apache.sshd/sshd-sftp/2.5.1</bundle>
+-        <bundle start-level="30">mvn:org.bouncycastle/bcprov-jdk15on/1.66</bundle>
+-        <bundle start-level="30">mvn:org.bouncycastle/bcpkix-jdk15on/1.66</bundle>
+         <bundle start-level="30">mvn:org.apache.karaf.shell/org.apache.karaf.shell.ssh/4.3.2</bundle>
+     </feature>
+
+@@ -1443,7 +1442,6 @@
+
+     <feature name="spring-security-crypto-encryption" description="Advanced encryption support for Karaf security" version="4.3.2">
+         <feature>jaas</feature>
+-        <bundle dependency="true" start-level="30">mvn:org.bouncycastle/bcprov-jdk15on/1.66</bundle>
+         <bundle dependency="true" start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.spring-security-crypto/5.3.3.RELEASE_2</bundle>
+         <bundle start-level="30">mvn:org.apache.karaf.jaas/org.apache.karaf.jaas.spring-security-crypto/4.3.2</bundle>
+     </feature>
