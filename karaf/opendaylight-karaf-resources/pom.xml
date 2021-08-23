@@ -54,6 +54,11 @@
       <artifactId>bcprov-framework-ext</artifactId>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>org.opendaylight.odlparent</groupId>
+      <artifactId>bcutil-framework-ext</artifactId>
+      <scope>runtime</scope>
+    </dependency>
 
     <!-- SLF4J logging markers -->
     <dependency>
@@ -123,6 +128,9 @@
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-quiesce.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
+                <patch patchfile="${project.basedir}/src/main/patches/karaf-remove-bc.patch"
+                       originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
+                       failonerror="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                          token="commons-io/commons-io/2.8.0" value="commons-io/commons-io/2.11.0" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
@@ -139,6 +147,7 @@
 mvn\:org.osgi/org.osgi.service.event/1.4.0 = 7
 mvn\:org.apache.felix/org.apache.felix.metatype/1.2.4 = 8
 mvn\:org.opendaylight.odlparent/bcprov-framework-ext/${project.version} = 14
+mvn\:org.opendaylight.odlparent/bcutil-framework-ext/${project.version} = 14
 mvn\:org.opendaylight.odlparent/bcpkix-framework-ext/${project.version} = 14
 mvn\:org.opendaylight.odlparent/logging-markers/${project.version} = 14
 mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.0.0 = 14
