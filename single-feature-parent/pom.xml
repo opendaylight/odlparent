@@ -34,7 +34,7 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>untested-single-feature-parent</artifactId>
-        <version>9.0.4-SNAPSHOT</version>
+        <version>9.0.5-SNAPSHOT</version>
         <relativePath>../untested-single-feature-parent</relativePath>
     </parent>
 
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>features-test</artifactId>
-            <version>9.0.4-SNAPSHOT</version>
+            <version>9.0.5-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
