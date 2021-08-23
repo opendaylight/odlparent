@@ -81,6 +81,7 @@
                         <excludedArtifactId>bcprov-jdk15on</excludedArtifactId>
                         <excludedArtifactId>bcprov-ext-jdk15on</excludedArtifactId>
                         <excludedArtifactId>bcpkix-jdk15on</excludedArtifactId>
+                        <excludedArtifactId>bcputil-jdk15on</excludedArtifactId>
                         <!-- JAXB -->
                         <excludedArtifactId>jaxb-api</excludedArtifactId>
                         <excludedArtifactId>jaxb-runtime</excludedArtifactId>
