@@ -256,6 +256,7 @@
 
                         <bundle>mvn:org.opendaylight.odlparent/bcprov-framework-ext/9.0.6-SNAPSHOT</bundle>
                         <bundle>mvn:org.opendaylight.odlparent/bcpkix-framework-ext/9.0.6-SNAPSHOT</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/bcutil-framework-ext/9.0.6-SNAPSHOT</bundle>
                     </startupBundles>
                     <startupFeatures>
                         <feature>static-framework</feature>
