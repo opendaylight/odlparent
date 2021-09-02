@@ -84,8 +84,6 @@
         <dependency>
             <groupId>org.ops4j.pax.url</groupId>
             <artifactId>pax-url-aether</artifactId>
-            <!-- FIXME: why do we need this version (maven-3.6.3 defaults to 2.5.4) -->
-            <version>2.6.5</version>
         </dependency>
 
         <!-- required by controller component -->
@@ -248,14 +246,15 @@
                 <configuration>
                     <startupBundles>
                         <!-- FIXME: we want to generate these versions somehow -->
-                        <bundle>mvn:org.apache.felix/org.apache.felix.cm.json/1.0.2</bundle>
-                        <bundle>mvn:org.apache.felix/org.apache.felix.converter/1.0.14</bundle>
-                        <bundle>mvn:org.apache.felix/org.apache.felix.fileinstall/3.6.8</bundle>
+                        <bundle>mvn:org.apache.felix/org.apache.felix.cm.json/1.0.6</bundle>
+                        <bundle>mvn:org.apache.felix/org.apache.felix.converter/1.0.18</bundle>
+                        <bundle>mvn:org.apache.felix/org.apache.felix.fileinstall/3.7.0</bundle>
                         <bundle>mvn:org.apache.sling/org.apache.sling.commons.johnzon/1.2.6</bundle>
-                        <bundle>mvn:org.ops4j.pax.url/pax-url-aether/2.6.5</bundle>
+                        <bundle>mvn:org.ops4j.pax.url/pax-url-aether/2.6.7</bundle>
 
                         <bundle>mvn:org.opendaylight.odlparent/bcprov-framework-ext/9.0.6-SNAPSHOT</bundle>
                         <bundle>mvn:org.opendaylight.odlparent/bcpkix-framework-ext/9.0.6-SNAPSHOT</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/bcutil-framework-ext/9.0.6-SNAPSHOT</bundle>
                     </startupBundles>
                     <startupFeatures>
                         <feature>static-framework</feature>
