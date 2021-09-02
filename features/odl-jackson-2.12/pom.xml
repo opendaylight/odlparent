@@ -19,11 +19,11 @@
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>odl-jackson-2.11</artifactId>
+    <artifactId>odl-jackson-2.12</artifactId>
     <packaging>feature</packaging>
 
-    <name>OpenDaylight :: Jackson 2.11.x</name>
-    <description>Jackson 2.11</description>
+    <name>OpenDaylight :: Jackson 2.12.x</name>
+    <description>Jackson 2.12</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>

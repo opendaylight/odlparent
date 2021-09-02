@@ -131,16 +131,14 @@
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-remove-bc.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
-                <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
-                         token="commons-io/commons-io/2.8.0" value="commons-io/commons-io/2.11.0" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"/>
-                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.3.16/pax-web-features-7.3.16-features.xml"
+                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.3.19/pax-web-features-7.3.19-features.xml"
                          token="javax.annotation/javax.annotation-api/1.3&lt;" value="javax.annotation/javax.annotation-api/1.3.1&lt;" failOnNoReplacements="true"/>
-                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.3.16/pax-web-features-7.3.16-features.xml"
-                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/7.3.16/pax-web-features-7.3.16-features.xml"/>
+                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/7.3.19/pax-web-features-7.3.19-features.xml"
+                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/7.3.19/pax-web-features-7.3.19-features.xml"/>
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
                 <echo file="${project.build.directory}/assembly/etc/startup.properties" append="true">
 # The following are added by opendaylight-karaf-resources

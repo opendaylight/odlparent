@@ -45,7 +45,7 @@
             <groupId>com.fasterxml.jackson</groupId>
             <artifactId>jackson-bom</artifactId>
             <type>pom</type>
-            <version>2.11.4</version>
+            <version>2.12.5</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.woodstox</groupId>
@@ -247,7 +247,7 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-bom</artifactId>
             <type>pom</type>
-            <version>9.4.40.v20210413</version>
+            <version>9.4.43.v20210629</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.xtend</groupId>

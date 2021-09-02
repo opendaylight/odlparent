@@ -35,7 +35,7 @@
                         <startupFeature>odl-dropwizard-metrics</startupFeature>
                         <startupFeature>odl-gson</startupFeature>
                         <startupFeature>odl-guava</startupFeature>
-                        <startupFeature>odl-jackson-2.11</startupFeature>
+                        <startupFeature>odl-jackson-2.12</startupFeature>
                         <startupFeature>odl-jakarta-activation-api</startupFeature>
                         <startupFeature>odl-jetty-2</startupFeature>
                         <!-- FIXME: needs https://issues.apache.org/jira/browse/KARAF-6573
