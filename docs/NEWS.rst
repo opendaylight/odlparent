@@ -2,6 +2,42 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.6
+-------------
+This is a bug-fix upgrade from version 9.0.5.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Jackson 2.11.4 → 2.12.5, release notes:
+  * `2.12 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12>`__
+  * `2.12.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.1>`__
+  * `2.12.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.2>`__
+  * `2.12.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.3>`__
+  * `2.12.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.4>`__
+  * `2.12.5 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.5>`__
+
+* Jetty 9.4.40 → 9.4.43.v20210629, release notes:
+  * `9.4.41.v20210516 https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.41.v20210516>`__
+  * `9.4.42.v20210604 https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.42.v20210604>`__
+  * `9.4.43.v20210629 https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.43.v20210629>`__
+
+* Jolokia `1.6.2 → 1.7.0 <https://jolokia.org/changes-report.html#a1.7.0>`__
+
+* Karaf `4.3.2 → 4.3.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12350142>`__
+
+* Pax URL 2.5.4 → 2.6.7, release notes:
+  * `2.6.0 <https://github.com/ops4j/org.ops4j.pax.url/milestone/67?closed=1>`__
+  * `2.6.3 <https://github.com/ops4j/org.ops4j.pax.url/milestone/68?closed=1>`__
+  * `2.6.4 <https://github.com/ops4j/org.ops4j.pax.url/milestone/69?closed=1>`__
+  * `2.6.6 <https://github.com/ops4j/org.ops4j.pax.url/milestone/71?closed=1>`__
+  * `2.6.7 <https://github.com/ops4j/org.ops4j.pax.url/milestone/72?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-enforcer-plugin `3.0.0-M3 → 3.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12346527>`__
+
+* asciidoctor-maven-plugin 2.1.0 → 2.2.1
+
 Version 9.0.5
 -------------
 This is a minor upgrade from version 9.0.4.
