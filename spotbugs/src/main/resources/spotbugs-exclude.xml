@@ -29,6 +29,13 @@
 
       <!-- https://github.com/spotbugs/spotbugs/issues/756. spotbugs does not grok Java 11's try-with-resources -->
       <Bug pattern="RCN_REDUNDANT_NULLCHECK_WOULD_HAVE_BEEN_A_NPE"/>
+
+      <!-- https://github.com/spotbugs/spotbugs/issues/1601. The new heuristics for determining mutability are
+           borderline insane. As an example: it flags org.osgi.framework.BundleContext as a mutable object (presumably
+           because of addListener()) and you just cannot store a reference in the field without a corresponding
+           @SuppressFBWarnings. -->
+      <Bug pattern="EI_EXPOSE_REP"/>
+      <Bug pattern="EI_EXPOSE_REP2"/>
     </Or>
   </Match>
 </FindBugsFilter>

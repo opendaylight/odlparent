@@ -1494,12 +1494,12 @@
         <plugin>
           <groupId>com.github.spotbugs</groupId>
           <artifactId>spotbugs-maven-plugin</artifactId>
-          <version>3.1.12.2</version>
+          <version>4.5.3.0</version>
           <dependencies>
             <dependency>
               <groupId>com.github.spotbugs</groupId>
               <artifactId>spotbugs</artifactId>
-              <version>3.1.12</version>
+              <version>4.5.3</version>
             </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
@@ -1507,10 +1507,10 @@
               <version>10.0.0-SNAPSHOT</version>
             </dependency>
             <dependency>
-              <!-- The SpotBugs Maven plugin uses SLF4J 1.8 beta 2 -->
+              <!-- The SpotBugs Maven plugin uses SLF4J 1.8 beta 4 -->
               <groupId>org.slf4j</groupId>
               <artifactId>slf4j-simple</artifactId>
-              <version>1.8.0-beta2</version>
+              <version>1.8.0-beta4</version>
             </dependency>
           </dependencies>
           <configuration>
@@ -1843,41 +1843,6 @@
       </plugin>
     </plugins>
   </build>
-
-  <profiles>
-    <profile>
-      <id>disable-spotbugs</id>
-      <activation>
-        <!-- Current spotbugs does not support JDK15+ -->
-        <jdk>[15,)</jdk>
-      </activation>
-
-      <properties>
-        <odlparent.spotbugs.skip>true</odlparent.spotbugs.skip>
-      </properties>
-
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>com.github.ekryd.echo-maven-plugin</groupId>
-            <artifactId>echo-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>UNTESTED-JDK</id>
-                <goals>
-                  <goal>echo</goal>
-                </goals>
-                <phase>test</phase>
-                <configuration>
-                  <message>Running on JDK newer than 11, which is not supported. Skipping SpotBugs execution.</message>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
 
   <reporting>
     <plugins>
