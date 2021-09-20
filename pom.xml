@@ -74,6 +74,9 @@
         <module>odlparent-bundle-check</module>
         <module>odlparent-dependency-check</module>
         <module>tests</module>
+
+        <!-- Copy files plugin -->
+        <module>copy-files-plugin</module>
     </modules>
 
     <profiles>
