@@ -63,6 +63,12 @@
                 <artifactId>bcutil-framework-ext</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <!-- Pom script -->
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>odlparent-script</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>

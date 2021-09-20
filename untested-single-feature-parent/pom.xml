@@ -94,6 +94,9 @@
 
                         <!-- Our slf4j logging markers -->
                         <excludedArtifactId>logging-markers</excludedArtifactId>
+
+                        <!-- Our scripts -->
+                        <excludedArtifactId>odlparent-script</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
             </plugin>
