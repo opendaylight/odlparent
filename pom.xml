@@ -55,6 +55,9 @@
         <module>odlparent</module>
         <module>odlparent-lite</module>
 
+        <!-- File copying plugin -->
+        <module>copy-files-plugin</module>
+
         <!-- Manifest filtering plugin -->
         <module>filter-manifest-plugin</module>
 
