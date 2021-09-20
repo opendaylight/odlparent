@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "92513561_1707421b",
+        "filename": "odlparent-script/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-09-20T12:04:35Z",
+      "side": 1,
+      "message": "- missing relativePath declaration\n- this plugin cannot use odlparet as its parent, as that leads to circular dependency",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 41
+      },
+      "revId": "dbf4bf9a35bbd22ace8681f889786551586f0c9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
