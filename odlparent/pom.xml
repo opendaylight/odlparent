@@ -1233,6 +1233,21 @@
         </plugin>
 
         <plugin>
+          <groupId>org.apache.karaf.tooling</groupId>
+          <artifactId>karaf-services-maven-plugin</artifactId>
+          <version>${karaf.version}</version>
+          <executions>
+            <execution>
+              <id>service-metadata-generate</id>
+              <phase>process-classes</phase>
+              <goals>
+                <goal>service-metadata-generate</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
           <groupId>com.github.spotbugs</groupId>
           <artifactId>spotbugs-maven-plugin</artifactId>
           <version>3.1.12.2</version>
