@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "573cb1bf_8d438e36",
+        "filename": "copy-files-plugin/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-09-28T23:21:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9586ee96_fa0aeb7c",
+      "revId": "9dd47e48c68c7901771f4e8829b8f99817e38ea9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f950dd0_4855b382",
         "filename": "copy-files-plugin/src/main/java/org/opendaylight/odlparent/copy/files/plugin/CopyFilesMojo.java",
         "patchSetId": 7
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "a481e87a_e71957bf",
+        "filename": "copy-files-plugin/src/main/java/org/opendaylight/odlparent/copy/files/plugin/CopyFilesMojo.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-09-28T23:21:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f950dd0_4855b382",
+      "range": {
+        "startLine": 31,
+        "startChar": 16,
+        "endLine": 31,
+        "endChar": 24
+      },
+      "revId": "9dd47e48c68c7901771f4e8829b8f99817e38ea9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "66166053_3d3bdea0",
         "filename": "copy-files-plugin/src/main/java/org/opendaylight/odlparent/copy/files/plugin/CopyFilesMojo.java",
         "patchSetId": 7
@@ -62,6 +104,30 @@
       "revId": "9dd47e48c68c7901771f4e8829b8f99817e38ea9",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79410b1f_ea0c9e0c",
+        "filename": "copy-files-plugin/src/main/java/org/opendaylight/odlparent/copy/files/plugin/CopyFilesMojo.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-09-28T23:21:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66166053_3d3bdea0",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 16
+      },
+      "revId": "9dd47e48c68c7901771f4e8829b8f99817e38ea9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     },
     {
       "key": {
