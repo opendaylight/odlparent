@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "52e516c3_9089030b",
+        "filename": "copy-files-plugin/src/main/java/org/opendaylight/odlparent/copy/files/plugin/CopyFilesMojo.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-09-28T23:21:02Z",
+      "side": 1,
+      "message": "please inject this as a parameter ...",
+      "range": {
+        "startLine": 48,
+        "startChar": 24,
+        "endLine": 48,
+        "endChar": 71
+      },
+      "revId": "579c838be9fca772b27770683548c9e9ebc68185",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}

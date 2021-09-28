@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a48486c9_794860d3",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 1651,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-09-28T23:21:02Z",
+      "side": 0,
+      "message": "... and retain these globs as plugin configuration",
+      "range": {
+        "startLine": 1651,
+        "startChar": 38,
+        "endLine": 1651,
+        "endChar": 47
+      },
+      "revId": "567068ce6d8bd3d09322eddd3bbc5aa7a1f08b9a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
