@@ -22,6 +22,23 @@
       "revId": "579c838be9fca772b27770683548c9e9ebc68185",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec286f84_2875e478",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 1620,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-09-28T23:43:07Z",
+      "side": 1,
+      "message": "rather these two specifying here, pick the properties up as default values, see https://maven.apache.org/plugin-tools/maven-plugin-tools-annotations/index.html line 73",
+      "revId": "579c838be9fca772b27770683548c9e9ebc68185",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
     }
   ]
 }
