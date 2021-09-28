@@ -37,12 +37,6 @@
     <nexus.repository.release>opendaylight.release</nexus.repository.release>
     <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
 
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-    <!-- Java Versions -->
-    <maven.compiler.release>11</maven.compiler.release>
-
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
     <karaf.version>4.3.3</karaf.version>
 
@@ -1004,7 +998,6 @@
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.1</version>
           <configuration>
             <showWarnings>true</showWarnings>
             <compilerArgs>
