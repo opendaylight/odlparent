@@ -75,6 +75,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+    <!-- Java Versions -->
+    <maven.compiler.release>11</maven.compiler.release>
+
     <!-- This version property instead of just direct version in pluginManagement is the exception that confirms the rule
          and is required so that downstream users of the archetype-packaging extension can use this (and get the same version
          as the maven-archetype-plugin), because there is no "extensionManagement" in Maven -->
@@ -123,6 +126,10 @@
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-dependency-plugin</artifactId>
@@ -349,7 +356,7 @@
             <configuration>
               <rules>
                 <requireJavaVersion>
-                  <version>11</version>
+                  <version>${maven.compiler.release}</version>
                 </requireJavaVersion>
                 <requireMavenVersion>
                   <version>[3.5.0,)</version>
