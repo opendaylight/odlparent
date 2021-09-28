@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9586ee96_fa0aeb7c",
+        "filename": "copy-files-plugin/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-09-28T22:35:43Z",
+      "side": 1,
+      "message": "These two are *not* equivalent to the proper way of doing things since Java 9, which is maven.release.version.\nWhen these two are run without further external setup (involving installing JDKs), they can (and will) produce binaries which cannot be loaded in JDK11.",
+      "revId": "9dd47e48c68c7901771f4e8829b8f99817e38ea9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2dad23d4_3d5135be",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 1618,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-09-28T22:35:43Z",
+      "side": 1,
+      "message": "this needs to be an explicit version because this is a parent pom.xml -- so project.version ends up being the version of *user* pom.xml -- which is a completely different thing.\n\nThink of it as calling getClass().getName() in a constructor of an abstract Java class.",
+      "range": {
+        "startLine": 1618,
+        "startChar": 17,
+        "endLine": 1618,
+        "endChar": 35
+      },
+      "revId": "9dd47e48c68c7901771f4e8829b8f99817e38ea9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
