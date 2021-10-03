@@ -8,8 +8,9 @@
  and is available at http://www.eclipse.org/legal/epl-v10.html
 -->
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.4.0" name="odl-karaf-feat-jdbc">
-    <repository>mvn:org.apache.karaf.features/enterprise/${karaf.version}/xml/features</repository>
+    <repository>mvn:org.ops4j.pax.jdbc/pax-jdbc-features/${pax.jdbc.version}/xml/features</repository>
     <feature name="odl-karaf-feat-jdbc" version="${project.version}">
-        <feature dependency="false" prerequisite="false">jdbc</feature>
+        <feature prerequisite="true">pax-jdbc</feature>
+        <feature prerequisite="true">pax-jdbc-config</feature>
     </feature>
 </features>
