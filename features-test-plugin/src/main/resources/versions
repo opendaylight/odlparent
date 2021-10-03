@@ -1,0 +1,3 @@
+release.version=${project.version}
+karaf.version=${karaf.version}
+pax.exam.version=${pax.exam.version}
