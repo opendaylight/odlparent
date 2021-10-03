@@ -162,8 +162,9 @@ public class SingleFeatureTest {
             new VMOption("-Xmx" + maxHeap),
             new VMOption("-XX:+HeapDumpOnOutOfMemoryError"),
             new VMOption("-XX:HeapDumpPath=" + heapDumpPath),
+
             // inspired by org.apache.commons.lang.SystemUtils
-            when(System.getProperty("os.name").toLowerCase().startsWith("linux")).useOptions(
+            when("Linux".equals(System.getProperty("os.name"))).useOptions(
                 // This prevents low entropy issues on Linux to affect Java random numbers
                 // which can block crypto such as the SSH server in netconf
                 // see https://jira.opendaylight.org/browse/ODLPARENT-49

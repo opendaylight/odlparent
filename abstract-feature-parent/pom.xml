@@ -67,6 +67,7 @@
 
     <build>
         <plugins>
+            <!-- FIXME: ODLPARENT-264: remove this stanza -->
             <plugin>
                 <!-- This generates the META-INF/maven/dependencies.properties file
                      which is required by the versionAsInProject() used in SingleFeatureTest -->
@@ -74,28 +75,20 @@
                 <artifactId>depends-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>features-test-plugin</artifactId>
+                <version>13.0.5-SNAPSHOT</version>
                 <configuration>
-                    <!-- Overridden to fix corruption with SFT, where the process would hang after test -->
-                    <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory"/>
                     <dependenciesToScan>
-                        <dependency>org.opendaylight.odlparent:features-test</dependency>
+                        <dependency>org.opendaylight.odlparent:bundles-test-lib</dependency>
                     </dependenciesToScan>
                     <additionalClasspathElements>
                         <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
                     </additionalClasspathElements>
-                    <skip>${skip.karaf.featureTest}</skip>
-                    <systemPropertyVariables>
-                        <!-- Use the same repository for Pax Exam as is used for Maven -->
-                        <org.ops4j.pax.url.mvn.localRepository>${settings.localRepository}</org.ops4j.pax.url.mvn.localRepository>
-                    </systemPropertyVariables>
-
-                    <!-- Disable argLine if present, but pass it to SFT -->
-                    <argLine>-DsftArgLine='@{argLine}'</argLine>
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>test</phase>
+                        <id>test</id>
                         <goals>
                             <goal>test</goal>
                         </goals>
