@@ -28,6 +28,9 @@
     </properties>
 
     <modules>
+        <!-- Plugin for testing features -->
+        <module>features-test-plugin</module>
+
         <!-- Proxy features for Karaf-provided features -->
         <module>odl-karaf-feat-feature</module>
         <module>odl-karaf-feat-jdbc</module>
