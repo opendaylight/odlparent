@@ -38,6 +38,12 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>opendaylight-karaf-empty</artifactId>
+                <version>${project.version}</version>
+                <type>tar.gz</type>
+            </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>bundles-test-lib</artifactId>
                 <version>${project.version}</version>
             </dependency>
