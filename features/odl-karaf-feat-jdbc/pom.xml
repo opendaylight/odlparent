@@ -22,20 +22,42 @@
     <name>ODL :: odlparent :: ${project.artifactId}</name>
     <packaging>kar</packaging>
 
+    <properties>
+        <pax.jdbc.version>1.5.0</pax.jdbc.version>
+    </properties>
+
     <dependencies>
         <dependency>
-            <groupId>org.apache.karaf.features</groupId>
-            <artifactId>enterprise</artifactId>
-            <version>${karaf.version}</version>
+            <groupId>org.ops4j.pax.jdbc</groupId>
+            <artifactId>pax-jdbc-features</artifactId>
+            <version>${pax.jdbc.version}</version>
             <classifier>features</classifier>
             <type>xml</type>
             <scope>runtime</scope>
         </dependency>
         <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.jdbc</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>org.apache.karaf.jdbc</groupId>
             <artifactId>org.apache.karaf.jdbc.core</artifactId>
-            <version>${karaf.version}</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>org.apache.felix.utils</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.karaf</groupId>
+                    <artifactId>org.apache.karaf.util</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.karaf.jaas</groupId>
+                    <artifactId>org.apache.karaf.jaas.boot</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
