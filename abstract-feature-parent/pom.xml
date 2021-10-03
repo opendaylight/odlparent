@@ -67,6 +67,7 @@
 
     <build>
         <plugins>
+            <!-- FIXME: ODLPARENT-264: remove this stanza -->
             <plugin>
                 <!-- This generates the META-INF/maven/dependencies.properties file
                      which is required by the versionAsInProject() used in SingleFeatureTest -->
@@ -74,7 +75,9 @@
                 <artifactId>depends-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>features-test-plugin</artifactId>
+                <version>13.0.5-SNAPSHOT</version>
                 <configuration>
                     <!-- Overridden to fix corruption with SFT, where the process would hang after test -->
                     <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory"/>
@@ -93,14 +96,6 @@
                     <!-- Disable argLine if present, but pass it to SFT -->
                     <argLine>-DsftArgLine='@{argLine}'</argLine>
                 </configuration>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
