@@ -162,6 +162,9 @@ public class SingleFeatureTest {
             new VMOption("-Xmx" + maxHeap),
             new VMOption("-XX:+HeapDumpOnOutOfMemoryError"),
             new VMOption("-XX:HeapDumpPath=" + heapDumpPath),
+
+            // FIXME: migrate the below properties to TestFeaturersMojo
+
             // inspired by org.apache.commons.lang.SystemUtils
             when(System.getProperty("os.name").toLowerCase().startsWith("linux")).useOptions(
                 // This prevents low entropy issues on Linux to affect Java random numbers
