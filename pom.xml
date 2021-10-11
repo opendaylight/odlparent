@@ -56,6 +56,9 @@
         <module>odlparent</module>
         <module>odlparent-lite</module>
 
+        <!-- Versions adding plugin -->
+        <module>add-versions-plugin</module>
+
         <!-- File copying plugin -->
         <module>copy-files-plugin</module>
 
