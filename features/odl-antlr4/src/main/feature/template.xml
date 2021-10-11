@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-antlr4">
+    <feature name="odl-antlr4" description="${project.name}">
+        <details>${project.description}</details>
+        <bundle>mvn:org.antlr/antlr4-runtime/{{versionAsInProject}}</bundle>
+    </feature>
+</features>

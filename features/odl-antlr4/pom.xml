@@ -13,23 +13,16 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>single-feature-parent</artifactId>
+        <artifactId>template-feature-parent</artifactId>
         <version>11.0.1-SNAPSHOT</version>
-        <relativePath>../../single-feature-parent</relativePath>
+        <relativePath>../../template-feature-parent</relativePath>
     </parent>
 
-    <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-antlr4</artifactId>
-    <version>11.0.1-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: ANTLRv4 Runtime</name>
     <description>ANTLR v4</description>
-
-    <properties>
-        <checkDependencyChange>true</checkDependencyChange>
-        <failOnDependencyChange>true</failOnDependencyChange>
-    </properties>
 
     <dependencies>
         <dependency>
