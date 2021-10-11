@@ -52,9 +52,13 @@
         <module>bundle-parent</module>
         <module>untested-single-feature-parent</module>
         <module>single-feature-parent</module>
+        <module>feature-parent</module>
         <module>feature-repo-parent</module>
         <module>odlparent</module>
         <module>odlparent-lite</module>
+
+        <!-- Versions adding plugin -->
+        <module>add-versions-plugin</module>
 
         <!-- File copying plugin -->
         <module>copy-files-plugin</module>
