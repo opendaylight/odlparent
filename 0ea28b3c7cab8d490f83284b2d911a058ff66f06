@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e8bf59ad_6ad1b1b9",
+        "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-11T21:32:53Z",
+      "side": 1,
+      "message": "AddVersionsMojo.class.getResourceAsStream(\"/feature.xsl\")\n\nyou should not be touching the classloader",
+      "range": {
+        "startLine": 41,
+        "startChar": 48,
+        "endLine": 41,
+        "endChar": 110
+      },
+      "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}
