@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71599e24_867aaa9b",
+        "filename": "single-static-feature-parent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-12T19:14:19Z",
+      "side": 1,
+      "message": "this should be PANTHEON.tech these days",
+      "range": {
+        "startLine": 3,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 39
+      },
+      "revId": "41f450b9df0d7550d3c9f9b3e48da0e614ede1cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da2c9456_a7b059d7",
+        "filename": "single-static-feature-parent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-12T19:14:19Z",
+      "side": 1,
+      "message": "we probably want to upstream this to karaf at some point, let\u0027s license this under Apache.\n\nStephen, does that work for you?",
+      "range": {
+        "startLine": 6,
+        "startChar": 14,
+        "endLine": 6,
+        "endChar": 42
+      },
+      "revId": "41f450b9df0d7550d3c9f9b3e48da0e614ede1cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b3b5940_66b34d54",
+        "filename": "single-static-feature-parent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-12T19:14:19Z",
+      "side": 1,
+      "message": "we need to override the \u0027\u003cenableGeneration\u003etrue\u003c/enableGeneration\u003e\u0027 knob at the very least",
+      "range": {
+        "startLine": 17,
+        "startChar": 25,
+        "endLine": 17,
+        "endChar": 46
+      },
+      "revId": "41f450b9df0d7550d3c9f9b3e48da0e614ede1cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21d11831_0cc9da77",
+        "filename": "single-static-feature-parent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-12T19:14:19Z",
+      "side": 1,
+      "message": "This is a mouthful. Essentially we will process anything, it could even be a full feature repo.\nHow about simply \u0027feature-parent\u0027?",
+      "range": {
+        "startLine": 20,
+        "startChar": 16,
+        "endLine": 20,
+        "endChar": 44
+      },
+      "revId": "41f450b9df0d7550d3c9f9b3e48da0e614ede1cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0020f289_dfc6e79f",
+        "filename": "single-static-feature-parent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-12T19:14:19Z",
+      "side": 1,
+      "message": "missing newline",
+      "range": {
+        "startLine": 33,
+        "startChar": 31,
+        "endLine": 33,
+        "endChar": 37
+      },
+      "revId": "41f450b9df0d7550d3c9f9b3e48da0e614ede1cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    }
+  ]
+}

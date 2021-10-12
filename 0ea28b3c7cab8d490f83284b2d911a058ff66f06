@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "d71a85d5_880a9c59",
+        "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-12T19:14:19Z",
+      "side": 1,
+      "message": "do not depend on concrete implementation, use TransformerFactory.newDefaultInstance() instead",
+      "range": {
+        "startLine": 17,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e8bf59ad_6ad1b1b9",
         "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
         "patchSetId": 2
@@ -18,6 +41,52 @@
         "startChar": 48,
         "endLine": 41,
         "endChar": 110
+      },
+      "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97c28ef2_24f4b155",
+        "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-12T19:14:19Z",
+      "side": 1,
+      "message": "let\u0027s use java.nio.file.Files things along with Path -- those have better error handling and overall ergonomics",
+      "range": {
+        "startLine": 43,
+        "startChar": 14,
+        "endLine": 43,
+        "endChar": 25
+      },
+      "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ac75172_37b9d982",
+        "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-12T19:14:19Z",
+      "side": 1,
+      "message": "hmm... can we store a pre-computed version of the input XSL, so that successive execute()s in the build can reuse it?",
+      "range": {
+        "startLine": 50,
+        "startChar": 72,
+        "endLine": 50,
+        "endChar": 96
       },
       "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
