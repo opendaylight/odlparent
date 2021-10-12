@@ -114,6 +114,29 @@
       "revId": "41f450b9df0d7550d3c9f9b3e48da0e614ede1cc",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e23e2ca7_5c0a14d9",
+        "filename": "single-static-feature-parent/src/main/feature/feature.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-12T19:16:05Z",
+      "side": 1,
+      "message": "yes, and after reviewing the patch I understand why, but a causal reader does not know that.\nPlease add \u0027because we want downstream artifacts to fail build if the input template is missing\u0027",
+      "range": {
+        "startLine": 11,
+        "startChar": 5,
+        "endLine": 11,
+        "endChar": 22
+      },
+      "revId": "41f450b9df0d7550d3c9f9b3e48da0e614ede1cc",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
     }
   ]
 }
