@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba414c9d_27df0d47",
+        "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 9022
+      },
+      "writtenOn": "2021-10-13T14:55:31Z",
+      "side": 1,
+      "message": "feature.xsl file is using XSLT 2.0 and that\u0027s the reason why \nwe have to use this concrete implementation of TransformerFactory.\nThis impl gives us Transformer that is able to handle XSLT 2.0",
+      "parentUuid": "d71a85d5_880a9c59",
+      "range": {
+        "startLine": 17,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e8bf59ad_6ad1b1b9",
         "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "991d938c_e7edd10a",
+        "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 9022
+      },
+      "writtenOn": "2021-10-13T14:55:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e8bf59ad_6ad1b1b9",
+      "range": {
+        "startLine": 41,
+        "startChar": 48,
+        "endLine": 41,
+        "endChar": 110
+      },
+      "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "65f69a01_a5f2bff8",
+        "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 9022
+      },
+      "writtenOn": "2021-10-13T14:55:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97c28ef2_24f4b155",
+      "range": {
+        "startLine": 43,
+        "startChar": 14,
+        "endLine": 43,
+        "endChar": 25
+      },
+      "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ac75172_37b9d982",
         "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2021-10-12T19:14:19Z",
       "side": 1,
       "message": "hmm... can we store a pre-computed version of the input XSL, so that successive execute()s in the build can reuse it?",
+      "range": {
+        "startLine": 50,
+        "startChar": 72,
+        "endLine": 50,
+        "endChar": 96
+      },
+      "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44351fd6_39bd18fe",
+        "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 9022
+      },
+      "writtenOn": "2021-10-13T14:55:31Z",
+      "side": 1,
+      "message": "I am not able to do that in this way",
+      "parentUuid": "6ac75172_37b9d982",
       "range": {
         "startLine": 50,
         "startChar": 72,
