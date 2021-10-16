@@ -434,10 +434,10 @@
         <scope>provided</scope>
       </dependency>
       <!-- We're staying on 2.8.5 for now, 2.8.6 has issues:
-	   https://github.com/google/gson/issues/1601
-	   https://github.com/google/gson/issues/1602
-	   https://github.com/google/gson/issues/1608
-	   https://github.com/google/gson/issues/1630
+          https://github.com/google/gson/issues/1601
+          https://github.com/google/gson/issues/1602
+          https://github.com/google/gson/issues/1608
+          https://github.com/google/gson/issues/1630
       -->
       <dependency>
         <groupId>com.google.code.gson</groupId>
