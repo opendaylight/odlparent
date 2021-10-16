@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-gson">
     <feature version="0.0.0">
-        <bundle>mvn:com.google.code.gson/gson/2.8.5</bundle>
+        <bundle>mvn:com.google.code.gson/gson/2.8.8</bundle>
     </feature>
 </features>
