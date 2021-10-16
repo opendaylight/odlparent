@@ -297,6 +297,12 @@
             <artifactId>jolokia-osgi</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.junit</groupId>
+            <artifactId>junit-bom</artifactId>
+            <type>pom</type>
+            <version>5.8.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.kohsuke.metainf-services</groupId>
             <artifactId>metainf-services</artifactId>
         </dependency>
