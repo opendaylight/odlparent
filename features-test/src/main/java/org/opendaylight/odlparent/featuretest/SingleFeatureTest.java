@@ -226,6 +226,9 @@ public class SingleFeatureTest {
             // Install SCR
             features(maven().groupId("org.apache.karaf.features").artifactId("standard").type("xml")
                 .classifier("features").versionAsInProject(), "scr"),
+
+            // Enable JaCoCo, if present
+            jacocoOption(),
         };
 
         if (JavaVersionUtil.getMajorVersion() <= 8) {
@@ -258,6 +261,11 @@ public class SingleFeatureTest {
             new VMOption("--add-exports=jdk.naming.rmi/com.sun.jndi.url.rmi=ALL-UNNAMED"),
             new VMOption("-classpath"),
             new VMOption("lib/jdk9plus/*" + File.pathSeparator + "lib/boot/*"));
+    }
+
+    private static Option jacocoOption() {
+        final String sftArgLine = System.getProperty("sftArgLine");
+        return sftArgLine == null || sftArgLine.isBlank() ? null : new VMOption(sftArgLine);
     }
 
     private static String getNewJFRFile() throws IOException {
