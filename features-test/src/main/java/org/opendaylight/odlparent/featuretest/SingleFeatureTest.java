@@ -43,6 +43,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.opendaylight.odlparent.bundlestest.lib.TestBundleDiag;
 import org.ops4j.pax.exam.Configuration;
+import org.ops4j.pax.exam.CoreOptions;
 import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.OptionUtils;
 import org.ops4j.pax.exam.ProbeBuilder;
@@ -226,6 +227,9 @@ public class SingleFeatureTest {
             // Install SCR
             features(maven().groupId("org.apache.karaf.features").artifactId("standard").type("xml")
                 .classifier("features").versionAsInProject(), "scr"),
+
+            // Pass down argLine to collect coverage
+            argLineOption(),
         };
 
         if (JavaVersionUtil.getMajorVersion() <= 8) {
@@ -233,7 +237,7 @@ public class SingleFeatureTest {
         }
 
         final String version = getKarafReleaseVersion();
-        return OptionUtils.combine(baseConfig, new VMOption[] {
+        return OptionUtils.combine(baseConfig,
             new VMOption("--add-reads=java.xml=java.logging"),
             new VMOption("--add-exports=java.base/org.apache.karaf.specs.locator=java.xml,ALL-UNNAMED"),
             new VMOption("--patch-module"),
@@ -258,7 +262,12 @@ public class SingleFeatureTest {
             new VMOption("--add-exports=jdk.naming.rmi/com.sun.jndi.url.rmi=ALL-UNNAMED"),
             new VMOption("-classpath"),
             new VMOption("lib/jdk9plus/*" + File.pathSeparator + "lib/boot/*")
-        });
+        );
+    }
+
+    private static Option argLineOption() {
+        final String argLine = System.getProperty("odlparentArgLine");
+        return argLine == null ? null : CoreOptions.vmOption(argLine);
     }
 
     private static String getNewJFRFile() throws IOException {

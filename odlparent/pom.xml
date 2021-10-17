@@ -1094,6 +1094,12 @@
           <configuration>
             <redirectTestOutputToFile>${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
             <trimStackTrace>false</trimStackTrace>
+
+            <!--
+                Hack to define argLine as a system property. We cannot use systemPropertyVariables, because
+                we may need to pick it and propagate to Pax-Exam (or anything we spawn under tests).
+            -->
+            <argLine>@{argLine} -DodlparentArgLine='@{argLine}'</argLine>
           </configuration>
         </plugin>
 
