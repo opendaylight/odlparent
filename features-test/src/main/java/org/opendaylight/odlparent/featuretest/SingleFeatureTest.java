@@ -233,7 +233,7 @@ public class SingleFeatureTest {
         }
 
         final String version = getKarafReleaseVersion();
-        return OptionUtils.combine(baseConfig, new VMOption[] {
+        return OptionUtils.combine(baseConfig,
             new VMOption("--add-reads=java.xml=java.logging"),
             new VMOption("--add-exports=java.base/org.apache.karaf.specs.locator=java.xml,ALL-UNNAMED"),
             new VMOption("--patch-module"),
@@ -257,8 +257,7 @@ public class SingleFeatureTest {
             new VMOption("--add-exports=java.base/sun.net.www.protocol.jar=ALL-UNNAMED"),
             new VMOption("--add-exports=jdk.naming.rmi/com.sun.jndi.url.rmi=ALL-UNNAMED"),
             new VMOption("-classpath"),
-            new VMOption("lib/jdk9plus/*" + File.pathSeparator + "lib/boot/*")
-        });
+            new VMOption("lib/jdk9plus/*" + File.pathSeparator + "lib/boot/*"));
     }
 
     private static String getNewJFRFile() throws IOException {
