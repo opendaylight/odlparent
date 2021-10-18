@@ -2,6 +2,63 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.7
+-------------
+This is a bug-fix upgrade from version 9.0.6.
+
+Bug fixes
+~~~~~~~~~
+* The upgrade of ``maven-dependency-plugin`` to version 3.2.0 has caused a regression in accuracy
+  of reports, with quite a few false positives being generated. The declaration has been rolled
+  back to version 3.1.2 with a few tweaks to improve JDK compatibility. See
+  `ODLPARENT-270 <https://jira.opendaylight.org/browse/ODLPARENT-270>`__ for more information.
+
+Improvements
+~~~~~~~~~~~~
+* The declaration and invocation of ``script-maven-plugin`` has been replaced with a dedicated
+  plugin providing the same functionality in a much more performant way.  See
+  `ODLPARENT-220 <https://jira.opendaylight.org/browse/ODLPARENT-220>`__ for more information.
+
+* A new parent pom.xml, ``bnd-parent``, is now available as an alternative to the existing
+  ``bundle-parent``.  It has a more streamlined integration with other plugins, for example
+  maven-jar-plugin, and a much healthier community. See
+  `ODLPARENT-258 <https://jira.opendaylight.org/browse/ODLPARENT-258>`__ for more information.
+
+* The definition of ``odl-karaf-feat-jdbc`` feature has been reworked to not pull in the entire
+  ``enterprise`` feature repository, leading to significant savings in terms of Karaf distribution
+  size for most downstream projects. See
+  `ODLPARENT-266 <https://jira.opendaylight.org/browse/ODLPARENT-266>`__ for more information.
+
+* The declaration of ``maven-compiler-plugin`` is now available in ``odlparent-lite``. This is
+  improves locality, as the JDK version enforcement is already part of odlparent-lite.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* GSON 2.8.5 → 2.8.8, release notes:
+  * `2.8.6 <https://github.com/google/gson/blob/master/CHANGELOG.md#version-286>`__
+  * `2.8.7 <https://github.com/google/gson/blob/master/CHANGELOG.md#version-287>`__
+  * `2.8.8 <https://github.com/google/gson/blob/master/CHANGELOG.md#version-288>`__
+
+* Jolokia `1.7.0 → 1.7.1 <https://jolokia.org/changes-report.html#a1.7.1>`__
+
+* Mockito 3.9.0 → 3.12.4, release notes:
+  * `3.9.2 <https://github.com/mockito/mockito/releases/tag/v3.9.2>`__
+  * `3.9.3 <https://github.com/mockito/mockito/releases/tag/v3.9.3>`__
+  * `3.9.7 <https://github.com/mockito/mockito/releases/tag/v3.9.7>`__
+  * `3.9.9 <https://github.com/mockito/mockito/releases/tag/v3.9.9>`__
+  * `3.9.10 <https://github.com/mockito/mockito/releases/tag/v3.9.10>`__
+  * `3.11.0 <https://github.com/mockito/mockito/releases/tag/v3.11.0>`__
+  * `3.11.1 <https://github.com/mockito/mockito/releases/tag/v3.11.1>`__
+  * `3.11.2 <https://github.com/mockito/mockito/releases/tag/v3.11.2>`__
+  * `3.12.0 <https://github.com/mockito/mockito/releases/tag/v3.12.0>`__
+  * `3.12.1 <https://github.com/mockito/mockito/releases/tag/v3.12.1>`__
+  * `3.12.2 <https://github.com/mockito/mockito/releases/tag/v3.12.2>`__
+  * `3.12.3 <https://github.com/mockito/mockito/releases/tag/v3.12.3>`__
+
+* Netty 4.1.67 → 4.1.69, release notes:
+  * `4.1.68 <https://netty.io/news/2021/09/09/4-1-68-Final.html>`__
+  * `4.1.69 <https://netty.io/news/2021/10/11/4-1-69-Final.html>`__
+
 Version 9.0.6
 -------------
 This is a bug-fix upgrade from version 9.0.5.
