@@ -2,6 +2,102 @@
 ODL Parent release notes
 ========================
 
+Version 8.1.4
+-------------
+This is bugfix/feature upgrade from version 8.1.3.
+
+Improvements
+~~~~~~~~~~~~
+* A new parent pom.xml, ``bnd-parent``, is now available as an alternative to the existing
+  ``bundle-parent``.  It has a more streamlined integration with other plugins, for example
+  maven-jar-plugin, and a much healthier community. See
+  `ODLPARENT-258 <https://jira.opendaylight.org/browse/ODLPARENT-258>`__ for more information.
+
+* The definition of ``odl-karaf-feat-jdbc`` feature has been reworked to not pull in the entire
+  ``enterprise`` feature repository, leading to significant savings in terms of Karaf distribution
+  size for most downstream projects. See
+  `ODLPARENT-266 <https://jira.opendaylight.org/browse/ODLPARENT-266>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* awaitility `4.0.3 → 4.1.0 <https://raw.githubusercontent.com/awaitility/awaitility/master/changelog.txt>`__
+
+* Bouncy Castle `1.68 → 1.69 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Checkstyle 8.42 → 8.45.1, release notes:
+  * `8.43 <https://checkstyle.org/releasenotes.html#Release_8.43>`__
+  * `8.44 <https://checkstyle.org/releasenotes.html#Release_8.44>`__
+  * `8.45 <https://checkstyle.org/releasenotes.html#Release_8.45>`__
+  * `8.45.1 <https://checkstyle.org/releasenotes.html#Release_8.45.1>`__
+
+* commons-io 2.8.0 → 2.11.0, release notes:
+  * `2.9.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.9.0>`__
+  * `2.10.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.10.0>`__
+  * `2.11.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.11.0>`__
+
+* Dropwizard Metrics 4.1.21 → 4.1.25, release notes:
+  * `4.1.22 <https://github.com/dropwizard/metrics/releases/tag/v4.1.22>`__
+  * `4.1.23 <https://github.com/dropwizard/metrics/releases/tag/v4.1.23>`__
+  * `4.1.24 <https://github.com/dropwizard/metrics/releases/tag/v4.1.24>`__
+  * `4.1.25 <https://github.com/dropwizard/metrics/releases/tag/v4.1.25>`__
+
+* Google Truth `1.1.2 → 1.1.3 <https://github.com/google/truth/releases/tag/release_1_1_3>`__
+
+* GSON 2.8.5 → 2.8.8, release notes:
+  * `2.8.6 <https://github.com/google/gson/blob/master/CHANGELOG.md#version-286>`__
+  * `2.8.7 <https://github.com/google/gson/blob/master/CHANGELOG.md#version-287>`__
+  * `2.8.8 <https://github.com/google/gson/blob/master/CHANGELOG.md#version-288>`__
+
+* Jackson 2.11.4 → 2.12.5, release notes:
+  * `2.12 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12>`__
+  * `2.12.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.1>`__
+  * `2.12.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.2>`__
+  * `2.12.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.3>`__
+  * `2.12.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.4>`__
+  * `2.12.5 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.5>`__
+
+* Jetty 9.4.40 → 9.4.43.v20210629, release notes:
+  * `9.4.41.v20210516 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.41.v20210516>`__
+  * `9.4.42.v20210604 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.42.v20210604>`__
+  * `9.4.43.v20210629 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.43.v20210629>`__
+
+* Jolokia 1.6.2 → 1.7.1, release notes:
+  * `1.7.0 <https://jolokia.org/changes-report.html#a1.7.0>`__
+  * `1.7.1 <https://jolokia.org/changes-report.html#a1.7.1>`__
+
+* Karaf `4.3.2 → 4.3.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12350142>`__
+
+* logback 1.2.3 → 1.2.5, release notes:
+  * `1.2.4 <https://jira.qos.ch/issues/?jql=project+%3D+LOGBACK+AND+fixVersion+%3D+1.2.4>`__
+  * `1.2.5 <https://jira.qos.ch/issues/?jql=project+%3D+LOGBACK+AND+fixVersion+%3D+1.2.5>`__
+
+* Netty 4.1.65 → 4.1.69, release notes:
+  * `4.1.66 <https://netty.io/news/2021/07/16/4-1-66-Final.html>`__
+  * `4.1.67 <https://netty.io/news/2021/08/16/4-1-67-Final.html>`__
+  * `4.1.68 <https://netty.io/news/2021/09/09/4-1-68-Final.html>`__
+  * `4.1.69 <https://netty.io/news/2021/10/11/4-1-69-Final.html>`__
+
+* Pax URL 2.5.4 → 2.6.7, release notes:
+  * `2.6.0 <https://github.com/ops4j/org.ops4j.pax.url/milestone/67?closed=1>`__
+  * `2.6.3 <https://github.com/ops4j/org.ops4j.pax.url/milestone/68?closed=1>`__
+  * `2.6.4 <https://github.com/ops4j/org.ops4j.pax.url/milestone/69?closed=1>`__
+  * `2.6.6 <https://github.com/ops4j/org.ops4j.pax.url/milestone/71?closed=1>`__
+  * `2.6.7 <https://github.com/ops4j/org.ops4j.pax.url/milestone/72?closed=1>`__
+
+* Sevntu `1.39.0 → 1.40.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.40.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* Jacoco Maven plugin `0.8.6 → 0.8.7 <https://github.com/jacoco/jacoco/releases/tag/v0.8.7>`__
+
+* maven-enforcer-plugin `3.0.0-M3 → 3.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12346527>`__
+
+* maven-plugin-plugin `3.6.0 → 3.6.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820&version=12344365>`__
+
+* project-info-reports-plugin `3.1.1 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12349521>`__
+
+Bug fixes
+~~~~~~~~~
 Version 8.1.3
 -------------
 This is a minor upgrade from version 8.1.2.
