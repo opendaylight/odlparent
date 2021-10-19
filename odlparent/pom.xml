@@ -1613,7 +1613,7 @@
               <globs>
                 <glob>README*</glob>
                 <glob>CONTRIBUTING*</glob>
-                <glob>INFO.yaml</glob>
+                <glob>PROJECT_INFO.yaml</glob>
               </globs>
             </configuration>
           </execution>
