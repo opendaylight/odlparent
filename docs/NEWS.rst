@@ -9,8 +9,8 @@ This is a bug-fix upgrade from version 9.0.7.
 Bug fixes
 ~~~~~~~~~
 * The fix for `ODLPARENT-220 <https://jira.opendaylight.org/browse/ODLPARENT-220>`__ ended up
-  changing behavior and packaging ``INFO.yaml`` instead of ``PROJECT_YAML``. This has now been
-  fixed.
+  changing behavior and packaging ``INFO.yaml`` instead of ``PROJECT_INFO.yaml``. This has now
+  been fixed.
 
 Version 9.0.7
 -------------
