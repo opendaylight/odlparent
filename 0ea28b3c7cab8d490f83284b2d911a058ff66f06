@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "d0b0d33c_c7840bd5",
+        "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-21T11:45:14Z",
+      "side": 1,
+      "message": "Alright, that makes two strikes, let\u0027s go for simple strings.\nI\u0027ll groom the patch a bit.",
+      "parentUuid": "ba414c9d_27df0d47",
+      "range": {
+        "startLine": 17,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e8bf59ad_6ad1b1b9",
         "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
         "patchSetId": 2
@@ -187,6 +211,30 @@
       "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "224e7c41_83b61995",
+        "filename": "add-versions-plugin/src/main/java/org/opendaylight/odlparent/add/versions/plugin/AddVersionsMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-10-21T11:45:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "44351fd6_39bd18fe",
+      "range": {
+        "startLine": 50,
+        "startChar": 72,
+        "endLine": 50,
+        "endChar": 96
+      },
+      "revId": "0ea28b3c7cab8d490f83284b2d911a058ff66f06",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81",
+      "unresolved": false
     }
   ]
 }
