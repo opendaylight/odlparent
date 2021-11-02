@@ -33,11 +33,11 @@
       <version>${karaf.version}</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
+    <!--dependency>
       <groupId>org.osgi</groupId>
       <artifactId>osgi.core</artifactId>
       <scope>provided</scope>
-    </dependency>
+    </dependency-->
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest</artifactId>
