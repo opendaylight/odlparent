@@ -51,7 +51,7 @@
         <dependency>
             <groupId>org.osgi</groupId>
             <!-- required due to https://jira.opendaylight.org/browse/ODLPARENT-136 -->
-            <artifactId>osgi.cmpn</artifactId>
+            <artifactId>org.osgi.service.resolver</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.karaf.features</groupId>
