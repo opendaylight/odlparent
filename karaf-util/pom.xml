@@ -55,7 +55,7 @@
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
-            <artifactId>osgi.core</artifactId>
+            <artifactId>org.osgi.service.url</artifactId>
             <scope>compile</scope>
         </dependency>
         <dependency>
