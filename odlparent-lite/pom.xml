@@ -60,7 +60,7 @@
       <id>*</id>
       <name>Please consult the PROJECT_INFO.yaml, README* and/or CONTRIBUTORS which should be included with this JAR</name>
       <url>https://www.opendaylight.org</url>
-      <email>helpdesk@opendaylight.org</email>
+      <email>discuss@lists.opendaylight.org</email>
     </developer>
   </developers>
 
