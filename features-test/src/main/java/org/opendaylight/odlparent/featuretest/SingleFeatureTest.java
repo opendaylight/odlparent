@@ -166,7 +166,7 @@ public class SingleFeatureTest {
             when(System.getProperty("os.name").toLowerCase().startsWith("linux")).useOptions(
                 // This prevents low entropy issues on Linux to affect Java random numbers
                 // which can block crypto such as the SSH server in netconf
-                // see https://bugs.opendaylight.org/show_bug.cgi?id=6790
+                // see https://jira.opendaylight.org/browse/ODLPARENT-49
                 new VMOption("-Djava.security.egd=file:/dev/./urandom")
             ),
             when(Boolean.getBoolean(PROFILE_PROP)).useOptions(
@@ -358,7 +358,7 @@ public class SingleFeatureTest {
     @SuppressWarnings("checkstyle:IllegalCatch")
     public void installFeatureCatchAndLog() throws Exception {
         // TODO remove this when the underlying problem is solved
-        // https://bugs.opendaylight.org/show_bug.cgi?id=7981:
+        // https://jira.opendaylight.org/browse/ODLPARENT-78:
         // "SFT never fails, Pax Exam (or our wrappers) swallow all exceptions"
         try {
             installFeature();
@@ -385,9 +385,9 @@ public class SingleFeatureTest {
         // may be an indication of a larger problem... see also related strange open bugs
         // which make it seem like at least some other bundles also get uninstalled
         // way too soon, for some reason:
-        //  * https://bugs.opendaylight.org/show_bug.cgi?id=7924
-        //  * https://bugs.opendaylight.org/show_bug.cgi?id=7923 (?)
-        //  * https://bugs.opendaylight.org/show_bug.cgi?id=7926
+        //  * https://jira.opendaylight.org/browse/CONTROLLER-1614
+        //  * https://jira.opendaylight.org/browse/ODLPARENT-76 (?)
+        //  * https://jira.opendaylight.org/browse/ODLPARENT-77
         bundleContext = bundleContext.getBundle(0).getBundleContext();
 
         // Acquire feature details from properties

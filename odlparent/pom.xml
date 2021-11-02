@@ -557,7 +557,7 @@
 
       <dependency>
         <groupId>org.osgi</groupId>
-        <!-- for https://bugs.opendaylight.org/show_bug.cgi?id=4290 -->
+        <!-- for https://jira.opendaylight.org/browse/ODLPARENT-24 -->
         <artifactId>org.osgi.service.event</artifactId>
         <version>1.4.0</version>
       </dependency>
@@ -1499,7 +1499,7 @@
             <configuration>
               <rules>
                 <bannedDependencies>
-                  <message>Please always use mockito-core instead of mockito-all (see https://bugs.opendaylight.org/show_bug.cgi?id=7662), and spotbugs:annotations instead of findbugs:annotations</message>
+                  <message>Please always use mockito-core instead of mockito-all (see https://jira.opendaylight.org/browse/ODLPARENT-59), and spotbugs:annotations instead of findbugs:annotations</message>
                   <excludes>
                     <exclude>org.mockito:mockito-all</exclude>
                     <exclude>com.google.code.findbugs:annotations</exclude>

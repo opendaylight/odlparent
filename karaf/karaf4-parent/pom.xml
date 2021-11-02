@@ -82,7 +82,7 @@
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
-            <!-- for https://bugs.opendaylight.org/show_bug.cgi?id=4290 -->
+            <!-- for https://jira.opendaylight.org/browse/ODLPARENT-24 -->
             <artifactId>org.osgi.service.event</artifactId>
         </dependency>
 
