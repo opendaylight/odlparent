@@ -532,7 +532,7 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.dto</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -550,7 +550,7 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.permissionadmin</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -873,7 +873,7 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.util.converter</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -897,13 +897,13 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.util.promise</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.util.pushstream</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
