@@ -528,14 +528,7 @@
         The definitions here are sourced from https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/cnf/central.mvn
         and the corresponding layout.bnd files.
       -->
-
-      <!-- This legacy is defined in https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/osgi.core/layout.bnd -->
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>osgi.core</artifactId>
-        <version>7.0.0</version>
-        <scope>provided</scope>
-      </dependency>
+      <!-- osgi.core content, defined in https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/osgi.core/layout.bnd -->
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.dto</artifactId>
@@ -597,13 +590,7 @@
         <scope>provided</scope>
       </dependency>
 
-      <!-- This legacy is defined in https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/osgi.annotation/layout.bnd -->
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>osgi.annotation</artifactId>
-        <version>7.0.0</version>
-        <scope>provided</scope>
-      </dependency>
+      <!-- osgi.annotation content, defined in https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/osgi.annotation/layout.bnd -->
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.annotation.versioning</artifactId>
@@ -617,13 +604,7 @@
         <scope>provided</scope>
       </dependency>
 
-      <!-- This legacy is defined in https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/osgi.cmpn/layout.bnd -->
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>osgi.cmpn</artifactId>
-        <version>7.0.0</version>
-        <scope>provided</scope>
-      </dependency>
+      <!-- osg.cmpn content, defined in https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/osgi.cmpn/layout.bnd -->
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.application</artifactId>
