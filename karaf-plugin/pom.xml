@@ -45,9 +45,9 @@
       <version>3.5.4</version>
     </dependency>
     <dependency>
-        <groupId>org.ops4j.pax.url</groupId>
-        <artifactId>pax-url-aether</artifactId>
-        <scope>compile</scope>
+      <groupId>org.ops4j.pax.url</groupId>
+      <artifactId>pax-url-aether</artifactId>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.karaf.features</groupId>
@@ -60,14 +60,14 @@
       <version>1.1.0</version>
     </dependency>
     <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.url</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
       <groupId>org.opendaylight.odlparent</groupId>
       <artifactId>karaf-util</artifactId>
       <version>${project.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>osgi.core</artifactId>
-      <scope>runtime</scope>
     </dependency>
   </dependencies>
 

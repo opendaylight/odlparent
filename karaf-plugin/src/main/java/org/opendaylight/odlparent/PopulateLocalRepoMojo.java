@@ -64,7 +64,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
         try {
             URL.setURLStreamHandlerFactory(new CustomBundleUrlStreamHandlerFactory());
         } catch (Error e) {
-            LOG.warn("populate-local-repo: URL factory is already defined");
+            LOG.warn("populate-local-repo: URL factory is already defined", e);
         }
     }
 
