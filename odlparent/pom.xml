@@ -1145,12 +1145,6 @@
         <artifactId>antlr4-runtime</artifactId>
         <version>4.9.3</version>
       </dependency>
-      <dependency>
-        <groupId>org.apache.aries.blueprint</groupId>
-        <artifactId>blueprint-maven-plugin-annotation</artifactId>
-        <version>1.3.0</version>
-        <optional>true</optional>
-      </dependency>
 
       <!-- TrieMap library -->
       <dependency>
@@ -1473,34 +1467,6 @@
         </plugin>
 
         <!-- Third-party plugins, grouped by groupId, alpha-sorted by artifactId -->
-        <plugin>
-          <!-- Support Blueprint XML construction using annotations -->
-          <groupId>org.apache.aries.blueprint</groupId>
-          <artifactId>blueprint-maven-plugin</artifactId>
-          <version>1.10.0</version>
-          <!-- TODO remove dependencies when we bump from 1.10.0 to 1.11.0 (or 1.10.1);
-             see https://jira.opendaylight.org/browse/ODLPARENT-167 & https://jira.apache.org/jira/browse/ARIES-1826 -->
-          <dependencies>
-            <dependency>
-              <groupId>org.apache.xbean</groupId>
-              <artifactId>xbean-finder-shaded</artifactId>
-              <version>4.19</version>
-            </dependency>
-          </dependencies>
-          <configuration>
-            <scanPaths>
-              <scanPath>${project.groupId}</scanPath>
-            </scanPaths>
-          </configuration>
-          <executions>
-            <execution>
-              <goals>
-                <goal>blueprint-generate</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-
         <plugin>
           <groupId>org.basepom.maven</groupId>
           <artifactId>duplicate-finder-maven-plugin</artifactId>
