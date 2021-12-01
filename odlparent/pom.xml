@@ -1666,6 +1666,7 @@
                 <goal>testCompile</goal>
               </goals>
               <configuration>
+                <javaSourceVersion>${maven.compiler.release}</javaSourceVersion>
                 <outputDirectory>${project.build.directory}/generated-sources/xtend</outputDirectory>
                 <testOutputDirectory>${project.build.directory}/generated-test-sources/xtend</testOutputDirectory>
               </configuration>
