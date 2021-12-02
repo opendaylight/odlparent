@@ -453,8 +453,6 @@
         <odlparent.checkstyle.skip>true</odlparent.checkstyle.skip>
         <odlparent.modernizer.skip>true</odlparent.modernizer.skip>
         <odlparent.spotbugs.skip>true</odlparent.spotbugs.skip>
-        <pmd.skip>true</pmd.skip>
-        <cpd.skip>true</cpd.skip>
         <maven.site.skip>true</maven.site.skip>
         <invoker.skip>true</invoker.skip>
         <enforcer.skip>true</enforcer.skip>

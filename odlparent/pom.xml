@@ -58,7 +58,6 @@
     <sonar.exclusions>**/gen/**,**/generated-sources/**,**/generated-test-sources/**,**/yang-gen/**,**/yang-gen-config/**,**/yang-gen-sal/**,**/yang-gen-code/**,**/pax/**</sonar.exclusions>
 
     <!-- Opt-in code quality checks -->
-    <pmd.cpd.fail>false</pmd.cpd.fail>                  <!-- Copy/paste detection -->
     <duplicate-finder.skip>true</duplicate-finder.skip> <!-- Classpath duplicates -->
 
     <!-- Redirect test output to files (overridable) -->
@@ -1305,31 +1304,6 @@
           </executions>
         </plugin>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-pmd-plugin</artifactId>
-          <version>3.14.0</version>
-          <executions>
-            <execution>
-              <id>cpd</id>
-              <phase>process-sources</phase>
-              <goals>
-                <goal>cpd-check</goal>
-              </goals>
-              <configuration>
-                <failOnViolation>${pmd.cpd.fail}</failOnViolation>
-                <!-- 100 "tokens" here correspond to approx. 5-10 lines of code -->
-                <minimumTokens>101</minimumTokens>
-                <printFailingErrors>true</printFailingErrors>
-                <excludeRoots>
-                  <excludeRoot>${project.build.directory}/generated-sources</excludeRoot>
-                  <excludeRoot>${project.build.directory}/generated-test-sources</excludeRoot>
-                </excludeRoots>
-                <linkXRef>false</linkXRef>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <configuration>
             <showWarnings>true</showWarnings>
@@ -1676,19 +1650,6 @@
                     <ignore/>
                   </action>
                 </pluginExecution>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-pmd-plugin</artifactId>
-                    <versionRange>[3.6,)</versionRange>
-                    <goals>
-                      <goal>cpd-check</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore/>
-                  </action>
-                </pluginExecution>
                 <!-- The plugin will eventually be removed, remove this too at that point -->
                 <pluginExecution>
                   <pluginExecutionFilter>
@@ -1871,9 +1832,6 @@
       </plugin>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
-      </plugin>
-      <plugin>
-          <artifactId>maven-pmd-plugin</artifactId>
       </plugin>
       <plugin>
         <artifactId>maven-source-plugin</artifactId>
