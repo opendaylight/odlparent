@@ -1015,7 +1015,7 @@
         <groupId>org.gaul</groupId>
         <artifactId>modernizer-maven-annotations</artifactId>
         <!-- This should match the plugin version below -->
-        <version>2.2.0</version>
+        <version>2.3.0</version>
         <scope>provided</scope>
       </dependency>
 
@@ -1432,7 +1432,7 @@
         <plugin>
           <groupId>org.gaul</groupId>
           <artifactId>modernizer-maven-plugin</artifactId>
-          <version>2.2.0</version>
+          <version>2.3.0</version>
           <configuration>
             <javaVersion>${odlparent.modernizer.target}</javaVersion>
             <failOnViolations>${odlparent.modernizer.enforce}</failOnViolations>
@@ -1445,11 +1445,14 @@
                    include:
 
                    - ImmutableCollection et al. are not just implementation details, they
-                     form an API contract.
+                     form an API contract
                    - ImmutableMap/ImmutableSet retain iteration order, whereas their
                      Map.of()/Set.of() counterparts have unstable iteration order (by design)
+                   - Iterables, which we are widely use for efficient discovery of when
+                     the Iterable is actually a Collection
               -->
               <exclusionPattern>com/google/common/collect/Immutable.*</exclusionPattern>
+              <exclusionPattern>com/google/common/collect/Iterables.*</exclusionPattern>
             </exclusionPatterns>
           </configuration>
 
