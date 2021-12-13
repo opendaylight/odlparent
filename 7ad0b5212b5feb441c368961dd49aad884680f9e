@@ -16,6 +16,24 @@
       "message": "Note that a complete fix will also involve patching Karaf to use PAX Logging 2.0.11.",
       "revId": "7ad0b5212b5feb441c368961dd49aad884680f9e",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9c35490_e6c3ccb4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2021-12-13T19:08:47Z",
+      "side": 1,
+      "message": "Yeah, karaf-4.3.4 is being voted on, and we\u0027ll spin releases once we have both",
+      "parentUuid": "426a1469_9d91b22e",
+      "revId": "7ad0b5212b5feb441c368961dd49aad884680f9e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
