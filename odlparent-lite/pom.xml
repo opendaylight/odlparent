@@ -354,6 +354,13 @@
                 <requireMavenVersion>
                   <version>[3.5.0,)</version>
                 </requireMavenVersion>
+                <bannedDependencies>
+                  <excludes>
+                    <!-- https://nvd.nist.gov/vuln/detail/CVE-2021-44228: at least 2.15.0 -->
+                    <!-- https://nvd.nist.gov/vuln/detail/CVE-2021-45046: at least 2.16.0 -->
+                    <exclude>org.apache.logging.log4j:log4j-core:(,2.16.0)</exclude>
+                  </excludes>
+                </bannedDependencies>
               </rules>
             </configuration>
             <goals>
