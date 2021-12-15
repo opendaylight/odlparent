@@ -253,12 +253,12 @@
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-core</artifactId>
-        <version>1.2.5</version>
+        <version>1.2.8</version>
       </dependency>
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>1.2.5</version>
+        <version>1.2.8</version>
       </dependency>
 
       <!-- log4j2 -->
