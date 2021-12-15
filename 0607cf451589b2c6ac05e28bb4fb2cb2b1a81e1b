@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "0607cf451589b2c6ac05e28bb4fb2cb2b1a81e1b",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0dc441af_05ecfacb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4540
+      },
+      "writtenOn": "2021-12-15T12:42:18Z",
+      "side": 1,
+      "message": "Oops the release hasn’t been cut yet.",
+      "revId": "0607cf451589b2c6ac05e28bb4fb2cb2b1a81e1b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
