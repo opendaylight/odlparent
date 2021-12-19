@@ -8,24 +8,21 @@ This is a security/bug-fix upgrade from version 9.0.8.
 
 Log4Shell and similar vulnerabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This addresses the following security issues:
+This release addresses following security issues by its adopting ``log4j-2.17.0``,
+``logback-1.2.9`` and ``pax-logging-2.0.13``:
 
-* `CVE-2021-44228 <https://nvd.nist.gov/vuln/detail/CVE-2021-44228>`__ is fully addressed
+* `CVE-2021-44228 <https://nvd.nist.gov/vuln/detail/CVE-2021-44228>`__
 
-* `CVE-2021-45046 <https://nvd.nist.gov/vuln/detail/CVE-2021-45046>`__ is fully addressed
+* `CVE-2021-45046 <https://nvd.nist.gov/vuln/detail/CVE-2021-45046>`__
 
-* `CVE-2021-45105 <https://nvd.nist.gov/vuln/detail/CVE-2021-45105>`__ is partially addressed. Compile-time
-  environment uses ``log4j-2.17.0``. Since there is not a ``pax-logging`` release mitigating this issue,
-  Karaf-based distributions are still vulnerable.
+* `CVE-2021-45105 <https://nvd.nist.gov/vuln/detail/CVE-2021-45105>`__
 
-* `CVE-2021-42550 <https://nvd.nist.gov/vuln/detail/CVE-2021-42550>`__ is partially addressied. Compile-time
-  environment uses ``logback-1.2.9``. Since there is not a ``pax-logging`` release mitigating this issue,
-  Karaf-based distributions are still vulnerable.
+* `CVE-2021-42550 <https://nvd.nist.gov/vuln/detail/CVE-2021-42550>`__
 
 Bug fixes
 ~~~~~~~~~
-* ``xtend-maven-plugin`` has been upgrades to ``2.16.0.M2`` to allow builds with JDK17.
-  See `ODLPARENT-254 <https://jira.opendaylight.org/browse/ODLPARENT-273>`__ for more information.
+* ``xtend-maven-plugin`` has been upgraded to ``2.16.0.M2`` to allow builds with JDK17.
+  See `ODLPARENT-273 <https://jira.opendaylight.org/browse/ODLPARENT-273>`__ for more information.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
