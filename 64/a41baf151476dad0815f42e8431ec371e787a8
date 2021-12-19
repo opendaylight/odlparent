@@ -1,0 +1,7 @@
+Verified+1: jenkins-releng
+Code-Review+2: Robert Varga <nite@hq.sk>
+Submitted-by: Robert Varga <nite@hq.sk>
+Submitted-at: Sun, 19 Dec 2021 08:09:52 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/c/odlparent/+/99101
+Project: odlparent
+Branch: refs/heads/8.1.x
