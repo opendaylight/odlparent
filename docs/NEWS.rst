@@ -64,8 +64,8 @@ Third-party dependencies
 Plugin upgrades
 ~~~~~~~~~~~~~~~
 * bnd-maven-plugin 5.3.0 → 6.1.0, release notes:
-  * `6.0.0 <https://github.com/bndtools/bnd/wiki/Changes-in-6.0.0>`
-  * `6.1.0 <https://github.com/bndtools/bnd/wiki/Changes-in-6.1.0>`
+  * `6.0.0 <https://github.com/bndtools/bnd/wiki/Changes-in-6.0.0>`__
+  * `6.1.0 <https://github.com/bndtools/bnd/wiki/Changes-in-6.1.0>`__
 
 * maven-bundle-plugin `5.1.2 → 5.1.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12350117>`__
 
