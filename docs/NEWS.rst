@@ -2,6 +2,66 @@
 ODL Parent release notes
 ========================
 
+Version 8.1.5
+-------------
+This is a security/bug-fix upgrade from version 8.1.4.
+
+Log4Shell and similar vulnerabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This release addresses following security issues by its adopting ``log4j-2.17.0``,
+``logback-1.2.9`` and ``pax-logging-2.0.13``:
+
+* `CVE-2021-44228 <https://nvd.nist.gov/vuln/detail/CVE-2021-44228>`__
+
+* `CVE-2021-45046 <https://nvd.nist.gov/vuln/detail/CVE-2021-45046>`__
+
+* `CVE-2021-45105 <https://nvd.nist.gov/vuln/detail/CVE-2021-45105>`__
+
+* `CVE-2021-42550 <https://nvd.nist.gov/vuln/detail/CVE-2021-42550>`__
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* ANTLR `4.9.3 <https://github.com/antlr/antlr4/releases/tag/4.9.3>`__
+
+* awaitility `4.1.0 → 4.1.1 <https://raw.githubusercontent.com/awaitility/awaitility/master/changelog.txt>`__
+
+* Bouncy Castle `1.69 → 1.70 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Dropwizard Metrics 4.1.25 → 4.1.28, release notes:
+  * `4.1.26 <https://github.com/dropwizard/metrics/releases/tag/v4.1.26>`__
+  * `4.1.27 <https://github.com/dropwizard/metrics/releases/tag/v4.1.27>`__
+  * `4.1.28 <https://github.com/dropwizard/metrics/releases/tag/v4.1.28>`__
+
+* GSON `2.8.8 → 2.8.9 <https://github.com/google/gson/blob/master/CHANGELOG.md#version-289>`__
+
+* Jackson `2.12.5 → 2.12.6 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.12.5>`__
+
+* Karaf 4.3.3 → 4.3.5, release notes:
+  * `4.3.4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12350547>`__
+  * `4.3.5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12350856>`__
+
+* Log4J 2.14.1 → 2.17.0, release notes:
+  * `2.15.0 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.15.0>`__
+  * `2.16.0 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.16.0>`__
+  * `2.17.0 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.17.0>`__
+
+* Logback `1.2.5 → 1.2.9 <http://logback.qos.ch/news.html>`__
+
+* Netty 4.1.69 → 4.1.72, release notes:
+  * `4.1.70 <https://netty.io/news/2021/10/11/4-1-70-Final.html>`__
+  * `4.1.71 <https://netty.io/news/2021/12/09/4-1-71-Final.html>`__
+  * `4.1.72 <https://netty.io/news/2021/12/13/4-1-72-Final.html>`__
+
+* Woodstox `6.2.6 → 6.2.7 <https://github.com/FasterXML/woodstox/milestone/24?closed=1>`__
+
+* xmlunit 2.8.2 → 2.8.4, release notes:
+  * `2.8.3 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.3>`__
+  * `2.8.4 <https://github.com/xmlunit/xmlunit/releases/tag/v2.8.4>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-bundle-plugin `5.1.2 → 5.1.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12350117>`__
+
 Version 8.1.4
 -------------
 This is bugfix/feature upgrade from version 8.1.3.
