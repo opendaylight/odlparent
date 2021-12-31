@@ -359,7 +359,8 @@
                     <!-- https://nvd.nist.gov/vuln/detail/CVE-2021-44228: at least 2.15.0 -->
                     <!-- https://nvd.nist.gov/vuln/detail/CVE-2021-45046: at least 2.16.0 -->
                     <!-- https://nvd.nist.gov/vuln/detail/CVE-2021-45105: at least 2.17.0 -->
-                    <exclude>org.apache.logging.log4j:log4j-core:(,2.17.0)</exclude>
+                    <!-- https://nvd.nist.gov/vuln/detail/CVE-2021-44832: at least 2.17.1 -->
+                    <exclude>org.apache.logging.log4j:log4j-core:(,2.17.1)</exclude>
                   </excludes>
                 </bannedDependencies>
               </rules>
