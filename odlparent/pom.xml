@@ -1043,12 +1043,6 @@
         <type>pom</type>
       </dependency>
 
-      <dependency>
-        <groupId>com.h2database</groupId>
-        <artifactId>h2</artifactId>
-        <version>1.4.200</version>
-      </dependency>
-
       <!-- Annotations -->
       <!-- A better alternative for javax.inject, from https://guicedee.com/ -->
       <dependency>
