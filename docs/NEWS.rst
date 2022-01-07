@@ -2,6 +2,34 @@
 ODL Parent release notes
 ========================
 
+Version 8.1.6
+-------------
+This is a security/bug-fix upgrade from version 8.1.5.
+
+Log4Shell and similar vulnerabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This release addresses following security issues by its adopting ``log4j-2.17.1``,
+``logback-1.2.10`` and ``pax-logging-2.0.14``:
+
+* `CVE-2021-42550 <https://nvd.nist.gov/vuln/detail/CVE-2021-42550>`__ and related problems
+  were further mitigated by reducing complexity in ``logback-1.2.10``
+
+* `CVE-2021-44832 <https://nvd.nist.gov/vuln/detail/CVE-2021-44832>`__
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Javassist 3.27.0-GA → 3.28.0-GA
+
+* Log4J `2.17.0 → 2.17.1 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.17.1>`__
+
+* Logback `1.2.8 → 1.2.10 <http://logback.qos.ch/news.html>`__
+
+* ThreeTen `1.6.0 → 1.7.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.7.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* Xtend `2.24.0 → 2.25.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2021/03/02/version-2-25-0>`__
+
 Version 8.1.5
 -------------
 This is a security/bug-fix upgrade from version 8.1.4.
