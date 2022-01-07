@@ -9,7 +9,7 @@ This is a security/bug-fix upgrade from version 8.1.4.
 Log4Shell and similar vulnerabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This release addresses following security issues by its adopting ``log4j-2.17.0``,
-``logback-1.2.9`` and ``pax-logging-2.0.13``:
+``logback-1.2.8`` and ``pax-logging-2.0.13``:
 
 * `CVE-2021-44228 <https://nvd.nist.gov/vuln/detail/CVE-2021-44228>`__
 
@@ -45,7 +45,7 @@ Third-party dependencies
   * `2.16.0 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.16.0>`__
   * `2.17.0 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.17.0>`__
 
-* Logback `1.2.5 → 1.2.9 <http://logback.qos.ch/news.html>`__
+* Logback `1.2.5 → 1.2.8 <http://logback.qos.ch/news.html>`__
 
 * Netty 4.1.69 → 4.1.72, release notes:
   * `4.1.70 <https://netty.io/news/2021/10/11/4-1-70-Final.html>`__
