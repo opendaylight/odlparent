@@ -114,6 +114,22 @@
         <scope>import</scope>
         <type>pom</type>
       </dependency>
+      <!-- Override pax-logging version, remove when we have karaf-4.3.6+ -->
+      <dependency>
+        <groupId>org.ops4j.pax.logging</groupId>
+        <artifactId>pax-logging-api</artifactId>
+        <version>2.0.14</version>
+      </dependency>
+      <dependency>
+        <groupId>org.ops4j.pax.logging</groupId>
+        <artifactId>pax-logging-log4j1</artifactId>
+        <version>2.0.14</version>
+      </dependency>
+      <dependency>
+        <groupId>org.ops4j.pax.logging</groupId>
+        <artifactId>pax-logging-log4j2</artifactId>
+        <version>2.0.14</version>
+      </dependency>
 
       <!-- Build tool dependencies (normally not here in <dependencies>,
            but in a <dependency> in <pluginManagement> but for Checkstyle this
