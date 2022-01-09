@@ -2,6 +2,34 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.10
+--------------
+This is a security/bug-fix upgrade from version 9.0.9.
+
+Log4Shell and similar vulnerabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This release addresses following security issues by its adopting ``log4j-2.17.1``,
+``logback-1.2.10`` and ``pax-logging-2.0.14``:
+
+* `CVE-2021-42550 <https://nvd.nist.gov/vuln/detail/CVE-2021-42550>`__ and related problems
+  were further mitigated by reducing complexity in ``logback-1.2.10``
+
+* `CVE-2021-44832 <https://nvd.nist.gov/vuln/detail/CVE-2021-44832>`__
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Javassist 3.27.0-GA → 3.28.0-GA
+
+* Karaf `4.3.4 → 4.3.5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12350547>`__
+
+* Log4J `2.17.0 → 2.17.1 <https://logging.apache.org/log4j/2.x/changes-report.html#a2.17.1>`__
+
+* Logback `1.2.8 → 1.2.10 <http://logback.qos.ch/news.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-bundle-plugin `5.1.3 → 5.1.4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12351195>`__
+
 Version 9.0.9
 -------------
 This is a security/bug-fix upgrade from version 9.0.8.
