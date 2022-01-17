@@ -2,6 +2,32 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.11
+--------------
+This is a bug-fix upgrade from version 9.0.10.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Karaf `4.3.5 → 4.3.6 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12351123>`__
+
+* Netty `4.1.72 → 4.1.73 <https://netty.io/news/2022/01/12/4-1-73-Final.html>`__
+
+* Sevntu `1.40.0 → 1.41.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.41.0>`__
+
+* Woodstox `6.2.7 → 6.2.8 <https://github.com/FasterXML/woodstox/milestone/26?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* build-helper-maven-plugin `3.2.0 → 3.3.0 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/build-helper-maven-plugin-3.3.0>`__
+
+* maven-compiler-plugin `3.8.1 → 3.9.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12345214>`__
+
+* maven-jar-plugin 3.2.0 → 3.2.2, release notes:
+  * `3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12348050>`__
+  * `3.2.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12351215>`__
+
+* maven-site-plugin `3.9.1 → 3.10.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12348370>`__
+
 Version 9.0.10
 --------------
 This is a security/bug-fix upgrade from version 9.0.9.
