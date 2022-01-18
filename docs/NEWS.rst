@@ -2,6 +2,17 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.12
+--------------
+This is a bug-fix upgrade from version 9.0.11.
+
+Bug fixes
+~~~~~~~~~
+* The upgrade of ``compiler-maven-plugin`` to ``3.9.0`` causes a regression in JPMS-enabled
+  artifacts with optional transitive dependencies. This has been resolved by downgrading the plugin
+  back to version ``3.8.1``.
+  See `ODLPARENT-278 <https://jira.opendaylight.org/browse/ODLPARENT-278>`__ for more information.
+
 Version 9.0.11
 --------------
 This is a bug-fix upgrade from version 9.0.10.
