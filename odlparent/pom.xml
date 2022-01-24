@@ -127,7 +127,7 @@
       </dependency>
 
       <!-- Testing Dependencies -->
-      <!-- JUnit, Hamcrest, Mockito and PowerMock need to be kept in sync -->
+      <!-- JUnit, Hamcrest and Mockito need to be kept in sync -->
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
@@ -151,6 +151,12 @@
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-core</artifactId>
+        <version>4.2.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-junit-jupiter</artifactId>
         <version>4.2.0</version>
         <scope>test</scope>
       </dependency>
@@ -1144,19 +1150,28 @@
       <artifactId>hamcrest-library</artifactId>
       <scope>test</scope>
     </dependency>
+
+    <!-- JUnit 5 integration -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit 4 integration -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
