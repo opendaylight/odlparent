@@ -2,6 +2,17 @@
 ODL Parent release notes
 ========================
 
+Version 8.1.9
+-------------
+This is a bug-fix upgrade from version 8.1.8.
+
+Bug fixes
+~~~~~~~~~
+* The upgrade of ``Netty`` to ``4.1.70`` or later causes a regression in OSGi enviroments, rendering
+  Linux ``epoll(2)`` based sockets unusable. This has been resolved by downgrading Netty to back to
+  versions ``4.1.69``.
+  See `ODLPARENT-279 <https://jira.opendaylight.org/browse/ODLPARENT-279>`__ for more information.
+
 Version 8.1.8
 -------------
 This is a bug-fix upgrade from version 8.1.7.
