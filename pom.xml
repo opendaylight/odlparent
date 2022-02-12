@@ -50,7 +50,7 @@
         <!-- Parent POMs -->
         <module>bnd-parent</module>
         <module>bundle-parent</module>
-        <module>untested-single-feature-parent</module>
+        <module>abstract-feature-parent</module>
         <module>single-feature-parent</module>
         <module>feature-repo-parent</module>
         <module>odlparent</module>

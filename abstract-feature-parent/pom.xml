@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright © 2016, 2017 Red Hat, Inc. and others.  All rights reserved.
+
+ This program and the accompanying materials are made available under the
+ terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ and is available at http://www.eclipse.org/legal/epl-v10.html
+ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+        Internal parent for testing single Karaf features. This parent should not be used by downstreams,
+        who should use single-feature-parent.
+    -->
+
+    <parent>
+        <groupId>org.opendaylight.odlparent</groupId>
+        <artifactId>odlparent</artifactId>
+        <version>10.0.0-SNAPSHOT</version>
+        <relativePath>../odlparent</relativePath>
+    </parent>
+
+    <artifactId>abstract-feature-parent</artifactId>
+    <packaging>pom</packaging>
+    <name>ODL :: odlparent :: ${project.artifactId}</name>
+
+    <properties>
+        <checkDependencyChange>false</checkDependencyChange>
+        <failOnDependencyChange>false</failOnDependencyChange>
+
+        <jacoco.skip>true</jacoco.skip>
+        <skip.karaf.featureTest>false</skip.karaf.featureTest>
+
+        <!-- We typically do not have code in feature artifacts, which throws off maven-dependency-plugin -->
+        <odlparent.dependency.skip>true</odlparent.dependency.skip>
+    </properties>
+
+    <dependencies>
+        <!-- Test the generated features.xml -->
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>features-test</artifactId>
+            <version>10.0.0-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>bundles-test-lib</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.karaf.bundle</groupId>
+            <artifactId>org.apache.karaf.bundle.core</artifactId>
+            <version>${karaf.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Force SLF4J to test scope -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <!-- required due to https://jira.opendaylight.org/browse/ODLPARENT-136 -->
+            <artifactId>osgi.cmpn</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!-- This generates the META-INF/maven/dependencies.properties file
+                     which is required by the versionAsInProject() used in SingleFeatureTest -->
+                <groupId>org.apache.servicemix.tooling</groupId>
+                <artifactId>depends-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <!-- Overridden to have TCP channel support -->
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <!-- Overridden to fix corruption with SFT, where the process would hang after test -->
+                    <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory"/>
+                    <dependenciesToScan>
+                        <dependency>org.opendaylight.odlparent:features-test</dependency>
+                    </dependenciesToScan>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
+                    </additionalClasspathElements>
+                    <skip>${skip.karaf.featureTest}</skip>
+                    <systemPropertyVariables>
+                        <!-- Use the same repository for Pax Exam as is used for Maven -->
+                        <org.ops4j.pax.url.mvn.localRepository>${settings.localRepository}</org.ops4j.pax.url.mvn.localRepository>
+                    </systemPropertyVariables>
+
+                    <!-- Disable argLine if present, but pass it to SFT -->
+                    <argLine>-DsftArgLine='@{argLine}'</argLine>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>disable-sft</id>
+            <activation>
+                <!-- Karaf does not have jre.properties for JDK17+ just yet -->
+                <jdk>[17,)</jdk>
+            </activation>
+
+            <properties>
+                <skip.karaf.featureTest>true</skip.karaf.featureTest>
+            </properties>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.ekryd.echo-maven-plugin</groupId>
+                        <artifactId>echo-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>UNTESTED-JDK</id>
+                                <goals>
+                                    <goal>echo</goal>
+                                </goals>
+                                <phase>test</phase>
+                                <configuration>
+                                    <message>Running on JDK newer than 11, which is not supported. Skipping feature tests.</message>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
