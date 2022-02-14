@@ -359,6 +359,11 @@
           <artifactId>jacoco-maven-plugin</artifactId>
           <version>${jacoco.version}</version>
         </plugin>
+        <plugin>
+          <groupId>org.cyclonedx</groupId>
+          <artifactId>cyclonedx-maven-plugin</artifactId>
+          <version>2.5.3</version>
+        </plugin>
       </plugins>
     </pluginManagement>
 
@@ -418,6 +423,20 @@
           <offline>true</offline>
         </configuration>
       </plugin>
+
+      <!-- SBOM integration -->
+      <plugin>
+        <groupId>org.cyclonedx</groupId>
+        <artifactId>cyclonedx-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>makeBom</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
@@ -468,6 +487,7 @@
         <duplicate-finder.skip>true</duplicate-finder.skip>
         <mdsal.skip.verbose>true</mdsal.skip.verbose> <!-- Bug 6236 -->
         <maven.gitcommitid.skip>true</maven.gitcommitid.skip>
+        <cyclonedx.skip>true</cyclonedx.skip>
       </properties>
     </profile>
     <profile>
