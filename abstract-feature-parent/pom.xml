@@ -117,8 +117,8 @@
         <profile>
             <id>disable-sft</id>
             <activation>
-                <!-- Karaf does not have jre.properties for JDK17+ just yet -->
-                <jdk>[17,)</jdk>
+                <!-- Karaf does not have jre.properties for JDK18+ just yet -->
+                <jdk>[18,)</jdk>
             </activation>
 
             <properties>
@@ -138,7 +138,7 @@
                                 </goals>
                                 <phase>test</phase>
                                 <configuration>
-                                    <message>Running on JDK newer than 11, which is not supported. Skipping feature tests.</message>
+                                    <message>Running on JDK newer than 17, which is not supported. Skipping feature tests.</message>
                                 </configuration>
                             </execution>
                         </executions>
