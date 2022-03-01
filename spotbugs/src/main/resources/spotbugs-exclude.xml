@@ -21,6 +21,13 @@
       <Bug pattern="NP_PARAMETER_MUST_BE_NONNULL_BUT_MARKED_AS_NULLABLE" />
       <Bug pattern="RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE" />
 
+      <!--
+           Triggers a lot of false-positives:
+           https://github.com/spotbugs/spotbugs/issues?q=is%3Aissue+is%3Aopen+NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE
+           It is getting worse with Guava annotations and failure to account for TYPE_USE @NonNull annotations, as
+           noted in https://github.com/spotbugs/spotbugs/issues/470 -->
+      <Bug pattern="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE"/>
+
       <!-- https://github.com/spotbugs/spotbugs/issues/511. Strict reading of Object.equals() contract means that
            evenever equals() behaviour is defined, all implementations need to adhere to it. The only reason
            to override the method (assuming correct API design, of course) is to provide a more efficient
