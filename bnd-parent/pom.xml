@@ -28,7 +28,7 @@
             <dependency>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>biz.aQute.bnd.annotation</artifactId>
-                <version>6.1.0</version>
+                <version>6.2.0</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
@@ -59,7 +59,7 @@
                 <plugin>
                     <groupId>biz.aQute.bnd</groupId>
                     <artifactId>bnd-maven-plugin</artifactId>
-                    <version>6.1.0</version>
+                    <version>6.2.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -83,7 +83,7 @@
                 </executions>
             </plugin>
             <!--
-                See https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin#important-note
+                See https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin#important-note-about-maven-jarwar-plugin
                 and https://issues.apache.org/jira/browse/MJAR-193
             -->
             <plugin>
