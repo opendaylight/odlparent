@@ -242,7 +242,7 @@
         <groupId>org.kohsuke.metainf-services</groupId>
         <artifactId>metainf-services</artifactId>
         <!-- Keep this version in sync with annotationProcessorPaths declaration below -->
-        <version>1.8</version>
+        <version>1.9</version>
         <optional>true</optional>
         <scope>provided</scope>
       </dependency>
@@ -1364,7 +1364,7 @@
                 <groupId>org.kohsuke.metainf-services</groupId>
                 <artifactId>metainf-services</artifactId>
                 <!-- Keep this version in sync with dependency declaration above -->
-                <version>1.8</version>
+                <version>1.9</version>
               </dependency>
             </annotationProcessorPaths>
           </configuration>
