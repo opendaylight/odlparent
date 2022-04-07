@@ -51,7 +51,7 @@
 
     <!-- Default Sonar configuration -->
     <sonar.java.source>${maven.compiler.release}</sonar.java.source>
-    <sonar-jacoco-listeners.version>3.8</sonar-jacoco-listeners.version>
+    <sonar-jacoco-listeners.version>5.14.0.18788</sonar-jacoco-listeners.version>
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
 
     <!-- Note: This list should match jacoco-maven-plugin's exclusion list below -->
@@ -1163,6 +1163,13 @@
         <type>pom</type>
       </dependency>
 
+      <!-- Sonar/JaCoCo integration -->
+      <dependency>
+        <groupId>org.sonarsource.java</groupId>
+        <artifactId>sonar-jacoco-listeners</artifactId>
+        <version>${sonar-jacoco-listeners.version}</version>
+        <scope>test</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
