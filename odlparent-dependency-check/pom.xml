@@ -600,6 +600,10 @@
             <artifactId>jsonassert</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.sonarsource.java</groupId>
+            <artifactId>sonar-jacoco-listeners</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.sonatype.plexus</groupId>
             <artifactId>plexus-build-api</artifactId>
         </dependency>
