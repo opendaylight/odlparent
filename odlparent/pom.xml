@@ -1253,7 +1253,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-failsafe-plugin</artifactId>
-          <version>2.22.2</version>
+          <version>3.0.0-M6</version>
         </plugin>
         <plugin>
           <artifactId>maven-invoker-plugin</artifactId>
@@ -1325,7 +1325,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.22.2</version>
+          <version>3.0.0-M6</version>
           <configuration>
             <redirectTestOutputToFile>${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
             <trimStackTrace>false</trimStackTrace>
