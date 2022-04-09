@@ -176,24 +176,24 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
                 <!-- Needs to be copied to lib/boot in order have it accessible to Main class -->
                 <artifactItem>
                     <groupId>org.bouncycastle</groupId>
-                    <artifactId>bcprov-ext-jdk15on</artifactId>
+                    <artifactId>bcprov-ext-jdk18on</artifactId>
                     <version>${bouncycastle.version}</version>
                     <outputDirectory>target/classes/lib/boot</outputDirectory>
-                    <destFileName>bcprov-ext-jdk15on-${bouncycastle.version}.jar</destFileName>
+                    <destFileName>bcprov-ext-jdk18on-${bouncycastle.version}.jar</destFileName>
                 </artifactItem>
                 <artifactItem>
                     <groupId>org.bouncycastle</groupId>
-                    <artifactId>bcpkix-jdk15on</artifactId>
+                    <artifactId>bcpkix-jdk18on</artifactId>
                     <version>${bouncycastle.version}</version>
                     <outputDirectory>target/classes/lib/boot</outputDirectory>
-                    <destFileName>bcpkix-jdk15on-${bouncycastle.version}.jar</destFileName>
+                    <destFileName>bcpkix-jdk18on-${bouncycastle.version}.jar</destFileName>
                 </artifactItem>
                 <artifactItem>
                     <groupId>org.bouncycastle</groupId>
-                    <artifactId>bcutil-jdk15on</artifactId>
+                    <artifactId>bcutil-jdk18on</artifactId>
                     <version>${bouncycastle.version}</version>
                     <outputDirectory>target/classes/lib/boot</outputDirectory>
-                    <destFileName>bcutil-jdk15on-${bouncycastle.version}.jar</destFileName>
+                    <destFileName>bcutil-jdk18on-${bouncycastle.version}.jar</destFileName>
                 </artifactItem>
               </artifactItems>
               <silent>true</silent>

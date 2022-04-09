@@ -25,7 +25,7 @@
     <dependencies>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcpkix-jdk15on</artifactId>
+            <artifactId>bcpkix-jdk18on</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -44,7 +44,7 @@
                         </goals>
                         <configuration>
                             <includes>**/MANIFEST.MF</includes>
-                            <includeArtifactIds>bcpkix-jdk15on</includeArtifactIds>
+                            <includeArtifactIds>bcpkix-jdk18on</includeArtifactIds>
                             <silent>true</silent>
                         </configuration>
                     </execution>
