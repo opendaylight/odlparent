@@ -25,7 +25,7 @@
     <dependencies>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcutil-jdk15on</artifactId>
+            <artifactId>bcutil-jdk18on</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -44,7 +44,7 @@
                         </goals>
                         <configuration>
                             <includes>**/MANIFEST.MF</includes>
-                            <includeArtifactIds>bcutil-jdk15on</includeArtifactIds>
+                            <includeArtifactIds>bcutil-jdk18on</includeArtifactIds>
                             <silent>true</silent>
                         </configuration>
                     </execution>
