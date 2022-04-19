@@ -63,12 +63,12 @@
             <artifactId>slf4j-api</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!-- required due to https://jira.opendaylight.org/browse/ODLPARENT-136 -->
+        <!--dependency>
             <groupId>org.osgi</groupId>
-            <!-- required due to https://jira.opendaylight.org/browse/ODLPARENT-136 -->
             <artifactId>osgi.cmpn</artifactId>
             <scope>test</scope>
-        </dependency>
+        </dependency-->
     </dependencies>
 
     <build>
@@ -115,8 +115,8 @@
         <profile>
             <id>disable-sft</id>
             <activation>
-                <!-- Karaf does not have jre.properties for JDK18+ just yet -->
-                <jdk>[18,)</jdk>
+                <!-- Karaf does not have jre.properties for JDK19+ just yet -->
+                <jdk>[19,)</jdk>
             </activation>
 
             <properties>
@@ -136,7 +136,7 @@
                                 </goals>
                                 <phase>test</phase>
                                 <configuration>
-                                    <message>Running on JDK newer than 17, which is not supported. Skipping feature tests.</message>
+                                    <message>Running on JDK newer than 18, which is not supported. Skipping feature tests.</message>
                                 </configuration>
                             </execution>
                         </executions>
