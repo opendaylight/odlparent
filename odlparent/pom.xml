@@ -38,7 +38,7 @@
     <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
 
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.3.7</karaf.version>
+    <karaf.version>4.4.0</karaf.version>
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
@@ -500,10 +500,24 @@
         - osgi.core, osgi.cmpn and osgi.annotation, which are legacy uber-bundles
         - fine-grained artifacts, which are the preferred way going forward, especially
           once we get to Release 8.
-        The definitions here are sourced from https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/cnf/central.mvn
+        The definitions here are sourced from https://github.com/osgi/osgi/blob/r8-cmpn-final/cnf/ext/baseline.mvn
         and the corresponding layout.bnd files.
       -->
-      <!-- osgi.core content, defined in https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/osgi.core/layout.bnd -->
+      <!-- osgi.annotation content -->
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.annotation.versioning</artifactId>
+        <version>1.1.1</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.annotation.bundle</artifactId>
+        <version>1.1.0</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <!-- osgi.core content -->
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.dto</artifactId>
@@ -512,14 +526,38 @@
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.framework</artifactId>
+        <version>1.10.0</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
         <artifactId>org.osgi.resource</artifactId>
+        <version>1.0.1</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.service.condition</artifactId>
         <version>1.0.0</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.framework</artifactId>
-        <version>1.9.0</version>
+        <artifactId>org.osgi.service.condpermadmin</artifactId>
+        <version>1.1.2</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.service.log</artifactId>
+        <version>1.5.0</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.service.packageadmin</artifactId>
+        <version>1.2.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -530,62 +568,30 @@
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.condpermadmin</artifactId>
+        <artifactId>org.osgi.service.resolver</artifactId>
         <version>1.1.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.packageadmin</artifactId>
-        <version>1.2.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.startlevel</artifactId>
-        <version>1.1.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.resolver</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.url</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.util.tracker</artifactId>
-        <version>1.5.2</version>
+        <version>1.5.3</version>
         <scope>provided</scope>
       </dependency>
 
-      <!-- osgi.annotation content, defined in https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/osgi.annotation/layout.bnd -->
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.annotation.versioning</artifactId>
-        <version>1.0.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.annotation.bundle</artifactId>
-        <version>1.0.0</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <!-- osg.cmpn content, defined in https://github.com/osgi/osgi/blob/r7-cmpn-spec-final/osgi.cmpn/layout.bnd -->
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.application</artifactId>
-        <version>1.0.0</version>
-        <scope>provided</scope>
-      </dependency>
+      <!-- osg.cmpn content -->
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.namespace.contract</artifactId>
@@ -624,23 +630,10 @@
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.application</artifactId>
-        <version>1.1.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.blueprint</artifactId>
-        <version>1.0.2</version>
-        <scope>provided</scope>
-      </dependency>
-      <!-- This is not published until R8>
-      <dependency>
-        <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.cdi</artifactId>
         <version>1.0.0</version>
         <scope>provided</scope>
-      </dependency -->
+      </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.clusterinfo</artifactId>
@@ -679,12 +672,6 @@
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.deploymentadmin</artifactId>
-        <version>1.1.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.device</artifactId>
         <version>1.1.0</version>
         <scope>provided</scope>
@@ -715,12 +702,6 @@
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.io</artifactId>
-        <version>1.0.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.jaxrs</artifactId>
         <version>1.0.0</version>
         <scope>provided</scope>
@@ -745,12 +726,6 @@
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.log</artifactId>
-        <version>1.4.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.metatype</artifactId>
         <version>1.4.0</version>
         <scope>provided</scope>
@@ -763,20 +738,8 @@
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.monitor</artifactId>
-        <version>1.0.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.prefs</artifactId>
         <version>1.1.1</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.provisioning</artifactId>
-        <version>1.2.0</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -801,12 +764,6 @@
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.serviceloader</artifactId>
         <version>1.0.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.service.subsystem</artifactId>
-        <version>1.1.0</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -842,25 +799,13 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.util.function</artifactId>
-        <version>1.2.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.util.measurement</artifactId>
-        <version>1.0.2</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.util.position</artifactId>
-        <version>1.0.1</version>
+        <version>1.1.0</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.util.promise</artifactId>
-        <version>1.2.0</version>
+        <version>1.1.1</version>
         <scope>provided</scope>
       </dependency>
       <dependency>

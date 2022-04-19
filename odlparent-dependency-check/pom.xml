@@ -365,10 +365,6 @@
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.application</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
             <artifactId>org.osgi.dto</artifactId>
         </dependency>
         <dependency>
@@ -401,15 +397,11 @@
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.application</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
             <artifactId>org.osgi.service.async</artifactId>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.blueprint</artifactId>
+            <artifactId>org.osgi.service.cdi</artifactId>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -429,6 +421,10 @@
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.condition</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
             <artifactId>org.osgi.service.condpermadmin</artifactId>
         </dependency>
         <dependency>
@@ -438,10 +434,6 @@
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.service.coordinator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.deploymentadmin</artifactId>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -462,10 +454,6 @@
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.service.http.whiteboard</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.io</artifactId>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -497,10 +485,6 @@
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.monitor</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
             <artifactId>org.osgi.service.packageadmin</artifactId>
         </dependency>
         <dependency>
@@ -510,10 +494,6 @@
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.service.prefs</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.provisioning</artifactId>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -538,10 +518,6 @@
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.service.startlevel</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.service.subsystem</artifactId>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -570,14 +546,6 @@
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.util.function</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.util.measurement</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.util.position</artifactId>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
