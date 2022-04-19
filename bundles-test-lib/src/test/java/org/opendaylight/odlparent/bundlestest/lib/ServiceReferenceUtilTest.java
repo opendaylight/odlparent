@@ -85,6 +85,11 @@ public class ServiceReferenceUtilTest {
         public Dictionary<String, Object> getProperties() {
             return null;
         }
+
+        @Override
+        public <A> A adapt(Class<A> type) {
+            throw new UnsupportedOperationException();
+        }
     }
 
 }

@@ -63,12 +63,12 @@
             <artifactId>slf4j-api</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!-- required due to https://jira.opendaylight.org/browse/ODLPARENT-136 -->
+        <!--dependency>
             <groupId>org.osgi</groupId>
-            <!-- required due to https://jira.opendaylight.org/browse/ODLPARENT-136 -->
             <artifactId>osgi.cmpn</artifactId>
             <scope>test</scope>
-        </dependency>
+        </dependency-->
     </dependencies>
 
     <build>
