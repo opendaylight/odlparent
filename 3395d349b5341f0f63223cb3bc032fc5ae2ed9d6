@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0d50b99b_d6619897",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2022-04-23T10:47:24Z",
+      "side": 1,
+      "message": "Requires 4.10.2 with https://github.com/antlr/antlr4/pull/3675",
+      "revId": "3395d349b5341f0f63223cb3bc032fc5ae2ed9d6",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
