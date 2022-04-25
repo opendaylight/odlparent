@@ -217,8 +217,9 @@
                         </goals>
                     </execution>
                 </executions>
-                <!-- FIXME: remove this section once we can activate javadoc-links profile -->
+
                 <configuration combine.children="append">
+                    <!-- FIXME: remove this section once we can activate javadoc-links profile -->
                     <links>
                         <link>https://junit.org/junit4/javadoc/4.13/</link>
                         <link>http://hamcrest.org/JavaHamcrest/javadoc/2.2/</link>
@@ -229,6 +230,9 @@
                         <link>https://commons.apache.org/proper/commons-lang/javadocs/api-3.11/</link>
                         <link>https://commons.apache.org/proper/commons-codec/apidocs/</link>
                     </links>
+
+                    <!-- FIXME: finish up -->
+                    <doclint>all,-missing</doclint>
                     <groups>
                         <group>
                             <title>Bundle Test Library</title>

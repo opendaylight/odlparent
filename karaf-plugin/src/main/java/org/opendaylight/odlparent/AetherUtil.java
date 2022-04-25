@@ -5,7 +5,6 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-
 package org.opendaylight.odlparent;
 
 import java.io.File;
@@ -35,6 +34,9 @@ import org.eclipse.aether.resolution.DependencyResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Utilities for resolving maven artifacts and their dependencies.
+ */
 public class AetherUtil {
     private static final Logger LOG = LoggerFactory.getLogger(AetherUtil.class);
     private RepositorySystem repoSystem;
@@ -43,6 +45,9 @@ public class AetherUtil {
 
     private List<RemoteRepository> remoteRepos;
 
+    /**
+     * Local repository path.
+     */
     protected File localRepository;
 
     /**
