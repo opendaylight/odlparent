@@ -1292,6 +1292,9 @@
               <arg>-Xlint:all</arg>
               <!-- Disable 'No processor claimed any of these annotations' -->
               <arg>-Xlint:-processing</arg>
+              <!-- Disable 'declares no explicit constructors, thereby exposing a default constructor'
+                   because it causes a lot of warnings in downstreams. -->
+              <arg>-Xlint:-missing-explicit-ctor</arg>
             </compilerArgs>
             <annotationProcessorPaths>
               <dependency>
