@@ -7,7 +7,9 @@
  */
 package org.opendaylight.odlparent.bundlestest.lib;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Dictionary;
 import java.util.HashMap;
@@ -26,15 +28,18 @@ public class ServiceReferenceUtilTest {
 
     @Test
     public void testGetUsingBundleSymbolicNames() {
-        assertThat(new ServiceReferenceUtil().getUsingBundleSymbolicNames(getServiceReference())).isEmpty();
+        assertEquals(List.of(), new ServiceReferenceUtil().getUsingBundleSymbolicNames(getServiceReference()));
     }
 
     @Test
     public void testGetProperties() {
-        assertThat(new ServiceReferenceUtil().getProperties(getServiceReference())).containsExactly(
-                "property1", "value1",
-                "property2", List.of("value2.1", "value2.2"),
-                "property3", null);
+        final var map = new ServiceReferenceUtil().getProperties(getServiceReference());
+        assertEquals(3, map.size());
+        assertEquals("value1", map.get("property1"));
+        assertEquals(List.of("value2.1", "value2.2"), map.get("property2"));
+        // Unfortunate null;
+        assertTrue(map.containsKey("property3"));
+        assertNull(map.get("property3"));
     }
 
     private static ServiceReference<?> getServiceReference() {

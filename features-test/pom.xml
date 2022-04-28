@@ -122,37 +122,31 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-          <groupId>com.google.guava</groupId>
-          <artifactId>guava</artifactId>
-          <scope>compile</scope>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <scope>compile</scope>
         </dependency>
         <!-- The following, which are just transitive dependencies of bundles4-test,
              have to be repeated here so that the Embed-Dependency below for maven-bundle-plugin works: -->
         <dependency>
-          <groupId>org.hamcrest</groupId>
-          <artifactId>hamcrest</artifactId>
-          <scope>provided</scope>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-          <groupId>org.awaitility</groupId>
-          <artifactId>awaitility</artifactId>
-          <scope>provided</scope>
-          <exclusions>
-            <exclusion>
-              <groupId>cglib</groupId>
-              <artifactId>cglib-nodep</artifactId>
-            </exclusion>
-            <exclusion>
-              <groupId>org.objenesis</groupId>
-              <artifactId>objenesis</artifactId>
-            </exclusion>
-          </exclusions>
-        </dependency>
-        <!-- Real <scope>test dependencies, just for SingleFeatureTestUnitTest -->
-        <dependency>
-          <groupId>com.google.truth</groupId>
-          <artifactId>truth</artifactId>
-          <scope>test</scope>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>cglib</groupId>
+                    <artifactId>cglib-nodep</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.objenesis</groupId>
+                    <artifactId>objenesis</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

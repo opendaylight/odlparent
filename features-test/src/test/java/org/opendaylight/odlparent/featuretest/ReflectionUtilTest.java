@@ -7,7 +7,8 @@
  */
 package org.opendaylight.odlparent.featuretest;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,26 +20,28 @@ import org.junit.Test;
  * @author Michael Vorburger.ch
  */
 public class ReflectionUtilTest {
-
     @Test
     public void testGetClasses() {
-        assertThat(ReflectionUtil.getClasses(getClass().getClassLoader(), "org.awaitility")
-                .collect(Collectors.toList()))
-                .containsAtLeast(org.awaitility.Awaitility.class, org.awaitility.core.ConditionTimeoutException.class);
+        assertTrue(ReflectionUtil.getClasses(getClass().getClassLoader(), "org.awaitility")
+            .collect(Collectors.toList())
+            .containsAll(
+                List.of(org.awaitility.Awaitility.class, org.awaitility.core.ConditionTimeoutException.class)));
     }
 
     @Test
     public void testGetInnerClasses() {
         List<Class<?>> innerClasses = ReflectionUtil.getClasses(
                 getClass().getClassLoader(), getClass().getPackage().getName()).collect(Collectors.toList());
-        assertThat(innerClasses).containsAtLeast(getClass(), InnerStaticClass.class, InnerNonStaticClass.class);
-        assertThat(innerClasses.stream().anyMatch(
-            clazz -> clazz.getName().endsWith(getClass().getSimpleName() + "$1"))).isTrue();
-        assertThat(innerClasses).containsNoDuplicates();
+        assertTrue(innerClasses.containsAll(List.of(getClass(), InnerStaticClass.class, InnerNonStaticClass.class)));
+        assertTrue(innerClasses.stream().anyMatch(
+            clazz -> clazz.getName().endsWith(getClass().getSimpleName() + "$1")));
+        assertEquals(innerClasses.stream().distinct().collect(Collectors.toList()), innerClasses);
     }
 
     @SuppressWarnings("unused")
-    private final InnerNonStaticClass anoymousInnerClass = new InnerNonStaticClass() { };
+    private final InnerNonStaticClass anonymousInnerClass = new InnerNonStaticClass() {
+
+    };
 
     private static class InnerStaticClass {
 
