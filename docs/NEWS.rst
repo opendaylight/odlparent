@@ -2,6 +2,70 @@
 ODL Parent release notes
 ========================
 
+Version 10.0.1
+--------------
+This is a bug-fix upgrade from version 10.0.0.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.70 → 1.71 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Checkstyle 9.2.1 → 10.1, release notes:
+  * `9.3 <https://checkstyle.org/releasenotes.html#Release_9.3>`__
+  * `10.0 <https://checkstyle.org/releasenotes.html#Release_10.0>`__
+  * `10.1 <https://checkstyle.org/releasenotes.html#Release_10.1>`__
+
+* Dropwizard Metrics `4.2.8 → 4.2.9 <https://github.com/dropwizard/metrics/releases/tag/v4.2.9>`__
+
+* Jackson 2.12.6 → 2.13.2, release notes:
+  * `2.13 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13>`__
+  * `2.13.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13.1>`__
+  * `2.13.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13.2>`__
+
+* JaCoCo `0.8.7 → 0.8.7 <https://github.com/jacoco/jacoco/releases/tag/v0.8.8>`__
+
+* Jetty 9.4.43.v20210629 → 9.4.46.v20220331, release notes:
+  * `9.4.44.v20210927 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.44.v20210927>`__
+  * `9.4.45.v20220203 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.45.v20220203>`__
+  * `9.4.46.v20220331 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.46.v20220331>`__
+
+* Karaf 4.3.6 → 4.3.7, release notes:
+  * `4.3.xi74 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12349243>`__
+
+* Mockito 4.3.1 → 4.5.1, release notes:
+  * `4.4.0 <https://github.com/mockito/mockito/releases/tag/v4.4.0>`__
+  * `4.5.0 <https://github.com/mockito/mockito/releases/tag/v4.5.0>`__
+  * `4.5.1 <https://github.com/mockito/mockito/releases/tag/v4.5.1>`__
+
+* Netty 4.1.74 → 4.1.76, release notes:
+  * `4.1.75 <https://netty.io/news/2022/03/10/4-1-75-Final.html>`__
+  * `4.1.76 <https://netty.io/news/2022/04/12/4-1-76-Final.html>`__
+
+* SpotBugs `4.5.3 → 4.6.0 <https://github.com/spotbugs/spotbugs/releases/tag/4.6.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* metainf-services `1.8 → 1.9 <https://github.com/kohsuke/metainf-services/pull/18>`__
+
+* maven-clean-plugin `3.1.0 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12343770&styleName=Text&projectId=12317224>`__
+
+* maven-compiler-plugin `3.10.0 → 3.10.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12351339>`__
+
+* maven-dependency-plugin 3.1.2 → 3.3.0, release notes:
+  * `3.1.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12347842>`__
+  * `3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12348705>`__
+  * `3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12340588>`__
+
+* maven-shade-plugin `3.2.4 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12348391&styleName=Text&projectId=12317921>`__
+
+* maven-site-plugin `3.10.0 → 3.11.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12351142>`__
+
+* modernizer-maven-plugin `2.3.0 → 2.4.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.4.0>`__
+
+* project-info-reports-plugin 3.1.2 → 3.2.2, release notes:
+  * `3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12349521>`__
+  * `3.2.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12351375>`__
+
 Version 10.0.0
 --------------
 This is a major upgrade from version 9, with breaking changes; downstream projects may need to make changes to upgrade
