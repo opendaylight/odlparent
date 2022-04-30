@@ -23,7 +23,7 @@
     <packaging>kar</packaging>
 
     <properties>
-        <pax.jdbc.version>1.5.0</pax.jdbc.version>
+        <pax.jdbc.version>1.5.3</pax.jdbc.version>
     </properties>
 
     <dependencies>
