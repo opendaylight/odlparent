@@ -516,6 +516,19 @@
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.service.http.whiteboard</artifactId>
+        <version>1.1.1</version>
+        <scope>provided</scope>
+        <exclusions>
+          <!-- Causes class path duplicates -->
+          <exclusion>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.annotation</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.jdbc</artifactId>
         <version>1.0.1</version>
         <scope>provided</scope>
