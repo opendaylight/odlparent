@@ -2,6 +2,16 @@
 ODL Parent release notes
 ========================
 
+Version 10.0.2
+--------------
+This is a bug-fix upgrade from version 10.0.1.
+
+Bug fixes
+~~~~~~~~~
+* The upgrade of ``maven-bundle-plugin`` ends up exposing a `Karaf bug <https://issues.apache.org/jira/browse/KARAF-7431>`__.
+  This has been worked around. See `ODLPARENT-284 <https://jira.opendaylight.org/browse/ODLPARENT-284>`__
+  for details.
+
 Version 10.0.1
 --------------
 This is a bug-fix upgrade from version 10.0.0.
