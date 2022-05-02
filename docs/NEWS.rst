@@ -42,6 +42,8 @@ Third-party dependencies
   * `4.1.75 <https://netty.io/news/2022/03/10/4-1-75-Final.html>`__
   * `4.1.76 <https://netty.io/news/2022/04/12/4-1-76-Final.html>`__
 
+* Sevntu `1.41.0 → 1.42.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.42.0>`__
+
 * SpotBugs `4.5.3 → 4.6.0 <https://github.com/spotbugs/spotbugs/releases/tag/4.6.0>`__
 
 Plugin upgrades
