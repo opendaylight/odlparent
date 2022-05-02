@@ -156,6 +156,12 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
                       tofile="${project.build.directory}/classes/etc/users.properties"/>
                 <fixcrlf srcdir="${project.build.directory}/classes/bin"
                          includes="*.bat" eol="crlf"/>
+                <!-- KARAF-7431: Fix JDK9+ exported packages -->
+                <patch patchfile="${project.basedir}/src/main/patches/karaf-jre-properties.patch"
+                       originalfile="${project.build.directory}/assembly/etc/jre.properties"
+                       failonerror="true"/>
+                <copy file="${project.build.directory}/assembly/etc/jre.properties"
+                      tofile="${project.build.directory}/classes/etc/jre.properties"/>
               </target>
             </configuration>
           </execution>
