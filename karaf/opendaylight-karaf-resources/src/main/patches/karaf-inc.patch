@@ -5,7 +5,7 @@
 
      if [ "x${JAVA_HOME}" = "x" ] && [ "${darwin}" = "true" ]; then
 -        JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
-+        JAVA_HOME="`/usr/libexec/java_home -v 11`"
++        JAVA_HOME="`/usr/libexec/java_home -v 17`"
      fi
      if [ "x${JAVA_HOME}" = "x" ] && [ -r /etc/gentoo-release ] ; then
          JAVA_HOME=`java-config --jre-home`
@@ -16,9 +16,9 @@
 -    # java must be at least version 8
 -    if [ "${VERSION}" -lt "8" ]; then
 -        die "JVM must be version 1.8 or greater"
-+    # java must be at least version 11
-+    if [ "${VERSION}" -lt "11" ]; then
-+        die "JVM must be version 11 or greater"
++    # java must be at least version 17
++    if [ "${VERSION}" -lt "17" ]; then
++        die "JVM must be version 17 or greater"
      fi
  }
 
