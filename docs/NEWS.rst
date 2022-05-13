@@ -2,6 +2,82 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.14
+--------------
+This is a bug-fix upgrade from version 9.0.13.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ``netty-transport-native-epoll`` is now supported on Linux/AArch64. See
+  `ODLPARENT-241 <https://jira.opendaylight.org/browse/ODLPARENT-241>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.69 → 1.71 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Dropwizard Metrics 4.1.28 → 4.1.31, release notes:
+  * `4.1.29 <https://github.com/dropwizard/metrics/releases/tag/v4.1.29>`__
+  * `4.1.30 <https://github.com/dropwizard/metrics/releases/tag/v4.1.30>`__
+  * `4.1.31 <https://github.com/dropwizard/metrics/releases/tag/v4.1.31>`__
+
+* GSON `2.8.9 → 2.9.0 <https://github.com/google/gson/releases/tag/gson-parent-2.9.0>`__
+
+* Jackson 2.12.6 → 2.13.2, release notes:
+  * `2.13 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13>`__
+  * `2.13.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13.1>`__
+  * `2.13.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13.2>`__
+
+* JaCoCo `0.8.7 → 0.8.8 <https://github.com/jacoco/jacoco/releases/tag/v0.8.8>`__
+
+* Jetty 9.4.43.v20210629 → 9.4.46.v20220331, release notes:
+  * `9.4.44.v20210927 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.44.v20210927>`__
+  * `9.4.45.v20220203 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.45.v20220203>`__
+  * `9.4.46.v20220331 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.46.v20220331>`__
+
+* Karaf `4.3.6 → 4.3.7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12349243>`__
+
+* Netty 4.1.69 → 4.1.77, release notes:
+  * `4.1.70 <https://netty.io/news/2021/10/11/4-1-70-Final.html>`__
+  * `4.1.71 <https://netty.io/news/2021/12/09/4-1-71-Final.html>`__
+  * `4.1.72 <https://netty.io/news/2021/12/13/4-1-72-Final.html>`__
+  * `4.1.73 <https://netty.io/news/2022/01/12/4-1-73-Final.html>`__
+  * `4.1.74 <https://netty.io/news/2022/02/08/4-1-74-Final.html>`__
+  * `4.1.75 <https://netty.io/news/2022/03/10/4-1-75-Final.html>`__
+  * `4.1.76 <https://netty.io/news/2022/04/12/4-1-76-Final.html>`__
+  * `4.1.77 <https://netty.io/news/2022/05/06/2-1-77-Final.html>`__
+
+* Xtend `2.25.0 → 2.26.0 <https://www.eclipse.org/xtend/releasenotes.html#/releasenotes/2022/02/28/version-2-26-0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin `6.1.0 → 6.2.0 <https://github.com/bndtools/bnd/wiki/Changes-in-6.2.0>`__
+
+* maven-bundle-plugin `5.1.4 → 5.1.5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12350117>`__
+
+* maven-clean-plugin `3.1.0 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12343770&styleName=Text&projectId=12317224>`__
+
+* maven-compiler-plugin 3.8.1 → 3.10.1, release notes:
+  * `3.9.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12345214>`__
+  * `3.10.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12351256>`__
+  * `3.10.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12351339>`__
+
+* maven-dependency-plugin 3.1.2 → 3.3.0, release notes:
+  * `3.1.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12347842>`__
+  * `3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12348705>`__
+  * `3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12340588>`__
+
+* maven-shade-plugin `3.2.4 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?version=12348391&styleName=Text&projectId=12317921>`__
+
+* maven-site-plugin `3.10.0 → 3.11.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12351142>`__
+
+* metainf-services `1.8 → 1.9 <https://github.com/kohsuke/metainf-services/pull/18>`__
+
+* modernizer-maven-plugin `2.3.0 → 2.4.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.4.0>`__
+
+* project-info-reports-plugin 3.1.2 → 3.2.2, release notes:
+  * `3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12349521>`__
+  * `3.2.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12351375>`__
+
 Version 9.0.13
 --------------
 This is a bug-fix upgrade from version 9.0.12.
