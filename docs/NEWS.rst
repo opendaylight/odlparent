@@ -33,15 +33,14 @@ Third-party dependencies
   * `2.13.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13.1>`__
   * `2.13.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13.2>`__
 
-* JaCoCo `0.8.7 → 0.8.7 <https://github.com/jacoco/jacoco/releases/tag/v0.8.8>`__
+* JaCoCo `0.8.7 → 0.8.8 <https://github.com/jacoco/jacoco/releases/tag/v0.8.8>`__
 
 * Jetty 9.4.43.v20210629 → 9.4.46.v20220331, release notes:
   * `9.4.44.v20210927 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.44.v20210927>`__
   * `9.4.45.v20220203 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.45.v20220203>`__
   * `9.4.46.v20220331 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.46.v20220331>`__
 
-* Karaf 4.3.6 → 4.3.7, release notes:
-  * `4.3.xi74 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12349243>`__
+* Karaf `4.3.6 → 4.3.7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12349243>`__
 
 * Mockito 4.3.1 → 4.5.1, release notes:
   * `4.4.0 <https://github.com/mockito/mockito/releases/tag/v4.4.0>`__
