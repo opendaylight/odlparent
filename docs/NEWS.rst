@@ -2,6 +2,17 @@
 ODL Parent release notes
 ========================
 
+Version 9.0.15
+--------------
+This is a bug-fix upgrade from version 9.0.14.
+
+Bug fixes and improvements
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+* The upgrade to Netty-4.1.77 broke ``epoll`` transport on Linux/x86_64. This has been corrected
+  with a downgrade to version 4.1.76.
+
+* Karaf feature tests are now enabled when running on Java 17.
+
 Version 9.0.14
 --------------
 This is a bug-fix upgrade from version 9.0.13.
