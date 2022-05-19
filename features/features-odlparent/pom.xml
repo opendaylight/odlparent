@@ -34,12 +34,6 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-apache-commons-codec</artifactId>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>odl-apache-commons-lang3</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
