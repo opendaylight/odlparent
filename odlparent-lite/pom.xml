@@ -596,7 +596,6 @@
                 <link>http://netty.io/4.1/api/</link>
                 <link>https://commons.apache.org/proper/commons-lang/javadocs/api-2.6/</link>
                 <link>https://commons.apache.org/proper/commons-lang/javadocs/api-release/</link>
-                <link>https://commons.apache.org/proper/commons-codec/apidocs/</link>
               </links>
             </configuration>
           </plugin>
