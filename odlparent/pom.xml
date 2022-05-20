@@ -718,6 +718,13 @@
         <optional>true</optional>
       </dependency>
 
+      <!-- Argparse4j, for parsing command-line arguments in standalone executables -->
+      <dependency>
+        <groupId>net.sourceforge.argparse4j</groupId>
+        <artifactId>argparse4j</artifactId>
+        <version>0.9.0</version>
+      </dependency>
+
       <!-- jung, a graph library -->
       <dependency>
         <groupId>net.sf.jung</groupId>
