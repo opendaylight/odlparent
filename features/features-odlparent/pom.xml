@@ -88,13 +88,6 @@
         </dependency>
 
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>odl-jung-2.1</artifactId>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-
-        <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>odl-karaf-feat-jdbc</artifactId>
             <classifier>features</classifier>

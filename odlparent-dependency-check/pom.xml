@@ -136,18 +136,6 @@
             <artifactId>stax-utils</artifactId>
         </dependency>
         <dependency>
-            <groupId>net.sf.jung</groupId>
-            <artifactId>jung-algorithms</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.sf.jung</groupId>
-            <artifactId>jung-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.sf.jung</groupId>
-            <artifactId>jung-graph-impl</artifactId>
-        </dependency>
-        <dependency>
             <groupId>net.sourceforge.argparse4j</groupId>
             <artifactId>argparse4j</artifactId>
         </dependency>

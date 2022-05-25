@@ -38,8 +38,6 @@
                         <startupFeature>odl-jackson-2.13</startupFeature>
                         <startupFeature>odl-jakarta-activation-api</startupFeature>
                         <startupFeature>odl-jetty-2</startupFeature>
-                        <!-- FIXME: needs https://issues.apache.org/jira/browse/KARAF-6573
-                        <startupFeature>odl-jung-2.1</startupFeature-->
                         <startupFeature>odl-lmax-3</startupFeature>
                         <startupFeature>odl-netty-4</startupFeature>
                     </startupFeatures>
