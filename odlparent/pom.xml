@@ -292,11 +292,12 @@
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite and docs -->
         <version>2.6</version>
       </dependency>
+
       <!-- Jersey for JAXRS -->
       <dependency>
-        <groupId>javax.ws.rs</groupId>
-        <artifactId>javax.ws.rs-api</artifactId>
-        <version>2.1.1</version>
+        <groupId>jakarta.ws.rs</groupId>
+        <artifactId>jakarta.ws.rs-api</artifactId>
+        <version>2.1.6</version>
       </dependency>
       <dependency>
         <groupId>org.glassfish.jersey</groupId>
@@ -306,18 +307,6 @@
         <scope>import</scope>
       </dependency>
 
-      <dependency>
-        <groupId>jakarta.activation</groupId>
-        <artifactId>jakarta.activation-api</artifactId>
-        <version>1.2.2</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.annotation</groupId>
-        <artifactId>javax.annotation-api</artifactId>
-        <version>1.3.2</version>
-        <optional>true</optional>
-      </dependency>
       <dependency>
         <groupId>xml-apis</groupId>
         <artifactId>xml-apis</artifactId>
@@ -412,11 +401,6 @@
         <scope>import</scope>
       </dependency>
 
-      <dependency>
-        <groupId>javax.ws.rs</groupId>
-        <artifactId>jsr311-api</artifactId>
-        <version>1.1.1</version>
-      </dependency>
       <dependency>
         <groupId>org.bouncycastle</groupId>
         <artifactId>bcpkix-jdk18on</artifactId>
