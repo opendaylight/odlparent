@@ -40,7 +40,7 @@ Third-party dependencies
   * `9.4.45.v20220203 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.45.v20220203>`__
   * `9.4.46.v20220331 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.46.v20220331>`__
 
-* Karaf `4.3.6 → 4.3.7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12349243>`__
+* Karaf `4.3.6 → 4.3.7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12351181>`__
 
 * Mockito 4.3.1 → 4.5.1, release notes:
   * `4.4.0 <https://github.com/mockito/mockito/releases/tag/v4.4.0>`__
