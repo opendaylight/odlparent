@@ -2,6 +2,52 @@
 ODL Parent release notes
 ========================
 
+Version 11.0.0
+--------------
+This is a major upgrade from version 9, with breaking changes; downstream projects may need to make changes to upgrade
+to this version.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Minimum required ``Java`` version is 17. Attempts to build a downstream project or load in a previous Java version
+  will result in a failure.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The following upstream dependencies have been removed from dependency/plugin management:
+
+
+* Declaration of ``Google Truth`` has been removed. This dependency is not used by any active downstream. See
+  `ODLPARENT-283 <https://jira.opendaylight.org/browse/ODLPARENT-283>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle 9.2.1 → 10.2, release notes:
+  * `9.3 <https://checkstyle.org/releasenotes.html#Release_9.3>`__
+  * `10.0 <https://checkstyle.org/releasenotes.html#Release_10.0>`__
+  * `10.1 <https://checkstyle.org/releasenotes.html#Release_10.1>`__
+  * `10.2 <https://checkstyle.org/releasenotes.html#Release_10.2>`__
+
+* JaCoCo `0.8.7 → 0.8.8 <https://github.com/jacoco/jacoco/releases/tag/v0.8.8>`__
+
+* Jetty 9.4.43.v20210629 → 9.4.46.v20220331, release notes:
+  * `9.4.44.v20210927 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.44.v20210927>`__
+  * `9.4.45.v20220203 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.45.v20220203>`__
+  * `9.4.46.v20220331 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.46.v20220331>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-surefire-plugin 2.22.2 → 3.0.0-M6, release notes:
+  * `3.0.0-M1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12342871>`__
+  * `3.0.0-M2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12344396>`__
+  * `3.0.0-M3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12342872>`__
+  * `3.0.0-M4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12344668>`__
+  * `3.0.0-M5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12344612>`__
+  * `3.0.0-M6 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12344613>`__
+
+
+
+
 Version 10.0.0
 --------------
 This is a major upgrade from version 9, with breaking changes; downstream projects may need to make changes to upgrade
