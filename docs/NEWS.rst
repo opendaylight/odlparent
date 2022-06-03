@@ -49,7 +49,7 @@ Third-party dependencies
   * `9.4.45.v20220203 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.45.v20220203>`__
   * `9.4.46.v20220331 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.46.v20220331>`__
 
-* Karaf `4.3.6 → 4.3.7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12349243>`__
+* Karaf `4.3.6 → 4.3.7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12351181>`__
 
 * Netty 4.1.69 → 4.1.77, release notes:
   * `4.1.70 <https://netty.io/news/2021/10/11/4-1-70-Final.html>`__
