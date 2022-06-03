@@ -2,6 +2,90 @@
 ODL Parent release notes
 ========================
 
+Version 11.0.0
+--------------
+This is a major upgrade from version 9, with breaking changes; downstream projects may need to make changes to upgrade
+to this version.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Minimum required ``Java`` version is 17. Attempts to build a downstream project or load in a previous Java version
+  will result in a failure.
+
+* The declaration for ``argparse4j`` has been addded. See
+  `ODLPARENT-289 <https://jira.opendaylight.org/browse/ODLPARENT-289>`__ for more information.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The following upstream dependencies have been removed from dependency/plugin management:
+
+* Declaration of ``Google Truth`` has been removed. This dependency is not used by any active downstream. See
+  `ODLPARENT-283 <https://jira.opendaylight.org/browse/ODLPARENT-283>`__ for more information.
+
+* Declaration of ``commons-codec`` has been removed. This dependency is not used by any active downstream. See
+  `ODLPARENT-285 <https://jira.opendaylight.org/browse/ODLPARENT-285>`__ for more information.
+
+* Declaration of ``commons-fileupload`` has been removed. This dependency is not used by any active downstream. See
+  `ODLPARENT-286 <https://jira.opendaylight.org/browse/ODLPARENT-286>`__ for more information.
+
+* Declaration of ``commons-net`` has been removed. This dependency is not used by any active downstream. See
+  `ODLPARENT-287 <https://jira.opendaylight.org/browse/ODLPARENT-287>`__ for more information.
+
+* Declaration of ``jsonassert`` has been removed. This dependency is not used by any active downstream. See
+  `ODLPARENT-288 <https://jira.opendaylight.org/browse/ODLPARENT-288>`__ for more information.
+
+* Declaration of ``jung`` has been removed. This dependency is not used by any active downstream. See
+  `ODLPARENT-290 <https://jira.opendaylight.org/browse/ODLPARENT-290>`__ for more information.
+
+* Declaration of ``spring-osgi-mock`` has been removed. This dependency is not used by any active downstream.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle `10.2 → 10.3 <https://checkstyle.org/releasenotes.html#Release_10.3>`__
+
+* Jersey 2.27 → 2.35, release notes:
+   * `2.28 <https://eclipse-ee4j.github.io/jersey.github.io/release-notes/2.28.html>`__
+   * `2.29 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.29>`__
+   * `2.29.1 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.29.1>`__
+   * `2.30 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.30>`__
+   * `2.30.1 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.30.1>`__
+   * `2.31 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.31>`__
+   * `2.32 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.32>`__
+   * `2.33 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.33>`__
+   * `2.34 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.34>`__
+   * `2.35 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.35>`__
+
+* Karaf `4.3.7 → 4.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12349243>`__
+
+* Mockito 4.5.1 → 4.6.1, release notes:
+  * `4.6.0 <https://github.com/mockito/mockito/releases/tag/v4.6.0>`__
+  * `4.6.1 <https://github.com/mockito/mockito/releases/tag/v4.6.1>`__
+
+* SpotBugs `4.6.0 → 4.7.0 <https://github.com/spotbugs/spotbugs/releases/tag/4.7.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* cyclonedx-maven-plugin 2.5.3 → 2.6.2
+
+* maven-javadoc-plugin 3.1.1 → 3.4.0, release notes:
+  * `3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12345698>`__
+  * `3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12346637>`__
+  * `3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12347807>`__
+  * `3.3.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12350586>`__
+  * `3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12330874>`__
+
+* maven-surefire-plugin 2.22.2 → 3.0.0-M6, release notes:
+  * `3.0.0-M1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12342871>`__
+  * `3.0.0-M2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12344396>`__
+  * `3.0.0-M3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12342872>`__
+  * `3.0.0-M4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12344668>`__
+  * `3.0.0-M5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12344612>`__
+  * `3.0.0-M6 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12344613>`__
+
+* project-info-reports-plugin `3.2.2 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12351604>`__
+
+* spotbugs-maven-plugin `4.6.0.0 → 4.7.0.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.0.0>`__
+
 Version 10.0.0
 --------------
 This is a major upgrade from version 9, with breaking changes; downstream projects may need to make changes to upgrade
