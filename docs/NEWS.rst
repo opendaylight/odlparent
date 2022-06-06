@@ -43,6 +43,8 @@ Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
 * Checkstyle `10.2 → 10.3 <https://checkstyle.org/releasenotes.html#Release_10.3>`__
 
+* Jackson `2.13.2 → 2.13.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13.3>`__
+
 * Jersey 2.27 → 2.35, release notes:
    * `2.28 <https://eclipse-ee4j.github.io/jersey.github.io/release-notes/2.28.html>`__
    * `2.29 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.29>`__
