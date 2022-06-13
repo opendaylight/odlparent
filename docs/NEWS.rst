@@ -46,16 +46,16 @@ Third-party dependencies
 * Jackson `2.13.2 → 2.13.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13.3>`__
 
 * Jersey 2.27 → 2.35, release notes:
-   * `2.28 <https://eclipse-ee4j.github.io/jersey.github.io/release-notes/2.28.html>`__
-   * `2.29 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.29>`__
-   * `2.29.1 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.29.1>`__
-   * `2.30 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.30>`__
-   * `2.30.1 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.30.1>`__
-   * `2.31 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.31>`__
-   * `2.32 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.32>`__
-   * `2.33 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.33>`__
-   * `2.34 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.34>`__
-   * `2.35 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.35>`__
+  * `2.28 <https://eclipse-ee4j.github.io/jersey.github.io/release-notes/2.28.html>`__
+  * `2.29 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.29>`__
+  * `2.29.1 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.29.1>`__
+  * `2.30 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.30>`__
+  * `2.30.1 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.30.1>`__
+  * `2.31 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.31>`__
+  * `2.32 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.32>`__
+  * `2.33 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.33>`__
+  * `2.34 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.34>`__
+  * `2.35 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.35>`__
 
 * Karaf `4.3.7 → 4.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12349243>`__
 
