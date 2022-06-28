@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-woodstox">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-woodstox">
     <feature version="0.0.0">
         <feature>odl-stax2-api</feature>
-        <bundle>mvn:com.fasterxml.woodstox/woodstox-core/6.2.8</bundle>
+        <feature>spifly</feature>
+        <bundle>mvn:com.fasterxml.woodstox/woodstox-core/6.3.0</bundle>
     </feature>
 </features>
