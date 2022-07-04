@@ -7,14 +7,13 @@
  */
 package org.opendaylight.odlparent.test.immutables.plain;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.isA;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class PlainInterfaceTest {
     @Test
     public void testBuilder() {
-        assertThat(ImmutablePlainInterface.builder().bar(1).build(), isA(PlainInterface.class));
+        assertInstanceOf(PlainInterface.class, ImmutablePlainInterface.builder().bar(1).build());
     }
 }

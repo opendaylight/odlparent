@@ -7,14 +7,13 @@
  */
 package org.opendaylight.odlparent.test.immutables.jpms;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.isA;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class JmpsInterfaceTest {
     @Test
     public void testBuilder() {
-        assertThat(ImmutableJpmsInterface.builder().foo(1).build(), isA(JpmsInterface.class));
+        assertInstanceOf(JpmsInterface.class, ImmutableJpmsInterface.builder().foo(1).build());
     }
 }
