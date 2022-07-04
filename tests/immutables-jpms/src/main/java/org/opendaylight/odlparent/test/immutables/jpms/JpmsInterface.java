@@ -9,8 +9,15 @@ package org.opendaylight.odlparent.test.immutables.jpms;
 
 import org.immutables.value.Value.Immutable;
 
+/**
+ * Test interface.
+ */
 @Immutable
 public interface JpmsInterface {
-
+    /**
+     * Get foo.
+     *
+     * @return An integer
+     */
     int getFoo();
 }

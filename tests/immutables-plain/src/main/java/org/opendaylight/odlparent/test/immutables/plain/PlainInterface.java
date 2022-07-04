@@ -9,8 +9,15 @@ package org.opendaylight.odlparent.test.immutables.plain;
 
 import org.immutables.value.Value.Immutable;
 
+/**
+ * Test interface.
+ */
 @Immutable
 public interface PlainInterface {
-
+    /**
+     * Get bar.
+     *
+     * @return An integer
+     */
     int getBar();
 }
