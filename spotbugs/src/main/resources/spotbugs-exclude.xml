@@ -44,12 +44,6 @@
       <Bug pattern="EI_EXPOSE_REP"/>
       <Bug pattern="EI_EXPOSE_REP2"/>
       <Bug pattern="MS_EXPOSE_REP"/>
-
-      <!-- https://github.com/spotbugs/spotbugs/issues/{2040,2043,2050} and others.
-           Let us not inflict this pain on downstreams just yet.  -->
-      <Bug pattern="THROWS_METHOD_THROWS_CLAUSE_BASIC_EXCEPTION"/>
-      <Bug pattern="THROWS_METHOD_THROWS_CLAUSE_THROWABLE"/>
-      <Bug pattern="THROWS_METHOD_THROWS_RUNTIMEEXCEPTION"/>
     </Or>
   </Match>
 </FindBugsFilter>
