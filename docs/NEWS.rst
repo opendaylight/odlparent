@@ -4,7 +4,7 @@ ODL Parent release notes
 
 Version 11.0.0
 --------------
-This is a major upgrade from version 9, with breaking changes; downstream projects may need to make changes to upgrade
+This is a major upgrade from version 10, with breaking changes; downstream projects may need to make changes to upgrade
 to this version.
 
 Improvements and new features
