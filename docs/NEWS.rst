@@ -2,6 +2,61 @@
 ODL Parent release notes
 ========================
 
+Version 11.0.1
+--------------
+This is a bug-fix upgrade from version 10.0.0.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* An alternative way of defining features has been introduced. This is hosted by the ``template-feature-parent``
+  and unlike ``single-feature-parent``, only performs replacement of versions in a provided template. See
+  `ODLPARENT-235 <https://jira.opendaylight.org/browse/ODLPARENT-235>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle `10.3 → 10.3.1 <https://checkstyle.org/releasenotes.html#Release_10.3.1>`__
+
+* Dropwizard Metrics `4.2.9 → 4.2.10 <https://github.com/dropwizard/metrics/releases/tag/v4.2.10>`__
+
+* Jersey `2.35 → 2.36 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.36>`__
+
+* Jetty 9.4.46.v20220331 → 9.4.48.v20220622, release notes:
+  * `9.4.47.v20220610 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.47.v20220610>`__
+  * `9.4.48.v20220622 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.48.v20220622>`__
+
+* JUnit `5.8.2 → 5.9.0 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.9.0>`__
+
+* Karaf `4.4.0 → 4.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12351548>`__
+
+* PAX-URL `2.6.10 → 2.6.11 <https://github.com/ops4j/org.ops4j.pax.url/milestone/76?closed=1>`__
+
+* SpotBugs `4.7.0 → 4.7.1 <https://github.com/spotbugs/spotbugs/releases/tag/4.7.1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin 6.2.0 → 6.3.1, release notes:
+  * `6.3.0 <https://github.com/bndtools/bnd/wiki/Changes-in-6.3.0>`__
+  * `6.3.1 <https://github.com/bndtools/bnd/wiki/Changes-in-6.3.1>`__
+
+* cyclonedx-maven-plugin 2.6.2 → 2.7.1
+
+* maven-antrun-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317121&version=12348085>`__
+
+* maven-assebly-plugin 3.3.0 → 3.4.2, release notes:
+  * `3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12348203>`__
+  * `3.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12352049>`__
+  * `3.4.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12352095>`__
+
+* maven-enforcer-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12341008>`__
+
+* maven-site-plugin `3.11.0 → 3.12.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12351142>`__
+
+* maven-surefire-plugin `3.0.0-M6 → 3.0.0-M7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12351502>`__
+
+* spotbugs-maven-plugin 4.7.0.0 → 4.7.1.1, release notes:
+  * `4.7.1.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.1.0>`__
+  * `4.7.1.1 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.1.1>`__
+
 Version 11.0.0
 --------------
 This is a major upgrade from version 10, with breaking changes; downstream projects may need to make changes to upgrade
