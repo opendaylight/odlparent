@@ -13,33 +13,55 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>single-feature-parent</artifactId>
+        <artifactId>template-feature-parent</artifactId>
         <version>11.0.2-SNAPSHOT</version>
-        <relativePath>../../single-feature-parent</relativePath>
+        <relativePath>../../template-feature-parent</relativePath>
     </parent>
 
-    <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-netty-4</artifactId>
-    <version>11.0.2-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Netty</name>
     <description>Netty 4.x</description>
 
-    <properties>
-        <checkDependencyChange>true</checkDependencyChange>
-        <failOnDependencyChange>true</failOnDependencyChange>
-    </properties>
-
     <dependencies>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-buffer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http</artifactId>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
+            <artifactId>netty-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
             <artifactId>netty-handler</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-resolver</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-classes-epoll</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-unix-common</artifactId>
+        </dependency>
+
         <!--
             Here we need to depend on all available native epoll implementations; we can't limit ourselves to the build
             platform and we can't require the build platform to have an implementation (e.g. OS X) -->
