@@ -6,6 +6,61 @@ Version 10.0.2
 --------------
 This is a bug-fix upgrade from version 10.0.1.
 
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle 10.2 → 10.3.2, release notes:
+  * `10.3 <https://checkstyle.org/releasenotes.html#Release_10.3>`__
+  * `10.3.1 <https://checkstyle.org/releasenotes.html#Release_10.3.1>`__
+  * `10.3.2 <https://checkstyle.org/releasenotes.html#Release_10.3.2>`__
+
+* Dropwizard Metrics 4.2.9 → 4.2.11, release notes:
+  * `4.2.10 <https://github.com/dropwizard/metrics/releases/tag/v4.2.10>`__
+  * `4.2.11 <https://github.com/dropwizard/metrics/releases/tag/v4.2.11>`__
+
+* GSON `2.9.0 → 2.9.1 <https://github.com/google/gson/releases/tag/gson-parent-2.9.1>`__
+
+* Jackson `2.13.2 → 2.13.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13.3>`__
+
+* JSONassert `1.5.0 → 1.5.1 <https://github.com/skyscreamer/JSONassert/blob/master/CHANGELOG.md#version-151---742022>`__
+
+* JUnit `5.8.2 → 5.9.0 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.9.0>`__
+
+* SpotBugs 4.6.0 → 4.7.1, release notes:
+  * `4.7.0 <https://github.com/spotbugs/spotbugs/releases/tag/4.7.0>`__
+  * `4.7.1 <https://github.com/spotbugs/spotbugs/releases/tag/4.7.1>`__
+
+* ThreeTen `1.7.0 → 1.7.1 <https://www.threeten.org/threeten-extra/changes-report.html#a1.7.1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin 6.2.0 → 6.3.1, release notes:
+  * `6.3.0 <https://github.com/bndtools/bnd/wiki/Changes-in-6.3.0>`__
+  * `6.3.1 <https://github.com/bndtools/bnd/wiki/Changes-in-6.3.1>`__
+
+* cyclonedx-maven-plugin 2.5.3 → 2.7.1
+
+* maven-antrun-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317121&version=12348085>`__
+
+* maven-assebly-plugin 3.3.0 → 3.4.2, release notes:
+  * `3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12348203>`__
+  * `3.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12352049>`__
+  * `3.4.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12352095>`__
+
+* maven-enforcer-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12341008>`__
+
+* maven-site-plugin `3.11.0 → 3.12.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12351142>`__
+
+* project-info-reports-plugin `3.2.2 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12351604>`__
+
+* spotbugs-maven-plugin 4.6.0.0 → 4.7.1.1, release notes:
+  * `4.7.0.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.0.0>`__
+  * `4.7.1.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.1.0>`__
+  * `4.7.1.1 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.1.1>`__
+
+Version 10.0.2
+--------------
+This is a bug-fix upgrade from version 10.0.1.
+
 Bug fixes
 ~~~~~~~~~
 * The upgrade of ``maven-bundle-plugin`` ends up exposing a `Karaf bug <https://issues.apache.org/jira/browse/KARAF-7431>`__.
