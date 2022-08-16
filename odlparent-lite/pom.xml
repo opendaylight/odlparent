@@ -415,7 +415,12 @@
         <artifactId>cyclonedx-maven-plugin</artifactId>
         <executions>
           <execution>
-            <phase>package</phase>
+            <!--
+              Run after 'package' but before 'verify' phases.
+
+              FIXME: We really want to say 'run as last package-phase execution.
+            -->
+            <phase>post-integration-test</phase>
             <goals>
               <goal>makeBom</goal>
             </goals>
