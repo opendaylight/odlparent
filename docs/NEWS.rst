@@ -4,7 +4,7 @@ ODL Parent release notes
 
 Version 11.0.1
 --------------
-This is a bug-fix upgrade from version 10.0.0.
+This is a bug-fix upgrade from version 11.0.0.
 
 Improvements and new features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
