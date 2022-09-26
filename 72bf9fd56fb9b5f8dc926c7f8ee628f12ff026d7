@@ -33,6 +33,24 @@
       "message": "We can bump slf4j-simple together with slf4j-api.",
       "revId": "72bf9fd56fb9b5f8dc926c7f8ee628f12ff026d7",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0239f5ca_de6e1e51",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1171,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2022-09-26T13:38:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a5a14b6f_417229f1",
+      "revId": "72bf9fd56fb9b5f8dc926c7f8ee628f12ff026d7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
