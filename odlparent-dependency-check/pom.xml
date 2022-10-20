@@ -96,10 +96,6 @@
             <artifactId>checkstyle</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.webcohesion.enunciate</groupId>
-            <artifactId>enunciate-core-annotations</artifactId>
-        </dependency>
-        <dependency>
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-bom</artifactId>
             <type>pom</type>
