@@ -82,15 +82,13 @@ final class BundleDiagInfosImpl implements BundleDiagInfos {
                 = new BundleSymbolicNameWithVersion(bundleSymbolicName, bundle.getVersion().toString());
 
             BundleInfo karafBundleInfo = bundleService.getInfo(bundle);
+            String diagText = bundleService.getDiag(bundle);
             BundleState karafBundleState = karafBundleInfo.getState();
             bundlesStateMap.put(bundleSymbolicNameWithVersion, karafBundleState);
 
             String bundleStateDiagText = "OSGi state = " + bundleStateToText(bundle.getState())
-                + ", Karaf bundleState = " + karafBundleState;
-            String diagText = bundleService.getDiag(bundle);
-            if (!diagText.isEmpty()) {
-                bundleStateDiagText += ", due to: " + diagText;
-            }
+                + ", Karaf bundleState = " + karafBundleState
+                + (diagText.isEmpty() ? "" : ", due to: " + diagText);
 
             if (WHITELISTED_BUNDLES.get(bundleSymbolicName) != null) {
                 if (WHITELISTED_BUNDLES.get(bundleSymbolicName).equals(karafBundleState)) {
