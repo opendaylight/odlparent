@@ -423,13 +423,6 @@
       </dependency>
 
       <dependency>
-        <groupId>com.webcohesion.enunciate</groupId>
-        <artifactId>enunciate-core-annotations</artifactId>
-        <!-- This must be aligned with the version of enunciate-maven-plugin specified below -->
-        <version>2.13.3</version>
-      </dependency>
-
-      <dependency>
         <groupId>org.javassist</groupId>
         <artifactId>javassist</artifactId>
         <version>3.29.2-GA</version>
@@ -1086,13 +1079,6 @@
               </goals>
             </execution>
           </executions>
-        </plugin>
-
-        <plugin>
-          <groupId>com.webcohesion.enunciate</groupId>
-          <artifactId>enunciate-maven-plugin</artifactId>
-          <!-- This must be aligned with the version of enunciate-core-annotations specified above -->
-          <version>2.13.3</version>
         </plugin>
 
         <plugin>
