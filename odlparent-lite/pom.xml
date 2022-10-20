@@ -609,29 +609,6 @@
     </profile>
 
     <profile>
-      <!-- On JDK9-and-later specify html4 javadoc, if requested-->
-      <id>jdk9-javadoc</id>
-      <activation>
-        <jdk>[9,)</jdk>
-        <file>
-          <exists>odl-javadoc-html5-optout</exists>
-        </file>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration combine.children="append">
-              <additionalOptions>
-                <additionalOption>-html4</additionalOption>
-              </additionalOptions>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
       <!-- Disable plugins which are not useful for sonar -->
       <id>sonar-only</id>
       <activation>
