@@ -107,7 +107,7 @@ final class BundleDiagInfosImpl implements BundleDiagInfos {
             // but we intentionally, got a little further than Karaf's "diag" command,
             // and instead of only checking some states, we check what's really Active,
             // but accept that some remain just Resolved:
-            if (karafBundleState != Active && !(karafBundleState == BundleState.Resolved)) {
+            if (karafBundleState != Active && karafBundleState != BundleState.Resolved) {
                 String msg = "NOK " + bundleSymbolicNameWithVersion + ": " + bundleStateDiagText;
                 nokBundleStateInfoTexts.add(msg);
             } else {
