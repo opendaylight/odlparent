@@ -123,22 +123,15 @@ final class BundleDiagInfosImpl implements BundleDiagInfos {
     }
 
     private static String bundleStateToText(int state) {
-        switch (state) {
-            case Bundle.INSTALLED:
-                return "Installed";
-            case Bundle.RESOLVED:
-                return "Resolved";
-            case Bundle.STARTING:
-                return "Starting";
-            case Bundle.ACTIVE:
-                return "Active";
-            case Bundle.STOPPING:
-                return "Stopping";
-            case Bundle.UNINSTALLED:
-                return "Uninstalled";
-            default:
-                return state + "???";
-        }
+        return switch (state) {
+            case Bundle.INSTALLED -> "Installed";
+            case Bundle.RESOLVED -> "Resolved";
+            case Bundle.STARTING -> "Starting";
+            case Bundle.ACTIVE -> "Active";
+            case Bundle.STOPPING -> "Stopping";
+            case Bundle.UNINSTALLED -> "Uninstalled";
+            default -> state + "???";
+        };
     }
 
     @Override
