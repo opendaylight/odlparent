@@ -2,6 +2,104 @@
 ODL Parent release notes
 ========================
 
+Version 12.0.0
+--------------
+This is a major upgrade from version 11, with breaking changes; downstream projects may need to make changes to upgrade
+to this version.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The following upstream dependencies have been removed from dependency/plugin management:
+
+* Declaration of ``Enunciate`` has been removed. This dependency is not used by any active downstream.
+
+* The opt-in for generating HTML4 Javadoc documentation has been removed.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Antlr 4.9.2 → 4.11.1, release notes:
+  * `4.10 <https://github.com/antlr/antlr4/releases/tag/4.10>`__
+  * `4.10.1 <https://github.com/antlr/antlr4/releases/tag/4.10.1>`__
+  * `4.11.0 <https://github.com/antlr/antlr4/releases/tag/4.11.0>`__
+  * `4.11.1 <https://github.com/antlr/antlr4/releases/tag/4.11.1>`__
+
+* Bouncy Castle `1.70 → 1.72 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Checkstyle 10.3.1 → 10.3.4, release notes:
+  * `10.3.2 <https://checkstyle.org/releasenotes.html#Release_10.3.2>`__
+  * `10.3.3 <https://checkstyle.org/releasenotes.html#Release_10.3.3>`__
+  * `10.3.4 <https://checkstyle.org/releasenotes.html#Release_10.3.4>`__
+
+* commons-text `1.9 → 1.10.0 <https://commons.apache.org/proper/commons-text/changes-report.html#a1.10.0>`__
+
+* Dropwizard Metrics 4.2.10 → 4.2.12, release notes:
+  * `4.2.11 <https://github.com/dropwizard/metrics/releases/tag/v4.2.11>`__
+  * `4.2.12 <https://github.com/dropwizard/metrics/releases/tag/v4.2.12>`__
+
+* immutables.org 2.8.8 → 2.9.2, release notes:
+  * `2.9.0 <https://github.com/immutables/immutables/milestone/76?closed=1>`__
+  * `2.9.1 <https://github.com/immutables/immutables/milestone/77?closed=1>`__
+  * `2.9.2 <https://github.com/immutables/immutables/milestone/78?closed=1>`__
+
+* Jackson `2.13.3 → 2.13.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13.4>`__
+
+* Javassist 3.28.0-GA → 3.29.2-GA
+
+* Jersey `2.36 → 2.37 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.37>`__
+
+* Jetty 9.4.46.v20220331 → 9.4.49.v20220914, release notes:
+  * `9.4.47.v20220610 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.47.v20220610>`__
+  * `9.4.48.v20220622 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.48.v20220622>`__
+  * `9.4.49.v20220914 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.49.v20220914>`__
+
+* JUnit `5.9.0 → 5.9.1 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.9.1>`__
+
+* Karaf `4.4.1 → 4.4.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12352048>`__
+
+* Mockito 4.6.1 → 4.8.1, release notes:
+  * `4.7.0 <https://github.com/mockito/mockito/releases/tag/v4.7.0>`__
+  * `4.8.0 <https://github.com/mockito/mockito/releases/tag/v4.8.0>`__
+  * `4.8.1 <https://github.com/mockito/mockito/releases/tag/v4.8.1>`__
+
+* Netty 4.1.76 → 4.1.84, release notes:
+  * `4.1.77 <https://netty.io/news/2022/05/06/2-1-77-Final.html>`__
+  * `4.1.78 <https://netty.io/news/2022/06/14/4-1-78-Final.html>`__
+  * `4.1.79 <https://netty.io/news/2022/07/11/4-1-79-Final.html>`__
+  * `4.1.80 <https://netty.io/news/2022/08/26/4-1-80-Final.html>`__
+  * `4.1.81 <https://netty.io/news/2022/09/08/4-1-81-Final.html>`__
+  * `4.1.82 <https://netty.io/news/2022/09/13/4-1-82-Final.html>`__
+  * `4.1.84 <https://netty.io/news/2022/10/11/4-1-84-Final.html>`__
+
+* SpotBugs 4.7.1 → 4.7.3, release notes:
+  * `4.7.2 <https://github.com/spotbugs/spotbugs/releases/tag/4.7.2>`__
+  * `4.7.3 <https://github.com/spotbugs/spotbugs/releases/tag/4.7.3>`__
+
+* ThreeTen `1.7.0 → 1.7.1 <https://www.threeten.org/threeten-extra/changes-report.html#a1.7.1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin 6.2.0 → 6.3.1, release notes:
+  * `6.3.0 <https://github.com/bndtools/bnd/wiki/Changes-in-6.3.0>`__
+  * `6.3.1 <https://github.com/bndtools/bnd/wiki/Changes-in-6.3.1>`__
+
+* maven-bundle-plugin 5.1.6 → 5.1.8, release notes:
+  * `5.1.7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12352061>`__
+  * `5.1.8 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12352145>`__
+
+* maven-checkstyle-plugin `3.1.2 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12345559>`__
+
+* maven-jar-plugin `3.2.2 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12351126>`__
+
+* maven-javadoc-plugin `3.4.0 → 3.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12352053>`__
+
+* maven-resources-plugin `3.2.0 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317827&version=12348676>`__
+
+* maven-site-plugin `3.12.0 → 3.12.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12351751>`__
+
+* project-info-reports-plugin 3.3.0 → 3.4.1, release notes:
+  * `3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12351758>`__
+  * `3.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12352097>`__
+
 Version 11.0.1
 --------------
 This is a bug-fix upgrade from version 11.0.0.
