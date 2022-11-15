@@ -255,6 +255,7 @@
                         <bundle>mvn:org.opendaylight.odlparent/bcprov-framework-ext/11.0.3-SNAPSHOT</bundle>
                         <bundle>mvn:org.opendaylight.odlparent/bcpkix-framework-ext/11.0.3-SNAPSHOT</bundle>
                         <bundle>mvn:org.opendaylight.odlparent/bcutil-framework-ext/11.0.3-SNAPSHOT</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/logging-markers/11.0.3-SNAPSHOT</bundle>
                     </startupBundles>
                     <startupFeatures>
                         <feature>static-framework</feature>
