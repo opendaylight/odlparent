@@ -279,6 +279,24 @@
                             </target>
                         </configuration>
                     </execution>
+                    <execution>
+                        <!-- FIXME: remove this once we have KARAF-7607 fixed -->
+                        <id>remove-sshd-2.9.1</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <delete dir="${project.build.directory}/assembly/system/org/apache/sshd/sshd-osgi/2.9.1"
+                                    includeemptydirs="true" failonerror="true"/>
+                                <delete dir="${project.build.directory}/assembly/system/org/apache/sshd/sshd-scp/2.9.1"
+                                    includeemptydirs="true" failonerror="true"/>
+                                <delete dir="${project.build.directory}/assembly/system/org/apache/sshd/sshd-sftp/2.9.1"
+                                    includeemptydirs="true" failonerror="true"/>
+                            </target>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

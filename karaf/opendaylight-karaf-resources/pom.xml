@@ -130,7 +130,20 @@
                        failonerror="true"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-remove-bc.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
-                       failonerror="true"/>
+                    failonerror="true"/>
+
+                <!-- Downgrade sshd to 2.8.0, see KARAF-7607 -->
+                <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
+                         token="2.9.1" value="2.8.0" failOnNoReplacements="true"/>
+                <replace file="${project.build.directory}/assembly/bin/client"
+                         token="2.9.1" value="2.8.0" failOnNoReplacements="true"/>
+                <replace file="${project.build.directory}/assembly/bin/client.bat"
+                         token="2.9.1" value="2.8.0" failOnNoReplacements="true"/>
+                <copy file="${project.build.directory}/assembly/bin/client"
+                      tofile="${project.build.directory}/classes/bin/client"/>
+                <copy file="${project.build.directory}/assembly/bin/client.bat"
+                      tofile="${project.build.directory}/classes/bin/client.bat"/>
+
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"
@@ -156,6 +169,11 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
                       tofile="${project.build.directory}/classes/etc/users.properties"/>
                 <fixcrlf srcdir="${project.build.directory}/classes/bin"
                          includes="*.bat" eol="crlf"/>
+                <!-- Downgrade sshd to 2.8.0, see KARAF-7607 -->
+                <copy file="${project.build.directory}/assembly/etc/startup.properties"
+                      tofile="${project.build.directory}/classes/etc/startup.properties"/>
+                <copy file="${project.build.directory}/assembly/etc/startup.properties"
+                      tofile="${project.build.directory}/classes/etc/startup.properties"/>
               </target>
             </configuration>
           </execution>
