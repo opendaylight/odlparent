@@ -2,6 +2,43 @@
 ODL Parent release notes
 ========================
 
+Version 11.0.3
+--------------
+This is a security bug-fix upgrade from version 11.0.2.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ``junit-jupiter-params`` is now a test dependency. This allows using JUnit 5 parameterized types without further
+  declarations.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle `10.3.4 → 10.4 <https://checkstyle.org/releasenotes.html#Release_10.4>`__
+
+* Dropwizard Metrics `4.2.12 → 4.2.13 <https://github.com/dropwizard/metrics/releases/tag/v4.2.13>`__
+
+* GSON `2.9.0 → 2.10.0 <https://github.com/google/gson/releases/tag/gson-parent-2.10.0>`__
+
+* Jackson `2.13.4 → 2.13.4.20221013 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.13#micro-patches>`__
+
+* Mockito `4.8.1 → 4.9.0 <https://github.com/mockito/mockito/releases/tag/v4.9.0>`__
+
+* Netty `4.1.84 → 4.1.85 <https://netty.io/news/2022/11/09/4-1-85-Final.html>`__
+
+* Sevntu `1.42.0 → 1.43.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.43.0>`__
+
+* Woodstox `6.3.1 → 6.4.0 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-6.4#640-24-oct-2022>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-shade-plugin 3.3.0 → 3.4.1, release notes:
+  * `3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921&version=12351491>`__
+  * `3.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921&version=12352285>`__
+
+* modernizer-maven-plugin `2.4.0 → 2.5.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.5.0>`__
+
+* spotbugs-maven-plugin `4.7.2.1 → 4.7.2.2 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.2.2>`__
+
 Version 11.0.2
 --------------
 This is a bug-fix upgrade from version 11.0.1.
