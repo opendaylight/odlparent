@@ -1000,7 +1000,7 @@
 
         <plugin>
           <artifactId>maven-plugin-plugin</artifactId>
-          <version>3.6.2</version>
+          <version>3.7.0</version>
         </plugin>
 
         <plugin>
