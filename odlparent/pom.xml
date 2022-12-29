@@ -850,7 +850,7 @@
             <dependency>
               <groupId>com.github.sevntu-checkstyle</groupId>
               <artifactId>sevntu-checks</artifactId>
-              <version>1.43.0</version>
+              <version>1.4.11</version>
             </dependency>
           </dependencies>
           <configuration>
