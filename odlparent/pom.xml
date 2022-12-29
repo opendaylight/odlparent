@@ -431,7 +431,7 @@
       <dependency>
         <groupId>org.jolokia</groupId>
         <artifactId>jolokia-osgi</artifactId>
-        <version>1.7.1</version>
+        <version>1.7.2</version>
       </dependency>
 
       <!-- OSGi Release 8 artifacts we support, augmenting Karaf's BOM -->
