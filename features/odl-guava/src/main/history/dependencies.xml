@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ns2:features xmlns:ns2="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-guava">
-    <ns2:feature version="0.0.0">
-        <ns2:bundle>mvn:com.google.guava/failureaccess/1.0.1</ns2:bundle>
-        <ns2:bundle>mvn:com.google.guava/guava/31.1-jre</ns2:bundle>
-        <ns2:bundle>mvn:org.checkerframework/checker-qual/3.12.0</ns2:bundle>
-    </ns2:feature>
-</ns2:features>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-guava">
+    <feature version="0.0.0">
+        <bundle>mvn:com.google.guava/failureaccess/1.0.1</bundle>
+        <bundle>mvn:com.google.guava/guava/31.1-jre</bundle>
+        <bundle>mvn:org.checkerframework/checker-qual/3.28.0</bundle>
+    </feature>
+</features>
