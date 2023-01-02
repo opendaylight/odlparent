@@ -25,8 +25,8 @@ Third-party dependencies
   * `4.11.0 <https://github.com/mockito/mockito/releases/tag/v4.11.0>`__
 
 * Netty 4.1.84 → 4.1.86, release notes:
-  * `4.1.85 <https://netty.io/news/2022/12/12/4-1-86-Final.html>`__
   * `4.1.85 <https://netty.io/news/2022/11/09/4-1-85-Final.html>`__
+  * `4.1.86 <https://netty.io/news/2022/12/12/4-1-86-Final.html>`__
 
 * Sevntu 1.43.0 → 1.44.1, release notes:
   * `1.44.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.44.0>`__
