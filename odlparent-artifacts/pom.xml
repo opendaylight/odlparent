@@ -94,6 +94,20 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>odl-apache-spifly</artifactId>
+                <version>${project.version}</version>
+                <classifier>features</classifier>
+                <type>xml</type>
+            </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>odl-asm</artifactId>
+                <version>${project.version}</version>
+                <classifier>features</classifier>
+                <type>xml</type>
+            </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-dropwizard-metrics</artifactId>
                 <version>${project.version}</version>
                 <classifier>features</classifier>
