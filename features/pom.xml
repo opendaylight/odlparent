@@ -39,6 +39,8 @@
         <module>odl-antlr4</module>
         <module>odl-apache-commons-lang3</module>
         <module>odl-apache-commons-text</module>
+        <module>odl-apache-spifly</module>
+        <module>odl-asm</module>
         <module>odl-dropwizard-metrics</module>
         <module>odl-gson</module>
         <module>odl-guava</module>
