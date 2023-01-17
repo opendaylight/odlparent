@@ -3,6 +3,6 @@
     <feature version="0.0.0">
         <feature>odl-apache-spifly</feature>
         <feature>odl-stax2-api</feature>
-        <bundle>mvn:com.fasterxml.woodstox/woodstox-core/6.4.0</bundle>
+        <bundle>mvn:com.fasterxml.woodstox/woodstox-core/6.5.0</bundle>
     </feature>
 </features>
