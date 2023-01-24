@@ -115,16 +115,6 @@
                        failonerror="true"/>
                 <copy file="${project.build.directory}/assembly/bin/karaf.bat"
                       tofile="${project.build.directory}/classes/bin/karaf.bat"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-setenv.patch"
-                       originalfile="${project.build.directory}/assembly/bin/setenv"
-                       failonerror="true"/>
-                <copy file="${project.build.directory}/assembly/bin/setenv"
-                      tofile="${project.build.directory}/classes/bin/setenv"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-setenv.bat.patch"
-                       originalfile="${project.build.directory}/assembly/bin/setenv.bat"
-                       failonerror="true"/>
-                <copy file="${project.build.directory}/assembly/bin/setenv.bat"
-                      tofile="${project.build.directory}/classes/bin/setenv.bat"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-quiesce.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
