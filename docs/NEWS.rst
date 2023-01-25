@@ -2,6 +2,101 @@
 ODL Parent release notes
 ========================
 
+Version 12.0.2
+--------------
+This is a security bug-fix upgrade from version 12.0.1.
+
+New features
+~~~~~~~~~~~~
+* Two new features, ``odl-asm`` and ``odl-apache-spifly`` have been added.
+  See `ODLPARENT-296 <https://jira.opendaylight.org/browse/ODLPARENT-296>`__
+  for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle 10.4 → 10.6.0
+  * `10.5.0 <https://checkstyle.org/releasenotes.html#Release_10.5.0>`__
+  * `10.6.0 <https://checkstyle.org/releasenotes.html#Release_10.6.0>`__
+
+* Dropwizard Metrics 4.2.13 → 4.2.15, release notes:
+  * `4.2.14 <https://github.com/dropwizard/metrics/releases/tag/v4.2.14>`__
+  * `4.2.15 <https://github.com/dropwizard/metrics/releases/tag/v4.2.15>`__
+
+* GSON `2.10.0 → 2.10.1 <https://github.com/google/gson/releases/tag/gson-parent-2.10.1>`__
+
+* immutables.org `2.9.2 → 2.9.3 <https://github.com/immutables/immutables/releases/tag/2.9.3>`__
+
+* Jackson 2.13.4 → 2.14.1, release notes:
+  * `2.14 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.14>`__
+  * `2.14.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.14.1>`__
+
+* Jetty `9.4.49.v20220914 → 9.4.50.v20221201 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.50.v20221201>`__
+
+* Jolokia 1.7.1 → 1.7.2
+
+* Jersey `2.37 → 2.38 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.38>`__
+
+* JUnit `5.9.1 → 5.9.2 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.9.2>`__
+
+* Karaf `4.4.2 → 4.4.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12352267>`__
+
+* Mockito 4.9.0 → 4.11.0, release notes:
+  * `4.10.0 <https://github.com/mockito/mockito/releases/tag/v4.10.0>`__
+  * `4.11.0 <https://github.com/mockito/mockito/releases/tag/v4.11.0>`__
+
+* Netty 4.1.84 → 4.1.86, release notes:
+  * `4.1.85 <https://netty.io/news/2022/11/09/4-1-85-Final.html>`__
+  * `4.1.86 <https://netty.io/news/2022/12/12/4-1-86-Final.html>`__
+
+* Sevntu 1.43.0 → 1.44.1, release notes:
+  * `1.44.0 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.44.0>`__
+  * `1.44.1 <https://sevntu-checkstyle.github.io/sevntu.checkstyle/#1.44.1>`__
+
+* ThreeTen `1.7.1 → 1.7.2 <https://www.threeten.org/threeten-extra/changes-report.html#a1.7.2>`__
+
+* xmlunit `2.9.0 → 2.9.1 <https://github.com/xmlunit/xmlunit/releases/tag/v2.9.1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin `6.3.1 → 6.4.0 <https://github.com/bndtools/bnd/wiki/Changes-in-6.4.0>`__
+
+* cyclonedx-maven-plugin 2.7.1 → 2.7.4, release notes:
+  * `2.7.4 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.4>`__
+
+* duplicate-finder-maven-plugin `1.5.0 → 1.5.1 <https://github.com/basepom/duplicate-finder-maven-plugin/releases/tag/duplicate-finder-maven-plugin-1.5.1>`__
+
+* exec-maven-plugin `3.0.0 → 3.1.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/exec-maven-plugin-3.1.0>`__
+
+* maven-archetype-plugin `3.2.0 → 3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122&version=12348615>`__
+
+* maven-dependency-plugin `3.3.0 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12351068>`__
+
+* maven-help-plugin `3.2.0 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12345417>`__
+
+* maven-invoker-plugin 3.2.2 → 3.4.0, release notes:
+  * `3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12349728>`__
+  * `3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12330828>`__
+
+* maven-plugin-plugin 3.6.2 → 3.7.0, release notes:
+  * `3.6.4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820&version=12351222>`__
+  * `3.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820&version=12344367>`__
+
+* maven-remote-resources-plugin `1.7.0 → 3.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12346864>`__
+
+* properties-maven-plugin 1.0.0 → 1.1.0
+
+* spotbugs-maven-plugin `4.7.2.2 → 4.7.3.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.0>`__
+
+* versions-maven-plugin 2.8.1 → 2.14.2, release notes:
+  * `2.9.0 <https://github.com/mojohaus/versions/releases/tag/versions-maven-plugin-2.9.0>`__
+  * `2.10.0 <https://github.com/mojohaus/versions/releases/tag/versions-maven-plugin-2.10.0>`__
+  * `2.11.0 <https://github.com/mojohaus/versions/releases/tag/versions-maven-plugin-2.11.0>`__
+  * `2.12.0 <https://github.com/mojohaus/versions/releases/tag/versions-maven-plugin-2.12.0>`__
+  * `2.13.0 <https://github.com/mojohaus/versions/releases/tag/2.13.0>`__
+  * `2.14.0 <https://github.com/mojohaus/versions/releases/tag/2.14.0>`__
+  * `2.14.1 <https://github.com/mojohaus/versions/releases/tag/2.14.1>`__
+  * `2.14.2 <https://github.com/mojohaus/versions/releases/tag/2.14.2>`__
+
 Version 12.0.1
 --------------
 This is a security bug-fix upgrade from version 12.0.0.
