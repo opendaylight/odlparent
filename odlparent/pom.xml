@@ -1210,7 +1210,7 @@
              We do not need to specify the groupId. -->
         <plugin>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.2.0</version>
+          <version>3.2.1</version>
           <dependencies>
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
@@ -1866,7 +1866,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.2.0</version>
+        <version>3.2.1</version>
       </plugin>
 
       <!-- FIXME: activate this
