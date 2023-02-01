@@ -134,6 +134,7 @@ mvn\:org.opendaylight.odlparent/bcprov-framework-ext/${project.version} = 14
 mvn\:org.opendaylight.odlparent/bcutil-framework-ext/${project.version} = 14
 mvn\:org.opendaylight.odlparent/bcpkix-framework-ext/${project.version} = 14
 mvn\:org.opendaylight.odlparent/logging-markers/${project.version} = 14
+# NOTE: this entry will be removed by https://jira.opendaylight.org/browse/ODLPARENT-297
 mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.0.0 = 14
                 </echo>
                 <copy file="${project.build.directory}/assembly/etc/startup.properties"
