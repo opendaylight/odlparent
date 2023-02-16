@@ -2,6 +2,55 @@
 ODL Parent release notes
 ========================
 
+Version 12.0.3
+--------------
+This is a bug-fix upgrade from version 12.0.2.
+
+Bug fixes
+~~~~~~~~~
+* The configuration of ``spotbugs-maven-plugin`` was incorrect in that it referenced
+  ``FindBugs`` settings. This issue is reported with ``maven-3.9.0`` and later and has
+  now been corrected. See `ODLPARENT-296 <https://jira.opendaylight.org/browse/ODLPARENT-299>`__
+  for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram `2.2.3 → 2.2.4 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.4>`__
+
+* Checkstyle `10.6.0 → 10.7.0 <https://checkstyle.org/releasenotes.html#Release_10.7.0>`__
+
+* Jackson `2.14.1 → 2.14.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.14.2>`__
+
+* Mockito 4.11.0 → 5.1.1, release notes:
+  * `5.0.0 <https://github.com/mockito/mockito/releases/tag/v5.0.0>`__
+  * `5.1.0 <https://github.com/mockito/mockito/releases/tag/v5.1.0>`__
+  * `5.1.1 <https://github.com/mockito/mockito/releases/tag/v5.1.1>`__
+
+* Netty 4.1.86 → 4.1.89, release notes:
+  * `4.1.87 <https://netty.io/news/2023/01/12/4-1-87-Final.html>`__
+  * `4.1.88 <https://netty.io/news/2023/02/12/4-1-88-Final.html>`__
+  * `4.1.89 <https://netty.io/news/2023/02/13/4-1-89-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* cyclonedx-maven-plugin `2.7.4 → 2.7.5 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.5>`__
+
+* echo-maven-plugin 1.3.2 → 2.0.1, release notes:
+  * `2.0.0 <https://github.com/Ekryd/echo-maven-plugin/releases/tag/echo-plugin-2.0.0>`__
+  * `2.0.1 <https://github.com/Ekryd/echo-maven-plugin/releases/tag/echo-plugin-2.0.1>`__
+
+* maven-checkstyle-plugin `3.2.0 → 3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12352729>`__
+
+* maven-dependency-plugin `3.4.0 → 3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12352602>`__
+
+* maven-enforcer-plugin `3.2.0 → 3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12352857>`__
+
+* maven-javadoc-plugin `3.4.1 → 3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12352256>`__
+
+* maven-plugin-plugin `3.7.0 → 3.7.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820&version=12352745>`__
+
+* maven-surefire-plugin `3.0.0-M7 → 3.0.0-M8 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12351809>`__
+
 Version 12.0.2
 --------------
 This is a security bug-fix upgrade from version 12.0.1.
