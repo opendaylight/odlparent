@@ -225,7 +225,6 @@
                         <link>http://hamcrest.org/JavaHamcrest/javadoc/2.2/</link>
                         <link>https://www.slf4j.org/apidocs/</link>
                         <link>https://google.github.io/guava/releases/31.1-jre/api/docs/</link>
-                        <link>https://commons.apache.org/proper/commons-lang/javadocs/api-2.6/</link>
                         <link>https://commons.apache.org/proper/commons-lang/javadocs/api-release/</link>
                     </links>
 

@@ -275,12 +275,6 @@
         <artifactId>commons-text</artifactId>
         <version>1.10.0</version>
       </dependency>
-      <dependency>
-        <groupId>commons-lang</groupId>
-        <artifactId>commons-lang</artifactId>
-        <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite and docs -->
-        <version>2.6</version>
-      </dependency>
 
       <!-- Jersey for JAXRS -->
       <dependency>
