@@ -110,6 +110,8 @@ Plugin upgrades
 * bnd-maven-plugin `6.3.1 → 6.4.0 <https://github.com/bndtools/bnd/wiki/Changes-in-6.4.0>`__
 
 * cyclonedx-maven-plugin 2.7.1 → 2.7.4, release notes:
+  * `2.7.2 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.2>`__
+  * `2.7.3 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.3>`__
   * `2.7.4 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.4>`__
 
 * duplicate-finder-maven-plugin `1.5.0 → 1.5.1 <https://github.com/basepom/duplicate-finder-maven-plugin/releases/tag/duplicate-finder-maven-plugin-1.5.1>`__
