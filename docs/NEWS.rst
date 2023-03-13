@@ -10,7 +10,7 @@ Bug fixes
 ~~~~~~~~~
 * The configuration of ``spotbugs-maven-plugin`` was incorrect in that it referenced
   ``FindBugs`` settings. This issue is reported with ``maven-3.9.0`` and later and has
-  now been corrected. See `ODLPARENT-296 <https://jira.opendaylight.org/browse/ODLPARENT-299>`__
+  now been corrected. See `ODLPARENT-299 <https://jira.opendaylight.org/browse/ODLPARENT-299>`__
   for details.
 
 Third-party dependencies
