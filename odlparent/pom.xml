@@ -1108,6 +1108,13 @@
               -->
               <exclusionPattern>com/google/common/collect/Iterables.*</exclusionPattern>
             </exclusionPatterns>
+            <exclusions>
+              <!--
+                   Disable Optional.get() warning, as it is a bit overly aggressive
+                   for a stability branch.
+              -->
+              <exclusion>java/util/Optional.get:()Ljava/lang/Object;</exclusion>
+            </exclusions>
           </configuration>
 
           <executions>
