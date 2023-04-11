@@ -29,6 +29,12 @@ Copyright (c) 2019 PANTHEON.tech, s.r.o. and others.  All rights reserved.
             <groupId>org.immutables</groupId>
             <artifactId>value</artifactId>
             <classifier>annotations</classifier>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-annotations</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 </project>

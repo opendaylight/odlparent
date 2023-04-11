@@ -98,6 +98,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>org.eclipse.jdt.annotation</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>opendaylight-karaf-empty</artifactId>
             <type>zip</type>
@@ -126,6 +131,7 @@
             <artifactId>guava</artifactId>
             <scope>compile</scope>
         </dependency>
+
         <!-- The following, which are just transitive dependencies of bundles4-test,
              have to be repeated here so that the Embed-Dependency below for maven-bundle-plugin works: -->
         <dependency>
