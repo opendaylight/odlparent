@@ -2,6 +2,107 @@
 ODL Parent release notes
 ========================
 
+Version 11.0.5
+--------------
+This is a security bug-fix upgrade from version 11.0.4.
+
+Bug fixes
+~~~~~~~~~
+* The configuration of ``spotbugs-maven-plugin`` was incorrect in that it referenced
+  ``FindBugs`` settings. This issue is reported with ``maven-3.9.0`` and later and has
+  now been corrected. See `ODLPARENT-299 <https://jira.opendaylight.org/browse/ODLPARENT-299>`__
+  for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram `2.2.3 → 2.2.4 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.4>`__
+
+* checker-qual 3.27.0 → 3.33.0
+
+* Checkstyle 10.5.0 → 10.9.3
+  * `10.6.0 <https://checkstyle.org/releasenotes.html#Release_10.6.0>`__
+  * `10.7.0 <https://checkstyle.org/releasenotes.html#Release_10.7.0>`__
+  * `10.8.0 <https://checkstyle.org/releasenotes.html#Release_10.8.0>`__
+  * `10.8.1 <https://checkstyle.org/releasenotes.html#Release_10.8.1>`__
+  * `10.9.0 <https://checkstyle.org/releasenotes.html#Release_10.9.0>`__
+  * `10.9.1 <https://checkstyle.org/releasenotes.html#Release_10.9.1>`__
+  * `10.9.2 <https://checkstyle.org/releasenotes.html#Release_10.9.2>`__
+  * `10.9.3 <https://checkstyle.org/releasenotes.html#Release_10.9.3>`__
+
+* Dropwizard Metrics 4.2.15 → 4.2.18, release notes:
+  * `4.2.16 <https://github.com/dropwizard/metrics/releases/tag/v4.2.16>`__
+  * `4.2.17 <https://github.com/dropwizard/metrics/releases/tag/v4.2.17>`__
+  * `4.2.18 <https://github.com/dropwizard/metrics/releases/tag/v4.2.18>`__
+
+* Enunciate `2.13.3 → 2.14.0 <https://github.com/stoicflame/enunciate/milestone/21?closed=1>`__
+
+* GSON `2.10.0 → 2.10.1 <https://github.com/google/gson/releases/tag/gson-parent-2.10.1>`__
+
+* Jackson 2.13.4 → 2.14.1, release notes:
+  * `2.14 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.14>`__
+  * `2.14.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.14.1>`__
+  * `2.14.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.14.2>`__
+
+* Jersey 2.38 → 2.39.1, release notes:
+  * `2.39 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.39>`__
+  * `2.39.1 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.39.1>`__
+
+* Jetty `9.4.49.v20220914 → 9.4.50.v20221201 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.50.v20221201>`__
+
+* JUnit `5.9.1 → 5.9.2 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.9.2>`__
+
+* Karaf `4.4.2 → 4.4.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12352267>`__
+
+* Mockito 4.11.0 → 5.2.0, release notes:
+  * `5.0.0 <https://github.com/mockito/mockito/releases/tag/v5.0.0>`__
+  * `5.1.0 <https://github.com/mockito/mockito/releases/tag/v5.1.0>`__
+  * `5.1.1 <https://github.com/mockito/mockito/releases/tag/v5.1.1>`__
+  * `5.2.0 <https://github.com/mockito/mockito/releases/tag/v5.2.0>`__
+
+* Netty 4.1.86 → 4.1.91, release notes:
+  * `4.1.87 <https://netty.io/news/2023/01/12/4-1-87-Final.html>`__
+  * `4.1.88 <https://netty.io/news/2023/02/12/4-1-88-Final.html>`__
+  * `4.1.89 <https://netty.io/news/2023/02/13/4-1-89-Final.html>`__
+  * `4.1.90 <https://netty.io/news/2023/03/14/4-1-90-Final.html>`__
+  * `4.1.91 <https://netty.io/news/2023/04/03/4-1-91-Final.html>`__
+
+* xmlunit `2.9.0 → 2.9.1 <https://github.com/xmlunit/xmlunit/releases/tag/v2.9.1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* cyclonedx-maven-plugin 2.7.3 → 2.7.5, release notes:
+  * `2.7.4 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.4>`__
+  * `2.7.5 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.5>`__
+
+* echo-maven-plugin 1.3.2 → 2.0.1, release notes:
+  * `2.0.0 <https://github.com/Ekryd/echo-maven-plugin/releases/tag/echo-plugin-2.0.0>`__
+  * `2.0.1 <https://github.com/Ekryd/echo-maven-plugin/releases/tag/echo-plugin-2.0.1>`__
+
+* maven-checkstyle-plugin `3.2.0 → 3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12352729>`__
+
+* maven-compiler-plugin `3.10.1 → 3.11.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12351444>`__
+
+* maven-dependency-plugin `3.4.0 → 3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12352602>`__
+
+* maven-enforcer-plugin `3.1.0 → 3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12352857>`__
+
+* maven-javadoc-plugin `3.4.1 → 3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12352256>`__
+
+* maven-plugin-plugin `3.7.0 → 3.7.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820&version=12352745>`__
+
+* maven-surefire-plugin 3.0.0-M7 → 3.0.0, release notes:
+  * `3.0.0-M8 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12351809>`__
+  * `3.0.0-M9 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12352730>`__
+  * `3.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12352998>`__
+
+* modernizer-maven-plugin `2.5.0 → 2.6.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.6.0>`__
+
+* spotbugs-maven-plugin 4.7.3.0 → 4.7.3.4, release notes:
+  * `4.7.3.1 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.1>`__
+  * `4.7.3.2 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.2>`__
+  * `4.7.3.3 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.3>`__
+  * `4.7.3.4 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.4>`__
+
 Version 11.0.4
 --------------
 This is a security bug-fix upgrade from version 11.0.3.
