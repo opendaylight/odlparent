@@ -2,6 +2,59 @@
 ODL Parent release notes
 ========================
 
+Version 12.0.4
+--------------
+This is a bug-fix upgrade from version 12.0.4.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Antlr `4.11.1 → 4.12.0 <https://github.com/antlr/antlr4/releases/tag/4.12.0>`__
+
+* checker-qual 3.30.0 → 3.33.0
+
+* Checkstyle 10.7.0 → 10.9.3, release notes:
+  * `10.8.0 <https://checkstyle.org/releasenotes.html#Release_10.8.0>`__
+  * `10.8.1 <https://checkstyle.org/releasenotes.html#Release_10.8.1>`__
+  * `10.9.0 <https://checkstyle.org/releasenotes.html#Release_10.9.0>`__
+  * `10.9.1 <https://checkstyle.org/releasenotes.html#Release_10.9.1>`__
+  * `10.9.2 <https://checkstyle.org/releasenotes.html#Release_10.9.2>`__
+  * `10.9.3 <https://checkstyle.org/releasenotes.html#Release_10.9.3>`__
+
+* Dropwizard Metrics 4.2.15 → 4.2.18, release notes:
+  * `4.2.16 <https://github.com/dropwizard/metrics/releases/tag/v4.2.16>`__
+  * `4.2.17 <https://github.com/dropwizard/metrics/releases/tag/v4.2.17>`__
+  * `4.2.18 <https://github.com/dropwizard/metrics/releases/tag/v4.2.18>`__
+
+* Jersey 2.38 → 2.39.1, release notes:
+  * `2.39 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.39>`__
+  * `2.39.1 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.39.1>`__
+
+* Mockito `5.1.1 → 5.2.0 <https://github.com/mockito/mockito/releases/tag/v5.2.0>`__
+
+* Netty 4.1.89 → 4.1.91, release notes:
+  * `4.1.90 <https://netty.io/news/2023/03/14/4-1-90-Final.html>`__
+  * `4.1.91 <https://netty.io/news/2023/04/03/4-1-91-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* cyclonedx-maven-plugin `2.7.5 → 2.7.6 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.6>`__
+
+* maven-compiler-plugin `3.10.1 → 3.11.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12351444>`__
+
+* maven-enforcer-plugin `3.2.1 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12352877>`__
+
+* maven-surefire-plugin 3.0.0-M8 → 3.0.0, release notes:
+  * `3.0.0-M9 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12352730>`__
+  * `3.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12352998>`__
+
+* modernizer-maven-plugin `2.5.0 → 2.6.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.6.0>`__
+
+* spotbugs-maven-plugin 4.7.3.0 → 4.7.3.4, release notes:
+  * `4.7.3.1 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.1>`__
+  * `4.7.3.2 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.2>`__
+  * `4.7.3.3 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.3>`__
+  * `4.7.3.4 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.4>`__
+
 Version 12.0.3
 --------------
 This is a bug-fix upgrade from version 12.0.2.
