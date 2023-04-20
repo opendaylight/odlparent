@@ -2,6 +2,25 @@
 ODL Parent release notes
 ========================
 
+Version 12.0.5
+--------------
+This is a bug-fix upgrade from version 12.0.4.
+
+Bug fixes
+~~~~~~~~~
+* cyclonedx-maven-plugin has been rolled back to version ``2.7.5`` because newer
+  versions execute incredibly slowly on large dependency graphs.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.72 → 1.73 <https://www.bouncycastle.org/releasenotes.html>`__
+
+* Mockito `5.2.0 → 5.3.0 <https://github.com/mockito/mockito/releases/tag/v5.2.0>`__
+
+* TrieMap 1.2.0 → 1.3.0
+  * `1.2.1 <https://github.com/PANTHEONtech/triemap/releases/tag/triemap-1.2.0>`__
+  * `1.3.0 <https://github.com/PANTHEONtech/triemap/releases/tag/triemap-1.3.0>`__
+
 Version 12.0.4
 --------------
 This is a bug-fix upgrade from version 12.0.4.
