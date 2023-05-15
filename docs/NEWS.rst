@@ -43,7 +43,17 @@ Plugin upgrades
 
 * maven-help-plugin `3.3.0 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12352206>`__
 
+* maven-invoker-plugin 3.4.0 → 3.5.1, release notes:
+  * `3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12352645>`__
+  * `3.5.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12352974>`__
+
+* maven-plugin-plugin 3.7.1 → 3.8.2, release notes:
+  * `3.8.1 <https://issues.apache.org/jira/projects/MPLUGIN/versions/12352545>`__
+  * `3.8.2 <https://issues.apache.org/jira/projects/MPLUGIN/versions/12352508>`__
+
 * maven-resources-plugin `3.3.0 → 3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317827&version=12352140>`__
+
+* maven-surefire-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12351273>`__
 
 Version 12.0.5
 --------------
