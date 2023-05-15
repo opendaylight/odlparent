@@ -2,6 +2,49 @@
 ODL Parent release notes
 ========================
 
+Version 12.0.6
+--------------
+This is a bug-fix upgrade from version 12.0.5.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checker-qual 3.33.0 → 3.34.0
+
+* Checkstyle 10.9.3 → 10.11.0, release notes:
+  * `10.10.0 <https://checkstyle.org/releasenotes.html#Release_10.10.0>`__
+  * `10.11.0 <https://checkstyle.org/releasenotes.html#Release_10.11.0>`__
+
+* Jackson `2.14.2 → 2.14.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.14.3>`__
+
+* JUnit `5.9.2 → 5.9.3 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.9.3>`__
+
+* Mockito `5.3.0 → 5.3.1 <https://github.com/mockito/mockito/releases/tag/v5.3.1>`__
+
+* Netty `4.1.91 → 4.1.92 <https://netty.io/news/2023/04/25/4-1-92-Final.html>`__
+
+* TrieMap `1.3.0 → 1.3.1 <https://github.com/PANTHEONtech/triemap/releases/tag/triemap-1.3.1>`__
+
+* Woodstox 6.4.0 → 6.5.1, release notes:
+  * `6.5.0 <https://github.com/FasterXML/woodstox/wiki/Woodstox-Release-6.5#650-14-jan-2023>`__
+  * `6.5.1 <https://github.com/FasterXML/woodstox/issues/170>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* builder-helper-maven-plugin `3.3.0 → 3.4.0 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/build-helper-maven-plugin-3.4.0>`__
+
+* cyclonedx-maven-plugin 2.7.5 → 2.7.8, release notes:
+  * `2.7.6 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.6>`__
+  * `2.7.7 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.7>`__
+  * `2.7.8 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.8>`__
+
+* maven-assembly-plugin 3.4.2 → 3.6.0, release notes:
+  * `3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12352065>`__
+  * `3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12352952>`__
+
+* maven-help-plugin `3.3.0 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12352206>`__
+
+* maven-resources-plugin `3.3.0 → 3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317827&version=12352140>`__
+
 Version 12.0.5
 --------------
 This is a bug-fix upgrade from version 12.0.4.
