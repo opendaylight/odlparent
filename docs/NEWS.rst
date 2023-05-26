@@ -8,11 +8,15 @@ This is a bug-fix upgrade from version 12.0.5.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram `2.2.4 → 2.2.8 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.8>`__
+
 * checker-qual 3.33.0 → 3.34.0
 
 * Checkstyle 10.9.3 → 10.11.0, release notes:
   * `10.10.0 <https://checkstyle.org/releasenotes.html#Release_10.10.0>`__
   * `10.11.0 <https://checkstyle.org/releasenotes.html#Release_10.11.0>`__
+
+* commons-io `2.11.0 → 2.12.0, <https://commons.apache.org/proper/commons-io/changes-report.html#a2.12.0>`__
 
 * Jackson `2.14.2 → 2.14.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.14.3>`__
 
@@ -20,7 +24,9 @@ Third-party dependencies
 
 * Mockito `5.3.0 → 5.3.1 <https://github.com/mockito/mockito/releases/tag/v5.3.1>`__
 
-* Netty `4.1.91 → 4.1.92 <https://netty.io/news/2023/04/25/4-1-92-Final.html>`__
+* Netty 4.1.91 → 4.1.93, release notes:
+  * `4.1.92 <https://netty.io/news/2023/04/25/4-1-92-Final.html>`__
+  * `4.1.93 <https://netty.io/news/2023/05/25/4-1-93-Final.html>`__
 
 * TrieMap `1.3.0 → 1.3.1 <https://github.com/PANTHEONtech/triemap/releases/tag/triemap-1.3.1>`__
 
@@ -30,6 +36,8 @@ Third-party dependencies
 
 Plugin upgrades
 ~~~~~~~~~~~~~~~
+* asciidoctor-maven-plugin `2.2.2 → 2.2.3 <https://github.com/asciidoctor/asciidoctor-maven-plugin/releases/tag/asciidoctor-maven-plugin-2.2.3>`__
+
 * builder-helper-maven-plugin `3.3.0 → 3.4.0 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/build-helper-maven-plugin-3.4.0>`__
 
 * cyclonedx-maven-plugin 2.7.5 → 2.7.9, release notes:
@@ -38,9 +46,21 @@ Plugin upgrades
   * `2.7.8 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.8>`__
   * `2.7.9 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.9>`__
 
+* git-commit-id-maven-plugin `5.0.0 → 6.0.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v6.0.0>`__
+
+* Jacoco Maven plugin 0.8.8 → 0.8.10, release notes:
+  * `0.8.9 <https://github.com/jacoco/jacoco/releases/tag/v0.8.9>`__
+  * `0.8.10 <https://github.com/jacoco/jacoco/releases/tag/v0.8.10>`__
+
 * maven-assembly-plugin 3.4.2 → 3.6.0, release notes:
   * `3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12352065>`__
   * `3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12352952>`__
+
+* maven-checkstyle-plugin 3.2.1 → 3.3.0, release notes:
+  * `3.2.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12352856>`__
+  * `3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12353164>`__
+
+* maven-dependency-plugin `3.5.0 → 3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12352921>`__
 
 * maven-help-plugin `3.3.0 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12352206>`__
 
@@ -52,9 +72,17 @@ Plugin upgrades
   * `3.8.1 <https://issues.apache.org/jira/projects/MPLUGIN/versions/12352545>`__
   * `3.8.2 <https://issues.apache.org/jira/projects/MPLUGIN/versions/12352508>`__
 
+* maven-project-info-reports-plugin 3.4.1 → 3.4.3, release notes:
+  * `3.4.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12352728>`__
+  * `3.4.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12352922>`__
+
 * maven-resources-plugin `3.3.0 → 3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317827&version=12352140>`__
 
+* maven-source-plugin `3.2.1 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924&version=12346658>`__
+
 * maven-surefire-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12351273>`__
+
+* versions-maven-plugin `2.14.2 → 2.15.0 <https://github.com/mojohaus/versions/releases/tag/2.15.0>`__
 
 Version 12.0.5
 --------------
