@@ -14,12 +14,12 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>11.0.6-SNAPSHOT</version>
+        <version>11.0.6</version>
         <relativePath>../../odlparent</relativePath>
     </parent>
 
     <artifactId>karaf-dist-static</artifactId>
-    <version>11.0.6-SNAPSHOT</version>
+    <version>11.0.6</version>
     <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
     <description>
@@ -150,9 +150,9 @@
                                 <artifactItem>
                                     <groupId>org.opendaylight.odlparent</groupId>
                                     <artifactId>karaf.branding</artifactId>
-                                    <version>11.0.6-SNAPSHOT</version>
+                                    <version>11.0.6</version>
                                     <outputDirectory>target/assembly/lib</outputDirectory>
-                                    <destFileName>karaf.branding-11.0.6-SNAPSHOT.jar</destFileName>
+                                    <destFileName>karaf.branding-11.0.6.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
                             <silent>true</silent>
@@ -252,10 +252,10 @@
                         <bundle>mvn:org.apache.sling/org.apache.sling.commons.johnzon/1.2.14</bundle>
                         <bundle>mvn:org.ops4j.pax.url/pax-url-aether/2.6.12</bundle>
 
-                        <bundle>mvn:org.opendaylight.odlparent/bcprov-framework-ext/11.0.6-SNAPSHOT</bundle>
-                        <bundle>mvn:org.opendaylight.odlparent/bcpkix-framework-ext/11.0.6-SNAPSHOT</bundle>
-                        <bundle>mvn:org.opendaylight.odlparent/bcutil-framework-ext/11.0.6-SNAPSHOT</bundle>
-                        <bundle>mvn:org.opendaylight.odlparent/logging-markers/11.0.6-SNAPSHOT</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/bcprov-framework-ext/11.0.6</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/bcpkix-framework-ext/11.0.6</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/bcutil-framework-ext/11.0.6</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/logging-markers/11.0.6</bundle>
                     </startupBundles>
                     <startupFeatures>
                         <feature>static-framework</feature>

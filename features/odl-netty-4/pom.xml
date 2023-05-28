@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>11.0.6-SNAPSHOT</version>
+        <version>11.0.6</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-netty-4</artifactId>
-    <version>11.0.6-SNAPSHOT</version>
+    <version>11.0.6</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Netty</name>
