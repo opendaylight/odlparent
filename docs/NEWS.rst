@@ -2,6 +2,45 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.0
+--------------
+This is a major upgrade from version 12, with breaking changes; downstream projects may need to make changes to upgrade
+to this version.
+
+Bug fixes
+~~~~~~~~~
+* Declaration of annotation artifacts for ``spotbugs-annotations``, ``org.eclipse.jdt.annotation`` and
+  ``modernizer-maven-annotations`` are no longer by default as ``<scope>provided</scope>``. This means that users
+  of these annotations need to explicitly depend on them. Note that ``spotbugs-annotations`` are not provided
+  at runtime and therefore should be used with ``<optional>true</optional>``.
+  See `ODLPARENT-300 <https://jira.opendaylight.org/browse/ODLPARENT-300>`__ for details.
+
+* Default configuration now includes test-scoped dependency to ``jassert-core``. Users are encouraged to migrate
+  assertions from Hamcrest to AssertJ. See `ODLPARENT-295 <https://jira.opendaylight.org/browse/ODLPARENT-295>`__ for details.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The following upstream dependencies have been removed from dependency/plugin management:
+
+* Declaration of ``commons-lang`` has been removed. This dependency is not used by any active downstream and ``commons-lang3``
+  already provides better or equivalent replacements.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle `10.11.0 → 10.12.0 <https://checkstyle.org/releasenotes.html#Release_10.12.0>`__
+
+* Guava `31.1 → 32.0.0 <https://github.com/google/guava/releases/tag/v32.0.0>`__
+
+* Jackson 2.14.3 → 2.15.1, release notes:
+  * `2.15 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.15>`__
+  * `2.15.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.15.1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* asciidoctor-maven-plugin `2.2.3 → 2.2.4 <https://github.com/asciidoctor/asciidoctor-maven-plugin/releases/tag/asciidoctor-maven-plugin-2.2.4>`__
+
+* maven-bundle-plugin `5.1.8 → 5.1.9 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12353241>``__
+
 Version 12.0.6
 --------------
 This is a bug-fix upgrade from version 12.0.5.
