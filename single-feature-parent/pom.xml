@@ -125,6 +125,12 @@
                         <excludedArtifactId>j2objc-annotations</excludedArtifactId>
                         <excludedArtifactId>listenablefuture</excludedArtifactId>
 
+                        <!-- Eclipse JDK annotations -->
+                        <excludedArtifactId>org.eclipse.jdt.annotation</excludedArtifactId>
+
+                        <!-- Immutables.org annotations -->
+                        <excludedArtifactId>value</excludedArtifactId>
+
                         <!-- Our slf4j logging markers -->
                         <excludedArtifactId>logging-markers</excludedArtifactId>
                     </excludedArtifactIds>
