@@ -2,6 +2,15 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.1
+--------------
+This is a bug-fix upgrade from version 13.0.0.
+
+Bug fixes
+~~~~~~~~~
+* Generated features included ``org.eclipse.jdt.annotation`` and ``value`` annotation JARs. This has been corrected by
+  excluding from generation See `ODLPARENT-302 <https://jira.opendaylight.org/browse/ODLPARENT-302>`__ for details.
+
 Version 13.0.0
 --------------
 This is a major upgrade from version 12, with breaking changes; downstream projects may need to make changes to upgrade
