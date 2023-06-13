@@ -188,6 +188,20 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>test-only-plugin</artifactId>
+                <version>${project.version}</version>
+                <executions>
+                    <execution>
+                        <id>populate-test-features</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>populate-test-features</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
