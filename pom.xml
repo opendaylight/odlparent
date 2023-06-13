@@ -41,6 +41,7 @@
         <module>bundles-test-lib</module>
         <module>bundles4-test</module>
         <module>features-test</module>
+        <module>test-only-plugin</module>
 
         <!-- Karaf integration -->
         <module>karaf</module>
