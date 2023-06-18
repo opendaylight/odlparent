@@ -1025,7 +1025,7 @@
         <plugin>
           <groupId>org.basepom.maven</groupId>
           <artifactId>duplicate-finder-maven-plugin</artifactId>
-          <version>1.5.1</version>
+          <version>2.0.1</version>
         </plugin>
 
         <plugin>
@@ -1391,7 +1391,6 @@
             <failBuildInCaseOfDifferentContentConflict>true</failBuildInCaseOfDifferentContentConflict>
             <failBuildInCaseOfEqualContentConflict>false</failBuildInCaseOfEqualContentConflict>
             <printEqualFiles>false</printEqualFiles>
-            <quiet>true</quiet>
             <!-- In addition to https://github.com/basepom/duplicate-finder-maven-plugin/wiki/Default%20ignored%20elements,
                  as explained on https://github.com/basepom/duplicate-finder-maven-plugin/wiki/Ignoring%20Dependencies%20and%20Resources,
                  we use resources not dependencies (see https://github.com/basepom/duplicate-finder-maven-plugin/wiki/Classpath%20Exceptions)
