@@ -2,7 +2,7 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-guava">
     <feature version="0.0.0">
         <bundle>mvn:com.google.guava/failureaccess/1.0.1</bundle>
-        <bundle>mvn:com.google.guava/guava/32.0.0-jre</bundle>
+        <bundle>mvn:com.google.guava/guava/32.0.1-jre</bundle>
         <bundle>mvn:org.checkerframework/checker-qual/3.34.0</bundle>
     </feature>
 </features>
