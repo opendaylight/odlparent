@@ -95,7 +95,7 @@ Bug fixes
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
-* Bouncy Castle `1.72 → 1.73 <https://www.bouncycastle.org/releasenotes.html>`__
+* Bouncy Castle `1.72 → 1.73 <https://www.bouncycastle.org/releasenotes.html#r1rv73>`__
 
 * Mockito `5.2.0 → 5.3.0 <https://github.com/mockito/mockito/releases/tag/v5.3.0>`__
 
@@ -360,7 +360,9 @@ Third-party dependencies
   * `4.11.0 <https://github.com/antlr/antlr4/releases/tag/4.11.0>`__
   * `4.11.1 <https://github.com/antlr/antlr4/releases/tag/4.11.1>`__
 
-* Bouncy Castle `1.70 → 1.72 <https://www.bouncycastle.org/releasenotes.html>`__
+* Bouncy Castle 1.70 → 1.72, release notes:
+  * `1.71 <https://www.bouncycastle.org/releasenotes.html#r1rv71>`__
+  * `1.72 <https://www.bouncycastle.org/releasenotes.html#r1rv72>`__
 
 * Checkstyle 10.3.1 → 10.3.4, release notes:
   * `10.3.2 <https://checkstyle.org/releasenotes.html#Release_10.3.2>`__
@@ -651,7 +653,7 @@ Improvements and new features
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
-* Bouncy Castle `1.69 → 1.70 <https://www.bouncycastle.org/releasenotes.html>`__
+* Bouncy Castle `1.69 → 1.70 <https://www.bouncycastle.org/releasenotes.html#r1rv70>`__
 
 * Checkstyle 8.45.1 → 9.2.1, release notes:
   * `9.0 <https://checkstyle.org/releasenotes.html#Release_9.0>`__
