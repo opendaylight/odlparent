@@ -2,9 +2,74 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.2
+--------------
+This is a bug-fix upgrade from version 13.0.1.
+
 Version 13.0.1
 --------------
 This is a bug-fix upgrade from version 13.0.0.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Antlr `4.12.0 → 4.13.0 <https://github.com/antlr/antlr4/releases/tag/4.13.0>`__
+
+* Bouncy Castle 1.73 → 1.75, release notes:
+  * `1.74 <https://www.bouncycastle.org/releasenotes.html#r1rv74>`__
+  * `1.75 <https://www.bouncycastle.org/releasenotes.html#r1rv75>`__
+
+* checker-qual 3.34.0 → 3.35.0
+
+* commons-io `2.12.0 → 2.13.0, <https://commons.apache.org/proper/commons-io/changes-report.html#a2.13.0>`__
+
+* Dropwizard Metrics `4.2.18 → 4.2.19 <https://github.com/dropwizard/metrics/releases/tag/v4.2.19>`__
+
+* Guava `32.0.0 → 32.0.1 <https://github.com/google/guava/releases/tag/v32.0.1>`__
+
+* Jackson `2.15.1 → 2.15.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.15.2>`__
+
+* Jersey `2.39.1 → 2.40 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.40>`__
+
+* javax.inject 1.0.20.0 → 1.2.2.1
+
+* Mockito `5.3.1 → 5.4.0 <https://github.com/mockito/mockito/releases/tag/v5.4.0>`__
+
+* Netty `4.1.93 → 4.1.94 <https://netty.io/news/2023/06/19/4-1-94-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram `2.2.8 → 2.2.9 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.9>`__
+
+* duplicate-finder-maven-plugin 1.5.1 → 2.0.1, release notes:
+  * `2.0.0 <https://github.com/basepom/duplicate-finder-maven-plugin/blob/main/CHANGES.md#200---2023-05-21>`__
+  * `2.0.1 <https://github.com/basepom/duplicate-finder-maven-plugin/blob/main/CHANGES.md#201---2023-05-28>`__
+
+* echo-maven-plugin `2.0.1 → 2.1.0 <https://github.com/Ekryd/echo-maven-plugin/releases/tag/echo-plugin-2.1.0>`__
+
+* maven-clean-plugin `3.2.0 → 3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317224&version=12351541>`__
+
+* maven-invoker-plugin `3.5.1 → 3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12353076>`__
+
+* maven-project-info-reports-plugin 3.4.3 → 3.4.5, release notes:
+  * `3.4.4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12353222>`__
+  * `3.4.5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12353297>`__
+
+* maven-release-plugin 2.5.3 → 3.0.1, release notes:
+  * `3.0.0-M1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12331214>`__
+  * `3.0.0-M4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12348079>`__
+  * `3.0.0-M5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12346565>`__
+  * `3.0.0-M6 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12351336>`__
+  * `3.0.0-M7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12351828>`__
+  * `3.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12352981>`__
+  * `3.0.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12353136>`__
+
+* maven-shade-plugin `3.4.1 → 3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921&version=12352951>`__
+
+* maven-surefire-plugin `3.1.0 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12353294>`__
+
+* spotbugs-maven-plugin `4.7.3.4 → 4.7.3.5 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.5>`__
+
+* versions-maven-plugin `2.15.0 → 2.16.0 <https://github.com/mojohaus/versions/releases/tag/2.16.0>`__
 
 Bug fixes
 ~~~~~~~~~
