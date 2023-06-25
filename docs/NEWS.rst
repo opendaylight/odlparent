@@ -2,13 +2,17 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.3
+--------------
+
+Bug fixes
+~~~~~~~~~
+* The upgrade of ``javax.inject`` to ``1.2.2.1`` is a silent switch to Jakarta EE and has been rolled back
+  to version ``1.0.20.2``.
+
 Version 13.0.2
 --------------
 This is a bug-fix upgrade from version 13.0.1.
-
-Version 13.0.1
---------------
-This is a bug-fix upgrade from version 13.0.0.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,6 +74,10 @@ Plugin upgrades
 * spotbugs-maven-plugin `4.7.3.4 → 4.7.3.5 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.5>`__
 
 * versions-maven-plugin `2.15.0 → 2.16.0 <https://github.com/mojohaus/versions/releases/tag/2.16.0>`__
+
+Version 13.0.1
+--------------
+This is a bug-fix upgrade from version 13.0.0.
 
 Bug fixes
 ~~~~~~~~~
