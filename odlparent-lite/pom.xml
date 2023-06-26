@@ -597,7 +597,7 @@
                 <link>http://hamcrest.org/JavaHamcrest/javadoc/2.2/</link>
                 <link>http://www.slf4j.org/apidocs/</link>
                 <link>https://xerces.apache.org/xerces2-j/javadocs/api/</link>
-                <link>https://google.github.io/guava/releases/31.1-jre/api/docs/</link>
+                <link>https://guava.dev/releases/32.0.1-jre/api/docs/</link>
                 <link>http://netty.io/4.1/api/</link>
                 <link>https://commons.apache.org/proper/commons-lang/javadocs/api-release/</link>
               </links>
