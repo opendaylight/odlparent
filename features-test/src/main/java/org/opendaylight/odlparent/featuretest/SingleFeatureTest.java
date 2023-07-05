@@ -14,6 +14,7 @@ import static org.junit.Assert.fail;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP;
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP;
+import static org.opendaylight.odlparent.featuretest.DependencyUtil.testFeatures;
 import static org.ops4j.pax.exam.CoreOptions.bootDelegationPackages;
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.CoreOptions.propagateSystemProperty;
@@ -226,6 +227,9 @@ public class SingleFeatureTest {
             // Install SCR
             features(maven().groupId("org.apache.karaf.features").artifactId("standard").type("xml")
                 .classifier("features").versionAsInProject(), "scr"),
+
+            // Install features optionally defined in test scope
+            testFeatures(),
 
             // Enable JaCoCo, if present
             jacocoOption(),
