@@ -80,6 +80,32 @@
                 <artifactId>depends-maven-plugin</artifactId>
             </plugin>
             <plugin>
+                <!-- Lists feature dependencies defined in test scope to be pre-installed in karaf when SFT is executed.
+                     Resolved dependencies also include absolute path to artifacts within local repository so
+                     feature names (required for feature:install) can be retrieved. -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <!-- execute before test phase -->
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>list</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <skip>${skip.karaf.featureTest}</skip>
+                    <includeClassifiers>features</includeClassifiers>
+                    <includeTypes>xml</includeTypes>
+                    <excludeScope>compile</excludeScope>
+                    <!-- exclude SFT's own dependency features -->
+                    <excludeGroupIds>org.apache.karaf.features</excludeGroupIds>
+                    <outputAbsoluteArtifactFilename>true</outputAbsoluteArtifactFilename>
+                    <outputFile>${project.build.directory}/test-features</outputFile>
+                </configuration>
+            </plugin>
+            <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <!-- Overridden to fix corruption with SFT, where the process would hang after test -->
@@ -94,6 +120,8 @@
                     <systemPropertyVariables>
                         <!-- Use the same repository for Pax Exam as is used for Maven -->
                         <org.ops4j.pax.url.mvn.localRepository>${settings.localRepository}</org.ops4j.pax.url.mvn.localRepository>
+                        <!-- test scope features directory -->
+                        <featureTest.dependencies.list>${project.build.directory}/test-features</featureTest.dependencies.list>
                     </systemPropertyVariables>
 
                     <!-- Disable argLine if present, but pass it to SFT -->
