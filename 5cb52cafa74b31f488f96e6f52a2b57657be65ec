@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "427d0009_2e0e7a75",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2023-07-20T13:06:04Z",
+      "side": 1,
+      "message": "There are a lot of changes inside this file. Please split them into two commits.\n1) Rename CONTRIBUTING\n2) Update CONTRIBUTING.md",
+      "revId": "5cb52cafa74b31f488f96e6f52a2b57657be65ec",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
