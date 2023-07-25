@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>12.0.7-SNAPSHOT</version>
+        <version>12.0.8-SNAPSHOT</version>
         <relativePath>../../odlparent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>karaf4-parent</artifactId>
-    <version>12.0.7-SNAPSHOT</version>
+    <version>12.0.8-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
@@ -127,7 +127,7 @@
                 <plugin>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>karaf-plugin</artifactId>
-                    <version>12.0.7-SNAPSHOT</version>
+                    <version>12.0.8-SNAPSHOT</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -154,9 +154,9 @@
                                 <artifactItem>
                                     <groupId>org.opendaylight.odlparent</groupId>
                                     <artifactId>karaf.branding</artifactId>
-                                    <version>12.0.7-SNAPSHOT</version>
+                                    <version>12.0.8-SNAPSHOT</version>
                                     <outputDirectory>target/assembly/lib</outputDirectory>
-                                    <destFileName>karaf.branding-12.0.7-SNAPSHOT.jar</destFileName>
+                                    <destFileName>karaf.branding-12.0.8-SNAPSHOT.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
                             <silent>true</silent>
