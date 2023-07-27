@@ -39,6 +39,30 @@
       },
       "revId": "6e810dc36c822c89f420fe38719410251afecf92",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e783a0b_b8fe9b30",
+        "filename": "features-test/src/main/java/org/opendaylight/odlparent/featuretest/DependencyUtil.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8894
+      },
+      "writtenOn": "2023-07-27T12:16:02Z",
+      "side": 1,
+      "message": "it\u0027s intentional, if moved to method call the code will became significantly harder to read, no any benefit gained at the same time.",
+      "parentUuid": "e0e51d11_7da3944f",
+      "range": {
+        "startLine": 88,
+        "startChar": 19,
+        "endLine": 95,
+        "endChar": 21
+      },
+      "revId": "6e810dc36c822c89f420fe38719410251afecf92",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
