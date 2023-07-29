@@ -366,7 +366,7 @@ Plugin upgrades
 
 * maven-remote-resources-plugin `1.7.0 → 3.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12346864>`__
 
-* properties-maven-plugin 1.0.0 → 1.1.0
+* properties-maven-plugin `1.0.0 → 1.1.0 <https://github.com/mojohaus/properties-maven-plugin/releases/tag/properties-maven-plugin-1.1.0>`__
 
 * spotbugs-maven-plugin `4.7.2.2 → 4.7.3.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.0>`__
 
