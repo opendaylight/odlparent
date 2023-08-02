@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "559f663c_e467181d",
+        "filename": "CONTRIBUTING.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 9063
+      },
+      "writtenOn": "2023-08-02T11:08:11Z",
+      "side": 1,
+      "message": "Now word \u0027Gerrit\u0027 with link is on separate line and not in the text. You can see it if you copy-paste it into md-editor. Please make proper links inside text here and for ALL other links.",
+      "revId": "393a61d0840caf877af054ed95051acf43fe2fea",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
