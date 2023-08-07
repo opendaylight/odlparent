@@ -43,7 +43,7 @@ public class ReflectionUtilTest {
 
     };
 
-    private static class InnerStaticClass {
+    private static final class InnerStaticClass {
 
     }
 
