@@ -16,6 +16,24 @@
       "message": "Now word \u0027Gerrit\u0027 with link is on separate line and not in the text. You can see it if you copy-paste it into md-editor. Please make proper links inside text here and for ALL other links.",
       "revId": "393a61d0840caf877af054ed95051acf43fe2fea",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5d0af53_3fc5d84e",
+        "filename": "CONTRIBUTING.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 9172
+      },
+      "writtenOn": "2023-08-09T12:45:36Z",
+      "side": 1,
+      "message": "In git it looks correct, leaving it as it is",
+      "parentUuid": "559f663c_e467181d",
+      "revId": "393a61d0840caf877af054ed95051acf43fe2fea",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
