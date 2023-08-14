@@ -1,0 +1,10 @@
+Code-Review+1: Ivan Hrasko <ivan.hrasko@pantheon.tech>
+Code-Review+1: Simon Ukus <simon.ukus@pantheon.tech>
+Code-Review+2: Robert Varga <nite@hq.sk>
+Code-Review+1: Oleksandr Zharov <oleksandr.zharov@pantheon.tech>
+Verified+1: jenkins-releng ODL
+Submitted-by: Robert Varga <nite@hq.sk>
+Submitted-at: Mon, 14 Aug 2023 17:20:29 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/c/odlparent/+/107108
+Project: odlparent
+Branch: refs/heads/master
