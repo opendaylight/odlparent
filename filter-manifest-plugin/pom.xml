@@ -11,7 +11,7 @@
     <parent>
         <artifactId>odlparent</artifactId>
         <groupId>org.opendaylight.odlparent</groupId>
-        <version>13.0.4</version>
+        <version>13.0.4-SNAPSHOT</version>
         <relativePath>../odlparent</relativePath>
     </parent>
     <artifactId>filter-manifest-plugin</artifactId>
