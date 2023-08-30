@@ -2,8 +2,56 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.4
+--------------
+This is a bug-fix upgrade from version 13.0.3.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.75 → 1.76 <https://www.bouncycastle.org/releasenotes.html#r1rv76>`__
+
+* checker-qual 3.35.0 → 3.37.0
+
+* commons-lang3 `3.12.0 → 3.13.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.13.0>`__
+
+* Checkstyle 10.12.0 → 10.12.3, release notes:
+  * `10.12.1 <https://checkstyle.org/releasenotes.html#Release_10.12.1>`__
+  * `10.12.2 <https://checkstyle.org/releasenotes.html#Release_10.12.2>`__
+  * `10.12.3 <https://checkstyle.org/releasenotes.html#Release_10.12.3>`__
+
+* Guava 32.0.1 → 32.1.2, release notes:
+  * `32.1.0 <https://github.com/google/guava/releases/tag/v32.1.0>`__
+  * `32.1.1 <https://github.com/google/guava/releases/tag/v32.1.1>`__
+  * `32.1.2 <https://github.com/google/guava/releases/tag/v32.1.2>`__
+
+* JUnit `5.9.3 → 5.10.0 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.10.0>`__
+
+* Mockito `5.4.0 → 5.5.0 <https://github.com/mockito/mockito/releases/tag/v5.5.0>`__
+
+* Netty 4.1.94 → 4.1.97, release notes:
+  * `4.1.95 <https://netty.io/news/2023/07/20/4-1-95-Final.html>`__
+  * `4.1.96 <https://netty.io/news/2023/07/27/4-1-96-Final.html>`__
+  * `4.1.97 <https://netty.io/news/2023/08/23/4-1-97-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram 2.2.9 → 2.2.11, release notes:
+  * `2.2.10 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.10>`__
+  * `2.2.11 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.11>`__
+
+* depends-maven-plugin `1.4.0 → 1.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311206&version=12339645>`__
+
+* maven-enforcer-plugin `3.3.0 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12353101>`__
+
+* maven-remote-resources-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12352115>`__
+
+* metainf-services 1.9 → 1.11
+
+* properties-maven-plugin `1.1.0 → 1.2.0 <https://github.com/mojohaus/properties-maven-plugin/releases/tag/1.2.0>`__
+
 Version 13.0.3
 --------------
+This is a bug-fix upgrade from version 13.0.2.
 
 Bug fixes
 ~~~~~~~~~
@@ -1172,7 +1220,7 @@ Third-party dependencies
   * `8.41.0 <https://checkstyle.org/releasenotes.html#Release_8.41.0>`__
   * `8.41.1 <https://checkstyle.org/releasenotes.html#Release_8.41.1>`__
 
-* commons-lang3 `3.11 → 3.12 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.12>`__
+* commons-lang3 `3.11 → 3.12.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.12.0>`__
 
 * Dropwizard Metrics 4.1.12.1 → 4.1.19, release notes:
   * `4.1.13 <https://github.com/dropwizard/metrics/releases/tag/v4.1.13>`__
