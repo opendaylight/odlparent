@@ -18,6 +18,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f876049_7859bf9f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9063
+      },
+      "writtenOn": "2023-09-06T11:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ab8e8aa_d97b1854",
+      "revId": "65ebeeab881e44b40caa428c64002c786dbd5588",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b8430a2c_cfd25404",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-08-28T12:34:56Z",
       "side": 1,
       "message": "this should be overall coverage, not just new code",
+      "range": {
+        "startLine": 5,
+        "startChar": 161,
+        "endLine": 5,
+        "endChar": 169
+      },
+      "revId": "65ebeeab881e44b40caa428c64002c786dbd5588",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45786b4a_a5a0f7e2",
+        "filename": "README.markdown",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 9063
+      },
+      "writtenOn": "2023-09-06T11:28:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8430a2c_cfd25404",
       "range": {
         "startLine": 5,
         "startChar": 161,
