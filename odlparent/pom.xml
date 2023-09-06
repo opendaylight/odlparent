@@ -695,7 +695,7 @@
       <dependency>
         <groupId>org.antlr</groupId>
         <artifactId>antlr4-runtime</artifactId>
-        <version>4.13.0</version>
+        <version>4.13.1</version>
       </dependency>
 
       <!-- TrieMap library -->
@@ -1344,7 +1344,7 @@
         <plugin>
           <groupId>org.antlr</groupId>
           <artifactId>antlr4-maven-plugin</artifactId>
-          <version>4.13.0</version>
+          <version>4.13.1</version>
         </plugin>
       </plugins>
     </pluginManagement>
