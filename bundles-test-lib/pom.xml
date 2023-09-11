@@ -61,10 +61,5 @@
       <groupId>org.eclipse.jdt</groupId>
       <artifactId>org.eclipse.jdt.annotation</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.github.spotbugs</groupId>
-      <artifactId>spotbugs-annotations</artifactId>
-      <optional>true</optional>
-    </dependency>
   </dependencies>
 </project>
