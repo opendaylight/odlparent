@@ -30,15 +30,13 @@ import org.osgi.framework.BundleContext;
  */
 // intentionally just package-local
 final class BundleDiagInfosImpl implements BundleDiagInfos {
+    @java.io.Serial
     private static final long serialVersionUID = 1L;
 
-    private static final Map<String, BundleState> WHITELISTED_BUNDLES;
-
-    static {
-        WHITELISTED_BUNDLES = new HashMap<>();
-        WHITELISTED_BUNDLES.put("slf4j.log4j12", Installed);
-        WHITELISTED_BUNDLES.put("org.apache.karaf.scr.management", Waiting); // ODLPARENT-144
-    }
+    private static final Map<String, BundleState> WHITELISTED_BUNDLES = Map.of(
+        "slf4j.log4j12", Installed,
+        // ODLPARENT-144
+        "org.apache.karaf.scr.management", Waiting);
 
     private final List<String> okBundleStateInfoTexts;
     private final List<String> nokBundleStateInfoTexts;
@@ -90,12 +88,10 @@ final class BundleDiagInfosImpl implements BundleDiagInfos {
                 + ", Karaf bundleState = " + karafBundleState
                 + (diagText.isEmpty() ? "" : ", due to: " + diagText);
 
-            if (WHITELISTED_BUNDLES.get(bundleSymbolicName) != null) {
-                if (WHITELISTED_BUNDLES.get(bundleSymbolicName).equals(karafBundleState)) {
-                    String msg = "WHITELISTED " + bundleSymbolicNameWithVersion + ": " + bundleStateDiagText;
-                    whitelistedBundleStateInfoTexts.add(msg);
-                    continue;
-                }
+            if (WHITELISTED_BUNDLES.get(bundleSymbolicName) == karafBundleState) {
+                whitelistedBundleStateInfoTexts.add(
+                    "WHITELISTED " + bundleSymbolicNameWithVersion + ": " + bundleStateDiagText);
+                continue;
             }
 
             bundleStatesCounters.compute(karafBundleState, (key, counter) -> counter + 1);
