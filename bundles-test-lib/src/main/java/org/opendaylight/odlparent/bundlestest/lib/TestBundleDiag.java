@@ -7,9 +7,6 @@
  */
 package org.opendaylight.odlparent.bundlestest.lib;
 
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
-import static java.util.concurrent.TimeUnit.SECONDS;
-
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
 import org.apache.karaf.bundle.core.BundleService;
@@ -65,8 +62,8 @@ public class TestBundleDiag {
         LOG.info("checkBundleDiagInfos() started...");
         try {
             Awaitility.await("checkBundleDiagInfos")
-                .pollDelay(0, MILLISECONDS)
-                .pollInterval(1, SECONDS)
+                .pollDelay(0, TimeUnit.MILLISECONDS)
+                .pollInterval(1, TimeUnit.SECONDS)
                 .atMost(timeout, timeoutUnit)
                     .conditionEvaluationListener(condition -> awaitingListener.accept(
                             new TimeInfo(condition.getElapsedTimeInMS(), condition.getRemainingTimeInMS()),
