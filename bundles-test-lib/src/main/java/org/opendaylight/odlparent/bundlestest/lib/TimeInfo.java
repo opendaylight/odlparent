@@ -12,50 +12,19 @@ package org.opendaylight.odlparent.bundlestest.lib;
  *
  * @author Michael Vorburger.ch
  */
-public final class TimeInfo {
-
-    private final long elapsedTimeInMS;
-    private final long remainingTimeInMS;
-
-    public TimeInfo(long elapsedTimeInMS, long remainingTimeInMS) {
-        this.elapsedTimeInMS = elapsedTimeInMS;
-        this.remainingTimeInMS = remainingTimeInMS;
-    }
-
+public record TimeInfo(long elapsedTimeInMS, long remainingTimeInMS) {
+    @Deprecated(since = "13.0.5", forRemoval = true)
     public long getElapsedTimeInMS() {
         return elapsedTimeInMS;
     }
 
+    @Deprecated(since = "13.0.5", forRemoval = true)
     public long getRemainingTimeInMS() {
         return remainingTimeInMS;
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + (int) (elapsedTimeInMS ^ elapsedTimeInMS >>> 32);
-        result = prime * result + (int) (remainingTimeInMS ^ remainingTimeInMS >>> 32);
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-
-        TimeInfo timeInfo = (TimeInfo) obj;
-
-        return elapsedTimeInMS == timeInfo.elapsedTimeInMS && remainingTimeInMS == timeInfo.remainingTimeInMS;
     }
 
     @Override
     public String toString() {
         return "TimeInfo [elapsedTimeInMS=" + elapsedTimeInMS + ", remainingTimeInMS=" + remainingTimeInMS + "]";
     }
-
 }

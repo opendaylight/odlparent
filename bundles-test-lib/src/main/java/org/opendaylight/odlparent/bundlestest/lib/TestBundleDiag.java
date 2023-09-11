@@ -59,7 +59,7 @@ public class TestBundleDiag {
     public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) throws SystemStateFailureException {
         checkBundleDiagInfos(timeout, timeoutUnit, (timeInfo, bundleDiagInfos) ->
             LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
-                    timeInfo.getElapsedTimeInMS() / 1000, timeInfo.getRemainingTimeInMS() / 1000,
+                    timeInfo.elapsedTimeInMS() / 1000, timeInfo.remainingTimeInMS() / 1000,
                     bundleDiagInfos.getFullDiagnosticText()));
     }
 
