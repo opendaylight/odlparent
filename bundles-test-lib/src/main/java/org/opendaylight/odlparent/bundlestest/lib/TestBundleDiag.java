@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
 @SuppressFBWarnings(value = "CRLF_INJECTION_LOGS",
         justification = "multi-line logs are internal, without input from untrusted external source")
 public class TestBundleDiag {
-
     private static final Logger LOG = LoggerFactory.getLogger(TestBundleDiag.class);
 
     private final BundleContext bundleContext;
@@ -124,7 +123,6 @@ public class TestBundleDiag {
     }
 
     private void logOSGiServices() {
-        ServiceReferenceUtil util = new ServiceReferenceUtil();
         LOG.info("Now going to log all known services, to help diagnose root cause of "
                 + "diag failure BundleService reported bundle(s) which are not active");
         try {
@@ -133,7 +131,8 @@ public class TestBundleDiag {
                 // serviceRef.getBundle() can return null if the bundle was destroyed
                 if (bundle != null) {
                     LOG.info("{} defines OSGi Service {} used by {}", bundle.getSymbolicName(),
-                            util.getProperties(serviceRef), util.getUsingBundleSymbolicNames(serviceRef));
+                        ServiceReferenceUtil.getProperties(serviceRef),
+                        ServiceReferenceUtil.getUsingBundleSymbolicNames(serviceRef));
                 } else {
                     LOG.trace("skipping reporting service reference as the underlying bundle is null");
                 }
@@ -142,5 +141,4 @@ public class TestBundleDiag {
             LOG.error("logOSGiServices() failed due to InvalidSyntaxException", e);
         }
     }
-
 }

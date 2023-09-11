@@ -28,12 +28,12 @@ public class ServiceReferenceUtilTest {
 
     @Test
     public void testGetUsingBundleSymbolicNames() {
-        assertEquals(List.of(), new ServiceReferenceUtil().getUsingBundleSymbolicNames(getServiceReference()));
+        assertEquals(List.of(), ServiceReferenceUtil.getUsingBundleSymbolicNames(getServiceReference()));
     }
 
     @Test
     public void testGetProperties() {
-        final var map = new ServiceReferenceUtil().getProperties(getServiceReference());
+        final var map = ServiceReferenceUtil.getProperties(getServiceReference());
         assertEquals(3, map.size());
         assertEquals("value1", map.get("property1"));
         assertEquals(List.of("value2.1", "value2.2"), map.get("property2"));

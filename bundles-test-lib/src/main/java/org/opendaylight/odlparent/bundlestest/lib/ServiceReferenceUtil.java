@@ -8,7 +8,6 @@
 package org.opendaylight.odlparent.bundlestest.lib;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,14 +20,16 @@ import org.osgi.framework.ServiceReference;
  *
  * @author Michael Vorburger.ch
  */
-// intentionally just package-local
-class ServiceReferenceUtil {
+final class ServiceReferenceUtil {
+    private ServiceReferenceUtil() {
+        // Hidden on purpose
+    }
 
-    public Map<String, Object> getProperties(ServiceReference<?> serviceRef) {
-        String[] propertyKeys = serviceRef.getPropertyKeys();
-        Map<String, Object> properties = new HashMap<>(propertyKeys.length);
-        for (String propertyKey : propertyKeys) {
-            Object propertyValue = serviceRef.getProperty(propertyKey);
+    static Map<String, Object> getProperties(final ServiceReference<?> serviceRef) {
+        final var propertyKeys = serviceRef.getPropertyKeys();
+        final var properties = new HashMap<String, Object>(propertyKeys.length);
+        for (var propertyKey : propertyKeys) {
+            var propertyValue = serviceRef.getProperty(propertyKey);
             if (propertyValue != null) {
                 if (propertyValue.getClass().isArray()) {
                     propertyValue = Arrays.asList((Object[]) propertyValue);
@@ -40,13 +41,9 @@ class ServiceReferenceUtil {
         return properties;
     }
 
-    public List<String> getUsingBundleSymbolicNames(ServiceReference<?> serviceRef) {
-        Bundle[] usingBundles = serviceRef.getUsingBundles();
-        if (usingBundles == null) {
-            return Collections.emptyList();
-        } else {
-            return Arrays.stream(usingBundles).map(Bundle::getSymbolicName).collect(Collectors.toList());
-        }
+    static List<String> getUsingBundleSymbolicNames(final ServiceReference<?> serviceRef) {
+        final var usingBundles = serviceRef.getUsingBundles();
+        return usingBundles == null ? List.of()
+            : Arrays.stream(usingBundles).map(Bundle::getSymbolicName).collect(Collectors.toList());
     }
-
 }
