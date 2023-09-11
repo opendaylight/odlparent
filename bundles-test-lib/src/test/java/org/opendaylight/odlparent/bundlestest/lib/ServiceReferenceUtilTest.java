@@ -10,13 +10,13 @@ package org.opendaylight.odlparent.bundlestest.lib;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.doReturn;
 
-import java.util.Dictionary;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import org.junit.Test;
-import org.osgi.framework.Bundle;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.osgi.framework.ServiceReference;
 
 /**
@@ -24,16 +24,25 @@ import org.osgi.framework.ServiceReference;
  *
  * @author Michael Vorburger.ch
  */
-public class ServiceReferenceUtilTest {
+@ExtendWith(MockitoExtension.class)
+class ServiceReferenceUtilTest {
+    @Mock
+    private ServiceReference<?> serviceReference;
 
     @Test
-    public void testGetUsingBundleSymbolicNames() {
-        assertEquals(List.of(), ServiceReferenceUtil.getUsingBundleSymbolicNames(getServiceReference()));
+    void testGetUsingBundleSymbolicNames() {
+        doReturn(null).when(serviceReference).getUsingBundles();
+        assertEquals(List.of(), ServiceReferenceUtil.getUsingBundleSymbolicNames(serviceReference));
     }
 
     @Test
-    public void testGetProperties() {
-        final var map = ServiceReferenceUtil.getProperties(getServiceReference());
+    void testGetProperties() {
+        doReturn(new String[] { "property1", "property2", "property3" }).when(serviceReference).getPropertyKeys();
+        doReturn("value1").when(serviceReference).getProperty("property1");
+        doReturn(List.of("value2.1", "value2.2")).when(serviceReference).getProperty("property2");
+        doReturn(null).when(serviceReference).getProperty("property3");
+
+        final var map = ServiceReferenceUtil.getProperties(serviceReference);
         assertEquals(3, map.size());
         assertEquals("value1", map.get("property1"));
         assertEquals(List.of("value2.1", "value2.2"), map.get("property2"));
@@ -41,60 +50,4 @@ public class ServiceReferenceUtilTest {
         assertTrue(map.containsKey("property3"));
         assertNull(map.get("property3"));
     }
-
-    private static ServiceReference<?> getServiceReference() {
-        return new TestServiceReference();
-    }
-
-    private static final class TestServiceReference implements ServiceReference<Object> {
-
-        private final Map<String, Object> properties = new HashMap<>();
-
-        TestServiceReference() {
-            properties.put("property1", "value1");
-            properties.put("property2", List.of("value2.1", "value2.2"));
-            properties.put("property3", null);
-        }
-
-        @Override
-        public Object getProperty(String key) {
-            return properties.get(key);
-        }
-
-        @Override
-        public String[] getPropertyKeys() {
-            return properties.keySet().stream().toArray(String[]::new);
-        }
-
-        @Override
-        public Bundle getBundle() {
-            return null;
-        }
-
-        @Override
-        public Bundle[] getUsingBundles() {
-            return null;
-        }
-
-        @Override
-        public boolean isAssignableTo(Bundle bundle, String className) {
-            return false;
-        }
-
-        @Override
-        public int compareTo(Object reference) {
-            return 0;
-        }
-
-        @Override
-        public Dictionary<String, Object> getProperties() {
-            return null;
-        }
-
-        @Override
-        public <A> A adapt(Class<A> type) {
-            throw new UnsupportedOperationException();
-        }
-    }
-
 }
