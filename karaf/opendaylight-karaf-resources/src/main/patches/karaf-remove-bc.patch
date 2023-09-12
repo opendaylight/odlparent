@@ -1,20 +1,20 @@
---- system/org/apache/karaf/features/standard/4.4.3/standard-4.4.3-features.xml.orig	2021-08-23 13:17:26.231520995 +0200
-+++ system/org/apache/karaf/features/standard/4.4.3/standard-4.4.3-features.xml	2021-08-23 13:20:50.730969216 +0200
-@@ -991,9 +991,6 @@ role=admin
-         <bundle start-level="30">mvn:org.apache.sshd/sshd-osgi/2.9.2</bundle>
-         <bundle start-level="30">mvn:org.apache.sshd/sshd-scp/2.9.2</bundle>
-         <bundle start-level="30">mvn:org.apache.sshd/sshd-sftp/2.9.2</bundle>
--	<bundle start-level="30">mvn:org.bouncycastle/bcutil-jdk15on/1.70</bundle>
--        <bundle start-level="30">mvn:org.bouncycastle/bcprov-jdk15on/1.70</bundle>
--        <bundle start-level="30">mvn:org.bouncycastle/bcpkix-jdk15on/1.70</bundle>
-         <bundle start-level="30">mvn:org.apache.karaf.shell/org.apache.karaf.shell.ssh/4.4.3</bundle>
+--- /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/system/org/apache/karaf/features/standard/4.4.4/standard-4.4.4-features.xml.orig	2023-09-12 20:39:16.336539563 +0200
++++ /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/system/org/apache/karaf/features/standard/4.4.4/standard-4.4.4-features.xml	2023-09-12 20:39:15.733533811 +0200
+@@ -1004,9 +1004,6 @@
+         <bundle start-level="30">mvn:org.apache.sshd/sshd-osgi/2.10.0</bundle>
+         <bundle start-level="30">mvn:org.apache.sshd/sshd-scp/2.10.0</bundle>
+         <bundle start-level="30">mvn:org.apache.sshd/sshd-sftp/2.10.0</bundle>
+-	<bundle start-level="30">mvn:org.bouncycastle/bcutil-jdk18on/1.75</bundle>
+-        <bundle start-level="30">mvn:org.bouncycastle/bcprov-jdk18on/1.75</bundle>
+-        <bundle start-level="30">mvn:org.bouncycastle/bcpkix-jdk18on/1.75</bundle>
+         <bundle start-level="30">mvn:org.apache.karaf.shell/org.apache.karaf.shell.ssh/4.4.4</bundle>
      </feature>
-
-@@ -1443,7 +1440,6 @@ org.apache.felix.eventadmin.AddSubject=true
-
-     <feature name="spring-security-crypto-encryption" description="Advanced encryption support for Karaf security" version="4.3.7">
+ 
+@@ -1461,7 +1458,6 @@
+ 
+     <feature name="spring-security-crypto-encryption" description="Advanced encryption support for Karaf security" version="4.4.4">
          <feature>jaas</feature>
--        <bundle dependency="true" start-level="30">mvn:org.bouncycastle/bcprov-jdk15on/1.70</bundle>
+-        <bundle dependency="true" start-level="30">mvn:org.bouncycastle/bcprov-jdk18on/1.75</bundle>
          <bundle dependency="true" start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.spring-security-crypto/5.3.3.RELEASE_2</bundle>
-         <bundle start-level="30">mvn:org.apache.karaf.jaas/org.apache.karaf.jaas.spring-security-crypto/4.3.7</bundle>
+         <bundle start-level="30">mvn:org.apache.karaf.jaas/org.apache.karaf.jaas.spring-security-crypto/4.4.4</bundle>
      </feature>

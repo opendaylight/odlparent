@@ -38,7 +38,7 @@
     <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
 
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.4.3</karaf.version>
+    <karaf.version>4.4.4</karaf.version>
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
@@ -466,7 +466,7 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.jdbc</artifactId>
-        <version>1.0.1</version>
+        <version>1.1.0</version>
         <scope>provided</scope>
         <exclusions>
           <!-- Causes class path duplicates -->
@@ -666,7 +666,7 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-bom</artifactId>
-        <version>9.4.50.v20221201</version>
+        <version>9.4.52.v20230823</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
