@@ -38,7 +38,7 @@
     <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
 
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.4.3</karaf.version>
+    <karaf.version>4.4.4</karaf.version>
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
@@ -482,7 +482,7 @@
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.jdbc</artifactId>
-        <version>1.0.1</version>
+        <version>1.1.0</version>
         <scope>provided</scope>
         <exclusions>
           <!-- Causes class path duplicates -->
@@ -610,19 +610,19 @@
       <dependency>
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-link</artifactId>
-        <version>2.6.12</version>
+        <version>2.6.14</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-aether</artifactId>
-        <version>2.6.12</version>
+        <version>2.6.14</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-wrap</artifactId>
-        <version>2.6.12</version>
+        <version>2.6.14</version>
       </dependency>
 
       <dependency>
@@ -669,7 +669,7 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-bom</artifactId>
-        <version>9.4.50.v20221201</version>
+        <version>9.4.52.v20230823</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
