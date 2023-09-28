@@ -109,7 +109,7 @@
             <groupId>io.netty</groupId>
             <artifactId>netty-bom</artifactId>
             <type>pom</type>
-            <version>4.1.97.Final</version>
+            <version>4.1.99.Final</version>
         </dependency>
         <dependency>
             <groupId>jakarta.ws.rs</groupId>
