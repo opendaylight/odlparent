@@ -2,6 +2,44 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.5
+--------------
+This is a bug-fix upgrade from version 13.0.4.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Antlr `4.13.0 → 4.13.1 <https://github.com/antlr/antlr4/releases/tag/4.13.1>`__
+
+* checker-qual 3.37.0 → 3.38.0
+
+* Dropwizard Metrics `4.2.19 → 4.2.20 <https://github.com/dropwizard/metrics/releases/tag/v4.2.20>`__
+
+* Jetty 9.4.50.v20221201 → 9.4.52.v20230823, release notes:
+  * `9.4.51.v20230217 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.51.v20230217>`__
+  * `9.4.52.v20230823 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.52.v20230823>`__
+
+* Karaf `4.4.3 → 4.4.4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12352693>`__
+
+* Netty 4.1.97 → 4.1.99, release notes:
+  * `4.1.98 <https://netty.io/news/2023/09/21/4-1-98-Final.html>`__
+  * `4.1.99 <https://netty.io/news/2023/09/21/4-1-99-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram `2.2.11 → 2.2.13 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.13>`__
+
+* maven-enforcer-plugin `3.4.0 → 3.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12353576>`__
+
+* maven-javadoc-plugin `3.5.0 → 3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12352956>`__
+
+* maven-share-plugin `3.5.0 → 3.5.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921&version=12353341>`__
+
+* modernizer-maven-plugin `2.6.0 → 2.7.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.7.0>`__
+
+* spotbugs-maven-plugin `4.7.3.5 → 4.7.3.6 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.6>`__
+
+* versions-maven-plugin `2.16.0 → 2.16.1 <https://github.com/mojohaus/versions/releases/tag/2.16.1>`__
+
 Version 13.0.4
 --------------
 This is a bug-fix upgrade from version 13.0.3.
