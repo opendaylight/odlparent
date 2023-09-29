@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Utility to verify bundle diagnostic state.
  *
- * @author Michael Vorburger.ch
+ * @author Michael Vorburger.ch, based on guidance from Christian Schneider
  */
 @SuppressFBWarnings(value = "CRLF_INJECTION_LOGS",
         justification = "multi-line logs are internal, without input from untrusted external source")
@@ -51,8 +51,6 @@ public class TestBundleDiag {
      * will have a separate BundleStateService.  The BundleService however will contain the combined status of all
      * BundleStateServices.
      *
-     *
-     * @author Michael Vorburger, based on guidance from Christian Schneider
      * @param timeout maximum time to wait for bundles to settle
      * @param timeoutUnit time unit of timeout
      * @throws SystemStateFailureException if all bundles do not settle within the timeout period
