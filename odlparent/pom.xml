@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>13.0.5-SNAPSHOT</version>
+    <version>13.0.5</version>
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
@@ -100,7 +100,7 @@
       <dependency>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-artifacts</artifactId>
-        <version>13.0.5-SNAPSHOT</version>
+        <version>13.0.5</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -841,7 +841,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>13.0.5-SNAPSHOT</version>
+              <version>13.0.5</version>
             </dependency>
             <dependency>
               <groupId>com.github.sevntu-checkstyle</groupId>
@@ -958,7 +958,7 @@
                   <artifactItem>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>odl-license</artifactId>
-                    <version>13.0.5-SNAPSHOT</version>
+                    <version>13.0.5</version>
                     <type>license</type>
                     <outputDirectory>${project.build.outputDirectory}</outputDirectory>
                     <destFileName>LICENSE</destFileName>
@@ -1131,7 +1131,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>spotbugs</artifactId>
-              <version>13.0.5-SNAPSHOT</version>
+              <version>13.0.5</version>
             </dependency>
 
             <!-- The SpotBugs Maven plugin uses SLF4J-2 -->
@@ -1456,7 +1456,7 @@
       <plugin>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>copy-files-plugin</artifactId>
-        <version>13.0.5-SNAPSHOT</version>
+        <version>13.0.5</version>
         <executions>
           <execution>
             <phase>prepare-package</phase>
