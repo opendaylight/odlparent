@@ -718,7 +718,7 @@
       <dependency>
         <groupId>io.dropwizard.metrics</groupId>
         <artifactId>metrics-bom</artifactId>
-        <version>4.2.19</version>
+        <version>4.2.20</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
