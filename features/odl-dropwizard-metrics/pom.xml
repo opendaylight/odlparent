@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>13.0.5</version>
+        <version>13.0.6-SNAPSHOT</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-dropwizard-metrics</artifactId>
-    <version>13.0.5</version>
+    <version>13.0.6-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Dropwizard.io Metrics</name>
