@@ -184,7 +184,7 @@
         <artifactId>value</artifactId>
         <classifier>annotations</classifier>
         <!-- Keep this version in sync with annotationProcessorPaths declaration below -->
-        <version>2.9.3</version>
+        <version>2.10.0</version>
         <!-- Must be provided; scope=test here breaks APT in Eclipse :( -->
         <scope>provided</scope>
       </dependency>
@@ -936,7 +936,7 @@
                 <groupId>org.immutables</groupId>
                 <artifactId>value</artifactId>
                 <!-- Keep this version in sync with dependency declaration above -->
-                <version>2.9.3</version>
+                <version>2.10.0</version>
               </dependency>
               <dependency>
                 <groupId>org.kohsuke.metainf-services</groupId>
