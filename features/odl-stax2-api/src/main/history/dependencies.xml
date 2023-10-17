@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.5.0" name="odl-stax2-api">
     <feature version="0.0.0">
-        <bundle>mvn:org.codehaus.woodstox/stax2-api/4.2.1</bundle>
+        <bundle>mvn:org.codehaus.woodstox/stax2-api/4.2.2</bundle>
     </feature>
 </features>
