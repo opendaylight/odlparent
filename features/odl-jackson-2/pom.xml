@@ -22,8 +22,8 @@
     <artifactId>odl-jackson-2</artifactId>
     <packaging>feature</packaging>
 
-    <name>OpenDaylight :: Jackson 2.14.x</name>
-    <description>Jackson 2.14</description>
+    <name>OpenDaylight :: Jackson 2.15.x</name>
+    <description>Jackson 2.15</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>
