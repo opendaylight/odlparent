@@ -14,8 +14,6 @@ Third-party dependencies
 
 * Dropwizard Metrics `4.2.20 → 4.2.21 <https://github.com/dropwizard/metrics/releases/tag/v4.2.21>`__
 
-* Guava `32.1.3 → 32.1.3 <https://github.com/google/guava/releases/tag/v32.1.3>`__
-
 * immutables.org `2.9.3 → 2.10.0 <https://github.com/immutables/immutables/releases/tag/2.10.0>`__
 
 * Jackson 2.14.3 → 2.15.3, release notes:
