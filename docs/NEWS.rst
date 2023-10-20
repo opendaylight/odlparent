@@ -2,6 +2,42 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.6
+--------------
+This is a bug-fix upgrade from version 13.0.5.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checker-qual 3.38.0 → 3.39.0
+
+* Checkstyle `10.12.3 → 10.12.4 <https://checkstyle.org/releasenotes.html#Release_10.12.4>`__
+
+* Dropwizard Metrics `4.2.20 → 4.2.21 <https://github.com/dropwizard/metrics/releases/tag/v4.2.21>`__
+
+* Guava `32.1.2 → 32.1.3 <https://github.com/google/guava/releases/tag/v32.1.3>`__
+
+* immutables.org `2.9.3 → 2.10.0 <https://github.com/immutables/immutables/releases/tag/2.10.0>`__
+
+* Jackson `2.15.2 → 2.15.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.15.3>`__
+
+* Jersey `2.40 → 2.41 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.41>`__
+
+* Log4J `2.17.1 → 2.17.2 <https://logging.apache.org/log4j/2.x/release-notes/2.17.2.html>`__
+
+* Logback `1.2.11 → 1.2.12 <https://logback.qos.ch/news.html#1.2.12>`__
+
+* Mockito `5.5.0 → 5.6.0 <https://github.com/mockito/mockito/releases/tag/v5.6.0>`__
+
+* Netty `4.1.99 → 4.1.100 <https://netty.io/news/2023/10/10/4-1-100-Final.html>`__
+
+* stax2-api `4.2.1 → 4.2.2 <https://github.com/FasterXML/stax2-api/blob/master/release-notes/VERSION>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin `6.4.0 → 7.0.0 <https://github.com/bndtools/bnd/wiki/Changes-in-7.0.0>`__
+
+* Jacoco Maven plugin `0.8.10 → 0.8.11 <https://github.com/jacoco/jacoco/releases/tag/v0.8.11>`__
+
 Version 13.0.5
 --------------
 This is a bug-fix upgrade from version 13.0.4.
