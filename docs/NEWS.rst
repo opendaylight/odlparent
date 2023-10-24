@@ -2,9 +2,18 @@
 ODL Parent release notes
 ========================
 
+Version 12.0.10
+---------------
+This is a bug-fix upgrade from version 12.0.9.
+
+Bug fixes
+~~~~~~~~~
+The Dropwizard Metrics upgrade to 4.2.21 ends up making ``metics-graphite`` failing to load
+in Karaf. This has been rectified by reverting back to 4.2.20.
+
 Version 12.0.9
 --------------
-This is a bug-fix upgrade from version 12.0.7.
+This is a bug-fix upgrade from version 12.0.8.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
