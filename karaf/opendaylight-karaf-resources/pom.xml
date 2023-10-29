@@ -122,6 +122,8 @@
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-remove-bc.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
+                <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
+                      token="commons-io/commons-io/2.13.0" value="commons-io/commons-io/2.15.0" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"
