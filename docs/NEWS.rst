@@ -2,6 +2,37 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.7
+--------------
+This is a bug-fix upgrade from version 13.0.6.
+
+Bug fixes
+~~~~~~~~~
+The Dropwizard Metrics upgrade to 4.2.21 ends up making ``metics-graphite`` failing to load
+in Karaf. This has been rectified by reverting back to 4.2.20.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* commons-io 2.13.0 → 2.15.0, release notes:
+  * `2.14.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.14.0>`__
+  * `2.15.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.15.0>`__
+
+* commons-text `1.10.0 → 1.11.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318221&version=12352347>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* git-commit-id-maven-plugin `6.0.0 → 7.0.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v7.0.0>`__
+
+* maven-checkstyle-plugin `3.3.0 → 3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12352729>`__
+
+* maven-clean-plugin `3.3.1 → 3.3.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317224&version=12353735>`__
+
+* maven-dependency-plugin `3.6.0 → 3.6.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12353360>`__
+
+* maven-surefire-plugin `3.1.2 → 3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12353730>`__
+
+* properties-maven-plugin `1.2.0 → 1.2.1 <https://github.com/mojohaus/properties-maven-plugin/releases/tag/1.2.1>`__
+
 Version 13.0.6
 --------------
 This is a bug-fix upgrade from version 13.0.5.
