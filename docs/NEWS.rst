@@ -2,6 +2,159 @@
 ODL Parent release notes
 ========================
 
+Version 11.0.7
+--------------
+This is a bug-fix upgrade from version 11.0.6.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle 1.73 → 1.76, release notes:
+  * `1.74 <https://www.bouncycastle.org/releasenotes.html#r1rv74>`__
+  * `1.75 <https://www.bouncycastle.org/releasenotes.html#r1rv75>`__
+  * `1.76 <https://www.bouncycastle.org/releasenotes.html#r1rv76>`__
+
+* checker-qual 3.34.0 → 3.39.0
+
+* Checkstyle 10.11.0 → 10.12.4, release notes:
+  * `10.12.0 <https://checkstyle.org/releasenotes.html#Release_10.12.0>`__
+  * `10.12.1 <https://checkstyle.org/releasenotes.html#Release_10.12.1>`__
+  * `10.12.2 <https://checkstyle.org/releasenotes.html#Release_10.12.2>`__
+  * `10.12.3 <https://checkstyle.org/releasenotes.html#Release_10.12.3>`__
+  * `10.12.4 <https://checkstyle.org/releasenotes.html#Release_10.12.4>`__
+
+* commons-io 2.12.0 → 2.15.0, release notes:
+  * `2.13.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.13.0>`__
+  * `2.14.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.14.0>`__
+  * `2.15.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.15.0>`__
+
+* commons-lang3 `3.12.0 → 3.13.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.13.0>`__
+
+* commons-text `1.10.0 → 1.11.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318221&version=12352347>`__
+
+* Dropwizard Metrics 4.2.18 → 4.2.20, release notes:
+  * `4.2.19 <https://github.com/dropwizard/metrics/releases/tag/v4.2.19>`__
+  * `4.2.20 <https://github.com/dropwizard/metrics/releases/tag/v4.2.20>`__
+
+* immutables.org `2.9.3 → 2.10.0 <https://github.com/immutables/immutables/releases/tag/2.10.0>`__
+
+* Jackson 2.14.3 → 2.15.3, release notes:
+  * `2.15 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.15>`__
+  * `2.15.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.15.1>`__
+  * `2.15.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.15.2>`__
+  * `2.15.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.15.3>`__
+
+* Jersey 2.39.1 → 2.41, release notes:
+  * `2.40 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.40>`__
+  * `2.41 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.41>`__
+
+* Jetty 9.4.50.v20221201 → 9.4.52.v20230823, release notes:
+  * `9.4.51.v20230217 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.51.v20230217>`__
+  * `9.4.52.v20230823 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.52.v20230823>`__
+
+* JUnit `5.9.3 → 5.10.0 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.10.0>`__
+
+* Karaf `4.4.3 → 4.4.4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12352693>`__
+
+* Log4J `2.17.1 → 2.17.2 <https://logging.apache.org/log4j/2.x/release-notes/2.17.2.html>`__
+
+* Logback `1.2.11 → 1.2.12 <https://logback.qos.ch/news.html#1.2.12>`__
+
+* Mockito 5.3.1 → 5.6.0, release notes:
+  * `5.4.0 <https://github.com/mockito/mockito/releases/tag/v5.4.0>`__
+  * `5.5.0 <https://github.com/mockito/mockito/releases/tag/v5.5.0>`__
+  * `5.6.0 <https://github.com/mockito/mockito/releases/tag/v5.6.0>`__
+
+* Netty 4.1.93 → 4.1.100, release notes:
+  * `4.1.94 <https://netty.io/news/2023/06/19/4-1-94-Final.html>`__
+  * `4.1.95 <https://netty.io/news/2023/07/20/4-1-95-Final.html>`__
+  * `4.1.96 <https://netty.io/news/2023/07/27/4-1-96-Final.html>`__
+  * `4.1.97 <https://netty.io/news/2023/08/23/4-1-97-Final.html>`__
+  * `4.1.98 <https://netty.io/news/2023/09/21/4-1-98-Final.html>`__
+  * `4.1.99 <https://netty.io/news/2023/09/21/4-1-99-Final.html>`__
+  * `4.1.100 <https://netty.io/news/2023/09/21/4-1-100-Final.html>`__
+
+* stax2-api `4.2.1 → 4.2.2 <https://github.com/FasterXML/stax2-api/blob/master/release-notes/VERSION>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram 2.2.8 → 2.2.13, release notes:
+  * `2.2.9 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.9>`__
+  * `2.2.10 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.10>`__
+  * `2.2.11 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.11>`__
+  * `2.2.13 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.13>`__
+
+* asciidoctor-maven-plugin `2.2.3 → 2.2.4 <https://github.com/asciidoctor/asciidoctor-maven-plugin/releases/tag/asciidoctor-maven-plugin-2.2.4>`__
+
+* bnd-maven-plugin `6.4.0 → 7.0.0 <https://github.com/bndtools/bnd/wiki/Changes-in-7.0.0>`__
+
+* depends-maven-plugin `1.4.0 → 1.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311206&version=12339645>`__
+
+* duplicate-finder-maven-plugin 1.5.1 → 2.0.1, release notes:
+  * `2.0.0 <https://github.com/basepom/duplicate-finder-maven-plugin/blob/main/CHANGES.md#200---2023-05-21>`__
+  * `2.0.1 <https://github.com/basepom/duplicate-finder-maven-plugin/blob/main/CHANGES.md#201---2023-05-28>`__
+
+* echo-maven-plugin `2.0.1 → 2.1.0 <https://github.com/Ekryd/echo-maven-plugin/releases/tag/echo-plugin-2.1.0>`__
+
+* git-commit-id-maven-plugin `6.0.0 → 7.0.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v7.0.0>`__
+
+* jacoco-maven-plugin `0.8.10 → 0.8.11 <https://github.com/jacoco/jacoco/releases/tag/v0.8.11>`__
+
+* maven-bundle-plugin `5.1.8 → 5.1.9 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12353241>`__
+
+* maven-checkstyle-plugin `3.3.0 → 3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12352729>`__
+
+* maven-clean-plugin 3.2.0 → 3.3.2, release notes:
+  * maven-clean-plugin `3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317224&version=12351541>`__
+  * maven-clean-plugin `3.3.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317224&version=12353735>`__
+
+* maven-dependency-plugin `3.6.0 → 3.6.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12353360>`__
+
+* maven-enforcer-plugin 3.2.1 → 3.4.1, release notes:
+  * `3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12352877>`__
+  * `3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12353101>`__
+  * `3.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317520&version=12353576>`__
+
+* maven-invoker-plugin `3.5.1 → 3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12353076>`__
+
+* maven-project-info-reports-plugin 3.4.3 → 3.4.5, release notes:
+  * `3.4.4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12353222>`__
+  * `3.4.5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12353297>`__
+
+* maven-release-plugin 2.5.3 → 3.0.1, release notes:
+  * `3.0.0-M1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12331214>`__
+  * `3.0.0-M4 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12348079>`__
+  * `3.0.0-M5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12346565>`__
+  * `3.0.0-M6 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12351336>`__
+  * `3.0.0-M7 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12351828>`__
+  * `3.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12352981>`__
+  * `3.0.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12353136>`__
+
+* maven-remote-resources-plugin `3.0.0 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12352115>`__
+
+* maven-shade-plugin 3.4.1 → 3.5.0, release notes:
+  * `3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921&version=12352951>`__
+  * `3.5.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921&version=12353341>`__
+
+* maven-surefire-plugin 3.1.0 → 3.2.1, release notes:
+  * `3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12353294>`__
+  * `3.2.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12353730>`__
+
+* metainf-services 1.9 → 1.11
+
+* modernizer-maven-plugin `2.6.0 → 2.7.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.7.0>`__
+
+* properties-maven-plugin 1.1.0 → 1.2.1, release notes:
+  * `1.2.0 <https://github.com/mojohaus/properties-maven-plugin/releases/tag/1.2.0>`__
+  * `1.2.1 <https://github.com/mojohaus/properties-maven-plugin/releases/tag/1.2.1>`__
+
+* spotbugs-maven-plugin 4.7.3.4 → 4.7.3.6, release notes:
+  * `4.7.3.5 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.5>`__
+  * `4.7.3.6 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.7.3.6>`__
+
+* versions-maven-plugin 2.15.0 → 2.16.1, release notes:
+  * `2.16.0 <https://github.com/mojohaus/versions/releases/tag/2.16.0>`__
+  * `2.16.1 <https://github.com/mojohaus/versions/releases/tag/2.16.1>`__
+
 Version 11.0.6
 --------------
 This is a bug-fix upgrade from version 11.0.5.
