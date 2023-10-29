@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>13.0.7</version>
+        <version>13.0.8-SNAPSHOT</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-servlet-api</artifactId>
-    <version>13.0.7</version>
+    <version>13.0.8-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Servlet API</name>
