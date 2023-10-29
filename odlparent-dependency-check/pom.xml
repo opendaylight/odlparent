@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>11.0.7</version>
+        <version>11.0.8-SNAPSHOT</version>
         <relativePath>../odlparent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-dependency-check</artifactId>
-    <version>11.0.7</version>
+    <version>11.0.8-SNAPSHOT</version>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <!--
