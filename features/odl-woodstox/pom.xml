@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>11.0.7-SNAPSHOT</version>
+        <version>11.0.7</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-woodstox</artifactId>
-    <version>11.0.7-SNAPSHOT</version>
+    <version>11.0.7</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Woodstox</name>
