@@ -593,7 +593,7 @@
             <artifactId>maven-javadoc-plugin</artifactId>
             <configuration combine.children="append">
               <links>
-                <link>https://junit.org/junit5/docs/5.10.0/api/</link>
+                <link>https://junit.org/junit5/docs/5.10.1/api/</link>
                 <link>http://hamcrest.org/JavaHamcrest/javadoc/2.2/</link>
                 <link>http://www.slf4j.org/apidocs/</link>
                 <link>https://xerces.apache.org/xerces2-j/javadocs/api/</link>
