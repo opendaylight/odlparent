@@ -42,7 +42,7 @@
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
-    <bouncycastle.version>1.76</bouncycastle.version>
+    <bouncycastle.version>1.77</bouncycastle.version>
 
     <!-- JaCoCo configuration, by default tied to Sonar configuration, but can be overridden separately
          to allow projects to report Sonar values from the entire project. -->
