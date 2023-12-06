@@ -12,7 +12,7 @@ Copyright (c) 2019 PANTHEON.tech, s.r.o. and others.  All rights reserved.
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>13.0.8</version>
+        <version>13.0.9-SNAPSHOT</version>
         <relativePath>../../odlparent</relativePath>
     </parent>
 
