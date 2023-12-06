@@ -95,7 +95,7 @@
             <groupId>io.dropwizard.metrics</groupId>
             <artifactId>metrics-bom</artifactId>
             <type>pom</type>
-            <version>4.2.22</version>
+            <version>4.2.23</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
