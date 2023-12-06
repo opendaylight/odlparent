@@ -2,6 +2,72 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.8
+--------------
+This is a bug-fix upgrade from version 13.0.7.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ``single-feature-test`` now supports injection of test-only feature dependencies. This allows testing features
+  which require externally-provided dependencies to complete their wiring.
+  See `ODLPARENT-257 <https://jira.opendaylight.org/browse/ODLPARENT-257>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.76 → 1.77 <https://www.bouncycastle.org/releasenotes.html#r1rv77>`__
+
+* checker-qual 3.39.0 → 3.41.0
+
+* Checkstyle `10.12.4 → 10.12.5 <https://checkstyle.org/releasenotes.html#Release_10.12.5>`__
+
+* commons-io `2.15.0 → 2.15.1 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.15.1>`__
+
+* commons-lang3 `3.13.0 → 3.14.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.14.0>`__
+
+* Dropwizard Metrics 4.2.20 → 4.2.22, release notes:
+  * `4.2.21 <https://github.com/dropwizard/metrics/releases/tag/v4.2.21>`__
+  * `4.2.22 <https://github.com/dropwizard/metrics/releases/tag/v4.2.22>`__
+
+* JUnit `5.10.0 → 5.10.1 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.10.1>`__
+
+* Mockito 5.6.0 → 5.8.0, release notes:
+  * `5.7.0 <https://github.com/mockito/mockito/releases/tag/v5.7.0>`__
+  * `5.8.0 <https://github.com/mockito/mockito/releases/tag/v5.8.0>`__
+
+* Netty `4.1.100 → 4.1.101 <https://netty.io/news/2023/11/09/4-1-101-Final.html>`__
+
+* SpotBugs 4.7.3 → 4.8.2, release notes:
+  * `4.8.0 <https://github.com/spotbugs/spotbugs/releases/tag/4.8.0>`__
+  * `4.8.1 <https://github.com/spotbugs/spotbugs/releases/tag/4.8.1>`__
+  * `4.8.2 <https://github.com/spotbugs/spotbugs/releases/tag/4.8.2>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* builder-helper-maven-plugin `3.4.0 → 3.5.0 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/build-helper-maven-plugin-3.5.0>`__
+
+* cyclonedx-maven-plugin `2.7.9 → 2.7.10 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.10>`__
+
+* exec-maven-plugin `3.1.0 → 3.1.1 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/exec-maven-plugin-3.1.1>`__
+
+* maven-javadoc-plugin 3.6.0 → 3.6.3, release notes:
+  * `3.6.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12353815>`__
+  * `3.6.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12353857>`__
+
+* maven-plugin-plugin 3.8.2 → 3.10.1, release notes:
+  * `3.9.0 <https://issues.apache.org/jira/projects/MPLUGIN/versions/12353224>`__
+  * `3.10.1 <https://issues.apache.org/jira/projects/MPLUGIN/versions/12353716>`__
+  * `3.10.2 <https://issues.apache.org/jira/projects/MPLUGIN/versions/12353719>`__
+
+* maven-project-info-reports-plugin `3.4.5 → 3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12353875>`__
+
+* maven-surefire-plugin `3.2.1 → 3.2.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12353764>`__
+
+* spotbugs-maven-plugin 4.7.3.6 → 4.8.2.0, release notes:
+  * `4.8.1.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.1.0>`__
+  * `4.8.2.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.2.0>`__
+
+* versions-maven-plugin `2.16.1 → 2.16.2 <https://github.com/mojohaus/versions/releases/tag/2.16.2>`__
+
 Version 13.0.7
 --------------
 This is a bug-fix upgrade from version 13.0.6.
