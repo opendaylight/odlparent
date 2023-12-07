@@ -198,6 +198,13 @@
         <scope>provided</scope>
       </dependency>
 
+      <dependency>
+        <groupId>com.google.errorprone</groupId>
+        <artifactId>error_prone_annotations</artifactId>
+        <!-- Keep this version in sync with annotationProcessorPaths declaration below -->
+        <version>2.23.0</version>
+      </dependency>
+
       <!--
            Supporting Libraries
        -->
@@ -252,11 +259,6 @@
         <groupId>org.checkerframework</groupId>
         <artifactId>checker-qual</artifactId>
         <version>3.41.0</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.errorprone</groupId>
-        <artifactId>error_prone_annotations</artifactId>
-        <version>2.23.0</version>
       </dependency>
 
       <dependency>
@@ -1475,6 +1477,128 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>errorprone</id>
+      <!-- Run Error Prone (see http://errorprone.info)
+           UNLESS we're running Maven inside the Eclipse IDE under M2E (i.e. only on the "mvn" CLI)
+           because in M2E it causes havoc for the m2e-apt extension (which configures Annotations Processors,
+           such as e.g. http://Immutables.org, for the Eclipse JDT APT support); see full details in
+           https://github.com/jbosstools/m2e-apt/issues/62.  Not running errorprone within the Eclipse
+           IDE is not a problem, because that's not yet supported, anyway;
+           see http://errorprone.info/docs/installation#Eclipse. -->
+      <activation>
+        <property>
+          <name>!m2e.version</name>
+        </property>
+        <!-- JDK18 is an unknown, let's not activate with it just now -->
+        <jdk>[8,18)</jdk>
+      </activation>
+
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <!-- Needed for add-{exports,opens} below -->
+              <fork>true</fork>
+              <compilerArgs combine.children="append">
+                <arg>-XDcompilePolicy=simple</arg>
+
+                <!-- Needed until EP uses something else than private APIs -->
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                <arg>-Xplugin:ErrorProne \
+                  <!-- disable well-known places where things are generated -->
+                  <!-- FIXME: use ${project.build.directory} ? -->
+                  -XepExcludedPaths:.*/target/.* \
+                  -XepDisableWarningsInGeneratedCode \
+                  <!-- FIXME: Audit these: -->
+                  <!-- TODO Do we need and want <arg>-Xep:OperatorPrecedence:OFF</arg> ? --> \
+                  <!-- There are lots of disabled goodies in error-prone which only emit warnings (which nobody will ever look at!), \
+                       so let us enable them all as least as warnings, and then selectively turn some of them into ERROR, and suppress \
+                       those we really don't want (or can't enforce for whatever reason) with OFF. --> \
+                  -XepAllDisabledChecksAsWarnings \
+                  <!-- StaticOrDefaultInterfaceMethod is an Android specific warning which we don't care about --> \
+                  -Xep:StaticOrDefaultInterfaceMethod:OFF \
+                  <!-- To "Use parameter comments to document ambiguous literals" is unrealistic on a large existing code base --> \
+                  -Xep:BooleanParameter:OFF \
+                  -Xep:InconsistentOverloads:ERROR \
+                  -Xep:MethodCanBeStatic:ERROR \
+                  -Xep:ThrowsUncheckedException:OFF \
+                  <!-- TODO -Xep:TestExceptionChecker:ERROR once all @Test with expected use org.opendaylight.infrautils.testutils.Asserts.assertThrows() instead --> \
+                  -Xep:RedundantThrows:ERROR \
+                  -Xep:Var:ERROR \
+                  <!-- Following are things which seem useful to enforce, found in other projects; \
+                       we could relax these again if during enforcement all over infrautils we find them to be too strict --> \
+                  -Xep:ConstantField:ERROR \
+                  -Xep:EmptySetMultibindingContributions:ERROR \
+                  -Xep:MixedArrayDimensions:ERROR \
+                  -Xep:MultipleTopLevelClasses:ERROR \
+                  -Xep:MultiVariableDeclaration:ERROR \
+                  -Xep:PackageLocation:ERROR \
+                  -Xep:PrivateConstructorForNoninstantiableModule:ERROR \
+                  -Xep:RemoveUnusedImports:ERROR \
+                  -Xep:UnnecessaryStaticImport:ERROR \
+                  -Xep:UseBinds:ERROR \
+                  -Xep:WildcardImport:ERROR \
+                  <!-- FutureReturnValueIgnored is better (stronger) than error-prone's own (and FindBug's) @CheckReturnValue annotation, as it checks that ANY return Future are checked, not just those from methods annotated @CheckReturnValue --> \
+                  -Xep:FutureReturnValueIgnored:ERROR \
+                  -Xep:IntLongMath:ERROR \
+                  -Xep:FloatCast:ERROR \
+                  -Xep:ClassNewInstance:ERROR \
+                  -Xep:ThreeLetterTimeZoneID:ERROR \
+                  -Xep:UnsafeFinalization:ERROR \
+                  -Xep:SynchronizeOnNonFinalField:ERROR \
+                  -Xep:WaitNotInLoop:ERROR \
+                  -Xep:SwitchDefault:ERROR \
+                  -Xep:ReachabilityFenceUsage:ERROR \
+                  -Xep:BoxedPrimitiveConstructor:ERROR \
+                  -Xep:InjectOnConstructorOfAbstractClass:ERROR \
+                  -Xep:StringSplitter:ERROR \
+                  -Xep:UnnecessaryDefaultInEnumSwitch:ERROR \
+                  -Xep:DefaultCharset:ERROR \
+                  -Xep:StreamResourceLeak:ERROR \
+                  <!-- new in 2.3.0 --> \
+                  -Xep:InconsistentCapitalization:ERROR \
+                  -Xep:TruthIncompatibleType:ERROR \
+                  -Xep:ByteBufferBackingArray:ERROR \
+                  -Xep:OrphanedFormatString:ERROR \
+                  -Xep:CatchAndPrintStackTrace:ERROR \
+                  -Xep:VarTypeName:ERROR \
+                  <!-- new in 2.3.1 --> \
+                  -Xep:ObjectToString:ERROR \
+                  -Xep:AssertThrowsMultipleStatements:ERROR \
+                  -Xep:FieldCanBeFinal:ERROR \
+                  <!-- new in 2.3.2 --> \
+                  -Xep:AndroidJdkLibsChecker:OFF \
+                  -Xep:Java7ApiChecker:OFF \
+                  -Xep:Java8ApiChecker:OFF
+                </arg>
+              </compilerArgs>
+              <annotationProcessorPaths combine.children="append">
+                <path>
+                  <groupId>com.google.errorprone</groupId>
+                  <artifactId>error_prone_core</artifactId>
+                  <!-- Keep this version in sync with dependency declaration above -->
+                  <version>2.23.0</version>
+                </path>
+              </annotationProcessorPaths>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
   <reporting>
     <plugins>
