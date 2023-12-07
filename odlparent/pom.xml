@@ -1171,6 +1171,8 @@
             <xmlOutput>true</xmlOutput>
             <!-- Configures the directory in which the XML report is created -->
             <spotbugsXmlOutputDirectory>${project.build.directory}/spotbugs</spotbugsXmlOutputDirectory>
+            <!-- Do not fork by default -->
+            <fork>false</fork>
           </configuration>
           <executions>
             <!--
