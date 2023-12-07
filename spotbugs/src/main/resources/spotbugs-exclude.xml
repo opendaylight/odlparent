@@ -44,6 +44,13 @@
       <Bug pattern="EI_EXPOSE_REP"/>
       <Bug pattern="EI_EXPOSE_REP2"/>
       <Bug pattern="MS_EXPOSE_REP"/>
+
+      <!--
+           https://github.com/spotbugs/spotbugs/issues/2750. The heuristic in this check does not work quite a few
+           cases, such as null guards (which we would use in serialization proxies) and plain if() without an else,
+           such as if(foo != null) { throw new ISE() }.
+      -->
+      <Bug pattern="SE_PREVENT_EXT_OBJ_OVERWRITE"/>
     </Or>
   </Match>
 </FindBugsFilter>
