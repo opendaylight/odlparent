@@ -2,6 +2,19 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.9
+--------------
+This is a bug-fix upgrade from version 13.0.8.
+
+Bug fixes
+~~~~~~~~~
+The SpotBugs upgrade to 4.8.2 ends up emitting a lot of ``SE_PREVENT_EXT_OBJ_OVERWRITE`` violations, which cannot
+be sanely fixed. This check is now globally disabled.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle `10.12.5 → 10.12.6 <https://checkstyle.org/releasenotes.html#Release_10.12.6>`__
+
 Version 13.0.8
 --------------
 This is a bug-fix upgrade from version 13.0.7.
