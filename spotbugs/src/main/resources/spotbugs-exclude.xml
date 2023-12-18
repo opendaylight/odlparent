@@ -51,6 +51,20 @@
            such as if(foo != null) { throw new ISE() }.
       -->
       <Bug pattern="SE_PREVENT_EXT_OBJ_OVERWRITE"/>
+
+      <!--
+           As described in https://spotbugs.readthedocs.io/en/stable/bugDescriptions.html#ct-be-wary-of-letting-constructors-throw-exceptions-ct-constructor-throw,
+           CT_CONSTRUCTOR_THROW is design to mitigate finalize()-based attacks.
+
+           While the effert is commendable, Object.finalize() is its way out:
+           - it was deprecated in Java 9, see https://bugs.openjdk.org/browse/JDK-8165641
+           - it was deprecated for removal in Java 18, see https://openjdk.org/jeps/421
+
+           It seems counter-productive to chase fixing this issue while we are also moving to a world where the
+           problem can be mitigated with a global JVM switch (disable-finalization), especially if it involves
+           "clever use of a private constructor".
+      -->
+      <Bug pattern="CT_CONSTRUCTOR_THROW"/>
     </Or>
   </Match>
 </FindBugsFilter>
