@@ -2,14 +2,54 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.10
+---------------
+This is a bug-fix upgrade from version 13.0.9.
+
+Bug fixes
+~~~~~~~~~
+* Previous upgrade of ``commons-lang3`` caused duplicate packaging against. This has been fixed.
+
+Improvements
+~~~~~~~~~~~~
+* The SpotBugs upgrade to 4.8.2+ is more touching about ``CT_CONSTRUCTOR_THROW``. Fixing these is quite verbose
+  and flaky. This release globally disables this check.
+
+* Single Feature Test is now enabled for all Java versions <= 21.
+
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checker-qual 3.41.0 → 3.42.0
+
+* Dropwizard Metrics `4.2.22 → 4.2.23 <https://github.com/dropwizard/metrics/releases/tag/v4.2.23>`__
+
+* Javassist 3.29.2-GA → 3.30.1-GA, release notes:
+  * `3.30.0-GA <https://github.com/jboss-javassist/javassist/releases/tag/rel_3_30_0_ga>`__
+  * `3.30.1-GA <https://github.com/jboss-javassist/javassist/releases/tag/rel_3_30_1_ga>`__
+
+* Netty 4.1.97 → 4.1.99, release notes:
+  * `4.1.103 <https://netty.io/news/2023/12/13/4-1-103-Final.html>`__
+  * `4.1.103 <https://netty.io/news/2023/12/15/4-1-104-Final.html>`__
+
+* jdt-annotations 2.2.700 → 2.2.800
+
+* SpotBugs `4.8.2 → 4.8.3 <https://github.com/spotbugs/spotbugs/releases/tag/4.8.3>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-compiler-plugin `3.11.0 → 3.12.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12353748>`__
+
+* maven-surefire-plugin `3.2.2 → 3.2.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12353823>`__
+
 Version 13.0.9
 --------------
 This is a bug-fix upgrade from version 13.0.8.
 
 Bug fixes
 ~~~~~~~~~
-The SpotBugs upgrade to 4.8.2 ends up emitting a lot of ``SE_PREVENT_EXT_OBJ_OVERWRITE`` violations, which cannot
-be sanely fixed. This check is now globally disabled.
+* The SpotBugs upgrade to 4.8.2 ends up emitting a lot of ``SE_PREVENT_EXT_OBJ_OVERWRITE`` violations, which cannot
+  be sanely fixed. This check is now globally disabled.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
