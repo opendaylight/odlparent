@@ -14,13 +14,13 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>single-feature-parent</artifactId>
-        <version>13.0.10-SNAPSHOT</version>
+        <version>13.0.10</version>
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-javassist-3</artifactId>
-    <version>13.0.10-SNAPSHOT</version>
+    <version>13.0.10</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Javassist</name>
