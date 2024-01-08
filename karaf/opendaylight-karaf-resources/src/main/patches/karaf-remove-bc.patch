@@ -1,20 +1,20 @@
---- /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/system/org/apache/karaf/features/standard/4.4.4/standard-4.4.4-features.xml.orig	2023-09-12 20:39:16.336539563 +0200
-+++ /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/system/org/apache/karaf/features/standard/4.4.4/standard-4.4.4-features.xml	2023-09-12 20:39:15.733533811 +0200
+--- /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/system/org/apache/karaf/features/standard/4.4.5/standard-4.4.5-features.xml.orig	2023-09-12 20:39:16.336539563 +0200
++++ /home/nite/odl/odlparent/karaf/opendaylight-karaf-resources/target/assembly/system/org/apache/karaf/features/standard/4.4.5/standard-4.4.5-features.xml	2023-09-12 20:39:15.733533811 +0200
 @@ -1004,9 +1004,6 @@
-         <bundle start-level="30">mvn:org.apache.sshd/sshd-osgi/2.10.0</bundle>
-         <bundle start-level="30">mvn:org.apache.sshd/sshd-scp/2.10.0</bundle>
-         <bundle start-level="30">mvn:org.apache.sshd/sshd-sftp/2.10.0</bundle>
+         <bundle start-level="30">mvn:org.apache.sshd/sshd-osgi/2.11.0</bundle>
+         <bundle start-level="30">mvn:org.apache.sshd/sshd-scp/2.11.0</bundle>
+         <bundle start-level="30">mvn:org.apache.sshd/sshd-sftp/2.11.0</bundle>
 -	<bundle start-level="30">mvn:org.bouncycastle/bcutil-jdk18on/1.75</bundle>
 -        <bundle start-level="30">mvn:org.bouncycastle/bcprov-jdk18on/1.75</bundle>
 -        <bundle start-level="30">mvn:org.bouncycastle/bcpkix-jdk18on/1.75</bundle>
-         <bundle start-level="30">mvn:org.apache.karaf.shell/org.apache.karaf.shell.ssh/4.4.4</bundle>
+         <bundle start-level="30">mvn:org.apache.karaf.shell/org.apache.karaf.shell.ssh/4.4.5</bundle>
      </feature>
 
 @@ -1461,7 +1458,6 @@
 
-     <feature name="spring-security-crypto-encryption" description="Advanced encryption support for Karaf security" version="4.4.4">
+     <feature name="spring-security-crypto-encryption" description="Advanced encryption support for Karaf security" version="4.4.5">
          <feature>jaas</feature>
 -        <bundle dependency="true" start-level="30">mvn:org.bouncycastle/bcprov-jdk18on/1.75</bundle>
          <bundle dependency="true" start-level="30">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.spring-security-crypto/5.3.3.RELEASE_2</bundle>
-         <bundle start-level="30">mvn:org.apache.karaf.jaas/org.apache.karaf.jaas.spring-security-crypto/4.4.4</bundle>
+         <bundle start-level="30">mvn:org.apache.karaf.jaas/org.apache.karaf.jaas.spring-security-crypto/4.4.5</bundle>
      </feature>
