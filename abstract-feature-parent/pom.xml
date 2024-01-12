@@ -38,88 +38,24 @@
         <odlparent.dependency.skip>true</odlparent.dependency.skip>
     </properties>
 
-    <dependencies>
-        <!-- Test the generated features.xml -->
-        <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>features-test</artifactId>
-            <version>13.0.11-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>bundles-test-lib</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.karaf.bundle</groupId>
-            <artifactId>org.apache.karaf.bundle.core</artifactId>
-            <version>${karaf.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- Force SLF4J to test scope -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.opendaylight.odlparent</groupId>
+                    <artifactId>features-test-plugin</artifactId>
+                    <version>${project.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
+            <!-- execute SFT -->
             <plugin>
-                <!-- This generates the META-INF/maven/dependencies.properties file
-                     which is required by the versionAsInProject() used in SingleFeatureTest -->
-                <groupId>org.apache.servicemix.tooling</groupId>
-                <artifactId>depends-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <!-- Lists feature dependencies defined in test scope to be pre-installed in karaf when SFT is executed.
-                     Resolved dependencies also include absolute path to artifacts within local repository so
-                     feature names (required for feature:install) can be retrieved. -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <!-- execute before test phase -->
-                        <phase>test-compile</phase>
-                        <goals>
-                            <goal>list</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>features-test-plugin</artifactId>
+                <extensions>false</extensions>
                 <configuration>
-                    <skip>${skip.karaf.featureTest}</skip>
-                    <includeClassifiers>features</includeClassifiers>
-                    <includeTypes>xml</includeTypes>
-                    <excludeScope>compile</excludeScope>
-                    <!-- exclude SFT's own dependency features -->
-                    <excludeGroupIds>org.apache.karaf.features</excludeGroupIds>
-                    <outputAbsoluteArtifactFilename>true</outputAbsoluteArtifactFilename>
-                    <outputFile>${project.build.directory}/test-features</outputFile>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <!-- Overridden to fix corruption with SFT, where the process would hang after test -->
-                    <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory"/>
-                    <dependenciesToScan>
-                        <dependency>org.opendaylight.odlparent:features-test</dependency>
-                    </dependenciesToScan>
-                    <additionalClasspathElements>
-                        <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
-                    </additionalClasspathElements>
-                    <skip>${skip.karaf.featureTest}</skip>
-                    <systemPropertyVariables>
-                        <!-- Use the same repository for Pax Exam as is used for Maven -->
-                        <org.ops4j.pax.url.mvn.localRepository>${settings.localRepository}</org.ops4j.pax.url.mvn.localRepository>
-                        <!-- Test scope features resolved by maven-dependency-plugin (above) -->
-                        <featureTest.dependencies.list>${project.build.directory}/test-features</featureTest.dependencies.list>
-                    </systemPropertyVariables>
-
-                    <!-- Disable argLine if present, but pass it to SFT -->
-                    <argLine>-DsftArgLine='@{argLine}'</argLine>
+                    <concurrent>false</concurrent>
                 </configuration>
                 <executions>
                     <execution>
@@ -142,7 +78,7 @@
             </activation>
 
             <properties>
-                <skip.karaf.featureTest>true</skip.karaf.featureTest>
+                <sft.skip>true</sft.skip>
             </properties>
 
             <build>
