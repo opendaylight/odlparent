@@ -467,7 +467,7 @@
                  particularly confusing when used in a project with maven-jar-plugin <goal>test-jar, so don't.)  -->
         <skipIT>true</skipIT>
         <skipITs>true</skipITs>
-        <skip.karaf.featureTest>true</skip.karaf.featureTest>
+        <sft.skip>true</sft.skip>
         <jacoco.skip>true</jacoco.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <maven.source.skip>true</maven.source.skip>
@@ -618,7 +618,7 @@
       <properties>
         <checkstyle.skip>true</checkstyle.skip>
         <duplicate-finder.skip>true</duplicate-finder.skip>
-        <skip.karaf.featureTest>true</skip.karaf.featureTest>
+        <sft.skip>true</sft.skip>
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <maven.source.skip>true</maven.source.skip>
       </properties>
