@@ -35,58 +35,22 @@
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <properties>
-        <skip.karaf.featureTest>true</skip.karaf.featureTest>
+        <sft.skip>true</sft.skip>
         <jacoco.skip>true</jacoco.skip>
 
         <!-- We typically do not have code in feature artifacts, which throws off maven-dependency-plugin -->
         <odlparent.dependency.skip>true</odlparent.dependency.skip>
     </properties>
 
-    <dependencies>
-        <!-- Test the generated features.xml -->
-        <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>features-test</artifactId>
-            <version>13.0.11-SNAPSHOT</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>bundles-test-lib</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.karaf.bundle</groupId>
-            <artifactId>org.apache.karaf.bundle.core</artifactId>
-            <version>${karaf.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- Force SLF4J to test scope -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
     <build>
         <plugins>
+            <!-- execute SFT -->
             <plugin>
-                <!-- This generates the META-INF/maven/dependencies.properties file
-                     which is required by the versionAsInProject() used in SingleFeatureTest -->
-                <groupId>org.apache.servicemix.tooling</groupId>
-                <artifactId>depends-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>features-test-plugin</artifactId>
+                <extensions>false</extensions>
                 <configuration>
-                    <skip>${skip.karaf.featureTest}</skip>
-                    <dependenciesToScan>
-                        <dependency>org.opendaylight.odlparent:features-test</dependency>
-                    </dependenciesToScan>
-                    <additionalClasspathElements>
-                        <additionalClasspathElement>${project.build.directory}/feature</additionalClasspathElement>
-                    </additionalClasspathElements>
+                    <concurrent>false</concurrent>
                 </configuration>
                 <executions>
                     <execution>
@@ -133,6 +97,11 @@
                 </lifecycleMappingMetadata>
               </configuration>
             </plugin>
+              <plugin>
+                  <groupId>org.opendaylight.odlparent</groupId>
+                  <artifactId>features-test-plugin</artifactId>
+                  <version>${project.version}</version>
+              </plugin>
           </plugins>
         </pluginManagement>
     </build>
