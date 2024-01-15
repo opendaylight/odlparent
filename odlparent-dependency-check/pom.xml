@@ -246,7 +246,7 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-bom</artifactId>
             <type>pom</type>
-            <version>5.8.0</version>
+            <version>5.9.0</version>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.exam</groupId>
