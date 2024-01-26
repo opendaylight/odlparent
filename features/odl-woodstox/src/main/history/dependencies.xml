@@ -2,6 +2,6 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-woodstox">
     <feature version="0.0.0">
         <feature>odl-stax2-api</feature>
-        <bundle>mvn:com.fasterxml.woodstox/woodstox-core/6.5.1</bundle>
+        <bundle>mvn:com.fasterxml.woodstox/woodstox-core/6.6.0</bundle>
     </feature>
 </features>
