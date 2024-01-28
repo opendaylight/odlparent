@@ -10,7 +10,6 @@ package org.opendaylight.odlparent.features.test.plugin;
 import static org.apache.karaf.bundle.core.BundleState.Installed;
 import static org.apache.karaf.bundle.core.BundleState.Waiting;
 
-import com.google.common.base.Functions;
 import java.io.File;
 import java.net.URI;
 import java.util.Arrays;
@@ -23,6 +22,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
 import org.apache.karaf.bundle.core.BundleService;
@@ -217,7 +217,7 @@ public final class TestProbe {
                         Arrays.stream(serviceRef.getUsingBundles()).map(Bundle::getSymbolicName).toList();
                     final var propKeys = serviceRef.getPropertyKeys();
                     final var serviceProps = Arrays.stream(propKeys)
-                        .collect(Collectors.toMap(Functions.identity(), serviceRef::getProperty));
+                        .collect(Collectors.toMap(Function.identity(), serviceRef::getProperty));
                     LOG.warn("NOK Service {} -> of bundle: {}, using: {}, props: {}",
                         serviceRef.getClass().getName(), bundle.getSymbolicName(), usingBundles, serviceProps);
                 }
