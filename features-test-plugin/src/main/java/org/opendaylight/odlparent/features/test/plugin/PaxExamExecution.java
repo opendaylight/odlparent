@@ -9,11 +9,10 @@ package org.opendaylight.odlparent.features.test.plugin;
 
 import static java.util.Objects.requireNonNull;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.nio.charset.StandardCharsets;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.ops4j.pax.exam.ExamSystem;
 import org.ops4j.pax.exam.TestContainer;
@@ -23,48 +22,57 @@ final class PaxExamExecution {
     private final ExamSystem examSystem;
     private final String localRepository;
 
-    PaxExamExecution(final String localRepository, final ExamSystem examSystem, final TestContainer ... containers) {
+    PaxExamExecution(final String localRepository, final ExamSystem examSystem, final TestContainer... containers) {
         this.localRepository = requireNonNull(localRepository);
         this.containers = containers;
         this.examSystem = examSystem;
     }
 
-    @SuppressWarnings({"IllegalCatch", "RegexpSinglelineJava"})
-    @SuppressFBWarnings("DM_DEFAULT_ENCODING")
     void execute() throws MojoExecutionException {
-
         // Use the same repository for Pax Exam as is used for Maven
         System.setProperty("org.ops4j.pax.url.mvn.localRepository", localRepository);
 
         for (var container : containers) {
             // disable karaf stdout output to maven log
-            final var stdout = System.out;
-            System.setOut(new PrintStream(OutputStream.nullOutputStream()));
-
-            final var containerStarted = new AtomicBoolean(false);
+            final var stdout = setOut(new PrintStream(OutputStream.nullOutputStream(), true, StandardCharsets.UTF_8));
             try {
-                container.start();
-                containerStarted.set(true);
-
-                // build probe
-                final var probeBuilder = examSystem.createProbe();
-                final var address = probeBuilder.addTest(TestProbe.class, "testFeature");
-                probeBuilder.addTest(TestProbe.CheckResult.class);
-
-                // install probe bundle
-                container.install(probeBuilder.build().getStream());
-                // execute probe testMethod
-                container.call(address);
-
-            } catch (RuntimeException | IOException e) {
-                throw new MojoExecutionException(e);
+                runContainer(container);
             } finally {
-                if (containerStarted.get()) {
-                    container.stop();
-                }
                 // restore stdout
-                System.setOut(stdout);
+                setOut(stdout);
             }
         }
+    }
+
+    @SuppressWarnings("checkstyle:illegalCatch")
+    private void runContainer(final TestContainer container) throws MojoExecutionException {
+        try {
+            container.start();
+        } catch (RuntimeException e) {
+            throw new MojoExecutionException("Container failed to start", e);
+        }
+
+        try {
+            // build probe
+            final var probeBuilder = examSystem.createProbe();
+            final var address = probeBuilder.addTest(TestProbe.class, "testFeature");
+            probeBuilder.addTest(TestProbe.CheckResult.class);
+
+            // install probe bundle
+            container.install(probeBuilder.build().getStream());
+            // execute probe testMethod
+            container.call(address);
+        } catch (RuntimeException | IOException e) {
+            throw new MojoExecutionException(e);
+        } finally {
+            container.stop();
+        }
+    }
+
+    @SuppressWarnings("checkstyle:regexpSinglelineJava")
+    private static PrintStream setOut(final PrintStream newOut) {
+        final var oldOut = System.out;
+        System.setOut(newOut);
+        return oldOut;
     }
 }

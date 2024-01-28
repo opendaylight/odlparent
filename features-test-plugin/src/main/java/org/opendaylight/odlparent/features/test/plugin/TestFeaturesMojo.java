@@ -51,7 +51,14 @@ public final class TestFeaturesMojo extends AbstractMojo {
 
     private static final Logger LOG = LoggerFactory.getLogger(TestFeaturesMojo.class);
     private static final String[] FEATURE_FILENAMES = {"feature.xml", "features.xml"};
-    private static final PluginDescriptor STATIC_DESCRIPTOR = staticPluginDescriptor();
+    private static final PluginDescriptor STATIC_DESCRIPTOR;
+
+    static {
+        final var desc = new PluginDescriptor();
+        desc.setGroupId("org.opendaylight.odlparent");
+        desc.setArtifactId("features-test-plugin");
+        STATIC_DESCRIPTOR = desc;
+    }
 
     @Parameter(defaultValue = "${project}", readonly = true, required = true)
     private MavenProject project;
@@ -161,9 +168,12 @@ public final class TestFeaturesMojo extends AbstractMojo {
             new KarafTestContainerFactory().create(system));
         if (concurrent) {
             execution.execute();
-            return;
+        } else {
+            lockedExecute(execution);
         }
+    }
 
+    private void lockedExecute(final PaxExamExecution execution) throws MojoExecutionException {
         // We create a plugin context in the top-level project of the build. There we store a single object which acts
         // as the global lock protecting execution.
         final Map<String, Object> topContext;
@@ -172,7 +182,8 @@ public final class TestFeaturesMojo extends AbstractMojo {
             topContext = session.getPluginContext(STATIC_DESCRIPTOR, session.getTopLevelProject());
         }
 
-        final var lock = (Lock) topContext.computeIfAbsent("lock", key -> new ReentrantLock());
+        // Use fair locks
+        final var lock = (Lock) topContext.computeIfAbsent("lock", key -> new ReentrantLock(true));
         LOG.debug("Using lock {}", lock);
         try {
             lock.lockInterruptibly();
@@ -188,13 +199,6 @@ public final class TestFeaturesMojo extends AbstractMojo {
             lock.unlock();
             LOG.debug("Released lock {}", lock);
         }
-    }
-
-    private static PluginDescriptor staticPluginDescriptor() {
-        final var desc = new PluginDescriptor();
-        desc.setGroupId("org.opendaylight.odlparent");
-        desc.setArtifactId("features-test-plugin");
-        return desc;
     }
 
     static File getFeatureFile(final File dir) throws MojoExecutionException {

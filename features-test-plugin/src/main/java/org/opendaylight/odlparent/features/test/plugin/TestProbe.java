@@ -211,15 +211,17 @@ public final class TestProbe {
         // log services of NOK bundles
         try {
             for (var serviceRef : bundleContext.getAllServiceReferences(null, null)) {
-                if (serviceRef.getBundle() != null && nokBundles.contains(serviceRef.getBundle().getBundleId())) {
-                    final var bundle = serviceRef.getBundle();
-                    final var usingBundles = serviceRef.getUsingBundles() == null ? List.of() :
-                        Arrays.stream(serviceRef.getUsingBundles()).map(Bundle::getSymbolicName).toList();
+                final var bundle = serviceRef.getBundle();
+
+                if (bundle != null && nokBundles.contains(bundle.getBundleId())) {
+                    final var usingBundles = serviceRef.getUsingBundles();
+                    final var usingSymbolic = usingBundles == null ? List.of() :
+                        Arrays.stream(usingBundles).map(Bundle::getSymbolicName).toList();
                     final var propKeys = serviceRef.getPropertyKeys();
                     final var serviceProps = Arrays.stream(propKeys)
                         .collect(Collectors.toMap(Function.identity(), serviceRef::getProperty));
                     LOG.warn("NOK Service {} -> of bundle: {}, using: {}, props: {}",
-                        serviceRef.getClass().getName(), bundle.getSymbolicName(), usingBundles, serviceProps);
+                        serviceRef.getClass().getName(), bundle.getSymbolicName(), usingSymbolic, serviceProps);
                 }
             }
         } catch (InvalidSyntaxException e) {
@@ -231,16 +233,12 @@ public final class TestProbe {
         if (bundleName != null && state == ELIGIBLE_STATES.get(bundleName)) {
             return CheckResult.SUCCESS;
         }
-        if (state == BundleState.Stopping) {
-            return CheckResult.STOPPING;
-        }
-        if (state == BundleState.Failure) {
-            return CheckResult.FAILURE;
-        }
-        if (state == BundleState.Resolved || state == BundleState.Active) {
-            return CheckResult.SUCCESS;
-        }
-        return CheckResult.IN_PROGRESS;
+        return switch (state) {
+            case Active, Resolved -> CheckResult.SUCCESS;
+            case Failure -> CheckResult.FAILURE;
+            case Stopping -> CheckResult.STOPPING;
+            default -> CheckResult.IN_PROGRESS;
+        };
     }
 
     enum CheckResult {
