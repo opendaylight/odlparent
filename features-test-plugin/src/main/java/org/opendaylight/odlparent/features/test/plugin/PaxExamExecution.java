@@ -9,10 +9,10 @@ package org.opendaylight.odlparent.features.test.plugin;
 
 import static java.util.Objects.requireNonNull;
 
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.ops4j.pax.exam.ExamSystem;
@@ -30,7 +30,6 @@ final class PaxExamExecution {
     }
 
     @SuppressWarnings({"IllegalCatch", "RegexpSinglelineJava"})
-    @SuppressFBWarnings("DM_DEFAULT_ENCODING")
     void execute() throws MojoExecutionException {
 
         // Use the same repository for Pax Exam as is used for Maven
@@ -39,7 +38,7 @@ final class PaxExamExecution {
         for (var container : containers) {
             // disable karaf stdout output to maven log
             final var stdout = System.out;
-            System.setOut(new PrintStream(OutputStream.nullOutputStream()));
+            System.setOut(new PrintStream(OutputStream.nullOutputStream(), true, StandardCharsets.UTF_8));
 
             final var containerStarted = new AtomicBoolean(false);
             try {
