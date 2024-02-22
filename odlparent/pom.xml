@@ -184,7 +184,7 @@
         <artifactId>value</artifactId>
         <classifier>annotations</classifier>
         <!-- Keep this version in sync with annotationProcessorPaths declaration below -->
-        <version>2.10.0</version>
+        <version>2.10.1</version>
         <optional>true</optional>
       </dependency>
 
@@ -925,7 +925,7 @@
                 <groupId>org.immutables</groupId>
                 <artifactId>value</artifactId>
                 <!-- Keep this version in sync with dependency declaration above -->
-                <version>2.10.0</version>
+                <version>2.10.1</version>
               </dependency>
               <dependency>
                 <groupId>org.kohsuke.metainf-services</groupId>
