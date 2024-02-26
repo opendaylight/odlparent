@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-javassist-3">
+    <feature name="odl-javassist-3">
+        <bundle>mvn:org.javassist/javassist/{{versionAsInProject}}</bundle>
+    </feature>
+</features>
