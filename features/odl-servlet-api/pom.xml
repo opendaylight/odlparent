@@ -13,23 +13,16 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>single-feature-parent</artifactId>
+        <artifactId>template-feature-parent</artifactId>
         <version>13.0.11-SNAPSHOT</version>
-        <relativePath>../../single-feature-parent</relativePath>
+        <relativePath>../../template-feature-parent</relativePath>
     </parent>
 
-    <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-servlet-api</artifactId>
-    <version>13.0.11-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Servlet API</name>
     <description>Java servlet API 3.1.x</description>
-
-    <properties>
-        <checkDependencyChange>true</checkDependencyChange>
-        <failOnDependencyChange>true</failOnDependencyChange>
-    </properties>
 
     <dependencies>
         <dependency>
