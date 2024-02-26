@@ -13,27 +13,20 @@
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>single-feature-parent</artifactId>
+        <artifactId>template-feature-parent</artifactId>
         <version>13.0.11-SNAPSHOT</version>
-        <relativePath>../../single-feature-parent</relativePath>
+        <relativePath>../../template-feature-parent</relativePath>
     </parent>
 
-    <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-woodstox</artifactId>
-    <version>13.0.11-SNAPSHOT</version>
     <packaging>feature</packaging>
 
     <name>OpenDaylight :: Woodstox</name>
     <description>Woodstox StAX</description>
 
-    <properties>
-        <checkDependencyChange>true</checkDependencyChange>
-        <failOnDependencyChange>true</failOnDependencyChange>
-    </properties>
-
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>odl-stax2-api</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
