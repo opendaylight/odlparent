@@ -37,6 +37,12 @@
         </dependency>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>odlparent-artifacts</artifactId>
+            <version>${project.version}</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>opendaylight-karaf-empty</artifactId>
             <version>${project.version}</version>
             <type>tar.gz</type>
