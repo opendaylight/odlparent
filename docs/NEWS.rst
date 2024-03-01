@@ -2,6 +2,72 @@
 ODL Parent release notes
 ========================
 
+Version 13.0.11
+---------------
+This is a bug-fix upgrade from version 13.0.10.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle 10.12.6 → 10.14.0, release notes:
+  * `10.12.7 <https://checkstyle.org/releasenotes.html#Release_10.12.7>`__
+  * `10.13.0 <https://checkstyle.org/releasenotes.html#Release_10.13.0>`__
+  * `10.14.0 <https://checkstyle.org/releasenotes.html#Release_10.14.0>`__
+
+* AssertJ 3.24.2 → 3.25.1, release notes:
+  * `3.25.0 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.25.0>`__
+  * `3.25.1 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.25.1>`__
+  * `3.25.2 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.25.2>`__
+  * `3.25.3 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.25.3>`__
+
+* Dropwizard Metrics 4.2.23 → 4.2.25, release notes:
+  * `4.2.24 <https://github.com/dropwizard/metrics/releases/tag/v4.2.24>`__
+  * `4.2.25 <https://github.com/dropwizard/metrics/releases/tag/v4.2.25>`__
+
+* immutables.org `2.10.0 → 2.10.1 <https://github.com/immutables/immutables/releases/tag/2.10.1>`__
+
+* Jackson `2.15.3 → 2.15.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.15.4>`__
+
+* Jetty `9.4.52.v20230823 → 9.4.53.v20231009 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.53.v20231009>`__
+
+* JUnit `5.10.1 → 5.10.2 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.10.2>`__
+
+* Karaf `4.4.4 → 4.4.5 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12353604>`__
+
+* Logback `1.2.12 → 1.2.13 <https://logback.qos.ch/news.html#1.2.13>`__
+
+* Mockito 5.8.0 → 5.10.0, release notes:
+  * `5.9.0 <https://github.com/mockito/mockito/releases/tag/v5.9.0>`__
+  * `5.10.0 <https://github.com/mockito/mockito/releases/tag/v5.10.0>`__
+
+* Netty 4.1.104 → 4.1.107, release notes:
+  * `4.1.105 <https://netty.io/news/2024/01/16/4-1-105-Final.html>`__
+  * `4.1.106 <https://netty.io/news/2024/01/19/4-1-106-Final.html>`__
+  * `4.1.107 <https://netty.io/news/2024/02/13/4-1-107-Final.html>`__
+
+* Woodstox 6.5.1 → 6.6.1, release notes:
+  * `6.6.0 <https://github.com/FasterXML/woodstox/milestone/31?closed=1>`__
+  * `6.6.1 <https://github.com/FasterXML/woodstox/milestone/33?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram `2.2.14 → 2.2.17 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.2.17>`__
+
+* asciidoctor-maven-plugin 2.2.4 → 2.2.6, release notes:
+  * `2.2.5 <https://github.com/asciidoctor/asciidoctor-maven-plugin/releases/tag/asciidoctor-maven-plugin-2.2.5>`__
+  * `2.2.6 <https://github.com/asciidoctor/asciidoctor-maven-plugin/releases/tag/asciidoctor-maven-plugin-2.2.6>`__
+
+* cyclonedx-maven-plugin `2.7.10 → 2.7.11 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.7.11>`__
+
+* exec-maven-plugin `3.1.1 → 3.2.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/exec-maven-plugin-3.2.0>`__
+
+* maven-shade-plugin `3.5.1 → 3.5.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921&version=12352505>`__
+
+* maven-surefire-plugin `3.2.3 → 3.2.5 <https://github.com/apache/maven-surefire/releases/tag/surefire-3.2.5>`__
+
+* spotbugs-maven-plugin 4.8.2.0 → 4.8.3.1, release notes:
+  * `4.8.3.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.3.0>`__
+  * `4.8.3.1 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.3.1>`__
+
 Version 13.0.10
 ---------------
 This is a bug-fix upgrade from version 13.0.9.
