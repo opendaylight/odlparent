@@ -32,32 +32,18 @@
     </properties>
 
     <modules>
+        <module>odlparent-artifacts</module>
+
         <!-- odlparent tools -->
         <module>checkstyle</module>
         <module>spotbugs</module>
         <module>license</module>
 
-        <!-- Features test (SFT) -->
-        <module>bundles-test-lib</module>
-        <module>bundles4-test</module>
-        <module>features-test</module>
-        <module>features-test-plugin</module>
-        <module>features-test-plugin-it</module>
-
-        <!-- Karaf integration -->
-        <module>karaf</module>
-        <module>karaf-plugin</module>
-        <module>karaf-util</module>
-
         <!-- Parent POMs -->
+        <module>odlparent-lite</module>
+        <module>odlparent</module>
         <module>bnd-parent</module>
         <module>bundle-parent</module>
-        <module>abstract-feature-parent</module>
-        <module>single-feature-parent</module>
-        <module>template-feature-parent</module>
-        <module>feature-repo-parent</module>
-        <module>odlparent</module>
-        <module>odlparent-lite</module>
 
         <!-- Plugin for processing templates for Karaf features -->
         <module>template-feature-plugin</module>
@@ -71,11 +57,25 @@
         <!-- Logging Markers -->
         <module>logging-markers</module>
 
+        <!-- Features test (SFT) -->
+        <module>bundles-test-lib</module>
+        <module>bundles4-test</module>
+        <module>features-test</module>
+        <module>features-test-plugin</module>
+        <module>features-test-plugin-it</module>
+
+        <!-- Karaf integration -->
+        <module>karaf</module>
+        <module>karaf-plugin</module>
+        <module>karaf-util</module>
+
+        <module>abstract-feature-parent</module>
+        <module>single-feature-parent</module>
+        <module>template-feature-parent</module>
+        <module>feature-repo-parent</module>
+
         <!-- Features -->
         <module>features</module>
-
-        <!-- Artifacts -->
-        <module>odlparent-artifacts</module>
 
         <!-- Aggragated javadocs -->
         <module>docs</module>
