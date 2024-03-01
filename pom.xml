@@ -32,6 +32,10 @@
     </properties>
 
     <modules>
+        <module>odlparent-artifacts</module>
+        <module>features</module>
+        <module>docs</module>
+
         <!-- odlparent tools -->
         <module>checkstyle</module>
         <module>spotbugs</module>
@@ -70,15 +74,6 @@
 
         <!-- Logging Markers -->
         <module>logging-markers</module>
-
-        <!-- Features -->
-        <module>features</module>
-
-        <!-- Artifacts -->
-        <module>odlparent-artifacts</module>
-
-        <!-- Aggragated javadocs -->
-        <module>docs</module>
 
         <!-- Self-tests -->
         <module>odlparent-bundle-check</module>
