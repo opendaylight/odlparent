@@ -211,8 +211,8 @@ public final class TestProbe {
         // log services of NOK bundles
         try {
             for (var serviceRef : bundleContext.getAllServiceReferences(null, null)) {
-                if (serviceRef.getBundle() != null && nokBundles.contains(serviceRef.getBundle().getBundleId())) {
-                    final var bundle = serviceRef.getBundle();
+                final var bundle = serviceRef.getBundle();
+                if (bundle != null && nokBundles.contains(bundle.getBundleId())) {
                     final var usingBundles = serviceRef.getUsingBundles() == null ? List.of() :
                         Arrays.stream(serviceRef.getUsingBundles()).map(Bundle::getSymbolicName).toList();
                     final var propKeys = serviceRef.getPropertyKeys();
