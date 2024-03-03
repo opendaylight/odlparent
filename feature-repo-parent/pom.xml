@@ -40,6 +40,9 @@
 
         <!-- We typically do not have code in feature artifacts, which throws off maven-dependency-plugin -->
         <odlparent.dependency.skip>true</odlparent.dependency.skip>
+
+        <!-- See https://issues.apache.org/jira/browse/MINSTALL-151 -->
+        <allowIncompleteProjects>true</allowIncompleteProjects>
     </properties>
 
     <build>
