@@ -213,13 +213,14 @@ public final class TestProbe {
             for (var serviceRef : bundleContext.getAllServiceReferences(null, null)) {
                 final var bundle = serviceRef.getBundle();
                 if (bundle != null && nokBundles.contains(bundle.getBundleId())) {
-                    final var usingBundles = serviceRef.getUsingBundles() == null ? List.of() :
-                        Arrays.stream(serviceRef.getUsingBundles()).map(Bundle::getSymbolicName).toList();
+                    final var usingBundles = serviceRef.getUsingBundles();
+                    final var usingSymbolic = usingBundles == null ? List.of()
+                        : Arrays.stream(usingBundles).map(Bundle::getSymbolicName).toList();
                     final var propKeys = serviceRef.getPropertyKeys();
                     final var serviceProps = Arrays.stream(propKeys)
                         .collect(Collectors.toMap(Function.identity(), serviceRef::getProperty));
                     LOG.warn("NOK Service {} -> of bundle: {}, using: {}, props: {}",
-                        serviceRef.getClass().getName(), bundle.getSymbolicName(), usingBundles, serviceProps);
+                        serviceRef.getClass().getName(), bundle.getSymbolicName(), usingSymbolic, serviceProps);
                 }
             }
         } catch (InvalidSyntaxException e) {
