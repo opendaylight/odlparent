@@ -178,7 +178,8 @@ public final class TestFeaturesMojo extends AbstractMojo {
             topContext = session.getPluginContext(STATIC_DESCRIPTOR, session.getTopLevelProject());
         }
 
-        final var lock = (Lock) topContext.computeIfAbsent("lock", key -> new ReentrantLock());
+        // Note: we are using a fair lock to get first-come, first-serve rather than some unpredictable order
+        final var lock = (Lock) topContext.computeIfAbsent("lock", key -> new ReentrantLock(true));
         LOG.debug("Using lock {}", lock);
         try {
             lock.lockInterruptibly();
