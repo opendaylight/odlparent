@@ -231,16 +231,12 @@ public final class TestProbe {
         if (bundleName != null && state == ELIGIBLE_STATES.get(bundleName)) {
             return CheckResult.SUCCESS;
         }
-        if (state == BundleState.Stopping) {
-            return CheckResult.STOPPING;
-        }
-        if (state == BundleState.Failure) {
-            return CheckResult.FAILURE;
-        }
-        if (state == BundleState.Resolved || state == BundleState.Active) {
-            return CheckResult.SUCCESS;
-        }
-        return CheckResult.IN_PROGRESS;
+        return switch (state) {
+            case Active, Resolved -> CheckResult.SUCCESS;
+            case Failure -> CheckResult.FAILURE;
+            case Stopping -> CheckResult.STOPPING;
+            default -> CheckResult.IN_PROGRESS;
+        };
     }
 
     enum CheckResult {
