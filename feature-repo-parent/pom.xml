@@ -71,38 +71,38 @@
             </plugin>
         </plugins>
         <pluginManagement>
-          <plugins>
-            <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-            <plugin>
-              <groupId>org.eclipse.m2e</groupId>
-              <artifactId>lifecycle-mapping</artifactId>
-              <version>1.0.0</version>
-              <configuration>
-                <lifecycleMappingMetadata>
-                  <pluginExecutions>
-                    <pluginExecution>
-                      <pluginExecutionFilter>
-                        <groupId>org.apache.karaf.tooling</groupId>
-                        <artifactId>karaf-maven-plugin</artifactId>
-                        <versionRange>[4.1.5,)</versionRange>
-                        <goals>
-                          <goal>verify</goal>
-                        </goals>
-                      </pluginExecutionFilter>
-                      <action>
-                        <ignore></ignore>
-                      </action>
-                    </pluginExecution>
-                  </pluginExecutions>
-                </lifecycleMappingMetadata>
-              </configuration>
-            </plugin>
-              <plugin>
-                  <groupId>org.opendaylight.odlparent</groupId>
-                  <artifactId>features-test-plugin</artifactId>
-                  <version>${project.version}</version>
-              </plugin>
-          </plugins>
+            <plugins>
+                <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.karaf.tooling</groupId>
+                                        <artifactId>karaf-maven-plugin</artifactId>
+                                        <versionRange>[4.1.5,)</versionRange>
+                                        <goals>
+                                            <goal>verify</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore></ignore>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.opendaylight.odlparent</groupId>
+                    <artifactId>features-test-plugin</artifactId>
+                    <version>13.1.0-SNAPSHOT</version>
+                </plugin>
+            </plugins>
         </pluginManagement>
     </build>
 
