@@ -48,10 +48,16 @@ import org.slf4j.LoggerFactory;
     requiresDependencyResolution = ResolutionScope.TEST,
     requiresDependencyCollection = ResolutionScope.TEST, threadSafe = true)
 public final class TestFeaturesMojo extends AbstractMojo {
-
     private static final Logger LOG = LoggerFactory.getLogger(TestFeaturesMojo.class);
     private static final String[] FEATURE_FILENAMES = {"feature.xml", "features.xml"};
-    private static final PluginDescriptor STATIC_DESCRIPTOR = staticPluginDescriptor();
+    private static final PluginDescriptor STATIC_DESCRIPTOR;
+
+    static {
+        final var desc = new PluginDescriptor();
+        desc.setGroupId("org.opendaylight.odlparent");
+        desc.setArtifactId("features-test-plugin");
+        STATIC_DESCRIPTOR = desc;
+    }
 
     @Parameter(defaultValue = "${project}", readonly = true, required = true)
     private MavenProject project;
@@ -188,13 +194,6 @@ public final class TestFeaturesMojo extends AbstractMojo {
             lock.unlock();
             LOG.debug("Released lock {}", lock);
         }
-    }
-
-    private static PluginDescriptor staticPluginDescriptor() {
-        final var desc = new PluginDescriptor();
-        desc.setGroupId("org.opendaylight.odlparent");
-        desc.setArtifactId("features-test-plugin");
-        return desc;
     }
 
     static File getFeatureFile(final File dir) throws MojoExecutionException {
