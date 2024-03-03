@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
-import java.util.concurrent.atomic.AtomicBoolean;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.ops4j.pax.exam.ExamSystem;
 import org.ops4j.pax.exam.TestContainer;
@@ -40,27 +39,29 @@ final class PaxExamExecution {
             final var stdout = System.out;
             System.setOut(new PrintStream(OutputStream.nullOutputStream(), true, StandardCharsets.UTF_8));
 
-            final var containerStarted = new AtomicBoolean(false);
             try {
-                container.start();
-                containerStarted.set(true);
+                try {
+                    container.start();
+                } catch (RuntimeException e) {
+                    throw new MojoExecutionException(e);
+                }
 
-                // build probe
-                final var probeBuilder = examSystem.createProbe();
-                final var address = probeBuilder.addTest(TestProbe.class, "testFeature");
-                probeBuilder.addTest(TestProbe.CheckResult.class);
+                try {
+                    // build probe
+                    final var probeBuilder = examSystem.createProbe();
+                    final var address = probeBuilder.addTest(TestProbe.class, "testFeature");
+                    probeBuilder.addTest(TestProbe.CheckResult.class);
 
-                // install probe bundle
-                container.install(probeBuilder.build().getStream());
-                // execute probe testMethod
-                container.call(address);
-
-            } catch (RuntimeException | IOException e) {
-                throw new MojoExecutionException(e);
-            } finally {
-                if (containerStarted.get()) {
+                    // install probe bundle
+                    container.install(probeBuilder.build().getStream());
+                    // execute probe testMethod
+                    container.call(address);
+                } catch (RuntimeException | IOException e) {
+                    throw new MojoExecutionException(e);
+                } finally {
                     container.stop();
                 }
+            } finally {
                 // restore stdout
                 System.setOut(stdout);
             }
