@@ -32,6 +32,23 @@
             <artifactId>pax-jdbc-features</artifactId>
             <version>${pax.jdbc.version}</version>
             <classifier>features</classifier>
+            <exclusions>
+                <!--
+                    Exclude Derby version 10.14.2.0 due to the vulnerability:
+                      https://nvd.nist.gov/vuln/detail/CVE-2022-46337
+                    for which there are no upstream builds we can use.
+
+                    FIXME: ODLPARENT-311: Re-enable this when we require Java 21 runtime and upgrade to Derby 10.17.1.0+
+                 -->
+                <exclusion>
+                    <groupId>org.ops4j.pax.jdbc</groupId>
+                    <artifactId>pax-jdbc-derby</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.ops4j.pax.jdbc</groupId>
+                    <artifactId>pax-jdbc-derbyclient</artifactId>
+                </exclusion>
+            </exclusions>
             <type>xml</type>
             <scope>runtime</scope>
         </dependency>
