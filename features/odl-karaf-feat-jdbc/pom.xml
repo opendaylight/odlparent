@@ -44,6 +44,13 @@
                     <artifactId>pax-jdbc-derbyclient</artifactId>
                     <groupId>org.ops4j.pax.jdbc</groupId>
                 </exclusion>
+                <!-- Exclude mysql version 8.1.0 due to vulnerability:
+                     https://nvd.nist.gov/vuln/detail/CVE-2023-22102
+                     TODO: Remove this after migrating mysql-connector-j to 8.2.0 -->
+                <exclusion>
+                    <artifactId>pax-jdbc-mysql</artifactId>
+                    <groupId>org.ops4j.pax.jdbc</groupId>
+                </exclusion>
             </exclusions>
             <type>xml</type>
             <scope>runtime</scope>
