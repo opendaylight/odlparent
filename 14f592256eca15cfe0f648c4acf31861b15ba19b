@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59a18b8f_1a67114a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-03-13T09:14:02Z",
+      "side": 1,
+      "message": "Create PR to https://github.com/ops4j/org.ops4j.pax.jdbc/pulls",
+      "revId": "14f592256eca15cfe0f648c4acf31861b15ba19b",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
