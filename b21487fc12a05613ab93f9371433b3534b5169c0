@@ -16,6 +16,24 @@
       "message": "Create PR to https://github.com/ops4j/org.ops4j.pax.jdbc/pulls",
       "revId": "b21487fc12a05613ab93f9371433b3534b5169c0",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ae2b264_cd6ce258",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-03-13T10:47:56Z",
+      "side": 1,
+      "message": "Pax.jdbc uses Java 8, which corresponds to release 10.14.x.y in Derby. However, there are currently no fixed Derby releases for Java 8, 11, or 17, only for Java 21, which is release 10.17.1.0.\nhttps://mvnrepository.com/artifact/org.apache.derby/derbyclient",
+      "parentUuid": "1de33fb8_d6dc7882",
+      "revId": "b21487fc12a05613ab93f9371433b3534b5169c0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
