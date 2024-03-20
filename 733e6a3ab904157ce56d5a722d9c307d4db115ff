@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a6130693_da0bd16c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-03-20T12:56:31Z",
+      "side": 1,
+      "message": "Now we have from:\n```\n    \u003cfeature name\u003d\"pax-jdbc-derby\" description\u003d\"Provides JDBC Derby Embedded DataSourceFactory\" version\u003d\"${project.version}\"\u003e\n        \u003cfeature\u003epax-jdbc-spec\u003c/feature\u003e\n\n        \u003cbundle dependency\u003d\"true\"\u003emvn:org.apache.derby/derby/${version.org.apache.derby}\u003c/bundle\u003e\n        \u003cbundle\u003emvn:org.ops4j.pax.jdbc/pax-jdbc-derby/${project.version}\u003c/bundle\u003e\n    \u003c/feature\u003e\n```\nthis:\n```\n    \u003cfeature name\u003d\"pax-jdbc-derby\" description\u003d\"Provides JDBC Derby Embedded DataSourceFactory\" version\u003d\"1.5.6\"\u003e\n        \u003cfeature\u003epax-jdbc-spec\u003c/feature\u003e\n```",
+      "parentUuid": "e86ff8da_872442eb",
+      "revId": "733e6a3ab904157ce56d5a722d9c307d4db115ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "04484731_7b766d0f",
         "filename": "features/odl-karaf-feat-jdbc/pom.xml",
         "patchSetId": 3
