@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e86ff8da_872442eb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-03-20T12:50:30Z",
+      "side": 1,
+      "message": "With .patch files we could potentially remove the whole derby part: https://github.com/ops4j/org.ops4j.pax.jdbc/blob/d83c327f0ecfd740411224a5a6dc9fcf871d6914/pax-jdbc-features/src/main/resources/features.xml#L62-L63.",
+      "parentUuid": "9cd7d8de_ac59c720",
+      "revId": "733e6a3ab904157ce56d5a722d9c307d4db115ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "04484731_7b766d0f",
         "filename": "features/odl-karaf-feat-jdbc/pom.xml",
         "patchSetId": 3
