@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8b787d1_8a60c671",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-03-20T11:46:58Z",
+      "side": 1,
+      "message": "We are usually using \"patches\" as here: https://git.opendaylight.org/gerrit/c/odlparent/+/51789. Isn\u0027t that possible this time?",
+      "revId": "22818088112c7db5f58223b4a8ba75e952c0a651",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
