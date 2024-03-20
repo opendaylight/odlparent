@@ -54,6 +54,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "24af4f42_fabe2cbb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-03-20T14:32:36Z",
+      "side": 1,
+      "message": "Yes, now it is an empty feature which does nothing.\n\nI can not use patch here. If I try to add \u003cpatch\u003e to karaf4-parent pom.xml\n```\n\n\u003cpatch if:true\u003d\"${pax.jdbc.exist}\" patchfile\u003d\"${project.basedir}/src/main/patches/pax-jdbc-feature.patch\"\n       originalfile\u003d\"${project.build.directory}/assembly/system/org/ops4j/pax/jdbc/pax-jdbc-features/1.5.6/pax-jdbc-features-1.5.6-features.xml\"\n       failonerror\u003d\"true\"/\u003e\n```\n\nIt will fail in \u0027test-distribution\u0027 because a patch file is missing:\n An Ant BuildException has occured: patchfile odlparent/karaf/test-distribution/src/main/patches/pax-jdbc-feature.patch doesn\u0027t exist\n\nAnd in \u0027test-distribution\u0027 it should not expect patch file.",
+      "parentUuid": "a6130693_da0bd16c",
+      "revId": "733e6a3ab904157ce56d5a722d9c307d4db115ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "04484731_7b766d0f",
