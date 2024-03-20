@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "616714f2_a8dde5b3",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-03-20T12:08:09Z",
+      "side": 1,
+      "message": "IMO we can do it like this: https://git.opendaylight.org/gerrit/c/odlparent/+/97285",
+      "revId": "733e6a3ab904157ce56d5a722d9c307d4db115ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
