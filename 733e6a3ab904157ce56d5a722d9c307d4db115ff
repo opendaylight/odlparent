@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "04484731_7b766d0f",
+        "filename": "features/odl-karaf-feat-jdbc/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-03-20T12:47:09Z",
+      "side": 1,
+      "message": "IMO \u003cgroupId\u003e first.",
+      "revId": "733e6a3ab904157ce56d5a722d9c307d4db115ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "616714f2_a8dde5b3",
         "filename": "karaf/karaf4-parent/pom.xml",
         "patchSetId": 3
