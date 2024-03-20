@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9cd7d8de_ac59c720",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-03-20T12:45:01Z",
+      "side": 1,
+      "message": "It looks that we (still) have:\n```\n    \u003cfeature name\u003d\"pax-jdbc-derby\" description\u003d\"Provides JDBC Derby Embedded DataSourceFactory\" version\u003d\"1.5.6\"\u003e\n        \u003cfeature\u003epax-jdbc-spec\u003c/feature\u003e\n\n        \n        \n    \u003c/feature\u003e\n```\n\nThus only bundles have been removed form file: pax-jdbc-features-1.5.6-features.xml of \"test distribution\" in odlparent.",
+      "revId": "733e6a3ab904157ce56d5a722d9c307d4db115ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "616714f2_a8dde5b3",
