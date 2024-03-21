@@ -89,6 +89,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec52532d_5fff05f9",
+        "filename": "features/odl-karaf-feat-jdbc/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-03-21T09:04:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04484731_7b766d0f",
+      "revId": "733e6a3ab904157ce56d5a722d9c307d4db115ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "616714f2_a8dde5b3",
@@ -102,6 +120,24 @@
       "writtenOn": "2024-03-20T12:08:09Z",
       "side": 1,
       "message": "IMO we can do it like this: https://git.opendaylight.org/gerrit/c/odlparent/+/97285",
+      "revId": "733e6a3ab904157ce56d5a722d9c307d4db115ff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7dc1ac5_23780de9",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-03-21T09:04:01Z",
+      "side": 1,
+      "message": "Is there some problem with TODO comment? IMHO I have responded to this here:\nhttps://git.opendaylight.org/gerrit/c/odlparent/+/110666/comments/9cd7d8de_ac59c720",
+      "parentUuid": "616714f2_a8dde5b3",
       "revId": "733e6a3ab904157ce56d5a722d9c307d4db115ff",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
