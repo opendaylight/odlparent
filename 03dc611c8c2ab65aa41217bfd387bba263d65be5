@@ -16,6 +16,24 @@
       "message": "Okay, so this needs a dedicated test distribution to ensure it works as needed",
       "revId": "03dc611c8c2ab65aa41217bfd387bba263d65be5",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43a0b65c_26b9ff4d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-03-26T12:35:56Z",
+      "side": 1,
+      "message": "Reworked by bumping pax-jdbc instead of postgresql.\nIMHO test-distribution is dedicated test also for pax-jdbc.\nhttps://github.com/opendaylight/odlparent/tree/master/karaf/test-distribution\n\nOr do you have a specific use case in mind?",
+      "parentUuid": "0ea326b4_6a5c2007",
+      "revId": "03dc611c8c2ab65aa41217bfd387bba263d65be5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
