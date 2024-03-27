@@ -2,6 +2,71 @@
 ODL Parent release notes
 ========================
 
+Version 13.1.0
+--------------
+This is a bug-fix/feature upgrade from version 13.0.11.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ``SingleFeatureTest`` is now executed by a dedicated Maven plugin, leading to faster execution times and better
+  multi-threaded behaviour.
+  See `ODLPARENT-262 <https://jira.opendaylight.org/browse/ODLPARENT-262>`__ for more information.
+* ``sporbugs-maven-plugin`` now runs with ``spotbugs.fork=false``. This setting improves build time by removing
+  the need to warm up a JVM for each SpotBugs analysis.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle 10.14.0 → 10.14.2, release notes:
+  * `10.14.1 <https://checkstyle.org/releasenotes.html#Release_10.14.1>`__
+  * `10.14.1 <https://checkstyle.org/releasenotes.html#Release_10.14.2>`__
+
+* error_prone_annotations 2.25.0 → 2.26.1, release notes:
+  * `2.26.0 <https://github.com/google/error-prone/releases/tag/v2.26.0>`__
+  * `2.26.1 <https://github.com/google/error-prone/releases/tag/v2.26.1>`__
+
+* Jackson 2.15.3 → 2.16.2, release notes:
+  * `2.16 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.16>`__
+  * `2.16.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.16.1>`__
+  * `2.16.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.16.2>`__
+
+* jdt-annotations `2.2.800 → 2.3.0 <https://github.com/eclipse-jdt/eclipse.jdt.core/pull/1716>`__
+
+* Jersey `2.41 → 2.42 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.42>`__
+
+* Netty `4.1.107 → 4.1.108 <https://netty.io/news/2024/03/21/4-1-108-Final.html>`__
+
+* Pax JDBC `1.5.6 → 1.5.7 <https://github.com/ops4j/org.ops4j.pax.jdbc/milestone/33?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* cyclonedx-maven-plugin `2.7.11 → 2.8.0 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.8.0>`__
+
+* git-commit-id-maven-plugin 7.0.0 → 8.0.0, release notes:
+  * `8.0.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v8.0.0>`__
+  * `8.0.1 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v8.0.1>`__
+
+* maven-assembly-plugin 3.6.0 → 3.7.1, release notes:
+  * `3.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12353243>`__
+  * `3.7.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12354406>`__
+
+* maven-compiler-plugin `2.12.1 → 2.13.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225&version=12354079>`__
+
+* maven-deploy-plugin 2.8.2 → 3.1.1, release notes:
+  * `3.0.0-M1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317228&version=12330476>`__
+  * `3.0.0-M2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317228&version=12344166>`__
+  * `3.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317228&version=12351654>`__
+  * `3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317228&version=12352181>`__
+  * `3.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317228&version=12352894>`__
+
+* maven-install-plugin 2.5.2 → 3.1.1, release notes:
+  * `3.0.0-M1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12334343>`__
+  * `3.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12344165>`__
+  * `3.0.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12352096>`__
+  * `3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12352107>`__
+  * `3.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12353026>`__
+
+* maven-remote-resources-plugin `3.1.0 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12353591>`__
+
 Version 13.0.11
 ---------------
 This is a bug-fix upgrade from version 13.0.10.
