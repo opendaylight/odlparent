@@ -37,6 +37,8 @@ Third-party dependencies
 
 * Pax JDBC `1.5.6 → 1.5.7 <https://github.com/ops4j/org.ops4j.pax.jdbc/milestone/33?closed=1>`__
 
+* Woodstox `6.6.1 → 6.6.2 <https://github.com/FasterXML/woodstox/milestone/34?closed=1>`__
+
 Plugin upgrades
 ~~~~~~~~~~~~~~~
 * cyclonedx-maven-plugin `2.7.11 → 2.8.0 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.8.0>`__
@@ -64,6 +66,8 @@ Plugin upgrades
   * `3.0.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12352096>`__
   * `3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12352107>`__
   * `3.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12353026>`__
+
+* maven-plugin-plugin `3.10.2 → 3.11.0 <https://github.com/apache/maven-plugin-tools/releases/tag/maven-plugin-tools-3.11.0>`__
 
 * maven-remote-resources-plugin `3.1.0 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12353591>`__
 
