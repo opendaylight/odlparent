@@ -16,8 +16,8 @@ import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
 import org.junit.runner.notification.RunNotifier;
 
+@Deprecated(since = "13.1.0", forRemoval = true)
 public class PerFeatureRunNotifier extends RunNotifier {
-
     private final RunNotifier delegate;
     private final URL repoUrl;
     private final String featureName;
@@ -31,8 +31,8 @@ public class PerFeatureRunNotifier extends RunNotifier {
      * @param featureVersion The feature version.
      * @param delegate The notification delegate.
      */
-    public PerFeatureRunNotifier(
-            final URL repoUrl, final String featureName, final String featureVersion, final RunNotifier delegate) {
+    public PerFeatureRunNotifier(final URL repoUrl, final String featureName, final String featureVersion,
+            final RunNotifier delegate) {
         this.repoUrl = Objects.requireNonNull(repoUrl);
         this.featureName = Objects.requireNonNull(featureName);
         this.featureVersion = Objects.requireNonNull(featureVersion);

@@ -20,10 +20,10 @@ import org.ops4j.pax.exam.TestProbeBuilder;
  *
  * @author Michael Vorburger.ch
  */
+@Deprecated(since = "13.1.0", forRemoval = true)
 public final class ReflectionUtil {
-
     private ReflectionUtil() {
-
+        // Hidden on purpose
     }
 
     public static void addAllClassesInSameAndSubPackageOfClass(TestProbeBuilder probe, Class<?> clazz) {

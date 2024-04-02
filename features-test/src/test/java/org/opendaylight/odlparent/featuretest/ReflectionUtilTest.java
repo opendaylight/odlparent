@@ -19,6 +19,7 @@ import org.junit.Test;
  *
  * @author Michael Vorburger.ch
  */
+@Deprecated(since = "13.1.0", forRemoval = true)
 public class ReflectionUtilTest {
     @Test
     public void testGetClasses() {

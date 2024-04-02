@@ -22,6 +22,7 @@ import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.karaf.options.KarafFeaturesOption;
 import org.ops4j.pax.exam.options.OptionalCompositeOption;
 
+@Deprecated(since = "13.1.0", forRemoval = true)
 class DependencyUtilTest {
 
     @TempDir

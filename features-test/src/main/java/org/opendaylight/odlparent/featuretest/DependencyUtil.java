@@ -29,8 +29,8 @@ import org.slf4j.LoggerFactory;
  * Utility class responsible for maven dependencies processing. Functionality relays on dependencies list populated
  * by {@code maven-dependency-plugin} on execution prior to SFT's {@code test} phase.
  */
+@Deprecated(since = "13.1.0", forRemoval = true)
 final class DependencyUtil {
-
     private static final Logger LOG = LoggerFactory.getLogger(DependencyUtil.class);
     private static final String TEST_DEPENDENCIES_LIST_PROP = "featureTest.dependencies.list";
     private static final String FEATURES = "features";

@@ -12,9 +12,10 @@ import java.net.URL;
 import java.util.Collection;
 import org.junit.runner.Description;
 
+@Deprecated(since = "13.1.0", forRemoval = true)
 public final class Util {
     private Util() {
-
+        // Hidden on purpose
     }
 
     /**

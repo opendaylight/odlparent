@@ -5,7 +5,6 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-
 package org.opendaylight.odlparent.featuretest;
 
 import static org.opendaylight.odlparent.featuretest.Constants.ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP;
@@ -27,8 +26,8 @@ import org.ops4j.pax.exam.junit.PaxExam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Deprecated(since = "13.1.0", forRemoval = true)
 public class PerFeatureRunner extends Runner implements Filterable, Sortable {
-
     private static final Logger LOG = LoggerFactory.getLogger(PerFeatureRunner.class);
 
     private final String featureVersion;
@@ -55,7 +54,7 @@ public class PerFeatureRunner extends Runner implements Filterable, Sortable {
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_URI_PROP, repoUrl.toString());
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATURENAME_PROP, featureName);
         System.setProperty(ORG_OPENDAYLIGHT_FEATURETEST_FEATUREVERSION_PROP, featureVersion);
-        this.delegate = new PaxExam(Objects.requireNonNull(testClass));
+        delegate = new PaxExam(Objects.requireNonNull(testClass));
     }
 
     @Override

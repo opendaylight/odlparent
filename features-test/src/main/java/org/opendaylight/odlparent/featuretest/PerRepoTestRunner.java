@@ -5,7 +5,6 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-
 package org.opendaylight.odlparent.featuretest;
 
 import java.io.IOException;
@@ -24,8 +23,8 @@ import org.opendaylight.odlparent.karafutil.CustomBundleUrlStreamHandlerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Deprecated(since = "13.1.0", forRemoval = true)
 public class PerRepoTestRunner extends ParentRunner<PerFeatureRunner> {
-
     private static final Logger LOG = LoggerFactory.getLogger(PerRepoTestRunner.class);
 
     private static final String REPO_RECURSE = "repo.recurse";

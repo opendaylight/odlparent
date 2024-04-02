@@ -16,6 +16,7 @@ import org.eclipse.jdt.annotation.NonNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Deprecated(since = "13.1.0", forRemoval = true)
 final class KarafConstants {
     private static final Logger LOG = LoggerFactory.getLogger(KarafConstants.class);
 

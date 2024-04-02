@@ -11,6 +11,7 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
+@Deprecated(since = "13.1.0", forRemoval = true)
 public class KarafConstantsTest {
     @Test
     public void testKarafVersions() {

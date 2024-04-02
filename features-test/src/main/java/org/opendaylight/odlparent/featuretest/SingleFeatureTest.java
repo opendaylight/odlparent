@@ -56,6 +56,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RunWith(PerRepoTestRunner.class)
+@Deprecated(since = "13.1.0", forRemoval = true)
 public class SingleFeatureTest {
 
     private static final String MAVEN_REPO_LOCAL = "maven.repo.local";
