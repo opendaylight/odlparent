@@ -125,7 +125,7 @@
         <groupId>com.puppycrawl.tools</groupId>
         <artifactId>checkstyle</artifactId>
         <!-- This should match the plugin management on maven-checkstyle-plugin below -->
-        <version>10.14.2</version>
+        <version>10.15.0</version>
       </dependency>
 
       <!-- Testing Dependencies -->
@@ -838,7 +838,7 @@
               <groupId>com.puppycrawl.tools</groupId>
               <artifactId>checkstyle</artifactId>
               <!-- This should match the dependency management on com.puppycrawl.tools:checkstyle above -->
-              <version>10.14.2</version>
+              <version>10.15.0</version>
             </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
