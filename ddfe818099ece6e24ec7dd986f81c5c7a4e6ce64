@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af8cfa0f_b72de4a0",
+        "filename": "features/odl-karaf-feat-jdbc/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-04-03T15:14:20Z",
+      "side": 1,
+      "message": "should be a FIXME:\n\nalso, a fixed version is available, but it requires Java 21. The FIXME: should mention that we should upgrade to that once we require Java 21 (i.e. odlparent-14 timeframe).\n\nAlso, please file a follow-up issue.",
+      "range": {
+        "startLine": 38,
+        "startChar": 21,
+        "endLine": 38,
+        "endChar": 25
+      },
+      "revId": "ddfe818099ece6e24ec7dd986f81c5c7a4e6ce64",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
