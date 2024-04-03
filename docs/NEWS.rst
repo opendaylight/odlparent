@@ -16,9 +16,12 @@ Improvements and new features
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
-* Checkstyle 10.14.0 → 10.14.2, release notes:
+* Checkstyle 10.14.0 → 10.15.0, release notes:
   * `10.14.1 <https://checkstyle.org/releasenotes.html#Release_10.14.1>`__
   * `10.14.2 <https://checkstyle.org/releasenotes.html#Release_10.14.2>`__
+  * `10.15.0 <https://checkstyle.org/releasenotes.html#Release_10.15.0>`__
+
+* commons-io `2.15.1 → 2.16.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.16.0>`__
 
 * error_prone_annotations 2.25.0 → 2.26.1, release notes:
   * `2.26.0 <https://github.com/google/error-prone/releases/tag/v2.26.0>`__
@@ -66,6 +69,8 @@ Plugin upgrades
   * `3.0.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12352096>`__
   * `3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12352107>`__
   * `3.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12353026>`__
+
+* maven-invoker-plugin `3.6.0 → 3.6.1 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.6.1>`__
 
 * maven-plugin-plugin `3.10.2 → 3.11.0 <https://github.com/apache/maven-plugin-tools/releases/tag/maven-plugin-tools-3.11.0>`__
 
