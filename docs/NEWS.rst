@@ -16,9 +16,12 @@ Improvements and new features
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
-* Checkstyle 10.14.0 → 10.14.2, release notes:
+* Checkstyle 10.14.0 → 10.15.0, release notes:
   * `10.14.1 <https://checkstyle.org/releasenotes.html#Release_10.14.1>`__
   * `10.14.2 <https://checkstyle.org/releasenotes.html#Release_10.14.2>`__
+  * `10.15.0 <https://checkstyle.org/releasenotes.html#Release_10.15.0>`__
+
+* commons-io `2.15.1 → 2.16.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.16.0>`__
 
 * error_prone_annotations 2.25.0 → 2.26.1, release notes:
   * `2.26.0 <https://github.com/google/error-prone/releases/tag/v2.26.0>`__
@@ -36,6 +39,8 @@ Third-party dependencies
 * Netty `4.1.107 → 4.1.108 <https://netty.io/news/2024/03/21/4-1-108-Final.html>`__
 
 * Pax JDBC `1.5.6 → 1.5.7 <https://github.com/ops4j/org.ops4j.pax.jdbc/milestone/33?closed=1>`__
+
+* SpotBugs `4.8.3 → 4.8.4 <https://github.com/spotbugs/spotbugs/releases/tag/4.8.4>`__
 
 * Woodstox `6.6.1 → 6.6.2 <https://github.com/FasterXML/woodstox/milestone/34?closed=1>`__
 
@@ -67,9 +72,13 @@ Plugin upgrades
   * `3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12352107>`__
   * `3.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12353026>`__
 
+* maven-invoker-plugin `3.6.0 → 3.6.1 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.6.1>`__
+
 * maven-plugin-plugin `3.10.2 → 3.11.0 <https://github.com/apache/maven-plugin-tools/releases/tag/maven-plugin-tools-3.11.0>`__
 
 * maven-remote-resources-plugin `3.1.0 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12353591>`__
+
+* spotbugs-maven-plugin `4.8.3.1 → 4.8.4.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.4.0>`__
 
 Version 13.0.11
 ---------------
