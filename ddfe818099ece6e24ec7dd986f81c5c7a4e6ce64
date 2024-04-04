@@ -22,6 +22,30 @@
       },
       "revId": "ddfe818099ece6e24ec7dd986f81c5c7a4e6ce64",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f74ea32_e627e60f",
+        "filename": "features/odl-karaf-feat-jdbc/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-04-04T07:54:13Z",
+      "side": 1,
+      "message": "Thanks, done. This issue could also be resolved by:\nhttps://jira.opendaylight.org/browse/ODLPARENT-309",
+      "parentUuid": "af8cfa0f_b72de4a0",
+      "range": {
+        "startLine": 38,
+        "startChar": 21,
+        "endLine": 38,
+        "endChar": 25
+      },
+      "revId": "ddfe818099ece6e24ec7dd986f81c5c7a4e6ce64",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
