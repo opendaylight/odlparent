@@ -38,7 +38,7 @@
     <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
 
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.4.5</karaf.version>
+    <karaf.version>4.4.6</karaf.version>
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
@@ -674,7 +674,7 @@
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-bom</artifactId>
-        <version>9.4.53.v20231009</version>
+        <version>9.4.54.v20240208</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
