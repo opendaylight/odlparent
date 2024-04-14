@@ -2,9 +2,39 @@
 ODL Parent release notes
 ========================
 
+Version 13.1.1
+--------------
+This is a bug-fix upgrade from version 13.1.0.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Logback`1.2.13 → 1.3.14, release notes:
+  * `1.3.0 <https://logback.qos.ch/news.html#1.3.0>`__
+  * `1.3.1 <https://logback.qos.ch/news.html#1.3.1>`__
+  * `1.3.2 <https://logback.qos.ch/news.html#1.3.2>`__
+  * `1.3.3 <https://logback.qos.ch/news.html#1.3.3>`__
+  * `1.3.4 <https://logback.qos.ch/news.html#1.3.4>`__
+  * `1.3.5 <https://logback.qos.ch/news.html#1.3.5>`__
+  * `1.3.6 <https://logback.qos.ch/news.html#1.3.6>`__
+  * `1.3.7 <https://logback.qos.ch/news.html#1.3.7>`__
+  * `1.3.8 <https://logback.qos.ch/news.html#1.3.8>`__
+  * `1.3.9 <https://logback.qos.ch/news.html#1.3.9>`__
+  * `1.3.10 <https://logback.qos.ch/news.html#1.3.10>`__
+  * `1.3.11 <https://logback.qos.ch/news.html#1.3.11>`__
+  * `1.3.12 <https://logback.qos.ch/news.html#1.3.12>`__
+  * `1.3.13 <https://logback.qos.ch/news.html#1.3.13>`__
+  * `1.3.14 <https://logback.qos.ch/news.html#1.3.14>`__
+
+* slf4j `2.0.12 → 2.0.13 <https://www.slf4j.org/news.html#2.0.13>`__
+
 Version 13.1.0
 --------------
 This is a bug-fix/feature upgrade from version 13.0.11.
+
+Potentially breaking change
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This release unfortunately ended up adopting SLF4J-2 as a transitive dependency. This upgrade is transparent to normal
+users. Unfortunately backend integrations needs to be updated to use the new logger loading mechanism.
 
 Improvements and new features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,6 +75,32 @@ Third-party dependencies
 * Netty `4.1.107 → 4.1.108 <https://netty.io/news/2024/03/21/4-1-108-Final.html>`__
 
 * Pax JDBC `1.5.6 → 1.5.7 <https://github.com/ops4j/org.ops4j.pax.jdbc/milestone/33?closed=1>`__
+
+* slf4j 1.7.35 → 2.0.12, release notes:
+  * `2.0.0 <https://www.slf4j.org/faq.html#changesInVersion200>`__
+  * `2.0.1 <https://www.slf4j.org/news.html#2.0.1>`__
+  * `2.0.2 <https://www.slf4j.org/news.html#2.0.2>`__
+  * `2.0.3 <https://www.slf4j.org/news.html#2.0.3>`__
+  * `2.0.4 <https://www.slf4j.org/news.html#2.0.4>`__
+  * `2.0.5 <https://www.slf4j.org/news.html#2.0.5>`__
+  * `2.0.6 <https://www.slf4j.org/news.html#2.0.6>`__
+  * `2.0.7 <https://www.slf4j.org/news.html#2.0.7>`__
+  * `2.0.8 <https://www.slf4j.org/news.html#2.0.8>`__
+  * `2.0.9 <https://www.slf4j.org/news.html#2.0.9>`__
+  * `2.0.10 <https://www.slf4j.org/news.html#2.0.10>`__
+  * `2.0.11 <https://www.slf4j.org/news.html#2.0.11>`__
+  * `2.0.12 <https://www.slf4j.org/news.html#2.0.12>`__
+
+* log4j 2.17.2 → 2.23.1, release notes:
+  * `2.18.0 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-18-0>`__
+  * `2.19.0 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-19-0>`__
+  * `2.20.0 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-20-0>`__
+  * `2.21.0 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-21-0>`__
+  * `2.21.1 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-21-1>`__
+  * `2.22.0 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-22-0>`__
+  * `2.22.1 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-22-1>`__
+  * `2.23.0 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-23-0>`__
+  * `2.23.1 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-23-1>`__
 
 * Woodstox `6.6.1 → 6.6.2 <https://github.com/FasterXML/woodstox/milestone/34?closed=1>`__
 
