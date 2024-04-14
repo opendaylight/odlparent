@@ -13,6 +13,8 @@ Improvements and new features
   See `ODLPARENT-262 <https://jira.opendaylight.org/browse/ODLPARENT-262>`__ for more information.
 * ``sporbugs-maven-plugin`` now runs with ``spotbugs.fork=false``. This setting improves build time by removing
   the need to warm up a JVM for each SpotBugs analysis.
+* Apache Derby is now excluded from PAX JDBC features due to a vulnerability which is not fixed in a suitable
+  release. See `ODLPARENT-262 <https://jira.opendaylight.org/browse/ODLPARENT-306>`__ for more information.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,9 +34,13 @@ Third-party dependencies
   * `2.16.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.16.1>`__
   * `2.16.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.16.2>`__
 
+* Jetty `9.4.53.v20231009 → 9.4.54.v20240208 <https://github.com/eclipse/jetty.project/releases/tag/jetty-9.4.54.v20240208>`__
+
 * jdt-annotations `2.2.800 → 2.3.0 <https://github.com/eclipse-jdt/eclipse.jdt.core/pull/1716>`__
 
 * Jersey `2.41 → 2.42 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.42>`__
+
+* Karaf `4.4.5 → 4.4.6 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12311140&version=12354057>`__
 
 * Netty `4.1.107 → 4.1.108 <https://netty.io/news/2024/03/21/4-1-108-Final.html>`__
 
@@ -49,6 +55,8 @@ Plugin upgrades
 * git-commit-id-maven-plugin 7.0.0 → 8.0.0, release notes:
   * `8.0.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v8.0.0>`__
   * `8.0.1 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v8.0.1>`__
+
+* Jacoco Maven plugin `0.8.11 → 0.8.12 <https://github.com/jacoco/jacoco/releases/tag/v0.8.12>`__
 
 * maven-assembly-plugin 3.6.0 → 3.7.1, release notes:
   * `3.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220&version=12353243>`__
@@ -72,9 +80,15 @@ Plugin upgrades
 
 * maven-invoker-plugin `3.6.0 → 3.6.1 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.6.1>`__
 
-* maven-plugin-plugin `3.10.2 → 3.11.0 <https://github.com/apache/maven-plugin-tools/releases/tag/maven-plugin-tools-3.11.0>`__
+* maven-jar-plugin `3.3.0 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12352303>`__
+
+* maven-plugin-plugin 3.10.2 → 3.12.0, release notes:
+  * `3.11.0 <https://github.com/apache/maven-plugin-tools/releases/tag/maven-plugin-tools-3.11.0>`__
+  * `3.12.0 <https://github.com/apache/maven-plugin-tools/releases/tag/maven-plugin-tools-3.12.0>`__
 
 * maven-remote-resources-plugin `3.1.0 → 3.2.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12353591>`__
+
+* maven-source-plugin `3.3.0 → 3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924&version=12353471>`__
 
 Version 13.0.11
 ---------------
