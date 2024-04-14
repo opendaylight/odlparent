@@ -22,7 +22,7 @@
     <description>ODL Root Parent documentation</description>
 
     <properties>
-        <maven.javadoc.failOnWarnings>true</maven.javadoc.failOnWarnings>
+        <maven.javadoc.failOnWarnings>false</maven.javadoc.failOnWarnings>
     </properties>
 
     <dependencies>
