@@ -25,7 +25,7 @@
     <dependencies>
         <dependency>
             <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-ext-jdk18on</artifactId>
+            <artifactId>bcprov-jdk18on</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -44,7 +44,7 @@
                         </goals>
                         <configuration>
                             <includes>**/MANIFEST.MF</includes>
-                            <includeArtifactIds>bcprov-ext-jdk18on</includeArtifactIds>
+                            <includeArtifactIds>bcprov-jdk18on</includeArtifactIds>
                             <silent>true</silent>
                         </configuration>
                     </execution>
