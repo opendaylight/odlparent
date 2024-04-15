@@ -8,6 +8,8 @@ This is a bug-fix upgrade from version 13.1.0.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.77 → 1.78 <https://www.bouncycastle.org/releasenotes.html#r1rv78>`__
+
 * Logback`1.2.13 → 1.3.14, release notes:
   * `1.3.0 <https://logback.qos.ch/news.html#1.3.0>`__
   * `1.3.1 <https://logback.qos.ch/news.html#1.3.1>`__
