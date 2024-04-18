@@ -22,6 +22,17 @@
     <name>ODL :: odlparent :: ${project.artifactId}</name>
     <packaging>kar</packaging>
 
+    <!-- FIXME: Remove this project in the next release-->
+    <distributionManagement>
+        <relocation>
+            <message>
+                The 'odl-karaf-feat-jdbc' has been split into two separate projects: 'odl-pax-jdbc' and
+                'odl-pax-jdbc-config'. If your project requires any other pax-jdbc feature, consider creating your own
+                feature based on the odl-pax-jdbc or odl-pax-jdbc-config project.
+            </message>
+        </relocation>
+    </distributionManagement>
+
     <properties>
         <pax.jdbc.version>1.5.7</pax.jdbc.version>
     </properties>
