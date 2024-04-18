@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-pax-jdbc-config">
+    <repository>mvn:org.opendaylight.odlparent/odl-pax-jdbc-spec/{{versionAsInProject}}/xml/features</repository>
+    <feature name="odl-pax-jdbc-config" description="Provides JDBC Config support">
+        <feature>odl-pax-jdbc-spec</feature>
+
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.jasypt/{{versionAsInProject}}</bundle>
+        <bundle>mvn:org.ops4j.pax.jdbc/pax-jdbc-pool-common/{{versionAsInProject}}</bundle>
+        <bundle>mvn:org.ops4j.pax.jdbc/pax-jdbc-config/{{versionAsInProject}}</bundle>
+    </feature>
+</features>
