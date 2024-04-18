@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-pax-jdbc-spec">
+    <feature name="odl-pax-jdbc-spec" description="Provides OSGi JDBC Service spec">
+        <bundle dependency="true">mvn:org.osgi/org.osgi.service.jdbc/1.1.0</bundle>
+        <!-- it should be Karaf that installs "transaction-api" feature, that's why these bundles have dependency="true" -->
+        <bundle dependency="true">mvn:javax.transaction/javax.transaction-api/1.2</bundle>
+        <bundle dependency="true">mvn:javax.interceptor/javax.interceptor-api/1.2.2</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/1_3</bundle>
+        <bundle dependency="true">mvn:jakarta.el/jakarta.el-api/3.0.3</bundle>
+        <bundle dependency="true">mvn:javax.enterprise/cdi-api/2.0.SP1</bundle>
+    </feature>
+</features>

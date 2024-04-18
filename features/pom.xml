@@ -57,5 +57,8 @@
 
         <!-- Test features -->
         <module>odl-bundle-test</module>
+        <module>odl-pax-jdbc-spec</module>
+        <module>odl-pax-jdbc</module>
+        <module>odl-pax-jdbc-config</module>
     </modules>
 </project>

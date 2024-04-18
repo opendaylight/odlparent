@@ -102,7 +102,19 @@
 
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-karaf-feat-jdbc</artifactId>
+            <artifactId>odl-pax-jdbc-spec</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>odl-pax-jdbc</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>odl-pax-jdbc-config</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
