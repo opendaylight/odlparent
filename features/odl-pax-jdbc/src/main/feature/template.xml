@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-pax-jdbc">
+    <repository>mvn:org.opendaylight.odlparent/odl-pax-jdbc-spec/{{versionAsInProject}}/xml/features</repository>
+    <feature name="odl-pax-jdbc" description="Provides JDBC Service support">
+        <feature>odl-pax-jdbc-spec</feature>
+
+        <bundle>mvn:org.ops4j.pax.jdbc/pax-jdbc/${pax.jdbc.version}</bundle>
+    </feature>
+</features>
