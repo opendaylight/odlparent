@@ -18,6 +18,10 @@
         <relativePath>../../single-feature-parent</relativePath>
     </parent>
 
+    <!--
+        FIXME: ODLPARENT-313: Remove this feature in the next release as it has been replaced by odl-pax-jdbc,
+                              odl-pax-jdbc-spec and odl-pax-jdbc-config.
+    -->
     <artifactId>odl-karaf-feat-jdbc</artifactId>
     <name>ODL :: odlparent :: ${project.artifactId}</name>
     <packaging>kar</packaging>

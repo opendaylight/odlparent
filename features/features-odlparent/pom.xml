@@ -102,12 +102,6 @@
 
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-karaf-feat-jdbc</artifactId>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-        <dependency>
-            <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>odl-karaf-feat-jetty</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
@@ -122,6 +116,27 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>odl-netty-4</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>odl-pax-jdbc</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>odl-pax-jdbc-config</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>odl-pax-jdbc-spec</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
