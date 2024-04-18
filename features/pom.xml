@@ -49,6 +49,9 @@
         <module>odl-javassist-3</module>
         <module>odl-jersey-2</module>
         <module>odl-netty-4</module>
+        <module>odl-pax-jdbc</module>
+        <module>odl-pax-jdbc-config</module>
+        <module>odl-pax-jdbc-spec</module>
         <module>odl-servlet-api</module>
         <module>odl-stax2-api</module>
         <module>odl-woodstox</module>
