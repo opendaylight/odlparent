@@ -43,6 +43,27 @@ import org.slf4j.LoggerFactory;
  * </ul>
  */
 public final class TestProbe {
+    enum CheckResult {
+        SUCCESS,
+        FAILURE,
+        STOPPING,
+        IN_PROGRESS;
+
+        static CheckResult of(final String bundleName, final ContainerState state) {
+            // Note we do not use a switch expression on purpose. Otherwise the probe installation will fail as we
+            // cannot reference the inner class generated in that pattern.
+            if (state == ContainerState.RESOLVED || state == ContainerState.ACTIVE
+                || bundleName != null && state == ELIGIBLE_STATES.get(bundleName)) {
+                return SUCCESS;
+            } else if (state == ContainerState.FAILURE) {
+                return FAILURE;
+            } else if (state == ContainerState.STOPPING) {
+                return STOPPING;
+            } else {
+                return IN_PROGRESS;
+            }
+        }
+    }
 
     static final String FEATURE_FILE_URI_PROP = "feature.test.file.uri";
     static final String BUNDLE_CHECK_SKIP = "feature.test.bundle.check.skip";
@@ -51,8 +72,12 @@ public final class TestProbe {
     static final String DEFAULT_TIMEOUT = "300";
     static final String DEFAULT_INTERVAL = "1";
 
-    static final String[] ALL_PROPERTY_KEYS =
-        {FEATURE_FILE_URI_PROP, BUNDLE_CHECK_SKIP, BUNDLE_CHECK_TIMEOUT_SECONDS, BUNDLE_CHECK_INTERVAL_SECONDS};
+    static final String[] ALL_PROPERTY_KEYS = {
+        FEATURE_FILE_URI_PROP,
+        BUNDLE_CHECK_SKIP,
+        BUNDLE_CHECK_TIMEOUT_SECONDS,
+        BUNDLE_CHECK_INTERVAL_SECONDS
+    };
 
     private static final Logger LOG = LoggerFactory.getLogger(TestProbe.class);
     private static final Map<String, ContainerState> ELIGIBLE_STATES = Map.of(
@@ -138,7 +163,7 @@ public final class TestProbe {
 
             final var bundleCheckResults = diag.bundles().stream()
                 .collect(Collectors.toMap(DiagBundle::bundleId,
-                    bundle -> checkResultOf(bundle.symbolicName(), bundle.serviceState().containerState())));
+                    bundle -> CheckResult.of(bundle.symbolicName(), bundle.serviceState().containerState())));
             final var result = aggregatedCheckResults(bundleCheckResults);
             final var elapsed = System.nanoTime() - started;
 
@@ -179,25 +204,5 @@ public final class TestProbe {
             return CheckResult.IN_PROGRESS;
         }
         return CheckResult.SUCCESS;
-    }
-
-    static CheckResult checkResultOf(final String bundleName, final ContainerState state) {
-        if (bundleName != null && state == ELIGIBLE_STATES.get(bundleName)) {
-            return CheckResult.SUCCESS;
-        }
-        if (state == ContainerState.STOPPING) {
-            return CheckResult.STOPPING;
-        }
-        if (state == ContainerState.FAILURE) {
-            return CheckResult.FAILURE;
-        }
-        if (state == ContainerState.RESOLVED || state == ContainerState.ACTIVE) {
-            return CheckResult.SUCCESS;
-        }
-        return CheckResult.IN_PROGRESS;
-    }
-
-    enum CheckResult {
-        SUCCESS, FAILURE, STOPPING, IN_PROGRESS;
     }
 }
