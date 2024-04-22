@@ -5,7 +5,7 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundlestest.lib;
+package org.opendaylight.odlparent.bundles.diag.spi;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -25,14 +25,14 @@ import org.osgi.framework.ServiceReference;
  * @author Michael Vorburger.ch
  */
 @ExtendWith(MockitoExtension.class)
-class ServiceReferenceUtilTest {
+class DefaultDiagReferenceTest {
     @Mock
     private ServiceReference<?> serviceReference;
 
     @Test
     void testGetUsingBundleSymbolicNames() {
         doReturn(null).when(serviceReference).getUsingBundles();
-        assertEquals(List.of(), ServiceReferenceUtil.getUsingBundleSymbolicNames(serviceReference));
+        assertEquals(List.of(), DefaultDiag.getUsingBundleSymbolicNames(serviceReference));
     }
 
     @Test
@@ -42,7 +42,7 @@ class ServiceReferenceUtilTest {
         doReturn(List.of("value2.1", "value2.2")).when(serviceReference).getProperty("property2");
         doReturn(null).when(serviceReference).getProperty("property3");
 
-        final var map = ServiceReferenceUtil.getProperties(serviceReference);
+        final var map = DefaultDiag.getProperties(serviceReference);
         assertEquals(3, map.size());
         assertEquals("value1", map.get("property1"));
         assertEquals(List.of("value2.1", "value2.2"), map.get("property2"));
