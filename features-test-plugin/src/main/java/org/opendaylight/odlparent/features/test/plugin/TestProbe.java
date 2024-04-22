@@ -56,6 +56,28 @@ import org.slf4j.LoggerFactory;
  * </ul>
  */
 public final class TestProbe {
+    private enum CheckResult {
+        SUCCESS,
+        FAILURE,
+        STOPPING,
+        IN_PROGRESS;
+
+        static CheckResult of(final String bundleName, final BundleState state) {
+            if (bundleName != null && state == ELIGIBLE_STATES.get(bundleName)) {
+                return CheckResult.SUCCESS;
+            }
+            if (state == BundleState.Stopping) {
+                return CheckResult.STOPPING;
+            }
+            if (state == BundleState.Failure) {
+                return CheckResult.FAILURE;
+            }
+            if (state == BundleState.Resolved || state == BundleState.Active) {
+                return CheckResult.SUCCESS;
+            }
+            return CheckResult.IN_PROGRESS;
+        }
+    }
 
     static final String FEATURE_FILE_URI_PROP = "feature.test.file.uri";
     static final String BUNDLE_CHECK_SKIP = "feature.test.bundle.check.skip";
@@ -174,7 +196,7 @@ public final class TestProbe {
     private void captureBundleState(final Bundle bundle) {
         if (bundle != null) {
             final var info = bundleService.getInfo(bundle);
-            final var checkResult = checkResultOf(info.getSymbolicName(), info.getState());
+            final var checkResult = CheckResult.of(info.getSymbolicName(), info.getState());
             LOG.info("Bundle state updated: {} -> {} ({})", info.getSymbolicName(), info.getState(), checkResult);
             bundleCheckResults.put(bundle.getBundleId(), checkResult);
         }
@@ -228,25 +250,5 @@ public final class TestProbe {
         } catch (InvalidSyntaxException e) {
             LOG.warn("Error retrieving services", e);
         }
-    }
-
-    static CheckResult checkResultOf(final String bundleName, final BundleState state) {
-        if (bundleName != null && state == ELIGIBLE_STATES.get(bundleName)) {
-            return CheckResult.SUCCESS;
-        }
-        if (state == BundleState.Stopping) {
-            return CheckResult.STOPPING;
-        }
-        if (state == BundleState.Failure) {
-            return CheckResult.FAILURE;
-        }
-        if (state == BundleState.Resolved || state == BundleState.Active) {
-            return CheckResult.SUCCESS;
-        }
-        return CheckResult.IN_PROGRESS;
-    }
-
-    enum CheckResult {
-        SUCCESS, FAILURE, STOPPING, IN_PROGRESS;
     }
 }
