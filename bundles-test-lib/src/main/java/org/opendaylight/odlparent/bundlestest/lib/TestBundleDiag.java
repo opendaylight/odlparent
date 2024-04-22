@@ -7,15 +7,16 @@
  */
 package org.opendaylight.odlparent.bundlestest.lib;
 
+import static java.util.Objects.requireNonNull;
+
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
 import org.apache.karaf.bundle.core.BundleService;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
-import org.osgi.framework.Bundle;
+import org.opendaylight.odlparent.bundles.diag.DiagProvider;
+import org.opendaylight.odlparent.bundles.diag.spi.DefaultDiagProvider;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.InvalidSyntaxException;
-import org.osgi.framework.ServiceReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,12 +28,15 @@ import org.slf4j.LoggerFactory;
 public class TestBundleDiag {
     private static final Logger LOG = LoggerFactory.getLogger(TestBundleDiag.class);
 
-    private final BundleContext bundleContext;
-    private final BundleService bundleService;
+    private final DiagProvider diagProvider;
 
-    public TestBundleDiag(BundleContext bundleContext, BundleService bundleService) {
-        this.bundleContext = bundleContext;
-        this.bundleService = bundleService;
+    public TestBundleDiag(final DiagProvider diagProvider) {
+        this.diagProvider = requireNonNull(diagProvider);
+    }
+
+    @Deprecated(forRemoval = true)
+    public TestBundleDiag(final BundleContext bundleContext, final BundleService bundleService) {
+        this(new DefaultDiagProvider(bundleService, bundleContext));
     }
 
     /**
@@ -48,15 +52,16 @@ public class TestBundleDiag {
      * @param timeoutUnit time unit of timeout
      * @throws SystemStateFailureException if all bundles do not settle within the timeout period
      */
-    public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit) throws SystemStateFailureException {
+    public void checkBundleDiagInfos(final long timeout, final TimeUnit timeoutUnit)
+            throws SystemStateFailureException {
         checkBundleDiagInfos(timeout, timeoutUnit, (timeInfo, bundleDiagInfos) ->
             LOG.info("checkBundleDiagInfos: Elapsed time {}s, remaining time {}s, {}",
-                    timeInfo.elapsedTimeInMS() / 1000, timeInfo.remainingTimeInMS() / 1000,
-                    bundleDiagInfos.getFullDiagnosticText()));
+                timeInfo.elapsedTimeInMS() / 1000, timeInfo.remainingTimeInMS() / 1000,
+                bundleDiagInfos.getFullDiagnosticText()));
     }
 
-    public void checkBundleDiagInfos(long timeout, TimeUnit timeoutUnit,
-            BiConsumer<TimeInfo, BundleDiagInfos> awaitingListener) throws SystemStateFailureException {
+    public void checkBundleDiagInfos(final long timeout, final TimeUnit timeoutUnit,
+            final BiConsumer<TimeInfo, BundleDiagInfos> awaitingListener) throws SystemStateFailureException {
         LOG.info("checkBundleDiagInfos() started...");
         try {
             Awaitility.await("checkBundleDiagInfos")
@@ -64,17 +69,21 @@ public class TestBundleDiag {
                 .pollInterval(1, TimeUnit.SECONDS)
                 .atMost(timeout, timeoutUnit)
                     .conditionEvaluationListener(condition -> awaitingListener.accept(
-                            new TimeInfo(condition.getElapsedTimeInMS(), condition.getRemainingTimeInMS()),
-                            (BundleDiagInfosImpl) condition.getValue()))
-                    .until(this::getBundleDiagInfos, new BundleServiceSummaryMatcher());
+                        new TimeInfo(condition.getElapsedTimeInMS(), condition.getRemainingTimeInMS()),
+                        (BundleDiagInfosImpl) condition.getValue()))
+                    .until(
+                        () -> BundleDiagInfosImpl.ofDiag(diagProvider.currentDiag()),
+                        new BundleServiceSummaryMatcher());
 
             // If we're here then either BundleServiceSummaryMatcher quit because of Active, Failure or Stopping..
-            BundleDiagInfos bundleInfos = getBundleDiagInfos();
-            SystemState systemState = bundleInfos.getSystemState();
+            final var diag = diagProvider.currentDiag();
+            final var bundleInfos = BundleDiagInfosImpl.ofDiag(diag);
+            final var systemState = bundleInfos.getSystemState();
             if (systemState.equals(SystemState.Failure) || systemState.equals(SystemState.Stopping)) {
-                LOG.error("diag failure; BundleService reports bundle(s) which failed or are already stopping"
-                        + " (details in following INFO and ERROR log messages...)");
-                logBundleDiagInfos(bundleInfos);
+                LOG.error("""
+                    diag failure; BundleService reports bundle(s) which failed or are already stopping (details in \
+                    following INFO and ERROR log messages...)""");
+                diag.logState(LOG);
                 throw new SystemStateFailureException("diag failed; some bundles failed to start", bundleInfos);
 
             } else {
@@ -85,52 +94,13 @@ public class TestBundleDiag {
         } catch (ConditionTimeoutException e) {
             // If this happens then it got stuck waiting in SystemState.Booting,
             // typically due to bundles still in BundleState GracePeriod or Waiting
-            LOG.error("diag failure; BundleService reports bundle(s) which are still not active"
-                    + " (details in following INFO and ERROR log messages...)");
-            BundleDiagInfos bundleInfos = getBundleDiagInfos();
-            logBundleDiagInfos(bundleInfos);
-            throw new SystemStateFailureException("diag timeout; some bundles are still not active:", bundleInfos, e);
-        }
-    }
-
-    private void logBundleDiagInfos(BundleDiagInfos bundleInfos) {
-        try {
-            logOSGiServices();
-        } catch (IllegalStateException e) {
-            LOG.warn("logOSGiServices() failed (never mind); too late during shutdown already?", e);
-        }
-        for (String okBundleStateInfo : bundleInfos.getOkBundleStateInfoTexts()) {
-            LOG.info(okBundleStateInfo);
-        }
-        for (String whitelistedBundleStateInfo : bundleInfos.getWhitelistedBundleStateInfoTexts()) {
-            LOG.warn(whitelistedBundleStateInfo);
-        }
-        for (String nokBundleStateInfo : bundleInfos.getNokBundleStateInfoTexts()) {
-            LOG.error(nokBundleStateInfo);
-        }
-    }
-
-    private BundleDiagInfos getBundleDiagInfos() {
-        return BundleDiagInfosImpl.forContext(bundleContext, bundleService);
-    }
-
-    private void logOSGiServices() {
-        LOG.info("Now going to log all known services, to help diagnose root cause of "
-                + "diag failure BundleService reported bundle(s) which are not active");
-        try {
-            for (ServiceReference<?> serviceRef : bundleContext.getAllServiceReferences(null, null)) {
-                Bundle bundle = serviceRef.getBundle();
-                // serviceRef.getBundle() can return null if the bundle was destroyed
-                if (bundle != null) {
-                    LOG.info("{} defines OSGi Service {} used by {}", bundle.getSymbolicName(),
-                        ServiceReferenceUtil.getProperties(serviceRef),
-                        ServiceReferenceUtil.getUsingBundleSymbolicNames(serviceRef));
-                } else {
-                    LOG.trace("skipping reporting service reference as the underlying bundle is null");
-                }
-            }
-        } catch (InvalidSyntaxException e) {
-            LOG.error("logOSGiServices() failed due to InvalidSyntaxException", e);
+            LOG.error("""
+                diag failure; BundleService reports bundle(s) which are still not active (details in following INFO \
+                and ERROR log messages...)""");
+            final var diag = diagProvider.currentDiag();
+            diag.logState(LOG);
+            throw new SystemStateFailureException("diag timeout; some bundles are still not active:",
+                BundleDiagInfosImpl.ofDiag(diag), e);
         }
     }
 }
