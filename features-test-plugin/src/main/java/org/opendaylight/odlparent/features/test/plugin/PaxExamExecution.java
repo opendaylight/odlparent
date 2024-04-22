@@ -51,6 +51,7 @@ final class PaxExamExecution {
                     final var probeBuilder = examSystem.createProbe();
                     final var address = probeBuilder.addTest(TestProbe.class, "testFeature");
                     probeBuilder.addTest(TestProbe.CheckResult.class);
+                    probeBuilder.addTest(TestProbe.BundleCheck.class);
 
                     // install probe bundle
                     container.install(probeBuilder.build().getStream());
