@@ -23,6 +23,7 @@ import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.bundle.core.BundleState;
 import org.apache.karaf.features.FeaturesService;
 import org.junit.Test;
+import org.opendaylight.odlparent.bundles.diag.spi.DefaultDiagProvider;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
@@ -166,6 +167,11 @@ public final class TestProbe {
         }
     }
 
+    private void logNokBundleDetails() {
+        // log bundle state details for troubleshooting
+        new DefaultDiagProvider(bundleService, bundleContext).currentDiag().logState();
+    }
+
     private void captureBundleState(final Bundle bundle) {
         if (bundle != null) {
             final var info = bundleService.getInfo(bundle);
@@ -190,23 +196,6 @@ public final class TestProbe {
         }
         return resultStats.getOrDefault(CheckResult.IN_PROGRESS, 0L) == 0
             ? CheckResult.SUCCESS : CheckResult.IN_PROGRESS;
-    }
-
-    private void logNokBundleDetails() {
-        final var nokBundles = bundleCheckResults.entrySet().stream()
-            .filter(entry -> CheckResult.SUCCESS != entry.getValue())
-            .map(Map.Entry::getKey).collect(Collectors.toSet());
-
-        for (var bundle : bundleContext.getBundles()) {
-            if (nokBundles.contains(bundle.getBundleId())) {
-                final var info = bundleService.getInfo(bundle);
-                final var diag = bundleService.getDiag(bundle);
-                final var diagText = diag.isEmpty() ? "" : ", diag: " + diag;
-                final var osgiState = OSGI_STATES.getOrDefault(bundle.getState(), "Unknown");
-                LOG.warn("NOK Bundle {}:{} -> OSGi state: {}, Karaf bundle state: {}{}",
-                    info.getSymbolicName(), info.getVersion(), osgiState, info.getState(), diagText);
-            }
-        }
     }
 
     static CheckResult checkResultOf(final String bundleName, final BundleState state) {
