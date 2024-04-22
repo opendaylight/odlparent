@@ -8,8 +8,10 @@
 package org.opendaylight.odlparent.features.test.plugin;
 
 import static org.opendaylight.odlparent.features.test.plugin.DependencyUtils.KARAF_VERSION;
+import static org.opendaylight.odlparent.features.test.plugin.DependencyUtils.RELEASE_VERSION;
 import static org.ops4j.pax.exam.CoreOptions.bootDelegationPackages;
 import static org.ops4j.pax.exam.CoreOptions.maven;
+import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
 import static org.ops4j.pax.exam.CoreOptions.propagateSystemProperties;
 import static org.ops4j.pax.exam.CoreOptions.systemPackages;
 import static org.ops4j.pax.exam.CoreOptions.when;
@@ -102,6 +104,9 @@ final class PaxOptionUtils {
 
     static Option[] miscOptions() {
         return new Option[]{
+            // probe dependencies
+            mavenBundle("org.opendaylight.odlparent", "bundles-diag", RELEASE_VERSION),
+
             // Needed for Agrona/aeron.io
             systemPackages("com.sun.media.sound", "sun.net", "sun.nio.ch")
         };
