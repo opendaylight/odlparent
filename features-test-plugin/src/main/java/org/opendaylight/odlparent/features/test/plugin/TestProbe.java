@@ -205,7 +205,9 @@ public final class TestProbe {
         for (var bundle : bundleContext.getBundles()) {
             if (nokBundles.contains(bundle.getBundleId())) {
                 final var info = bundleService.getInfo(bundle);
-                LOG.warn("NOK Bundle {} -> State: {}", info.getSymbolicName(), info.getState());
+                final var diag = bundleService.getDiag(bundle);
+                LOG.warn("NOK Bundle {} -> State: {}{}", info.getSymbolicName(), info.getState(),
+                    diag.isEmpty() ? "" : ", due to: " + diag);
             }
         }
         // log services of NOK bundles
