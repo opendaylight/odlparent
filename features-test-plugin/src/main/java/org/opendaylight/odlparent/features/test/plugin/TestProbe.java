@@ -22,6 +22,7 @@ import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.bundle.core.BundleState;
 import org.apache.karaf.features.FeaturesService;
 import org.junit.Test;
+import org.opendaylight.odlparent.bundles.diag.spi.DefaultDiagProvider;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
@@ -151,13 +152,10 @@ public final class TestProbe {
             Thread.sleep(interval * 1000L);
         }
         LOG.info("Bundle state check completed with result {}", result);
-        if (result == CheckResult.IN_PROGRESS) {
-            logNokBundleDetails();
-            throw new IllegalStateException("Bundles states check timeout");
-        }
         if (result != CheckResult.SUCCESS) {
-            logNokBundleDetails();
-            throw new IllegalStateException("Bundle states check failure");
+            // log bundle state details for troubleshooting
+            new DefaultDiagProvider(bundleService, bundleContext).currentDiag().logState();
+            throw new IllegalStateException("NOK bundle state(s). See log above for details.");
         }
     }
 
@@ -185,23 +183,6 @@ public final class TestProbe {
         }
         return resultStats.getOrDefault(CheckResult.IN_PROGRESS, 0L) == 0
             ? CheckResult.SUCCESS : CheckResult.IN_PROGRESS;
-    }
-
-    private void logNokBundleDetails() {
-        final var nokBundles = bundleCheckResults.entrySet().stream()
-            .filter(entry -> CheckResult.SUCCESS != entry.getValue())
-            .map(Map.Entry::getKey).collect(Collectors.toSet());
-
-        for (var bundle : bundleContext.getBundles()) {
-            if (nokBundles.contains(bundle.getBundleId())) {
-                final var info = bundleService.getInfo(bundle);
-                final var diag = bundleService.getDiag(bundle);
-                final var diagText = diag.isEmpty() ? "" : ", diag: " + diag;
-                final var osgiState = OSGI_STATES.getOrDefault(bundle.getState(), "Unknown");
-                LOG.warn("NOK Bundle {}:{} -> OSGi state: {}, Karaf bundle state: {}{}",
-                    info.getSymbolicName(), info.getVersion(), osgiState, info.getState(), diagText);
-            }
-        }
     }
 
     static CheckResult checkResultOf(final String bundleName, final BundleState state) {
