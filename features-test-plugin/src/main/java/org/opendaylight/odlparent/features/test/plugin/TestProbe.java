@@ -150,13 +150,14 @@ public final class TestProbe {
         // init all bundles state data
         Arrays.stream(bundleContext.getBundles()).forEach(this::captureBundleState);
         // enable stats analysis
-        checkFutureRef.set(new CompletableFuture<>());
+        final var checkFuture = new CompletableFuture<CheckResult>();
+        checkFutureRef.set(checkFuture);
         // perform stats analysis
         updateCheckResults();
 
         final CheckResult result;
         try {
-            result = checkFutureRef.get().get(timeout, TimeUnit.SECONDS);
+            result = checkFuture.get(timeout, TimeUnit.SECONDS);
         } catch (TimeoutException e) {
             logNokBundleDetails();
             throw new IllegalStateException("Bundles states check was not completed in " + timeout + "seconds", e);
@@ -180,7 +181,8 @@ public final class TestProbe {
     }
 
     private void updateCheckResults() {
-        if (checkFutureRef.get() == null || checkFutureRef.get().isDone()) {
+        final var checkFuture = checkFutureRef.get();
+        if (checkFuture == null || checkFuture.isDone()) {
             // don't check stats if results are not expected or already delivered
             return;
         }
@@ -189,11 +191,11 @@ public final class TestProbe {
         LOG.info("Bundle states check results: total={}, byResult={}", bundleCheckResults.size(), resultStats);
 
         if (resultStats.getOrDefault(CheckResult.FAILURE, 0L) > 0) {
-            checkFutureRef.get().complete(CheckResult.FAILURE);
+            checkFuture.complete(CheckResult.FAILURE);
         } else if (resultStats.getOrDefault(CheckResult.STOPPING, 0L) > 0) {
-            checkFutureRef.get().complete(CheckResult.STOPPING);
+            checkFuture.complete(CheckResult.STOPPING);
         } else if (resultStats.getOrDefault(CheckResult.IN_PROGRESS, 0L) == 0) {
-            checkFutureRef.get().complete(CheckResult.SUCCESS);
+            checkFuture.complete(CheckResult.SUCCESS);
         }
     }
 
