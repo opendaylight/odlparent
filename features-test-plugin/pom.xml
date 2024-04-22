@@ -153,6 +153,11 @@
             <artifactId>org.apache.karaf.bundle.core</artifactId>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>bundles-diag</artifactId>
+            <scope>compile</scope>
+        </dependency>
 
         <!-- junit 4 @Test annotation is required for junit probe invoker -->
         <dependency>
