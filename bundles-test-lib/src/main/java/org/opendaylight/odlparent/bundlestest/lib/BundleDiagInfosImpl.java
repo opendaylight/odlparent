@@ -20,6 +20,8 @@ import java.util.Map;
 import org.apache.karaf.bundle.core.BundleInfo;
 import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.bundle.core.BundleState;
+import org.opendaylight.odlparent.bundles.diag.Diag;
+import org.opendaylight.odlparent.bundles.diag.spi.DefaultDiagProvider;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 
@@ -65,6 +67,10 @@ final class BundleDiagInfosImpl implements BundleDiagInfos {
     }
 
     public static BundleDiagInfos forContext(BundleContext bundleContext, BundleService bundleService) {
+        return ofDiag(new DefaultDiagProvider(bundleService, bundleContext).currentDiag());
+    }
+
+    public static BundleDiagInfos ofDiag(Diag diag) {
         List<String> okBundleStateInfoTexts = new ArrayList<>();
         List<String> nokBundleStateInfoTexts = new ArrayList<>();
         List<String> whitelistedBundleStateInfoTexts = new ArrayList<>();
@@ -74,10 +80,10 @@ final class BundleDiagInfosImpl implements BundleDiagInfos {
             bundleStatesCounters.put(bundleState, 0);
         }
 
-        for (Bundle bundle : bundleContext.getBundles()) {
-            String bundleSymbolicName = bundle.getSymbolicName();
+        for (var bundle : diag.bundles()) {
+            String bundleSymbolicName = bundle.symbolicName();
             BundleSymbolicNameWithVersion bundleSymbolicNameWithVersion
-                = new BundleSymbolicNameWithVersion(bundleSymbolicName, bundle.getVersion().toString());
+                = new BundleSymbolicNameWithVersion(bundleSymbolicName, bundle.version().toString());
 
             BundleInfo karafBundleInfo = bundleService.getInfo(bundle);
             String diagText = bundleService.getDiag(bundle);
