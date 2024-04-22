@@ -7,12 +7,8 @@
  */
 package org.opendaylight.odlparent.features.test.plugin;
 
-import static org.apache.karaf.bundle.core.BundleState.Installed;
-import static org.apache.karaf.bundle.core.BundleState.Waiting;
-
 import java.io.File;
 import java.net.URI;
-import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,10 +16,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
 import org.apache.karaf.bundle.core.BundleService;
-import org.apache.karaf.bundle.core.BundleState;
 import org.apache.karaf.features.FeaturesService;
 import org.junit.Test;
-import org.osgi.framework.Bundle;
+import org.opendaylight.odlparent.bundles.diag.ContainerState;
+import org.opendaylight.odlparent.bundles.diag.spi.DefaultDiagProvider;
 import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,15 +56,9 @@ public final class TestProbe {
         {FEATURE_FILE_URI_PROP, BUNDLE_CHECK_SKIP, BUNDLE_CHECK_TIMEOUT_SECONDS, BUNDLE_CHECK_INTERVAL_SECONDS};
 
     private static final Logger LOG = LoggerFactory.getLogger(TestProbe.class);
-    private static final Map<Integer, String> OSGI_STATES = Map.of(
-        Bundle.INSTALLED, "Installed", Bundle.RESOLVED, "Resolved",
-        Bundle.STARTING, "Starting", Bundle.ACTIVE, "Active",
-        Bundle.STOPPING, "Stopping", Bundle.UNINSTALLED, "Uninstalled");
-    private static final Map<String, BundleState> ELIGIBLE_STATES = Map.of(
-        "slf4j.log4j12", Installed,
-        "org.apache.karaf.scr.management", Waiting);
-
-    private final Map<Long, CheckResult> bundleCheckResults = new HashMap<>();
+    private static final Map<String, ContainerState> ELIGIBLE_STATES = Map.of(
+        "slf4j.log4j12", ContainerState.INSTALLED,
+        "org.apache.karaf.scr.management", ContainerState.WAITING);
 
     @Inject
     private BundleContext bundleContext;
@@ -143,13 +133,32 @@ public final class TestProbe {
 
         final var maxNanos = TimeUnit.SECONDS.toNanos(timeout);
         final var started = System.nanoTime();
+        final var diagProvider = new DefaultDiagProvider(bundleService, bundleContext);
+
+        // FIXME: this does not work well with bundles being uninstalled, see below
+        final var bundleCheckResults = new HashMap<Long, CheckResult>();
+
         while (true) {
-            Arrays.stream(bundleContext.getBundles()).forEach(this::captureBundleState);
-            final var result = aggregatedCheckResults();
+            final var diag = diagProvider.currentDiag();
+
+            for (var bundle : diag.bundles()) {
+                final var containerState = bundle.serviceState().containerState();
+                final var checkResult = checkResultOf(bundle.symbolicName(), containerState);
+
+                // FIXME: this does not account for bundleIds disappearing. We really should just index here and then
+                //        compare observed state from previous run
+                final var prev = bundleCheckResults.put(bundle.bundleId(), checkResult);
+                if (prev != checkResult) {
+                    LOG.info("Bundle {} -> State: {} ({})", bundle.symbolicName(), containerState, checkResult);
+                }
+            }
+
+            final var result = aggregatedCheckResults(bundleCheckResults);
+
             if (result == CheckResult.IN_PROGRESS) {
                 final var now = System.nanoTime();
                 if (now - started >= maxNanos) {
-                    logNokBundleDetails();
+                    diag.logState(LOG);
                     throw new IllegalStateException("Bundles states check timeout");
                 }
 
@@ -159,25 +168,14 @@ public final class TestProbe {
 
             LOG.info("Bundle state check completed with result {}", result);
             if (result != CheckResult.SUCCESS) {
-                logNokBundleDetails();
+                diag.logState(LOG);
                 throw new IllegalStateException("Bundle states check failure");
             }
             break;
         }
     }
 
-    private void captureBundleState(final Bundle bundle) {
-        if (bundle != null) {
-            final var info = bundleService.getInfo(bundle);
-            final var checkResult = checkResultOf(info.getSymbolicName(), info.getState());
-            if (checkResult != bundleCheckResults.get(bundle.getBundleId())) {
-                LOG.info("Bundle {} -> State: {} ({})", info.getSymbolicName(), info.getState(), checkResult);
-                bundleCheckResults.put(bundle.getBundleId(), checkResult);
-            }
-        }
-    }
-
-    private CheckResult aggregatedCheckResults() {
+    private static CheckResult aggregatedCheckResults(final Map<Long, CheckResult> bundleCheckResults) {
         final var resultStats = bundleCheckResults.entrySet().stream()
             .collect(Collectors.groupingBy(Map.Entry::getValue, Collectors.counting()));
         LOG.info("Bundle states check results: total={}, byResult={}", bundleCheckResults.size(), resultStats);
@@ -188,38 +186,23 @@ public final class TestProbe {
         if (resultStats.getOrDefault(CheckResult.STOPPING, 0L) > 0) {
             return CheckResult.STOPPING;
         }
-        return resultStats.getOrDefault(CheckResult.IN_PROGRESS, 0L) == 0
-            ? CheckResult.SUCCESS : CheckResult.IN_PROGRESS;
-    }
-
-    private void logNokBundleDetails() {
-        final var nokBundles = bundleCheckResults.entrySet().stream()
-            .filter(entry -> CheckResult.SUCCESS != entry.getValue())
-            .map(Map.Entry::getKey).collect(Collectors.toSet());
-
-        for (var bundle : bundleContext.getBundles()) {
-            if (nokBundles.contains(bundle.getBundleId())) {
-                final var info = bundleService.getInfo(bundle);
-                final var diag = bundleService.getDiag(bundle);
-                final var diagText = diag.isEmpty() ? "" : ", diag: " + diag;
-                final var osgiState = OSGI_STATES.getOrDefault(bundle.getState(), "Unknown");
-                LOG.warn("NOK Bundle {}:{} -> OSGi state: {}, Karaf bundle state: {}{}",
-                    info.getSymbolicName(), info.getVersion(), osgiState, info.getState(), diagText);
-            }
+        if (resultStats.getOrDefault(CheckResult.IN_PROGRESS, 0L) > 0) {
+            return CheckResult.IN_PROGRESS;
         }
+        return CheckResult.SUCCESS;
     }
 
-    static CheckResult checkResultOf(final String bundleName, final BundleState state) {
+    static CheckResult checkResultOf(final String bundleName, final ContainerState state) {
         if (bundleName != null && state == ELIGIBLE_STATES.get(bundleName)) {
             return CheckResult.SUCCESS;
         }
-        if (state == BundleState.Stopping) {
+        if (state == ContainerState.STOPPING) {
             return CheckResult.STOPPING;
         }
-        if (state == BundleState.Failure) {
+        if (state == ContainerState.FAILURE) {
             return CheckResult.FAILURE;
         }
-        if (state == BundleState.Resolved || state == BundleState.Active) {
+        if (state == ContainerState.RESOLVED || state == ContainerState.ACTIVE) {
             return CheckResult.SUCCESS;
         }
         return CheckResult.IN_PROGRESS;
