@@ -61,5 +61,9 @@
       <groupId>org.eclipse.jdt</groupId>
       <artifactId>org.eclipse.jdt.annotation</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.opendaylight.odlparent</groupId>
+      <artifactId>bundles-diag</artifactId>
+    </dependency>
   </dependencies>
 </project>

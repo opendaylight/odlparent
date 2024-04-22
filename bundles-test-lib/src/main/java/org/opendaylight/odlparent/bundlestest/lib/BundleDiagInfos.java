@@ -10,7 +10,7 @@ package org.opendaylight.odlparent.bundlestest.lib;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-import org.apache.karaf.bundle.core.BundleState;
+import org.opendaylight.odlparent.bundles.diag.ContainerState;
 
 /**
  * System readiness diagnostic summary information.
@@ -25,7 +25,7 @@ public interface BundleDiagInfos extends Serializable {
 
     String getSummaryText();
 
-    Map<BundleSymbolicNameWithVersion, BundleState> getBundlesStateMap();
+    Map<BundleSymbolicNameWithVersion, ContainerState> getBundlesStateMap();
 
     List<String> getNokBundleStateInfoTexts();
 
