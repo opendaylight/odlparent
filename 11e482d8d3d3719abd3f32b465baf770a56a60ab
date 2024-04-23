@@ -24,6 +24,30 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c54ea9a_b5cf0750",
+        "filename": "features-test-plugin/src/main/java/org/opendaylight/odlparent/features/test/plugin/TestProbe.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8894
+      },
+      "writtenOn": "2024-04-23T13:27:34Z",
+      "side": 1,
+      "message": "currently it\u0027s BundleDiagInfosImpl#bundleStateToText of bundles-test-lib \nthe module is only used by legacy sft and became obsolete once it\u0027s removed\n\nusing switch expression compiles into anonymous inner class which \ncannot be included by name into probe bundle (see PaxExamExecution#execute) \nand requires complex workarounds with reflections\n\nusing a map for simple int to string mapping is a best fit here",
+      "parentUuid": "036224c0_af3ef57b",
+      "range": {
+        "startLine": 67,
+        "startChar": 46,
+        "endLine": 70,
+        "endChar": 72
+      },
+      "revId": "11e482d8d3d3719abd3f32b465baf770a56a60ab",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e39a65c5_6f75c1cb",
@@ -47,6 +71,30 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2bffc69a_4441bde3",
+        "filename": "features-test-plugin/src/main/java/org/opendaylight/odlparent/features/test/plugin/TestProbe.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8894
+      },
+      "writtenOn": "2024-04-23T13:27:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e39a65c5_6f75c1cb",
+      "range": {
+        "startLine": 75,
+        "startChar": 66,
+        "endLine": 75,
+        "endChar": 83
+      },
+      "revId": "11e482d8d3d3719abd3f32b465baf770a56a60ab",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "30e70e4c_7c305c46",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-04-23T11:57:23Z",
       "side": 1,
       "message": "just execute the check on main thread, for clarity and thread safety",
+      "range": {
+        "startLine": 77,
+        "startChar": 18,
+        "endLine": 77,
+        "endChar": 107
+      },
+      "revId": "11e482d8d3d3719abd3f32b465baf770a56a60ab",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "516c3d66_6fbfd3b6",
+        "filename": "features-test-plugin/src/main/java/org/opendaylight/odlparent/features/test/plugin/TestProbe.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 8894
+      },
+      "writtenOn": "2024-04-23T13:27:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30e70e4c_7c305c46",
       "range": {
         "startLine": 77,
         "startChar": 18,
