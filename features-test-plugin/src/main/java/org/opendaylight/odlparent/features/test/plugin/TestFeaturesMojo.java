@@ -83,8 +83,10 @@ public final class TestFeaturesMojo extends AbstractMojo {
     // bundle state check probe settings
     @Parameter(property = "sft.diag.skip", defaultValue = "false")
     private boolean bundleStateCheckSkip;
-    @Parameter(property = "sft.diag.timeout", defaultValue = "120")
+    @Parameter(property = "sft.diag.timeout", defaultValue = "300")
     private int bundleStateCheckTimeout;
+    @Parameter(property = "sft.diag.interval", defaultValue = "1")
+    private int bundleStateCheckInterval;
 
     // vm and profile options for karaf container
     @Parameter(property = "sft.heap.max", defaultValue = "2g")
@@ -155,6 +157,7 @@ public final class TestFeaturesMojo extends AbstractMojo {
         System.setProperty(TestProbe.FEATURE_FILE_URI_PROP, featureFile.toURI().toString());
         System.setProperty(TestProbe.BUNDLE_CHECK_SKIP, String.valueOf(bundleStateCheckSkip));
         System.setProperty(TestProbe.BUNDLE_CHECK_TIMEOUT_SECONDS, String.valueOf(bundleStateCheckTimeout));
+        System.setProperty(TestProbe.BUNDLE_CHECK_INTERVAL_SECONDS, String.valueOf(bundleStateCheckInterval));
 
         final ExamSystem system;
         try {
