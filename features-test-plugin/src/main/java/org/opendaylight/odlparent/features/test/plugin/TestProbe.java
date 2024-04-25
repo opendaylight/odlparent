@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
 import org.apache.karaf.bundle.core.BundleService;
@@ -140,24 +141,28 @@ public final class TestProbe {
         final int interval = Integer.parseInt(System.getProperty(BUNDLE_CHECK_INTERVAL_SECONDS, DEFAULT_INTERVAL));
         LOG.info("Checking bundle states. Interval = {} second(s). Timeout = {} second(s).", interval, timeout);
 
-        final var maxTimestamp = System.currentTimeMillis() + timeout * 1000L;
-        CheckResult result = CheckResult.IN_PROGRESS;
-        while (System.currentTimeMillis() < maxTimestamp) {
+        final var maxNanos = TimeUnit.SECONDS.toNanos(timeout);
+        final var started = System.nanoTime();
+        while (true) {
             Arrays.stream(bundleContext.getBundles()).forEach(this::captureBundleState);
-            result = aggregatedCheckResults();
-            if (result != CheckResult.IN_PROGRESS) {
-                break;
+            final var result = aggregatedCheckResults();
+            if (result == CheckResult.IN_PROGRESS) {
+                final var now = System.nanoTime();
+                if (now - started >= maxNanos) {
+                    logNokBundleDetails();
+                    throw new IllegalStateException("Bundles states check timeout");
+                }
+
+                TimeUnit.SECONDS.sleep(interval);
+                continue;
             }
-            Thread.sleep(interval * 1000L);
-        }
-        LOG.info("Bundle state check completed with result {}", result);
-        if (result == CheckResult.IN_PROGRESS) {
-            logNokBundleDetails();
-            throw new IllegalStateException("Bundles states check timeout");
-        }
-        if (result != CheckResult.SUCCESS) {
-            logNokBundleDetails();
-            throw new IllegalStateException("Bundle states check failure");
+
+            LOG.info("Bundle state check completed with result {}", result);
+            if (result != CheckResult.SUCCESS) {
+                logNokBundleDetails();
+                throw new IllegalStateException("Bundle states check failure");
+            }
+            break;
         }
     }
 
