@@ -5,7 +5,7 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundles.diag.spi;
+package org.opendaylight.odlparent.bundles.diag.ri;
 
 import static java.util.Objects.requireNonNull;
 
@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
 import org.opendaylight.odlparent.bundles.diag.ContainerState;
 import org.opendaylight.odlparent.bundles.diag.Diag;
@@ -29,6 +30,7 @@ import org.slf4j.Logger;
 /**
  * The default {@link Diag} implementation.
  */
+@NonNullByDefault
 record DefaultDiag(BundleContext bundleContext, List<DiagBundle> bundles) implements Diag {
     private static final Map<String, ContainerState> ALLOWED_STATES = Map.of(
         "slf4j.log4j12", ContainerState.INSTALLED,

@@ -5,7 +5,7 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-package org.opendaylight.odlparent.bundles.diag.spi;
+package org.opendaylight.odlparent.bundles.diag.ri;
 
 import static java.util.Objects.requireNonNull;
 
@@ -14,6 +14,7 @@ import java.util.Comparator;
 import java.util.stream.Collectors;
 import org.apache.karaf.bundle.core.BundleInfo;
 import org.apache.karaf.bundle.core.BundleService;
+import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.opendaylight.odlparent.bundles.diag.ContainerState;
 import org.opendaylight.odlparent.bundles.diag.Diag;
 import org.opendaylight.odlparent.bundles.diag.DiagBundle;
@@ -22,15 +23,21 @@ import org.opendaylight.odlparent.bundles.diag.FrameworkState;
 import org.opendaylight.odlparent.bundles.diag.ServiceState;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
 /**
  * Default implementation of {@link DiagProvider}.
  */
+@Component
+@NonNullByDefault
 public final class DefaultDiagProvider implements DiagProvider {
     private final BundleService bundleService;
     private final BundleContext bundleContext;
 
-    public DefaultDiagProvider(final BundleService bundleService, final BundleContext bundleContext) {
+    @Activate
+    public DefaultDiagProvider(@Reference final BundleService bundleService, final BundleContext bundleContext) {
         this.bundleService = requireNonNull(bundleService);
         this.bundleContext = requireNonNull(bundleContext);
     }
@@ -53,7 +60,7 @@ public final class DefaultDiagProvider implements DiagProvider {
      * @param bundle a {@link Bundle}
      * @return A {@link FrameworkState}
      */
-    public static FrameworkState frameworkStateOf(final Bundle bundle) {
+    private static FrameworkState frameworkStateOf(final Bundle bundle) {
         final int state = bundle.getState();
         return switch (state) {
             case Bundle.INSTALLED -> FrameworkState.INSTALLED;
@@ -72,7 +79,7 @@ public final class DefaultDiagProvider implements DiagProvider {
      * @param info a {@link BundleInfo}
      * @return A {@link ContainerState}
      */
-    public static ContainerState containerStateOf(final BundleInfo info) {
+    private static ContainerState containerStateOf(final BundleInfo info) {
         return switch (info.getState()) {
             case Active -> ContainerState.ACTIVE;
             case Failure -> ContainerState.FAILURE;

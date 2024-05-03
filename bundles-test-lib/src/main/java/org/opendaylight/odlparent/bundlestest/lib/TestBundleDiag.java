@@ -15,7 +15,7 @@ import org.apache.karaf.bundle.core.BundleService;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
 import org.opendaylight.odlparent.bundles.diag.DiagProvider;
-import org.opendaylight.odlparent.bundles.diag.spi.DefaultDiagProvider;
+import org.opendaylight.odlparent.bundles.diag.ri.DefaultDiagProvider;
 import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

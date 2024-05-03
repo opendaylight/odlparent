@@ -14,14 +14,12 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
-import org.apache.karaf.bundle.core.BundleService;
 import org.apache.karaf.features.FeaturesService;
 import org.junit.Test;
 import org.opendaylight.odlparent.bundles.diag.ContainerState;
 import org.opendaylight.odlparent.bundles.diag.Diag;
 import org.opendaylight.odlparent.bundles.diag.DiagBundle;
-import org.opendaylight.odlparent.bundles.diag.spi.DefaultDiagProvider;
-import org.osgi.framework.BundleContext;
+import org.opendaylight.odlparent.bundles.diag.DiagProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,13 +60,10 @@ public final class TestProbe {
         "org.apache.karaf.scr.management", ContainerState.WAITING);
 
     @Inject
-    private BundleContext bundleContext;
-
-    @Inject
     private FeaturesService featuresService;
 
     @Inject
-    private BundleService bundleService;
+    private DiagProvider diagProvider;
 
     /**
      * Performs the project feature installation on karaf environment with subsequent state check of deployed bundles.
@@ -89,16 +84,10 @@ public final class TestProbe {
     }
 
     private void validateServices() {
-        if (bundleContext == null) {
-            throw new IllegalStateException("bundleContext is not initialized");
-        }
-        // replace the probe's initial context which expires too fast
-        bundleContext = bundleContext.getBundle(0).getBundleContext();
-
         if (featuresService == null) {
             throw new IllegalStateException("featureService is not initialized");
         }
-        if (bundleService == null) {
+        if (diagProvider == null) {
             throw new IllegalStateException("bundleService is not initialized");
         }
     }
@@ -137,7 +126,6 @@ public final class TestProbe {
         final var intervalNanos = TimeUnit.SECONDS.toNanos(interval);
         final var maxNanos = TimeUnit.SECONDS.toNanos(timeout);
         final var started = System.nanoTime();
-        final var diagProvider = new DefaultDiagProvider(bundleService, bundleContext);
 
         Diag prevDiag = null;
         while (true) {
