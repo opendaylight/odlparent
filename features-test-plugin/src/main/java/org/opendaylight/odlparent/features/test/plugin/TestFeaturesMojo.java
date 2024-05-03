@@ -85,7 +85,7 @@ public final class TestFeaturesMojo extends AbstractMojo {
     private boolean bundleStateCheckSkip;
     @Parameter(property = "sft.diag.timeout", defaultValue = TestProbe.DEFAULT_TIMEOUT)
     private int bundleStateCheckTimeout;
-    @Parameter(property = "sft.diag.interval", defaultValue = TestProbe.DEFAULT_TIMEOUT)
+    @Parameter(property = "sft.diag.interval", defaultValue = TestProbe.DEFAULT_INTERVAL)
     private int bundleStateCheckInterval;
 
     // vm and profile options for karaf container
