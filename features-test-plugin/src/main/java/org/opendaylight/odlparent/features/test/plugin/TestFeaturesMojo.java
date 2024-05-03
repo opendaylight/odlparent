@@ -74,6 +74,8 @@ public final class TestFeaturesMojo extends AbstractMojo {
 
     @Parameter(property = "sft.skip", defaultValue = "false")
     private boolean skip;
+    @Parameter(property = "skipTests", defaultValue = "false")
+    private boolean skipTests;
     @Deprecated(since = "13.0.10", forRemoval = true)
     @Parameter(property = "skip.karaf.featureTest", defaultValue = "false")
     private boolean legacySkip;
@@ -108,7 +110,7 @@ public final class TestFeaturesMojo extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException {
-        if (skip) {
+        if (skip || skipTests) {
             LOG.debug("Skipping execution");
             return;
         }
