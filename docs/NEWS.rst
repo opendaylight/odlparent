@@ -2,6 +2,47 @@
 ODL Parent release notes
 ========================
 
+Version 13.1.2
+--------------
+This is a bug-fix upgrade from version 13.1.1.
+
+Bug fixes
+~~~~~~~~~
+* ``SingleFeatureTest`` execution did not account for asynchronous bundle updates. This has now been fixed.
+  See `ODLPARENT-312 <https://jira.opendaylight.org/browse/ODLPARENT-312>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checker-qual 3.42.0 → 3.43.0
+
+* Checkstyle `10.15.0 → 10.16.0 <https://checkstyle.org/releasenotes.html#Release_10.16.0>`__
+
+* commons-io `2.16.0 → 2.16.1 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.16.1>`__
+
+* commons-text `1.11.0 → 1.12.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318221&version=12353778>`__
+
+* error_prone_annotations 2.26.1 → 2.27.1, release notes:
+  * `2.27.0 <https://github.com/google/error-prone/releases/tag/v2.27.0>`__
+  * `2.27.1 <https://github.com/google/error-prone/releases/tag/v2.27.1>`__
+
+* Jersey `2.42 → 2.43 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.43>`__
+
+* Netty `4.1.108 → 4.1.109 <https://netty.io/news/2024/04/15/4-1-109-Final.html>`__
+
+* ThreeTen `1.7.2 → 1.8.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.8.0>`__
+
+* xmlunit `2.9.1 → 2.10.0 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-deploy-plugin `3.1.1 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317228&version=12354128>`__
+
+* maven-install-plugin `3.1.1 → 3.1.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12353548>`__
+
+* maven-jar-plugin `3.4.0 → 3.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12354551>`__
+
+* maven-shade-plugin `3.5.2 → 3.5.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921&version=12354342>`__
+
 Version 13.1.1
 --------------
 This is a bug-fix upgrade from version 13.1.0.
@@ -42,7 +83,7 @@ Improvements and new features
 * ``sporbugs-maven-plugin`` now runs with ``spotbugs.fork=false``. This setting improves build time by removing
   the need to warm up a JVM for each SpotBugs analysis.
 * Apache Derby is now excluded from PAX JDBC features due to a vulnerability which is not fixed in a suitable
-  release. See `ODLPARENT-262 <https://jira.opendaylight.org/browse/ODLPARENT-306>`__ for more information.
+  release. See `ODLPARENT-306 <https://jira.opendaylight.org/browse/ODLPARENT-306>`__ for more information.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
