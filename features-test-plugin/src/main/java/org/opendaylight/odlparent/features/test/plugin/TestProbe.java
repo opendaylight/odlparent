@@ -7,18 +7,19 @@
  */
 package org.opendaylight.odlparent.features.test.plugin;
 
+import static java.util.concurrent.TimeUnit.NANOSECONDS;
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 import java.io.File;
 import java.net.URI;
 import java.util.EnumSet;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
 import org.apache.karaf.features.FeaturesService;
 import org.junit.Test;
 import org.opendaylight.odlparent.bundles.diag.ContainerState;
 import org.opendaylight.odlparent.bundles.diag.Diag;
-import org.opendaylight.odlparent.bundles.diag.DiagBundle;
 import org.opendaylight.odlparent.bundles.diag.DiagProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -91,6 +92,13 @@ public final class TestProbe {
     private DiagProvider diagProvider;
 
     /**
+     * Default constructor.
+     */
+    public TestProbe() {
+        // Exposed for javadoc
+    }
+
+    /**
      * Performs the project feature installation on karaf environment with subsequent state check of deployed bundles.
      *
      * @throws Exception on probe failure
@@ -148,8 +156,8 @@ public final class TestProbe {
         final int interval = Integer.parseInt(System.getProperty(BUNDLE_CHECK_INTERVAL_SECONDS, DEFAULT_INTERVAL));
         LOG.info("Bundle check started. Interval = {} second(s). Timeout = {} second(s).", interval, timeout);
 
-        final var intervalNanos = TimeUnit.SECONDS.toNanos(interval);
-        final var maxNanos = TimeUnit.SECONDS.toNanos(timeout);
+        final var intervalNanos = SECONDS.toNanos(interval);
+        final var maxNanos = SECONDS.toNanos(timeout);
         final var started = System.nanoTime();
 
         Diag prevDiag = null;
@@ -161,23 +169,46 @@ public final class TestProbe {
             }
             prevDiag = diag;
 
-            final var bundleCheckResults = diag.bundles().stream()
-                .collect(Collectors.toMap(DiagBundle::bundleId,
-                    bundle -> CheckResult.of(bundle.symbolicName(), bundle.serviceState().containerState())));
-            final var result = aggregatedCheckResults(bundleCheckResults);
+            final var checkResults = diag.bundles().stream()
+                .map(bundle -> Map.entry(bundle,
+                    CheckResult.of(bundle.symbolicName(), bundle.serviceState().containerState())))
+                .collect(Collectors.toUnmodifiableList());
+
+            LOG.info("Bundle states check results: total={}, byResult={}", checkResults.size(), checkResults.stream()
+                .collect(Collectors.groupingBy(Map.Entry::getValue, Collectors.counting())));
             final var elapsed = System.nanoTime() - started;
 
-            if (result != CheckResult.IN_PROGRESS) {
-                LOG.info("Bundle check completed with result {} after {}s", result,
-                    TimeUnit.NANOSECONDS.toSeconds(elapsed));
-                if (result != CheckResult.SUCCESS) {
+            for (var checkResult : checkResults) {
+                if (checkResult.getValue() == CheckResult.FAILURE) {
+                    LOG.error("Bundle check failed after {}s", NANOSECONDS.toSeconds(elapsed));
                     diag.logState(LOG);
                     throw new IllegalStateException("Bundle states check failure");
                 }
-                break;
+            }
+            for (var checkResult : checkResults) {
+                if (checkResult.getValue() == CheckResult.STOPPING) {
+                    LOG.error("Bundle check stopping after {}s", NANOSECONDS.toSeconds(elapsed));
+                    diag.logState(LOG);
+                    throw new IllegalStateException("Bundle states check stopping");
+                }
             }
 
-            // FIXME: log remaining
+            final var inProgress = checkResults.stream()
+                .filter(checkResult -> checkResult.getValue() == CheckResult.IN_PROGRESS)
+                .collect(Collectors.toUnmodifiableList());
+            if (inProgress.isEmpty()) {
+                LOG.info("Bundle check completed after {}s", NANOSECONDS.toSeconds(elapsed));
+                return;
+            }
+
+            final var elapsedSeconds = NANOSECONDS.toSeconds(elapsed);
+            final var elapsedStr = elapsedSeconds > 0 ? "(after " + elapsedSeconds + "s) " : "";
+            for (var checkResult : inProgress) {
+                final var bundle = checkResult.getKey();
+                final var serviceState = bundle.serviceState();
+                LOG.info("Unresolved {}{}:{} {}/{}[{}]", elapsedStr, bundle.symbolicName(), bundle.version(),
+                    bundle.frameworkState(), serviceState.containerState().reportingName(), serviceState.diag());
+            }
 
             final var remainingNanos = maxNanos - elapsed;
             if (remainingNanos <= 0) {
@@ -185,24 +216,9 @@ public final class TestProbe {
                 throw new IllegalStateException("Bundles states check timeout");
             }
 
-            TimeUnit.NANOSECONDS.sleep(Math.min(remainingNanos, intervalNanos));
+            final var sleepNanos = Math.min(remainingNanos, intervalNanos);
+            LOG.debug("Bundle check sleep {}ns", sleepNanos);
+            NANOSECONDS.sleep(sleepNanos);
         }
-    }
-
-    private static CheckResult aggregatedCheckResults(final Map<Long, CheckResult> bundleCheckResults) {
-        final var resultStats = bundleCheckResults.entrySet().stream()
-            .collect(Collectors.groupingBy(Map.Entry::getValue, Collectors.counting()));
-        LOG.info("Bundle states check results: total={}, byResult={}", bundleCheckResults.size(), resultStats);
-
-        if (resultStats.getOrDefault(CheckResult.FAILURE, 0L) > 0) {
-            return CheckResult.FAILURE;
-        }
-        if (resultStats.getOrDefault(CheckResult.STOPPING, 0L) > 0) {
-            return CheckResult.STOPPING;
-        }
-        if (resultStats.getOrDefault(CheckResult.IN_PROGRESS, 0L) > 0) {
-            return CheckResult.IN_PROGRESS;
-        }
-        return CheckResult.SUCCESS;
     }
 }

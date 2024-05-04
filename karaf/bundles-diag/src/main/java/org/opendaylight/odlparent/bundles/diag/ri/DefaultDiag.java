@@ -49,8 +49,8 @@ record DefaultDiag(BundleContext bundleContext, List<DiagBundle> bundles) implem
         for (var bundle : bundles) {
             if (!bundle.equals(find(logger, prevBundles, bundle.bundleId()))) {
                 final var serviceState = bundle.serviceState();
-                logger.info("Updated {}:{} {}/{}[{}]", bundle.symbolicName(), bundle.version(), bundle.frameworkState(),
-                    serviceState.containerState().reportingName(), serviceState.diag());
+                logger.debug("Updated {}:{} {}/{}[{}]", bundle.symbolicName(), bundle.version(),
+                    bundle.frameworkState(), serviceState.containerState().reportingName(), serviceState.diag());
             }
         }
 

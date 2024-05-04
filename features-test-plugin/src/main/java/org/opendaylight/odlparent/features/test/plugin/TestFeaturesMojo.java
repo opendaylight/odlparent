@@ -108,6 +108,13 @@ public final class TestFeaturesMojo extends AbstractMojo {
     @Parameter(property = "karaf.keep.unpack", defaultValue = "false")
     private boolean keepUnpack;
 
+    /**
+     * Default constructor.
+     */
+    public TestFeaturesMojo() {
+        // Exposed for javadoc
+    }
+
     @Override
     public void execute() throws MojoExecutionException {
         if (skip || skipTests) {
