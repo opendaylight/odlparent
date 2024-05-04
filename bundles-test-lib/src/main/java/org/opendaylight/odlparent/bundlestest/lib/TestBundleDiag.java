@@ -11,12 +11,9 @@ import static java.util.Objects.requireNonNull;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
-import org.apache.karaf.bundle.core.BundleService;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
 import org.opendaylight.odlparent.bundles.diag.DiagProvider;
-import org.opendaylight.odlparent.bundles.diag.ri.DefaultDiagProvider;
-import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,11 +29,6 @@ public class TestBundleDiag {
 
     public TestBundleDiag(final DiagProvider diagProvider) {
         this.diagProvider = requireNonNull(diagProvider);
-    }
-
-    @Deprecated(forRemoval = true)
-    public TestBundleDiag(final BundleContext bundleContext, final BundleService bundleService) {
-        this(new DefaultDiagProvider(bundleService, bundleContext));
     }
 
     /**
