@@ -113,6 +113,11 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>bundles-diag</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>bundles4-test</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
@@ -165,7 +170,7 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
                   <instructions>
-                    <Embed-Dependency>bundles4-test;inline=true,awaitility;inline=true,hamcrest;inline=true</Embed-Dependency>
+                    <Embed-Dependency>bundles-diag,bundles4-test;inline=true,awaitility;inline=true,hamcrest;inline=true</Embed-Dependency>
                     <!-- same as in bundles4-test/pom.xml: -->
                     <Import-Package>!net.sf.cglib.proxy,!org.objenesis,*</Import-Package>
                   </instructions>
