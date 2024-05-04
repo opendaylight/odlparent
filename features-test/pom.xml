@@ -112,7 +112,11 @@
           <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>org.opendaylight.odlparent</groupId>
+            <artifactId>bundles-diag</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.opendaylight.odlparent</groupId>
             <artifactId>bundles4-test</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>

@@ -42,6 +42,7 @@ import org.eclipse.jdt.annotation.NonNull;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.opendaylight.odlparent.bundles.diag.ri.DefaultDiagProvider;
 import org.opendaylight.odlparent.bundlestest.lib.TestBundleDiag;
 import org.ops4j.pax.exam.Configuration;
 import org.ops4j.pax.exam.Option;
@@ -414,7 +415,8 @@ public class SingleFeatureTest {
         if (!Boolean.getBoolean(BUNDLES_DIAG_SKIP_PROP)) {
             LOG.info("new TestBundleDiag().checkBundleDiagInfos() STARTING");
             Integer timeOutInSeconds = Integer.getInteger(BUNDLES_DIAG_TIMEOUT_PROP, 5 * 60);
-            new TestBundleDiag(bundleContext, bundleService).checkBundleDiagInfos(timeOutInSeconds, SECONDS);
+            new TestBundleDiag(new DefaultDiagProvider(bundleService, bundleContext))
+                .checkBundleDiagInfos(timeOutInSeconds, SECONDS);
             LOG.info("new TestBundleDiag().checkBundleDiagInfos() ENDED");
         } else {
             LOG.warn("SKIPPING TestBundleDiag because system property {} is true: {}", BUNDLES_DIAG_SKIP_PROP,
