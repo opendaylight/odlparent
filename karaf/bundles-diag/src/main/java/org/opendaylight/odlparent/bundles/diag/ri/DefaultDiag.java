@@ -48,8 +48,9 @@ record DefaultDiag(BundleContext bundleContext, List<DiagBundle> bundles) implem
         // Log current state ...
         for (var bundle : bundles) {
             if (!bundle.equals(find(logger, prevBundles, bundle.bundleId()))) {
-                logger.info("Updated {}:{} {}/{}", bundle.symbolicName(), bundle.version(), bundle.frameworkState(),
-                    serviceStateString(bundle));
+                final var serviceState = bundle.serviceState();
+                logger.info("Updated {}:{} {}/{}[{}]", bundle.symbolicName(), bundle.version(), bundle.frameworkState(),
+                    serviceState.containerState().reportingName(), serviceState.diag());
             }
         }
 
@@ -152,26 +153,23 @@ record DefaultDiag(BundleContext bundleContext, List<DiagBundle> bundles) implem
         if (logger.isInfoEnabled()) {
             for (var bundle : okBundles) {
                 logger.info("OK {}:{} {}/{}", bundle.symbolicName(), bundle.version(), bundle.frameworkState(),
-                    serviceStateString(bundle));
+                    bundle.serviceState().containerState().reportingName());
             }
         }
         if (logger.isWarnEnabled()) {
             for (var bundle : allowedBundles) {
                 logger.warn("WHITELISTED {}:{} {}/{}", bundle.symbolicName(), bundle.version(), bundle.frameworkState(),
-                    serviceStateString(bundle));
+                    bundle.serviceState().containerState().reportingName());
             }
         }
         if (logger.isErrorEnabled()) {
             for (var bundle : nokBundles) {
-                logger.error("NOK {}:{} {}/{}", bundle.symbolicName(), bundle.version(), bundle.frameworkState(),
-                    serviceStateString(bundle));
+                final var serviceState = bundle.serviceState();
+                final var diag = serviceState.diag();
+                final var diagStr = diag.isBlank() ? "" : ", due to: " + diag;
+                logger.error("NOK {}:{} {}/{}{}", bundle.symbolicName(), bundle.version(), bundle.frameworkState(),
+                    bundle.serviceState().containerState().reportingName(), diagStr);
             }
         }
-    }
-
-    private static String serviceStateString(final DiagBundle bundle) {
-        final var serviceState = bundle.serviceState();
-        final var diag = serviceState.diag();
-        return serviceState.containerState().reportingName() + (diag.isBlank() ? "" : ", due to: " + diag);
     }
 }
