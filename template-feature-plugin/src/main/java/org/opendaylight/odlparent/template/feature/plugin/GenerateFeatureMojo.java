@@ -109,7 +109,7 @@ public class GenerateFeatureMojo extends AbstractMojo {
         if (feature.hasVersion()) {
             feature.setVersion(processVersion(feature));
         } else if (artifactFeature) {
-            feature.setVersion(osgiVersion(mavenProject.getVersion()));
+            feature.setVersion(mavenProject.getVersion());
         } else {
             throw new MojoFailureException("Feature \"" + feature.getName() + "\" does not define a version");
         }
@@ -164,9 +164,9 @@ public class GenerateFeatureMojo extends AbstractMojo {
     private String processVersion(final Dependency dependency) throws MojoFailureException {
         final var version = dependency.getVersion();
         return switch (version) {
-            case PROJECT_VERSION -> osgiVersion(mavenProject.getVersion());
-            case SEM_VER_RANGE -> semVerRange(featureVersion(dependency.getName()));
-            case VERSION_AS_IN_PROJECT -> osgiVersion(featureVersion(dependency.getName()));
+            case PROJECT_VERSION -> VersionCleaner.clean(mavenProject.getVersion());
+            case SEM_VER_RANGE -> featureSemVerRange(dependency.getName());
+            case VERSION_AS_IN_PROJECT -> VersionCleaner.clean(featureVersion(dependency.getName()));
             default -> version;
         };
     }
@@ -176,11 +176,11 @@ public class GenerateFeatureMojo extends AbstractMojo {
         // and scrubbed in ways that are not compile-time constants
         final String version = feature.getVersion();
         if (PROJECT_VERSION_CLEAN.equals(version)) {
-            return osgiVersion(mavenProject.getVersion());
+            return mavenProject.getVersion();
         } else if (SEM_VER_RANGE_CLEAN.equals(version)) {
-            return semVerRange(featureVersion(feature.getName()));
+            return featureSemVerRange(feature.getName());
         } else if (VERSION_AS_IN_PROJECT_CLEAN.equals(version)) {
-            return osgiVersion(featureVersion(feature.getName()));
+            return featureVersion(feature.getName());
         } else {
             return version;
         }
@@ -215,6 +215,10 @@ public class GenerateFeatureMojo extends AbstractMojo {
         throw new MojoFailureException("Dependency matching feature \"" + featureName + "\" not found");
     }
 
+    private String featureSemVerRange(final String featureName) throws MojoFailureException {
+        return semVerRange(featureVersion(featureName));
+    }
+
     // Visible for testing
     static String semVerRange(final String version) {
         final var semVer = new DefaultArtifactVersion(version);
@@ -230,11 +234,6 @@ public class GenerateFeatureMojo extends AbstractMojo {
             }
         }
         return sb.append(',').append(major + 1).append(')').toString();
-    }
-
-    private static String osgiVersion(final String version) {
-        // Sufficient for now
-        return version.replace('-', '.');
     }
 
     private static Features readFeature(final Path path) throws MojoExecutionException {
