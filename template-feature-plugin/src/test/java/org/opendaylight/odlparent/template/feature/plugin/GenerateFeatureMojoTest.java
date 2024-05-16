@@ -141,6 +141,51 @@ public class GenerateFeatureMojoTest {
     }
 
     @Test
+    public void testProcessFeatureProjectCustomVersion() {
+        doReturn("odl-yangtools-util").when(mavenProject).getArtifactId();
+        doReturn("1.2.3-TEST-SNAPSHOT").when(mavenProject).getVersion();
+
+        final var util = mock(Dependency.class);
+        doReturn("org.opendaylight.yangtools").when(util).getGroupId();
+        doReturn("util").when(util).getArtifactId();
+        doReturn("2.3.4-TEST-SNAPSHOT").when(util).getVersion();
+        final var trieMap = mock(Dependency.class);
+
+        doReturn("pt-triemap").when(trieMap).getArtifactId();
+        doReturn("3.4.5-TEST-SNAPSHOT").when(trieMap).getVersion();
+        doReturn("xml").when(trieMap).getType();
+        doReturn("features").when(trieMap).getClassifier();
+
+        final var concepts = mock(Dependency.class);
+        doReturn("concepts").when(concepts).getArtifactId();
+        doReturn(List.of(dependency, trieMap, concepts, util)).when(mavenProject).getDependencies();
+
+        assertProcessFeature(
+            """
+            <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            <features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-yangtools-util">
+                <feature name="self" version="1.2.3.TEST-SNAPSHOT">
+                    <feature version="3.4.5.TEST-SNAPSHOT">pt-triemap</feature>
+                    <feature version="1.2.3.TEST-SNAPSHOT">concepts</feature>
+                    <bundle>mvn:org.opendaylight.yangtools/util/2.3.4-TEST-SNAPSHOT</bundle>
+                </feature>
+                <feature name="odl-yangtools-util" version="1.2.3.TEST-SNAPSHOT"/>
+            </features>
+            """,
+            """
+            <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            <features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-yangtools-util">
+                <feature name="self" version="{{projectVersion}}">
+                    <feature version="{{versionAsInProject}}">pt-triemap</feature>
+                    <feature version="{{projectVersion}}">concepts</feature>
+                    <bundle>mvn:org.opendaylight.yangtools/util/{{versionAsInProject}}</bundle>
+                </feature>
+                <feature name="odl-yangtools-util" version="{{versionAsInProject}}"/>
+            </features>
+            """);
+    }
+
+    @Test
     public void testProcessRepository() throws MojoFailureException {
         doReturn("example").when(dependency).getGroupId();
         doReturn("example").when(dependency).getArtifactId();
