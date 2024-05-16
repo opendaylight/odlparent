@@ -141,6 +141,24 @@ public class GenerateFeatureMojoTest {
     }
 
     @Test
+    public void testProcessFeatureProjectCustomVersion() {
+        doReturn("1.2.3-TEST-SNAPSHOT").when(mavenProject).getVersion();
+        assertProcessFeature(
+            """
+            <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            <features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-yangtools-util">
+                <feature name="self" version="1.2.3.TEST-SNAPSHOT"/>
+            </features>
+            """,
+            """
+            <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            <features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-yangtools-util">
+                <feature name="self" version="{{projectVersion}}"/>
+            </features>
+            """);
+    }
+
+    @Test
     public void testProcessRepository() throws MojoFailureException {
         doReturn("example").when(dependency).getGroupId();
         doReturn("example").when(dependency).getArtifactId();
