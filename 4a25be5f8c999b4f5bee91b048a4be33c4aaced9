@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "76416d09_b7556242",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-05-20T08:21:52Z",
+      "side": 1,
+      "message": "- test with bundles\n- prove the features actually work",
+      "revId": "4a25be5f8c999b4f5bee91b048a4be33c4aaced9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
