@@ -16,6 +16,24 @@
       "message": "- test with bundles\n- prove the features actually work",
       "revId": "4a25be5f8c999b4f5bee91b048a4be33c4aaced9",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8822e3ad_b55153cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-05-21T10:22:38Z",
+      "side": 1,
+      "message": "- I have extended the test with more feature use-cases.\n- I have extended the test for the bundle. (The bundle version is unaffected by this change)\n\nThis change is also tested by SFT for features using the template-feature-plugin:\n- odl-antlr4\n- odl-apache-commons-lang3\n- odl-apache-commons-text\n- odl-apache-spifly\n- odl-asm\n- odl-gson\n- odl-javassist-3\n- odl-servlet-api\n- odl-stax2-api\n- odl-woodstox\n\nFor example, in odl-apache-spifly and odl-woodstox:\nhttps://github.com/opendaylight/odlparent/blob/v13.1.2/features/odl-woodstox/src/main/feature/template.xml\n\nhttps://github.com/opendaylight/odlparent/blob/v13.1.2/features/odl-apache-spifly/src/main/feature/template.xml",
+      "parentUuid": "76416d09_b7556242",
+      "revId": "4a25be5f8c999b4f5bee91b048a4be33c4aaced9",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
