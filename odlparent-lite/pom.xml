@@ -76,7 +76,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <!-- Java Versions -->
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
 
     <!-- This version property instead of just direct version in pluginManagement is the exception that confirms the rule
          and is required so that downstream users of the archetype-packaging extension can use this (and get the same version
