@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6acaf9d1_27478370",
+        "filename": "features/odl-pax-jdbc-spec/src/main/feature/template.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-05-24T03:41:49Z",
+      "side": 1,
+      "message": "{{semVerRange}}\n\nproperties-based things just Do Not Work(tm). That is why we have this template thing, which picks out versions from Maven project dependencies!",
+      "range": {
+        "startLine": 6,
+        "startChar": 78,
+        "endLine": 6,
+        "endChar": 110
+      },
+      "revId": "860a9f4c7c37ae89343f3212079f2753bf093bb7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
