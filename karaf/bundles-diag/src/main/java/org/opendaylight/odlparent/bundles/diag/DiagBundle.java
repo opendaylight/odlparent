@@ -19,7 +19,7 @@ import org.osgi.framework.Bundle;
  * @param bundleId {@link Bundle#getBundleId()}
  * @param name bundle name
  * @param symbolicName bundle symbolic name
- * @param version bundle version
+ * @param version bundle version, if {@code "0.0.0"} if not otherwise specified
  * @param frameworkState current {@link FrameworkState}
  * @param serviceState current {@link ServiceState}
  */
@@ -37,7 +37,7 @@ public record DiagBundle(
     public DiagBundle {
         // FIXME: handle pax-exam's test probe bundle with null name and version
         // requireNonNull(name);
-        // requireNonNull(version);
+        requireNonNull(version);
         requireNonNull(frameworkState);
         requireNonNull(serviceState);
     }
