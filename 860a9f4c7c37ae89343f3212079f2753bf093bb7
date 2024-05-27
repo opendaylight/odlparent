@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "eb2601e6_2308a2a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-05-27T17:32:03Z",
+      "side": 1,
+      "message": "Looking at this, the effect we are achieving is that we are splitting out the Maven-facing configuration, so that auto-generated features do not pull them in, right?\n\nCan you create a test-distro, which shows the difference in an JDBC-using test bundle, please?",
+      "revId": "860a9f4c7c37ae89343f3212079f2753bf093bb7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6acaf9d1_27478370",
         "filename": "features/odl-pax-jdbc-spec/src/main/feature/template.xml",
         "patchSetId": 4
