@@ -141,6 +141,11 @@
             <artifactId>org.osgi.framework</artifactId>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.resolver</artifactId>
+            <scope>compile</scope>
+        </dependency>
 
         <!-- test probe dependencies for karaf environment -->
         <dependency>
