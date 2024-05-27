@@ -47,8 +47,10 @@ public final class DefaultDiagProvider implements DiagProvider {
         return new DefaultDiag(bundleContext, Arrays.stream(bundleContext.getBundles())
             .map(bundle -> {
                 final var info = bundleService.getInfo(bundle);
-                return new DiagBundle(bundle.getBundleId(), info.getName(), info.getSymbolicName(), info.getVersion(),
-                    frameworkStateOf(bundle), new ServiceState(containerStateOf(info), bundleService.getDiag(bundle)));
+                return new DiagBundle(bundle.getBundleId(), info.getName(), bundle.getSymbolicName(),
+                    // Note: not info.getVersion() as that can return null
+                    bundle.getVersion().toString(), frameworkStateOf(bundle),
+                    new ServiceState(containerStateOf(info), bundleService.getDiag(bundle)));
             })
             .sorted(Comparator.comparingLong(DiagBundle::bundleId))
             .collect(Collectors.toList()));
