@@ -2,6 +2,56 @@
 ODL Parent release notes
 ========================
 
+Version 13.1.3
+--------------
+This is a bug-fix upgrade from version 13.1.2.
+
+Bug fixes
+~~~~~~~~~
+* ``SingleFeatureTest`` plugin execution would fail with a missing required class. This has now been fixed.
+  See `ODLPARENT-314 <https://jira.opendaylight.org/browse/ODLPARENT-314>`__ for more information.
+
+* ``SingleFeatureTest`` execution coupled with infrautils' ``ready service`` could cause a ``NullPointerException``
+  point to a missing version. This has now been fixed.
+  See `ODLPARENT-317 <https://jira.opendaylight.org/browse/ODLPARENT-317>`__ for more information.
+
+* ``template-feature-parent`` performed superfluous replacements in version strings. This has now been fixed.
+  See `ODLPARENT-315 <https://jira.opendaylight.org/browse/ODLPARENT-315>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* AssertJ 3.25.3 → 3.26.0, release notes:
+  * `3.26.0 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.26.0>`__
+
+* Bouncy Castle 1.77 → 1.78.1, release notes:
+  * `1.78 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java%3Drelease-1-78>`__
+  * `1.78.1 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java%3Drelease-1-78-1>`__
+
+* Mockito 5.11.0 → 5.12.0, release notes:
+  * `5.12.0 <https://github.com/mockito/mockito/releases/tag/v5.12.0>`__
+
+* SpotBugs 4.8.3 → 4.8.5, release notes:
+  * `4.8.4 <https://github.com/spotbugs/spotbugs/releases/tag/4.8.4>`__
+  * `4.8.5 <https://github.com/spotbugs/spotbugs/releases/tag/4.8.5>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* builder-helper-maven-plugin `3.5.0 → 3.5.0 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/build-helper-maven-plugin-3.6.0>`__
+
+* exec-maven-plugin `3.2.0 → 3.3.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/exec-maven-plugin-3.3.0>`__
+
+* maven-invoker-plugin `3.6.1 → 3.7.0 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.7.0>`__
+
+* maven-plugin-plugin `3.12.0 → 3.13.0 <https://github.com/apache/maven-plugin-tools/releases/tag/maven-plugin-tools-3.11.0>`__
+
+* modernizer-maven-plugin 2.7.0 → 2.9.0, release notes:
+  * `2.8.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.8.0>`__
+  * `2.9.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-2.9.0>`__
+
+* spotbugs-maven-plugin 4.8.3.1 → 4.8.5.0, release notes:
+  * `4.8.4.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.4.0>`__
+  * `4.8.5.0 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.5.0>`__
+
 Version 13.1.2
 --------------
 This is a bug-fix upgrade from version 13.1.1.
