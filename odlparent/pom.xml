@@ -521,13 +521,6 @@
         <version>1.0.0</version>
       </dependency>
 
-      <!-- LMAX Disruptor -->
-      <dependency>
-        <groupId>com.lmax</groupId>
-        <artifactId>disruptor</artifactId>
-        <version>3.4.4</version>
-      </dependency>
-
       <!-- Add Pax Exam -->
       <dependency>
         <groupId>org.ops4j.pax.exam</groupId>

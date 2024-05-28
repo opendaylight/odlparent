@@ -48,7 +48,6 @@
         <module>odl-jakarta-activation-api</module>
         <module>odl-javassist-3</module>
         <module>odl-jersey-2</module>
-        <module>odl-lmax-3</module>
         <module>odl-netty-4</module>
         <module>odl-servlet-api</module>
         <module>odl-stax2-api</module>

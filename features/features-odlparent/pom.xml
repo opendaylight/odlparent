@@ -121,13 +121,6 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>odl-lmax-3</artifactId>
-            <classifier>features</classifier>
-            <type>xml</type>
-        </dependency>
-
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>odl-netty-4</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
