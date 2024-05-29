@@ -18,6 +18,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a8a2d0c_ca3795a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-05-29T12:47:54Z",
+      "side": 1,
+      "message": "Done. I prepared the test-karaf-jdbc-distribution, which also tests the odl-karaf-feat-jdbc feature. The new JDBC features are tested in the test-distribution project because I replaced odl-karaf-feat-jdbc with odl-pax-jdbc, odl-pax-jdbc-spec, and odl-pax-jdbc-config in the features-odlparent pom.\n\nhttps://git.opendaylight.org/gerrit/c/odlparent/+/111467/5/features/features-odlparent/pom.xml#123",
+      "parentUuid": "eb2601e6_2308a2a4",
+      "revId": "860a9f4c7c37ae89343f3212079f2753bf093bb7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6acaf9d1_27478370",
@@ -31,6 +49,30 @@
       "writtenOn": "2024-05-24T03:41:49Z",
       "side": 1,
       "message": "{{semVerRange}}\n\nproperties-based things just Do Not Work(tm). That is why we have this template thing, which picks out versions from Maven project dependencies!",
+      "range": {
+        "startLine": 6,
+        "startChar": 78,
+        "endLine": 6,
+        "endChar": 110
+      },
+      "revId": "860a9f4c7c37ae89343f3212079f2753bf093bb7",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd8e525d_088c1026",
+        "filename": "features/odl-pax-jdbc-spec/src/main/feature/template.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-05-29T12:47:54Z",
+      "side": 1,
+      "message": "Done. I used {{versionAsInProject}} since the range could accept a higher version, as specified in pax-jdbc.",
+      "parentUuid": "6acaf9d1_27478370",
       "range": {
         "startLine": 6,
         "startChar": 78,
