@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "23ebec72de4555ffd3b2cd6854b1274f84977447",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0e8ad8b_06d2959e",
+        "filename": "karaf/test-karaf-jdbc-distribution/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1927
+      },
+      "writtenOn": "2024-05-29T17:31:36Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we also add `features-odlparent` as dependency for fair comparison with `test-distribution` since `features-odlparent` brings in a lot more than JDBC features?",
+      "revId": "23ebec72de4555ffd3b2cd6854b1274f84977447",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
