@@ -64,6 +64,12 @@
                     <groupId>biz.aQute.bnd</groupId>
                     <artifactId>bnd-maven-plugin</artifactId>
                     <version>7.0.0</version>
+                    <configuration>
+                        <bnd><![CDATA[
+                            -noextraheaders: true
+                            Bundle-SymbolicName: ${project.groupId}.${project.artifactId}
+                        ]]></bnd>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
