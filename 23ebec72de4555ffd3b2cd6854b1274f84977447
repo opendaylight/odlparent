@@ -51,6 +51,24 @@
       "parentUuid": "d0e8ad8b_06d2959e",
       "revId": "23ebec72de4555ffd3b2cd6854b1274f84977447",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a83ac1e5_a7c7c310",
+        "filename": "karaf/test-karaf-jdbc-distribution/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1927
+      },
+      "writtenOn": "2024-05-31T16:57:45Z",
+      "side": 1,
+      "message": "The size of `system` for `test-distribution` is 82 MB:\n```\n$ du -sh karaf/test-distribution/target/assembly/system/\n82M\tkaraf/test-distribution/target/assembly/system/\n```\n\nand it\u0027s 106 MB for `test-karaf-jdbc-distribution`:\n```\n$ du -sh karaf/test-karaf-jdbc-distribution/target/assembly/system/\n106M\tkaraf/test-karaf-jdbc-distribution/target/assembly/system/\n```\n\nHowever, this is misleading. If I replace `odl-karaf-feat-jdbc` in `test-karaf-jdbc-distribution` with the 3 new features `odl-pax-jdbc`, `odl-pax-jdbc-config` \u0026 `odl-pax-jdbc-spec`, then the size is only 67 MB.\n```\ndu -sh karaf/test-karaf-jdbc-distribution/target/assembly/system/\n67M\tkaraf/test-karaf-jdbc-distribution/target/assembly/system/\n```\n\nSo true difference between `odl-karaf-feat-jdbc` and the new features are close to 40 MB, not 24 MB.",
+      "parentUuid": "f24698b1_6c5e5f7a",
+      "revId": "23ebec72de4555ffd3b2cd6854b1274f84977447",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
