@@ -24,7 +24,7 @@
   </properties>
 
   <prerequisites>
-    <maven>3.8.3</maven>
+    <maven>3.9.5</maven>
   </prerequisites>
 
   <dependencies>
@@ -60,8 +60,8 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>org.eclipse.aether</groupId>
-      <artifactId>aether-api</artifactId>
+      <groupId>org.apache.maven.resolver</groupId>
+      <artifactId>maven-resolver-api</artifactId>
     </dependency>
     <dependency>
       <groupId>org.opendaylight.odlparent</groupId>
