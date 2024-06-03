@@ -114,25 +114,25 @@
       <dependency>
         <groupId>org.apache.maven</groupId>
         <artifactId>maven-artifact</artifactId>
-        <version>3.8.3</version>
+        <version>3.9.5</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.apache.maven</groupId>
         <artifactId>maven-core</artifactId>
-        <version>3.8.3</version>
+        <version>3.9.5</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.apache.maven</groupId>
         <artifactId>maven-model</artifactId>
-        <version>3.8.3</version>
+        <version>3.9.5</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
         <groupId>org.apache.maven</groupId>
         <artifactId>maven-plugin-api</artifactId>
-        <version>3.8.3</version>
+        <version>3.9.5</version>
         <scope>provided</scope>
       </dependency>
 
@@ -148,7 +148,7 @@
       <dependency>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-http</artifactId>
-        <version>3.2.0</version>
+        <version>3.5.3</version>
         <exclusions>
           <exclusion>
             <!-- because it conflicts with org.slf4j:jcl-over-slf4j -->
@@ -442,7 +442,7 @@
                   <version>${maven.compiler.release}</version>
                 </requireJavaVersion>
                 <requireMavenVersion>
-                  <version>[3.8.3,)</version>
+                  <version>[3.9.5,)</version>
                 </requireMavenVersion>
                 <bannedDependencies>
                   <excludes>
