@@ -38,15 +38,6 @@
         <dependency>
             <groupId>org.apache.maven.wagon</groupId>
             <artifactId>wagon-http</artifactId>
-            <version>3.2.0</version>
-            <scope>compile</scope>
-            <exclusions>
-              <exclusion>
-                <!-- because it conflicts with org.slf4j:jcl-over-slf4j -->
-                <groupId>commons-logging</groupId>
-                <artifactId>commons-logging</artifactId>
-              </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.ops4j.pax.url</groupId>
