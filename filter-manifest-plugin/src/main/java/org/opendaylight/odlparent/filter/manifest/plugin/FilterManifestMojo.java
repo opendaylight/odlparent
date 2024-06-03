@@ -50,6 +50,13 @@ public class FilterManifestMojo extends AbstractMojo {
     @Parameter(required = true)
     private List<String> retainedAttributes;
 
+    /**
+     * Default constructor.
+     */
+    public FilterManifestMojo() {
+        // to fix javadoc warnings
+    }
+
     @Override
     public void execute() throws MojoExecutionException {
         LOG.debug("Filtering {} to {} retaining {}", inputFile, outputFile, retainedAttributes);
