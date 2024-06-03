@@ -117,7 +117,6 @@
                         <excludedArtifactId>org.osgi.enterprise</excludedArtifactId>
                         <!-- Bouncy Castle -->
                         <excludedArtifactId>bcprov-jdk18on</excludedArtifactId>
-                        <excludedArtifactId>bcprov-ext-jdk18on</excludedArtifactId>
                         <excludedArtifactId>bcpkix-jdk18on</excludedArtifactId>
                         <excludedArtifactId>bcutil-jdk18on</excludedArtifactId>
                         <!-- JAXB -->
