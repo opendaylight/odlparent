@@ -25,7 +25,7 @@
     </description>
 
     <prerequisites>
-        <maven>3.8.3</maven>
+        <maven>3.9.5</maven>
     </prerequisites>
 
     <dependencies>
