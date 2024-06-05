@@ -69,6 +69,24 @@
       "parentUuid": "f24698b1_6c5e5f7a",
       "revId": "23ebec72de4555ffd3b2cd6854b1274f84977447",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cbe4951_b4105f2a",
+        "filename": "karaf/test-karaf-jdbc-distribution/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-06-05T09:40:22Z",
+      "side": 1,
+      "message": "Ok, I have added all features from features-odlparent into test-karaf-jdbc-distribution.\n\nNow you can see the actual size difference:\n\n$ du -sh test-distribution/target/assembly/system/\n85M     test-distribution/target/assembly/system/\n\n$ du -sh test-karaf-jdbc-distribution/target/assembly/system/\n124M    test-karaf-jdbc-distribution/target/assembly/system/",
+      "parentUuid": "a83ac1e5_a7c7c310",
+      "revId": "23ebec72de4555ffd3b2cd6854b1274f84977447",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
