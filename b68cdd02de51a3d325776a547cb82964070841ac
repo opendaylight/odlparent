@@ -16,6 +16,24 @@
       "message": "This is a major change, I don\u0027t think it should go into anything below odlparent-14",
       "revId": "b68cdd02de51a3d325776a547cb82964070841ac",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2540892f_33b96a52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-06-30T23:31:04Z",
+      "side": 1,
+      "message": "This is okay, as any problems can be mitigated locally by downgrading the version.",
+      "parentUuid": "f3994fc1_22825457",
+      "revId": "b68cdd02de51a3d325776a547cb82964070841ac",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
