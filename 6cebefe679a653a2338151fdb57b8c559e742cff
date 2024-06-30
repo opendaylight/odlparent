@@ -16,6 +16,24 @@
       "message": "Missing release notes, I think this was done in separate patches somewhere.",
       "revId": "6cebefe679a653a2338151fdb57b8c559e742cff",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f765917c_18a9d59b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-06-30T20:43:50Z",
+      "side": 1,
+      "message": "actually, no, this the site config",
+      "parentUuid": "6d880fe7_9e230f8b",
+      "revId": "6cebefe679a653a2338151fdb57b8c559e742cff",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
