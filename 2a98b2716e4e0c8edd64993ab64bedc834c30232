@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fcb0508d_a343a06c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-06-30T14:36:53Z",
+      "side": 1,
+      "message": "So this leaves us with no database drivers at all:\nhttps://jira.opendaylight.org/secure/attachment/19836/files.diff.gz\n\nAAA requires H2\nTransportPCE uses MariaDB (IIRC)\n\nIf we package those two, we should also include PostreSQL (and make a judgement on Derby).",
+      "revId": "2a98b2716e4e0c8edd64993ab64bedc834c30232",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
