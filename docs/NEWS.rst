@@ -2,6 +2,96 @@
 ODL Parent release notes
 ========================
 
+Version 14.0.0
+--------------
+This is a major upgrade from version 13, with breaking changes; downstream projects may need to make changes to upgrade
+to this version.
+
+Build-time requirements
+~~~~~~~~~~~~~~~~~~~~~~~
+This release bumps build enviroment requirements to the following.
+
+* The build now requires at least Java 21, as do the artifacts produced. Please make sure to use JDK 21.0.3 or later.
+  See `ODLPARENT-319 <https://jira.opendaylight.org/browse/ODLPARENT-319>`__ for more information.
+
+* The build now requires at least maven-3.9.5, with maven-3.9.8 being recommended.
+  See `ODLPARENT-319 <https://jira.opendaylight.org/browse/ODLPARENT-319>`__ for more information.
+
+Both of these requirements are enforced through ``maven-enforcer-plugin``.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The following upstream dependencies have been removed from dependency/plugin management:
+
+* Declaration of ``LMAX Distruptor`` and ``odl-lmax-3`` feature have been removed. This dependency is not used by any active
+  downstream.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checker-qual 3.43.0 → 3.44.0
+
+* Dropwizard Metrics `4.2.25 → 4.2.26 <https://github.com/dropwizard/metrics/releases/tag/v4.2.26>`__
+
+* GSON `2.10.1 → 2.11.0 <https://github.com/google/gson/releases/tag/gson-parent-2.11.0>`__
+
+* Guava 32.1.3 → 33.2.1, release notes:
+  * `33.0.0 <https://github.com/google/guava/releases/tag/v33.0.0>`__
+  * `33.1.0 <https://github.com/google/guava/releases/tag/v33.1.0>`__
+  * `33.2.0 <https://github.com/google/guava/releases/tag/v33.2.0>`__
+  * `33.2.1 <https://github.com/google/guava/releases/tag/v33.2.1>`__
+
+* Jackson 2.16.2 → 2.17.1, release notes:
+  * `2.17 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.17>`__
+  * `2.17.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.17.1>`__
+
+* JUnit `5.10.2 → 5.10.3 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.10.3>`__
+
+* Netty 4.1.109 → 4.1.111, release notes:
+  * `4.1.110 <https://netty.io/news/2024/05/22/4-1-110-Final.html>`__
+  * `4.1.111 <https://netty.io/news/2024/06/11/4-1-111-Final.html>`__
+
+* SpotBugs `4.8.5 → 4.8.6 <https://github.com/spotbugs/spotbugs/releases/tag/4.8.6>`__
+
+* TrieMap `1.3.1 → 1.3.2 <https://github.com/PANTHEONtech/triemap/releases/tag/triemap-1.3.2>`__
+
+* Woodstox 6.6.2 → 7.0.0, release notes:
+  * `6.7.0 <https://github.com/FasterXML/woodstox/milestone/35?closed=1>`__
+  * `7.0.0 <https://github.com/FasterXML/woodstox/milestone/32?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* git-commit-id-maven-plugin `8.0.0 → 9.0.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v9.0.0>`__
+
+* maven-checkstyle-plugin `3.3.1 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12353877>`__
+
+* maven-clean-plugin `3.3.2 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317224&version=12353775>`__
+
+* maven-dependency-plugin 3.6.1 → 3.7.1, release notes:
+  * `3.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12353819>`__
+  * `3.7.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12354829>`__
+
+* maven-enforcer-plugin `3.4.1 → 3.5.0 <https://github.com/apache/maven-enforcer/releases/tag/enforcer-3.5.0`__
+
+* maven-help-plugin `3.4.0 → 3.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12353019>`__
+
+* maven-jar-plugin `3.4.1 → 3.4.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12354600>`__
+
+* maven-javadoc-plugin `3.6.3 → 3.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12354465>`__
+
+* maven-plugin-plugin `3.13.0 → 3.13.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820&version=12354759>`__
+
+* maven-project-info-reports-plugin `3.5.0 → 3.6.1, release notes:
+  * `3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12354774>`__
+  * `3.6.1.<https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12354845>`__
+
+* maven-release-plugin `3.0.1 → 3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12354221>`__
+
+* maven-shade-plugin `3.5.3 → 3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921&version=12354611>`__
+
+* maven-surefire-plugin `3.2.5 → 3.3.0 <https://github.com/apache/maven-surefire/releases/tag/surefire-3.3.0>`__
+
+* versions-maven-plugin `2.16.2 → 2.17.0 <https://github.com/mojohaus/versions/releases/tag/2.17.0>`__
+
 Version 13.1.3
 --------------
 This is a bug-fix upgrade from version 13.1.2.
