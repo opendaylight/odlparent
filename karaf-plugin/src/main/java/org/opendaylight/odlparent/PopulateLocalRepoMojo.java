@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.stream.Collectors;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -56,6 +57,7 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings("checkstyle:IllegalCatch")
 public class PopulateLocalRepoMojo extends AbstractMojo {
     private static final Logger LOG = LoggerFactory.getLogger(PopulateLocalRepoMojo.class);
+    private static final String INCLUDE_JAR = "include.jar";
 
     static {
         // Static initialization, as we may be invoked multiple times
@@ -120,6 +122,10 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             for (Features feature : features) {
                 LOG.info("Feature repository discovered recursively: {}", feature.getName());
             }
+            final var includeJar = getIncludeJar();
+            if (includeJar != null && !includeJar.isEmpty()) {
+                features = removeExcludedFeatures(features, includeJar);
+            }
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
             artifacts.addAll(featureArtifacts);
             featureUtil.removeLocalArtifacts(artifacts);
@@ -139,6 +145,33 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
         } catch (Exception e) {
             throw new MojoExecutionException("Failed to execute", e);
         }
+    }
+
+    private Map<String, Boolean> getIncludeJar() {
+        return this.project.getProperties().entrySet().stream()
+            .filter(p -> p.getKey() instanceof String key && key.contains(INCLUDE_JAR))
+            .filter(p -> p.getValue() instanceof String value
+                && ("true".equalsIgnoreCase(value) || "false".equalsIgnoreCase(value)))
+            .collect(Collectors.toMap(
+                e -> (String) e.getKey(),
+                e -> Boolean.parseBoolean((String) e.getValue()))
+            );
+    }
+
+    private boolean isFeatureExcluded(final Map<String, Boolean> includeJar, final String featureName) {
+        final var propName = featureName.replaceAll("-", ".") + ".include.jar";
+        return !includeJar.getOrDefault(propName, true);
+    }
+
+    private Set<Features> removeExcludedFeatures(final Set<Features> features,
+            final Map<String, Boolean> includeJar) {
+        return features.stream().filter(f -> {
+            if (isFeatureExcluded(includeJar, f.getName())) {
+                return false;
+            }
+            f.getFeature().removeIf(innerFeature -> isFeatureExcluded(includeJar, innerFeature.getName()));
+            return true;
+        }).collect(Collectors.toUnmodifiableSet());
     }
 
     private void readFeatureCfg(AetherUtil aetherUtil, FeatureUtil featureUtil, Set<Artifact> artifacts,
