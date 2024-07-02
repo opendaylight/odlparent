@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.stream.Collectors;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -98,6 +99,9 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
     @Parameter
     private File localRepo;
 
+    @Parameter
+    private Set<String> blacklistedFeatures;
+
     @Override
     @SuppressFBWarnings("REC_CATCH_EXCEPTION")
     public void execute() throws MojoExecutionException {
@@ -120,6 +124,9 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             for (Features feature : features) {
                 LOG.info("Feature repository discovered recursively: {}", feature.getName());
             }
+            if (this.blacklistedFeatures != null && !this.blacklistedFeatures.isEmpty()) {
+                features = removeBlackListedFeatures(features);
+            }
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
             artifacts.addAll(featureArtifacts);
             featureUtil.removeLocalArtifacts(artifacts);
@@ -139,6 +146,17 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
         } catch (Exception e) {
             throw new MojoExecutionException("Failed to execute", e);
         }
+    }
+
+    private Set<Features> removeBlackListedFeatures(final Set<Features> features) {
+        return features.stream().filter(f -> {
+            if (blacklistedFeatures.contains(f.getName())) {
+                return false;
+            } else {
+                f.getFeature().removeIf(innerFeature -> blacklistedFeatures.contains(innerFeature.getName()));
+                return true;
+            }
+        }).collect(Collectors.toUnmodifiableSet());
     }
 
     private void readFeatureCfg(AetherUtil aetherUtil, FeatureUtil featureUtil, Set<Artifact> artifacts,
