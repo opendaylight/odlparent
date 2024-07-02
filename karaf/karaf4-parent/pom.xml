@@ -29,6 +29,23 @@
         <karaf.localFeature>standard</karaf.localFeature>
         <karaf.archiveZip>true</karaf.archiveZip>
         <karaf.archiveTarGz>true</karaf.archiveTarGz>
+
+        <!-- Configure karaf-plugin to remove unused pax-jdbc features -->
+        <pax.jdbc.db2.include.jar>false</pax.jdbc.db2.include.jar>
+        <pax.jdbc.teradata.include.jar>false</pax.jdbc.teradata.include.jar>
+        <pax.jdbc.derby.include.jar>false</pax.jdbc.derby.include.jar>
+        <pax.jdbc.derbyclient.include.jar>false</pax.jdbc.derbyclient.include.jar>
+        <pax.jdbc.hsqldb.include.jar>false</pax.jdbc.hsqldb.include.jar>
+        <pax.jdbc.oracle.include.jar>false</pax.jdbc.oracle.include.jar>
+        <pax.jdbc.postgresql.include.jar>false</pax.jdbc.postgresql.include.jar>
+        <pax.jdbc.sqlite.include.jar>false</pax.jdbc.sqlite.include.jar>
+        <pax.jdbc.mssql.include.jar>false</pax.jdbc.mssql.include.jar>
+        <pax.jdbc.jtds.include.jar>false</pax.jdbc.jtds.include.jar>
+        <pax.jdbc.pool.c3p0.include.jar>false</pax.jdbc.pool.c3p0.include.jar>
+        <pax.jdbc.pool.hikaricp.include.jar>false</pax.jdbc.pool.hikaricp.include.jar>
+        <pax.jdbc.pool.aries.include.jar>false</pax.jdbc.pool.aries.include.jar>
+        <pax.jdbc.pool.narayana.include.jar>false</pax.jdbc.pool.narayana.include.jar>
+        <pax.jdbc.pool.transx.include.jar>false</pax.jdbc.pool.transx.include.jar>
     </properties>
 
     <dependencyManagement>
@@ -248,38 +265,6 @@
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
-                    <execution>
-                        <id>remove-system-process-compile</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target xmlns:if="ant:if">
-                                <!-- Check if pax-jdbc-features file exists -->
-                                <condition property="pax.jdbc.exist" else="false">
-                                    <available type="file"
-                                       file="${project.build.directory}/assembly/system/org/ops4j/pax/jdbc/pax-jdbc-features/1.5.7/pax-jdbc-features-1.5.7-features.xml"/>
-                                </condition>
-
-                                <!-- FIXME: ODLPARENT-311: Remove this when we require Java 21 runtime and upgrade to Derby 10.17.1.0+ -->
-                                <!-- Remove Derby client jar-->
-                                <replace if:true="${pax.jdbc.exist}" failOnNoReplacements="true" value=""
-                                    token="&lt;bundle dependency=&quot;true&quot;&gt;mvn:org.apache.derby/derbyclient/10.14.2.0&lt;/bundle&gt;"
-                                    file="${project.build.directory}/assembly/system/org/ops4j/pax/jdbc/pax-jdbc-features/1.5.7/pax-jdbc-features-1.5.7-features.xml"/>
-                                <replace if:true="${pax.jdbc.exist}" failOnNoReplacements="true" value=""
-                                    token="&lt;bundle&gt;mvn:org.ops4j.pax.jdbc/pax-jdbc-derbyclient/1.5.7&lt;/bundle&gt;"
-                                    file="${project.build.directory}/assembly/system/org/ops4j/pax/jdbc/pax-jdbc-features/1.5.7/pax-jdbc-features-1.5.7-features.xml"/>
-                                <!-- Remove Derby jar-->
-                                <replace if:true="${pax.jdbc.exist}" failOnNoReplacements="true" value=""
-                                    token="&lt;bundle dependency=&quot;true&quot;&gt;mvn:org.apache.derby/derby/10.14.2.0&lt;/bundle&gt;"
-                                    file="${project.build.directory}/assembly/system/org/ops4j/pax/jdbc/pax-jdbc-features/1.5.7/pax-jdbc-features-1.5.7-features.xml"/>
-                                <replace if:true="${pax.jdbc.exist}" failOnNoReplacements="true" value=""
-                                    token="&lt;bundle&gt;mvn:org.ops4j.pax.jdbc/pax-jdbc-derby/1.5.7&lt;/bundle&gt;"
-                                    file="${project.build.directory}/assembly/system/org/ops4j/pax/jdbc/pax-jdbc-features/1.5.7/pax-jdbc-features-1.5.7-features.xml"/>
-                            </target>
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>fix-permissions</id>
                         <phase>prepare-package</phase>
