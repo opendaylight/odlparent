@@ -32,6 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.stream.Collectors;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -56,6 +57,7 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings("checkstyle:IllegalCatch")
 public class PopulateLocalRepoMojo extends AbstractMojo {
     private static final Logger LOG = LoggerFactory.getLogger(PopulateLocalRepoMojo.class);
+    private static final String INCLUDE_JAR = ".include.jar";
 
     static {
         // Static initialization, as we may be invoked multiple times
@@ -120,6 +122,10 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             for (Features feature : features) {
                 LOG.info("Feature repository discovered recursively: {}", feature.getName());
             }
+            final var includeJar = getIncludeJar();
+            if (includeJar != null && !includeJar.isEmpty()) {
+                features = removeExcludedFeatures(features, includeJar);
+            }
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
             artifacts.addAll(featureArtifacts);
             featureUtil.removeLocalArtifacts(artifacts);
@@ -141,8 +147,46 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
         }
     }
 
-    private void readFeatureCfg(AetherUtil aetherUtil, FeatureUtil featureUtil, Set<Artifact> artifacts,
-            Set<Features> features) {
+    Map<String, Boolean> getIncludeJar() {
+        final var ret = new HashMap<String, Boolean>();
+        for (var entry : project.getProperties().entrySet()) {
+            if (entry.getKey() instanceof String key && key.endsWith(INCLUDE_JAR)
+                && entry.getValue() instanceof String value) {
+                if ("true".equalsIgnoreCase(value)) {
+                    ret.put(key, Boolean.TRUE);
+                } else if ("false".equalsIgnoreCase(value)) {
+                    ret.put(key, Boolean.FALSE);
+                } else {
+                    LOG.warn("Ignoring {} value {}", key, value);
+                }
+            }
+        }
+        return ret;
+    }
+
+    Set<Features> removeExcludedFeatures(final Set<Features> features, final Map<String, Boolean> includeJar) {
+        return features.stream()
+            .filter(feature -> {
+                if (isFeatureExcluded(includeJar, feature.getName())) {
+                    return false;
+                }
+                feature.getFeature().removeIf(innerFeature -> isFeatureExcluded(includeJar, innerFeature.getName()));
+                return true;
+            })
+            .collect(Collectors.toSet());
+    }
+
+    private static boolean isFeatureExcluded(final Map<String, Boolean> includeJar, final String featureName) {
+        if (featureName == null) {
+            return false;
+        }
+        final var propName = featureName.replace('-', '.') + INCLUDE_JAR;
+        // Return false as a default for any unset feature.
+        return !includeJar.getOrDefault(propName, true);
+    }
+
+    private void readFeatureCfg(final AetherUtil aetherUtil, final FeatureUtil featureUtil,
+            final Set<Artifact> artifacts, final Set<Features> features) {
         // Create file structure
         final File karafHome = localRepo.getParentFile();
         final File karafEtc = new File(karafHome, "etc");
@@ -178,7 +222,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
         }
     }
 
-    private Set<Artifact> readStartupProperties(AetherUtil aetherUtil) {
+    private Set<Artifact> readStartupProperties(final AetherUtil aetherUtil) {
         Set<Artifact> artifacts = new LinkedHashSet<>();
         File file = new File(new File(localRepo.getParentFile(), "etc"), "startup.properties");
         Properties prop = new Properties();
