@@ -22,6 +22,30 @@
       },
       "revId": "5561eade9528a0dd0141e23e1ce3aca95e95e48a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1a4da0a9_03e4991a",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-03T11:26:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27715012_df948c40",
+      "range": {
+        "startLine": 155,
+        "startChar": 13,
+        "endLine": 155,
+        "endChar": 20
+      },
+      "revId": "5561eade9528a0dd0141e23e1ce3aca95e95e48a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
