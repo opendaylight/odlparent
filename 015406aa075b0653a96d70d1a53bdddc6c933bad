@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24792662_0dc0d895",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-03T14:16:48Z",
+      "side": 1,
+      "message": "`ExcludedFeatures` or else.. https://www.splunk.com/en_us/blog/learn/blacklist-whitelist-inclusivity.html",
+      "revId": "015406aa075b0653a96d70d1a53bdddc6c933bad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
