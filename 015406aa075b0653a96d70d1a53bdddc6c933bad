@@ -16,6 +16,24 @@
       "message": "`ExcludedFeatures` or else.. https://www.splunk.com/en_us/blog/learn/blacklist-whitelist-inclusivity.html",
       "revId": "015406aa075b0653a96d70d1a53bdddc6c933bad",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec3b658f_a83cc039",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-03T15:17:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24792662_0dc0d895",
+      "revId": "015406aa075b0653a96d70d1a53bdddc6c933bad",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
