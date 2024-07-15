@@ -643,7 +643,7 @@
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
-        <version>3.26.0</version>
+        <version>3.26.3</version>
         <scope>test</scope>
         <exclusions>
           <exclusion>
@@ -655,7 +655,7 @@
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-guava</artifactId>
-        <version>3.26.0</version>
+        <version>3.26.3</version>
         <scope>test</scope>
       </dependency>
 
