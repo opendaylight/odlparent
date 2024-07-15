@@ -9,18 +9,20 @@ package org.opendaylight.odlparent;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Map;
-import java.util.Properties;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
+import org.apache.maven.model.Plugin;
 import org.apache.maven.project.MavenProject;
+import org.codehaus.plexus.util.xml.Xpp3Dom;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -37,19 +39,16 @@ class PopulateLocalRepoMojoTest {
     private MavenProject mavenProject;
 
     @Test
-    void testExcludeInnerFeatureJar() {
+    void testBlackListedInnerFeature() {
         // Prepare environment.
-        final var properties = new Properties();
-        properties.setProperty("pax.jdbc.db2.include.jar", "true");
-        properties.setProperty("pax.jdbc.teradata.include.jar", "false");
-        doReturn(properties).when(mavenProject).getProperties();
-
-        final var includeJar = localRepoMojo.getIncludeJar();
+        mockBlackListedFeatures(List.of("pax-jdbc-teradata", "pax-jdbc-mssql"));
+        final var includeJar = localRepoMojo.getBlackListedFeatures();
         assertEquals(2, includeJar.size());
 
         final var features = new HashSet<Features>();
         final var mockPaxFeatures = createMockFeatures("org.ops4j.pax.jdbc-1.5.7");
-        final var mockPaxFeature = Set.of("pax-jdbc-db2", "pax-jdbc-teradata", "pax-jdbc-derbyclient").stream()
+        final var mockPaxFeature = Set.of("pax-jdbc-db2", "pax-jdbc-teradata", "pax-jdbc-mssql", "pax-jdbc-derbyclient")
+            .stream()
             .map(this::createMockFeature)
             .collect(Collectors.toCollection(ArrayList::new));
         doReturn(mockPaxFeature).when(mockPaxFeatures).getFeature();
@@ -57,8 +56,8 @@ class PopulateLocalRepoMojoTest {
         final var mockDataFeatures = createMockFeatures("odl-jakarta-activation-api");
         features.add(mockDataFeatures);
 
-       // Remove excluded features.
-        final var resultFeatures = localRepoMojo.removeExcludedFeatures(features, includeJar);
+        // Remove excluded features.
+        final var resultFeatures = localRepoMojo.removeBlackListedFeatures(features, includeJar);
 
        // Verify excluded features.
         assertEquals(2, resultFeatures.size());
@@ -74,14 +73,10 @@ class PopulateLocalRepoMojoTest {
     }
 
     @Test
-    void testExcludeFeatureJar() {
+    void testBlackListFeatures() {
         // Prepare environment.
-        final var properties = new Properties();
-        properties.setProperty("org.ops4j.pax.jdbc.1.5.7.include.jar", "true");
-        properties.setProperty("test.data.include.jar", "false");
-        doReturn(properties).when(mavenProject).getProperties();
-
-        final var includeJar = localRepoMojo.getIncludeJar();
+        mockBlackListedFeatures(List.of("test-data", "framework-4.4.6"));
+        final var includeJar = localRepoMojo.getBlackListedFeatures();
         assertEquals(2, includeJar.size());
 
         final var features = new HashSet<Features>();
@@ -91,11 +86,13 @@ class PopulateLocalRepoMojoTest {
             .collect(Collectors.toCollection(ArrayList::new));
         doReturn(mockPaxFeature).when(mockPaxFeatures).getFeature();
         features.add(mockPaxFeatures);
+        final var mockFrameworkFeatures = createMockFeatures("framework-4.4.6");
+        features.add(mockFrameworkFeatures);
         final var mockDataFeatures = createMockFeatures("test-data");
         features.add(mockDataFeatures);
 
         // Remove excluded features.
-        final var resultFeatures = localRepoMojo.removeExcludedFeatures(features, includeJar);
+        final var resultFeatures = localRepoMojo.removeBlackListedFeatures(features, includeJar);
 
         // Verify excluded features.
         assertEquals(1, resultFeatures.size());
@@ -111,34 +108,80 @@ class PopulateLocalRepoMojoTest {
     }
 
     @Test
-    void testIncludeJarWithWrongValueProperties() {
-        final var properties = new Properties();
-        properties.setProperty("pax.jdbc.db2.include.jar", "foo");
-        properties.setProperty("pax.jdbc.teradata.include.jar", "10");
-        properties.setProperty("data2.include.jar", "");
-        doReturn(properties).when(mavenProject).getProperties();
+    void testSpecialCharactersInBlackListedFeatures() {
+        // Prepare environment.
+        mockBlackListedFeatures(List.of("spring-jdbc/(5.2,6.0]", "*tomcat*", "pax-web/[1.2,)"));
+        final var includeJar = localRepoMojo.getBlackListedFeatures();
+        assertEquals(3, includeJar.size());
 
-        assertEquals(Map.of(), localRepoMojo.getIncludeJar());
+        final var features = new HashSet<Features>();
+        final var mockSpring60Features = createMockFeatures("spring-jdbc/6.0");
+        features.add(mockSpring60Features);
+        final var mockSpring52Features = createMockFeatures("spring-jdbc/5.2");
+        features.add(mockSpring52Features);
+        final var mockSpring62Features = createMockFeatures("spring-jdbc/6.2");
+        features.add(mockSpring62Features);
+        final var mockTomcatFeatures = createMockFeatures("a-tomcat-s");
+        features.add(mockTomcatFeatures);
+        final var mockPax10Features = createMockFeatures("pax-web/10.0");
+        features.add(mockPax10Features);
+        final var mockPax1Features = createMockFeatures("pax-web/1.0");
+        features.add(mockPax1Features);
+        final var mockTestFeatures = createMockFeatures("test");
+        features.add(mockTestFeatures);
+
+        // Remove excluded features.
+        final var resultFeatures = localRepoMojo.removeBlackListedFeatures(features, includeJar);
+
+        // Verify excluded features.
+        assertEquals(4, resultFeatures.size());
+        assertTrue(resultFeatures.stream().anyMatch(t -> t.getName().equals("spring-jdbc/5.2")));
+        assertTrue(resultFeatures.stream().anyMatch(t -> t.getName().equals("spring-jdbc/6.2")));
+        assertTrue(resultFeatures.stream().anyMatch(t -> t.getName().equals("pax-web/1.0")));
+        assertTrue(resultFeatures.stream().anyMatch(t -> t.getName().equals("test")));
     }
 
     @Test
-    void testIncludeJarWithWrongProperties() {
-        final var properties = new Properties();
-        properties.setProperty("pax.jdbc.db2.include", "true");
-        properties.setProperty("pax.jdbc.teradata.jar", "false");
-        properties.setProperty("pax.jdbc.teradata", "false");
-        properties.setProperty("karaf.localFeature", "standard");
-        doReturn(properties).when(mavenProject).getProperties();
+    void testEmptyKarafPluginConfiguration() {
+        // Verify result without karaf-maven-plugin.
+        assertTrue(localRepoMojo.getBlackListedFeatures().isEmpty());
 
-        assertEquals(Map.of(), localRepoMojo.getIncludeJar());
+        // Verify result without karaf-maven-plugin configuration.
+        final var mockPlugin = mock(Plugin.class);
+        doReturn(mockPlugin).when(mavenProject).getPlugin(eq("org.apache.karaf.tooling:karaf-maven-plugin"));
+        assertEquals(List.of(), localRepoMojo.getBlackListedFeatures());
+
+        // Verify result without karaf-maven-plugin blackListedFeatures configuration.
+        final var mockConfiguration = mock(Xpp3Dom.class);
+        doReturn(mockConfiguration).when(mockPlugin).getConfiguration();
+        assertEquals(List.of(), localRepoMojo.getBlackListedFeatures());
+
+        // Verify result with empty configuration of blackListedFeatures in karaf-maven-plugin.
+        final var mockBlacklistFeatures = mock(Xpp3Dom.class);
+        doReturn(mockBlacklistFeatures).when(mockConfiguration).getChild(eq("blacklistedFeatures"));
+        assertEquals(List.of(), localRepoMojo.getBlackListedFeatures());
+
+        // Verify result when feature element is empty in blackListedFeatures configuration.
+        doReturn(new Xpp3Dom[0]).when(mockBlacklistFeatures).getChildren();
+        assertEquals(List.of(), localRepoMojo.getBlackListedFeatures());
     }
 
-    @Test
-    void testIncludeJarWithNoIncludeJarProperty() {
-        final var properties = new Properties();
-        doReturn(properties).when(mavenProject).getProperties();
+    private void mockBlackListedFeatures(final List<String> featureNames) {
+        final var mockBlacklistFeatures = mock(Xpp3Dom.class);
+        final var xpp3Doms = featureNames.stream()
+            .map(featureName -> {
+                final var mockBlackListedFeature = mock(Xpp3Dom.class);
+                doReturn(featureName).when(mockBlackListedFeature).getValue();
+                return mockBlackListedFeature;
+            })
+            .toArray(Xpp3Dom[]::new);
 
-        assertEquals(Map.of(), localRepoMojo.getIncludeJar());
+        doReturn(xpp3Doms).when(mockBlacklistFeatures).getChildren();
+        final var mockConfiguration = mock(Xpp3Dom.class);
+        doReturn(mockBlacklistFeatures).when(mockConfiguration).getChild(eq("blacklistedFeatures"));
+        final var mockPlugin = mock(Plugin.class);
+        doReturn(mockConfiguration).when(mockPlugin).getConfiguration();
+        doReturn(mockPlugin).when(mavenProject).getPlugin(eq("org.apache.karaf.tooling:karaf-maven-plugin"));
     }
 
     private Feature createMockFeature(final String name) {
