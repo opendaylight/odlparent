@@ -32,8 +32,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.apache.karaf.features.internal.model.Features;
+import org.apache.maven.artifact.versioning.DefaultArtifactVersion;
+import org.apache.maven.artifact.versioning.InvalidVersionSpecificationException;
+import org.apache.maven.artifact.versioning.VersionRange;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Component;
@@ -41,6 +46,7 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
+import org.codehaus.plexus.util.xml.Xpp3Dom;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.artifact.Artifact;
@@ -57,7 +63,6 @@ import org.slf4j.LoggerFactory;
 @SuppressWarnings("checkstyle:IllegalCatch")
 public class PopulateLocalRepoMojo extends AbstractMojo {
     private static final Logger LOG = LoggerFactory.getLogger(PopulateLocalRepoMojo.class);
-    private static final String INCLUDE_JAR = ".include.jar";
 
     static {
         // Static initialization, as we may be invoked multiple times
@@ -122,9 +127,9 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             for (Features feature : features) {
                 LOG.info("Feature repository discovered recursively: {}", feature.getName());
             }
-            final var includeJar = getIncludeJar();
-            if (includeJar != null && !includeJar.isEmpty()) {
-                features = removeExcludedFeatures(features, includeJar);
+            final var backListedFeatures = getBackListedFeatures();
+            if (!backListedFeatures.isEmpty()) {
+                features = removeBackListedFeatures(features, backListedFeatures);
             }
             Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
             artifacts.addAll(featureArtifacts);
@@ -147,42 +152,43 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
         }
     }
 
-    Map<String, Boolean> getIncludeJar() {
-        final var ret = new HashMap<String, Boolean>();
-        for (var entry : project.getProperties().entrySet()) {
-            if (entry.getKey() instanceof String key && key.endsWith(INCLUDE_JAR)
-                && entry.getValue() instanceof String value) {
-                if ("true".equalsIgnoreCase(value)) {
-                    ret.put(key, Boolean.TRUE);
-                } else if ("false".equalsIgnoreCase(value)) {
-                    ret.put(key, Boolean.FALSE);
-                } else {
-                    LOG.warn("Ignoring {} value {}", key, value);
-                }
-            }
+    List<String> getBackListedFeatures() {
+        final var plugin = this.project.getPlugin("org.apache.karaf.tooling:karaf-maven-plugin");
+        if (plugin == null) {
+            return List.of();
         }
-        return ret;
+        final var configuration = (Xpp3Dom) plugin.getConfiguration();
+        if (configuration == null) {
+            return List.of();
+        }
+        final var blacklistedFeatures = configuration.getChild("blacklistedFeatures");
+        if (blacklistedFeatures == null || blacklistedFeatures.getChildren() == null) {
+            return List.of();
+        }
+        return Stream.of(blacklistedFeatures.getChildren())
+            .map(Xpp3Dom::getValue)
+            .collect(Collectors.toList());
     }
 
-    Set<Features> removeExcludedFeatures(final Set<Features> features, final Map<String, Boolean> includeJar) {
+    Set<Features> removeBackListedFeatures(final Set<Features> features, final List<String> blackListedFeatures) {
+        final var featureComparators = blackListedFeatures.stream()
+            .filter(blackListedFeature -> !blackListedFeature.isEmpty())
+            .map(FeatureComparator::new)
+            .collect(Collectors.toList());
         return features.stream()
             .filter(feature -> {
-                if (isFeatureExcluded(includeJar, feature.getName())) {
+                if (featureMatch(featureComparators, feature.getName())) {
                     return false;
                 }
-                feature.getFeature().removeIf(innerFeature -> isFeatureExcluded(includeJar, innerFeature.getName()));
+                feature.getFeature().removeIf(innerFeature -> featureMatch(featureComparators, innerFeature.getName()));
                 return true;
             })
             .collect(Collectors.toSet());
     }
 
-    private static boolean isFeatureExcluded(final Map<String, Boolean> includeJar, final String featureName) {
-        if (featureName == null) {
-            return false;
-        }
-        final var propName = featureName.replace('-', '.') + INCLUDE_JAR;
-        // Return false as a default for any unset feature.
-        return !includeJar.getOrDefault(propName, true);
+    private static boolean featureMatch(final List<FeatureComparator> comparators, final String input) {
+        return comparators.stream()
+            .anyMatch(featureComparator -> featureComparator.compare(input));
     }
 
     private void readFeatureCfg(final AetherUtil aetherUtil, final FeatureUtil featureUtil,
@@ -241,5 +247,50 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
         }
 
         return artifacts;
+    }
+
+    private static final class FeatureComparator {
+        private final String name;
+        private final Pattern patter;
+        private final VersionRange range;
+
+        private FeatureComparator(final String featureName) {
+            String nameResult = featureName;
+            VersionRange rangeResult = null;
+            Pattern patternResult = null;
+            try {
+                if (featureName.contains("[")) {
+                    nameResult = featureName.substring(0, featureName.indexOf('['));
+                    final var featureRange = featureName.substring(featureName.indexOf('['));
+                    rangeResult = VersionRange.createFromVersionSpec(featureRange);
+                } else if (featureName.contains("(")) {
+                    nameResult = featureName.substring(0, featureName.indexOf('('));
+                    final var featureRange = featureName.substring(featureName.indexOf('('));
+                    rangeResult = VersionRange.createFromVersionSpec(featureRange);
+                } else if (featureName.contains("*")) {
+                    patternResult = Pattern.compile(featureName.replace("*", ".*"));
+                }
+            } catch (InvalidVersionSpecificationException e) {
+                // Ignored, FeatureComparator will use name instead.
+            }
+            name = nameResult;
+            patter = patternResult;
+            range = rangeResult;
+        }
+
+        public boolean compare(final String value) {
+            if (range != null) {
+                if (value.startsWith(name)) {
+                    final var versionRange = value.substring(name.length());
+                    return range.containsVersion(new DefaultArtifactVersion(versionRange));
+                } else {
+                    return false;
+                }
+            } else if (patter != null) {
+                return patter.matcher(value).matches();
+            } else {
+                return name.equals(value);
+            }
+        }
     }
 }
