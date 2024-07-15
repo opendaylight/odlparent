@@ -2,6 +2,32 @@
 ODL Parent release notes
 ========================
 
+Version 14.0.1
+--------------
+This is a bug-fix upgrade from version 14.0.0.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* AssertJ `3.26.0 → 3.26.3 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.26.3>`__
+
+* checker-qual 3.44.0 → 3.45.0
+
+* Jackson `2.17.1 → 2.17.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.17.2>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* git-commit-id-maven-plugin `9.0.0 → 9.0.1 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v9.0.1>`__
+
+* maven-project-info-reports-plugin `3.6.1 → 3.6.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12354937>`__
+
+* maven-release-plugin `3.1.0 → 3.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12354890>`__
+
+* maven-surefire-plugin `3.3.0 → 3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12354879>`__
+
+* spotbugs-maven-plugin `4.8.6.1 → 4.8.6.2 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.6.2>`__
+
+* versions-maven-plugin `2.17.0 → 2.17.1 <https://github.com/mojohaus/versions/releases/tag/2.17.1>`__
+
 Version 14.0.0
 --------------
 This is a major upgrade from version 13, with breaking changes; downstream projects may need to make changes to upgrade
