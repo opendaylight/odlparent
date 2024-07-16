@@ -18,6 +18,23 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e7ab95a_32f9d3f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T12:17:07Z",
+      "side": 1,
+      "message": "Is purpose of this patch to show in console:\n`14:05:57.544 INFO [pipe-feature:install pax-jdbc-db2] Skipping blacklisted feature: pax-jdbc-db2/[1.5.7,1.5.7]`?",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "24bb7d11_11715050",
