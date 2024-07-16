@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abbb5299_5e8749dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T11:56:56Z",
+      "side": 1,
+      "message": "Are we going to use org.apache.karaf.features.internal.model.Features implements Blacklisting#isBlackisted?",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24bb7d11_11715050",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T11:56:56Z",
+      "side": 1,
+      "message": "@VisibleForTesting",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e9c8020_bbfe2083",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T11:56:56Z",
+      "side": 1,
+      "message": ".toList()",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3d032ff_5c8f3e60",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T11:56:56Z",
+      "side": 1,
+      "message": "@VisibleForTesting",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae35242f_1407e13e",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T11:56:56Z",
+      "side": 1,
+      "message": "How can feature be \"empty\"?",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8df20043_f9a8a001",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T11:56:56Z",
+      "side": 1,
+      "message": ".toList()",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3752f52_f9cbc9e7",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T11:56:56Z",
+      "side": 1,
+      "message": "How many comparators we have? Can we get rid of this `featureMatch` method?",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d96cc2e_ef7390ab",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T11:56:56Z",
+      "side": 1,
+      "message": "pattern",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee723a82_1362f7d7",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T11:56:56Z",
+      "side": 1,
+      "message": "What is the order of comparison and meaning of properties? For example range?",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f8a25c1_5904f109",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-16T11:56:56Z",
+      "side": 1,
+      "message": "IMO Its quite unusual to compile pattern when its not static variable.",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
