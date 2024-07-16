@@ -52,6 +52,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c20706a6_883d1bc9",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-16T15:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24bb7d11_11715050",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e9c8020_bbfe2083",
@@ -65,6 +83,24 @@
       "writtenOn": "2024-07-16T11:56:56Z",
       "side": 1,
       "message": ".toList()",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7fbbc27_c8f022d2",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-16T15:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e9c8020_bbfe2083",
       "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
@@ -86,6 +122,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "15a398ab_cacb5c05",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-16T15:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3d032ff_5c8f3e60",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae35242f_1407e13e",
@@ -99,6 +153,24 @@
       "writtenOn": "2024-07-16T11:56:56Z",
       "side": 1,
       "message": "How can feature be \"empty\"?",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "092521c5_dbfe8f0d",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-16T15:25:21Z",
+      "side": 1,
+      "message": "If is empty configuration.\n```\n     \u003cblacklistedFeatures\u003e\n         \u003cfeature\u003e\u003c/feature\u003e\n     \u003c/blacklistedFeatures\u003e\n```\n\nIn this case, comparing it with existing features does not make sense.",
+      "parentUuid": "ae35242f_1407e13e",
       "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
@@ -120,6 +192,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af343053_270da709",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-16T15:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8df20043_f9a8a001",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b3752f52_f9cbc9e7",
@@ -133,6 +223,24 @@
       "writtenOn": "2024-07-16T11:56:56Z",
       "side": 1,
       "message": "How many comparators we have? Can we get rid of this `featureMatch` method?",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9aab3bd5_70f6c2f1",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-16T15:25:21Z",
+      "side": 1,
+      "message": "For each feature which is specified as blackListed is created FeatureComparator.\nSee \"removeBlackListedFeatures\" method.",
+      "parentUuid": "b3752f52_f9cbc9e7",
       "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
@@ -154,6 +262,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c785efe1_560abbc8",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-16T15:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d96cc2e_ef7390ab",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ee723a82_1362f7d7",
@@ -171,6 +297,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "91ec407b_7cfb8c05",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-16T15:25:21Z",
+      "side": 1,
+      "message": "The VersionRange is used to verify version, e.g. \"pax-web/[1.2,)\".\nThe pattern handles cases where any character \"*\" is used, e.g \"cxf-*-jetty\".\nThe name is just a basic string compare.\nhttps://github.com/jboss-fuse/fuse-karaf/blob/7.x.redhat-7-x/assemblies/fuse-karaf/pom.xml#L405-L528\n\nOrder of comparison is specified in compare method.\n``` \n       public boolean compare(final String value) {\n            if (range !\u003d null) {\n               ...\n            } else if (pattern !\u003d null) {\n               ...\n            } else {\n                return name.equals(value);\n            }\n        }\n```",
+      "parentUuid": "ee723a82_1362f7d7",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2f8a25c1_5904f109",
@@ -184,6 +328,24 @@
       "writtenOn": "2024-07-16T11:56:56Z",
       "side": 1,
       "message": "IMO Its quite unusual to compile pattern when its not static variable.",
+      "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31014410_2647e5c4",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-16T15:25:21Z",
+      "side": 1,
+      "message": "In my opinion, it\u0027s better to create it once and reuse it, rather than creating it for each comparison.",
+      "parentUuid": "2f8a25c1_5904f109",
       "revId": "ea63dd16ba7be50537b90edae6375856bfe2bbfd",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
