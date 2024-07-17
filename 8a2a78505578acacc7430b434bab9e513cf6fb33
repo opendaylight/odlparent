@@ -18,6 +18,24 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0cadcec_fe3d4007",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-17T13:47:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2997793_d3cbd84c",
+      "revId": "8a2a78505578acacc7430b434bab9e513cf6fb33",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "50d74d7a_f62a1274",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-07-17T12:52:46Z",
       "side": 1,
       "message": "Please check: https://docs.opendaylight.org/en/latest/developer-guides/logging-subsystem.html.",
+      "revId": "8a2a78505578acacc7430b434bab9e513cf6fb33",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa15dc79_723b6dc6",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-17T13:47:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50d74d7a_f62a1274",
       "revId": "8a2a78505578acacc7430b434bab9e513cf6fb33",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
