@@ -321,6 +321,10 @@
                         <feature>pax-jdbc-pool-aries</feature>
                         <feature>pax-jdbc-pool-narayana</feature>
                         <feature>pax-jdbc-pool-transx</feature>
+
+                        <!-- org.ops4j.pax.web -->
+                        <feature>pax-web*undertow*</feature>
+                        <feature>pax-web*tomcat*</feature>
                     </blacklistedFeatures>
                     <bootFeatures>
                         <feature>standard</feature>
