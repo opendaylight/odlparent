@@ -321,6 +321,23 @@
                     <installedFeatures>
                         <feature>wrapper</feature>
                     </installedFeatures>
+                    <blacklistedFeatures>
+                        <feature>pax-jdbc-db2</feature>
+                        <feature>pax-jdbc-teradata</feature>
+                        <feature>pax-jdbc-derby</feature>
+                        <feature>pax-jdbc-derbyclient</feature>
+                        <feature>pax-jdbc-hsqldb</feature>
+                        <feature>pax-jdbc-oracle</feature>
+                        <feature>pax-jdbc-postgresql</feature>
+                        <feature>pax-jdbc-sqlite</feature>
+                        <feature>pax-jdbc-mssql</feature>
+                        <feature>pax-jdbc-jtds</feature>
+                        <feature>pax-jdbc-pool-c3p0</feature>
+                        <feature>pax-jdbc-pool-hikaricp</feature>
+                        <feature>pax-jdbc-pool-aries</feature>
+                        <feature>pax-jdbc-pool-narayana</feature>
+                        <feature>pax-jdbc-pool-transx</feature>
+                    </blacklistedFeatures>
                     <bootFeatures>
                         <feature>standard</feature>
                         <!-- Features always assumed to be present. Keep in sync with feature parent exclusions. -->
