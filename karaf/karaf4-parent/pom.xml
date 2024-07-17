@@ -331,6 +331,14 @@
                         <feature>pax-jdbc-pool-aries</feature>
                         <feature>pax-jdbc-pool-narayana</feature>
                         <feature>pax-jdbc-pool-transx</feature>
+
+                        <!--
+                        From org.ops4j.pax.web ODL uses:
+                            jetty server
+                        See: https://github.com/ops4j/org.ops4j.pax.web/tree/main/pax-web-features/src/main/resources
+                        -->
+                        <feature>pax-web*undertow*</feature>
+                        <feature>pax-web*tomcat*</feature>
                     </blacklistedFeatures>
                     <bootFeatures>
                         <feature>standard</feature>
