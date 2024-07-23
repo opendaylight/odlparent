@@ -16,6 +16,24 @@
       "message": "Tests for Netconf transport-ssh are failing and require further analysis.",
       "revId": "3b38e24f13f1e96dcb8c932479bcd3490261e89a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ccdf453_3c79ba60",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-23T15:13:44Z",
+      "side": 1,
+      "message": "transport-ssh failures are addressed in https://jira.opendaylight.org/browse/NETCONF-1348",
+      "parentUuid": "4209e037_81af871a",
+      "revId": "3b38e24f13f1e96dcb8c932479bcd3490261e89a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
