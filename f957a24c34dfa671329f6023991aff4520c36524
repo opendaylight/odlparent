@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b081a262_f139b195",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-24T12:43:48Z",
+      "side": 1,
+      "message": "`pax-web-tomcat-common` is still present",
+      "revId": "f957a24c34dfa671329f6023991aff4520c36524",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
