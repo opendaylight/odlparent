@@ -16,6 +16,24 @@
       "message": "`pax-web-tomcat-common` is still present",
       "revId": "f957a24c34dfa671329f6023991aff4520c36524",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e530572d_da3bd9bd",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-25T15:36:32Z",
+      "side": 1,
+      "message": "Its is required by `pax-web-http-jetty` here: https://github.com/ops4j/org.ops4j.pax.web/blob/74fc50d2f0f100293d2293e18cf66ce4dd69947b/pax-web-features/src/main/resources/features.xml#L148.",
+      "parentUuid": "b081a262_f139b195",
+      "revId": "f957a24c34dfa671329f6023991aff4520c36524",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
