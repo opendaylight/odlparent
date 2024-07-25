@@ -2,6 +2,20 @@
 ODL Parent release notes
 ========================
 
+Version 14.0.2
+--------------
+This is a bug-fix upgrade from version 14.0.1.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checker-qual 3.44.0 → 3.45.0
+
+* Netty `4.1.111 → 4.1.112 <https://netty.io/news/2024/07/19/4-1-112-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-javadoc-plugin `3.7.0 → 3.8.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12354802>`__
+
 Version 14.0.1
 --------------
 This is a bug-fix upgrade from version 14.0.0.
