@@ -110,23 +110,26 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             Set<Artifact> startupArtifacts = readStartupProperties(aetherUtil);
             aetherUtil.installArtifacts(startupArtifacts);
             Set<Artifact> featureArtifacts = new LinkedHashSet<>();
-            Set<Features> features = new LinkedHashSet<>();
-            readFeatureCfg(aetherUtil, featureUtil, featureArtifacts, features);
+            final Set<Features> featureRepos = new LinkedHashSet<>();
+            readFeatureCfg(aetherUtil, featureUtil, featureArtifacts, featureRepos);
             featureArtifacts.addAll(
                 aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
                     new KarafFeaturesDependencyFilter()));
-            features.addAll(featureUtil.readFeatures(featureArtifacts));
+            featureRepos.addAll(featureUtil.readFeatures(featureArtifacts));
             // Do not provide FeatureUtil.featuresRepositoryToCoords(features)) as existingCoords
             // to findAllFeaturesRecursively, as those coords are not resolved yet, and it would lead to Bug 6187.
-            features.addAll(featureUtil.findAllFeaturesRecursively(features));
-            for (Features feature : features) {
-                LOG.info("Feature repository discovered recursively: {}", feature.getName());
+            featureRepos.addAll(featureUtil.findAllFeaturesRecursively(featureRepos));
+            for (final Features featureRepo : featureRepos) {
+                LOG.info("Feature repository discovered recursively: {}", featureRepo.getName());
             }
             final var includeJar = getIncludeJar();
+            final Set<Features> cleanedRepos;
             if (includeJar != null && !includeJar.isEmpty()) {
-                features = removeExcludedFeatures(features, includeJar);
+                cleanedRepos = removeExcludedFeatures(featureRepos, includeJar);
+            } else {
+                cleanedRepos = featureRepos;
             }
-            Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(features));
+            Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(cleanedRepos));
             artifacts.addAll(featureArtifacts);
             featureUtil.removeLocalArtifacts(artifacts);
 
