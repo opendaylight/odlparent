@@ -16,6 +16,24 @@
       "message": "Missing mysql.",
       "revId": "40bdedd2f3280c08309f17d7a8e83b4b6efdc42c",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1961e36_75333613",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-26T12:30:58Z",
+      "side": 1,
+      "message": "Its listed in https://github.com/ops4j/org.ops4j.pax.jdbc/blob/main/pax-jdbc-features/src/main/resources/features-gpl.xml.\n\nSeems to be not always present - but blocklist it to be sure.",
+      "parentUuid": "e5a3c825_5a544823",
+      "revId": "40bdedd2f3280c08309f17d7a8e83b4b6efdc42c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
