@@ -34,6 +34,24 @@
       "parentUuid": "b081a262_f139b195",
       "revId": "f957a24c34dfa671329f6023991aff4520c36524",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19800490_82219561",
+        "filename": "karaf/karaf4-parent/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-26T13:40:44Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e530572d_da3bd9bd",
+      "revId": "f957a24c34dfa671329f6023991aff4520c36524",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
