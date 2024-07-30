@@ -34,6 +34,24 @@
       "parentUuid": "45e7e9fa_e87dbdd2",
       "revId": "1b80fbd86d305fb104abd40ad8a68ce1bfdd45be",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "368bffa5_8fe4c9e1",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-30T07:12:15Z",
+      "side": 1,
+      "message": "The bigger problem is that we mutate internal state of `Features` by removing some items from its list of `Feature`. I have checked it but found no way to construct new `Features` - there is no `setFeatures` method.\n\nYou can look one more time..",
+      "parentUuid": "51360134_ce4736de",
+      "revId": "1b80fbd86d305fb104abd40ad8a68ce1bfdd45be",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
