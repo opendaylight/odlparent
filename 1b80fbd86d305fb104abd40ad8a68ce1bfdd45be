@@ -16,6 +16,24 @@
       "message": "The peek method exists primarily to support debugging. Is there any specific reason for using it here?\n\nhttps://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#peek-java.util.function.Consumer-\n\nhttps://stackoverflow.com/questions/33635717/in-java-streams-is-peek-really-only-for-debugging",
       "revId": "1b80fbd86d305fb104abd40ad8a68ce1bfdd45be",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "51360134_ce4736de",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2024-07-30T07:00:25Z",
+      "side": 1,
+      "message": "IDK we need to just perform void operation - suits this purpose.\nIf it is problematic in any other way - please replace it.",
+      "parentUuid": "45e7e9fa_e87dbdd2",
+      "revId": "1b80fbd86d305fb104abd40ad8a68ce1bfdd45be",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
