@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45e7e9fa_e87dbdd2",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-07-30T06:42:24Z",
+      "side": 1,
+      "message": "The peek method exists primarily to support debugging. Is there any specific reason for using it here?\n\nhttps://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html#peek-java.util.function.Consumer-\n\nhttps://stackoverflow.com/questions/33635717/in-java-streams-is-peek-really-only-for-debugging",
+      "revId": "1b80fbd86d305fb104abd40ad8a68ce1bfdd45be",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
