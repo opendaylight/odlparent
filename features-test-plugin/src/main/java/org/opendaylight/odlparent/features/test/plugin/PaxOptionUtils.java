@@ -105,6 +105,7 @@ final class PaxOptionUtils {
     static Option[] miscOptions() {
         return new Option[]{
             // probe dependencies
+            mavenBundle("org.apache.karaf.diagnostic", "org.apache.karaf.diagnostic.core", KARAF_VERSION),
             mavenBundle("org.opendaylight.odlparent", "bundles-diag", RELEASE_VERSION),
 
             // Needed for Agrona/aeron.io

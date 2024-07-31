@@ -18,6 +18,7 @@ import static org.opendaylight.odlparent.features.test.plugin.PaxOptionUtils.vmO
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.locks.Lock;
@@ -167,6 +168,7 @@ public final class TestFeaturesMojo extends AbstractMojo {
         System.setProperty(TestProbe.BUNDLE_CHECK_SKIP, String.valueOf(bundleStateCheckSkip));
         System.setProperty(TestProbe.BUNDLE_CHECK_TIMEOUT_SECONDS, String.valueOf(bundleStateCheckTimeout));
         System.setProperty(TestProbe.BUNDLE_CHECK_INTERVAL_SECONDS, String.valueOf(bundleStateCheckInterval));
+        System.setProperty(TestProbe.DIAGNOSTICS_DUMP_ZIP_FILE, Path.of(buildDir, "SFT", "diag-dump.zip").toString());
 
         final ExamSystem system;
         try {

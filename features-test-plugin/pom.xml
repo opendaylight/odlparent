@@ -137,6 +137,11 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>org.apache.karaf.diagnostic</groupId>
+            <artifactId>org.apache.karaf.diagnostic.core</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>org.eclipse.jdt</groupId>
             <artifactId>org.eclipse.jdt.annotation</artifactId>
             <optional>true</optional>

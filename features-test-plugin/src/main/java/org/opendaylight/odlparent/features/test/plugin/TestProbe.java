@@ -16,6 +16,8 @@ import java.util.EnumSet;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
+import javax.management.MBeanException;
+import org.apache.karaf.diagnostic.management.DiagnosticDumpMBean;
 import org.apache.karaf.features.FeaturesService;
 import org.junit.Test;
 import org.opendaylight.odlparent.bundles.diag.ContainerState;
@@ -67,6 +69,7 @@ public final class TestProbe {
     }
 
     static final String FEATURE_FILE_URI_PROP = "feature.test.file.uri";
+    static final String DIAGNOSTICS_DUMP_ZIP_FILE = "feature.test.diagnostics.dump.zip.file";
     static final String BUNDLE_CHECK_SKIP = "feature.test.bundle.check.skip";
     static final String BUNDLE_CHECK_TIMEOUT_SECONDS = "feature.test.bundle.check.timeout.seconds";
     static final String BUNDLE_CHECK_INTERVAL_SECONDS = "feature.test.bundle.check.interval.seconds";
@@ -75,6 +78,7 @@ public final class TestProbe {
 
     static final String[] ALL_PROPERTY_KEYS = {
         FEATURE_FILE_URI_PROP,
+        DIAGNOSTICS_DUMP_ZIP_FILE,
         BUNDLE_CHECK_SKIP,
         BUNDLE_CHECK_TIMEOUT_SECONDS,
         BUNDLE_CHECK_INTERVAL_SECONDS
@@ -87,6 +91,9 @@ public final class TestProbe {
 
     @Inject
     private FeaturesService featuresService;
+
+    @Inject
+    private DiagnosticDumpMBean diagnosticDumpMBean;
 
     @Inject
     private DiagProvider diagProvider;
@@ -122,6 +129,9 @@ public final class TestProbe {
         }
         if (diagProvider == null) {
             throw new IllegalStateException("bundleService is not initialized");
+        }
+        if (diagnosticDumpMBean == null) {
+            throw new IllegalStateException("diagnosticDumpMBean is not initialized");
         }
     }
 
@@ -213,12 +223,23 @@ public final class TestProbe {
             final var remainingNanos = maxNanos - elapsed;
             if (remainingNanos <= 0) {
                 diag.logState(LOG);
+                dumpDiagnostics();
                 throw new IllegalStateException("Bundles states check timeout");
             }
 
             final var sleepNanos = Math.min(remainingNanos, intervalNanos);
             LOG.debug("Bundle check sleep {}ns", sleepNanos);
             NANOSECONDS.sleep(sleepNanos);
+        }
+    }
+
+    private void dumpDiagnostics() {
+        final var filePath = System.getProperty(DIAGNOSTICS_DUMP_ZIP_FILE);
+        LOG.info("Building diagnostics DUMP to {}", filePath);
+        try {
+            diagnosticDumpMBean.createDump(filePath);
+        } catch (MBeanException e) {
+            LOG.error("Error creating dump", e);
         }
     }
 }
