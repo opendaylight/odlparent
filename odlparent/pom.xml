@@ -156,19 +156,19 @@
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest</artifactId>
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
-        <version>2.2</version>
+        <version>3.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-core</artifactId>
-        <version>2.2</version>
+        <version>3.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-library</artifactId>
-        <version>2.2</version>
+        <version>3.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
