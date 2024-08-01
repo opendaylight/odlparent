@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7f3657c_75f416bc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-08-01T20:19:57Z",
+      "side": 1,
+      "message": "hmm... so I would like to move things out of the probe rather than into it.\n\ncan we actually catch the probe failure in the mojo while we have access to the container and perhaps tickle diag service from there?",
+      "revId": "def35ecb8cec6b633fa745616d89ea5f25bc1e5a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
