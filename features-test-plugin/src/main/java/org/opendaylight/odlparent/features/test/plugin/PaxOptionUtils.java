@@ -36,6 +36,8 @@ import org.ops4j.pax.exam.options.MavenArtifactUrlReference;
 import org.ops4j.pax.exam.options.extra.VMOption;
 
 final class PaxOptionUtils {
+    private static final String ETC_ORG_OPS4J_PAX_URL_MVN_CFG = "etc/org.ops4j.pax.url.mvn.cfg";
+    private static final String ETC_ORG_OPS4J_PAX_LOGGING_CFG = "etc/org.ops4j.pax.logging.cfg";
 
     private PaxOptionUtils() {
         // utility class
@@ -134,19 +136,21 @@ final class PaxOptionUtils {
         }
         return new Option[]{
             logLevel(LogLevelOption.LogLevel.INFO),
+
             // Make sure karaf's default repository is consulted before anything else
-            editConfigurationFilePut("etc/org.ops4j.pax.url.mvn.cfg", "org.ops4j.pax.url.mvn.defaultRepositories",
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, "org.ops4j.pax.url.mvn.defaultRepositories",
                 "file:${karaf.home}/${karaf.default.repository}@id=system.repository"),
             // remote repository, exclude snapshots
-            editConfigurationFilePut("etc/org.ops4j.pax.url.mvn.cfg", "org.ops4j.pax.url.mvn.repositories",
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, "org.ops4j.pax.url.mvn.repositories",
                 "https://repo1.maven.org/maven2@id=central"),
             // local repository
-            editConfigurationFilePut("etc/org.ops4j.pax.url.mvn.cfg", "org.ops4j.pax.url.mvn.localRepository",
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, "org.ops4j.pax.url.mvn.localRepository",
                 localRepository),
+
             // redirect karaf log output
-            editConfigurationFilePut("etc/org.ops4j.pax.logging.cfg", "log4j2.appender.rolling.fileName",
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j2.appender.rolling.fileName",
                 karafLogPath.toString()),
-            editConfigurationFilePut("etc/org.ops4j.pax.logging.cfg", "log4j2.appender.rolling.filePattern",
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j2.appender.rolling.filePattern",
                 karafLogPath + ".%i")
         };
     }
