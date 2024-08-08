@@ -22,9 +22,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -74,7 +74,7 @@ final class DependencyResolver {
      */
     Set<FeatureDependency> resolveFeatures(final Collection<org.apache.maven.artifact.Artifact> artifacts)
             throws MojoExecutionException {
-        final var featureDependencies = new LinkedList<FeatureDependency>();
+        final var featureDependencies = new ArrayList<FeatureDependency>();
         for (var mvnArtifact : artifacts) {
             final var artifact = toAetherArtifact(mvnArtifact);
             if (isFeature(artifact)) {
@@ -164,17 +164,20 @@ final class DependencyResolver {
         if (cached != null) {
             return cached;
         }
-        final var request = new ArtifactRequest().setRepositories(repositories).setArtifact(unresolved);
+
         final ArtifactResult resolutionResult;
         try {
-            resolutionResult = repoSystem.resolveArtifact(repoSession, request);
+            resolutionResult = repoSystem.resolveArtifact(repoSession,
+                new ArtifactRequest(unresolved, repositories, null));
         } catch (ArtifactResolutionException e) {
             throw new MojoExecutionException("Could not resolve artifact " + identifier, e);
         }
+
         final var resolved = resolutionResult.getArtifact();
-        LOG.debug("Dependency resolved for {}", identifier);
         final var file = resolved.getFile();
-        if (file == null || !file.exists()) {
+        if (file != null && file.exists()) {
+            LOG.debug("Dependency artifact {} resolved to {}", identifier, file);
+        } else {
             LOG.warn("Dependency artifact {} is resolved but has no attached file.", identifier);
         }
         resolvedArtifacts.put(identifier, resolved);
