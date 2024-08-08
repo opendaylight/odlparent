@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29cbc7ba_190fab0b",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 20
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-08-08T13:20:49Z",
+      "side": 1,
+      "message": "we can ditch these lambdas by improving FeatureComparator",
+      "range": {
+        "startLine": 232,
+        "startChar": 22,
+        "endLine": 232,
+        "endChar": 60
+      },
+      "revId": "6a4cab48d750d190828aa55fea98f1f602f04234",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6cc0a7d9_c257ceb9",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 20
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-08-08T13:20:49Z",
+      "side": 1,
+      "message": "FeaturePredicate and implements Predicate\u003cString\u003e",
+      "range": {
+        "startLine": 298,
+        "startChar": 31,
+        "endLine": 298,
+        "endChar": 48
+      },
+      "revId": "6a4cab48d750d190828aa55fea98f1f602f04234",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62efecbb_11e0894d",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 20
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-08-08T13:20:49Z",
+      "side": 1,
+      "message": "@Override\npublic boolean test(...)",
+      "range": {
+        "startLine": 328,
+        "startChar": 23,
+        "endLine": 328,
+        "endChar": 30
+      },
+      "revId": "6a4cab48d750d190828aa55fea98f1f602f04234",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
