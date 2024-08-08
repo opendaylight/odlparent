@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "30c03a3d_4ee98c18",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 20
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-08-08T13:24:59Z",
+      "side": 1,
+      "message": "so I was not sure about this one, but I think we want to make a strong connection here.\n\nthis plugin is executed in two places, both of which follow up with an assembly run.\n\ncan we perhaps subclass the assembly mojo and get the config from there?\n\nthat would allow us to codify what we are doing and sequence assembly execution accordingly...",
+      "range": {
+        "startLine": 171,
+        "startChar": 27,
+        "endLine": 171,
+        "endChar": 92
+      },
+      "revId": "6a4cab48d750d190828aa55fea98f1f602f04234",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "29cbc7ba_190fab0b",
         "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
         "patchSetId": 20
