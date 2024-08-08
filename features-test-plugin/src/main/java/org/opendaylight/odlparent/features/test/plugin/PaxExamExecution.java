@@ -7,8 +7,6 @@
  */
 package org.opendaylight.odlparent.features.test.plugin;
 
-import static java.util.Objects.requireNonNull;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -20,20 +18,14 @@ import org.ops4j.pax.exam.TestContainer;
 final class PaxExamExecution {
     private final TestContainer[] containers;
     private final ExamSystem examSystem;
-    private final String localRepository;
 
-    PaxExamExecution(final String localRepository, final ExamSystem examSystem, final TestContainer ... containers) {
-        this.localRepository = requireNonNull(localRepository);
+    PaxExamExecution(final ExamSystem examSystem, final TestContainer ... containers) {
         this.containers = containers;
         this.examSystem = examSystem;
     }
 
     @SuppressWarnings({"IllegalCatch", "RegexpSinglelineJava"})
     void execute() throws MojoExecutionException {
-
-        // Use the same repository for Pax Exam as is used for Maven
-        System.setProperty("org.ops4j.pax.url.mvn.localRepository", localRepository);
-
         for (var container : containers) {
             // disable karaf stdout output to maven log
             final var stdout = System.out;

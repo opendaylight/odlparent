@@ -172,15 +172,14 @@ public final class TestFeaturesMojo extends AbstractMojo {
         );
 
 
-        final ExamSystem system;
+        final ExamSystem examSystem;
         try {
-            system = PaxExamRuntime.createTestSystem(options);
+            examSystem = PaxExamRuntime.createTestSystem(options);
         } catch (IOException e) {
             throw new MojoExecutionException("Cannot create pax-exam system", e);
         }
 
-        final var execution = new PaxExamExecution(localRepository, system,
-            new KarafTestContainerFactory().create(system));
+        final var execution = new PaxExamExecution(examSystem, new KarafTestContainerFactory().create(examSystem));
         if (concurrent) {
             execution.execute();
             return;
