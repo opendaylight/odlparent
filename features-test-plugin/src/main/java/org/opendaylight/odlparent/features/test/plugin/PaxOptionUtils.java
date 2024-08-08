@@ -36,6 +36,8 @@ import org.ops4j.pax.exam.options.MavenArtifactUrlReference;
 import org.ops4j.pax.exam.options.extra.VMOption;
 
 final class PaxOptionUtils {
+    // pax-url-mvn configuration, see detailed explanation at
+    // https://ops4j1.jira.com/wiki/spaces/paxurl/pages/115802124/Aether+Configuration
     private static final String ETC_ORG_OPS4J_PAX_URL_MVN_CFG = "etc/org.ops4j.pax.url.mvn.cfg";
     private static final String ETC_ORG_OPS4J_PAX_LOGGING_CFG = "etc/org.ops4j.pax.logging.cfg";
 
@@ -137,15 +139,16 @@ final class PaxOptionUtils {
         return new Option[]{
             logLevel(LogLevelOption.LogLevel.INFO),
 
-            // Make sure karaf's default repository is consulted before anything else
-            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, "org.ops4j.pax.url.mvn.defaultRepositories",
-                "file:${karaf.home}/${karaf.default.repository}@id=system.repository"),
-            // remote repository, exclude snapshots
-            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, "org.ops4j.pax.url.mvn.repositories",
-                "https://repo1.maven.org/maven2@id=central"),
             // local repository
             editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, "org.ops4j.pax.url.mvn.localRepository",
                 localRepository),
+            // Make sure karaf's default repository is consulted before anything else, followed by the local repository
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, "org.ops4j.pax.url.mvn.defaultRepositories", """
+                file:${karaf.home}/${karaf.default.repository}@id=system.repository,\
+                file:%s@id=maven.local.repository""".formatted(localRepository)),
+            // remote repository, exclude snapshots
+            editConfigurationFilePut(ETC_ORG_OPS4J_PAX_URL_MVN_CFG, "org.ops4j.pax.url.mvn.repositories",
+                "https://repo1.maven.org/maven2@id=central"),
 
             // redirect karaf log output
             editConfigurationFilePut(ETC_ORG_OPS4J_PAX_LOGGING_CFG, "log4j2.appender.rolling.fileName",
