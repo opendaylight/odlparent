@@ -32,15 +32,15 @@ import org.slf4j.LoggerFactory;
  * All dependencies which are absent on target environment expected to be packaged using same
  * {@link org.ops4j.pax.exam.ProbeBuilder}. Input parameters are passed through system properties. in order to be
  * delivered properly all affected properties require explicit declaration using associated Pax options -- see
- * {@link PaxOptionUtils#probePropertiesOptions()}.
+ * {@link PaxOptionUtils} and setup in {@link TestFeaturesMojo#execute()}.
  *
  * <p>
  * Pax Exam module references:
  * <ul>
  *     <li>Probe bundle deployment handling is served by pax-exam-extender-service</li>
  *     <li>Service instances lookup and injection into probe instance is served by pax-exam-inject</li>
- *     <li>Test method invocation is served by pax-exam-invoker-junit, uses JUnitCore v.4, which requires @Test
- *     annotation for method to be eligible for invocation</li>
+ *     <li>Test method invocation is served by pax-exam-invoker-junit, uses JUnitCore v.4, which requires {@code @Test}
+ *         annotation for method to be eligible for invocation</li>
  * </ul>
  */
 public final class TestProbe {
@@ -72,13 +72,6 @@ public final class TestProbe {
     static final String BUNDLE_CHECK_INTERVAL_SECONDS = "feature.test.bundle.check.interval.seconds";
     static final String DEFAULT_TIMEOUT = "300";
     static final String DEFAULT_INTERVAL = "1";
-
-    static final String[] ALL_PROPERTY_KEYS = {
-        FEATURE_FILE_URI_PROP,
-        BUNDLE_CHECK_SKIP,
-        BUNDLE_CHECK_TIMEOUT_SECONDS,
-        BUNDLE_CHECK_INTERVAL_SECONDS
-    };
 
     private static final Logger LOG = LoggerFactory.getLogger(TestProbe.class);
     private static final Map<String, ContainerState> ELIGIBLE_STATES = Map.of(
