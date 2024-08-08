@@ -12,7 +12,6 @@ import static org.opendaylight.odlparent.features.test.plugin.DependencyUtils.RE
 import static org.ops4j.pax.exam.CoreOptions.bootDelegationPackages;
 import static org.ops4j.pax.exam.CoreOptions.maven;
 import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
-import static org.ops4j.pax.exam.CoreOptions.propagateSystemProperties;
 import static org.ops4j.pax.exam.CoreOptions.systemPackages;
 import static org.ops4j.pax.exam.CoreOptions.when;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.configureConsole;
@@ -160,10 +159,6 @@ final class PaxOptionUtils {
             featureDependencies.stream()
                 .map(fd -> features(urlReferenceOf(fd.artifact()), fd.featureNames().toArray(String[]::new)))
                 .toArray(Option[]::new);
-    }
-
-    static Option[] probePropertiesOptions() {
-        return new Option[]{propagateSystemProperties(TestProbe.ALL_PROPERTY_KEYS)};
     }
 
     private static MavenArtifactUrlReference urlReferenceOf(final Artifact artifact) {

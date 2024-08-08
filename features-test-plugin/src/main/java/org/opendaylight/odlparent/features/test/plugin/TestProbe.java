@@ -73,13 +73,6 @@ public final class TestProbe {
     static final String DEFAULT_TIMEOUT = "300";
     static final String DEFAULT_INTERVAL = "1";
 
-    static final String[] ALL_PROPERTY_KEYS = {
-        FEATURE_FILE_URI_PROP,
-        BUNDLE_CHECK_SKIP,
-        BUNDLE_CHECK_TIMEOUT_SECONDS,
-        BUNDLE_CHECK_INTERVAL_SECONDS
-    };
-
     private static final Logger LOG = LoggerFactory.getLogger(TestProbe.class);
     private static final Map<String, ContainerState> ELIGIBLE_STATES = Map.of(
         "slf4j.log4j12", ContainerState.INSTALLED,
