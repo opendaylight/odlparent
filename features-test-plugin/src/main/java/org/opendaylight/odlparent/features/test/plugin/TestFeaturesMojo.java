@@ -12,9 +12,9 @@ import static org.opendaylight.odlparent.features.test.plugin.PaxOptionUtils.dep
 import static org.opendaylight.odlparent.features.test.plugin.PaxOptionUtils.karafConfigOptions;
 import static org.opendaylight.odlparent.features.test.plugin.PaxOptionUtils.karafDistroOptions;
 import static org.opendaylight.odlparent.features.test.plugin.PaxOptionUtils.miscOptions;
-import static org.opendaylight.odlparent.features.test.plugin.PaxOptionUtils.probePropertiesOptions;
 import static org.opendaylight.odlparent.features.test.plugin.PaxOptionUtils.profileOptions;
 import static org.opendaylight.odlparent.features.test.plugin.PaxOptionUtils.vmOptions;
+import static org.ops4j.pax.exam.CoreOptions.systemProperty;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,6 +36,7 @@ import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.ops4j.pax.exam.ExamSystem;
+import org.ops4j.pax.exam.Option;
 import org.ops4j.pax.exam.karaf.container.internal.KarafTestContainerFactory;
 import org.ops4j.pax.exam.spi.PaxExamRuntime;
 import org.slf4j.Logger;
@@ -158,15 +159,18 @@ public final class TestFeaturesMojo extends AbstractMojo {
             karafConfigOptions(buildDir, localRepository),
             dependencyFeaturesOptions(pluginDependencyFeatures),
             dependencyFeaturesOptions(projectDependencyFeatures),
-            probePropertiesOptions(),
+
+            // probe parameters
+            new Option[] {
+                systemProperty(TestProbe.FEATURE_FILE_URI_PROP).value(featureFile.toURI().toString()),
+                systemProperty(TestProbe.BUNDLE_CHECK_SKIP).value(String.valueOf(bundleStateCheckSkip)),
+                systemProperty(TestProbe.BUNDLE_CHECK_TIMEOUT_SECONDS).value(String.valueOf(bundleStateCheckTimeout)),
+                systemProperty(TestProbe.BUNDLE_CHECK_INTERVAL_SECONDS).value(String.valueOf(bundleStateCheckInterval))
+            },
+
             miscOptions()
         );
 
-        // probe parameters
-        System.setProperty(TestProbe.FEATURE_FILE_URI_PROP, featureFile.toURI().toString());
-        System.setProperty(TestProbe.BUNDLE_CHECK_SKIP, String.valueOf(bundleStateCheckSkip));
-        System.setProperty(TestProbe.BUNDLE_CHECK_TIMEOUT_SECONDS, String.valueOf(bundleStateCheckTimeout));
-        System.setProperty(TestProbe.BUNDLE_CHECK_INTERVAL_SECONDS, String.valueOf(bundleStateCheckInterval));
 
         final ExamSystem system;
         try {
