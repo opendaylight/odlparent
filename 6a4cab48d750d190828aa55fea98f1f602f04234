@@ -24,6 +24,30 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4521c7a_33caca47",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 20
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-08-12T11:40:58Z",
+      "side": 1,
+      "message": "Extending the AssemblyMojo class does not allow sharing karaf-maven-plugin configurations, even if they are executed in the same Maven build phase. The dependency injector does not populate properties in AssemblyMojo, leaving them either null or at their default values.",
+      "parentUuid": "30c03a3d_4ee98c18",
+      "range": {
+        "startLine": 171,
+        "startChar": 27,
+        "endLine": 171,
+        "endChar": 92
+      },
+      "revId": "6a4cab48d750d190828aa55fea98f1f602f04234",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "29cbc7ba_190fab0b",
@@ -37,6 +61,30 @@
       "writtenOn": "2024-08-08T13:20:49Z",
       "side": 1,
       "message": "we can ditch these lambdas by improving FeatureComparator",
+      "range": {
+        "startLine": 232,
+        "startChar": 22,
+        "endLine": 232,
+        "endChar": 60
+      },
+      "revId": "6a4cab48d750d190828aa55fea98f1f602f04234",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "74fb200d_b9ebb0f2",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 20
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-08-12T11:40:58Z",
+      "side": 1,
+      "message": "We are working with a list of comparators and a single String. With this approach, we will still utilize lambdas:\n```\nfinal var match \u003d predicates.stream()\n    .anyMatch(featurePredicate -\u003e featurePredicate.test(featureName));\n```",
+      "parentUuid": "29cbc7ba_190fab0b",
       "range": {
         "startLine": 232,
         "startChar": 22,
@@ -70,6 +118,30 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ddb3011a_7090238c",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 20
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-08-12T11:40:58Z",
+      "side": 1,
+      "message": "We are working with a list of comparators and a single String. With this approach, we will still utilize lambdas:\n```\nfinal var match \u003d predicates.stream()\n    .anyMatch(featurePredicate -\u003e featurePredicate.test(featureName));\n```",
+      "parentUuid": "6cc0a7d9_c257ceb9",
+      "range": {
+        "startLine": 298,
+        "startChar": 31,
+        "endLine": 298,
+        "endChar": 48
+      },
+      "revId": "6a4cab48d750d190828aa55fea98f1f602f04234",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "62efecbb_11e0894d",
@@ -83,6 +155,30 @@
       "writtenOn": "2024-08-08T13:20:49Z",
       "side": 1,
       "message": "@Override\npublic boolean test(...)",
+      "range": {
+        "startLine": 328,
+        "startChar": 23,
+        "endLine": 328,
+        "endChar": 30
+      },
+      "revId": "6a4cab48d750d190828aa55fea98f1f602f04234",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8da0d694_f29e3546",
+        "filename": "karaf-plugin/src/main/java/org/opendaylight/odlparent/PopulateLocalRepoMojo.java",
+        "patchSetId": 20
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2024-08-12T11:40:58Z",
+      "side": 1,
+      "message": "We are working with a list of comparators and a single String. With this approach, we will still utilize lambdas:\n```\nfinal var match \u003d predicates.stream()\n    .anyMatch(featurePredicate -\u003e featurePredicate.test(featureName));\n```",
+      "parentUuid": "62efecbb_11e0894d",
       "range": {
         "startLine": 328,
         "startChar": 23,
