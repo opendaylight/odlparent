@@ -829,7 +829,7 @@
              We do not need to specify the groupId. -->
         <plugin>
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>3.4.0</version>
+          <version>3.5.0</version>
           <dependencies>
             <dependency>
               <groupId>com.puppycrawl.tools</groupId>
@@ -1446,7 +1446,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.3.0</version>
+        <version>3.5.0</version>
       </plugin>
 
       <!-- FIXME: activate this
