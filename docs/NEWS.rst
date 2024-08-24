@@ -2,6 +2,58 @@
 ODL Parent release notes
 ========================
 
+Version 14.0.3
+--------------
+This is a bug-fix upgrade from version 14.0.2.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Antlr `4.13.1 → 4.13.2 <https://github.com/antlr/antlr4/releases/tag/4.13.2>`__
+
+* awaitility `4.2.1 → 4.2.2 <https://raw.githubusercontent.com/awaitility/awaitility/master/changelog.txt>`__
+
+* checker-qual 3.45.0 → 3.46.0
+
+* commons-lang3 3.14.0 → 3.16.0, release notes:
+  * `3.15.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.15.0>`__
+  * `3.16.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.16.0>`__
+
+* error_prone_annotations 2.28.0 → 2.30.0
+
+* Guava `33.2.1 → 33.3.0 <https://github.com/google/guava/releases/tag/v33.3.0>`__
+
+* Hamcrest `2.2 → 3.0 <https://github.com/hamcrest/JavaHamcrest/releases/tag/v3.0>`__
+
+* Jersey `2.43 → 2.44 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.44>`__
+
+* JUnit `5.10.3 → 5.11.0 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.11.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* cyclonedx-maven-plugin `2.8.0 → 2.8.1 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.8.1>`__
+
+* exec-maven-plugin 3.3.0 → 3.4.1, release notes:
+  * `3.4.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.4.0>`__
+  * `3.4.1 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.4.1>`__
+
+* maven-checkstyle-plugin `3.4.0 → 3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12355046>`__
+
+* maven-dependency-plugin `3.7.1 → 3.8.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12354847>`__
+
+* maven-deploy-plugin `3.1.2 → 3.1.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317228&version=12354621>`__
+
+* maven-help-plugin `3.4.1 → 3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12354978>`__
+
+* maven-install-plugin `3.1.2 → 3.1.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12354620>`__
+
+* maven-invoker-plugin `3.7.0 → 3.8.0 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.8.0>`__
+
+* maven-project-info-reports-plugin `3.6.2 → 3.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12355024>`__
+
+* maven-site-plugin `3.12.1 → 3.20.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12354960>`__
+
+* maven-surefire-plugin `3.3.1 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12354945>`__
+
 Version 14.0.2
 --------------
 This is a bug-fix upgrade from version 14.0.1.
