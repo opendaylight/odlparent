@@ -2,6 +2,115 @@
 ODL Parent release notes
 ========================
 
+Version 13.1.4
+--------------
+This is a bug-fix upgrade from version 13.1.3.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Antlr `4.13.1 → 4.13.2 <https://github.com/antlr/antlr4/releases/tag/4.13.2>`__
+
+* AssertJ `3.26.0 → 3.26.3 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.26.3>`__
+
+* awaitility `4.2.1 → 4.2.2 <https://raw.githubusercontent.com/awaitility/awaitility/master/changelog.txt>`__
+
+* checker-qual 3.43.0 → 3.46.0
+
+* Dropwizard Metrics `4.2.25 → 4.2.26 <https://github.com/dropwizard/metrics/releases/tag/v4.2.26>`__
+
+* GSON `2.10.1 → 2.11.0 <https://github.com/google/gson/releases/tag/gson-parent-2.11.0>`__
+
+* Hamcrest `2.2 → 3.0 <https://github.com/hamcrest/JavaHamcrest/releases/tag/v3.0>`__
+
+* Jersey `2.43 → 2.44 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.44>`__
+
+* JUnit 5.10.2 → 5.11.0, release notes:
+  * `5.10.3 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.10.3>`__
+  * `5.11.0 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.11.0>`__
+
+* Netty 4.1.109 → 4.1.112, release notes:
+  * `4.1.110 <https://netty.io/news/2024/05/22/4-1-110-Final.html>`__
+  * `4.1.111 <https://netty.io/news/2024/06/11/4-1-111-Final.html>`__
+  * `4.1.112 <https://netty.io/news/2024/07/19/4-1-112-Final.html>`__
+
+* SpotBugs `4.8.5 → 4.8.6 <https://github.com/spotbugs/spotbugs/releases/tag/4.8.6>`__
+
+* TrieMap `1.3.1 → 1.3.2 <https://github.com/PANTHEONtech/triemap/releases/tag/triemap-1.3.2>`__
+
+* Woodstox 6.6.2 → 7.0.0, release notes:
+  * `6.7.0 <https://github.com/FasterXML/woodstox/milestone/35?closed=1>`__
+  * `7.0.0 <https://github.com/FasterXML/woodstox/milestone/32?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* cyclonedx-maven-plugin `2.8.0 → 2.8.1 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.8.1>`__
+
+* exec-maven-plugin 3.3.0 → 3.4.1, release notes:
+  * `3.4.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.4.0>`__
+  * `3.4.1 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.4.1>`__
+
+* git-commit-id-maven-plugin 8.0.0 → 9.0.1, release notes:
+  * `9.0.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v9.0.0>`__
+  * `9.0.1 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v9.0.1>`__
+
+* maven-checkstyle-plugin 3.3.1 → 3.5.0, release notes:
+  * `3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12353877>`__
+  * `3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12355046>`__
+
+* maven-clean-plugin `3.3.2 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317224&version=12353775>`__
+
+* maven-dependency-plugin 3.6.1 → 3.8.0, release notes:
+  * `3.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12353819>`__
+  * `3.7.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12354829>`__
+  * `3.8.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12354847>`__
+
+* maven-deploy-plugin `3.1.2 → 3.1.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317228&version=12354621>`__
+
+* maven-help-plugin `3.4.1 → 3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12354978>`__
+
+* maven-enforcer-plugin `3.4.1 → 3.5.0 <https://github.com/apache/maven-enforcer/releases/tag/enforcer-3.5.0>`__
+
+* maven-help-plugin 3.4.0 → 3.5.0, release notes:
+  * `3.4.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12353019>`__
+  * `3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12354978>`__
+
+* maven-install-plugin `3.1.2 → 3.1.3 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524&version=12354620>`__
+
+* maven-invoker-plugin `3.7.0 → 3.8.0 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.8.0>`__
+
+* maven-jar-plugin `3.4.1 → 3.4.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526&version=12354600>`__
+
+* maven-javadoc-plugin 3.6.3 → 3.8.0, release notes:
+  * `3.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12354465>`__
+  * `3.8.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12354802>`__
+
+* maven-plugin-plugin `3.13.0 → 3.13.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820&version=12354759>`__
+
+* maven-project-info-reports-plugin 3.5.0 → 3.7.0, release notes:
+  * `3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12354774>`__
+  * `3.6.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12354845>`__
+  * `3.6.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12354937>`__
+  * `3.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12355024>`__
+
+* maven-release-plugin 3.0.1 → 3.1.1, release notes:
+  * `3.1.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12354221>`__
+  * `3.1.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824&version=12354890>`__
+
+* maven-shade-plugin `3.5.3 → 3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921&version=12354611>`__
+
+* maven-site-plugin `3.12.1 → 3.20.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12354960>`__
+
+* maven-surefire-plugin 3.2.5 → 3.4.0, release notes:
+  * `3.3.0 <https://github.com/apache/maven-surefire/releases/tag/surefire-3.3.0>`__
+  * `3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12354879>`__
+  * `3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12354945>`__
+
+* spotbugs-maven-plugin `4.8.6.1 → 4.8.6.2 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.6.2>`__
+
+* versions-maven-plugin 2.16.2 → 2.17.1, release notes:
+  * `2.17.0 <https://github.com/mojohaus/versions/releases/tag/2.17.0>`__
+  * `2.17.1 <https://github.com/mojohaus/versions/releases/tag/2.17.1>`__
+
 Version 13.1.3
 --------------
 This is a bug-fix upgrade from version 13.1.2.
