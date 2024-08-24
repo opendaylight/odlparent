@@ -3,6 +3,6 @@
     <feature version="0.0.0">
         <bundle>mvn:com.google.guava/failureaccess/1.0.2</bundle>
         <bundle>mvn:com.google.guava/guava/33.3.0-jre</bundle>
-        <bundle>mvn:org.checkerframework/checker-qual/3.45.0</bundle>
+        <bundle>mvn:org.checkerframework/checker-qual/3.46.0</bundle>
     </feature>
 </features>
