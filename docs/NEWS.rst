@@ -14,19 +14,28 @@ Third-party dependencies
 
 * checker-qual 3.45.0 → 3.46.0
 
+* CheckStyle 10.17.0 → 10.18.1, release notes:
+  * `10.18.0 <https://checkstyle.org/releasenotes.html#Release_10.18.0>`__
+  * `10.18.1 <https://checkstyle.org/releasenotes.html#Release_10.18.1>`__
+
 * commons-lang3 3.14.0 → 3.16.0, release notes:
   * `3.15.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.15.0>`__
   * `3.16.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.16.0>`__
+  * `3.17.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.17.0>`__
 
-* error_prone_annotations 2.28.0 → 2.30.0
+* error_prone_annotations 2.28.0 → 2.31.0
 
 * Guava `33.2.1 → 33.3.0 <https://github.com/google/guava/releases/tag/v33.3.0>`__
 
 * Hamcrest `2.2 → 3.0 <https://github.com/hamcrest/JavaHamcrest/releases/tag/v3.0>`__
 
-* Jersey `2.43 → 2.44 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.44>`__
+* Jersey 2.43 → 2.45, release notes:
+  * `2.44 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.44>`__
+  * `2.45 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.45>`__
 
 * JUnit `5.10.3 → 5.11.0 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.11.0>`__
+
+* Mockito `5.12.0 → 5.13.0 <https://github.com/mockito/mockito/releases/tag/v5.13.0>`__
 
 Plugin upgrades
 ~~~~~~~~~~~~~~~
@@ -48,11 +57,15 @@ Plugin upgrades
 
 * maven-invoker-plugin `3.7.0 → 3.8.0 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.8.0>`__
 
+* maven-javadoc-plugin `3.8.0 → 3.10.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12355014>`__
+
 * maven-project-info-reports-plugin `3.6.2 → 3.7.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12355024>`__
 
 * maven-site-plugin `3.12.1 → 3.20.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923&version=12354960>`__
 
-* maven-surefire-plugin `3.3.1 → 3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12354945>`__
+* maven-surefire-plugin 3.3.1 → 3.5.0, release notes:
+  * `3.4.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12354945>`__
+  * `3.5.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12355048>`__
 
 Version 14.0.2
 --------------
@@ -216,8 +229,7 @@ Third-party dependencies
 
 * CheckStyle `10.16.0 → 10.17.0 <https://checkstyle.org/releasenotes.html#Release_10.17.0>`__
 
-* Mockito 5.11.0 → 5.12.0, release notes:
-  * `5.12.0 <https://github.com/mockito/mockito/releases/tag/v5.12.0>`__
+* Mockito `5.11.0 → 5.12.0 <https://github.com/mockito/mockito/releases/tag/v5.12.0>`__
 
 * SpotBugs 4.8.3 → 4.8.5, release notes:
   * `4.8.4 <https://github.com/spotbugs/spotbugs/releases/tag/4.8.4>`__
