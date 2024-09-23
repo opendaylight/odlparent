@@ -16,6 +16,24 @@
       "message": "The version is not really updated.",
       "revId": "75cabe02598a1331d9fcd2291ebc46ca4c237fcd",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b530affc_485c24a1",
+        "filename": "karaf/opendaylight-karaf-resources/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2024-09-23T08:14:03Z",
+      "side": 1,
+      "message": "ah, right, https://git.opendaylight.org/gerrit/c/odlparent/+/113525 fixes that",
+      "parentUuid": "325ed6f9_5bcee9d3",
+      "revId": "75cabe02598a1331d9fcd2291ebc46ca4c237fcd",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ],
   "submitRequirementResults": [
