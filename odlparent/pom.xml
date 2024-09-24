@@ -300,6 +300,10 @@
         <scope>import</scope>
         <exclusions>
           <exclusion>
+            <groupId>org.glassfish.hk2.external</groupId>
+            <artifactId>jakarta.inject</artifactId>
+          </exclusion>
+          <exclusion>
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm</artifactId>
           </exclusion>
@@ -319,10 +323,6 @@
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm-util</artifactId>
           </exclusion>
-          <!--exclusion>
-            <groupId>org.glassfish.hk2.external</groupId>
-            <artifactId>jakarta.inject</artifactId>
-          </exclusion-->
         </exclusions>
       </dependency>
       <dependency>
