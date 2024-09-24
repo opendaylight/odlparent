@@ -199,6 +199,12 @@
             <artifactId>modernizer-maven-annotations</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.glassfish.hk2</groupId>
+            <artifactId>hk2-bom</artifactId>
+            <type>pom</type>
+            <version>2.6.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.glassfish.jersey</groupId>
             <artifactId>jersey-bom</artifactId>
             <type>pom</type>
