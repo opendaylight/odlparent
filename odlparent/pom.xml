@@ -1026,11 +1026,22 @@
           </executions>
         </plugin>
         <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <execution>
+              <goals>
+                <goal>properties</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.5.0</version>
           <configuration>
             <redirectTestOutputToFile>${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
             <trimStackTrace>false</trimStackTrace>
+            <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
           </configuration>
         </plugin>
 
