@@ -27,15 +27,13 @@ import org.slf4j.LoggerFactory;
 /**
  * The feature test probe artifact.
  *
- * <p>
- * The class is being packaged and deployed to karaf environment on {@link PaxExamExecution#execute()} invocation.
+ * <p>The class is being packaged and deployed to karaf environment on {@link PaxExamExecution#execute()} invocation.
  * All dependencies which are absent on target environment expected to be packaged using same
  * {@link org.ops4j.pax.exam.ProbeBuilder}. Input parameters are passed through system properties. in order to be
  * delivered properly all affected properties require explicit declaration using associated Pax options -- see
  * {@link PaxOptionUtils} and setup in {@link TestFeaturesMojo#execute()}.
  *
- * <p>
- * Pax Exam module references:
+ * <p>Pax Exam module references:
  * <ul>
  *     <li>Probe bundle deployment handling is served by pax-exam-extender-service</li>
  *     <li>Service instances lookup and injection into probe instance is served by pax-exam-inject</li>
