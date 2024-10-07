@@ -2,6 +2,59 @@
 ODL Parent release notes
 ========================
 
+Version 14.0.4
+--------------
+This is a bug-fix upgrade from version 14.0.3.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Tomcat and Undertow web servers are typically not used. Since this release we do not package them
+  by default. See `ODLPARENT-322 <https://jira.opendaylight.org/browse/ODLPARENT-322>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* CheckStyle `10.18.1 → 10.18.2 <https://checkstyle.org/releasenotes.html#Release_10.18.2>`__
+
+* commons-io `2.16.1 → 2.17.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.17.0>`__
+
+* Dropwizard Metrics 4.2.26 → 4.2.28, release notes:
+  * `4.2.27 <https://github.com/dropwizard/metrics/releases/tag/v4.2.27>`__
+  * `4.2.28 <https://github.com/dropwizard/metrics/releases/tag/v4.2.28>`__
+
+* Guava `33.3.0 → 33.3.1 <https://github.com/google/guava/releases/tag/v33.3.1>`__
+
+* JUnit 5.11.0 → 5.11.2, release notes:
+ * `5.11.1 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.11.1>`__
+ * `5.11.2 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.11.2>`__
+
+* Mockito 5.13.0 → 5.14.1, release notes:
+ * `5.14.0 <https://github.com/mockito/mockito/releases/tag/v5.14.0>`__
+ * `5.14.1 <https://github.com/mockito/mockito/releases/tag/v5.14.1>`__
+
+* Netty 4.1.112 → 4.1.114, release notes:
+  * `4.1.113 <https://netty.io/news/2024/09/04/4-1-113-Final.html>`__
+  * `4.1.114 <https://netty.io/news/2024/10/01/4-1-114-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* cyclonedx-maven-plugin `2.8.1 → 2.8.2 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.8.2>`__
+
+* jdepend-maven-plugin `2.0 → 2.1 <https://github.com/mojohaus/jdepend-maven-plugin/releases/tag/2.1>`__
+
+* maven-archetype-plugin `3.2.1 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122&version=12351178>`__
+
+* maven-javadoc-plugin `3.10.0 → 3.10.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12355065>`__
+
+* maven-plugin-plugin 3.13.1 → 3.15.0, release notes:
+  * `3.14.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820&version=12354665>`__
+  * `3.15.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820&version=12355047>`__
+
+* maven-surefire-plugin `3.5.0 → 3.5.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12355072>`__
+
+* spotbugs-maven-plugin 4.8.6.2 → 4.8.6.4, release notes:
+  * `4.8.6.3 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.6.3>`__
+  * `4.8.6.4 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.6.4>`__
+
 Version 14.0.3
 --------------
 This is a bug-fix upgrade from version 14.0.2.
