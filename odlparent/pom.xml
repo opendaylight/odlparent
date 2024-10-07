@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>14.0.4-SNAPSHOT</version>
+    <version>14.0.4</version>
     <relativePath>../odlparent-lite</relativePath>
   </parent>
 
@@ -103,7 +103,7 @@
       <dependency>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-artifacts</artifactId>
-        <version>14.0.4-SNAPSHOT</version>
+        <version>14.0.4</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -873,7 +873,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>14.0.4-SNAPSHOT</version>
+              <version>14.0.4</version>
             </dependency>
             <dependency>
               <groupId>com.github.sevntu-checkstyle</groupId>
@@ -988,7 +988,7 @@
                   <artifactItem>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>odl-license</artifactId>
-                    <version>14.0.4-SNAPSHOT</version>
+                    <version>14.0.4</version>
                     <type>license</type>
                     <outputDirectory>${project.build.outputDirectory}</outputDirectory>
                     <destFileName>LICENSE</destFileName>
@@ -1142,7 +1142,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>spotbugs</artifactId>
-              <version>14.0.4-SNAPSHOT</version>
+              <version>14.0.4</version>
             </dependency>
           </dependencies>
           <configuration>
@@ -1455,7 +1455,7 @@
       <plugin>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>copy-files-plugin</artifactId>
-        <version>14.0.4-SNAPSHOT</version>
+        <version>14.0.4</version>
         <executions>
           <execution>
             <phase>prepare-package</phase>
