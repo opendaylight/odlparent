@@ -16,6 +16,10 @@ Third-party dependencies
 
 * checker-qual 3.43.0 → 3.46.0
 
+* commons-lang 3.14.0 → 3.16.0, release notes:
+  * `3.15.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.15.0>`__
+  * `3.16.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.16.0>`__
+
 * Dropwizard Metrics `4.2.25 → 4.2.26 <https://github.com/dropwizard/metrics/releases/tag/v4.2.26>`__
 
 * GSON `2.10.1 → 2.11.0 <https://github.com/google/gson/releases/tag/gson-parent-2.11.0>`__
