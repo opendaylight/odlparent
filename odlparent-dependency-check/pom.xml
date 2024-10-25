@@ -243,7 +243,7 @@
             <groupId>org.junit</groupId>
             <artifactId>junit-bom</artifactId>
             <type>pom</type>
-            <version>5.11.2</version>
+            <version>5.11.3</version>
         </dependency>
         <dependency>
             <groupId>org.kohsuke.metainf-services</groupId>
