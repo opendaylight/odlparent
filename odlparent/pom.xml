@@ -126,7 +126,7 @@
         <groupId>com.puppycrawl.tools</groupId>
         <artifactId>checkstyle</artifactId>
         <!-- This should match the plugin management on maven-checkstyle-plugin below -->
-        <version>10.18.2</version>
+        <version>10.20.1</version>
       </dependency>
 
       <!-- Testing Dependencies -->
