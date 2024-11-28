@@ -2,6 +2,67 @@
 ODL Parent release notes
 ========================
 
+Version 14.0.5
+--------------
+This is a bug-fix upgrade from version 14.0.4.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle 1.78.1 → 1.79
+
+* checker-qual 3.46.0 → 3.48.2
+
+* CheckStyle 10.18.2 → 10.20.1, release notes
+  * `10.19.0 <https://checkstyle.org/releasenotes.html#Release_10.19.0>`__
+  * `10.20.0 <https://checkstyle.org/releasenotes.html#Release_10.20.0>`__
+  * `10.20.1 <https://checkstyle.org/releasenotes.html#Release_10.20.1>`__
+
+* commons-io `2.17.0 → 2.18.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.18.0>`__
+
+* Dropwizard Metrics `4.2.28 → 4.2.29 <https://github.com/dropwizard/metrics/releases/tag/v4.2.29>`__
+
+* error_prone_annotations 2.33.0 → 2.36.0
+
+* Jackson `2.17.2 → 2.17.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.17.3>`__
+
+* JUnit `5.11.2 → 5.11.3 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.11.3>`__
+
+* Mockito `5.14.1 → 5.14.2 <https://github.com/mockito/mockito/releases/tag/v5.14.2>`__
+
+* Netty `4.1.114 → 4.1.115 <https://netty.io/news/2024/11/12/4-1-115-Final.html>`__
+
+* Woodstox `7.0.0 → 7.1.0 <https://github.com/FasterXML/woodstox/milestone/35?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin `7.0.0 → 7.1.0 <https://github.com/bndtools/bnd/wiki/Changes-in-7.1.0>`__
+
+* cyclonedx-maven-plugin `2.8.2 → 2.9.0 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.9.0>`__
+
+* exec-maven-plugin `3.4.1 → 3.5.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.5.0>`__
+
+* maven-archetype-plugin `3.3.0 → 3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122&version=12355155>`__
+
+* maven-checkstyle-plugin `3.5.0 → 3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12355210>`__
+
+* maven-dependency-plugin `3.8.0 → 3.8.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12355206>`__
+
+* maven-help-plugin `3.5.0 → 3.5.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12355200>`__
+
+* maven-invoker-plugin `3.8.0 → 3.8.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12355205>`__
+
+* maven-javadoc-plugin `3.10.1 → 3.11.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12355245>`__
+
+* maven-project-info-reports-plugin `3.7.0 → 3.8.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12355138>`__
+
+* maven-surefire-plugin `3.5.1 → 3.5.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12355213>`__
+
+* spotbugs-maven-plugin 4.8.6.4 → 4.8.6.6, release notes:
+  * `4.8.6.5 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.6.5>`__
+  * `4.8.6.6 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.6.6>`__
+
+* versions-maven-plugin `2.17.1 → 2.18.0 <https://github.com/mojohaus/versions/releases/tag/2.18.0>`__
+
 Version 14.0.4
 --------------
 This is a bug-fix upgrade from version 14.0.3.
