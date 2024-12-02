@@ -119,6 +119,8 @@
                         <excludedArtifactId>bcprov-jdk18on</excludedArtifactId>
                         <excludedArtifactId>bcpkix-jdk18on</excludedArtifactId>
                         <excludedArtifactId>bcutil-jdk18on</excludedArtifactId>
+                        <!-- commons-logging is provided by pax-logging -->
+                        <excludedArtifactId>commons-logging</excludedArtifactId>
                         <!-- JAXB -->
                         <excludedArtifactId>jaxb-api</excludedArtifactId>
                         <excludedArtifactId>jaxb-runtime</excludedArtifactId>
