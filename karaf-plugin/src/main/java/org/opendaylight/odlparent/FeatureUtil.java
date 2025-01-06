@@ -8,8 +8,8 @@
 package org.opendaylight.odlparent;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -239,8 +239,8 @@ public final class FeatureUtil {
      * @throws MojoExecutionException if an error occurs during processing.
      */
     public static Set<String> featuresToCoords(final Set<Features> features) throws MojoExecutionException {
-        Set<String> result = new LinkedHashSet<>();
-        for (Features feature : features) {
+        final var result = new LinkedHashSet<String>();
+        for (var feature : features) {
             result.addAll(featuresToCoords(feature));
         }
         LOG.trace("featuresToCoords({}) returns {}", features, result);
@@ -252,11 +252,12 @@ public final class FeatureUtil {
      *
      * @param featureArtifacts The artifacts.
      * @return The features.
+     * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Set<Features> readFeatures(final Set<Artifact> featureArtifacts) throws FileNotFoundException {
-        Set<Features> result = new LinkedHashSet<>();
-        for (Artifact artifact : featureArtifacts) {
+    public Set<Features> readFeatures(final Set<Artifact> featureArtifacts) throws IOException {
+        final var result = new LinkedHashSet<Features>();
+        for (var artifact : featureArtifacts) {
             result.add(readFeature(artifact));
         }
         LOG.trace("readFeatures({}) returns {}", featureArtifacts, result);
@@ -268,9 +269,10 @@ public final class FeatureUtil {
      *
      * @param artifact The artifact.
      * @return The features.
+     * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Features readFeature(final Artifact artifact) throws FileNotFoundException {
+    public Features readFeature(final Artifact artifact) throws IOException {
         return readFeature(artifact.getFile());
     }
 
@@ -279,11 +281,12 @@ public final class FeatureUtil {
      *
      * @param file The file.
      * @return The features.
+     * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Features readFeature(final File file) throws FileNotFoundException {
+    public Features readFeature(final File file) throws IOException {
         final var localFile = getFileInLocalRepo(file);
-        final var stream = new FileInputStream(localFile != null ? localFile.toFile() : file);
+        final var stream = Files.newInputStream(localFile != null ? localFile : file.toPath());
         final var result = JaxbUtil.unmarshal(file.toURI().toString(), stream, false);
         LOG.trace("readFeature({}) returns {} without resolving first", file, result.getName());
         return result;
@@ -294,9 +297,10 @@ public final class FeatureUtil {
      *
      * @param coords The artifact coordinates.
      * @return The features.
+     * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Features readFeature(final String coords) throws FileNotFoundException {
+    public Features readFeature(final String coords) throws IOException {
         Artifact artifact = aetherUtil.resolveArtifact(coords);
         Features result = readFeature(artifact);
         LOG.trace("readFeature({}) returns {} after resolving first", coords, result.getName());
@@ -310,10 +314,11 @@ public final class FeatureUtil {
      * @param existingCoords The artifact coordinates which have already been unmarshalled.
      * @return The features.
      * @throws MalformedURLException if a URL is malformed.
+     * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
     public Set<Features> findAllFeaturesRecursively(final Features features, final Set<String> existingCoords)
-            throws MalformedURLException, FileNotFoundException {
+            throws MalformedURLException, IOException {
         LOG.debug("findAllFeaturesRecursively({}) starts", features.getName());
         LOG.trace("findAllFeaturesRecursively knows about these coords: {}", existingCoords);
         Set<Features> result = new LinkedHashSet<>();
@@ -340,10 +345,11 @@ public final class FeatureUtil {
      * @param existingCoords The artifact coordinates which have already been unmarshalled.
      * @return The features.
      * @throws MalformedURLException if a URL is malformed.
+     * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
     public Set<Features> findAllFeaturesRecursively(final Set<Features> features, final Set<String> existingCoords)
-            throws MalformedURLException, FileNotFoundException {
+            throws MalformedURLException, IOException {
         Set<Features> result = new LinkedHashSet<>();
         for (Features feature : features) {
             result.addAll(findAllFeaturesRecursively(feature, existingCoords));
@@ -357,10 +363,11 @@ public final class FeatureUtil {
      * @param features The starting features.
      * @return The features.
      * @throws MalformedURLException if a URL is malformed.
+     * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
     public Set<Features> findAllFeaturesRecursively(final Set<Features> features)
-            throws MalformedURLException, FileNotFoundException {
+            throws MalformedURLException, IOException {
         return findAllFeaturesRecursively(features, new LinkedHashSet<>());
     }
 
