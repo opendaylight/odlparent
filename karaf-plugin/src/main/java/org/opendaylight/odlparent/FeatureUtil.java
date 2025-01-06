@@ -12,9 +12,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -46,7 +46,7 @@ public final class FeatureUtil {
     private final AetherUtil aetherUtil;
     private final File localRepo;
 
-    public FeatureUtil(AetherUtil aetherUtil, File localRepo) {
+    public FeatureUtil(final AetherUtil aetherUtil, final File localRepo) {
         this.aetherUtil = aetherUtil;
         this.localRepo = localRepo;
     }
@@ -282,9 +282,9 @@ public final class FeatureUtil {
      * @throws FileNotFoundException if a file is missing.
      */
     public Features readFeature(final File file) throws FileNotFoundException {
-        File localFile = getFileInLocalRepo(file);
-        FileInputStream stream = new FileInputStream(localFile != null ? localFile : file);
-        Features result = JaxbUtil.unmarshal(file.toURI().toString(), stream, false);
+        final var localFile = getFileInLocalRepo(file);
+        final var stream = new FileInputStream(localFile != null ? localFile.toFile() : file);
+        final var result = JaxbUtil.unmarshal(file.toURI().toString(), stream, false);
         LOG.trace("readFeature({}) returns {} without resolving first", file, result.getName());
         return result;
     }
@@ -364,11 +364,11 @@ public final class FeatureUtil {
         return findAllFeaturesRecursively(features, new LinkedHashSet<>());
     }
 
-    void removeLocalArtifacts(Set<Artifact> artifacts) {
+    void removeLocalArtifacts(final Set<Artifact> artifacts) {
         if (localRepo != null) {
-            Iterator<Artifact> it = artifacts.iterator();
+            final var it = artifacts.iterator();
             while (it.hasNext()) {
-                Artifact artifact = it.next();
+                final var artifact = it.next();
                 if (getFileInLocalRepo(artifact.getFile()) != null) {
                     LOG.trace("Removing artifact {}", artifact);
                     it.remove();
@@ -377,12 +377,12 @@ public final class FeatureUtil {
         }
     }
 
-    private File getFileInLocalRepo(File file) {
+    private Path getFileInLocalRepo(final File file) {
         Path filePath = file.toPath();
         Path parent = filePath.getParent();
         while (parent != null) {
-            File candidate = new File(localRepo, parent.relativize(filePath).toString());
-            if (candidate.exists()) {
+            final var candidate = localRepo.toPath().resolve(parent.relativize(filePath));
+            if (Files.exists(candidate)) {
                 return candidate;
             }
             parent = parent.getParent();
