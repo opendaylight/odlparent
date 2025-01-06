@@ -697,7 +697,7 @@
         <groupId>org.gaul</groupId>
         <artifactId>modernizer-maven-annotations</artifactId>
         <!-- This should match the plugin version below -->
-        <version>2.9.0</version>
+        <version>3.0.0</version>
         <scope>provided</scope>
       </dependency>
 
@@ -1095,7 +1095,7 @@
         <plugin>
           <groupId>org.gaul</groupId>
           <artifactId>modernizer-maven-plugin</artifactId>
-          <version>2.9.0</version>
+          <version>3.0.0</version>
           <configuration>
             <javaVersion>${odlparent.modernizer.target}</javaVersion>
             <failOnViolations>${odlparent.modernizer.enforce}</failOnViolations>
