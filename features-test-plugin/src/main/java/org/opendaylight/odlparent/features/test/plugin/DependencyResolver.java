@@ -19,9 +19,9 @@ import static org.opendaylight.odlparent.features.test.plugin.DependencyUtils.is
 import static org.opendaylight.odlparent.features.test.plugin.DependencyUtils.toAetherArtifact;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -142,7 +142,7 @@ final class DependencyResolver {
             return Set.of();
         }
         final Features features;
-        try (var inputStream = new FileInputStream(featureFile)) {
+        try (var inputStream = Files.newInputStream(featureFile.toPath())) {
             features = JaxbUtil.unmarshal(featureFile.toURI().toString(), inputStream, false);
         } catch (IOException e) {
             throw new MojoExecutionException("Could not read feature file " + featureFile, e);
