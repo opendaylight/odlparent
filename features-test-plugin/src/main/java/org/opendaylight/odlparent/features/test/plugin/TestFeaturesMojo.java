@@ -16,8 +16,9 @@ import static org.opendaylight.odlparent.features.test.plugin.PaxOptionUtils.pro
 import static org.opendaylight.odlparent.features.test.plugin.PaxOptionUtils.vmOptions;
 import static org.ops4j.pax.exam.CoreOptions.systemProperty;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.locks.Lock;
@@ -134,7 +135,7 @@ public final class TestFeaturesMojo extends AbstractMojo {
         LOG.info("Starting SFT for {}:{}", project.getGroupId(), project.getArtifactId());
 
         final var buildDir = project.getBuild().getDirectory();
-        final var featureFile = getFeatureFile(new File(buildDir + File.separator + "feature"));
+        final var featureFile = getFeatureFile(Path.of(buildDir).resolve("feature")).toFile();
 
         // resolve dependencies (ensure all are in local repository)
         final var resolver = new DependencyResolver(repoSystem, repoSession, repositories);
@@ -213,10 +214,10 @@ public final class TestFeaturesMojo extends AbstractMojo {
         }
     }
 
-    static File getFeatureFile(final File dir) throws MojoExecutionException {
+    static Path getFeatureFile(final Path dir) throws MojoExecutionException {
         for (var filename : FEATURE_FILENAMES) {
-            final File file = new File(dir, filename);
-            if (file.exists()) {
+            final var file = dir.resolve(filename);
+            if (Files.exists(file)) {
                 return file;
             }
         }

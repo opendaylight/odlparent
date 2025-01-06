@@ -21,10 +21,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Path;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -237,26 +237,26 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
     private void readFeatureCfg(final AetherUtil aetherUtil, final FeatureUtil featureUtil,
             final Set<Artifact> artifacts, final Set<Features> features) {
         // Create file structure
-        final File karafHome = localRepo.getParentFile();
-        final File karafEtc = new File(karafHome, "etc");
-        final File file = new File(karafEtc, "org.apache.karaf.features.cfg");
+        final var karafHome = localRepo.getParentFile().toPath();
+        final var karafEtc = karafHome.resolve("etc");
+        final var file = karafEtc.resolve("org.apache.karaf.features.cfg");
 
-        final Properties prop = new Properties();
-        try (InputStream is = new FileInputStream(file)) {
+        final var prop = new Properties();
+        try (var is = new FileInputStream(file.toFile())) {
             prop.load(is);
 
             // Note this performs path seaparator translation
-            final String karafHomePath = karafHome.toURI().getPath();
-            final String karafEtcPath = karafEtc.toURI().getPath();
-            final String featuresRepositories = prop.getProperty("featuresRepositories");
-            for (String mvnUrl : featuresRepositories.split(",")) {
-                final String fixedUrl = mvnUrl
+            final var karafHomePath = karafHome.toUri().getPath();
+            final var karafEtcPath = karafEtc.toUri().getPath();
+            final var featuresRepositories = prop.getProperty("featuresRepositories");
+            for (var mvnUrl : featuresRepositories.split(",")) {
+                final var fixedUrl = mvnUrl
                         .replace("${karaf.home}", karafHomePath)
                         .replace("${karaf.etc}", karafEtcPath);
                 if (fixedUrl.startsWith("file:")) {
                     try {
                         // Local feature file
-                        features.add(featureUtil.readFeature(new File(new URI(fixedUrl))));
+                        features.add(featureUtil.readFeature(Path.of(new URI(fixedUrl)).toFile()));
                     } catch (URISyntaxException e) {
                         throw new IllegalArgumentException("Could not resolve URI: " + fixedUrl, e);
                     }
@@ -265,17 +265,17 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
                 }
             }
         } catch (FileNotFoundException e) {
-            LOG.info("Could not find properties file: {}", file.getAbsolutePath(), e);
+            LOG.info("Could not find properties file: {}", file.toAbsolutePath(), e);
         } catch (IOException e) {
-            LOG.info("Could not read properties file: {}", file.getAbsolutePath(), e);
+            LOG.info("Could not read properties file: {}", file.toAbsolutePath(), e);
         }
     }
 
     private Set<Artifact> readStartupProperties(final AetherUtil aetherUtil) {
-        Set<Artifact> artifacts = new LinkedHashSet<>();
-        File file = new File(new File(localRepo.getParentFile(), "etc"), "startup.properties");
-        Properties prop = new Properties();
-        try (InputStream is = new FileInputStream(file)) {
+        final var artifacts = new LinkedHashSet<Artifact>();
+        final var file = localRepo.toPath().resolveSibling("etc").resolve("startup.properties");
+        final var prop = new Properties();
+        try (var is = new FileInputStream(file.toFile())) {
             prop.load(is);
             Enumeration<Object> mvnUrls = prop.keys();
             while (mvnUrls.hasMoreElements()) {
@@ -284,9 +284,9 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
                 artifacts.add(artifact);
             }
         } catch (FileNotFoundException e) {
-            LOG.info("Could not find properties file: {}", file.getAbsolutePath(), e);
+            LOG.info("Could not find properties file: {}", file.toAbsolutePath(), e);
         } catch (IOException e) {
-            LOG.info("Could not read properties file: {}", file.getAbsolutePath(), e);
+            LOG.info("Could not read properties file: {}", file.toAbsolutePath(), e);
         }
 
         return artifacts;
