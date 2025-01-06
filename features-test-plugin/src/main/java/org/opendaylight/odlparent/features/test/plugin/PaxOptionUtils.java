@@ -119,7 +119,7 @@ final class PaxOptionUtils {
         return new Option[]{
             karafDistributionConfiguration().frameworkUrl(url)
                 .name("OpenDaylight")
-                .unpackDirectory(new File(buildDir, "pax"))
+                .unpackDirectory(Path.of(buildDir, "pax").toFile())
                 .useDeployFolder(false),
             when(keepUnpack).useOptions(keepRuntimeFolder()),
 //            configureSecurity().disableKarafMBeanServerBuilder(),

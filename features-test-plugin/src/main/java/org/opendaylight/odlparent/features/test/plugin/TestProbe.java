@@ -10,8 +10,9 @@ package org.opendaylight.odlparent.features.test.plugin;
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
-import java.io.File;
 import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.EnumSet;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -118,7 +119,7 @@ public final class TestProbe {
 
     private void installFeatures() throws Exception {
         final var featureUri = URI.create(System.getProperty(FEATURE_FILE_URI_PROP));
-        if (!new File(featureUri).exists()) {
+        if (!Files.exists(Path.of(featureUri))) {
             throw new IllegalStateException("Feature file with URI " + featureUri + " does not exist");
         }
 
