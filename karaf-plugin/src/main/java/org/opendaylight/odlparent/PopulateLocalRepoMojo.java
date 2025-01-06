@@ -18,14 +18,13 @@ package org.opendaylight.odlparent;
 import com.google.common.annotations.VisibleForTesting;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -242,7 +241,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
         final var file = karafEtc.resolve("org.apache.karaf.features.cfg");
 
         final var prop = new Properties();
-        try (var is = new FileInputStream(file.toFile())) {
+        try (var is = Files.newInputStream(file)) {
             prop.load(is);
 
             // Note this performs path seaparator translation
@@ -275,12 +274,12 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
         final var artifacts = new LinkedHashSet<Artifact>();
         final var file = localRepo.toPath().resolveSibling("etc").resolve("startup.properties");
         final var prop = new Properties();
-        try (var is = new FileInputStream(file.toFile())) {
+        try (var is = Files.newInputStream(file)) {
             prop.load(is);
-            Enumeration<Object> mvnUrls = prop.keys();
+            final var mvnUrls = prop.keys();
             while (mvnUrls.hasMoreElements()) {
-                String mvnUrl = (String) mvnUrls.nextElement();
-                Artifact artifact = aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(mvnUrl)));
+                final var mvnUrl = (String) mvnUrls.nextElement();
+                final var artifact = aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(mvnUrl)));
                 artifacts.add(artifact);
             }
         } catch (FileNotFoundException e) {
