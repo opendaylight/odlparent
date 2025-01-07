@@ -252,15 +252,18 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
                 final var fixedUrl = mvnUrl
                         .replace("${karaf.home}", karafHomePath)
                         .replace("${karaf.etc}", karafEtcPath);
-                if (fixedUrl.startsWith("file:")) {
-                    try {
-                        // Local feature file
-                        features.add(featureUtil.readFeature(Path.of(new URI(fixedUrl)).toFile()));
-                    } catch (URISyntaxException e) {
-                        throw new IllegalArgumentException("Could not resolve URI: " + fixedUrl, e);
-                    }
+                final URI uri;
+                try {
+                    uri = new URI(fixedUrl);
+                } catch (URISyntaxException e) {
+                    throw new IllegalArgumentException("Could not resolve URI: " + fixedUrl, e);
+                }
+
+                if (uri.getScheme().equals("file")) {
+                    // Local feature file
+                    features.add(featureUtil.readFeature(Path.of(uri).toFile()));
                 } else {
-                    artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(fixedUrl))));
+                    artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(uri.toURL())));
                 }
             }
         } catch (FileNotFoundException e) {
@@ -279,8 +282,15 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             final var mvnUrls = prop.keys();
             while (mvnUrls.hasMoreElements()) {
                 final var mvnUrl = (String) mvnUrls.nextElement();
-                final var artifact = aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(mvnUrl)));
-                artifacts.add(artifact);
+                final URL coord;
+                try {
+                    coord = new URI(mvnUrl).toURL();
+                } catch (URISyntaxException e) {
+                    LOG.info("Could not process URL: {}", mvnUrl, e);
+                    continue;
+                }
+
+                artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(coord)));
             }
         } catch (FileNotFoundException e) {
             LOG.info("Could not find properties file: {}", file.toAbsolutePath(), e);
