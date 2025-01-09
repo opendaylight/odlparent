@@ -25,9 +25,7 @@
 
     <properties>
         <!-- Do not delete: pax.exam.version property is used in copy resources -->
-        <!-- NB 4.13.3 is last known ok version allowing concurrent karaf containers -->
-        <!-- pax exam issue https://github.com/ops4j/org.ops4j.pax.exam2/issues/1020 -->
-        <pax.exam.version>4.13.3</pax.exam.version>
+        <pax.exam.version>4.14.0</pax.exam.version>
         <pax.url.version>2.6.2</pax.url.version>
     </properties>
 
