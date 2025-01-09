@@ -1031,6 +1031,8 @@
           <configuration>
             <redirectTestOutputToFile>${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
             <trimStackTrace>false</trimStackTrace>
+            <!-- Mockito wiring for Java 21+ -->
+            <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
           </configuration>
         </plugin>
 
@@ -1413,6 +1415,14 @@
       </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <!-- needed for Mockito/Surefire integration with Java 21+ -->
+              <goal>properties</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-checkstyle-plugin</artifactId>
