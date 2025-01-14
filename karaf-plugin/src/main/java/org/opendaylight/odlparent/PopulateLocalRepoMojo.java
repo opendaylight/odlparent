@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.opendaylight.odlparent;
 
 import com.google.common.annotations.VisibleForTesting;
@@ -36,13 +35,13 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
+import javax.inject.Inject;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.maven.artifact.versioning.DefaultArtifactVersion;
 import org.apache.maven.artifact.versioning.InvalidVersionSpecificationException;
 import org.apache.maven.artifact.versioning.VersionRange;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
@@ -85,7 +84,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
     /**
      * The entry point to Aether, i.e. the component doing all the work.
      */
-    @Component
+    @Inject
     private RepositorySystem repoSystem;
 
     /**
