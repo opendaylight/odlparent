@@ -388,7 +388,7 @@
       <dependency>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-annotations</artifactId>
-        <version>4.8.6</version>
+        <version>4.9.0</version>
         <!-- Contains retention=RUNTIME annotations, which are not really needed -->
         <optional>true</optional>
         <exclusions>
@@ -1137,7 +1137,7 @@
             <dependency>
               <groupId>com.github.spotbugs</groupId>
               <artifactId>spotbugs</artifactId>
-              <version>4.8.6</version>
+              <version>4.9.0</version>
             </dependency>
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
