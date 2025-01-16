@@ -76,6 +76,17 @@
            https://github.com/spotbugs/spotbugs/issues/2933. Causes false positives with readResolve()d singletons.
       -->
       <Bug pattern="SING_SINGLETON_IMPLEMENTS_SERIALIZABLE"/>
+
+      <!--
+           https://github.com/spotbugs/spotbugs/issues/3516. Causes all sorts of false positives.
+      -->
+      <Bug pattern="AT_NONATOMIC_OPERATIONS_ON_SHARED_VARIABLE"/>
+      <Bug pattern="AT_STALE_THREAD_WRITE_OF_PRIMITIVE"/>
+
+      <!--
+           https://github.com/spotbugs/spotbugs/issues/3644. False positive on abstract methods.
+      -->
+      <Bug pattern="THROWS_METHOD_THROWS_CLAUSE_BASIC_EXCEPTION"/>
     </Or>
   </Match>
 </FindBugsFilter>
