@@ -11,7 +11,7 @@
          JAVA_HOME=`java-config --jre-home`
 @@ -243,9 +243,9 @@
 
-     VERSION=`"${JAVA}" -version 2>&1 | ${AWK} -F '"' '/version/ {print $2}' | sed -e 's/_.*//g; s/^1\.//g; s/\..*//g; s/-.*//g;'`
+     VERSION=`"${JAVA}" -version 2>&1 | ${AWK} -F '"' '/version/ {print $2}' | sed -e 's/_.*//g; s/^1\.//g; s/\..*//g; s/-.*//g;s/-.*//g; s/^[A-Za-z].*//'`
 
 -    # java must be at least version 8
 -    if [ "${VERSION}" -lt "8" ]; then
@@ -22,14 +22,16 @@
      fi
  }
 
-@@ -281,11 +281,20 @@
- setupDefaults() {
+@@ -281,6 +281,8 @@
 
+ setupDefaults() {
      DEFAULT_JAVA_OPTS="-XX:+UnlockDiagnosticVMOptions "
 +    DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError"
 +    DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS -XX:+DisableExplicitGC"
 
-     setupVendorSepcifics
+     if [ "${VERSION}" -gt "11" ]; then
+       # TODO revisit EventAdminImpl to avoid use of Subject.getSubject(AccessController.getContext());
+@@ -292,6 +294,13 @@
 
      DEFAULT_JAVA_OPTS="${DEFAULT_JAVA_OPTS} ${JAVA_VENDOR_OPTS}"
 
