@@ -38,7 +38,7 @@
     <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
 
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.4.6</karaf.version>
+    <karaf.version>4.4.7</karaf.version>
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
