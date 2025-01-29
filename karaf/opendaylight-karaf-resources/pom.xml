@@ -131,7 +131,7 @@
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.27/pax-web-features-8.0.27-features.xml"
-                         token="/2.15.3" value="/2.17.3" failOnNoReplacements="true"/>
+                         token="/2.15.3" value="/2.18.2" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.27/pax-web-features-8.0.27-features.xml"
                       tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/8.0.27/pax-web-features-8.0.27-features.xml"/>
 
