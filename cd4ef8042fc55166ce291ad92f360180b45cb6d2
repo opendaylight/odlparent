@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a5e8970e_b3fe1183",
+        "filename": "karaf/opendaylight-karaf-resources/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1927
+      },
+      "writtenOn": "2025-01-30T23:39:05Z",
+      "side": 1,
+      "message": "This patch configuration and `karaf-instance.patch` seem to be unnecessary.\n[karaf-instance.patch](https://github.com/opendaylight/odlparent/blob/82e05e52ceeac99f0d094433d48c380d0598c030/karaf/opendaylight-karaf-resources/src/main/patches/karaf-instance.patch) probably is for karaf 4.0.6 [instance](https://github.com/apache/karaf/blob/karaf-4.0.6/assemblies/features/base/src/main/filtered-resources/resources/bin/instance#L291) when [the script was self-contained without the \u0027inc\u0027 script](https://github.com/apache/karaf/tree/karaf-4.0.6/assemblies/features/base/src/main/filtered-resources/resources/bin).\n\nSince karaf 4.1.0, common functions moved to `inc`, and `karaf-inc.patch` already updates `inc` to set `DEFAULT_JAVA_OPTS` with `java.security.properties`.",
+      "revId": "cd4ef8042fc55166ce291ad92f360180b45cb6d2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6c1d6e51_4b6a186d",
         "filename": "karaf/opendaylight-karaf-resources/src/main/patches/karaf-remove-bc.patch",
         "patchSetId": 3
