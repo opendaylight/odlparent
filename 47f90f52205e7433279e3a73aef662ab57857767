@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e7ae773_8da9e6af",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/patches/karaf-inc.patch",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1927
+      },
+      "writtenOn": "2025-01-30T22:39:24Z",
+      "side": 0,
+      "message": "Why remove this section?",
+      "revId": "47f90f52205e7433279e3a73aef662ab57857767",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}

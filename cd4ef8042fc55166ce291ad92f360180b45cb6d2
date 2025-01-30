@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c1d6e51_4b6a186d",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/patches/karaf-remove-bc.patch",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1927
+      },
+      "writtenOn": "2025-01-30T22:39:24Z",
+      "side": 1,
+      "message": "`4.4.6` to `4.4.7` in lines 1 \u0026 2",
+      "revId": "cd4ef8042fc55166ce291ad92f360180b45cb6d2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6c68a65_ab569399",
+        "filename": "odlparent/pom.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 1927
+      },
+      "writtenOn": "2025-01-30T22:39:24Z",
+      "side": 1,
+      "message": "Jetty should be bumped to `9.4.57.v20241219`:\nhttps://github.com/apache/karaf/blob/karaf-4.4.7/pom.xml#L315",
+      "revId": "cd4ef8042fc55166ce291ad92f360180b45cb6d2",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
