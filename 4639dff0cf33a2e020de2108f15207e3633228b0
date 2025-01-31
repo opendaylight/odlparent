@@ -16,6 +16,23 @@
       "message": "This will require https://git.opendaylight.org/gerrit/c/mdsal/+/114772 in mdsal.",
       "revId": "4639dff0cf33a2e020de2108f15207e3633228b0",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17d8bbf0_cb697396",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-01-31T09:50:54Z",
+      "side": 1,
+      "message": "this would break API compatibility in downstreams between minor versions",
+      "revId": "4639dff0cf33a2e020de2108f15207e3633228b0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
