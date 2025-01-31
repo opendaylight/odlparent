@@ -16,6 +16,24 @@
       "message": "Java 21 is required for the master branch.",
       "revId": "88512bfdff80edddffa66248d6bcdc8677274de3",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c9f739d_9a127f99",
+        "filename": "karaf/opendaylight-karaf-resources/src/main/patches/karaf-inc.patch",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1927
+      },
+      "writtenOn": "2025-01-31T19:48:13Z",
+      "side": 1,
+      "message": "https://git.opendaylight.org/gerrit/c/odlparent/+/114943",
+      "parentUuid": "81d42e80_be51c24e",
+      "revId": "88512bfdff80edddffa66248d6bcdc8677274de3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
