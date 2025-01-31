@@ -90,9 +90,6 @@
                 <!-- Patches only work with LF line endings from ant -->
                 <fixcrlf srcdir="${project.build.directory}/assembly/bin"
                          includes="*.bat" eol="lf"/>
-                <patch patchfile="${project.basedir}/src/main/patches/karaf-instance.patch"
-                       originalfile="${project.build.directory}/assembly/bin/instance"
-                       failonerror="true"/>
                 <copy file="${project.build.directory}/assembly/bin/instance"
                       tofile="${project.build.directory}/classes/bin/instance"/>
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-instance.bat.patch"
