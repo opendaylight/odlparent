@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55eb99ab_9af3725f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2025-02-04T11:46:29Z",
+      "side": 1,
+      "message": "What about https://github.com/apache/logging-log4j2/releases/tag/rel%2F2.24.0 and the others?",
+      "revId": "60e231d658c9d686b2647197616d3fadd9ecb43e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
