@@ -978,6 +978,11 @@
           <artifactId>maven-dependency-plugin</artifactId>
           <executions>
             <execution>
+              <goals>
+                <goal>properties</goal>
+              </goals>
+            </execution>
+            <execution>
               <id>unpack-license</id>
               <phase>generate-resources</phase>
               <goals>
@@ -1021,16 +1026,6 @@
               <phase>verify</phase>
               <goals>
                 <goal>jar-no-fork</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <plugin>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <executions>
-            <execution>
-              <goals>
-                <goal>properties</goal>
               </goals>
             </execution>
           </executions>
