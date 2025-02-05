@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d2b2685_7901174d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-02-05T09:29:14Z",
+      "side": 1,
+      "message": "please order release notes in chrono order, always, everywhere",
+      "revId": "7ccd567b9394f9db48dec6e824594bb5aa206180",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
