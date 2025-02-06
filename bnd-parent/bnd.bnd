@@ -1,0 +1,3 @@
+-noextraheaders: true
+Bundle-DocURL: https://github.com/opendaylight/odlparent/
+Bundle-SymbolicName: ${project.groupId}.${project.artifactId}
