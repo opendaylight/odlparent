@@ -2,6 +2,74 @@
 ODL Parent release notes
 ========================
 
+Version 14.0.6
+--------------
+This is a bug-fix upgrade from version 14.0.5.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ``maven-surefire-plugin`` configuration has been updated to lauch Mockito as an agent, silencing warnings printed
+  in test output. See `ODLPARENT-326 <https://jira.opendaylight.org/browse/ODLPARENT-326>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* AssertJ 3.26.3 → 3.27.3, release notes:
+  * `3.27.0 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.0>`__
+  * `3.27.1 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.1>`__
+  * `3.27.2 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.2>`__
+  * `3.27.3 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.3>`__
+
+* Bouncy Castle 1.77 → 1.80
+
+* checker-qual 3.48.2 → 3.49.0
+
+* CheckStyle 10.20.1 → 10.21.2, release notes:
+  * `10.20.2 <https://checkstyle.org/releasenotes.html#Release_10.20.2>`__
+  * `10.21.0 <https://checkstyle.org/releasenotes.html#Release_10.21.0>`__
+  * `10.21.1 <https://checkstyle.org/releasenotes.html#Release_10.21.1>`__
+  * `10.21.2 <https://checkstyle.org/releasenotes.html#Release_10.21.2>`__
+
+* commons-text `1.12.0 → 1.13.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318221&version=12354570>`__
+
+* Dropwizard Metrics `4.2.29 → 4.2.30 <https://github.com/dropwizard/metrics/releases/tag/v4.2.30>`__
+
+* GSON 2.11.0 → 2.12.1, release notes:
+  * `2.12.0 <https://github.com/google/gson/releases/tag/gson-parent-2.12.0>`__
+  * `2.12.1 <https://github.com/google/gson/releases/tag/gson-parent-2.12.1>`__
+
+* Guava `33.3.1 → 33.4.0 <https://github.com/google/guava/releases/tag/v33.4.0>`__
+
+* Jersey `2.45 → 2.46 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.46>`__
+
+* JUnit `5.11.3 → 5.11.4 <https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.11.4>`__
+
+* Mockito 5.14.2 → 5.15.2, release notes:
+  * `5.15.0 <https://github.com/mockito/mockito/releases/tag/v5.15.0>`__
+  * `5.15.1 <https://github.com/mockito/mockito/releases/tag/v5.15.1>`__
+  * `5.15.2 <https://github.com/mockito/mockito/releases/tag/v5.15.2>`__
+
+* Netty 4.1.115 → 4.1.117, release notes:
+  * `4.1.116 <https://netty.io/news/2024/12/17/4-1-116-Final.html>`__
+  * `4.1.117 <https://netty.io/news/2025/01/14/4-1-117-Final.html>`__
+
+* TrieMap `1.3.2 → 1.4.0 <https://github.com/PANTHEONtech/triemap/releases/tag/triemap-1.4.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* cyclonedx-maven-plugin `2.9.0 → 2.9.1 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.9.1>`__
+
+* maven-bundle-plugin `5.1.9 → 6.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12355325>`__
+
+* maven-invoker-plugin `3.8.1 → 3.9.0 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.9.0>`__
+
+* maven-javadoc-plugin `3.11.1 → 3.11.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12355299>`__
+
+* maven-remote-resources-plugin `3.2.0 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12354381>`__
+
+* modernizer-maven-plugin 2.9.0 → 3.1.0, release notes:
+  * `3.0.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-3.0.0>`__
+  * `3.1.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-3.1.0>`__
+
 Version 14.0.5
 --------------
 This is a bug-fix upgrade from version 14.0.4.
