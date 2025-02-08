@@ -2,6 +2,11 @@
 ODL Parent release notes
 ========================
 
+Version 14.0.7
+--------------
+This is a bug-fix upgrade from version 14.0.6. ``modernizer-maven-plugin`` is downgraded to version ``3.0.0`` because
+version ``3.1.0`` causes problems in large projects.
+
 Version 14.0.6
 --------------
 This is a bug-fix upgrade from version 14.0.5.
