@@ -29,7 +29,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -111,10 +110,10 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
         AetherUtil aetherUtil = new AetherUtil(repoSystem, repoSession, remoteRepos, localRepo);
         FeatureUtil featureUtil = new FeatureUtil(aetherUtil, localRepo);
         try {
-            Set<Artifact> startupArtifacts = readStartupProperties(aetherUtil);
+            final var startupArtifacts = readStartupProperties(aetherUtil);
             aetherUtil.installArtifacts(startupArtifacts);
-            Set<Artifact> featureArtifacts = new LinkedHashSet<>();
-            final Set<Features> featureRepos = new LinkedHashSet<>();
+            final var featureArtifacts = new LinkedHashSet<Artifact>();
+            final var featureRepos = new LinkedHashSet<Features>();
             readFeatureCfg(aetherUtil, featureUtil, featureArtifacts, featureRepos);
             featureArtifacts.addAll(
                 aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
@@ -123,9 +122,10 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             // Do not provide FeatureUtil.featuresRepositoryToCoords(features)) as existingCoords
             // to findAllFeaturesRecursively, as those coords are not resolved yet, and it would lead to Bug 6187.
             featureRepos.addAll(featureUtil.findAllFeaturesRecursively(featureRepos));
-            for (final Features featureRepo : featureRepos) {
-                LOG.info("Feature repository discovered recursively: {}", featureRepo.getName());
-            }
+
+            featureRepos.stream().map(Features::getName).sorted().distinct()
+                .forEach(name -> LOG.info("Feature repository discovered recursively: {}", name));
+
             // Remove blacklisted features
             final var blackListedFeatures = getBlackListedFeatures();
             final Set<Features> cleanedRepos;
@@ -134,11 +134,11 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             } else {
                 cleanedRepos = featureRepos;
             }
-            Set<Artifact> artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(cleanedRepos));
+            final var artifacts = aetherUtil.resolveArtifacts(FeatureUtil.featuresToCoords(cleanedRepos));
             artifacts.addAll(featureArtifacts);
             featureUtil.removeLocalArtifacts(artifacts);
 
-            Map<Gace, String> gaceVersions = new HashMap<>();
+            final var gaceVersions = new HashMap<Gace, String>();
             for (Artifact artifact : artifacts) {
                 LOG.debug("Artifact to be installed: {}", artifact);
                 Gace gace = new Gace(artifact);
