@@ -10,7 +10,7 @@ package org.opendaylight.odlparent.bundlestest.lib;
 import static java.util.Objects.requireNonNull;
 
 import java.io.Serializable;
-import org.eclipse.jdt.annotation.NonNull;
+import org.eclipse.jdt.annotation.Nullable;
 
 /**
  * Bundle's symbolic name + its version.
@@ -18,13 +18,13 @@ import org.eclipse.jdt.annotation.NonNull;
  * @author Michael Vorburger.ch
  */
 public final class BundleSymbolicNameWithVersion implements Serializable {
+    @java.io.Serial
     private static final long serialVersionUID = 1L;
 
-    private final @NonNull String symbolicName;
+    private final String symbolicName;
+    private final String version;
 
-    private final @NonNull String version;
-
-    public BundleSymbolicNameWithVersion(String symbolicName, String version) {
+    public BundleSymbolicNameWithVersion(final String symbolicName, final String version) {
         this.symbolicName = requireNonNull(symbolicName, "symbolicName");
         this.version = requireNonNull(version, "version");
     }
@@ -47,22 +47,13 @@ public final class BundleSymbolicNameWithVersion implements Serializable {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-
-        BundleSymbolicNameWithVersion that = (BundleSymbolicNameWithVersion) obj;
-
-        return symbolicName.equals(that.symbolicName) && version.equals(that.version);
+    public boolean equals(final @Nullable Object obj) {
+        return this == obj || obj instanceof BundleSymbolicNameWithVersion other
+            && symbolicName.equals(other.symbolicName) && version.equals(other.version);
     }
 
     @Override
     public String toString() {
         return symbolicName + ":" + version;
     }
-
 }
