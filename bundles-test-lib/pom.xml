@@ -24,7 +24,7 @@
 
   <properties>
     <!-- Opt-in to our optional code quality checks -->
-    <duplicate-finder.skip>false</duplicate-finder.skip> <!-- Classpath duplicates -->
+    <duplicate-finder.skip>false</duplicate-finder.skip>
   </properties>
 
   <dependencies>
@@ -36,26 +36,6 @@
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.framework</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.awaitility</groupId>
-      <artifactId>awaitility</artifactId>
-      <scope>compile</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>cglib</groupId>
-          <artifactId>cglib-nodep</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.objenesis</groupId>
-          <artifactId>objenesis</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jdt</groupId>

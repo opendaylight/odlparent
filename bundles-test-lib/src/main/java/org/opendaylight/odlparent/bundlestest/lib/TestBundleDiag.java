@@ -11,8 +11,6 @@ import static java.util.Objects.requireNonNull;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.BiConsumer;
-import org.awaitility.Awaitility;
-import org.awaitility.core.ConditionTimeoutException;
 import org.opendaylight.odlparent.bundles.diag.DiagProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,44 +53,50 @@ public class TestBundleDiag {
     public void checkBundleDiagInfos(final long timeout, final TimeUnit timeoutUnit,
             final BiConsumer<TimeInfo, BundleDiagInfos> awaitingListener) throws SystemStateFailureException {
         LOG.info("checkBundleDiagInfos() started...");
-        try {
-            Awaitility.await("checkBundleDiagInfos")
-                .pollDelay(0, TimeUnit.MILLISECONDS)
-                .pollInterval(1, TimeUnit.SECONDS)
-                .atMost(timeout, timeoutUnit)
-                    .conditionEvaluationListener(condition -> awaitingListener.accept(
-                        new TimeInfo(condition.getElapsedTimeInMS(), condition.getRemainingTimeInMS()),
-                        (BundleDiagInfosImpl) condition.getValue()))
-                    .until(
-                        () -> BundleDiagInfosImpl.ofDiag(diagProvider.currentDiag()),
-                        new BundleServiceSummaryMatcher());
 
-            // If we're here then either BundleServiceSummaryMatcher quit because of Active, Failure or Stopping..
+        final var timeoutNanos = timeoutUnit.toNanos(timeout);
+        final var started = System.nanoTime();
+
+        while (true) {
+            final var elapsedNanos = System.nanoTime() - started;
+            final var remainingNanos = timeoutNanos - elapsedNanos;
             final var diag = diagProvider.currentDiag();
             final var bundleInfos = BundleDiagInfosImpl.ofDiag(diag);
-            final var systemState = bundleInfos.getSystemState();
-            if (systemState.equals(SystemState.Failure) || systemState.equals(SystemState.Stopping)) {
-                LOG.error("""
-                    diag failure; BundleService reports bundle(s) which failed or are already stopping (details in \
-                    following INFO and ERROR log messages...)""");
-                diag.logState(LOG);
-                throw new SystemStateFailureException("diag failed; some bundles failed to start", bundleInfos);
 
-            } else {
-                // Inform the developer of the green SystemState.Active
-                LOG.info("diag successful; system state active ({})", bundleInfos.getFullDiagnosticText());
+            switch (bundleInfos.getSystemState()) {
+                case null -> throw new NullPointerException();
+                case Active -> {
+                    // Inform the developer of the green SystemState.Active
+                    awaitingListener.accept(new TimeInfo(TimeUnit.NANOSECONDS.toMillis(elapsedNanos),
+                        TimeUnit.NANOSECONDS.toMillis(remainingNanos)), bundleInfos);
+                    LOG.info("diag successful; system state active ({})", bundleInfos.getFullDiagnosticText());
+                    return;
+                }
+                case Booting -> {
+                    if (remainingNanos <= 0) {
+                        // This typically happens due to bundles still in BundleState GracePeriod or Waiting
+                        LOG.error("""
+                            diag failure; BundleService reports bundle(s) which are still not active (details in \
+                            following INFO and ERROR log messages...)""");
+                        diag.logState(LOG);
+                        throw new SystemStateFailureException("diag timeout; some bundles are still not active:",
+                            bundleInfos);
+                    }
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        throw new SystemStateFailureException("Interrupted waiting for a retry", bundleInfos, e);
+                    }
+                }
+                case Failure, Stopping -> {
+                    LOG.error("""
+                        diag failure; BundleService reports bundle(s) which failed or are already stopping (details in \
+                        following INFO and ERROR log messages...)""");
+                    diag.logState(LOG);
+                    throw new SystemStateFailureException("diag failed; some bundles failed to start", bundleInfos);
+                }
             }
-
-        } catch (ConditionTimeoutException e) {
-            // If this happens then it got stuck waiting in SystemState.Booting,
-            // typically due to bundles still in BundleState GracePeriod or Waiting
-            LOG.error("""
-                diag failure; BundleService reports bundle(s) which are still not active (details in following INFO \
-                and ERROR log messages...)""");
-            final var diag = diagProvider.currentDiag();
-            diag.logState(LOG);
-            throw new SystemStateFailureException("diag timeout; some bundles are still not active:",
-                BundleDiagInfosImpl.ofDiag(diag), e);
         }
     }
 }
