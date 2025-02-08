@@ -941,35 +941,6 @@
           </executions>
         </plugin>
         <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-            <compilerArgs>
-              <arg>-parameters</arg>
-              <arg>-Xlint:all</arg>
-              <!-- Disable 'No processor claimed any of these annotations' -->
-              <arg>-Xlint:-processing</arg>
-              <!-- Disable 'declares no explicit constructors, thereby exposing a default constructor'
-                   because it causes a lot of warnings in downstreams. -->
-              <arg>-Xlint:-missing-explicit-ctor</arg>
-            </compilerArgs>
-            <annotationProcessorPaths>
-              <dependency>
-                <groupId>org.immutables</groupId>
-                <artifactId>value</artifactId>
-                <!-- Keep this version in sync with dependency declaration above -->
-                <version>2.10.1</version>
-              </dependency>
-              <dependency>
-                <groupId>org.kohsuke.metainf-services</groupId>
-                <artifactId>metainf-services</artifactId>
-                <!-- Keep this version in sync with dependency declaration above -->
-                <version>1.11</version>
-              </dependency>
-            </annotationProcessorPaths>
-            <proc>full</proc>
-          </configuration>
-        </plugin>
-        <plugin>
           <artifactId>maven-failsafe-plugin</artifactId>
           <version>3.5.2</version>
         </plugin>
@@ -1415,6 +1386,35 @@
                 <artifactId>opendaylight-karaf-empty</artifactId>
               </ignoredDependency>
             </ignoredDependencies>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <compilerArgs>
+            <arg>-parameters</arg>
+            <arg>-Xlint:all</arg>
+            <!-- Disable 'No processor claimed any of these annotations' -->
+            <arg>-Xlint:-processing</arg>
+            <!-- Disable 'declares no explicit constructors, thereby exposing a default constructor'
+                 because it causes a lot of warnings in downstreams. -->
+            <arg>-Xlint:-missing-explicit-ctor</arg>
+          </compilerArgs>
+          <annotationProcessorPaths>
+            <dependency>
+              <groupId>org.immutables</groupId>
+              <artifactId>value</artifactId>
+              <!-- Keep this version in sync with dependency declaration above -->
+              <version>2.10.1</version>
+            </dependency>
+            <dependency>
+              <groupId>org.kohsuke.metainf-services</groupId>
+              <artifactId>metainf-services</artifactId>
+              <!-- Keep this version in sync with dependency declaration above -->
+              <version>1.11</version>
+            </dependency>
+          </annotationProcessorPaths>
+          <proc>full</proc>
         </configuration>
       </plugin>
       <plugin>
