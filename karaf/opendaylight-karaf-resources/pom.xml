@@ -134,6 +134,14 @@
                          token="/2.15.3" value="/2.17.3" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.27/pax-web-features-8.0.27-features.xml"
                       tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/8.0.27/pax-web-features-8.0.27-features.xml"/>
+
+                <!-- Remove this once we have Karaf with https://issues.apache.org/jira/browse/KARAF-7927 -->
+                <patch patchfile="${project.basedir}/src/main/patches/karaf-jre-properties.patch"
+                       originalfile="${project.build.directory}/assembly/etc/jre.properties"
+                       failonerror="true"/>
+                <copy file="${project.build.directory}/assembly/etc/jre.properties"
+                      tofile="${project.build.directory}/classes/etc/jre.properties"/>
+
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
                 <echo file="${project.build.directory}/assembly/etc/startup.properties" append="true">
 # The following are added by opendaylight-karaf-resources
