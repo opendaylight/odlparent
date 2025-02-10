@@ -1,0 +1,10 @@
+--- ./target/assembly/etc/jre.properties.orig	2025-02-10 13:36:22.856242236 +0100
++++ ./target/assembly/etc/jre.properties	2025-02-10 13:36:37.318421946 +0100
+@@ -58,6 +58,7 @@
+  java.nio.charset.spi, \
+  java.nio.file, \
+  java.nio.file.attribute, \
++ java.nio.file.spi, \
+  java.rmi, \
+  java.rmi.activation, \
+  java.rmi.dgc, \
