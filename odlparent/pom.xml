@@ -1428,6 +1428,37 @@
       </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
+          <configuration combine.children="append">
+            <additionalDependencies>
+              <additionalDependency>
+                <groupId>com.google.errorprone</groupId>
+                <artifactId>error_prone_annotations</artifactId>
+                <!-- Keep this version in sync with dependency declaration above -->
+                <version>2.36.0</version>
+              </additionalDependency>
+              <additionalDependency>
+                <groupId>org.immutables</groupId>
+                <artifactId>value</artifactId>
+                <classifier>annotations</classifier>
+                <!-- Keep this version in sync with dependency declaration above -->
+                <version>2.10.1</version>
+              </additionalDependency>
+              <additionalDependency>
+                <groupId>org.kohsuke.metainf-services</groupId>
+                <artifactId>metainf-services</artifactId>
+                <!-- Keep this version in sync with dependency declaration above -->
+                <version>1.11</version>
+              </additionalDependency>
+            </additionalDependencies>
+          </configuration>
+          <executions>
+            <execution>
+              <id>attach-javadocs</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
       </plugin>
       <plugin>
         <groupId>org.gaul</groupId>
