@@ -2,6 +2,39 @@
 ODL Parent release notes
 ========================
 
+Version 14.0.8
+--------------
+This is a bug-fix upgrade from version 14.0.6. ``triemap`` is downgraded to version ``1.3.2`` because
+version ``1.4.0`` is causing failures in integration tests.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* CheckStyle 10.21.2 → 10.21.4, release notes:
+  * `10.21.3 <https://checkstyle.org/releasenotes.html#Release_10.21.3>`__
+  * `10.21.4 <https://checkstyle.org/releasenotes.html#Release_10.21.4>`__
+
+* JUnit `5.11.4 → 5.12.0 <https://junit.org/junit5/docs/5.12.0/release-notes/#release-notes-5.12.0>`__
+
+* Mockito `5.15.2 → 5.16.0 <https://github.com/mockito/mockito/releases/tag/v5.16.0>`__
+
+* Netty 4.1.117 → 4.1.118, release notes:
+  * `4.1.118 <https://netty.io/news/2025/02/10/4-1-118-Final.html>`__
+  * `4.1.119 <https://netty.io/news/2025/02/26/4-1-119-Final.html>`__
+
+* TrieMap 1.4.0 → 1.3.2
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-clean-plugin `3.4.0 → 3.4.1 <https://github.com/apache/maven-clean-plugin/releases/tag/maven-clean-plugin-3.4.1>`__
+
+* maven-compiler-plugin `3.13.0 → 3.14.0 <https://github.com/apache/maven-compiler-plugin/releases/tag/maven-compiler-plugin-3.14.0>`__
+
+* maven-deploy-plugin `3.1.3 → 3.1.4 <https://github.com/apache/maven-deploy-plugin/releases/tag/maven-deploy-plugin-3.1.4>`__
+
+* maven-install-plugin `3.1.3 → 3.1.4 <https://github.com/apache/maven-install-plugin/releases/tag/maven-install-plugin-3.1.4>`__
+
+* maven-project-info-reports-plugin `3.8.0 → 3.9.0 <https://github.com/apache/maven-project-info-reports-plugin/releases/tag/maven-project-info-reports-plugin-3.9.0>`__
+
 Version 14.0.7
 --------------
 This is a bug-fix upgrade from version 14.0.6. ``modernizer-maven-plugin`` is downgraded to version ``3.0.0`` because
