@@ -16,6 +16,24 @@
       "message": "should be solved in AAA then",
       "revId": "80b216f38aa1022a9c983930fc41ad04d455beba",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "af0b5f2e_735c89ea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8449
+      },
+      "writtenOn": "2025-03-11T11:18:50Z",
+      "side": 1,
+      "message": "Ok, moved to AAA.\nhttps://git.opendaylight.org/gerrit/c/aaa/+/115865",
+      "parentUuid": "de5a6a3d_f2be849d",
+      "revId": "80b216f38aa1022a9c983930fc41ad04d455beba",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
