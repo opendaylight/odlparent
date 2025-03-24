@@ -45,9 +45,16 @@ public class GenerateFeatureMojo extends AbstractMojo {
     private static final String CLASSIFIER = "classifier";
 
     // Version specification as they appear in raw features and bundles
+    // FIXME: alias for new 'buildVersion'
     private static final String VERSION_AS_IN_PROJECT = "{{versionAsInProject}}";
+    // FIXME: alias for new 'buildRange'
     private static final String SEM_VER_RANGE = "{{semVerRange}}";
+    // FIXME: add 'majorRange' to derive '[2,3)' from '2.3.4'
+    // FIXME: add 'minorRange' to derive '[2.3,3)' from '2.3.4'
+    // FIXME: add 'buildMinorRange' to derive [2.3,2.4)' from '2.3.4'
+    // FIXME: deprecate: we are building with maven substitution enabled, so ${project.version} will do the same
     private static final String PROJECT_VERSION = "{{projectVersion}}";
+    // TODO: would something to derive '[2,)' from '2.3.4' be useful? it goes against semVer and what would we call it?
 
     // Version specifications as they appear in features after being scrubbed by Karaf marshaller
     private static final String VERSION_AS_IN_PROJECT_CLEAN = VersionCleaner.clean(VERSION_AS_IN_PROJECT);
