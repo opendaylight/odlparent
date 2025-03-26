@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-guava">
     <feature version="0.0.0">
-        <bundle>mvn:com.google.guava/failureaccess/1.0.2</bundle>
-        <bundle>mvn:com.google.guava/guava/33.4.4-jre</bundle>
+        <bundle>mvn:com.google.guava/failureaccess/1.0.3</bundle>
+        <bundle>mvn:com.google.guava/guava/33.4.6-jre</bundle>
         <bundle>mvn:org.checkerframework/checker-qual/3.49.1</bundle>
     </feature>
 </features>
