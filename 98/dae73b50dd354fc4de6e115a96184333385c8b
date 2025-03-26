@@ -1,0 +1,8 @@
+Verified+1: ODL Required.GHA <releng+odl.required.gha@linuxfoundation.org>
+Code-Review+2: Robert Varga <nite@hq.sk>
+Verified+1: jenkins-releng ODL
+Submitted-by: Robert Varga <nite@hq.sk>
+Submitted-at: Wed, 26 Mar 2025 10:28:05 +0000
+Reviewed-on: https://git.opendaylight.org/gerrit/c/odlparent/+/116070
+Project: odlparent
+Branch: refs/heads/master
