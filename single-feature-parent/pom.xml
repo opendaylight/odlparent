@@ -139,6 +139,8 @@
 
                         <!-- Our slf4j logging markers -->
                         <excludedArtifactId>logging-markers</excludedArtifactId>
+                        <!-- Netty's netty-codec (aggregator since Netty-4.2.0) -->
+                        <excludedArtifactId>netty-codec</excludedArtifactId>
                     </excludedArtifactIds>
                 </configuration>
             </plugin>
