@@ -14,9 +14,11 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 import javax.xml.bind.JAXBException;
 import org.apache.felix.utils.version.VersionCleaner;
+import org.apache.karaf.features.internal.model.Bundle;
 import org.apache.karaf.features.internal.model.Dependency;
 import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
@@ -57,6 +59,7 @@ public class GenerateFeatureMojo extends AbstractMojo {
     // TODO: would something to derive '[2,)' from '2.3.4' be useful? it goes against semVer and what would we call it?
 
     // Version specifications as they appear in features after being scrubbed by Karaf marshaller
+    // FIXME: pre-compute these if we can, so we can use them with switch expressions
     private static final String VERSION_AS_IN_PROJECT_CLEAN = VersionCleaner.clean(VERSION_AS_IN_PROJECT);
     private static final String SEM_VER_RANGE_CLEAN = VersionCleaner.clean(SEM_VER_RANGE);
     private static final String PROJECT_VERSION_CLEAN = VersionCleaner.clean(PROJECT_VERSION);
@@ -131,16 +134,29 @@ public class GenerateFeatureMojo extends AbstractMojo {
             }
         }
 
-        // Process feature dependencies, updating versions as needed
-        for (var dependency : feature.getFeature()) {
+        // Process feature dependencies and bundles
+        processBundles(feature.getBundle());
+        processDependencies(feature.getFeature());
+        // Process conditional bundles/dependencies
+        for (var conditional : feature.getConditional()) {
+            processDependencies(conditional.getFeature());
+            processBundles(conditional.getBundle());
+        }
+    }
+
+    // Process a set of bundles, updating versions as needed
+    private void processBundles(final List<Bundle> bundles) throws MojoFailureException {
+        for (var bundle : bundles) {
+            bundle.setLocation(processReference(bundle.getLocation()));
+        }
+    }
+
+    // Process a set of features, updating versions as needed
+    private void processDependencies(final List<Dependency> list) throws MojoFailureException {
+        for (var dependency : list) {
             if (dependency.hasVersion()) {
                 dependency.setVersion(processVersion(dependency));
             }
-        }
-
-        // Process feature bundles, updating versions as needed
-        for (var bundle : feature.getBundle()) {
-            bundle.setLocation(processReference(bundle.getLocation()));
         }
     }
 
