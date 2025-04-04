@@ -71,12 +71,22 @@
             Here we need to depend on all available native epoll implementations; we can't limit ourselves to the build
             platform and we can't require the build platform to have an implementation (e.g. OS X).
 
-            FIXME: figure out packaging of linux-aarch_64
+            Note: RISC-V needs a value in https://docs.osgi.org/reference/osnames.html#processor-names
         -->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-epoll</artifactId>
+            <classifier>linux-aarch_64</classifier>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-epoll</artifactId>
             <classifier>linux-x86_64</classifier>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-unix-common</artifactId>
+            <classifier>linux-aarch_64</classifier>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
