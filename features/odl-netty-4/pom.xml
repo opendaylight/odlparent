@@ -41,6 +41,14 @@
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
+            <artifactId>netty-codec-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec-compression</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
             <artifactId>netty-codec-http</artifactId>
         </dependency>
         <dependency>
@@ -69,6 +77,10 @@
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
+            <artifactId>netty-transport-classes-io_uring</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
             <artifactId>netty-transport-classes-kqueue</artifactId>
         </dependency>
         <dependency>
@@ -86,11 +98,30 @@
             <artifactId>netty-transport-native-epoll</artifactId>
             <classifier>linux-x86_64</classifier>
         </dependency>
-        <!-- FIXME: osx-x86_64 once we have https://github.com/netty/netty/issues/15058 resolved -->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-io_uring</artifactId>
+            <classifier>linux-aarch_64</classifier>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-io_uring</artifactId>
+            <classifier>linux-riscv64</classifier>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-io_uring</artifactId>
+            <classifier>linux-x86_64</classifier>
+        </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-transport-native-kqueue</artifactId>
             <classifier>osx-aarch_64</classifier>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-transport-native-kqueue</artifactId>
+            <classifier>osx-x86_64</classifier>
         </dependency>
         <!-- TODO: linux-aarch_64 requires Bundle-SymbolicName cleanup upstream -->
         <dependency>
