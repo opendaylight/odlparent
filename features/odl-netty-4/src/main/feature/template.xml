@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-netty-4">
+    <feature name="odl-netty-4">
+        <bundle>mvn:io.netty/netty-buffer/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-base/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-compression/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-http2/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-http/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-marshalling/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-protobuf/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-common/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-handler/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-resolver/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-transport/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-transport-classes-epoll/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-transport-classes-io_uring/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-transport-native-unix-common/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-transport-native-epoll/{{versionAsInProject}}/jar/linux-x86_64</bundle>
+        <bundle>mvn:io.netty/netty-transport-native-io_uring/{{versionAsInProject}}/jar/linux-x86_64</bundle>
+        <bundle>mvn:io.netty/netty-transport-native-unix-common/{{versionAsInProject}}/jar/linux-x86_64</bundle>
+    </feature>
+</features>
