@@ -2,7 +2,8 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-netty-4">
     <feature name="odl-netty-4">
         <bundle>mvn:io.netty/netty-buffer/{{versionAsInProject}}</bundle>
-        <bundle>mvn:io.netty/netty-codec/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-base/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-compression/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-codec-http2/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-codec-http/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-common/{{versionAsInProject}}</bundle>
@@ -10,10 +11,12 @@
         <bundle>mvn:io.netty/netty-resolver/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-transport/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-transport-classes-epoll/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-transport-classes-io_uring/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-transport-native-unix-common/{{versionAsInProject}}</bundle>
         <conditional>
             <condition>req:osgi.native;filter:="(&amp;(osgi.native.osname~=Linux)(osgi.native.processor~=x86-64))"</condition>
             <bundle>mvn:io.netty/netty-transport-native-epoll/{{versionAsInProject}}/jar/linux-x86_64</bundle>
+            <bundle>mvn:io.netty/netty-transport-native-io_uring/{{versionAsInProject}}/jar/linux-x86_64</bundle>
             <bundle>mvn:io.netty/netty-transport-native-unix-common/{{versionAsInProject}}/jar/linux-x86_64</bundle>
         </conditional>
     </feature>
