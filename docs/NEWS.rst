@@ -2,9 +2,72 @@
 ODL Parent release notes
 ========================
 
+Version 14.0.9
+--------------
+This is a bug-fix upgrade from version 14.0.8.
+
+Potentially breaking change
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This release includes a fully-modularized Guava. The new version has switched internal use of annotations
+and no longer pulls in ``checker-qual`` as a transitive dependency. Project which use Checker annotations
+need to explicitly add that dependency. We still package ``checker-qual`` in the ``odl-guava`` feature.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Version macros expansion in ``template-feature-parent`` would ignore ``<bundle>`` and ``<feature>`` elements
+  in a ``conditional`` block. This has been corrected and these are now processed just as their unconditional
+  counterparts.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* awaitility `4.2.2 → 4.3.0 <https://raw.githubusercontent.com/awaitility/awaitility/master/changelog.txt>`__
+
+* checker-qual 3.49.1 → 3.49.2
+
+* CheckStyle 10.21.4 → 10.23.0, release notes:
+  * `10.22.0 <https://checkstyle.org/releasenotes.html#Release_10.22.0>`__
+  * `10.23.0 <https://checkstyle.org/releasenotes.html#Release_10.23.0>`__
+
+* commons-beanutils 1.9.4 → 1.10.1, release notes:
+  * `1.10.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310460&version=12354555>`__
+  * `1.10.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310460&version=12355552>`__
+
+* commons-io `2.18.0 → 2.19.0 <https://commons.apache.org/proper/commons-io/changes.html#a2.19.0>`__
+
+* error_prone_annotations 2.36.0 → 2.37.0
+
+* GSON `2.12.1 → 2.13.0 <https://github.com/google/gson/releases/tag/gson-parent-2.13.0>`__
+
+* Guava 33.4.0 → 33.4.7, release notes:
+  * `33.4.1 <https://github.com/google/guava/releases/tag/v33.4.1>`__
+  * `33.4.2 <https://github.com/google/guava/releases/tag/v33.4.2>`__
+  * `33.4.3 <https://github.com/google/guava/releases/tag/v33.4.3>`__
+  * `33.4.4 <https://github.com/google/guava/releases/tag/v33.4.4>`__
+  * `33.4.5 <https://github.com/google/guava/releases/tag/v33.4.5>`__
+  * `33.4.6 <https://github.com/google/guava/releases/tag/v33.4.6>`__
+  * `33.4.7 <https://github.com/google/guava/releases/tag/v33.4.7>`__
+
+* JUnit `5.12.0 → 5.12.1 <https://junit.org/junit5/docs/5.12.1/release-notes/#release-notes-5.12.1>`__
+
+* Mockito 5.16.0 → 5.17.0, release notes:
+  * `5.16.1 <https://github.com/mockito/mockito/releases/tag/v5.16.1>`__
+  * `5.17.0 <https://github.com/mockito/mockito/releases/tag/v5.17.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram `2.3.1 → 2.3.2 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v2.3.2>`__
+
+* Jacoco Maven plugin `0.8.12 → 0.8.13 <https://github.com/jacoco/jacoco/releases/tag/v0.8.13>`__
+
+* maven-plugin-plugin `3.15.0 → 3.15.1 <https://github.com/apache/maven-plugin-tools/releases/tag/maven-plugin-tools-3.15.1>`__
+
+* maven-site-plugin `3.20.0 → 3.21.0 <https://github.com/apache/maven-site-plugin/releases/tag/maven-site-plugin-3.21.0>`__
+
+* maven-surefire-plugin `3.5.2 → 3.5.3 <https://github.com/apache/maven-surefire/releases/tag/maven-surefire-3.5.3>`__
+
 Version 14.0.8
 --------------
-This is a bug-fix upgrade from version 14.0.6. ``triemap`` is downgraded to version ``1.3.2`` because
+This is a bug-fix upgrade from version 14.0.7. ``triemap`` is downgraded to version ``1.3.2`` because
 version ``1.4.0`` is causing failures in integration tests.
 
 Third-party dependencies
