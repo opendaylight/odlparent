@@ -237,13 +237,6 @@
         <artifactId>guava</artifactId>
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite and docs -->
         <version>33.4.8-jre</version>
-        <exclusions>
-          <exclusion>
-            <!-- Do not pull JSpecify onto the classpath just yet -->
-            <groupId>org.jspecify</groupId>
-            <artifactId>jspecify</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>
@@ -251,13 +244,6 @@
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite and docs -->
         <version>33.4.8-jre</version>
         <scope>test</scope>
-        <exclusions>
-          <exclusion>
-            <!-- Do not pull JSpecify onto the classpath just yet -->
-            <groupId>org.jspecify</groupId>
-            <artifactId>jspecify</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.checkerframework</groupId>
