@@ -517,6 +517,10 @@
   </build>
 
   <profiles>
+    <!--
+         Activated in Eclipse to not use the default directory (target). This is a best effort to separate command-line vs. IDE
+         rebuilds.
+      -->
     <profile>
       <id>ide</id>
       <activation>
@@ -525,29 +529,30 @@
         </property>
       </activation>
       <build>
-        <!-- Put the IDE's build output in a folder other than target, so that IDE builds don't interact with Maven builds -->
         <directory>target-ide</directory>
       </build>
     </profile>
+
+    <!-- http://blog2.vorburger.ch/2016/06/improve-maven-build-speed-with-q.html
+         q = http://memory-alpha.wikia.com/wiki/Q ;)
+
+         The Quick profile is used during incremental local development, when you want to "just get that JAR built", which is
+         very handy e.g. for fast hot reloading cycles in Karaf with bundle watch. It (intentionally!) skips tests, quality
+         checks etc. which are great and useful to run before finally submitting changes to Gerrit, and which all must run
+         on Gerrit, but which are overhead during ongoing fast iterative local development.
+
+         Note that the idea here is that your IDE will already have run quality checks such as e.g. Checkstyle while you typed
+         the code anyway.  Similarly, if you wrote a test, you'll probably already have compiled and run it from your IDE,
+         so when you want the OSGi bundle JAR for Karaf, as soon as possible, you typically do not want all that to run again.
+      -->
     <profile>
-        <!-- http://blog2.vorburger.ch/2016/06/improve-maven-build-speed-with-q.html
-             q = http://memory-alpha.wikia.com/wiki/Q ;)
-
-             The Quick profile is used during incremental local development, when you want to "just get that JAR built",
-             which is very handy e.g. for fast hot reloading cycles in Karaf with bundle watch.  It (intentionally!) skips
-             tests, quality checks etc. which are great and useful to run before finally submitting changes to Gerrit, and
-             which all must run on Gerrit, but which are overhead during ongoing fast iterative local development.
-
-             Note that the idea here is that your IDE will already have run quality checks such as e.g. Checkstyle
-             while you typed the code anyway.  Similarly, if you wrote a test, you'll probably already have compiled and run it
-             from your IDE, so when you want the OSGi bundle JAR for Karaf, ASAP, you typically don't want all that to run again.
-          -->
       <id>q</id>
       <properties>
         <skipTests>true</skipTests>
             <!-- But NOT <maven.test.skip>true, as that's for compiling, not running, tests;
                  and that's usually quick.  Skipping test compilation with -Pq with maven.test.skip would be
-                 particularly confusing when used in a project with maven-jar-plugin <goal>test-jar, so don't.)  -->
+                 particularly confusing when used in a project with maven-jar-plugin <goal>test-jar, so let us just not do that.
+              -->
         <skipIT>true</skipIT>
         <skipITs>true</skipITs>
         <sft.skip>true</sft.skip>
@@ -566,12 +571,41 @@
         <cyclonedx.skip>true</cyclonedx.skip>
       </properties>
     </profile>
+
+    <!--
+         A subset of 'q' profile. Where 'q' is Quick, 'f' is Fast. We keep the following Maven plugins enabled:
+         - checkstyle, as it quite fast
+         - source, to keep ~/.m2 populated for IDEs
+         - surefilre, to properly unit-test
+      -->
     <profile>
-      <!-- http://blog2.vorburger.ch/2016/06/maven-install-into-additional.html
-           mvn [-o -Pq] install -DaddInstallRepositoryPath=.../karaf/system is used in development to directly
-           install artifacts such as bundles and KARs not just into the global shared ~/.m2/repository
-           but also into the isolated Maven repo of a Karaf distribution.
-       -->
+      <id>f</id>
+      <properties>
+        <skipTests>true</skipTests>
+        <skipIT>true</skipIT>
+        <skipITs>true</skipITs>
+        <sft.skip>true</sft.skip>
+        <jacoco.skip>true</jacoco.skip>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <odlparent.checkstyle.skip>true</odlparent.checkstyle.skip>
+        <odlparent.modernizer.skip>true</odlparent.modernizer.skip>
+        <odlparent.spotbugs.skip>true</odlparent.spotbugs.skip>
+        <maven.site.skip>true</maven.site.skip>
+        <invoker.skip>true</invoker.skip>
+        <enforcer.skip>true</enforcer.skip>
+        <duplicate-finder.skip>true</duplicate-finder.skip>
+        <mdsal.skip.verbose>true</mdsal.skip.verbose> <!-- Bug 6236 -->
+        <maven.gitcommitid.skip>true</maven.gitcommitid.skip>
+        <cyclonedx.skip>true</cyclonedx.skip>
+      </properties>
+    </profile>
+
+    <!-- http://blog2.vorburger.ch/2016/06/maven-install-into-additional.html
+         mvn [-o -Pq] install -DaddInstallRepositoryPath=.../karaf/system is used in development to directly install artifacts
+         such as bundles and KARs not just into the global shared ~/.m2/repository but also into the isolated Maven repo
+         of a Karaf distribution.
+     -->
+    <profile>
       <activation>
         <property>
           <name>addInstallRepositoryPath</name>
@@ -598,15 +632,14 @@
         </plugins>
       </build>
     </profile>
-    <profile>
-      <!--
-          This profile is to ensure we only build javadocs reports
-          when we plan to deploy Maven site for our project.
 
-          It activates by checking for the existance of deploy-site.xml in the
-          user's current working directory. (Intent is that this is run from
-          the Project root directory)
-      -->
+    <!--
+        This profile is to ensure we only build javadocs reports when we plan to deploy Maven site for our project.
+
+        It activates by checking for the existance of deploy-site.xml in the user's current working directory.
+        The Intent is that this is run from the Project root directory.
+    -->
+    <profile>
       <id>maven-site</id>
       <activation>
         <file>
@@ -662,8 +695,9 @@
         </plugins>
       </reporting>
     </profile>
+
+    <!-- Javadocs with links -->
     <profile>
-      <!-- Javadocs with links -->
       <id>javadoc-links</id>
         <activation>
           <file>
@@ -690,8 +724,8 @@
       </build>
     </profile>
 
+    <!-- Disable plugins which are not useful for sonar -->
     <profile>
-      <!-- Disable plugins which are not useful for sonar -->
       <id>sonar-only</id>
       <activation>
         <property>
