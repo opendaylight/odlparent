@@ -75,8 +75,8 @@
         <profile>
             <id>disable-sft</id>
             <activation>
-                <!-- Karaf does not have jre.properties for JDK22+ just yet -->
-                <jdk>[22,)</jdk>
+                <!-- Karaf does not have jre.properties for JDK24+ just yet -->
+                <jdk>[24,)</jdk>
             </activation>
 
             <properties>
