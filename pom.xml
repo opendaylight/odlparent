@@ -58,6 +58,9 @@
         <module>odlparent</module>
         <module>odlparent-lite</module>
 
+        <!-- Libraries -->
+        <module>libs</module>
+
         <!-- Plugin for processing templates for Karaf features -->
         <module>template-feature-plugin</module>
 
@@ -66,9 +69,6 @@
 
         <!-- Manifest filtering plugin -->
         <module>filter-manifest-plugin</module>
-
-        <!-- Logging Markers -->
-        <module>logging-markers</module>
 
         <!-- Features -->
         <module>features</module>

@@ -13,7 +13,7 @@
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>bundle-parent</artifactId>
         <version>14.1.0-SNAPSHOT</version>
-        <relativePath>../bundle-parent</relativePath>
+        <relativePath>../../bundle-parent</relativePath>
     </parent>
     <artifactId>logging-markers</artifactId>
     <packaging>bundle</packaging>
