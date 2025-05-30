@@ -26,6 +26,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     </properties>
 
     <modules>
+        <module>concepts</module>
         <module>logging-markers</module>
     </modules>
 </project>
