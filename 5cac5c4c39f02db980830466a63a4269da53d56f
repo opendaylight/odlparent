@@ -16,6 +16,23 @@
       "message": "We would need to adapt AAA 0.19.x version. Latest AAA uses version as in project but 0.19x. needs a change in odl-apache-shiro dependencies.xml.",
       "revId": "5cac5c4c39f02db980830466a63a4269da53d56f",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00dffffa_c8bc1b38",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2025-05-30T10:14:44Z",
+      "side": 1,
+      "message": "See: https://git.opendaylight.org/gerrit/c/aaa/+/116646",
+      "revId": "5cac5c4c39f02db980830466a63a4269da53d56f",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
