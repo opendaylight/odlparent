@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-netty-queue">
+    <repository>mvn:org.opendaylight.odlparent/odl-netty-4/{{versionAsInProject}}/xml/features</repository>
+    <feature name="odl-netty-kqueue">
+        <feature version="{{semVerRange}}">odl-netty-4</feature>
+        <bundle>mvn:io.netty/netty-transport-classes-kqueue/{{versionAsInProject}}</bundle>
+        <conditional>
+            <condition>req:osgi.native;filter:="(&amp;(osgi.native.osname~=MacOS)(osgi.native.processor~=AArch64))"</condition>
+            <bundle>mvn:io.netty/netty-transport-native-kqueue/{{versionAsInProject}}/jar/osx-aarch_64</bundle>
+        </conditional>
+        <conditional>
+            <condition>req:osgi.native;filter:="(&amp;(osgi.native.osname~=MacOS)(osgi.native.processor~=x86-64))"</condition>
+            <bundle>mvn:io.netty/netty-transport-native-kqueue/{{versionAsInProject}}/jar/osx-x86_64</bundle>
+        </conditional>
+    </feature>
+</features>
