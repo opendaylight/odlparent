@@ -3,9 +3,11 @@
     <feature name="odl-netty-4">
         <bundle>mvn:io.netty/netty-buffer/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-codec-base/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-classes-quic/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-codec-compression/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-codec-http/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-codec-http2/{{versionAsInProject}}</bundle>
+        <bundle>mvn:io.netty/netty-codec-http3/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-common/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-handler/{{versionAsInProject}}</bundle>
         <bundle>mvn:io.netty/netty-resolver/{{versionAsInProject}}</bundle>
@@ -16,6 +18,7 @@
         <bundle>mvn:io.netty/netty-transport-native-unix-common/{{versionAsInProject}}</bundle>
         <conditional>
             <condition>req:osgi.native;filter:="(&amp;(osgi.native.osname~=Linux)(osgi.native.processor~=AArch64))"</condition>
+            <bundle>mvn:io.netty/netty-codec-native-quic/{{versionAsInProject}}/jar/linux-aarch_64</bundle>
             <bundle>mvn:io.netty/netty-transport-native-epoll/{{versionAsInProject}}/jar/linux-aarch_64</bundle>
             <bundle>mvn:io.netty/netty-transport-native-io_uring/{{versionAsInProject}}/jar/linux-aarch_64</bundle>
         </conditional>
@@ -26,16 +29,19 @@
         </conditional>
         <conditional>
             <condition>req:osgi.native;filter:="(&amp;(osgi.native.osname~=Linux)(osgi.native.processor~=x86-64))"</condition>
+            <bundle>mvn:io.netty/netty-codec-native-quic/{{versionAsInProject}}/jar/linux-x86_64</bundle>
             <bundle>mvn:io.netty/netty-transport-native-epoll/{{versionAsInProject}}/jar/linux-x86_64</bundle>
             <bundle>mvn:io.netty/netty-transport-native-io_uring/{{versionAsInProject}}/jar/linux-x86_64</bundle>
             <bundle>mvn:io.netty/netty-transport-native-unix-common/{{versionAsInProject}}/jar/linux-x86_64</bundle>
         </conditional>
         <conditional>
             <condition>req:osgi.native;filter:="(&amp;(osgi.native.osname~=MacOS)(osgi.native.processor~=AArch64))"</condition>
+            <bundle>mvn:io.netty/netty-codec-native-quic/{{versionAsInProject}}/jar/osx-aarch_64</bundle>
             <bundle>mvn:io.netty/netty-transport-native-kqueue/{{versionAsInProject}}/jar/osx-aarch_64</bundle>
         </conditional>
         <conditional>
             <condition>req:osgi.native;filter:="(&amp;(osgi.native.osname~=MacOS)(osgi.native.processor~=x86-64))"</condition>
+            <bundle>mvn:io.netty/netty-codec-native-quic/{{versionAsInProject}}/jar/osx-x86_64</bundle>
             <bundle>mvn:io.netty/netty-transport-native-kqueue/{{versionAsInProject}}/jar/osx-x86_64</bundle>
         </conditional>
     </feature>
