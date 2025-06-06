@@ -49,6 +49,8 @@
         <module>odl-javassist-3</module>
         <module>odl-jersey-2</module>
         <module>odl-netty-4</module>
+        <module>odl-netty-io_uring</module>
+        <module>odl-netty-kqueue</module>
         <module>odl-servlet-api</module>
         <module>odl-stax2-api</module>
         <module>odl-woodstox</module>
