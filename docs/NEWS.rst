@@ -2,6 +2,96 @@
 ODL Parent release notes
 ========================
 
+Version 14.1.0
+--------------
+This is a bug-fix/feature upgrade from version 14.0.9.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* A new, fast, profile, balancing between a normal build and the quick profile. This profile, activated
+  on command-line via ``-Pf``, deactivates everything ``-Pq`` does, with the exception of:
+  * maven-checkstyle-plugin
+  * maven-source-plugin
+  * maven-surefire-plugin
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.89 → 1.81 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java=release-1-81>`__
+
+* checker-qual 3.49.2 → 3.49.3
+
+* Checkstyle 10.23.0 → 10.25.0, release notes:
+  * `10.23.1 <https://checkstyle.org/releasenotes.html#Release_10.23.1>`__
+  * `10.24.0 <https://checkstyle.org/releasenotes.html#Release_10.24.0>`__
+  * `10.25.0 <https://checkstyle.org/releasenotes.html#Release_10.25.0>`__
+
+* commons-beanutils `1.10.1 → 1.11.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310460&version=12355661>`__
+
+* Dropwizard Metrics 4.2.30 → 4.2.32, release notes:
+  * `4.2.31 <https://github.com/dropwizard/metrics/releases/tag/v4.2.31>`__
+  * `4.2.32 <https://github.com/dropwizard/metrics/releases/tag/v4.2.32>`__
+
+* error_prone_annotations 2.37.0 → 2.38.0
+
+* GSON `2.13.0 → 2.13.1 <https://github.com/google/gson/releases/tag/gson-parent-2.13.1>`__
+
+* Guava `33.4.7 → 33.4.8 <https://github.com/google/guava/releases/tag/v33.4.8>`__
+
+* Jackson 2.17.3 → 2.19.0, release notes:
+  * `2.18.0 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.18>`__
+  * `2.18.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.18.1>`__
+  * `2.18.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.18.2>`__
+  * `2.18.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.18.3>`__
+  * `2.18.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.18.4>`__
+  * `2.19.0 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.19>`__
+
+* Jersey `2.46 → 2.47 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.47>`__
+
+* Jetty 9.4.54.v20240208 → 9.4.57.v20241219, release notes:
+  * `9.4.55.v20240627 <https://github.com/jetty/jetty.project/releases/tag/jetty-9.4.55.v20240627>`__
+  * `9.4.56.v20240826 <https://github.com/jetty/jetty.project/releases/tag/jetty-9.4.56.v20240826>`__
+  * `9.4.57.v20241219 <https://github.com/jetty/jetty.project/releases/tag/jetty-9.4.57.v20241219>`__
+
+* JUnit 5.12.1 → 5.13.1, release notes:
+  * `5.12.2 <https://junit.org/junit5/docs/5.12.2/release-notes/#release-notes-5.12.2>`__
+  * `5.13.0 <https://junit.org/junit5/docs/5.13.0/release-notes/#release-notes-5.13.0>`__
+  * `5.13.1 <https://junit.org/junit5/docs/5.13.1/release-notes/#release-notes-5.13.1>`__
+
+* Karaf `4.4.6 → 4.4.7 <https://github.com/apache/karaf/blob/karaf-4.4.7/RELEASE-NOTES.md#apache-karaf-447>`__
+
+* log4j 2.23.1 → 2.24.3, release notes:
+  * `2.24.0 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-24-0>`__
+  * `2.24.1 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-24-1>`__
+  * `2.24.2 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-24-2>`__
+  * `2.24.3 <https://logging.apache.org/log4j/2.x/release-notes.html#release-notes-2-24-3>`__
+
+* Mockito `5.17.0 → 5.18.0 <https://github.com/mockito/mockito/releases/tag/v5.18.0>`__
+
+* Netty 4.1.119.Final → 4.2.2.Final, release notes:
+  * `4.1.120.Final <https://netty.io/news/2025/04/23/4-1-120-Final.html>`__
+  * `4.1.121.Final <https://netty.io/news/2025/04/24/4-1-121-Final.html>`__
+  * `4.2.0.Final <https://netty.io/news/2025/04/03/4-2-0.html>`__
+  * `4.2.1.Final <https://netty.io/news/2025/05/06/4-2-1.html>`__
+  * `4.2.2.Final <https://netty.io/news/2025/06/05/4-2-2.html>`__
+
+* Woodstox `7.1.1 → 7.1.1 <https://github.com/FasterXML/woodstox/milestone/37?closed=1>`__
+
+* xmlunit 2.10.0 → 2.10.2, release notes:
+  * `2.10.1 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.1>`__
+  * `2.10.2 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.2>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* build-helper-maven-plugin `3.6.0 → 3.6.1 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/3.6.1>`__
+
+* exec-maven-plugin `3.5.0 → 3.5.1 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.5.1>`__
+
+* git-commit-id-maven-plugin `9.0.1 → 9.0.2 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v9.0.2>`__
+
+* maven-archetype-plugin `3.3.1 → 3.4.0 <https://github.com/apache/maven-archetype/releases/tag/maven-archetype-3.4.0>`__
+
+* maven-clean-plugin `3.4.1 → 3.5.0 <https://github.com/apache/maven-clean-plugin/releases/tag/maven-clean-plugin-3.5.0>`__
+
 Version 14.0.9
 --------------
 This is a bug-fix upgrade from version 14.0.8.
@@ -520,7 +610,7 @@ Third-party dependencies
 
 Plugin upgrades
 ~~~~~~~~~~~~~~~
-* builder-helper-maven-plugin `3.5.0 → 3.5.0 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/build-helper-maven-plugin-3.6.0>`__
+* build-helper-maven-plugin `3.5.0 → 3.5.0 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/build-helper-maven-plugin-3.6.0>`__
 
 * exec-maven-plugin `3.2.0 → 3.3.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/exec-maven-plugin-3.3.0>`__
 
