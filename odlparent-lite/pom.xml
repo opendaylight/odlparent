@@ -581,7 +581,6 @@
     <profile>
       <id>f</id>
       <properties>
-        <skipTests>true</skipTests>
         <skipIT>true</skipIT>
         <skipITs>true</skipITs>
         <sft.skip>true</sft.skip>
