@@ -12,12 +12,14 @@
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
     <version>14.1.1-SNAPSHOT</version>
-    <relativePath>../../odlparent</relativePath>
+    <relativePath>../../odlparent/pom.xml</relativePath>
   </parent>
+
   <artifactId>opendaylight-karaf-resources</artifactId>
-  <description>Resources for opendaylight-karaf</description>
   <packaging>jar</packaging>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
+  <description>Resources for opendaylight-karaf</description>
+
   <properties>
     <!-- There are a lot of duplicate classes in the dependencies below, but this is not a real issue,
          because this is not a real Java artifact; it's just packaging.  (TODO: Ideally, this artifact should

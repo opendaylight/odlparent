@@ -6,23 +6,18 @@
  terms of the Eclipse Public License v1.0 which accompanies this distribution,
  and is available at http://www.eclipse.org/legal/epl-v10.html
  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>template-feature-parent</artifactId>
         <version>14.1.1-SNAPSHOT</version>
-        <relativePath>../../template-feature-parent</relativePath>
+        <relativePath>../../template-feature-parent/pom.xml</relativePath>
     </parent>
 
-    <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odl-netty-4</artifactId>
-    <version>14.1.1-SNAPSHOT</version>
     <packaging>feature</packaging>
-
     <name>OpenDaylight :: Netty</name>
     <description>Netty 4.x</description>
 

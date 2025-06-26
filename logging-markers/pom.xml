@@ -13,8 +13,9 @@
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>bundle-parent</artifactId>
         <version>14.1.1-SNAPSHOT</version>
-        <relativePath>../bundle-parent</relativePath>
+        <relativePath>../bundle-parent/pom.xml</relativePath>
     </parent>
+
     <artifactId>logging-markers</artifactId>
     <packaging>bundle</packaging>
     <name>OpenDaylight :: Logging Markers</name>
