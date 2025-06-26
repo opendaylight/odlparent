@@ -13,7 +13,7 @@ Copyright (c) 2019 PANTHEON.tech, s.r.o. and others.  All rights reserved.
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
         <version>14.1.1-SNAPSHOT</version>
-        <relativePath>../../odlparent</relativePath>
+        <relativePath>../../odlparent/pom.xml</relativePath>
     </parent>
 
     <artifactId>immutables-plain</artifactId>
