@@ -12,11 +12,11 @@
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
     <version>14.1.1-SNAPSHOT</version>
-    <relativePath>../odlparent/</relativePath>
+    <relativePath>../odlparent/pom.xml</relativePath>
   </parent>
+
   <artifactId>karaf-plugin</artifactId>
   <packaging>maven-plugin</packaging>
-
   <name>ODL :: odlparent :: ${project.artifactId}</name>
 
   <properties>
