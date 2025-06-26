@@ -6,7 +6,7 @@
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>karaf-dist-static</artifactId>
         <version>14.1.1-SNAPSHOT</version>
-        <relativePath>../karaf-dist-static</relativePath>
+        <relativePath>../karaf-dist-static/pom.xml</relativePath>
     </parent>
 
     <artifactId>test-static</artifactId>

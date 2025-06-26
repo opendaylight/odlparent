@@ -14,7 +14,7 @@
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
     <version>14.1.1-SNAPSHOT</version>
-    <relativePath>../odlparent-lite</relativePath>
+    <relativePath>../odlparent-lite/pom.xml</relativePath>
   </parent>
 
   <artifactId>odlparent</artifactId>
@@ -1295,7 +1295,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore></ignore>
+                    <ignore/>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
