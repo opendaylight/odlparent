@@ -170,7 +170,7 @@
                             <includeArtifactIds>opendaylight-karaf-resources</includeArtifactIds>
                             <!-- Let maven plugin to configure start.properties  -->
                             <!-- Don't apply monkey patches to artifacsts in the system repository  -->
-                            <excludes>META-INF/**,system/**,etc/startup.properties</excludes>-->
+                            <excludes>META-INF/**,system/**,etc/startup.properties</excludes>
                             <excludeTransitive>true</excludeTransitive>
                             <ignorePermissions>false</ignorePermissions>
                             <silent>true</silent>
