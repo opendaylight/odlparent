@@ -2,6 +2,164 @@
 ODL Parent release notes
 ========================
 
+Version 13.1.6
+--------------
+This is a bug-fix upgrade from version 13.1.4.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ``maven-surefire-plugin`` configuration has been updated to lauch Mockito as an agent, silencing warnings printed
+  in test output. See `ODLPARENT-326 <https://jira.opendaylight.org/browse/ODLPARENT-326>`__ for more information.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* AssertJ 3.26.3 → 3.27.3, release notes:
+  * `3.27.0 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.0>`__
+  * `3.27.1 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.1>`__
+  * `3.27.2 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.2>`__
+  * `3.27.3 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.3>`__
+
+* Bouncy Castle 1.78.1 → 1.81, release notes:
+  * `1.79 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java=release-1-79>`
+  * `1.80 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java=release-1-80>`
+  * `1.81 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java=release-1-81>`
+
+* checker-qual 3.46.0 → 3.48.2
+
+* commons-beanutils 1.9.4 → 1.11.0, release notes:
+  * `1.10.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310460&version=12354555>`__
+  * `1.10.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310460&version=12355552>`__
+  * `1.11.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310460&version=12355661>`__
+
+* commons-io 2.17.0 → 2.19.0, release notes:
+  * `2.18.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.18.0>`__
+  * `2.19.0 <https://commons.apache.org/proper/commons-io/changes-report.html#a2.19.0>`__
+
+* commons-text 1.12.0 → 1.13.1, release notes:
+  * `1.13.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318221&version=12354570>`__
+  * `1.13.1 <https://commons.apache.org/proper/commons-text/changes.html#a1.13.1>`__
+
+* Dropwizard Metrics 4.2.28 → 4.2.33, release notes:
+  * `4.2.29 <https://github.com/dropwizard/metrics/releases/tag/v4.2.29>`__
+  * `4.2.30 <https://github.com/dropwizard/metrics/releases/tag/v4.2.30>`__
+  * `4.2.31 <https://github.com/dropwizard/metrics/releases/tag/v4.2.31>`__
+  * `4.2.32 <https://github.com/dropwizard/metrics/releases/tag/v4.2.32>`__
+  * `4.2.33 <https://github.com/dropwizard/metrics/releases/tag/v4.2.33>`__
+
+* error_prone_annotations 2.33.0 → 2.39.0
+
+* Jersey 2.45 → 2.47, release notes:
+  * `2.46 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.46>`__
+  * `2.47 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.47>`__
+
+* JUnit 5.11.2 → 5.13.3, release notes:
+  * `5.11.3 <https://junit.org/junit5/docs/5.11.3/release-notes/#release-notes-5.11.3>`__
+  * `5.11.4 <https://junit.org/junit5/docs/5.11.4/release-notes/#release-notes-5.11.4>`__
+  * `5.12.0 <https://junit.org/junit5/docs/5.12.0/release-notes/#release-notes-5.12.0>`__
+  * `5.12.1 <https://junit.org/junit5/docs/5.12.1/release-notes/#release-notes-5.12.1>`__
+  * `5.12.2 <https://junit.org/junit5/docs/5.12.1/release-notes/#release-notes-5.12.2>`__
+  * `5.13.0 <https://junit.org/junit5/docs/5.13.0/release-notes/#release-notes-5.13.0>`__
+  * `5.13.1 <https://junit.org/junit5/docs/5.13.0/release-notes/#release-notes-5.13.1>`__
+  * `5.13.2 <https://junit.org/junit5/docs/5.13.0/release-notes/#release-notes-5.13.2>`__
+  * `5.13.3 <https://junit.org/junit5/docs/5.13.0/release-notes/#release-notes-5.13.3>`__
+
+* Mockito 5.14.1 → 5.18.0, release notes:
+  * `5.14.2 <https://github.com/mockito/mockito/releases/tag/v5.14.2>`__
+  * `5.15.0 <https://github.com/mockito/mockito/releases/tag/v5.15.0>`__
+  * `5.15.1 <https://github.com/mockito/mockito/releases/tag/v5.15.1>`__
+  * `5.15.2 <https://github.com/mockito/mockito/releases/tag/v5.15.2>`__
+  * `5.16.0 <https://github.com/mockito/mockito/releases/tag/v5.16.0>`__
+  * `5.16.1 <https://github.com/mockito/mockito/releases/tag/v5.16.1>`__
+  * `5.17.0 <https://github.com/mockito/mockito/releases/tag/v5.17.0>`__
+  * `5.18.0 <https://github.com/mockito/mockito/releases/tag/v5.18.0>`__
+
+* Netty 4.1.114 → 4.1.121, release notes:
+  * `4.1.115 <https://netty.io/news/2024/11/12/4-1-115-Final.html>`__
+  * `4.1.116 <https://netty.io/news/2024/12/17/4-1-116-Final.html>`__
+  * `4.1.117 <https://netty.io/news/2025/01/14/4-1-117-Final.html>`__
+  * `4.1.118 <https://netty.io/news/2025/02/10/4-1-118-Final.html>`__
+  * `4.1.119 <https://netty.io/news/2025/02/26/4-1-119-Final.html>`__
+  * `4.1.120 <https://netty.io/news/2025/04/23/4-1-120-Final.html>`__
+  * `4.1.121 <https://netty.io/news/2025/04/24/4-1-121-Final.html>`__
+
+* xmlunit 2.10.0 → 2.10.3, release notes:
+  * `2.10.1 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.1>`__
+  * `2.10.2 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.2>`__
+  * `2.10.3 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.3>`__
+
+* Woodstox 7.0.0 → 7.1.1, release notes:
+  * `7.1.0 <https://github.com/FasterXML/woodstox/milestone/35?closed=1>`__
+  * `7.1.1 <https://github.com/FasterXML/woodstox/milestone/37?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin `7.0.0 → 7.1.0 <https://github.com/bndtools/bnd/wiki/Changes-in-7.1.0>`__
+
+* build-helper-maven-plugin `3.6.0 → 3.6.1 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/3.6.1>`__
+
+* cyclonedx-maven-plugin 2.8.2 → 2.9.1, release notes:
+  * `2.9.0 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.9.0>`__
+  * `2.9.1 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.9.1>`__
+
+* exec-maven-plugin 3.4.1 → 3.5.1, release notes:
+  * `3.5.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.5.0>`__
+  * `3.5.1 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.5.1>`__
+
+* git-commit-id-maven-plugin `9.0.1 → 9.0.2 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v9.0.2>`__
+
+* Jacoco Maven plugin `0.8.12 → 0.8.13 <https://github.com/jacoco/jacoco/releases/tag/v0.8.13>`__
+
+* maven-archetype-plugin 3.3.0 → 3.4.0, release notes:
+  * `3.3.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122&version=12355155>`__
+  * `3.4.0 <https://github.com/apache/maven-archetype/releases/tag/maven-archetype-3.4.0>`__
+
+* maven-bundle-plugin `5.1.9 → 6.0.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12355325>`__
+
+* maven-checkstyle-plugin `3.5.0 → 3.6.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317223&version=12355210>`__
+
+* maven-clean-plugin 3.4.0 → 3.5.0, release notes:
+  * `3.4.1 <https://github.com/apache/maven-clean-plugin/releases/tag/maven-clean-plugin-3.4.1>`__
+  * `3.5.0 <https://github.com/apache/maven-clean-plugin/releases/tag/maven-clean-plugin-3.5.0>`__
+
+* maven-compiler-plugin `3.13.0 → 3.14.0 <https://github.com/apache/maven-compiler-plugin/releases/tag/maven-compiler-plugin-3.14.0>`__
+
+* maven-dependency-plugin `3.8.0 → 3.8.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227&version=12355206>`__
+
+* maven-deploy-plugin `3.1.3 → 3.1.4 <https://github.com/apache/maven-deploy-plugin/releases/tag/maven-deploy-plugin-3.1.4>`__
+
+* maven-enforcer-plugin `3.5.0 → 3.6.0 <https://github.com/apache/maven-enforcer/releases/tag/enforcer-3.6.0>`__
+
+* maven-help-plugin `3.5.0 → 3.5.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522&version=12355200>`__
+
+* maven-install-plugin `3.1.3 → 3.1.4 <https://github.com/apache/maven-install-plugin/releases/tag/maven-install-plugin-3.1.4>`__
+
+* maven-invoker-plugin 3.8.0 → 3.9.1, release notes:
+  * `3.8.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525&version=12355205>`__
+  * `3.9.0 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.9.0>`__
+  * `3.9.1 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.9.1>`__
+
+* maven-javadoc-plugin 3.10.1 → 3.11.2, release notes:
+  * `3.11.1 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12355245>`__
+  * `3.11.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529&version=12355299>`__
+
+* maven-project-info-reports-plugin 3.7.0 → 3.9.0, release notes:
+  * `3.8.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821&version=12355138>`__
+  * `3.9.0 <https://github.com/apache/maven-project-info-reports-plugin/releases/tag/maven-project-info-reports-plugin-3.9.0>`__
+
+* maven-remote-resources-plugin `3.2.0 → 3.3.0 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317825&version=12354381>`__
+
+* maven-site-plugin `3.20.0 → 3.21.0 <https://github.com/apache/maven-site-plugin/releases/tag/maven-site-plugin-3.21.0>`__
+
+* maven-surefire-plugin 3.5.1 → 3.5.3, release notes:
+  * `3.5.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927&version=12355213>`__
+  * `3.5.3 <https://github.com/apache/maven-surefire/releases/tag/maven-surefire-3.5.3>`__
+
+* spotbugs-maven-plugin 4.8.6.4 → 4.8.6.6, release notes:
+  * `4.8.6.5 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.6.5>`__
+  * `4.8.6.6 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.6.6>`__
+
+* versions-maven-plugin `2.17.1 → 2.18.0 <https://github.com/mojohaus/versions/releases/tag/2.18.0>`__
+
 Version 13.1.5
 --------------
 This is a bug-fix upgrade from version 13.1.4.
