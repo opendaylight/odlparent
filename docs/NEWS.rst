@@ -2,9 +2,17 @@
 ODL Parent release notes
 ========================
 
+Version 13.1.7
+--------------
+This is a bug-fix upgrade from version 13.1.6.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Netty `4.1.121 → 4.1.122 <https://netty.io/news/2025/06/03/4-1-122-Final.html>`__
+
 Version 13.1.6
 --------------
-This is a bug-fix upgrade from version 13.1.4.
+This is a bug-fix upgrade from version 13.1.5.
 
 Improvements and new features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
