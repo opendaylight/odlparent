@@ -8,6 +8,8 @@ This is a bug-fix upgrade from version 13.1.6.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
+* error_prone_annotations 2.39.0 → 2.40.0
+
 * Netty `4.1.121 → 4.1.122 <https://netty.io/news/2025/06/03/4-1-122-Final.html>`__
 
 Version 13.1.6
