@@ -245,6 +245,9 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
             <goals>
               <goal>assembly</goal>
             </goals>
+            <configuration>
+              <javase>${maven.compiler.release}</javase>
+            </configuration>
           </execution>
       </executions>
       </plugin>
