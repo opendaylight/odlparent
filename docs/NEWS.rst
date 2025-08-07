@@ -391,10 +391,10 @@ Third-party dependencies
   * `10.18.0 <https://checkstyle.org/releasenotes.html#Release_10.18.0>`__
   * `10.18.1 <https://checkstyle.org/releasenotes.html#Release_10.18.1>`__
 
-* commons-lang3 3.14.0 → 3.16.0, release notes:
-  * `3.15.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.15.0>`__
-  * `3.16.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.16.0>`__
-  * `3.17.0 <https://commons.apache.org/proper/commons-lang/changes-report.html#a3.17.0>`__
+* commons-lang3 3.14.0 → 3.17.0, release notes:
+  * `3.15.0 <https://commons.apache.org/proper/commons-lang/changes.html#a3.15.0>`__
+  * `3.16.0 <https://commons.apache.org/proper/commons-lang/changes.html#a3.16.0>`__
+  * `3.17.0 <https://commons.apache.org/proper/commons-lang/changes.html#a3.17.0>`__
 
 * error_prone_annotations 2.28.0 → 2.31.0
 
