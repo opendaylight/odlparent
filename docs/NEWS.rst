@@ -2,6 +2,86 @@
 ODL Parent release notes
 ========================
 
+Version 14.1.1
+--------------
+This is a bug-fix/feature upgrade from version 14.1.0.
+
+Bug fixes
+~~~~~~~~~
+* The fast profile, enabled by ``-Pf``, inadvertedly disabled test execution. This has been corrected, so unit tests
+  execute normally.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle 10.25.0 → 11.0.0, release notes:
+  * `10.26.0 <https://checkstyle.org/releasenotes.html#Release_10.26.0>`__
+  * `10.26.1 <https://checkstyle.org/releasenotes.html#Release_10.26.1>`__
+  * `11.0.0 <https://checkstyle.org/releasenotes.html#Release_11.0.0>`__
+
+* commons-io `2.19.0 → 2.20.0 <https://commons.apache.org/proper/commons-io/changes.html#a2.20.0>`__
+
+* commons-lang3 `3.17.0 → 3.18.0 <https://commons.apache.org/proper/commons-lang/changes.html#a3.18.0>``
+
+* commons-text `1.13.0 → 1.13.1 <https://commons.apache.org/proper/commons-text/changes.html#a1.13.1>`__
+
+* Dropwizard Metrics `4.2.32 → 4.2.33 <https://github.com/dropwizard/metrics/releases/tag/v4.2.33>`__
+
+* error_prone_annotations 2.39.0 → 2.41.0
+
+* immutables.org 2.10.1 → 2.11.2, release notes:
+  * `2.11.0 <https://github.com/immutables/immutables/releases/tag/2.11.0>`__
+  * `2.11.1 <https://github.com/immutables/immutables/releases/tag/2.11.1>`__
+  * `2.11.2 <https://github.com/immutables/immutables/releases/tag/2.11.2>`__
+
+* Jackson 2.19.0 → 2.19.2, release notes:
+  * `2.19.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.19.1>`__
+  * `2.19.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.19.2>`__
+
+* JUnit 5.13.1 → 5.13.4, release notes:
+  * `5.13.2 <https://junit.org/junit5/docs/5.13.4/release-notes/#release-notes-5.13.2>`__
+  * `5.13.3 <https://junit.org/junit5/docs/5.13.4/release-notes/#release-notes-5.13.3>`__
+  * `5.13.4 <https://junit.org/junit5/docs/5.13.4/release-notes/#release-notes-5.13.4>`__
+
+* Karaf `4.4.7 → 4.4.8 <https://github.com/apache/karaf/blob/karaf-4.4.8/RELEASE-NOTES.md#apache-karaf-448>`__
+
+* Logback 1.3.14 → 1.5.18, release notes:
+  * `1.5.0 <https://logback.qos.ch/news.html#1.5.0`__
+  * `1.5.1 <https://logback.qos.ch/news.html#1.5.1`__
+  * `1.5.2 <https://logback.qos.ch/news.html#1.5.2`__
+  * `1.5.3 <https://logback.qos.ch/news.html#1.5.3`__
+  * `1.5.4 <https://logback.qos.ch/news.html#1.5.4`__
+  * `1.5.5 <https://logback.qos.ch/news.html#1.5.5`__
+  * `1.5.6 <https://logback.qos.ch/news.html#1.5.6`__
+  * `1.5.7 <https://logback.qos.ch/news.html#1.5.7`__
+  * `1.5.8 <https://logback.qos.ch/news.html#1.5.8`__
+  * `1.5.9 <https://logback.qos.ch/news.html#1.5.9`__
+  * `1.5.10 <https://logback.qos.ch/news.html#1.5.10`__
+  * `1.5.11 <https://logback.qos.ch/news.html#1.5.11`__
+  * `1.5.12 <https://logback.qos.ch/news.html#1.5.12`__
+  * `1.5.13 <https://logback.qos.ch/news.html#1.5.13`__
+  * `1.5.14 <https://logback.qos.ch/news.html#1.5.14`__
+  * `1.5.15 <https://logback.qos.ch/news.html#1.5.15`__
+  * `1.5.16 <https://logback.qos.ch/news.html#1.5.16`__
+  * `1.5.17 <https://logback.qos.ch/news.html#1.5.17`__
+  * `1.5.18 <https://logback.qos.ch/news.html#1.5.18`__
+
+* Pax Exam `4.13.4 → 4.14.0 <https://github.com/ops4j/org.ops4j.pax.exam/milestone/69?closed=1>`__
+
+* Pax URL `2.6.16 → 2.6.17 <https://github.com/ops4j/org.ops4j.pax.url/milestone/84?closed=1>`__
+
+* xmlunit 2.10.2 → 2.10.3, release notes:
+  * `2.10.3 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.3>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram `2.3.2 → 3.0.1 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v3.0.1>`__
+
+* maven-enforcer-plugin 3.5.0 → 3.6.1, release notes:
+  * `3.6.0 <https://github.com/apache/maven-enforcer/releases/tag/enforcer-3.6.0>`__
+  * `3.6.1 <https://github.com/apache/maven-enforcer/releases/tag/enforcer-3.6.1>`__
+
+* maven-invoker-plugin `3.9.0 → 3.9.1 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.9.1>`__
+
 Version 14.1.0
 --------------
 This is a bug-fix/feature upgrade from version 14.0.9.
