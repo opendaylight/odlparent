@@ -67,12 +67,6 @@
       <Bug pattern="CT_CONSTRUCTOR_THROW"/>
 
       <!--
-           https://github.com/spotbugs/spotbugs/issues/2932. Causes a ton of false positives with eagerly-instantiated
-           singletons.
-      -->
-      <Bug pattern="SING_SINGLETON_GETTER_NOT_SYNCHRONIZED"/>
-
-      <!--
            https://github.com/spotbugs/spotbugs/issues/2934. The logic identifying singletons seems to be over-eager,
            assuming that a class is meant to be a singleton when there even is a single singleton value.
       -->
