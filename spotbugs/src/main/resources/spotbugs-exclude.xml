@@ -46,13 +46,6 @@
       <Bug pattern="MS_EXPOSE_REP"/>
 
       <!--
-           https://github.com/spotbugs/spotbugs/issues/2750. The heuristic in this check does not work quite a few
-           cases, such as null guards (which we would use in serialization proxies) and plain if() without an else,
-           such as if(foo != null) { throw new ISE() }.
-      -->
-      <Bug pattern="SE_PREVENT_EXT_OBJ_OVERWRITE"/>
-
-      <!--
            As described in https://spotbugs.readthedocs.io/en/stable/bugDescriptions.html#ct-be-wary-of-letting-constructors-throw-exceptions-ct-constructor-throw,
            CT_CONSTRUCTOR_THROW is design to mitigate finalize()-based attacks.
 
