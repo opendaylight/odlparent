@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b16d7204_552ea8b5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-08-21T12:58:31Z",
+      "side": 1,
+      "message": "https://github.com/spotbugs/spotbugs/issues/3645",
+      "revId": "24a2a32e8aab0498cbf19b1f8c295740839443e5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
