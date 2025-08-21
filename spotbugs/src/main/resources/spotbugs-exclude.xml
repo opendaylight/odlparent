@@ -60,12 +60,6 @@
       <Bug pattern="CT_CONSTRUCTOR_THROW"/>
 
       <!--
-           https://github.com/spotbugs/spotbugs/issues/2934. The logic identifying singletons seems to be over-eager,
-           assuming that a class is meant to be a singleton when there even is a single singleton value.
-      -->
-      <Bug pattern="SING_SINGLETON_HAS_NONPRIVATE_CONSTRUCTOR"/>
-
-      <!--
            https://github.com/spotbugs/spotbugs/issues/2933. Causes false positives with readResolve()d singletons.
       -->
       <Bug pattern="SING_SINGLETON_IMPLEMENTS_SERIALIZABLE"/>
