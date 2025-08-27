@@ -11,9 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 
 import org.junit.jupiter.api.Test;
 
-public class JmpsInterfaceTest {
+class JmpsInterfaceTest {
     @Test
-    public void testBuilder() {
+    void testBuilder() {
         assertInstanceOf(JpmsInterface.class, ImmutableJpmsInterface.builder().foo(1).build());
     }
 }
