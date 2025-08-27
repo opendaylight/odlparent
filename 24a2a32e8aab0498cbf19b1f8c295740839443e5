@@ -16,6 +16,24 @@
       "message": "https://github.com/spotbugs/spotbugs/issues/3645",
       "revId": "24a2a32e8aab0498cbf19b1f8c295740839443e5",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76db60b8_b08862ba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-08-27T15:11:17Z",
+      "side": 1,
+      "message": "downgraded to 4.9.3",
+      "parentUuid": "b16d7204_552ea8b5",
+      "revId": "24a2a32e8aab0498cbf19b1f8c295740839443e5",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
