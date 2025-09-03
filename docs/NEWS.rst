@@ -2,6 +2,52 @@
 ODL Parent release notes
 ========================
 
+Version 14.1.2
+--------------
+This is a security/bug-fix/feature upgrade from version 14.1.1.
+
+Bug fixes
+~~~~~~~~~
+* ``Karaf-4.4.8`` and earlier do not correctly expose Java Flight Recorder packages from the framework bundle,
+  as reported in `KARAF-7999 <https://issues.apache.org/jira/browse/KARAF-7999>`__. This release contains
+  a packaging workaround which fixes this bug at least for normal Karaf distributions.
+
+* SpotBugs ``SING_SINGLETON_GETTER_NOT_SYNCHRONIZED`` bug pattern has remained suppressed even after we upgraded
+  to a version which does not produce false positives. This has been corrected and this pattern is now being
+  reported.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ``netty-codec-http3`` is now supported on Linux/x86_64 via a standalone ``odl-netty-http3`` feature.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* AssertJ `3.27.3 → 3.27.4 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.4>`__
+
+* Checkstyle `11.0.0 → 11.0.1 <https://checkstyle.org/releasenotes.html#Release_11.0.1>`__
+
+* Dropwizard Metrics 4.2.33 → 4.2.36, release notes:
+  * `4.2.34 <https://github.com/dropwizard/metrics/releases/tag/v4.2.34>`__
+  * `4.2.35 <https://github.com/dropwizard/metrics/releases/tag/v4.2.35>`__
+  * `4.2.36 <https://github.com/dropwizard/metrics/releases/tag/v4.2.36>`__
+
+* immutables.org `2.11.2 → 2.11.3 <https://github.com/immutables/immutables/releases/tag/2.11.0>`__
+
+* Mockito `5.18.0 → 5.19.0 <https://github.com/mockito/mockito/releases/tag/v5.18.0>`__
+
+* Netty 4.2.2.Final → 4.2.5.Final, release notes:
+  * `4.2.3.Final <https://netty.io/news/2025/07/15/4-2-3.html>`__
+  * `4.2.3.Final <https://netty.io/news/2025/08/13/4-2-4.html>`__
+  * `4.2.3.Final <https://netty.io/news/2025/09/03/4-2-5.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* modernizer-maven-plugin 3.0.0 → 3.2.0, release notes:
+  * `3.1.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-3.1.0>`__
+  * `3.2.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-3.2.0>`__
+
+* spotbugs-maven-plugin `4.8.6.6 → 4.8.6.7 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.6.7>`__
+
 Version 14.1.1
 --------------
 This is a bug-fix/feature upgrade from version 14.1.0.
