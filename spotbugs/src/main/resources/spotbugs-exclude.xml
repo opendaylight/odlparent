@@ -78,14 +78,8 @@
       <Bug pattern="SING_SINGLETON_IMPLEMENTS_SERIALIZABLE"/>
 
       <!--
-           Fixed in 4.9.4, but still in 4.9.3:
-           - https://github.com/spotbugs/spotbugs/issues/3428
-           - https://github.com/spotbugs/spotbugs/issues/3363
-
-           https://github.com/spotbugs/spotbugs/issues/3516.
-           Overall the heuristics seem to be flaky at best and causes all sorts of false positives.
+           https://github.com/spotbugs/spotbugs/issues/3516. Causes all sorts of false positives.
       -->
-      <Bug pattern="AT_NONATOMIC_64BIT_PRIMITIVE"/>
       <Bug pattern="AT_NONATOMIC_OPERATIONS_ON_SHARED_VARIABLE"/>
       <Bug pattern="AT_STALE_THREAD_WRITE_OF_PRIMITIVE"/>
 
