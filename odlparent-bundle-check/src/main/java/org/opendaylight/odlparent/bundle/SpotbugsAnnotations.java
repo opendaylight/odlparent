@@ -9,7 +9,7 @@ package org.opendaylight.odlparent.bundle;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
-@SuppressFBWarnings(value = "UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD")
-public final class SpotbugsAnnotations {
-    public byte[] bytes;
+@SuppressFBWarnings
+public interface SpotbugsAnnotations {
+
 }

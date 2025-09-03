@@ -8,5 +8,6 @@
 module org.opendaylight.odlparent.test.immutables.jpms {
     exports org.opendaylight.odlparent.test.immutables.jpms;
 
+    requires static com.github.spotbugs.annotations;
     requires static transitive org.immutables.value.annotations;
 }
