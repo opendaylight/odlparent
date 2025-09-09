@@ -37,8 +37,8 @@ Third-party dependencies
 
 * Netty 4.2.2.Final → 4.2.5.Final, release notes:
   * `4.2.3.Final <https://netty.io/news/2025/07/15/4-2-3.html>`__
-  * `4.2.3.Final <https://netty.io/news/2025/08/13/4-2-4.html>`__
-  * `4.2.3.Final <https://netty.io/news/2025/09/03/4-2-5.html>`__
+  * `4.2.4.Final <https://netty.io/news/2025/08/13/4-2-4.html>`__
+  * `4.2.5.Final <https://netty.io/news/2025/09/03/4-2-5.html>`__
 
 Plugin upgrades
 ~~~~~~~~~~~~~~~
