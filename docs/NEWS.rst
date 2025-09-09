@@ -2,6 +2,18 @@
 ODL Parent release notes
 ========================
 
+Version 14.1.3
+--------------
+This is a bug-fix upgrade from version 14.1.2.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Netty `4.2.5.Final → 4.2.6.Final <https://netty.io/news/2025/09/08/4-2-6.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* versions-maven-plugin, `2.18.0 → 2.19.0 <https://github.com/mojohaus/versions/releases/tag/2.19.0>`__
+
 Version 14.1.2
 --------------
 This is a security/bug-fix/feature upgrade from version 14.1.1.
