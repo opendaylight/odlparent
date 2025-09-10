@@ -121,9 +121,9 @@
                 <patch patchfile="${project.basedir}/src/main/patches/karaf-remove-bc.patch"
                        originalfile="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                        failonerror="true"/>
-                <!-- Commented out for later reuse
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
-                         token="commons-io/2.18.0" value="commons-io/2.20.0" failOnNoReplacements="true"/>
+                         token="commons-codec/2.15.0" value="commons-codec/2.19.0" failOnNoReplacements="true"/>
+                <!-- Commented out for later reuse
                 <replace file="${project.build.directory}/assembly/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"
                          token="commons-lang3/3.17.0" value="commons-lang3/3.18.0" failOnNoReplacements="true"/>
                 -->
