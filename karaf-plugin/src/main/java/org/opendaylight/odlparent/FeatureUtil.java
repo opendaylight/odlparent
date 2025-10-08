@@ -27,7 +27,6 @@ import org.apache.karaf.features.internal.model.Feature;
 import org.apache.karaf.features.internal.model.Features;
 import org.apache.karaf.features.internal.model.JaxbUtil;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.checkerframework.checker.regex.qual.Regex;
 import org.eclipse.aether.artifact.Artifact;
 import org.ops4j.pax.url.mvn.internal.Parser;
 import org.slf4j.Logger;
@@ -38,10 +37,7 @@ public final class FeatureUtil {
 
     private static final Pattern MVN_PATTERN = Pattern.compile("mvn:", Pattern.LITERAL);
     private static final Pattern WRAP_PATTERN = Pattern.compile("wrap:", Pattern.LITERAL);
-
-    @Regex
-    private static final String VERSION_STRIP_PATTERN_STR = "\\$.*$";
-    private static final Pattern VERSION_STRIP_PATTERN = Pattern.compile(VERSION_STRIP_PATTERN_STR);
+    private static final Pattern VERSION_STRIP_PATTERN = Pattern.compile("\\$.*$");
 
     private final AetherUtil aetherUtil;
     private final File localRepo;
