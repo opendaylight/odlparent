@@ -326,14 +326,13 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
                 if (value.startsWith(name)) {
                     final var valueVersionRange = value.substring(name.length());
                     return versionRange.containsVersion(new DefaultArtifactVersion(valueVersionRange));
-                } else {
-                    return false;
                 }
-            } else if (pattern != null) {
-                return pattern.matcher(value).matches();
-            } else {
-                return name.equals(value);
+                return false;
             }
+            if (pattern != null) {
+                return pattern.matcher(value).matches();
+            }
+            return name.equals(value);
         }
     }
 }
