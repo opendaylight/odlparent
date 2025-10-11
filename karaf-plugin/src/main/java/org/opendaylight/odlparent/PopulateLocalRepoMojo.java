@@ -156,10 +156,8 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
     }
 
     /**
-     * Read blacklisted features
-     *
-     * <p>Read features which are enclosed by {@snippet <blacklisted>} tag in maven configuration.
-     * Ignore those entries which are blank.
+     * Read blacklisted, i.e. those enclosed by {@code <blacklisted>} tag in maven configuration. Ignore those entries
+     * which are blank.
      *
      * @return {@code List} of non-blank blacklisted features
      */
@@ -184,10 +182,8 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
     }
 
     /**
-     * Remove blacklisted feature repositories and features
-     *
-     * <p>First filter feature repositories by removing those which are blacklisted.
-     * Then clean features of all remaining repositories.
+     * Remove blacklisted feature repositories and features. First filter feature repositories by removing those which
+     * are blacklisted. Then clean features of all remaining repositories.
      *
      * @param featureRepos All feature repositories we depend on
      * @param blackListedFeatures List of blacklisted feature repos/features names
