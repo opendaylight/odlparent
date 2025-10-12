@@ -43,9 +43,9 @@ Third-party dependencies
   * `4.2.35 <https://github.com/dropwizard/metrics/releases/tag/v4.2.35>`__
   * `4.2.36 <https://github.com/dropwizard/metrics/releases/tag/v4.2.36>`__
 
-* immutables.org `2.11.2 → 2.11.3 <https://github.com/immutables/immutables/releases/tag/2.11.0>`__
+* immutables.org `2.11.2 → 2.11.3 <https://github.com/immutables/immutables/releases/tag/2.11.3>`__
 
-* Mockito `5.18.0 → 5.19.0 <https://github.com/mockito/mockito/releases/tag/v5.18.0>`__
+* Mockito `5.18.0 → 5.19.0 <https://github.com/mockito/mockito/releases/tag/v5.19.0>`__
 
 * Netty 4.2.2.Final → 4.2.5.Final, release notes:
   * `4.2.3.Final <https://netty.io/news/2025/07/15/4-2-3.html>`__
@@ -127,8 +127,7 @@ Third-party dependencies
 
 * Pax URL `2.6.16 → 2.6.17 <https://github.com/ops4j/org.ops4j.pax.url/milestone/84?closed=1>`__
 
-* xmlunit 2.10.2 → 2.10.3, release notes:
-  * `2.10.3 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.3>`__
+* xmlunit `2.10.2 → 2.10.3 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.3>`__
 
 Plugin upgrades
 ~~~~~~~~~~~~~~~
@@ -154,7 +153,7 @@ Improvements and new features
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
-* Bouncy Castle `1.89 → 1.81 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java=release-1-81>`__
+* Bouncy Castle `1.80 → 1.81 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java=release-1-81>`__
 
 * checker-qual 3.49.2 → 3.49.3
 
