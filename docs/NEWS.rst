@@ -2,6 +2,66 @@
 ODL Parent release notes
 ========================
 
+Version 14.1.4
+--------------
+This is a bug-fix upgrade from version 14.1.3.
+
+Bug fixes
+~~~~~~~~~
+* The fast profile, enabled by ``-Pf``, inadvertedly disabled checkstyle execution. This has been corrected so that
+  checkstyle-maven-plugin executes normally.
+* ``commons-codec`` packaging from Karaf and our declaration was not aligned. This has now been fixed.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* AssertJ 3.27.4 → 3.27.6, release notes:
+  * `3.27.5 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.5>`__
+  * `3.27.6 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.6>`__
+
+* Bouncy Castle `1.81 → 1.82 <https://www.bouncycastle.org/resources/new-releases-bouncy-castle-java-1-82-and-bouncy-castle-java-lts-2-73-9/>`__
+
+* Checkstyle 11.0.1 → 12.0.0, release notes:
+  * `11.1,0  <https://checkstyle.org/releasenotes.html#Release_11.1.0>`__
+  * `12.0,0  <https://checkstyle.org/releasenotes.html#Release_12.0.0>`__
+
+* checker-qual 3.50.0 → 3.51.1
+
+* commons-lang3 `3.18.0 → 3.19.0 <https://commons.apache.org/proper/commons-lang/changes.html#a3.19.0>`__
+
+* Dropwizard Metrics `4.2.36 → 4.2.37 <https://github.com/dropwizard/metrics/releases/tag/v4.2.37>`__
+
+* error_prone_annotations 2.41.0 → 2.42.0
+
+* GSON `2.13.1 → 2.13.2 <https://github.com/google/gson/releases/tag/gson-parent-2.13.2>`__
+
+* Guava `33.4.8 → 33.5.0 <https://github.com/google/guava/releases/tag/v33.5.0>`__
+
+* immutables.org `2.11.3 → 2.11.4 <https://github.com/immutables/immutables/releases/tag/2.11.4>`__
+
+* Mockito `5.19.0 → 5.20.0 <https://github.com/mockito/mockito/releases/tag/v5.20.0>`__
+
+* xmlunit `2.10.3 → 2.10.4 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.4>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* exec-maven-plugin 3.5.1 → 3.6.1, release notes:
+  * `3.6.0 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.6.0>`__
+  * `3.6.1 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.6.1>`__
+
+* maven-archetype-plugin `3.4.0 → 3.4.1 <https://github.com/apache/maven-archetype/releases/tag/maven-archetype-3.4.1>`__
+
+* maven-compiler-plugin `3.14.0 → 3.14.1 <https://github.com/apache/maven-compiler-plugin/releases/tag/maven-compiler-plugin-3.14.1>`__
+
+* maven-enforcer-plugin `3.6.1 → 3.6.2 <https://github.com/apache/maven-enforcer/releases/tag/enforcer-3.6.2>`__
+
+* maven-javadoc-plugin `3.11.2 → 3.12,0 <https://github.com/apache/maven-javadoc-plugin/releases/tag/maven-javadoc-plugin-3.12.0>`__
+
+* maven-shade-plugin `3.6.0 → 3.6.1 <https://github.com/apache/maven-shade-plugin/releases/tag/v3.6.1>`__
+
+* maven-surefire-plugin `3.5.3 → 3.5.4 <https://github.com/apache/maven-surefire/releases/tag/maven-surefire-3.5.4>`__
+
+* versions-maven-plugin, `2.19.0 → 2.19.1 <https://github.com/mojohaus/versions/releases/tag/2.19.1>`__
+
 Version 14.1.3
 --------------
 This is a bug-fix upgrade from version 14.1.2.
