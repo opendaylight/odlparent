@@ -574,3 +574,54 @@ assuming the appropriate dependency management:
 (the version number there is appropriate for Carbon). We no longer use version
 ranges, the feature dependencies all use the ``odlparent`` version (but you
 should rely on the artifacts POM).
+
+Automating feature template migration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This repository includes a `small sh  helper script <migrate-feature.sh>`_. which prepares
+``src/main/feature/template.xml`` files and updates feature modules for use with
+``template-feature-parent``.
+
+What it does
+^^^^^^^^^^^^
+- Optionally builds the repo once with ``mvn clean install -Pq`` (triggered by ``--build``).
+- Copies each generated ``target/feature/feature.xml`` to
+  ``src/main/feature/template.xml`` (keeps the original in ``target/``).
+- Normalizes the XML prolog and injects the copyright header
+  (header immediately follows the ``<?xml …?>`` declaration).
+- Rewrites versions inside the **template.xml**:
+  - All non-``<configfile>`` Maven coords → ``{{versionAsInProject}}``.
+  - ``<configfile>… mvn:…/<version>/ …</configfile>`` → ``${project.version}``.
+  - Dependency ``<feature version="…">`` (those **without** ``name=``):
+    - ranges like ``[14,15)`` → ``version="{{semVerRange}}"``
+    - exact versions → ``version="{{versionAsInProject}}"``
+- Cleans up the **template.xml**:
+  - Removes ``description`` and ``version`` attributes from the top-level ``<feature name="…">``.
+  - Removes any ``<details>…</details>`` lines.
+  - Removes ``prerequisite="…"`` and ``dependency="…"`` attributes from dependency ``<feature>`` lines.
+- Updates each module’s ``pom.xml`` parent:
+  - ``<artifactId>feature-parent</artifactId>`` → ``template-feature-parent``
+  - ``<relativePath>../feature-parent[…]</relativePath>`` → ``../parent[…]``
+  - add ``<description/>`` if no exists
+
+How to run
+^^^^^^^^^^
+From the ``features/`` directory:
+
+.. code-block:: bash
+
+   # from repo root
+   ./migrate-feature.sh
+   ./migrate-feature.sh --build   # run mvn once before migration
+
+
+Notes
+^^^^^
+- The script accepts exactly one optional parameter: ``--build``.
+  If provided, it runs ``mvn clean install -Pq`` **once before** migration.
+
+- Rebuild to verify:
+
+  .. code-block:: bash
+
+     mvn clean install
