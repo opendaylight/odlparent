@@ -109,10 +109,6 @@
             <artifactId>junit</artifactId>
         </dependency>
         <dependency>
-            <groupId>net.java.dev.stax-utils</groupId>
-            <artifactId>stax-utils</artifactId>
-        </dependency>
-        <dependency>
             <groupId>net.sourceforge.argparse4j</groupId>
             <artifactId>argparse4j</artifactId>
         </dependency>
