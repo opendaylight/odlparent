@@ -319,12 +319,6 @@
         <scope>import</scope>
       </dependency>
 
-      <dependency>
-        <groupId>xml-apis</groupId>
-        <artifactId>xml-apis</artifactId>
-        <version>1.4.01</version>
-      </dependency>
-
       <!-- Plugin integration -->
       <dependency>
         <groupId>net.java.dev.stax-utils</groupId>
