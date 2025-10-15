@@ -987,7 +987,6 @@
                     <overWrite>false</overWrite>
                   </artifactItem>
                 </artifactItems>
-                <silent>true</silent>
               </configuration>
             </execution>
             <execution>
