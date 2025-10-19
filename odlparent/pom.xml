@@ -1467,6 +1467,99 @@
     </plugins>
   </build>
 
+  <profiles>
+    <profile>
+      <id>errorprone</id>
+      <activation>
+        <!-- Activated unless we are running in M2E, which would indicated JDT -->
+        <property>
+          <name>!m2e.version</name>
+        </property>
+        <!-- JDK22 is an unknown, let's not activate with it just now -->
+        <jdk>[9,22)</jdk>
+      </activation>
+
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <!-- Needed for add-{exports,opens} below -->
+              <fork>true</fork>
+              <compilerArgs combine.children="append">
+                <arg>-XDcompilePolicy=simple</arg>
+                <arg>--should-stop=ifError=FLOW</arg>
+
+                <!-- Needed until EP uses something else than private APIs -->
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+
+                <!-- Note on formatting here: be absolutely sure to escape the EOL, so that the argument ends up being
+                     a single line, as per https://errorprone.info/docs/flags#maven -->
+                <arg>-Xplugin:ErrorProne \
+                  -XepExcludedPaths:.*/target/.* \
+                  -XepDisableWarningsInGeneratedCode \
+                  <!-- Keep options sorted for easy cross-reference to https://errorprone.info/bugpatterns and provide
+                       a brief explanation on why we are changing the detault --> \
+                  \
+                  <!-- On-by-default errors we turn down or off, alpha-sorted --> \
+                  \
+                  <!-- On-by-default warnings we turn up or off, alpha-sorted --> \
+                  <!-- triggers on concise equals() methods which do 'obj == this || ...' --> \
+                  -Xep:OperatorPrecedence:OFF \
+                  \
+                  <!-- Experimantal errors we turn on, alpha-sorted --> \
+                  <!-- class name/file name should match even in package-private files --> \
+                  -Xep:ClassName \
+                  <!-- enforce Javadoc/javac deprecation consistency --> \
+                  -Xep:DepAnn \
+                  <!-- be very mindful of crypto, see https://errorprone.info/bugpattern/InsecureCryptoUsage --> \
+                  -Xep:InsecureCryptoUsage \
+                  <!-- prevents confusion between '11' and '1l' by forcing the latter to be '1L' --> \
+                  -Xep:LongLiteralLowerCaseSuffix \
+                  <!-- System.exit() calls are extremely dangerous --> \
+                  -Xep:SystemExitOutsideMain \
+                  <!-- JUnit4's @Test(expected=...) cannot be easily be migrated to JUnit5 --> \
+                  -Xep:TestExceptionChecker \
+                  <!-- Java assertions are disabled by default, our guidelines specifically say they should not be used
+                       anywhere. This is always wrong. --> \
+                  -Xep:UseCorrectAssertInTests \
+                  <!-- Experimantal warnings we turn on, alpha-sorted --> \
+                  <!-- correct positioning of annotations is critical, especially with TYPE_USE annotations --> \
+                  -Xep:AnnotationPosition:ERROR \
+                  <!-- compiling a Pattern is expensive and patterns with compile-time constants shoult always be
+                       pre-computed --> \
+                  -Xep:ConstantPatternCompile:ERROR \
+                  <!-- misusing @see with URLs is a common mistake --> \
+                  -Xep:UrlInSee:ERROR \
+                  \
+                  <!-- Experimantal suggestions we turn on, alpha-sorted --> \
+                  <!-- there is really no excuse to use enum without a switch --> \
+                  -Xep:UseEnumSwitch:ERROR</arg>
+              </compilerArgs>
+              <annotationProcessorPaths combine.children="append">
+                <path>
+                  <groupId>com.google.errorprone</groupId>
+                  <artifactId>error_prone_core</artifactId>
+                  <!-- Keep this version in sync with dependency declaration above -->
+                  <version>2.42.0</version>
+                </path>
+              </annotationProcessorPaths>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
   <reporting>
     <plugins>
       <plugin>
