@@ -95,6 +95,51 @@
          checking. Defaults to false. Set to 'true' in pom.xml of a project which
          desires to not check the consistency of its dependencies. -->
     <odlparent.dependency.skip>false</odlparent.dependency.skip>
+
+    <!-- Control over whether we instruct maven-compiler-plugin to use forked mode.
+         The default is safe for any deployment, leading to a less efficient build, as each invocation of javac
+         needs to be warmed up.
+
+         Projects can set up their git repository to include the required JVM flags in their top-level .mvn/jvm.config
+         file as noted at the bottom of Maven section of https://errorprone.info/docs/installation. Once done, such
+         projects can set this property to 'false', eliminating the inefficiency.
+         Please this can lead to https://github.com/google/error-prone/issues/2793, which we have not triaged
+         in OpenDaylight projects.
+
+         The specific impact measured in this repository with 'mvn clean install -Pq' is about 50%, based on:
+
+           Temurin 21.0.8, odl.ep.fork=true
+            real    0m59,133s
+            user    3m18,548s
+            sys     0m9,322s
+
+           Temurin 21.0.8, odl.ep.fork=false
+            real    0m47,013s
+            user    2m15,346s
+            sys     0m5,865s
+
+           Temurin 25.0.0, odl.ep.fork=true
+            real    0m57,253s
+            user    3m1,776s
+            sys     0m9,834s
+
+           Temurin 25.0.0, odl.ep.fork=false
+            real    0m43,518s
+            user    2m1,888s
+            sys     0m4,859s
+
+          Downstreams are advised to take advantage of this override in the project-specific parent artifacts.
+    -->
+    <odl.ep.fork>true</odl.ep.fork>
+
+    <!-- Control over https://errorprone.info/bugpattern/Var. This defaults to OFF, but can be overridden
+         by downstreams to opt-in to less-verbose code, whose is semantics is different from plain Java. Valid values
+         are OFF, WARN and ERROR. -->
+    <odl.ep.var>OFF</odl.ep.var>
+
+    <!-- Control over any other arguments one might wish to pass to Error Prone. This can be used to change default
+         configuration. Note this value has to evaluate to a single line. -->
+    <odl.ep.extra/>
   </properties>
 
   <dependencyManagement>
@@ -253,6 +298,7 @@
       <dependency>
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
+        <!-- Keep this version in sync with annotationProcessorPaths declaration of error_prone_core below -->
         <version>2.42.0</version>
       </dependency>
 
@@ -1466,6 +1512,97 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>ep</id>
+
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <!-- Needed for add-{exports,opens} below -->
+              <fork>${odl.ep.fork}</fork>
+              <compilerArgs combine.children="append">
+                <arg>-XDcompilePolicy=simple</arg>
+                <arg>--should-stop=ifError=FLOW</arg>
+
+                <!-- Needed until EP uses something else than private APIs -->
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+
+                <!-- Note on formatting here: be absolutely sure to escape the EOL, so that the argument ends up being
+                     a single line, as per https://errorprone.info/docs/flags#maven -->
+                <arg>-Xplugin:ErrorProne \
+                  -XepExcludedPaths:.*/target/.* \
+                  -XepDisableWarningsInGeneratedCode \
+                  <!-- Keep options sorted for easy cross-reference to https://errorprone.info/bugpatterns and provide
+                       a brief explanation on why we are changing the detault --> \
+                  \
+                  <!-- On-by-default errors we turn down or off, alpha-sorted --> \
+                  <!-- changes semantics from plain Java to '@Var means non-final', hence disabled by default,
+                       but made available via a property override --> \
+                  -Xep:Var:${odl.ep.var} \
+                  \
+                  <!-- On-by-default warnings we turn up or off, alpha-sorted --> \
+                  <!-- triggers on concise equals() methods which do 'obj == this || ...' --> \
+                  -Xep:OperatorPrecedence:OFF \
+                  \
+                  <!-- Experimantal errors we turn on, alpha-sorted --> \
+                  <!-- class name/file name should match even in package-private files --> \
+                  -Xep:ClassName \
+                  <!-- enforce Javadoc/javac deprecation consistency --> \
+                  -Xep:DepAnn \
+                  <!-- be very mindful of crypto, see https://errorprone.info/bugpattern/InsecureCryptoUsage --> \
+                  -Xep:InsecureCryptoUsage \
+                  <!-- prevents confusion between '11' and '1l' by forcing the latter to be '1L' --> \
+                  -Xep:LongLiteralLowerCaseSuffix \
+                  <!-- System.exit() calls are extremely dangerous --> \
+                  -Xep:SystemExitOutsideMain \
+                  <!-- JUnit4's @Test(expected=...) cannot be easily be migrated to JUnit5 --> \
+                  -Xep:TestExceptionChecker \
+                  <!-- Java assertions are disabled by default, our guidelines specifically say they should not be used
+                       anywhere. This is always wrong. --> \
+                  -Xep:UseCorrectAssertInTests \
+                  <!-- Experimantal warnings we turn on, alpha-sorted --> \
+                  <!-- correct positioning of annotations is critical, especially with TYPE_USE annotations --> \
+                  -Xep:AnnotationPosition:ERROR \
+                  <!-- compiling a Pattern is expensive and patterns with compile-time constants shoult always be
+                       pre-computed --> \
+                  -Xep:ConstantPatternCompile:ERROR \
+                  <!-- misusing @see with URLs is a common mistake --> \
+                  -Xep:UrlInSee:ERROR \
+                  \
+                  <!-- Experimantal suggestions we turn on, alpha-sorted --> \
+                  <!-- there is really no excuse to use enum without a switch --> \
+                  -Xep:UseEnumSwitch:ERROR \
+                  \
+                  ${odl.ep.extra}</arg>
+              </compilerArgs>
+              <annotationProcessorPaths combine.children="append">
+                <path>
+                  <groupId>com.google.errorprone</groupId>
+                  <artifactId>error_prone_core</artifactId>
+                  <!-- Keep this version in sync with dependency declaration of error_prone_annotations above -->
+                  <!-- When bumping this version also evaluate changes and consider updating the above policy -->
+                  <version>2.42.0</version>
+                </path>
+              </annotationProcessorPaths>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
   <reporting>
     <plugins>
