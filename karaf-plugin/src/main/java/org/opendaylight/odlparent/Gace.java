@@ -28,14 +28,8 @@ final class Gace {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof Gace)) {
-            return false;
-        }
-        Gace gace = (Gace) obj;
-        return Objects.equals(groupId, gace.groupId)
+        return this == obj || obj instanceof Gace gace
+            && Objects.equals(groupId, gace.groupId)
             && Objects.equals(artifactId, gace.artifactId)
             && Objects.equals(classifier, gace.classifier)
             && Objects.equals(extension, gace.extension);
