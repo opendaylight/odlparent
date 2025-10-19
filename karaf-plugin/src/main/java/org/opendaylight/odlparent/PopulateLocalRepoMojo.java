@@ -317,7 +317,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             versionRange = versionRangeResult;
         }
 
-        public boolean compare(final String value) {
+        boolean compare(final String value) {
             if (versionRange != null) {
                 if (value.startsWith(name)) {
                     final var valueVersionRange = value.substring(name.length());
