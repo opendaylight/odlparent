@@ -74,7 +74,8 @@
             <id>disable-sft</id>
             <activation>
                 <!-- Karaf does not have jre.properties for JDK27+ just yet -->
-                <jdk>[27,)</jdk>
+                <!-- FIXME: Karaf fails with Java 24+. Re-enable with Karaf-4.5.0. -->
+                <jdk>[24,)</jdk>
             </activation>
 
             <properties>
