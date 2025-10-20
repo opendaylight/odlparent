@@ -24,9 +24,16 @@
     <properties>
         <!-- Opt-in to our optional code quality checks -->
         <duplicate-finder.skip>false</duplicate-finder.skip> <!-- Classpath duplicates -->
+        <!-- Opt-in to @Var world -->
+        <odl.ep.var>ERROR</odl.ep.var>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.google.errorprone</groupId>
+            <artifactId>error_prone_annotations</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.apache.karaf.bundle</groupId>
             <artifactId>org.apache.karaf.bundle.core</artifactId>

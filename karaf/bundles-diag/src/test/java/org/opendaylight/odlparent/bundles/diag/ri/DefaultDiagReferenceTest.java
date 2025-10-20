@@ -42,7 +42,7 @@ class DefaultDiagReferenceTest {
         doReturn(List.of("value2.1", "value2.2")).when(serviceReference).getProperty("property2");
         doReturn(null).when(serviceReference).getProperty("property3");
 
-        final var map = DefaultDiag.getProperties(serviceReference);
+        var map = DefaultDiag.getProperties(serviceReference);
         assertEquals(3, map.size());
         assertEquals("value1", map.get("property1"));
         assertEquals(List.of("value2.1", "value2.2"), map.get("property2"));
