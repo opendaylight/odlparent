@@ -21,7 +21,7 @@ public interface Diag {
 
     // Iteration order guaranteed to be ordered by ContainerState.ordinal()
     default Map<ContainerState, Integer> containerStateFrequencies() {
-        final var frequencies = new EnumMap<ContainerState, Integer>(ContainerState.class);
+        var frequencies = new EnumMap<ContainerState, Integer>(ContainerState.class);
         for (var bundleState : ContainerState.values()) {
             frequencies.put(bundleState, 0);
         }

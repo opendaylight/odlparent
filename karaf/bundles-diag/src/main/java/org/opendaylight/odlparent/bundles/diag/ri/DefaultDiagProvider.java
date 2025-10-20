@@ -37,7 +37,7 @@ public final class DefaultDiagProvider implements DiagProvider {
     private final BundleContext bundleContext;
 
     @Activate
-    public DefaultDiagProvider(@Reference final BundleService bundleService, final BundleContext bundleContext) {
+    public DefaultDiagProvider(@Reference BundleService bundleService, BundleContext bundleContext) {
         this.bundleService = requireNonNull(bundleService);
         this.bundleContext = requireNonNull(bundleContext);
     }
@@ -46,7 +46,7 @@ public final class DefaultDiagProvider implements DiagProvider {
     public Diag currentDiag() {
         return new DefaultDiag(bundleContext, Arrays.stream(bundleContext.getBundles())
             .map(bundle -> {
-                final var info = bundleService.getInfo(bundle);
+                var info = bundleService.getInfo(bundle);
                 return new DiagBundle(bundle.getBundleId(), info.getName(), bundle.getSymbolicName(),
                     // Note: not info.getVersion() as that can return null
                     bundle.getVersion().toString(), frameworkStateOf(bundle),
@@ -62,8 +62,8 @@ public final class DefaultDiagProvider implements DiagProvider {
      * @param bundle a {@link Bundle}
      * @return A {@link FrameworkState}
      */
-    private static FrameworkState frameworkStateOf(final Bundle bundle) {
-        final int state = bundle.getState();
+    private static FrameworkState frameworkStateOf(Bundle bundle) {
+        int state = bundle.getState();
         return switch (state) {
             case Bundle.INSTALLED -> FrameworkState.INSTALLED;
             case Bundle.RESOLVED -> FrameworkState.RESOLVED;
@@ -81,7 +81,7 @@ public final class DefaultDiagProvider implements DiagProvider {
      * @param info a {@link BundleInfo}
      * @return A {@link ContainerState}
      */
-    private static ContainerState containerStateOf(final BundleInfo info) {
+    private static ContainerState containerStateOf(BundleInfo info) {
         return switch (info.getState()) {
             case Active -> ContainerState.ACTIVE;
             case Failure -> ContainerState.FAILURE;
