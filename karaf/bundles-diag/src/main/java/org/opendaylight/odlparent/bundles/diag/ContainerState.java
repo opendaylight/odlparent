@@ -27,7 +27,7 @@ public enum ContainerState {
 
     private final String reportingName;
 
-    ContainerState(final String reportingName) {
+    ContainerState(String reportingName) {
         this.reportingName = requireNonNull(reportingName);
     }
 
