@@ -1558,6 +1558,14 @@
   <profiles>
     <profile>
       <id>ep</id>
+      <activation>
+        <!-- Activated unless we are running in M2E, which would indicated JDT -->
+        <property>
+          <name>!m2e.version</name>
+        </property>
+        <!-- JDK 26 is an unknown, let's not activate with it just now -->
+        <jdk>[9,26)</jdk>
+      </activation>
 
       <build>
         <plugins>
