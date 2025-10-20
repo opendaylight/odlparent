@@ -9,6 +9,7 @@ package org.opendaylight.odlparent.bundles.diag.ri;
 
 import static java.util.Objects.requireNonNull;
 
+import com.google.errorprone.annotations.Var;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,12 +44,12 @@ record DefaultDiag(BundleContext bundleContext, List<DiagBundle> bundles) implem
     }
 
     @Override
-    public void logDelta(final Logger logger, final Diag prevDiag) {
-        final var prevBundles = new ArrayDeque<>(prevDiag.bundles());
+    public void logDelta(Logger logger, Diag prevDiag) {
+        var prevBundles = new ArrayDeque<>(prevDiag.bundles());
         // Log current state ...
         for (var bundle : bundles) {
             if (!bundle.equals(find(logger, prevBundles, bundle.bundleId()))) {
-                final var serviceState = bundle.serviceState();
+                var serviceState = bundle.serviceState();
                 logger.debug("Updated {}:{} {}/{}[{}]", bundle.symbolicName(), bundle.version(),
                     bundle.frameworkState(), serviceState.containerState().reportingName(), serviceState.diag());
             }
@@ -58,9 +59,9 @@ record DefaultDiag(BundleContext bundleContext, List<DiagBundle> bundles) implem
         prevBundles.forEach(bundle -> logger.info("{} no longer present", bundle));
     }
 
-    static @Nullable DiagBundle find(final Logger logger, final ArrayDeque<DiagBundle> bundles, final long bundleId) {
+    static @Nullable DiagBundle find(Logger logger, ArrayDeque<DiagBundle> bundles, long bundleId) {
         for (var bundle = bundles.poll(); bundle != null; bundle = bundles.poll()) {
-            final var id = bundle.bundleId();
+            var id = bundle.bundleId();
             if (id == bundleId) {
                 return bundle;
             } else if (id > bundleId) {
@@ -73,7 +74,7 @@ record DefaultDiag(BundleContext bundleContext, List<DiagBundle> bundles) implem
     }
 
     @Override
-    public void logServices(final Logger logger) {
+    public void logServices(Logger logger) {
         logger.info("""
             Now going to log all known services, to help diagnose root cause of diag failure BundleService reported \
             bundle(s) which are not active""");
@@ -96,11 +97,11 @@ record DefaultDiag(BundleContext bundleContext, List<DiagBundle> bundles) implem
     }
 
     // Visible for testing
-    static Map<String, Object> getProperties(final ServiceReference<?> serviceRef) {
-        final var propertyKeys = serviceRef.getPropertyKeys();
-        final var properties = new HashMap<String, Object>(propertyKeys.length);
+    static Map<String, Object> getProperties(ServiceReference<?> serviceRef) {
+        var propertyKeys = serviceRef.getPropertyKeys();
+        var properties = new HashMap<String, Object>(propertyKeys.length);
         for (var propertyKey : propertyKeys) {
-            var propertyValue = serviceRef.getProperty(propertyKey);
+            @Var var propertyValue = serviceRef.getProperty(propertyKey);
             if (propertyValue != null) {
                 if (propertyValue.getClass().isArray()) {
                     propertyValue = Arrays.asList((Object[]) propertyValue);
@@ -113,36 +114,36 @@ record DefaultDiag(BundleContext bundleContext, List<DiagBundle> bundles) implem
     }
 
     // Visible for testing
-    static List<String> getUsingBundleSymbolicNames(final ServiceReference<?> serviceRef) {
-        final var usingBundles = serviceRef.getUsingBundles();
+    static List<String> getUsingBundleSymbolicNames(ServiceReference<?> serviceRef) {
+        var usingBundles = serviceRef.getUsingBundles();
         return usingBundles == null ? List.of()
             : Arrays.stream(usingBundles).map(Bundle::getSymbolicName).collect(Collectors.toList());
     }
 
     @Override
-    public void logState(final Logger logger) {
+    public void logState(Logger logger) {
         try {
             logServices(logger);
         } catch (IllegalStateException e) {
             logger.warn("logOSGiServices() failed (never mind); too late during shutdown already?", e);
         }
 
-        final var okBundles = new ArrayList<DiagBundle>();
-        final var allowedBundles = new ArrayList<DiagBundle>();
-        final var nokBundles = new ArrayList<DiagBundle>();
+        var okBundles = new ArrayList<DiagBundle>();
+        var allowedBundles = new ArrayList<DiagBundle>();
+        var nokBundles = new ArrayList<DiagBundle>();
 
         for (var bundle : bundles) {
-            final var serviceState = bundle.serviceState();
+            var serviceState = bundle.serviceState();
             // BundleState comparison as in Karaf's "diag" command, see
             // https://github.com/apache/karaf/blob/master/bundle/core/src/main/java/org/apache/karaf/bundle/command/Diag.java
             // but we intentionally, got a little further than Karaf's "diag" command, and instead of only checking some
             // states, we check what's really Active, but accept that some remain just Resolved:
-            final var containerState = serviceState.containerState();
+            var containerState = serviceState.containerState();
 
-            final var list = switch (containerState) {
+            var list = switch (containerState) {
                 case ACTIVE, RESOLVED -> okBundles;
                 default -> {
-                    final var symbolicName = bundle.symbolicName();
+                    var symbolicName = bundle.symbolicName();
                     yield symbolicName != null && containerState.equals(ALLOWED_STATES.get(symbolicName))
                         ? allowedBundles : nokBundles;
                 }
@@ -164,9 +165,9 @@ record DefaultDiag(BundleContext bundleContext, List<DiagBundle> bundles) implem
         }
         if (logger.isErrorEnabled()) {
             for (var bundle : nokBundles) {
-                final var serviceState = bundle.serviceState();
-                final var diag = serviceState.diag();
-                final var diagStr = diag.isBlank() ? "" : ", due to: " + diag;
+                var serviceState = bundle.serviceState();
+                var diag = serviceState.diag();
+                var diagStr = diag.isBlank() ? "" : ", due to: " + diag;
                 logger.error("NOK {}:{} {}/{}{}", bundle.symbolicName(), bundle.version(), bundle.frameworkState(),
                     bundle.serviceState().containerState().reportingName(), diagStr);
             }
