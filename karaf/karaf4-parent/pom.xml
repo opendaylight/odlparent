@@ -155,7 +155,6 @@
                                     <destFileName>karaf.branding-14.1.5-SNAPSHOT.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
-                            <silent>true</silent>
                         </configuration>
                     </execution>
                     <execution>
@@ -171,7 +170,6 @@
                             <excludes>META-INF\/**</excludes>
                             <excludeTransitive>true</excludeTransitive>
                             <ignorePermissions>false</ignorePermissions>
-                            <silent>true</silent>
                         </configuration>
                     </execution>
                     <execution>

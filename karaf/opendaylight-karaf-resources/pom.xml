@@ -199,7 +199,6 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
                     <destFileName>bcutil-jdk18on-${bouncycastle.version}.jar</destFileName>
                 </artifactItem>
               </artifactItems>
-              <silent>true</silent>
             </configuration>
           </execution>
         </executions>

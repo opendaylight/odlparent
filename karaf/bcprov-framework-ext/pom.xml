@@ -44,7 +44,6 @@
                         <configuration>
                             <includes>**/MANIFEST.MF</includes>
                             <includeArtifactIds>bcprov-jdk18on</includeArtifactIds>
-                            <silent>true</silent>
                         </configuration>
                     </execution>
                 </executions>
