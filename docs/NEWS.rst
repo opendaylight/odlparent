@@ -21,8 +21,8 @@ Third-party dependencies
 * Bouncy Castle `1.81 → 1.82 <https://www.bouncycastle.org/resources/new-releases-bouncy-castle-java-1-82-and-bouncy-castle-java-lts-2-73-9/>`__
 
 * Checkstyle 11.0.1 → 12.0.0, release notes:
-  * `11.1,0  <https://checkstyle.org/releasenotes.html#Release_11.1.0>`__
-  * `12.0,0  <https://checkstyle.org/releasenotes.html#Release_12.0.0>`__
+  * `11.1.0 <https://checkstyle.org/releasenotes.html#Release_11.1.0>`__
+  * `12.0.0 <https://checkstyle.org/releasenotes.html#Release_12.0.0>`__
 
 * checker-qual 3.50.0 → 3.51.1
 
