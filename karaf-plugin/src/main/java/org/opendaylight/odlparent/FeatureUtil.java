@@ -314,7 +314,7 @@ public final class FeatureUtil {
      * @throws FileNotFoundException if a file is missing.
      */
     public Set<Features> findAllFeaturesRecursively(final Features features, final Set<String> existingCoords)
-            throws MalformedURLException, IOException {
+            throws IOException {
         LOG.debug("findAllFeaturesRecursively({}) starts", features.getName());
         LOG.trace("findAllFeaturesRecursively knows about these coords: {}", existingCoords);
         Set<Features> result = new LinkedHashSet<>();
@@ -345,7 +345,7 @@ public final class FeatureUtil {
      * @throws FileNotFoundException if a file is missing.
      */
     public Set<Features> findAllFeaturesRecursively(final Set<Features> features, final Set<String> existingCoords)
-            throws MalformedURLException, IOException {
+            throws IOException {
         Set<Features> result = new LinkedHashSet<>();
         for (Features feature : features) {
             result.addAll(findAllFeaturesRecursively(feature, existingCoords));
@@ -362,8 +362,7 @@ public final class FeatureUtil {
      * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Set<Features> findAllFeaturesRecursively(final Set<Features> features)
-            throws MalformedURLException, IOException {
+    public Set<Features> findAllFeaturesRecursively(final Set<Features> features) throws IOException {
         return findAllFeaturesRecursively(features, new LinkedHashSet<>());
     }
 
