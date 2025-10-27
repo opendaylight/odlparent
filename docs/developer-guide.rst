@@ -61,13 +61,20 @@ artifacts to Maven Central:
 
 -  distribution management information.
 
-It also defines two profiles which help during development:
+It also defines a few profiles which help during development:
 
 -  ``q`` (``-Pq``), the quick profile, which disables tests, code
    coverage, Javadoc generation, code analysis, etc. — anything which
-   isn’t necessary to build the bundles and features (see `this blog
+   is not necessary to build the bundles and features (see `this blog
    post <http://blog2.vorburger.ch/2016/06/improve-maven-build-speed-with-q.html>`__
-   for details);
+   for details). This profile is safe to execute in parallel via ``mvnd``.
+
+-  ``f`` (``-Pf``), the fast profile, which is a subset of the quick profile,
+   leaving more things enabled, among which are checkstyle, source jars and
+   unit tests. This profile is mostly safe to execute in parallel via ``mvnd``,
+   but some unit tests may fail due to resource conflicts. Such failures can
+   be overcome via restarting the build via ``mvnd -r``, perhaps forcing it
+   to execute single-threaded mode via ``mvnd -1``.
 
 -  ``addInstallRepositoryPath``
    (``-DaddInstallRepositoryPath=…/karaf/system``) which can be used to
