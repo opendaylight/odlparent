@@ -227,6 +227,31 @@ ASL-licensed:
         </executions>
     </plugin>
 
+It also defines a few profiles which control static analysis:
+
+-  ``ep`` (``-Pep``) which can be enables `Error Prone <https://errorprone.info/>`__
+   with a OpenDaylight-specific policy which is different from Error Prone
+   default in a few respects. This policy can be tweaked in a downstream
+   ``pom.xml`` (and via Maven ``-D`` facility) via the following properties:
+
+   - ``odl.ef.fork`` controlling ``maven-compiler-plugin`` fork mode. It
+     defaults to ``true``, which is the safe default. It can be set to
+     ``false`` if the Maven JVM is known to be launched with the ``--add-exports``
+     and ``--add-opens`` required by Error Prone, significanly reducing
+     the impact on CPU usage/build time
+
+   - ``odl.ep.var`` controlling the `Var <https://errorprone.info/bugpattern/Var>`__
+     checker. It defaults to ``OFF``, which matches Java semantics. Other
+     accepted values are ``WARN`` and ``ERROR``. opting into ``@Var``-annotated
+     world.
+
+   - ``odl.ep.extra`` which is can be used to pass additional arguments
+     to Error Prone, in the form ``-Xep:Foo:OFF`` and similar. Note that
+     this facility can also be used to override the default policy,
+     by specifying the new severity for an already-defined check. For
+     example, ``-Dodl.ep.var=ERROR -Dodl.ep.extra=-Xep:Var:OFF`` will
+     result in ``Var`` checker to be disabled.
+
 bundle-parent
 ~~~~~~~~~~~~~
 
