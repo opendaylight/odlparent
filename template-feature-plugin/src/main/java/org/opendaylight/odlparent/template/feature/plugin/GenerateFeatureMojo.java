@@ -46,21 +46,29 @@ public class GenerateFeatureMojo extends AbstractMojo {
     private static final String TYPE = "type";
     private static final String CLASSIFIER = "classifier";
 
-    // Version specification as they appear in raw features and bundles
-    // FIXME: alias for new 'buildVersion'
+    // Version specifications as they appear in raw features and bundles
+
+    // exact version as declared in pom.xml
+    private static final String BUILD_VERSION = "{{buildVersion}}";
     private static final String VERSION_AS_IN_PROJECT = "{{versionAsInProject}}";
-    // FIXME: alias for new 'buildRange'
+
+    // buildVersion expanded to current major version: '2.3.4' becomes '[2.3.4,3)'
+    private static final String BUILD_RANGE = "{{buildRange}}";
     private static final String SEM_VER_RANGE = "{{semVerRange}}";
+
     // FIXME: add 'majorRange' to derive '[2,3)' from '2.3.4'
     // FIXME: add 'minorRange' to derive '[2.3,3)' from '2.3.4'
     // FIXME: add 'buildMinorRange' to derive [2.3,2.4)' from '2.3.4'
+
     // FIXME: deprecate: we are building with maven substitution enabled, so ${project.version} will do the same
     private static final String PROJECT_VERSION = "{{projectVersion}}";
     // TODO: would something to derive '[2,)' from '2.3.4' be useful? it goes against semVer and what would we call it?
 
     // Version specifications as they appear in features after being scrubbed by Karaf marshaller
     // FIXME: pre-compute these if we can, so we can use them with switch expressions
+    private static final String BUILD_VERSION_CLEAN = VersionCleaner.clean(BUILD_VERSION);
     private static final String VERSION_AS_IN_PROJECT_CLEAN = VersionCleaner.clean(VERSION_AS_IN_PROJECT);
+    private static final String BUILD_RANGE_CLEAN = VersionCleaner.clean(BUILD_RANGE);
     private static final String SEM_VER_RANGE_CLEAN = VersionCleaner.clean(SEM_VER_RANGE);
     private static final String PROJECT_VERSION_CLEAN = VersionCleaner.clean(PROJECT_VERSION);
 
@@ -188,8 +196,8 @@ public class GenerateFeatureMojo extends AbstractMojo {
         final var version = dependency.getVersion();
         return switch (version) {
             case PROJECT_VERSION -> VersionCleaner.clean(mavenProject.getVersion());
-            case SEM_VER_RANGE -> featureSemVerRange(dependency.getName());
-            case VERSION_AS_IN_PROJECT -> VersionCleaner.clean(featureVersion(dependency.getName()));
+            case BUILD_RANGE, SEM_VER_RANGE -> featureSemVerRange(dependency.getName());
+            case BUILD_VERSION, VERSION_AS_IN_PROJECT -> VersionCleaner.clean(featureVersion(dependency.getName()));
             default -> version;
         };
     }
@@ -200,13 +208,14 @@ public class GenerateFeatureMojo extends AbstractMojo {
         final String version = feature.getVersion();
         if (PROJECT_VERSION_CLEAN.equals(version)) {
             return mavenProject.getVersion();
-        } else if (SEM_VER_RANGE_CLEAN.equals(version)) {
-            return featureSemVerRange(feature.getName());
-        } else if (VERSION_AS_IN_PROJECT_CLEAN.equals(version)) {
-            return featureVersion(feature.getName());
-        } else {
-            return version;
         }
+        if (BUILD_RANGE_CLEAN.equals(version) || SEM_VER_RANGE_CLEAN.equals(version)) {
+            return featureSemVerRange(feature.getName());
+        }
+        if (BUILD_VERSION_CLEAN.equals(version) || VERSION_AS_IN_PROJECT_CLEAN.equals(version)) {
+            return featureVersion(feature.getName());
+        }
+        return version;
     }
 
     private String dependencyVersion(final String groupId, final String artifactId, final @Nullable String type,
