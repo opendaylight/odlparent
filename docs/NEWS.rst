@@ -2,6 +2,66 @@
 ODL Parent release notes
 ========================
 
+Version 14.1.5
+--------------
+This is a bug-fix/feature upgrade from version 14.1.4.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* A new profile, ``ep``, disabled by default has been added. Activating this profile via ``-Pep`` will cause the build
+  to include `Error Prone <https://errorprone.info/>`__. This profile is provided as a preview to garner feedback
+  before it becomes enabled by default in a future major version of odlparent. See the developer guide
+  and  `ODLPARENT-336 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-336>`__ for details.
+
+* A new script, ``migrate-feature.sh`` for migrating artifacts based on ``single-feature-parent`` to the more modern
+  ``template-feature-parent``. See the developer guide for the details on how to use. Note that the script is not
+  completely automated and requires thorough review and manual editing of its results.
+
+Bug fixes
+~~~~~~~~~
+* Various places using ``maven-dependency-plugin`` specified ``silent`` flag, causing a deprecation warning
+  to be printed. These have now been fixed.
+
+* Recent versions of Eclipse have started reporting incorrect warnings around record components' nullness. This has
+  been tracked down to a mismatch in JDT annotations and is fixed by the below upgrade.
+
+* Single Feature Test attempted to invoke Karaf when running with Java 24+, which always failed because of Java 24's
+  impacts on JAAS. This has been corrected by disabling them on Java 24+.
+  See `the Karaf issue <https://github.com/apache/karaf/issues/2128>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle 12.0.0 → 12.1.1, release notes:
+  * `12.0.1 <https://checkstyle.org/releasenotes.html#Release_12.0.1>`__
+  * `12.1.0 <https://checkstyle.org/releasenotes.html#Release_12.1.0>`__
+  * `12.1.1 <https://checkstyle.org/releasenotes.html#Release_12.1.1>`__
+
+* Error Prone `2.41.0 → 2.42.0 <https://github.com/google/error-prone/releases/tag/v2.43.0>`__
+
+* immutables.org 2.11.4 → 2.11.6, release notes:
+  * `2.11.5 <https://github.com/immutables/immutables/releases/tag/2.11.5>`__
+  * `2.11.6 <https://github.com/immutables/immutables/releases/tag/2.11.6>`__
+
+* jdt-annotations `2.3.100 → 2.4.0 <https://github.com/eclipse-jdt/eclipse.jdt.core/pull/3992>`__
+
+* Logback 1.5.18 → 1.5.20, release notes:
+  * `1.5.19 <https://logback.qos.ch/news.html#1.5.19>`__
+  * `1.5.20 <https://logback.qos.ch/news.html#1.5.20>`__
+
+* Netty `4.2.6.Final → 4.2.7.Final <https://netty.io/news/2025/10/15/4-2-7.html>`__
+
+* xmlunit `2.10.4 → 2.11.0 <https://github.com/xmlunit/xmlunit/releases/tag/v2.11.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* exec-maven-plugin `3.6.1 → 3.6.2 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.6.2>`__
+
+* Jacoco Maven plugin `0.8.13 → 0.8.14 <https://github.com/jacoco/jacoco/releases/tag/v0.8.14>`__
+
+* maven-antrun-plugin `3.1.0 → 3.2.0 <https://github.com/apache/maven-antrun-plugin/releases/tag/maven-antrun-plugin-3.2.0>`__
+
+* maven-plugin-plugin `3.15.1 → 3.15.2 <https://github.com/apache/maven-plugin-tools/releases/tag/maven-plugin-tools-3.15.2>`__
+
 Version 14.1.4
 --------------
 This is a bug-fix upgrade from version 14.1.3.
