@@ -109,23 +109,13 @@ plugin management for OpenDaylight projects.
 If you use any of the following libraries, you should rely on
 ``odlparent`` to provide the appropriate versions:
 
--  Akka (and Scala)
-
 -  Apache Commons:
 
    -  ``commons-codec``
 
-   -  ``commons-fileupload``
-
    -  ``commons-io``
 
-   -  ``commons-lang``
-
    -  ``commons-lang3``
-
-   -  ``commons-net``
-
--  Apache Shiro
 
 -  Guava
 
@@ -162,8 +152,6 @@ If you use any of the following libraries, you should rely on
    -  Mockito
 
    -  Pax Exam
-
-   -  PowerMock
 
 -  XML/XSL:
 
