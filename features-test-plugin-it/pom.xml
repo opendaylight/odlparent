@@ -49,28 +49,38 @@
         </dependency>
     </dependencies>
 
-    <build>
-         <plugins>
-             <plugin>
-                <artifactId>maven-invoker-plugin</artifactId>
-                <configuration>
-                    <projectsDirectory>src/it</projectsDirectory>
-                    <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
-                    <pomExcludes>
-                        <pomExclude>test-feature-parent/pom.xml</pomExclude>
-                    </pomExcludes>
-                    <debug>true</debug>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>integration-test</id>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+    <profiles>
+        <profile>
+            <!-- Karaf does not support Java 24+ -->
+            <id>karaf-supported-jdk</id>
+            <activation>
+                <jdk>[21,24)</jdk>
+            </activation>
+
+            <build>
+                 <plugins>
+                     <plugin>
+                        <artifactId>maven-invoker-plugin</artifactId>
+                        <configuration>
+                            <projectsDirectory>src/it</projectsDirectory>
+                            <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+                            <pomExcludes>
+                                <pomExclude>test-feature-parent/pom.xml</pomExclude>
+                            </pomExcludes>
+                            <debug>true</debug>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>integration-test</id>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
