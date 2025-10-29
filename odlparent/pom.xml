@@ -1554,6 +1554,9 @@
                   -Xep:Var:${odl.ep.var} \
                   \
                   <!-- On-by-default warnings we turn up or off, alpha-sorted --> \
+                  <!-- our annotation packaging story is missing, hence users do not have a way to fix this --> \
+                  <!-- FIXME: remove this override -->
+                  -Xep:AnnotateFormatMethod:OFF \
                   <!-- forbid use of explicit constructors for boxed types --> \
                   -Xep:BoxedPrimitiveConstructor:ERROR \
                   <!-- sloppy stderr printing: either log or chain to a new exception --> \
