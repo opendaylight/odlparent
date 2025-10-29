@@ -1574,6 +1574,9 @@
                   -Xep:InconsistentCapitalization:ERROR \
                   <!-- this has way too many hits in our codebase --> \
                   -Xep:InconsistentOverloads:OFF \
+                  <!-- we do not have annotation packaging ready, disable this check to reduce clutter --> \
+                  <!-- FIXME: remove this override -->
+                  -Xep:InlineMeSuggester:OFF \
                   <!-- forbid possible int/long overflows: these should be widened first --> \
                   -Xep:IntLongMath:ERROR \
                   <!-- triggers on concise equals() methods which do 'obj == this || ...' --> \
