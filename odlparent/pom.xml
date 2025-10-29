@@ -1564,6 +1564,8 @@
                   -Xep:Finalize:ERROR \
                   <!-- force users to examine returned future by default, as it is typically an error to ignore it --> \
                   -Xep:FutureReturnValueIgnored:ERROR \
+                  <!--  enforcing deep immutability is a tall order for our codebase --> \
+                  -Xep:ImmutableEnumChecker:OFF \
                   <!-- fields/arguments should not differ only in capitalization --> \
                   -Xep:InconsistentCapitalization:ERROR \
                   <!-- forbid possible int/long overflows: these should be widened first --> \
