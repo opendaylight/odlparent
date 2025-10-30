@@ -511,6 +511,19 @@
       </dependency>
       <dependency>
         <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.service.component</artifactId>
+        <version>1.5.1</version>
+        <scope>provided</scope>
+        <exclusions>
+          <!-- Causes class path duplicates -->
+          <exclusion>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.annotation</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.component.annotations</artifactId>
         <version>1.5.1</version>
         <scope>provided</scope>
@@ -578,6 +591,13 @@
         <artifactId>org.osgi.util.tracker</artifactId>
         <version>1.5.4</version>
         <scope>provided</scope>
+        <exclusions>
+          <!-- Causes class path duplicates -->
+          <exclusion>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.annotation</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
 
       <!-- for https://jira.opendaylight.org/browse/ODLPARENT-24 -->
