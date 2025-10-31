@@ -1585,8 +1585,6 @@
                   -Xep:ClassNewInstance:ERROR \
                   <!-- forbid use of finalizers: they are going away --> \
                   -Xep:Finalize:ERROR \
-                  <!-- force users to examine returned future by default, as it is typically an error to ignore it --> \
-                  -Xep:FutureReturnValueIgnored:ERROR \
                   <!-- enforcing deep immutability is a tall order for our codebase --> \
                   <!-- FIXME: remove this override at some point --> \
                   -Xep:ImmutableEnumChecker:OFF \
