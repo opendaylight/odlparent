@@ -762,15 +762,6 @@
         <type>pom</type>
       </dependency>
 
-      <!-- A better alternative for javax.inject, from https://guicedee.com/ -->
-      <dependency>
-        <groupId>com.guicedee.services</groupId>
-        <artifactId>javax.inject</artifactId>
-        <version>1.0.20.2</version>
-        <scope>provided</scope>
-        <optional>true</optional>
-      </dependency>
-
       <!-- Jakarta Dependency Injection -->
       <dependency>
         <groupId>jakarta.inject</groupId>
