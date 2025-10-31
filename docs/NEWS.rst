@@ -2,6 +2,28 @@
 ODL Parent release notes
 ========================
 
+Version 14.1.6
+--------------
+This is a bug-fix upgrade from version 14.1.5.
+
+Improvements
+~~~~~~~~~~~~
+* Based on early feedback from downstreams, the Error Prone policy has been updated to disable
+  ``FutureReturnValueIgnored``, ``ImmutableEnumChecker``, ``InconsistentOverloads``,
+  ``AnnotateFormatMethod``, ``InlineMeSuggester`` checkers. These have been found too aggressive to current codebase.
+  The last two will be re-enabled one `ODLPARENT-338 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-338>`
+  is resolved.
+
+Bug fixes
+~~~~~~~~~
+* ``org.osgi.service.component`` and ``org.osgi.util.tracker`` dependency declarations ended up leaking
+  ``osgi.annotation`` onto the classpath, rendering them difficult to use in JPMS-enabled artifacts. This has now been
+  fixed.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Jackson `2.19.2 → 2.19.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.19.4>`__
+
 Version 14.1.5
 --------------
 This is a bug-fix/feature upgrade from version 14.1.4.
