@@ -238,7 +238,9 @@ It also defines a few profiles which control static analysis:
      defaults to ``true``, which is the safe default. It can be set to
      ``false`` if the Maven JVM is known to be launched with the ``--add-exports``
      and ``--add-opens`` required by Error Prone, significanly reducing
-     the impact on CPU usage/build time
+     the impact on CPU usage/build time. Users are advised to add the corresponding
+     configuration to their ``.mvn/jvm.config`` and then add ``-Dodl.ep.fork=false``
+     to their ``.mvn/maven.config``.
 
    - ``odl.ep.var`` controlling the `Var <https://errorprone.info/bugpattern/Var>`__
      checker. It defaults to ``OFF``, which matches Java semantics. Other

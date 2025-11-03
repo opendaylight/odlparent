@@ -128,7 +128,7 @@
             user    2m1,888s
             sys     0m4,859s
 
-          Downstreams are advised to take advantage of this override in the project-specific parent artifacts.
+         Downstreams are advised to to adjust their .mvn/jvm.config and add -Dodl.ep.fork to their .mvn/maven.config.
     -->
     <odl.ep.fork>true</odl.ep.fork>
 
