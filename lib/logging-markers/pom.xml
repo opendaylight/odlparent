@@ -11,27 +11,20 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
-        <artifactId>bundle-parent</artifactId>
+        <artifactId>bnd-parent</artifactId>
         <version>14.1.7-SNAPSHOT</version>
-        <relativePath>../bundle-parent/pom.xml</relativePath>
+        <relativePath>../../bnd-parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>logging-markers</artifactId>
-    <packaging>bundle</packaging>
+    <packaging>jar</packaging>
     <name>OpenDaylight :: Logging Markers</name>
     <description>OpenDaylight-specific SLF4J Markers</description>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <configuration>
-                    <instructions>
-                        <Automatic-Module-Name>org.opendaylight.odlparent.logging.markers</Automatic-Module-Name>
-                    </instructions>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.jdt</groupId>
+            <artifactId>org.eclipse.jdt.annotation</artifactId>
+        </dependency>
+    </dependencies>
 </project>
