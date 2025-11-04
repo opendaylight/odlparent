@@ -1,0 +1,2 @@
+# None of these should be used in OSGi
+Import-Package: !dagger.*, !jakarta.inject, !org.opendaylight.odlparent.dagger
