@@ -301,6 +301,20 @@
         <!-- Keep this version in sync with annotationProcessorPaths declaration of error_prone_core below -->
         <version>2.43.0</version>
       </dependency>
+      <dependency>
+        <groupId>com.google.dagger</groupId>
+        <artifactId>dagger</artifactId>
+        <!-- Keep this version in sync with annotationProcessorPaths declaration of dagger-compiler below -->
+        <version>2.57.2</version>
+        <scope>provided</scope>
+        <exclusions>
+          <!-- FIXME: 15.0.0: remove this exclusion -->
+          <exclusion>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
 
       <dependency>
         <groupId>commons-beanutils</groupId>
@@ -763,6 +777,7 @@
       </dependency>
 
       <!-- A better alternative for javax.inject, from https://guicedee.com/ -->
+      <!-- FIXME: 15.0.0: remove this declaration if possible with dagger profile below -->
       <dependency>
         <groupId>com.guicedee.services</groupId>
         <artifactId>javax.inject</artifactId>
@@ -1660,6 +1675,27 @@
                   <!-- Keep this version in sync with dependency declaration of error_prone_annotations above -->
                   <!-- When bumping this version also evaluate changes and consider updating the above policy -->
                   <version>2.43.0</version>
+                </path>
+              </annotationProcessorPaths>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <!-- FIXME: 15.0.0: activate by default -->
+      <id>dagger</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <annotationProcessorPaths combine.children="append">
+                <path>
+                  <groupId>com.google.dagger</groupId>
+                  <artifactId>dagger-compiler</artifactId>
+                  <!-- Keep this version in sync with dependency declaration of dagger above -->
+                  <version>2.57.2</version>
                 </path>
               </annotationProcessorPaths>
             </configuration>

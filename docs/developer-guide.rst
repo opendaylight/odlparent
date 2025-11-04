@@ -229,7 +229,7 @@ ASL-licensed:
 
 It also defines a few profiles which control static analysis:
 
--  ``ep`` (``-Pep``) which can be enables `Error Prone <https://errorprone.info/>`__
+- ``ep`` (``-Pep``) which can be enables `Error Prone <https://errorprone.info/>`__
    with a OpenDaylight-specific policy which is different from Error Prone
    default in a few respects. This policy can be tweaked in a downstream
    ``pom.xml`` (and via Maven ``-D`` facility) via the following properties:
@@ -253,6 +253,10 @@ It also defines a few profiles which control static analysis:
      by specifying the new severity for an already-defined check. For
      example, ``-Dodl.ep.var=ERROR -Dodl.ep.extra=-Xep:Var:OFF`` will
      result in ``Var`` checker to be disabled.
+
+Furthermore, it defines the following profiles:
+
+- ``dagger`` (``-Pdagger``) which enableis `Dagger <https://dagger.dev>`__
 
 bundle-parent
 ~~~~~~~~~~~~~
