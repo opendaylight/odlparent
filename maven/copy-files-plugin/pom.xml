@@ -12,7 +12,7 @@
         <artifactId>odlparent-lite</artifactId>
         <groupId>org.opendaylight.odlparent</groupId>
         <version>14.1.7-SNAPSHOT</version>
-        <relativePath>../odlparent-lite/pom.xml</relativePath>
+        <relativePath>../../odlparent-lite/pom.xml</relativePath>
     </parent>
 
     <artifactId>copy-files-plugin</artifactId>

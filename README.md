@@ -23,3 +23,4 @@ There are sorts of things here:
 * basic project infrastructure, including
   * [the BOM](odlparent-artifacts)
 * some basic [libraries](lib), exposed for downstream use
+* a few [Maven plugins](maven), useful for things we are doing

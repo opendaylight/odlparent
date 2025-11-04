@@ -47,12 +47,9 @@
         <!-- Features test (SFT) -->
         <module>bundles-test-lib</module>
         <module>bundles4-test</module>
-        <module>features-test-plugin</module>
-        <module>features-test-plugin-it</module>
 
         <!-- Karaf integration -->
         <module>karaf</module>
-        <module>karaf-plugin</module>
         <module>karaf-util</module>
 
         <!-- Parent POMs -->
@@ -64,15 +61,6 @@
         <module>feature-repo-parent</module>
         <module>odlparent</module>
         <module>odlparent-lite</module>
-
-        <!-- Plugin for processing templates for Karaf features -->
-        <module>template-feature-plugin</module>
-
-        <!-- File copying plugin -->
-        <module>copy-files-plugin</module>
-
-        <!-- Manifest filtering plugin -->
-        <module>filter-manifest-plugin</module>
 
         <!-- Features -->
         <module>features</module>
