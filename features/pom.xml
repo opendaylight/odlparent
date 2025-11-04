@@ -59,5 +59,6 @@
 
         <!-- Test features -->
         <module>odl-bundle-test</module>
+        <module>odl-dagger-test</module>
     </modules>
 </project>
