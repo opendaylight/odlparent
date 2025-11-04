@@ -12,7 +12,7 @@
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
         <version>14.1.7-SNAPSHOT</version>
-        <relativePath>../odlparent/pom.xml</relativePath>
+        <relativePath>../../odlparent/pom.xml</relativePath>
     </parent>
 
     <artifactId>features-test-plugin</artifactId>

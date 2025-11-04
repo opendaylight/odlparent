@@ -12,7 +12,7 @@
         <artifactId>odlparent</artifactId>
         <groupId>org.opendaylight.odlparent</groupId>
         <version>14.1.7-SNAPSHOT</version>
-        <relativePath>../odlparent/pom.xml</relativePath>
+        <relativePath>../../odlparent/pom.xml</relativePath>
     </parent>
 
     <artifactId>template-feature-plugin</artifactId>
