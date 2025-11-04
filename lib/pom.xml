@@ -25,7 +25,11 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     </properties>
 
     <modules>
-        <!-- Logging Markers -->
+        <!-- Dagger support and example -->
+        <module>dagger</module>
+        <module>dagger-example</module>
+
+        <!-- SLF4J Logging Markers -->
         <module>logging-markers</module>
     </modules>
 </project>
