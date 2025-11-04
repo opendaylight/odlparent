@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2025 PANTHEON.tech, s.r.o. and others.  All rights reserved.
+ *
+ * This program and the accompanying materials are made available under the
+ * terms of the Eclipse Public License v1.0 which accompanies this distribution,
+ * and is available at http://www.eclipse.org/legal/epl-v10.html
+ */
+package org.opendaylight.odlparent.dagger;
+
+import dagger.Module;
+import dagger.Provides;
+import jakarta.inject.Singleton;
+
+/**
+ * A Dagger module wiring in {@link ShutdownRegistry}. A typical user would look like
+ * {@snippet :
+ *     @Singleton
+ *     @Component(modules = ShutdownModule.class)
+ *     interface ShutdownComponent {
+ *
+ *         ShutdownRegistry shutdownRegistry();
+ *     }
+ * }
+ */
+@Module
+public interface ShutdownModule {
+    /**
+     * {@return a singleton {@link ShutdownRegistry}}
+     */
+    @Provides
+    @Singleton
+    static ShutdownRegistry provideShutdownRegistry() {
+        return new ShutdownRegistry();
+    }
+}
