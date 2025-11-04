@@ -32,7 +32,14 @@
     </properties>
 
     <modules>
-        <!-- odlparent tools -->
+        <!-- Artifacts -->
+        <!-- FIXME: rename to 'artifacts' -->
+        <module>odlparent-artifacts</module>
+
+        <!-- libraries provided to downstreams -->
+        <module>lib</module>
+
+        <!-- odlparent build-time support artifacts -->
         <module>checkstyle</module>
         <module>spotbugs</module>
         <module>license</module>
@@ -67,14 +74,8 @@
         <!-- Manifest filtering plugin -->
         <module>filter-manifest-plugin</module>
 
-        <!-- Logging Markers -->
-        <module>logging-markers</module>
-
         <!-- Features -->
         <module>features</module>
-
-        <!-- Artifacts -->
-        <module>odlparent-artifacts</module>
 
         <!-- Aggragated javadocs -->
         <module>docs</module>

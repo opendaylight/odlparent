@@ -17,3 +17,11 @@
 
 Details regarding this project repo can be found on the project page
 located [here](https://wiki.opendaylight.org/display/ODL/ODL+Root+Parent).
+
+## The gory details
+
+There are sorts of things here:
+
+- basic project infrastructure, including
+  - [the BOM](odlparent-artifacts)
+- some basic [libraries](lib), exposed for downstream use
