@@ -33,6 +33,24 @@
       "message": "Expand developer guide to include a proper section on how to use Dagger in OpenDaylight setting",
       "revId": "05da7808ce57c1d1583bec95bf48fd7425579525",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f75ee188_1023ac76",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:01:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7ce6ca9_2b9d0814",
+      "revId": "05da7808ce57c1d1583bec95bf48fd7425579525",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
