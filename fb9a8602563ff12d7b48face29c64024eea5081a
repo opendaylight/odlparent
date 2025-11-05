@@ -45,6 +45,282 @@
       },
       "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01322edf_5cbbf1ca",
+        "filename": "lib/dagger-example/src/main/java/org/opendaylight/odlparent/dagger/example/ExampleComponent.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "javadoc",
+      "range": {
+        "startLine": 29,
+        "startChar": 19,
+        "endLine": 29,
+        "endChar": 34
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d759afa9_e013ba9b",
+        "filename": "lib/dagger-example/src/main/java/org/opendaylight/odlparent/dagger/example/ExampleServiceImplModule.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "javadoc",
+      "range": {
+        "startLine": 24,
+        "startChar": 26,
+        "endLine": 24,
+        "endChar": 47
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f7f48d1_653751ce",
+        "filename": "lib/dagger-example/src/test/java/org/opendaylight/odlparent/dagger/example/DaggerExampleComponentTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "resourceSupport",
+      "range": {
+        "startLine": 18,
+        "startChar": 9,
+        "endLine": 18,
+        "endChar": 25
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8218d43a_db96d2e0",
+        "filename": "lib/dagger-example/src/test/java/org/opendaylight/odlparent/dagger/example/DaggerExampleComponentTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "componentClose",
+      "range": {
+        "startLine": 26,
+        "startChar": 9,
+        "endLine": 26,
+        "endChar": 14
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bc50306_64703e54",
+        "filename": "lib/dagger/README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "dagger",
+      "range": {
+        "startLine": 1,
+        "startChar": 25,
+        "endLine": 1,
+        "endChar": 30
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "316366b1_a30d0724",
+        "filename": "lib/dagger/README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "update and expand this bit, provide a link to the example",
+      "range": {
+        "startLine": 4,
+        "startChar": 58,
+        "endLine": 4,
+        "endChar": 72
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ead2e170_81709d6b",
+        "filename": "lib/dagger/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "also needs bnd.bnd to suppress imports",
+      "range": {
+        "startLine": 20,
+        "startChar": 15,
+        "endLine": 20,
+        "endChar": 18
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cf9f31c7_64c098c9",
+        "filename": "lib/dagger/src/main/java/org/opendaylight/odlparent/dagger/ResourceSupport.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "an",
+      "range": {
+        "startLine": 54,
+        "startChar": 16,
+        "endLine": 54,
+        "endChar": 17
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4d2e517_d0dadcca",
+        "filename": "lib/dagger/src/main/java/org/opendaylight/odlparent/dagger/ResourceSupport.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "resources",
+      "range": {
+        "startLine": 94,
+        "startChar": 59,
+        "endLine": 94,
+        "endChar": 70
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03386008_0005a6d3",
+        "filename": "lib/dagger/src/main/java/org/opendaylight/odlparent/dagger/ResourceSupport.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "LOG.debug(\"Instance {} closed\", uuid);",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 10
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6f85765f_863233bf",
+        "filename": "lib/dagger/src/main/java/org/opendaylight/odlparent/dagger/ResourceSupport.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "close resource",
+      "range": {
+        "startLine": 109,
+        "startChar": 32,
+        "endLine": 109,
+        "endChar": 37
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5be2f69_fbb0c85e",
+        "filename": "lib/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T22:25:51Z",
+      "side": 1,
+      "message": "also dagger-example",
+      "range": {
+        "startLine": 29,
+        "startChar": 8,
+        "endLine": 29,
+        "endChar": 31
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
