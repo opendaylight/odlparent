@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7ce6ca9_2b9d0814",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-05T18:20:08Z",
+      "side": 1,
+      "message": "Let\u0027s see if we can create a prototype for AutoCloseableComponent, which will have registry and a default close() method.",
+      "revId": "05da7808ce57c1d1583bec95bf48fd7425579525",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
