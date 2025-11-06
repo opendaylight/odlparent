@@ -24,6 +24,30 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e87ef7e3_48b48965",
+        "filename": "lib/README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-06T09:12:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "abec26ef_f2a674a3",
+      "range": {
+        "startLine": 6,
+        "startChar": 43,
+        "endLine": 6,
+        "endChar": 59
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7860297_cf2e542d",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-11-05T22:10:28Z",
       "side": 1,
       "message": "can we minimize these dependencies?",
+      "range": {
+        "startLine": 36,
+        "startChar": 21,
+        "endLine": 36,
+        "endChar": 42
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "28809a26_c08f510a",
+        "filename": "lib/dagger-example/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-06T09:12:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7860297_cf2e542d",
       "range": {
         "startLine": 36,
         "startChar": 21,
@@ -295,6 +343,30 @@
       "writtenOn": "2025-11-05T22:25:51Z",
       "side": 1,
       "message": "update and expand this bit, provide a link to the example",
+      "range": {
+        "startLine": 4,
+        "startChar": 58,
+        "endLine": 4,
+        "endChar": 72
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b98d8cd5_14b41ecd",
+        "filename": "lib/dagger/README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-06T09:12:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "316366b1_a30d0724",
       "range": {
         "startLine": 4,
         "startChar": 58,
