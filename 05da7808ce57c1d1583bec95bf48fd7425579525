@@ -51,6 +51,24 @@
       "parentUuid": "e7ce6ca9_2b9d0814",
       "revId": "05da7808ce57c1d1583bec95bf48fd7425579525",
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "072b16ed_1ad6f0f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-06T10:43:59Z",
+      "side": 1,
+      "message": "We do not have an overall guide on DI, so let\u0027s punt this to later.",
+      "parentUuid": "750d7d14_ebe5968c",
+      "revId": "05da7808ce57c1d1583bec95bf48fd7425579525",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     }
   ]
 }
