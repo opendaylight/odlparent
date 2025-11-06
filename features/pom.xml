@@ -40,6 +40,7 @@
         <module>odl-apache-spifly</module>
         <module>odl-asm</module>
         <module>odl-dropwizard-metrics</module>
+        <module>odl-errorprone</module>
         <module>odl-gson</module>
         <module>odl-guava</module>
         <module>odl-jackson-2</module>

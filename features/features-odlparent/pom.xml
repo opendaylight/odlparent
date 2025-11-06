@@ -64,6 +64,13 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>odl-errorprone</artifactId>
+            <classifier>features</classifier>
+            <type>xml</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>odl-gson</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
