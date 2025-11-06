@@ -7,14 +7,12 @@
  */
 package org.opendaylight.odlparent.logging.markers;
 
-import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.slf4j.Marker;
 import org.slf4j.MarkerFactory;
 
 /**
  * Common markers for SLF4J. See individual methods for available markers and their use.
  */
-@NonNullByDefault
 public final class Markers {
     private Markers() {
         // Hidden on purpose
