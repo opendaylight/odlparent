@@ -328,6 +328,30 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "02f39b78_7a3b2145",
+        "filename": "lib/dagger/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-06T08:19:38Z",
+      "side": 1,
+      "message": "actually this artifact should be a plain jar",
+      "parentUuid": "ead2e170_81709d6b",
+      "range": {
+        "startLine": 20,
+        "startChar": 15,
+        "endLine": 20,
+        "endChar": 18
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cf9f31c7_64c098c9",
