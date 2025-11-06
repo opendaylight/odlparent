@@ -23,8 +23,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.eclipse.jdt</groupId>
-            <artifactId>org.eclipse.jdt.annotation</artifactId>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
         </dependency>
     </dependencies>
 </project>
