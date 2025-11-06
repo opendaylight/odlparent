@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-jspecify">
+    <feature name="odl-jspecify">
+        <bundle dependency="true">mvn:org.jspecify/jspecify/{{versionAsInProject}}</bundle>
+    </feature>
+</features>

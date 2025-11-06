@@ -166,6 +166,13 @@
             </dependency>
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>odl-jspecify</artifactId>
+                <version>${project.version}</version>
+                <classifier>features</classifier>
+                <type>xml</type>
+            </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
                 <artifactId>odl-netty-4</artifactId>
                 <version>${project.version}</version>
                 <classifier>features</classifier>
