@@ -398,6 +398,30 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "48a87ab8_dcd667af",
+        "filename": "lib/dagger/src/main/java/org/opendaylight/odlparent/dagger/ResourceSupport.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-06T08:39:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4d2e517_d0dadcca",
+      "range": {
+        "startLine": 94,
+        "startChar": 59,
+        "endLine": 94,
+        "endChar": 70
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "03386008_0005a6d3",
@@ -421,6 +445,30 @@
       "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f804dd3e_ec19229a",
+        "filename": "lib/dagger/src/main/java/org/opendaylight/odlparent/dagger/ResourceSupport.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-06T08:39:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "03386008_0005a6d3",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 101,
+        "endChar": 10
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6f85765f_863233bf",
@@ -434,6 +482,30 @@
       "writtenOn": "2025-11-05T22:25:51Z",
       "side": 1,
       "message": "close resource",
+      "range": {
+        "startLine": 109,
+        "startChar": 32,
+        "endLine": 109,
+        "endChar": 37
+      },
+      "revId": "fb9a8602563ff12d7b48face29c64024eea5081a",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d960a6da_267dca54",
+        "filename": "lib/dagger/src/main/java/org/opendaylight/odlparent/dagger/ResourceSupport.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-06T08:39:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f85765f_863233bf",
       "range": {
         "startLine": 109,
         "startChar": 32,
