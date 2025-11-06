@@ -9,12 +9,13 @@
  * Common {@link org.slf4j.Marker}s. Individual markers are available via static methods exposed from
  * {@link org.opendaylight.odlparent.logging.markers.Markers}.
  */
+@org.jspecify.annotations.NullMarked
 module org.opendaylight.odlparent.logging.markers {
     exports org.opendaylight.odlparent.logging.markers;
 
     requires transitive org.slf4j;
 
     // Annotations
-    requires static transitive org.eclipse.jdt.annotation;
+    requires static org.jspecify;
     requires static org.osgi.annotation.bundle;
 }

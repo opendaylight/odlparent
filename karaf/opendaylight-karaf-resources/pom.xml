@@ -138,6 +138,8 @@
 # The following are added by opendaylight-karaf-resources
 mvn\:org.osgi/org.osgi.service.event/1.4.1 = 7
 mvn\:org.apache.felix/org.apache.felix.metatype/1.2.4 = 8
+# dependency of logging-markers, but we want to have it always available
+mvn\:org.jspecify/jspecify/1.0.0 = 14
 mvn\:org.opendaylight.odlparent/bcprov-framework-ext/${project.version} = 14
 mvn\:org.opendaylight.odlparent/bcutil-framework-ext/${project.version} = 14
 mvn\:org.opendaylight.odlparent/bcpkix-framework-ext/${project.version} = 14
