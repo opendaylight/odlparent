@@ -41,7 +41,7 @@
     <name>ODL :: odlparent :: ${project.artifactId}</name>
 
     <properties>
-        <!-- See https://issues.apache.org/jira/browse/MINSTALL-151 -->
+        <!-- See https://github.com/apache/maven-install-plugin/issues/313 -->
         <allowIncompleteProjects>true</allowIncompleteProjects>
     </properties>
 
