@@ -93,7 +93,7 @@
             </plugin>
             <!--
                 See https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin#important-note-about-maven-jarwar-plugin
-                and https://issues.apache.org/jira/browse/MJAR-193
+                and https://github.com/apache/maven-jar-plugin/issues/350
             -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
