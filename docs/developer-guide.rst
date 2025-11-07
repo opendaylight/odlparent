@@ -23,11 +23,19 @@ These parent projects are:
 -  ``odlparent`` — the common parent POM for Maven modules containing
    Java code
 
+-  ``bnd-parent`` — the parent POM for Maven modules producing OSGi bundles
+   the modern way via ``bnd-maven-plugin``
+
 -  ``bundle-parent`` — the parent POM for Maven modules producing OSGi
-   bundles
+   bundles the old-school way via ``maven-bundle-plugin``
 
 -  ``single-feature-parent`` — the parent POM for Maven modules producing
-   a single Karaf 4 feature
+   a single Karaf 4 feature by employing ``karaf-maven-plugin``'s feature
+   generation facility
+
+-  ``template-feature-parent`` — the parent POM for Maven modules producing
+   a single Karaf 4 feature by filling out a template with build-time
+   expansions
 
 -  ``feature-repo-parent`` — the parent POM for Maven modules producing
    Karaf 4 feature repositories
@@ -258,6 +266,33 @@ Furthermore, it defines the following profiles:
 
 - ``dagger`` (``-Pdagger``) which enableis `Dagger <https://dagger.dev>`__
 
+bnd-parent
+~~~~~~~~~~
+
+This inherits from ``odlparent`` and enables functionality useful for
+OSGi bundles:
+
+-  ``maven-javadoc-plugin`` is activated, to build the Javadoc JAR;
+
+-  ``maven-source-plugin`` is activated, to build the source JAR;
+
+-  various OSGi annotation-only dependencies are declared with ``provided``
+   scope
+
+-  `bnd-maven-plugin <https://github.com/bndtools/bnd/blob/7.1.0/maven-plugins/bnd-maven-plugin/README.md>`__
+   is activated to derive corresponding OSGi metadata as well the bundle
+   MANIFEST.
+
+The default configuration includes provision for reproducible non-SNAPSHOT
+builds. The recommended way of modifying the plugin configuration is through
+``bnd.bnd``.
+
+WARNING: when using this parent, please make sure to properly fill out ``<name/>``
+and ``<description/>`` elements in your ``pom.xml``, as these are used
+propagated to resulting bundle's metadata. Users would be quite confused
+by seeing these to be set to values inherited from ``bnd-parent``!
+
+
 bundle-parent
 ~~~~~~~~~~~~~
 
@@ -268,8 +303,9 @@ OSGi bundles:
 
 -  ``maven-source-plugin`` is activated, to build the source JAR;
 
--  ``maven-bundle-plugin`` is activated (including extensions), to build
-   OSGi bundles (using the “bundle” packaging).
+-  `maven-bundle-plugin <https://felix.apache.org/documentation/_attachments/components/bundle-plugin/index.html>`__
+   is activated (including extensions), to build OSGi bundles
+   (using the “bundle” packaging).
 
 In addition to this, JUnit is included as a default dependency in “test”
 scope.
@@ -357,6 +393,36 @@ appropriate type and classifier) and as ``<configfile>`` elements in the
 
 Other features which a feature depends on need to be defined as Maven
 dependencies with type “xml” and classifier “features” (note the plural here).
+
+template-feature-parent
+~~~~~~~~~~~~~~~~~~~~~~~
+
+This profiles in most regards the same way as ``single-feature-parent``, but
+rather than generating ``feature.xml`` via ``karaf-maven-plugin``, they process
+a pre-existing ``src/main/feature/template.xml`` file using
+``template-feature-plugin``.
+
+This approach allows tight control over the resulting ``feature.xml``,
+as only non-critical components like ``<details>`` are generated and all
+capabilities of a ``<feature>`` definition can be utilized.
+
+In addition to the usual ``${foo}`` Maven substitutions, more powerful
+mustache-substitutions are expanded from Maven project:
+
+-  ``{{versionAsInProject}}`` resolves to the corresponding dependency version
+
+-  ``{{semVerRange}}`` resolves to the semantic version interval with lower
+   bound being the corresponding dependency version (including) and the next
+   major version (excluding)
+
+-  ``{{projectVersion}}`` is a legacy alias for ``${project.version}``
+
+This allows for powerful handling of dependencies between features, for example
+as done between ``odl-stax2-api`` and ``odl-woodstox``.
+
+The power of this templating approach can be witnessed in ``odl-netty-4``
+feature, which deploys platform-specific bundles based on the actual run-time
+being used.
 
 feature-repo-parent
 ~~~~~~~~~~~~~~~~~~~
