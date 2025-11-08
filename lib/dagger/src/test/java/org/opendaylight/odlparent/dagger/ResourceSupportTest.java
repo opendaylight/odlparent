@@ -48,7 +48,7 @@ class ResourceSupportTest {
 
         registry.close();
 
-        final var inOrder = inOrder(one, two);
+        var inOrder = inOrder(one, two);
         inOrder.verify(two).close();
         inOrder.verify(one).close();
     }
@@ -56,7 +56,7 @@ class ResourceSupportTest {
     @Test
     void registerRejectedAfterClose() {
         registry.close();
-        final var ex = assertThrows(IllegalStateException.class, () -> registry.register(one));
+        var ex = assertThrows(IllegalStateException.class, () -> registry.register(one));
         assertEquals("Cannot register one while closed", ex.getMessage());
     }
 

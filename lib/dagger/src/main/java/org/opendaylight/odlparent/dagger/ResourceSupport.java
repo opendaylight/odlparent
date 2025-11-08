@@ -7,12 +7,14 @@
  */
 package org.opendaylight.odlparent.dagger;
 
+import com.google.errorprone.annotations.ThreadSafe;
 import org.eclipse.jdt.annotation.NonNullByDefault;
 
 /**
  * A registry for {@link AutoCloseable} resources to close when a component is shut down. This class should be used via
  * {@link ResourceSupportModule}.
  */
+@ThreadSafe
 @NonNullByDefault
 public abstract sealed class ResourceSupport permits DefaultResourceSupport {
     /**

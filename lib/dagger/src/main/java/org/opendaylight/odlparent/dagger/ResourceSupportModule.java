@@ -7,6 +7,7 @@
  */
 package org.opendaylight.odlparent.dagger;
 
+import com.google.errorprone.annotations.DoNotMock;
 import dagger.Module;
 import dagger.Provides;
 import jakarta.inject.Singleton;
@@ -26,6 +27,7 @@ import org.eclipse.jdt.annotation.NonNullByDefault;
  * }
  */
 @Module
+@DoNotMock
 @NonNullByDefault
 public interface ResourceSupportModule {
     /**
