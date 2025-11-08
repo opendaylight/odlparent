@@ -15,6 +15,7 @@ module org.opendaylight.odlparent.dagger {
     requires org.slf4j;
 
     // Annotations
+    requires transitive com.google.errorprone.annotations;
     requires transitive jakarta.inject;
     requires transitive java.compiler;
     requires static transitive org.eclipse.jdt.annotation;

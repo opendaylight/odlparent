@@ -9,6 +9,8 @@ package org.opendaylight.odlparent.dagger;
 
 import static java.util.Objects.requireNonNull;
 
+import com.google.errorprone.annotations.DoNotMock;
+import com.google.errorprone.annotations.concurrent.GuardedBy;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.UUID;
@@ -20,6 +22,7 @@ import org.slf4j.LoggerFactory;
  * A registry for {@link AutoCloseable} resources to close when a component is shut down. This class should be used via
  * {@link ResourceSupportModule}.
  */
+@DoNotMock
 @NonNullByDefault
 final class DefaultResourceSupport extends ResourceSupport {
     private sealed interface State {
@@ -44,6 +47,7 @@ final class DefaultResourceSupport extends ResourceSupport {
 
     private final UUID uuid = UUID.randomUUID();
 
+    @GuardedBy("this")
     private State state = new Open(new ArrayList<>());
 
     DefaultResourceSupport() {
@@ -59,8 +63,8 @@ final class DefaultResourceSupport extends ResourceSupport {
      * @throws IllegalStateException if this instance has been closed
      */
     @Override
-    public <T extends AutoCloseable> T register(final T resource) {
-        final var checked = requireNonNull(resource);
+    public <T extends AutoCloseable> T register(T resource) {
+        var checked = requireNonNull(resource);
 
         synchronized (this) {
             switch (state) {
@@ -74,7 +78,7 @@ final class DefaultResourceSupport extends ResourceSupport {
 
     @Override
     void close() {
-        final Iterator<AutoCloseable> it;
+        Iterator<AutoCloseable> it;
 
         synchronized (this) {
             switch (state) {
@@ -96,7 +100,7 @@ final class DefaultResourceSupport extends ResourceSupport {
     }
 
     @SuppressWarnings("checkstyle:illegalCatch")
-    private static void closeDefensively(final AutoCloseable resource) {
+    private static void closeDefensively(AutoCloseable resource) {
         try {
             resource.close();
         } catch (Exception e) {
@@ -106,7 +110,7 @@ final class DefaultResourceSupport extends ResourceSupport {
 
     @Override
     public String toString() {
-        final State local;
+        State local;
         synchronized (this) {
             local = state;
         }

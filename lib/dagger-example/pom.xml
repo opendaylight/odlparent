@@ -31,6 +31,8 @@
 
         <!-- Opt-in to class path duplicate checks -->
         <duplicate-finder.skip>false</duplicate-finder.skip>
+        <!-- Opt-in to @Var world -->
+        <odl.ep.var>ERROR</odl.ep.var>
 
         <!-- Needed to suppress 'URF_UNREAD_FIELD' violation -->
         <spotbugs.onlyAnalyze>!org.opendaylight.odlparent.dagger.example.dagger.DaggerExampleComponent$ExampleComponentImpl</spotbugs.onlyAnalyze>
@@ -41,6 +43,10 @@
             <groupId>com.google.dagger</groupId>
             <artifactId>dagger</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.google.errorprone</groupId>
+            <artifactId>error_prone_annotations</artifactId>
         </dependency>
         <dependency>
             <groupId>com.guicedee.services</groupId>
