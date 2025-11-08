@@ -12,13 +12,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 
 import org.junit.jupiter.api.Test;
+import org.opendaylight.odlparent.dagger.AutoCloseableComponent;
 import org.opendaylight.odlparent.dagger.example.api.ExampleService;
 
 class DaggerExampleComponentTest {
     @Test
     void resourceSupportIsConstant() {
         try (var component = DaggerExampleComponent.create()) {
-            final var first = component.resourceSupport();
+            var first = component.resourceSupport();
             assertNotNull(first);
             assertSame(first, component.resourceSupport());
         }
@@ -26,14 +27,20 @@ class DaggerExampleComponentTest {
 
     @Test
     void componentCloseIsIdempotent() {
-        final ExampleService service;
+        ExampleService service;
         try (var component = DaggerExampleComponent.create()) {
             service = component.exampleResource();
             assertEquals(0, service.interactionCount());
-            component.close();
+            explicitClose(component);
             assertEquals(1, service.interactionCount());
         }
 
         assertEquals(1, service.interactionCount());
+    }
+
+    // split out suppress warning
+    @SuppressWarnings("try")
+    private static void explicitClose(AutoCloseableComponent component) {
+        component.close();
     }
 }
