@@ -21,6 +21,11 @@
     <name>OpenDaylight :: Logging Markers</name>
     <description>OpenDaylight-specific SLF4J Markers</description>
 
+    <properties>
+        <!-- Opt-in to @Var world -->
+        <odl.ep.var>ERROR</odl.ep.var>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.eclipse.jdt</groupId>
