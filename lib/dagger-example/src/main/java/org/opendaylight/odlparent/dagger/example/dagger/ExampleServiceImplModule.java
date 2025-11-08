@@ -7,6 +7,7 @@
  */
 package org.opendaylight.odlparent.dagger.example.dagger;
 
+import com.google.errorprone.annotations.DoNotMock;
 import dagger.Module;
 import dagger.Provides;
 import jakarta.inject.Singleton;
@@ -19,6 +20,7 @@ import org.opendaylight.odlparent.dagger.example.api.ExampleService;
  * A Dagger module binding {@link ExampleServiceImpl}.
  */
 @Module
+@DoNotMock
 @NonNullByDefault
 public interface ExampleServiceImplModule {
     /**
@@ -29,7 +31,7 @@ public interface ExampleServiceImplModule {
      */
     @Provides
     @Singleton
-    static ExampleService provideExampleService(final ResourceSupport resourceSupport) {
+    static ExampleService provideExampleService(ResourceSupport resourceSupport) {
         // this is the magic incantation
         return resourceSupport.register(new ExampleServiceImpl());
     }

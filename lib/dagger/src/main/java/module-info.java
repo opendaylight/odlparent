@@ -12,12 +12,12 @@ module org.opendaylight.odlparent.dagger {
     exports org.opendaylight.odlparent.dagger;
 
     requires transitive dagger;
-    requires transitive jakarta.inject;
-    requires transitive java.compiler;
-    requires com.google.errorprone.annotations;
     requires org.slf4j;
 
     // Annotations
+    requires transitive com.google.errorprone.annotations;
+    requires transitive jakarta.inject;
+    requires transitive java.compiler;
     requires static transitive org.eclipse.jdt.annotation;
     // Workaround for Eclipse failing
     requires static javax.inject;
