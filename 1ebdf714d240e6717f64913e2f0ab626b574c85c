@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c025143_85c961d2",
+        "filename": "lib/dagger/src/main/java/org/opendaylight/odlparent/dagger/ResourceSupport.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-08T01:48:22Z",
+      "side": 1,
+      "message": "This is not enough, as modern Mockito can mock final classes. Split into a sealed abstract class (this) and implementation called DefaultResourceSupport.",
+      "range": {
+        "startLine": 24,
+        "startChar": 7,
+        "endLine": 24,
+        "endChar": 12
+      },
+      "revId": "1ebdf714d240e6717f64913e2f0ab626b574c85c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "451fdc8d_5b3ac20d",
+        "filename": "lib/dagger/src/main/java/org/opendaylight/odlparent/dagger/ResourceSupport.java",
+        "patchSetId": 15
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-08T01:48:22Z",
+      "side": 1,
+      "message": "we have error_prone_annotations available, annotate with @GuardedBy",
+      "range": {
+        "startLine": 47,
+        "startChar": 12,
+        "endLine": 47,
+        "endChar": 23
+      },
+      "revId": "1ebdf714d240e6717f64913e2f0ab626b574c85c",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
