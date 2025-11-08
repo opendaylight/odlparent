@@ -31,6 +31,8 @@
 
         <!-- Opt-in to class path duplicate checks -->
         <duplicate-finder.skip>false</duplicate-finder.skip>
+        <!-- Opt-in to @Var world -->
+        <odl.ep.var>ERROR</odl.ep.var>
 
         <!-- Needed to suppress 'URF_UNREAD_FIELD' violation -->
         <spotbugs.onlyAnalyze>!org.opendaylight.odlparent.dagger.example.dagger.DaggerExampleComponent$ExampleComponentImpl</spotbugs.onlyAnalyze>

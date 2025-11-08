@@ -29,7 +29,7 @@ public interface ExampleServiceImplModule {
      */
     @Provides
     @Singleton
-    static ExampleService provideExampleService(final ResourceSupport resourceSupport) {
+    static ExampleService provideExampleService(ResourceSupport resourceSupport) {
         // this is the magic incantation
         return resourceSupport.register(new ExampleServiceImpl());
     }

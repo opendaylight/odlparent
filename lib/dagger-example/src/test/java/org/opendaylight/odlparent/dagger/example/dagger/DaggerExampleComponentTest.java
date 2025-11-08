@@ -18,7 +18,7 @@ class DaggerExampleComponentTest {
     @Test
     void resourceSupportIsConstant() {
         try (var component = DaggerExampleComponent.create()) {
-            final var first = component.resourceSupport();
+            var first = component.resourceSupport();
             assertNotNull(first);
             assertSame(first, component.resourceSupport());
         }
@@ -26,7 +26,7 @@ class DaggerExampleComponentTest {
 
     @Test
     void componentCloseIsIdempotent() {
-        final ExampleService service;
+        ExampleService service;
         try (var component = DaggerExampleComponent.create()) {
             service = component.exampleResource();
             assertEquals(0, service.interactionCount());
