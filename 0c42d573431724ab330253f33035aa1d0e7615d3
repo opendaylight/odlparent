@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03c7afe8_bf355607",
+        "filename": "lib/dagger-example/src/main/java/org/opendaylight/odlparent/dagger/example/api/package-info.java",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2025-11-08T03:35:44Z",
+      "side": 1,
+      "message": "do not import",
+      "range": {
+        "startLine": 12,
+        "startChar": 1,
+        "endLine": 12,
+        "endChar": 7
+      },
+      "revId": "0c42d573431724ab330253f33035aa1d0e7615d3",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
