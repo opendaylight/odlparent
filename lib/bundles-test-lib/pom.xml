@@ -14,7 +14,7 @@
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>bnd-parent</artifactId>
     <version>14.1.7-SNAPSHOT</version>
-    <relativePath>../bnd-parent/pom.xml</relativePath>
+    <relativePath>../../bnd-parent/pom.xml</relativePath>
   </parent>
 
   <artifactId>bundles-test-lib</artifactId>

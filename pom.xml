@@ -45,7 +45,6 @@
         <module>license</module>
 
         <!-- Features test (SFT) -->
-        <module>bundles-test-lib</module>
         <module>bundles4-test</module>
 
         <!-- Karaf integration -->

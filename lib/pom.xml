@@ -25,6 +25,9 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     </properties>
 
     <modules>
+        <!-- Features test (SFT) -->
+        <module>bundles-test-lib</module>
+
         <!-- Dagger support and example -->
         <module>dagger</module>
         <module>dagger-example</module>
