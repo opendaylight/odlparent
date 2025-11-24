@@ -39,6 +39,9 @@
         <!-- libraries provided to downstreams -->
         <module>lib</module>
 
+        <!-- maven plugins -->
+        <module>maven</module>
+
         <!-- odlparent build-time support artifacts -->
         <module>checkstyle</module>
         <module>spotbugs</module>
