@@ -2,6 +2,48 @@
 ODL Parent release notes
 ========================
 
+Version 14.1.7
+--------------
+This is a bug-fix/feature upgrade from version 14.1.6.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* The declaration of ``jakarta.inject-api`` has been added.
+  See `ODLPARENT-343 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-343>`__ for details.
+
+* A new provide, ``dagger``, has been added. Activatin gthis profile via ``-Pdagger`` will cause the build to include
+  `Dagger <https://dagger.dev/>`__. See the developer guide and
+  `ODLPARENT-282 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-282>`__ for details.
+
+* ``logging-markers`` is now and explicit JPMS module. See
+  `ODLPARENT-344 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-344>`__ for details.
+
+* Two new features, ``odl-jspecify`` and ``odl-errorprone`` have been introduced to provide run-time packaging
+  of JSpecify and Error Prone annotations respectively. See
+  `ODLPARENT-338 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-338>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checker-qual 3.51.1 → 3.52.0
+
+* Checkstyle `12.1.1 → 12.1.2 <https://checkstyle.org/releasenotes.html#Release_12.1.2>`__
+
+* commons-io `2.20.0 → 2.21.0 <https://commons.apache.org/proper/commons-io/changes.html#a2.21.0>`__
+
+* commons-lang3 `3.19.0 → 3.20.0 <https://commons.apache.org/proper/commons-lang/changes.html#a3.20.0>`__
+
+* Error Prone `2.43.0 → 2.44.0 <https://github.com/google/error-prone/releases/tag/v2.44.0>`__
+
+* JUnit `5.14.0 → 5.14.1 <https://junit.org/junit5/docs/5.14.1/release-notes/#release-notes-5.14.1>`__
+
+* Logback `1.5.20 → 1.5.21 <https://logback.qos.ch/news.html#1.5.21>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-jar-plugin `3.4.2 → 3.5.0 <https://github.com/apache/maven-jar-plugin/releases/tag/maven-jar-plugin-3.5.0>`__
+
+* maven-release-plugin `3.1.1 → 3.2.0 <https://github.com/apache/maven-release/releases/tag/maven-release-3.2.0>`__
+
 Version 14.1.6
 --------------
 This is a bug-fix upgrade from version 14.1.5.
