@@ -61,6 +61,10 @@
             <artifactId>gson</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.google.dagger</groupId>
+            <artifactId>dagger</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.google.errorprone</groupId>
             <artifactId>error_prone_annotations</artifactId>
         </dependency>
