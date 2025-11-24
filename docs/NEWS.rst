@@ -123,6 +123,8 @@ Third-party dependencies
 
 * immutables.org `2.11.3 → 2.11.4 <https://github.com/immutables/immutables/releases/tag/2.11.4>`__
 
+* JUnit `5.13.4 → 5.14.0 <https://junit.org/junit5/docs/5.14.0/release-notes/#release-notes-5.14.0>`__
+
 * Mockito `5.19.0 → 5.20.0 <https://github.com/mockito/mockito/releases/tag/v5.20.0>`__
 
 * xmlunit `2.10.3 → 2.10.4 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.4>`__
