@@ -11,7 +11,7 @@
     <parent>
         <artifactId>odlparent-lite</artifactId>
         <groupId>org.opendaylight.odlparent</groupId>
-        <version>14.1.7</version>
+        <version>14.1.8-SNAPSHOT</version>
         <relativePath>../../odlparent-lite/pom.xml</relativePath>
     </parent>
 
