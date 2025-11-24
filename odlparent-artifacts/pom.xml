@@ -212,6 +212,13 @@
                 <classifier>features</classifier>
                 <type>xml</type>
             </dependency>
+            <dependency>
+                <groupId>org.opendaylight.odlparent</groupId>
+                <artifactId>odl-netty-quic</artifactId>
+                <version>${project.version}</version>
+                <classifier>features</classifier>
+                <type>xml</type>
+            </dependency>
 
             <dependency>
                 <groupId>org.opendaylight.odlparent</groupId>

@@ -52,6 +52,7 @@
         <module>odl-netty-http3</module>
         <module>odl-netty-io_uring</module>
         <module>odl-netty-kqueue</module>
+        <module>odl-netty-quic</module>
         <module>odl-servlet-api</module>
         <module>odl-stax2-api</module>
         <module>odl-woodstox</module>
