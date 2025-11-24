@@ -264,7 +264,10 @@ It also defines a few profiles which control static analysis:
 
 Furthermore, it defines the following profiles:
 
-- ``dagger`` (``-Pdagger``) which enableis `Dagger <https://dagger.dev>`__
+- ``dagger``, which enables `Dagger <https://dagger.dev>`__. This profile can either
+  be enabled globally in a repository by including ``-Pdagger`` in ``.mvn/maven.config``
+  or on a per-artifact by creating ``odl.dagger.enable`` file co-located
+  with the artifact's ``pom.xml``.
 
 bnd-parent
 ~~~~~~~~~~

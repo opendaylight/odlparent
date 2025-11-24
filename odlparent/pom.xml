@@ -1683,8 +1683,13 @@
       </build>
     </profile>
     <profile>
-      <!-- FIXME: 15.0.0: activate by default -->
       <id>dagger</id>
+      <activation>
+        <file>
+          <!-- FIXME: 15.0.0: consider inverting this to <missing/> -->
+          <exists>odl.dagger.enable</exists>
+        </file>
+      </activation>
       <build>
         <plugins>
           <plugin>
