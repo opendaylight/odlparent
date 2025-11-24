@@ -16,10 +16,10 @@
         <relativePath>../../template-feature-parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>odl-netty-http3</artifactId>
+    <artifactId>odl-netty-quic</artifactId>
     <packaging>feature</packaging>
-    <name>OpenDaylight :: Netty :: HTTP/3</name>
-    <description>Netty 4.x HTTP/3 support</description>
+    <name>OpenDaylight :: Netty :: QUIC</name>
+    <description>Netty 4.x QUIC support</description>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>
@@ -28,13 +28,18 @@
     <dependencies>
         <dependency>
             <groupId>org.opendaylight.odlparent</groupId>
-            <artifactId>odl-netty-quic</artifactId>
+            <artifactId>odl-netty-4</artifactId>
             <classifier>features</classifier>
             <type>xml</type>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
-            <artifactId>netty-codec-http3</artifactId>
+            <artifactId>netty-codec-classes-quic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-codec-native-quic</artifactId>
+            <classifier>linux-x86_64</classifier>
         </dependency>
     </dependencies>
 </project>

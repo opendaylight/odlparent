@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="odl-netty-quic">
+    <repository>mvn:org.opendaylight.odlparent/odl-netty-4/{{versionAsInProject}}/xml/features</repository>
+    <feature name="odl-netty-http3">
+        <feature version="{{semVerRange}}">odl-netty-4</feature>
+        <bundle>mvn:io.netty/netty-codec-classes-quic/{{versionAsInProject}}</bundle>
+        <conditional>
+            <condition>req:osgi.native;filter:="(&amp;(osgi.native.osname~=Linux)(osgi.native.processor~=x86-64))"</condition>
+            <bundle>mvn:io.netty/netty-codec-native-quic/{{versionAsInProject}}/jar/linux-x86_64</bundle>
+        </conditional>
+    </feature>
+</features>
