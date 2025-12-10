@@ -38,7 +38,7 @@
     <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
 
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.4.8</karaf.version>
+    <karaf.version>4.4.9</karaf.version>
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
@@ -410,7 +410,7 @@
       </dependency>
 
       <!-- These three need to be consistent:
-        jackson-2.19.4 needs woodstox-6.6.0+
+        jackson-2.20.1 needs woodstox-6.6.0+
         woodstox-5.3+ needs stax2-api-4.2.x
         -->
       <dependency>
@@ -426,7 +426,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson</groupId>
         <artifactId>jackson-bom</artifactId>
-        <version>2.19.4</version>
+        <version>2.20.1</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
