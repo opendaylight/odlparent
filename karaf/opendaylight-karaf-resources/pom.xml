@@ -11,7 +11,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
-    <version>14.1.8-SNAPSHOT</version>
+    <version>14.2.0-SNAPSHOT</version>
     <relativePath>../../odlparent/pom.xml</relativePath>
   </parent>
 
@@ -245,7 +245,7 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
       <plugin>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>karaf-plugin</artifactId>
-        <version>14.1.8-SNAPSHOT</version>
+        <version>14.2.0-SNAPSHOT</version>
         <executions>
           <execution>
             <id>populate-local-repo</id>
