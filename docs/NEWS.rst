@@ -2,6 +2,74 @@
 ODL Parent release notes
 ========================
 
+Version 14.2.0
+--------------
+This is a bug-fix/feature upgrade from version 14.1.7. Since this includes a minor version bump in Jackson, we get
+a new minor version as well.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* A new ``odl-netty-quic`` feature has been split out of ``odl-netty-http``. This allows using QUIC independently
+  of its HTTP/3 application.
+
+* ``odl-netty-quic``, and by extension HTTP/3, is now available on all platforms supported by Netty.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.82 → 1.83 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java=release-1-83>`__
+
+* checker-qual 3.52.0 → 3.52.1
+
+* Checkstyle 12.1.2 → 12.3.0, release notes:
+  * `12.2.0 <https://checkstyle.org/releasenotes.html#Release_12.2.0>`__
+  * `12.3.0 <https://checkstyle.org/releasenotes.html#Release_12.3.0>`__
+
+* commons-text `1.14.0 → 1.15.0 <https://commons.apache.org/proper/commons-text/changes.html#a1.15.0>`__
+
+* Error Prone `2.44.0 → 2.45.0 <https://github.com/google/error-prone/releases/tag/v2.45.0>`__
+
+* immutables.org 2.11.6 → 2.12.0, release notes:
+  * `2.11.7 <https://github.com/immutables/immutables/releases/tag/2.11.7>`__
+  * `2.12.0 <https://github.com/immutables/immutables/releases/tag/2.12.0>`__
+
+* Jackson 2.19.4 → 2.20.1, release notes:
+  * `2.20.0 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.20>`__
+  * `2.20.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.20.1>`__
+
+* jdt-annotations `2.4.0 → 2.4.100 <https://github.com/eclipse-jdt/eclipse.jdt.core/pull/4495>`__
+
+* Jetty `9.4.57.v20241219 → 9.4.58.v20250814 <https://github.com/jetty/jetty.project/releases/tag/jetty-9.4.58.v20250814>`__
+
+* Karaf `4.4.8 → 4.4.9 <https://github.com/apache/karaf/releases/tag/karaf-4.4.9>`__
+
+* Logback 1.5.21 → 1.5.23, release notes:
+  * Logback `1.5.22 <https://logback.qos.ch/news.html#1.5.22>`__
+  * Logback `1.5.23 <https://logback.qos.ch/news.html#1.5.23>`__
+
+* Mockito `5.20.0 → 5.21.0 <https://github.com/mockito/mockito/releases/tag/v5.21.0>`__
+
+* Netty 4.2.7.Final → 4.2.9.Final, release notes:
+  * `4.2.8.Final <https://netty.io/news/2025/12/11/4-2-8.html>`__
+  * `4.2.9.Final <https://netty.io/news/2025/12/15/4-2-9.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram `3.0.1 → 3.1.0 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v3.1.0>`__
+
+* exec-maven-plugin `3.6.2 → 3.6.3 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.6.3>`__
+
+* maven-assembly-plugin `3.7.1 → 3.8.0 <https://github.com/apache/maven-assembly-plugin/releases/tag/v3.8.0>`
+
+* maven-release-plugin 3.2.0 → 3.3.1, release notes:
+  * `3.3.0 <https://github.com/apache/maven-release/releases/tag/maven-release-3.3.0>`__
+  * `3.3.1 <https://github.com/apache/maven-release/releases/tag/maven-release-3.3.1>`__
+
+* maven-source-plugin `3.3.1 → 3.4.0 <https://github.com/apache/maven-resources-plugin/releases/tag/maven-resources-plugin-3.4.0>`__
+
+* versions-maven-plugin, 2.19.1 → 2.20.1, release notes:
+  * `2.20.0 <https://github.com/mojohaus/versions/releases/tag/2.20.0>`__
+  * `2.20.1 <https://github.com/mojohaus/versions/releases/tag/2.20.1>`__
+
 Version 14.1.7
 --------------
 This is a bug-fix/feature upgrade from version 14.1.6.
