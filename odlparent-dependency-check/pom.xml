@@ -196,7 +196,7 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-bom</artifactId>
             <type>pom</type>
-            <version>9.4.57.v20241219</version>
+            <version>9.4.58.v20250814</version>
         </dependency>
         <dependency>
             <groupId>org.gaul</groupId>
