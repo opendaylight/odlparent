@@ -12,7 +12,7 @@
     <parent>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent</artifactId>
-        <version>14.2.0</version>
+        <version>14.2.1-SNAPSHOT</version>
         <relativePath>../../odlparent/pom.xml</relativePath>
     </parent>
 
@@ -147,9 +147,9 @@
                                 <artifactItem>
                                     <groupId>org.opendaylight.odlparent</groupId>
                                     <artifactId>karaf.branding</artifactId>
-                                    <version>14.2.0</version>
+                                    <version>14.2.1-SNAPSHOT</version>
                                     <outputDirectory>target/assembly/lib</outputDirectory>
-                                    <destFileName>karaf.branding-14.2.0.jar</destFileName>
+                                    <destFileName>karaf.branding-14.2.1-SNAPSHOT.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -247,10 +247,10 @@
                         <bundle>mvn:org.apache.sling/org.apache.sling.commons.johnzon/1.2.16</bundle>
                         <bundle>mvn:org.ops4j.pax.url/pax-url-aether/2.6.17</bundle>
 
-                        <bundle>mvn:org.opendaylight.odlparent/bcprov-framework-ext/14.2.0</bundle>
-                        <bundle>mvn:org.opendaylight.odlparent/bcpkix-framework-ext/14.2.0</bundle>
-                        <bundle>mvn:org.opendaylight.odlparent/bcutil-framework-ext/14.2.0</bundle>
-                        <bundle>mvn:org.opendaylight.odlparent/logging-markers/14.2.0</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/bcprov-framework-ext/14.2.1-SNAPSHOT</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/bcpkix-framework-ext/14.2.1-SNAPSHOT</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/bcutil-framework-ext/14.2.1-SNAPSHOT</bundle>
+                        <bundle>mvn:org.opendaylight.odlparent/logging-markers/14.2.1-SNAPSHOT</bundle>
                     </startupBundles>
                     <startupFeatures>
                         <feature>static-framework</feature>
