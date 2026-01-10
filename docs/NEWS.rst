@@ -58,7 +58,7 @@ Plugin upgrades
 
 * exec-maven-plugin `3.6.2 → 3.6.3 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.6.3>`__
 
-* maven-assembly-plugin `3.7.1 → 3.8.0 <https://github.com/apache/maven-assembly-plugin/releases/tag/v3.8.0>`
+* maven-assembly-plugin `3.7.1 → 3.8.0 <https://github.com/apache/maven-assembly-plugin/releases/tag/v3.8.0>`__
 
 * maven-release-plugin 3.2.0 → 3.3.1, release notes:
   * `3.3.0 <https://github.com/apache/maven-release/releases/tag/maven-release-3.3.0>`__
