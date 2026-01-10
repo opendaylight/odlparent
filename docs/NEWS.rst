@@ -121,7 +121,7 @@ Improvements
 * Based on early feedback from downstreams, the Error Prone policy has been updated to disable
   ``FutureReturnValueIgnored``, ``ImmutableEnumChecker``, ``InconsistentOverloads``,
   ``AnnotateFormatMethod``, ``InlineMeSuggester`` checkers. These have been found too aggressive to current codebase.
-  The last two will be re-enabled one `ODLPARENT-338 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-338>`
+  The last two will be re-enabled one `ODLPARENT-338 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-338>`__
   is resolved.
 
 Bug fixes
