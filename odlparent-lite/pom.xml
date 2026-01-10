@@ -17,7 +17,7 @@
 
   <groupId>org.opendaylight.odlparent</groupId>
   <artifactId>odlparent-lite</artifactId>
-  <version>14.2.1</version>
+  <version>14.2.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>ODL :: odlparent :: ${project.artifactId}</name>
 
