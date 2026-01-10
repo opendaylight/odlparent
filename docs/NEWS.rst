@@ -43,8 +43,8 @@ Third-party dependencies
 * Karaf `4.4.8 → 4.4.9 <https://github.com/apache/karaf/releases/tag/karaf-4.4.9>`__
 
 * Logback 1.5.21 → 1.5.23, release notes:
-  * Logback `1.5.22 <https://logback.qos.ch/news.html#1.5.22>`__
-  * Logback `1.5.23 <https://logback.qos.ch/news.html#1.5.23>`__
+  * `1.5.22 <https://logback.qos.ch/news.html#1.5.22>`__
+  * `1.5.23 <https://logback.qos.ch/news.html#1.5.23>`__
 
 * Mockito `5.20.0 → 5.21.0 <https://github.com/mockito/mockito/releases/tag/v5.21.0>`__
 
