@@ -180,7 +180,7 @@
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
-        <version>5.14.1</version>
+        <version>5.14.2</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
