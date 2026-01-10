@@ -2,6 +2,30 @@
 ODL Parent release notes
 ========================
 
+Version 14.2.1
+--------------
+This is a bug-fix/feature upgrade from version 14.2.0.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checker-qual 3.52.1 → 3.53.0
+
+* Checkstyle 12.3.0 → 13.0.0, release notes:
+  * `12.3.1 <https://checkstyle.org/releasenotes.html#Release_12.3.1>`__
+  * `13.0.0 <https://checkstyle.org/releasenotes.html#Release_13.0.0>`__
+
+* Error Prone `2.45.0 → 2.46.0 <https://github.com/google/error-prone/releases/tag/v2.46.0>`__
+
+* immutables.org `2.12.0 → 2.12.1 <https://github.com/immutables/immutables/releases/tag/2.12.1>`__
+
+* JUnit `5.14.1 → 5.14.2 <https://docs.junit.org/5.14.2/release-notes.html#v5.14.2>`__
+
+* Logback `1.5.23 → 1.5.24 <https://logback.qos.ch/news.html#1.5.24>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin `7.1.0 → 7.2.0 <https://github.com/bndtools/bnd/wiki/Changes-in-7.2.0>`__
+
 Version 14.2.0
 --------------
 This is a bug-fix/feature upgrade from version 14.1.7. Since this includes a minor version bump in Jackson, we get
