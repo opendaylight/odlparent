@@ -27,7 +27,7 @@
             <dependency>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>biz.aQute.bnd.annotation</artifactId>
-                <version>7.1.0</version>
+                <version>7.2.0</version>
                 <scope>provided</scope>
             </dependency>
         </dependencies>
@@ -62,7 +62,7 @@
                 <plugin>
                     <groupId>biz.aQute.bnd</groupId>
                     <artifactId>bnd-maven-plugin</artifactId>
-                    <version>7.1.0</version>
+                    <version>7.2.0</version>
                     <configuration>
                         <bnd><![CDATA[
                             -noextraheaders: true
