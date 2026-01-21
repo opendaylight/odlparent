@@ -1,4 +1,4 @@
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.opendaylight.odlparent/odlparent/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.opendaylight.odlparent/odlparent)
+[![Maven Central](https://maven-badges.sml.io/maven-central/org.opendaylight.odlparent/odlparent/badge.svg)](https://maven-badges.sml.io/maven-central/org.opendaylight.odlparent/odlparent)
 [![javadoc](https://javadoc.io/badge2/org.opendaylight.odlparent/odlparent/javadoc.svg)](https://javadoc.io/doc/org.opendaylight.odlparent/odlparent)
 [![License](https://img.shields.io/badge/License-EPL%201.0-blue.svg)](https://opensource.org/licenses/EPL-1.0)
 
