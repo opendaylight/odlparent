@@ -132,7 +132,9 @@
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.34/pax-web-features-8.0.34-features.xml"
-                         token="/2.20.0" value="/2.20.1" failOnNoReplacements="true"/>
+                         token="/2.20.0" value="/2.21.0" failOnNoReplacements="true"/>
+                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.34/pax-web-features-8.0.34-features.xml"
+                         token="ackson-annotations/2.20" value="ackson-annotations/2.21" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.34/pax-web-features-8.0.34-features.xml"
                       tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/8.0.34/pax-web-features-8.0.34-features.xml"/>
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
