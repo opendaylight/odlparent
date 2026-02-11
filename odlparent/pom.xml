@@ -299,7 +299,7 @@
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
         <!-- Keep this version in sync with annotationProcessorPaths declaration of error_prone_core below -->
-        <version>2.46.0</version>
+        <version>2.47.0</version>
       </dependency>
       <dependency>
         <groupId>com.google.dagger</groupId>
@@ -1676,7 +1676,7 @@
                   <artifactId>error_prone_core</artifactId>
                   <!-- Keep this version in sync with dependency declaration of error_prone_annotations above -->
                   <!-- When bumping this version also evaluate changes and consider updating the above policy -->
-                  <version>2.46.0</version>
+                  <version>2.47.0</version>
                 </path>
               </annotationProcessorPaths>
             </configuration>
