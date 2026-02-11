@@ -467,7 +467,7 @@
         <groupId>io.netty</groupId>
         <artifactId>netty-bom</artifactId>
         <!-- When bumping this version, remember to also change the JavaDoc link in odlparent-lite -->
-        <version>4.2.9.Final</version>
+        <version>4.2.10.Final</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
