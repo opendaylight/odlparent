@@ -38,7 +38,7 @@
     <nexus.repository.snapshot>opendaylight.snapshot</nexus.repository.snapshot>
 
     <!-- Used in controller, genius, infrautils, netconf, netvirt, ovsdb, serviceutils -->
-    <karaf.version>4.4.9</karaf.version>
+    <karaf.version>4.4.10</karaf.version>
 
     <!-- Supporting Libraries -->
     <!-- Only used internally -->
@@ -693,19 +693,19 @@
       <dependency>
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-link</artifactId>
-        <version>2.6.17</version>
+        <version>2.7.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-aether</artifactId>
-        <version>2.6.17</version>
+        <version>2.7.0</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.ops4j.pax.url</groupId>
         <artifactId>pax-url-wrap</artifactId>
-        <version>2.6.17</version>
+        <version>2.7.0</version>
       </dependency>
 
       <dependency>
