@@ -1628,7 +1628,7 @@
                   <!-- Object.wait() is subject to spurious wakeups, forbid its use outside of loops --> \
                   -Xep:WaitNotInLoop:ERROR \
                   \
-                  <!-- Experimantal errors we turn on, alpha-sorted --> \
+                  <!-- Experimental errors we turn on, alpha-sorted --> \
                   <!-- class name/file name should match even in package-private files --> \
                   -Xep:ClassName \
                   <!-- enforce Javadoc/javac deprecation consistency --> \
@@ -1645,7 +1645,7 @@
                        anywhere. This is always wrong. --> \
                   -Xep:UseCorrectAssertInTests \
                   \
-                  <!-- Experimantal warnings we turn on, alpha-sorted --> \
+                  <!-- Experimental warnings we turn on, alpha-sorted --> \
                   <!-- correct positioning of annotations is critical, especially with TYPE_USE annotations --> \
                   -Xep:AnnotationPosition:ERROR \
                   <!-- compiling a Pattern is expensive and patterns with compile-time constants shoult always be
@@ -1656,7 +1656,7 @@
                   <!-- misusing @see with URLs is a common mistake --> \
                   -Xep:UrlInSee:ERROR \
                   \
-                  <!-- Experimantal suggestions we turn on, alpha-sorted --> \
+                  <!-- Experimental suggestions we turn on, alpha-sorted --> \
                   <!-- strong recommendation in JLS 8.4. Method Declarations --> \
                   -Xep:MixedArrayDimensions:ERROR \
                   <!-- enforce one top-level class per source file --> \
