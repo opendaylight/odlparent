@@ -1668,6 +1668,9 @@
                   <!-- there is really no excuse to use enum without a switch --> \
                   -Xep:UseEnumSwitch:ERROR \
                   \
+                  <!-- NullAway configuration --> \
+                  -XepOpt:NullAway:OnlyNullMarked=true \
+                  \
                   ${odl.ep.extra}</arg>
               </compilerArgs>
               <annotationProcessorPaths combine.children="append">
@@ -1677,6 +1680,11 @@
                   <!-- Keep this version in sync with dependency declaration of error_prone_annotations above -->
                   <!-- When bumping this version also evaluate changes and consider updating the above policy -->
                   <version>2.47.0</version>
+                </path>
+                <path>
+                  <groupId>com.uber.nullaway</groupId>
+                  <artifactId>nullaway</artifactId>
+                  <version>0.13.1</version>
                 </path>
               </annotationProcessorPaths>
             </configuration>
