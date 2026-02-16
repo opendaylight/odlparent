@@ -1678,6 +1678,11 @@
                   <!-- When bumping this version also evaluate changes and consider updating the above policy -->
                   <version>2.47.0</version>
                 </path>
+                <path>
+                  <groupId>jp.skypencil.errorprone.slf4j</groupId>
+                  <artifactId>errorprone-slf4j</artifactId>
+                  <version>0.1.29</version>
+                </path>
               </annotationProcessorPaths>
             </configuration>
           </plugin>
