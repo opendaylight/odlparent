@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent-lite</artifactId>
-    <version>14.3.0-SNAPSHOT</version>
+    <version>14.3.0</version>
     <relativePath>../odlparent-lite/pom.xml</relativePath>
   </parent>
 
@@ -148,7 +148,7 @@
       <dependency>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>odlparent-artifacts</artifactId>
-        <version>14.3.0-SNAPSHOT</version>
+        <version>14.3.0</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -948,7 +948,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>checkstyle</artifactId>
-              <version>14.3.0-SNAPSHOT</version>
+              <version>14.3.0</version>
             </dependency>
             <dependency>
               <groupId>com.github.sevntu-checkstyle</groupId>
@@ -1068,7 +1068,7 @@
                   <artifactItem>
                     <groupId>org.opendaylight.odlparent</groupId>
                     <artifactId>odl-license</artifactId>
-                    <version>14.3.0-SNAPSHOT</version>
+                    <version>14.3.0</version>
                     <type>license</type>
                     <outputDirectory>${project.build.outputDirectory}</outputDirectory>
                     <destFileName>LICENSE</destFileName>
@@ -1222,7 +1222,7 @@
             <dependency>
               <groupId>org.opendaylight.odlparent</groupId>
               <artifactId>spotbugs</artifactId>
-              <version>14.3.0-SNAPSHOT</version>
+              <version>14.3.0</version>
             </dependency>
           </dependencies>
           <configuration>
@@ -1535,7 +1535,7 @@
       <plugin>
         <groupId>org.opendaylight.odlparent</groupId>
         <artifactId>copy-files-plugin</artifactId>
-        <version>14.3.0-SNAPSHOT</version>
+        <version>14.3.0</version>
         <executions>
           <execution>
             <phase>prepare-package</phase>
