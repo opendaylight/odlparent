@@ -2,6 +2,76 @@
 ODL Parent release notes
 ========================
 
+Version 14.3.0
+--------------
+This is a bug-fix/feature upgrade from version 14.2.1. Since this includes a minor version bump in Jackson, we get
+a new minor version as well.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* The Error Prone configuration has been updated to includes SLF4j integration similar to the SpotBugs integration.
+  See `ODLPARENT-341 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-341>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* AssertJ `3.27.6 → 3.27.7 <https://github.com/assertj/assertj/releases/tag/assertj-build-3.27.7>`__
+
+* checker-qual 3.53.0 → 3.53.1
+
+* Checkstyle 13.0.0 → 13.2.0, release notes:
+  * `13.1.0 <https://checkstyle.org/releasenotes.html#Release_13.1.0>`__
+  * `13.2.0 <https://checkstyle.org/releasenotes.html#Release_13.2.0>`__
+
+* Dagger 2.57.2 → 2.59.1, release notes:
+  * `2.58 <https://github.com/google/dagger/releases/tag/dagger-2.58>`__
+  * `2.59 <https://github.com/google/dagger/releases/tag/dagger-2.59>`__
+  * `2.59.1 <https://github.com/google/dagger/releases/tag/dagger-2.59.1>`__
+
+* Dropwizard Metrics `4.2.37 → 4.2.38 <https://github.com/dropwizard/metrics/releases/tag/v4.2.38>`__
+
+* Error Prone `2.46.0 → 2.47.0 <https://github.com/google/error-prone/releases/tag/v2.47.0>`__
+
+* Jackson `2.20.1 → 2.21 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.21>`__
+
+* JUnit `5.14.2 → 5.14.3 <https://docs.junit.org/5.14.3/release-notes.html#v5.14.3>`__
+
+* Karaf `4.4.9 → 4.4.10 <https://github.com/apache/karaf/releases/tag/karaf-4.4.10>`__
+
+* Logback 1.5.24 → 1.5.32, release notes:
+  * `1.5.25 <https://logback.qos.ch/news.html#1.5.25>`__
+  * `1.5.26 <https://logback.qos.ch/news.html#1.5.26>`__
+  * `1.5.27 <https://logback.qos.ch/news.html#1.5.27>`__
+  * `1.5.28 <https://logback.qos.ch/news.html#1.5.28>`__
+  * `1.5.29 <https://logback.qos.ch/news.html#1.5.29>`__
+  * `1.5.30 <https://logback.qos.ch/news.html#1.5.30>`__
+  * `1.5.31 <https://logback.qos.ch/news.html#1.5.31>`__
+  * `1.5.32 <https://logback.qos.ch/news.html#1.5.32>`__
+
+* Netty `4.2.9.Final → 4.2.10.Final <https://netty.io/news/2026/02/05/4-2-10.html>`__
+
+* Pax URL `2.6.17 → 2.7.0 <https://github.com/ops4j/org.ops4j.pax.url/milestone/88?closed=1>`__
+
+* slf4j 2.0.12 → 2.0.17, release notes:
+  * `2.0.13 <https://www.slf4j.org/news.html#2.0.13>`__
+  * `2.0.14 <https://www.slf4j.org/news.html#2.0.14>`__
+  * `2.0.15 <https://www.slf4j.org/news.html#2.0.15>`__
+  * `2.0.16 <https://www.slf4j.org/news.html#2.0.16>`__
+  * `2.0.17 <https://www.slf4j.org/news.html#2.0.17>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin `7.2.0 → 7.2.1 <https://github.com/bndtools/bnd/wiki/Changes-in-7.2.1>`__
+
+* jdepend-maven-plugin `2.1 → 2.2.0 <https://github.com/mojohaus/jdepend-maven-plugin/releases/tag/jdepend-maven-plugin-2.2.0>`__
+
+* maven-compiler-plugin `3.14.1 → 3.15.0 <https://github.com/apache/maven-compiler-plugin/releases/tag/maven-compiler-plugin-3.15.0>`__
+
+* maven-dependency-plugin `3.9.0 → 3.10.0 <https://github.com/apache/maven-dependency-plugin/releases/tag/maven-dependency-plugin-3.10.0>`__
+
+* properties-maven-plugin `1.2.1 → 1.3.0 <https://github.com/mojohaus/properties-maven-plugin/releases/tag/properties-maven-plugin-1.3.0>`__
+
+* versions-maven-plugin, `2.20.1 → 2.21.0 <https://github.com/mojohaus/versions/releases/tag/2.21.0>`__
+
 Version 14.2.1
 --------------
 This is a bug-fix/feature upgrade from version 14.2.0.
