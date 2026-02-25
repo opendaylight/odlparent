@@ -2,6 +2,25 @@
 ODL Parent release notes
 ========================
 
+Version 14.3.1
+--------------
+This is a bug-fix upgrade from version 14.3.0.
+
+Bug fixes
+~~~~~~~~~
+* Karaf-4.4.10 has an inconsistent view on the version of ``pax-url``, causeing issues in downstream tests.
+  This has now been resolved.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Dagger `2.59.1 → 2.59.2 <https://github.com/google/dagger/releases/tag/dagger-2.59.1>`__
+
+* Jackson `2.21 → 2.21.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.21.1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-surefire-plugin `3.5.4 → 3.5.5 <https://github.com/apache/maven-surefire/releases/tag/maven-surefire-3.5.5>`__
+
 Version 14.3.0
 --------------
 This is a bug-fix/feature upgrade from version 14.2.1. Since this includes a minor version bump in Jackson, we get
