@@ -84,3 +84,13 @@ target-ide/
 
 # Sphinx build directory
 _build
+
+# pre-commit / linting
+.pre-commit-log*
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+.tox/
+*.egg-info/
