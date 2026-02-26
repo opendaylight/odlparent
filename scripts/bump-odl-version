@@ -20,7 +20,7 @@ target=$3
 
 # We use find/grep instead of git grep to allow running this on
 # multiple repositories
-for file in $(find . -type f -name pom.xml | xargs grep -l ${curver})
+for file in $(find . -type f -name pom.xml -print0 | xargs -0 grep -l "${curver}")
 do
     echo -n Processing ${file}...
     xmlstarlet ed -P -L -N mvn=http://maven.apache.org/POM/4.0.0 -u //mvn:version[../mvn:groupId=\"org.opendaylight.${project}\"] -v ${target} ${file}
