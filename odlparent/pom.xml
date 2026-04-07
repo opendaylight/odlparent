@@ -1668,6 +1668,9 @@
                   <!-- there is really no excuse to use enum without a switch --> \
                   -Xep:UseEnumSwitch:ERROR \
                   \
+                  <!-- We do not require Loggers to be non-static -->
+                  -Xep:Slf4jLoggerShouldBeNonStatic:OFF \
+                  \
                   ${odl.ep.extra}</arg>
               </compilerArgs>
               <annotationProcessorPaths combine.children="append">
