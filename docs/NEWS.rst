@@ -2,6 +2,53 @@
 ODL Parent release notes
 ========================
 
+Version 14.3.2
+--------------
+This is a bug-fix upgrade from version 14.3.0.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* checker-qual 3.53.1 → 3.55.1
+
+* Checkstyle 13.2.0 → 13.4.0, release notes:
+  * `13.3.0 <https://checkstyle.org/releasenotes.html#Release_13.3.0>`__
+  * `13.4.0 <https://checkstyle.org/releasenotes.html#Release_13.4.0>`__
+
+* Error Prone `2.47.0 → 2.48.0 <https://github.com/google/error-prone/releases/tag/v2.48.0>`__
+
+* Jackson `2.21.1 → 2.21.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.21.2>`__
+
+* Jersey `2.47 → 2.48 <https://github.com/eclipse-ee4j/jersey/releases/tag/2.48>`__
+
+* Mockito 5.21.0 → 5.23.0, release notes:
+  * `5.22.0 <https://github.com/mockito/mockito/releases/tag/v5.22.0>`__
+  * `5.23.0 <https://github.com/mockito/mockito/releases/tag/v5.23.0>`__
+
+* Netty 4.2.10.Final → 4.2.12.Final, release notes:
+  * `4.2.11.Final <https://netty.io/news/2026/03/24/4-2-11-Final.html>`__
+  * `4.2.12.Final <https://github.com/netty/netty/releases/tag/netty-4.2.11.Final>`__
+
+* stax2-api `4.2.2 → 4.3.0 <https://github.com/FasterXML/stax2-api/milestone/4?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* asciidoctor-jdiagram 3.1.0 → 3.2.1, release notes:
+  * `3.2.0 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v3.2.0>`__
+  * `3.2.1 <https://github.com/asciidoctor/asciidoctorj-diagram/releases/tag/v3.2.1>`__
+
+* bnd-maven-plugin `7.2.1 → 7.2.3 <https://github.com/bndtools/bnd/wiki/Changes-in-7.2.3>`__
+
+* git-commit-id-maven-plugin 9.0.2 → 10.0.0, release notes:
+  * `9.1.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v9.1.0>`__
+  * `9.2.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v9.2.0>`__
+  * `10.0.0 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v10.0.0>`__
+
+* maven-resources-plugin `3.4.0 → 3.5.0 <https://github.com/apache/maven-resources-plugin/releases/tag/maven-resources-plugin-3.5.0>`__
+
+* maven-shade-plugin `3.6.1 → 3.6.2 <https://github.com/apache/maven-shade-plugin/releases/tag/v3.6.2>`__
+
+* modernizer-maven-plugin `3.1.0 → 3.2.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-3.2.0>`__
+
 Version 14.3.1
 --------------
 This is a bug-fix upgrade from version 14.3.0.
