@@ -1110,7 +1110,8 @@
           <configuration>
             <redirectTestOutputToFile>${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
             <trimStackTrace>false</trimStackTrace>
-            <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
+            <!-- Note: native access is for Netty at the very least -->
+            <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar} --enable-native-access=ALL-UNNAMED</argLine>
           </configuration>
         </plugin>
 
