@@ -3,7 +3,7 @@
     <feature version="0.0.0">
         <feature>odl-jspecify</feature>
         <bundle>mvn:com.google.guava/failureaccess/1.0.3</bundle>
-        <bundle>mvn:com.google.guava/guava/33.5.0-jre</bundle>
+        <bundle>mvn:com.google.guava/guava/33.6.0-jre</bundle>
         <bundle>mvn:org.checkerframework/checker-qual/3.55.1</bundle>
     </feature>
 </features>
