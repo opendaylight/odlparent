@@ -129,14 +129,12 @@
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/standard/${karaf.version}/standard-${karaf.version}-features.xml"/>
                 <copy file="${project.build.directory}/assembly/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"
                       tofile="${project.build.directory}/classes/system/org/apache/karaf/features/framework/${karaf.version}/framework-${karaf.version}-features.xml"/>
-                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.34/pax-web-features-8.0.34-features.xml"
-                         token="/2.20.0" value="/2.21.3" failOnNoReplacements="true"/>
-                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.34/pax-web-features-8.0.34-features.xml"
-                         token="ackson-annotations/2.20" value="ackson-annotations/2.21" failOnNoReplacements="true"/>
-                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.34/pax-web-features-8.0.34-features.xml"
-                         token="pax-url-war/2.6.17/" value="pax-url-war/2.7.0/" failOnNoReplacements="true"/>
-                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.34/pax-web-features-8.0.34-features.xml"
-                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/8.0.34/pax-web-features-8.0.34-features.xml"/>
+                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.35/pax-web-features-8.0.35-features.xml"
+                         token="/2.21.2" value="/2.21.3" failOnNoReplacements="true"/>
+                <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.35/pax-web-features-8.0.35-features.xml"
+                         token="/1.83" value="/1.84" failOnNoReplacements="true"/>
+                <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.35/pax-web-features-8.0.35-features.xml"
+                      tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/8.0.35/pax-web-features-8.0.35-features.xml"/>
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
                 <echo file="${project.build.directory}/assembly/etc/startup.properties" append="true">
 # The following are added by opendaylight-karaf-resources
