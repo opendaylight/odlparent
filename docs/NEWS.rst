@@ -2,9 +2,50 @@
 ODL Parent release notes
 ========================
 
+Version 14.3.3
+--------------
+This is a bug-fix upgrade from version 14.3.2.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Java 24+ issues a warning about Netty loading its JNI libraries. We now suppress this warning in unit tests.
+  See `ODLPARENT-350 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-350>`__ for details.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.83 → 1.84 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java=release-1-84>`__
+
+* Checkstyle 13.4.0 → 13.4.2, release notes:
+  * `13.4.1 <https://checkstyle.org/releasenotes.html#Release_13.4.1>`__
+  * `13.4.2 <https://checkstyle.org/releasenotes.html#Release_13.4.2>`__
+
+* commons-io `2.21.0 → 2.22.0 <https://commons.apache.org/proper/commons-io/changes.html#a2.22.0>`__
+
+* Error Prone `2.48.0 → 2.49.0 <https://github.com/google/error-prone/releases/tag/v2.49.0>`__
+
+* GSON `2.13.2 → 2.14.0 <https://github.com/google/gson/releases/tag/gson-parent-2.14.0>`__
+
+* Guava `33.5.8 → 33.6.0 <https://github.com/google/guava/releases/tag/v33.6.0>`__
+
+* Jackson `2.21.2 → 2.21.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.21.3>`__
+
+* Javassist `3.30.2-GA → 3.31.0-GA <https://github.com/jboss-javassist/javassist/releases/tag/rel_3_31_0_ga>`__
+
+* JUnit `5.14.3 → 5.14.4 <https://docs.junit.org/5.14.4/release-notes.html#v5.14.4>`__
+
+* Karaf `4.4.10 → 4.4.11 <https://github.com/apache/karaf/releases/tag/karaf-4.4.11>`__
+
+* Pax URL `2.7.0 → 2.7.1 <https://github.com/ops4j/org.ops4j.pax.url/milestone/89?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-invoker-plugin `3.9.1 → 3.10.0 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.10.0>`__
+
+* spotbugs-maven-plugin `4.8.6.7 → 4.8.6.8 <https://github.com/spotbugs/spotbugs-maven-plugin/releases/tag/spotbugs-maven-plugin-4.8.6.8>`__
+
 Version 14.3.2
 --------------
-This is a bug-fix upgrade from version 14.3.0.
+This is a bug-fix upgrade from version 14.3.1.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
