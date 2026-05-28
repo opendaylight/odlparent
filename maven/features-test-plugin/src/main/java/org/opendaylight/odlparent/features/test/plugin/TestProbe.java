@@ -164,7 +164,7 @@ public final class TestProbe {
             final var checkResults = diag.bundles().stream()
                 .map(bundle -> Map.entry(bundle,
                     CheckResult.of(bundle.symbolicName(), bundle.serviceState().containerState())))
-                .collect(Collectors.toUnmodifiableList());
+                .toList();
 
             LOG.info("Bundle states check results: total={}, byResult={}", checkResults.size(), checkResults.stream()
                 .collect(Collectors.groupingBy(Map.Entry::getValue, Collectors.counting())));
@@ -187,7 +187,7 @@ public final class TestProbe {
 
             final var inProgress = checkResults.stream()
                 .filter(checkResult -> checkResult.getValue() == CheckResult.IN_PROGRESS)
-                .collect(Collectors.toUnmodifiableList());
+                .toList();
             if (inProgress.isEmpty()) {
                 LOG.info("Bundle check completed after {}s", NANOSECONDS.toSeconds(elapsed));
                 return;
