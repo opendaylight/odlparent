@@ -9,9 +9,8 @@ package org.opendaylight.odlparent.features.test.plugin;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 import org.apache.karaf.features.BundleInfo;
@@ -61,7 +60,7 @@ final class DependencyUtils {
         // utility class
     }
 
-    static Collection<Artifact> extractDependencies(final Features features) {
+    static List<Artifact> extractDependencies(final Features features) {
         final var urls = new LinkedHashSet<String>();
         urls.addAll(features.getRepository());
         for (var feature : features.getFeature()) {
@@ -78,12 +77,12 @@ final class DependencyUtils {
                 urls.addAll(feature.getConfigfile().stream().map(ConfigFile::getLocation).toList());
             }
         }
-        final var artifacts = new LinkedList<Artifact>();
+        final var artifacts = new ArrayList<Artifact>();
         urls.forEach(url -> collectArtifact(url, artifacts));
         return artifacts;
     }
 
-    private static void collectArtifact(final String url, final Collection<Artifact> collection) {
+    private static void collectArtifact(final String url, final List<Artifact> collection) {
         final var filteredUrl = url == null ? null : filterMvnUrl(url);
         if (filteredUrl != null) {
             final Parser parser;
