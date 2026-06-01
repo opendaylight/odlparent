@@ -1181,6 +1181,27 @@
                      the Iterable is actually a Collection
               -->
               <exclusionPattern>com/google/common/collect/Iterables.*</exclusionPattern>
+
+              <!--
+                   Modernizer 3.4.0 is rather aggressive around streams, collections and collectors,
+                   which makes the upgrade rather invasive, which we do not want to do outside of major
+                   release. These generally call into three categories:
+                     1. different semantics and storage, like Stream.toList() vs Collectors.toUnmodifiableList()
+                     2. different nullness semantics, like Collections.singleton(Object) vs. Set.of(Object)
+                     3. unneeded churn, like String.format(String, ...) vs. String.formatted(...)
+                   The first two generally require investigation to ensure we do not accidentaly inflate List12 to
+                   ListN (for example). We also have a number of places where we explicitly want nulls, which requires
+                   suppression in potentially awkward places.
+              -->
+              <exclusionPattern>com/google/common/base/Joiner.join:.*</exclusionPattern>
+              <exclusionPattern>java/lang/String.format:.*</exclusionPattern>
+              <exclusionPattern>java/util/Collections.emptyList:.*</exclusionPattern>
+              <exclusionPattern>java/util/Collections.emptyMap:.*</exclusionPattern>
+              <exclusionPattern>java/util/Collections.emptySet:.*</exclusionPattern>
+              <exclusionPattern>java/util/Collections.singleton:.*</exclusionPattern>
+              <exclusionPattern>java/util/Collections.singletonList:.*</exclusionPattern>
+              <exclusionPattern>java/util/Collections.singletonMap:.*</exclusionPattern>
+              <exclusionPattern>java/util/stream/Collectors.toUnmodifiableList:.*</exclusionPattern>
             </exclusionPatterns>
           </configuration>
 
