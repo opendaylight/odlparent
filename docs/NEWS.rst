@@ -35,6 +35,8 @@ Third-party dependencies
 
 * Karaf `4.4.10 → 4.4.11 <https://github.com/apache/karaf/releases/tag/karaf-4.4.11>`__
 
+* Netty `4.2.12.Final → 4.2.13.Final <https://github.com/netty/netty/releases/tag/netty-4.2.13.Final>`__
+
 * Pax URL `2.7.0 → 2.7.1 <https://github.com/ops4j/org.ops4j.pax.url/milestone/89?closed=1>`__
 
 Plugin upgrades
