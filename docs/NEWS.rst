@@ -671,7 +671,7 @@ Third-party dependencies
   * `4.2.1.Final <https://netty.io/news/2025/05/06/4-2-1.html>`__
   * `4.2.2.Final <https://netty.io/news/2025/06/05/4-2-2.html>`__
 
-* Woodstox `7.1.1 → 7.1.1 <https://github.com/FasterXML/woodstox/milestone/37?closed=1>`__
+* Woodstox `7.1.0 → 7.1.1 <https://github.com/FasterXML/woodstox/milestone/37?closed=1>`__
 
 * xmlunit 2.10.0 → 2.10.2, release notes:
   * `2.10.1 <https://github.com/xmlunit/xmlunit/releases/tag/v2.10.1>`__
