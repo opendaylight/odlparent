@@ -2,6 +2,48 @@
 ODL Parent release notes
 ========================
 
+Version 14.3.4
+--------------
+This is a bug-fix upgrade from version 14.3.3.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle `13.4.2 → 13.5.0 <https://checkstyle.org/releasenotes.html#Release_13.5.0>`__
+
+* Dropwizard Metrics `4.2.38 → 4.2.39 <https://github.com/dropwizard/metrics/releases/tag/v4.2.39>`__
+
+* immutables.org `2.12.1 → 2.12.2 <https://github.com/immutables/immutables/releases/tag/2.12.2>`__
+
+* Jackson `2.21.3 → 2.21.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.21.4>`__
+
+* Logback 1.5.32 → 1.5.34, release notes:
+  * `1.5.33 <https://logback.qos.ch/news.html#1.5.33>`__
+  * `1.5.34 <https://logback.qos.ch/news.html#1.5.34>`__
+
+* Netty `4.2.13.Final → 4.2.14.Final <https://github.com/netty/netty/releases/tag/netty-4.2.14.Final>`__
+
+* slf4j `2.0.17 → 2.0.18 <https://www.slf4j.org/news.html#2.0.18>`__
+
+* ThreeTen `1.8.0 → 1.9.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.9.0>`__
+
+* Woodstox `7.1.1 → 7.2.0 <https://github.com/FasterXML/woodstox/milestone/38?closed=1>`__
+
+* xmlunit `2.11.0 → 2.12.0 <https://github.com/xmlunit/xmlunit/releases/tag/v2.12.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-dependency-plugin `3.10.0 → 3.11.0 <https://github.com/apache/maven-dependency-plugin/releases/tag/maven-dependency-plugin-3.11.0>`__
+
+* maven-enforcer-plugin `3.6.2 → 3.6.3 <https://github.com/apache/maven-enforcer/releases/tag/enforcer-3.6.3>`__
+
+* maven-invoker-plugin `3.10.0 → 3.10.1 <https://github.com/apache/maven-invoker-plugin/releases/tag/maven-invoker-plugin-3.10.1>`__
+
+* maven-site-plugin `3.21.0 → 3.22.0 <https://github.com/apache/maven-site-plugin/releases/tag/maven-site-plugin-3.22.0>`__
+
+* maven-surefire-plugin `3.5.5 → 3.5.6 <https://github.com/apache/maven-surefire/releases/tag/maven-surefire-3.5.6>`__
+
+* modernizer-maven-plugin `3.3.0 → 3.4.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-3.4.0>`__
+
 Version 14.3.3
 --------------
 This is a bug-fix upgrade from version 14.3.2.
