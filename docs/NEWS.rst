@@ -90,7 +90,7 @@ Plugin upgrades
 
 * maven-shade-plugin `3.6.1 → 3.6.2 <https://github.com/apache/maven-shade-plugin/releases/tag/v3.6.2>`__
 
-* modernizer-maven-plugin `3.1.0 → 3.2.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-3.2.0>`__
+* modernizer-maven-plugin `3.2.0 → 3.3.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-3.3.0>`__
 
 Version 14.3.1
 --------------
