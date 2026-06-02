@@ -16,6 +16,10 @@ Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
 * Netty `4.2.14.Final → 4.2.15.Final <https://github.com/netty/netty/releases/tag/netty-4.2.15.Final>`__
 
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-bundle-plugin `6.0.0 → 6.0.2 <https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310100&version=12355502>`__
+
 Version 14.3.4
 --------------
 This is a bug-fix upgrade from version 14.3.3.
