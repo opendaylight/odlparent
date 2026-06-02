@@ -2,6 +2,20 @@
 ODL Parent release notes
 ========================
 
+Version 14.3.5
+--------------
+This is a bug-fix upgrade from version 14.3.4.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ``modernizer-maven-plugin-3.4.0`` is triggering a large number of violations, which would imply
+  large-scale code churn inappropriate for the minor bump. Most of the invasive violations have now been
+  suppressed.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Netty `4.2.14.Final → 4.2.15.Final <https://github.com/netty/netty/releases/tag/netty-4.2.15.Final>`__
+
 Version 14.3.4
 --------------
 This is a bug-fix upgrade from version 14.3.3.
