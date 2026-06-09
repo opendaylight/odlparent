@@ -2,6 +2,20 @@
 ODL Parent release notes
 ========================
 
+Version 14.3.6
+--------------
+This is a bug-fix upgrade from version 14.3.5.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Woodstox `7.2.0 → 7.2.1 <https://github.com/FasterXML/woodstox/milestone/39?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin `7.2.3 → 7.3.0 <https://github.com/bndtools/bnd/wiki/Changes-in-7.3.0>`__
+
+* Jacoco Maven plugin `0.8.14 → 0.8.15 <https://github.com/jacoco/jacoco/releases/tag/v0.8.15>`__
+
 Version 14.3.5
 --------------
 This is a bug-fix upgrade from version 14.3.4.
