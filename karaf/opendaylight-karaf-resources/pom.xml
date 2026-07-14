@@ -130,7 +130,7 @@
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.35/pax-web-features-8.0.35-features.xml"
                          token="/2.21.1" value="/2.21.5" failOnNoReplacements="true"/>
                 <replace file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.35/pax-web-features-8.0.35-features.xml"
-                         token="/1.83" value="/1.84" failOnNoReplacements="true"/>
+                         token="/1.83" value="/1.85" failOnNoReplacements="true"/>
                 <copy file="${project.build.directory}/assembly/system/org/ops4j/pax/web/pax-web-features/8.0.35/pax-web-features-8.0.35-features.xml"
                       tofile="${project.build.directory}/classes/system/org/ops4j/pax/web/pax-web-features/8.0.35/pax-web-features-8.0.35-features.xml"/>
                 <!-- Add startup bundles to startup.properties — order is significant, bundles are wired in declaration order -->
