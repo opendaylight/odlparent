@@ -256,12 +256,12 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
                         throw new IllegalArgumentException("Could not resolve URI: " + fixedUrl, e);
                     }
                 } else {
-                    artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(fixedUrl))));
+                    artifacts.add(aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URI(fixedUrl).toURL())));
                 }
             }
         } catch (FileNotFoundException e) {
             LOG.info("Could not find properties file: {}", file.toAbsolutePath(), e);
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             LOG.info("Could not read properties file: {}", file.toAbsolutePath(), e);
         }
     }
@@ -275,12 +275,12 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             final var mvnUrls = prop.keys();
             while (mvnUrls.hasMoreElements()) {
                 final var mvnUrl = (String) mvnUrls.nextElement();
-                final var artifact = aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URL(mvnUrl)));
+                final var artifact = aetherUtil.resolveArtifact(FeatureUtil.toCoord(new URI(mvnUrl).toURL()));
                 artifacts.add(artifact);
             }
         } catch (FileNotFoundException e) {
             LOG.info("Could not find properties file: {}", file.toAbsolutePath(), e);
-        } catch (IOException e) {
+        } catch (IOException | URISyntaxException e) {
             LOG.info("Could not read properties file: {}", file.toAbsolutePath(), e);
         }
 
