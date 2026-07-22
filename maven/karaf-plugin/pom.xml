@@ -21,6 +21,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- FIXME: ditch use of URL completely and enable enforcement -->
+    <odlparent.modernizer.enforce>false</odlparent.modernizer.enforce>
   </properties>
 
   <prerequisites>
