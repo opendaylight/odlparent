@@ -11,7 +11,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -19,8 +20,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
-import org.apache.karaf.features.BundleInfo;
-import org.apache.karaf.features.Conditional;
 import org.apache.karaf.features.internal.model.Bundle;
 import org.apache.karaf.features.internal.model.ConfigFile;
 import org.apache.karaf.features.internal.model.Feature;
@@ -54,9 +53,9 @@ public final class FeatureUtil {
      * @return The corresponding artifact coordinates.
      * @throws MalformedURLException if a URL is malformed.
      */
-    public static List<String> toCoord(final List<URL> urls) throws MalformedURLException {
-        List<String> result = new ArrayList<>();
-        for (URL url : urls) {
+    public static List<String> toCoord(final List<URI> urls) throws MalformedURLException {
+        final var result = new ArrayList<String>();
+        for (var url : urls) {
             result.add(toCoord(url));
         }
         LOG.trace("toCoord({}) returns {}", urls, result);
@@ -70,7 +69,7 @@ public final class FeatureUtil {
      * @return The corresponding artifact coordinates.
      * @throws MalformedURLException if the URL is malformed.
      */
-    public static String toCoord(final URL url) throws MalformedURLException {
+    public static String toCoord(final URI url) throws MalformedURLException {
         String repository = url.toString();
         String unwrappedRepo = WRAP_PATTERN.matcher(repository).replaceFirst("");
 
@@ -93,11 +92,13 @@ public final class FeatureUtil {
      * @param repository The repository (list of URLs).
      * @return The corresponding artifact coordinates.
      * @throws MalformedURLException if a URL is malformed.
+     * @throws URISyntaxException if the URL is not syntactically valid
      */
-    public static Set<String> mvnUrlsToCoord(final List<String> repository) throws MalformedURLException {
-        Set<String> result = new LinkedHashSet<>();
-        for (String url : repository) {
-            result.add(toCoord(new URL(url)));
+    public static Set<String> mvnUrlsToCoord(final List<String> repository)
+            throws MalformedURLException, URISyntaxException {
+        final var result = new LinkedHashSet<String>();
+        for (var url : repository) {
+            result.add(toCoord(new URI(url)));
         }
         LOG.trace("mvnUrlsToCoord({}) returns {}", repository, result);
         return result;
@@ -109,8 +110,10 @@ public final class FeatureUtil {
      * @param features The features.
      * @return The corresponding artifact coordinates.
      * @throws MalformedURLException if a URL is malformed.
+     * @throws URISyntaxException if the URL is not syntactically valid
      */
-    public static Set<String> featuresRepositoryToCoords(final Features features) throws MalformedURLException {
+    public static Set<String> featuresRepositoryToCoords(final Features features)
+            throws MalformedURLException, URISyntaxException {
         return mvnUrlsToCoord(features.getRepository());
     }
 
@@ -120,10 +123,12 @@ public final class FeatureUtil {
      * @param features The features.
      * @return The corresponding artifact coordinates.
      * @throws MalformedURLException if a URL is malformed.
+     * @throws URISyntaxException if the URL is not syntactically valid
      */
-    public static Set<String> featuresRepositoryToCoords(final Set<Features> features) throws MalformedURLException {
-        Set<String> result = new LinkedHashSet<>();
-        for (Features feature : features) {
+    public static Set<String> featuresRepositoryToCoords(final Set<Features> features)
+            throws MalformedURLException, URISyntaxException {
+        final var result = new LinkedHashSet<String>();
+        for (var feature : features) {
             result.addAll(featuresRepositoryToCoords(feature));
         }
         LOG.trace("featuresRepositoryToCoords({}) returns {}", features, result);
@@ -136,17 +141,18 @@ public final class FeatureUtil {
      * @param feature The feature.
      * @return The corresponding coordinates.
      * @throws MalformedURLException if a URL is malformed.
+     * @throws URISyntaxException if the URL is not syntactically valid
      */
-    public static Set<String> featureToCoords(final Feature feature) throws MalformedURLException {
-        Set<String> result = new LinkedHashSet<>();
+    public static Set<String> featureToCoords(final Feature feature) throws MalformedURLException, URISyntaxException {
+        final var result = new LinkedHashSet<String>();
         if (feature.getBundle() != null) {
             result.addAll(bundlesToCoords(feature.getBundle()));
         }
         if (feature.getConditional() != null) {
-            for (Conditional conditional : feature.getConditional()) {
+            for (var conditional : feature.getConditional()) {
                 if (conditional.getBundles() != null) {
-                    for (BundleInfo bundleInfo : conditional.getBundles()) {
-                        result.add(toCoord(new URL(bundleInfo.getLocation())));
+                    for (var bundleInfo : conditional.getBundles()) {
+                        result.add(toCoord(new URI(bundleInfo.getLocation())));
                     }
                 }
             }
@@ -165,11 +171,13 @@ public final class FeatureUtil {
      * @param configfiles The configuration files.
      * @return The corresponding coordinates.
      * @throws MalformedURLException if a URL is malformed.
+     * @throws URISyntaxException if the URL is not syntactically valid
      */
-    public static Set<String> configFilesToCoords(final List<ConfigFile> configfiles) throws MalformedURLException {
-        Set<String> result = new LinkedHashSet<>();
-        for (ConfigFile configFile : configfiles) {
-            result.add(toCoord(new URL(configFile.getLocation())));
+    public static Set<String> configFilesToCoords(final List<ConfigFile> configfiles)
+            throws MalformedURLException, URISyntaxException {
+        final var result = new LinkedHashSet<String>();
+        for (var configFile : configfiles) {
+            result.add(toCoord(new URI(configFile.getLocation())));
         }
         LOG.trace("configFilesToCoords({}) returns {}", configfiles, result);
         return result;
@@ -181,13 +189,15 @@ public final class FeatureUtil {
      * @param bundles The bundles.
      * @return The corresponding coordinates.
      * @throws MalformedURLException if a URL is malformed.
+     * @throws URISyntaxException if the URL is not syntactically valid
      */
-    public static Set<String> bundlesToCoords(final List<Bundle> bundles) throws MalformedURLException {
-        Set<String> result = new LinkedHashSet<>();
-        for (Bundle bundle : bundles) {
+    public static Set<String> bundlesToCoords(final List<Bundle> bundles)
+            throws MalformedURLException, URISyntaxException {
+        final var result = new LinkedHashSet<String>();
+        for (var bundle : bundles) {
             try {
-                result.add(toCoord(new URL(bundle.getLocation())));
-            } catch (MalformedURLException e) {
+                result.add(toCoord(new URI(bundle.getLocation())));
+            } catch (MalformedURLException | URISyntaxException e) {
                 LOG.error("Invalid URL {}", bundle.getLocation(), e);
                 throw e;
             }
@@ -204,19 +214,19 @@ public final class FeatureUtil {
      * @throws MojoExecutionException if an error occurs during processing.
      */
     public static Set<String> featuresToCoords(final Features features) throws MojoExecutionException {
-        Set<String> result = new LinkedHashSet<>();
+        final var result = new LinkedHashSet<String>();
         if (features.getRepository() != null) {
             try {
                 result.addAll(featuresRepositoryToCoords(features));
-            } catch (MalformedURLException e) {
+            } catch (MalformedURLException | URISyntaxException e) {
                 throw new MojoExecutionException("Feature " + features.getName() + " has an invalid repository URL", e);
             }
         }
         if (features.getFeature() != null) {
-            for (Feature feature : features.getFeature()) {
+            for (var feature : features.getFeature()) {
                 try {
                     result.addAll(featureToCoords(feature));
-                } catch (MalformedURLException e) {
+                } catch (MalformedURLException | URISyntaxException e) {
                     throw new MojoExecutionException("Feature " + feature.getName() + " in " + features.getName()
                             + " contains an invalid or missing URL", e);
                 }
@@ -314,12 +324,11 @@ public final class FeatureUtil {
      * @throws FileNotFoundException if a file is missing.
      */
     public Set<Features> findAllFeaturesRecursively(final Features features, final Set<String> existingCoords)
-            throws IOException {
+            throws IOException, URISyntaxException {
         LOG.debug("findAllFeaturesRecursively({}) starts", features.getName());
         LOG.trace("findAllFeaturesRecursively knows about these coords: {}", existingCoords);
-        Set<Features> result = new LinkedHashSet<>();
-        Set<String> coords = FeatureUtil.featuresRepositoryToCoords(features);
-        for (String coord : coords) {
+        final var result = new LinkedHashSet<Features>();
+        for (var coord : FeatureUtil.featuresRepositoryToCoords(features)) {
             if (!existingCoords.contains(coord)) {
                 LOG.trace("findAllFeaturesRecursively() going to add {}", coord);
                 existingCoords.add(coord);
@@ -345,9 +354,9 @@ public final class FeatureUtil {
      * @throws FileNotFoundException if a file is missing.
      */
     public Set<Features> findAllFeaturesRecursively(final Set<Features> features, final Set<String> existingCoords)
-            throws IOException {
-        Set<Features> result = new LinkedHashSet<>();
-        for (Features feature : features) {
+            throws IOException, URISyntaxException {
+        final var result = new LinkedHashSet<Features>();
+        for (var feature : features) {
             result.addAll(findAllFeaturesRecursively(feature, existingCoords));
         }
         return result;
@@ -362,7 +371,8 @@ public final class FeatureUtil {
      * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Set<Features> findAllFeaturesRecursively(final Set<Features> features) throws IOException {
+    public Set<Features> findAllFeaturesRecursively(final Set<Features> features)
+            throws IOException, URISyntaxException {
         return findAllFeaturesRecursively(features, new LinkedHashSet<>());
     }
 
