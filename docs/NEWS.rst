@@ -8,6 +8,53 @@ This is a bug-fix upgrade from version 14.3.5.
 
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.84 → 1.85 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java=release-1-85>`__
+
+* Dagger 2.59.1 → 2.60.1, release notes:
+  * `2.60 <https://github.com/google/dagger/releases/tag/dagger-2.60>`__
+  * `2.60.1 <https://github.com/google/dagger/releases/tag/dagger-2.60.1>`__
+
+* Error Prone `2.49.0 → 2.50.0 <https://github.com/google/error-prone/releases/tag/v2.50.0>`__
+
+* Jackson `2.21.4 → 2.21.5 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.21.5>`__
+
+* Javassist `3.31.0-GA → 3.32.0-GA <https://github.com/jboss-javassist/javassist/releases/tag/rel_3_32_0_ga>`__
+
+* Logback 1.5.34 → 1.5.38, release notes:
+  * `1.5.35 <https://logback.qos.ch/news.html#1.5.35>`__
+  * `1.5.36 <https://logback.qos.ch/news.html#1.5.36>`__
+  * `1.5.37 <https://logback.qos.ch/news.html#1.5.37>`__
+  * `1.5.38 <https://logback.qos.ch/news.html#1.5.38>`__
+
+* Netty `4.2.15.Final → 4.2.16.Final <https://github.com/netty/netty/releases/tag/netty-4.2.16.Final>`__
+
+* ThreeTen `1.9.0 → 1.10.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.10.0>`__
+
+* xmlunit `2.12.0 → 2.13.0 <https://github.com/xmlunit/xmlunit/releases/tag/v2.13.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* Checkstyle 13.5.0 → 13.8.0, release notes:
+  * `13.6.0 <https://checkstyle.org/releasenotes.html#Release_13.6.0>`__
+  * `13.7.0 <https://checkstyle.org/releasenotes.html#Release_13.7.0>`__
+  * `13.8.0 <https://checkstyle.org/releasenotes.html#Release_13.8.0>`__
+
+* cyclonedx-maven-plugin 2.9.1 → 2.9.3, release notes:
+  * `2.9.2 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.9.2>`__
+  * `2.9.3 <https://github.com/CycloneDX/cyclonedx-maven-plugin/releases/tag/cyclonedx-maven-plugin-2.9.3>`__
+
+* maven-bundle-plugin `6.0.2 → 6.1.0 <https://github.com/apache/felix-dev/blob/master/tools/maven-bundle-plugin/changelog.txt>`__
+
+* maven-help-plugin `3.5.0 → 3.5.1 <https://github.com/apache/maven-help-plugin/releases/tag/maven-help-plugin-3.5.2>`__
+
+* maven-jar-plugin `3.5.0 → 3.5.1 <https://github.com/apache/maven-jar-plugin/releases/tag/maven-jar-plugin-3.5.1>`__
+
+Version 14.3.6
+--------------
+This is a bug-fix upgrade from version 14.3.5.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
 * Woodstox `7.2.0 → 7.2.1 <https://github.com/FasterXML/woodstox/milestone/39?closed=1>`__
 
 Plugin upgrades
