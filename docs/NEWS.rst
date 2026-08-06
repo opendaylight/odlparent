@@ -26,7 +26,7 @@ Third-party dependencies
   * `1.5.37 <https://logback.qos.ch/news.html#1.5.37>`__
   * `1.5.38 <https://logback.qos.ch/news.html#1.5.38>`__
 
-* Netty `4.2.15.Final → 4.2.16.Final <https://github.com/netty/netty/releases/tag/netty-4.2.16.Final>`__
+* Netty `4.2.15.Final → 4.2.17.Final <https://github.com/netty/netty/releases/tag/netty-4.2.17.Final>`__
 
 * ThreeTen `1.9.0 → 1.10.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.10.0>`__
 
