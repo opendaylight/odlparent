@@ -291,11 +291,6 @@
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>org.checkerframework</groupId>
-        <artifactId>checker-qual</artifactId>
-        <version>3.55.1</version>
-      </dependency>
-      <dependency>
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
         <!-- Keep this version in sync with annotationProcessorPaths declaration of error_prone_core below -->
