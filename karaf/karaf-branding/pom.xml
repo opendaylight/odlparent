@@ -20,6 +20,7 @@
         <version>6.1.0</version>
         <extensions>true</extensions>
         <configuration>
+          <obrRepository>NONE</obrRepository>
           <instructions>
             <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
             <Import-Package>*</Import-Package>
