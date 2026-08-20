@@ -14,13 +14,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Pattern;
-import org.apache.karaf.features.BundleInfo;
-import org.apache.karaf.features.Conditional;
 import org.apache.karaf.features.internal.model.Bundle;
 import org.apache.karaf.features.internal.model.ConfigFile;
 import org.apache.karaf.features.internal.model.Feature;
@@ -32,7 +29,7 @@ import org.ops4j.pax.url.mvn.internal.Parser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public final class FeatureUtil {
+final class FeatureUtil {
     private static final Logger LOG = LoggerFactory.getLogger(FeatureUtil.class);
 
     private static final Pattern MVN_PATTERN = Pattern.compile("mvn:", Pattern.LITERAL);
@@ -42,25 +39,9 @@ public final class FeatureUtil {
     private final AetherUtil aetherUtil;
     private final File localRepo;
 
-    public FeatureUtil(final AetherUtil aetherUtil, final File localRepo) {
+    FeatureUtil(final AetherUtil aetherUtil, final File localRepo) {
         this.aetherUtil = aetherUtil;
         this.localRepo = localRepo;
-    }
-
-    /**
-     * Converts the given list of URLs to artifact coordinates.
-     *
-     * @param urls The URLs.
-     * @return The corresponding artifact coordinates.
-     * @throws MalformedURLException if a URL is malformed.
-     */
-    public static List<String> toCoord(final List<URL> urls) throws MalformedURLException {
-        List<String> result = new ArrayList<>();
-        for (URL url : urls) {
-            result.add(toCoord(url));
-        }
-        LOG.trace("toCoord({}) returns {}", urls, result);
-        return result;
     }
 
     /**
@@ -70,12 +51,12 @@ public final class FeatureUtil {
      * @return The corresponding artifact coordinates.
      * @throws MalformedURLException if the URL is malformed.
      */
-    public static String toCoord(final URL url) throws MalformedURLException {
-        String repository = url.toString();
-        String unwrappedRepo = WRAP_PATTERN.matcher(repository).replaceFirst("");
+    static String toCoord(final URL url) throws MalformedURLException {
+        final var repository = url.toString();
+        final var unwrappedRepo = WRAP_PATTERN.matcher(repository).replaceFirst("");
 
-        Parser parser = new Parser(unwrappedRepo);
-        String coord = MVN_PATTERN.matcher(parser.getGroup()).replaceFirst("") + ":" + parser.getArtifact();
+        final var parser = new Parser(unwrappedRepo);
+        var coord = MVN_PATTERN.matcher(parser.getGroup()).replaceFirst("") + ":" + parser.getArtifact();
         if (parser.getType() != null) {
             coord = coord + ":" + parser.getType();
         }
@@ -94,9 +75,9 @@ public final class FeatureUtil {
      * @return The corresponding artifact coordinates.
      * @throws MalformedURLException if a URL is malformed.
      */
-    public static Set<String> mvnUrlsToCoord(final List<String> repository) throws MalformedURLException {
-        Set<String> result = new LinkedHashSet<>();
-        for (String url : repository) {
+    private static Set<String> mvnUrlsToCoord(final List<String> repository) throws MalformedURLException {
+        final var result = new LinkedHashSet<String>();
+        for (var url : repository) {
             result.add(toCoord(new URL(url)));
         }
         LOG.trace("mvnUrlsToCoord({}) returns {}", repository, result);
@@ -110,24 +91,8 @@ public final class FeatureUtil {
      * @return The corresponding artifact coordinates.
      * @throws MalformedURLException if a URL is malformed.
      */
-    public static Set<String> featuresRepositoryToCoords(final Features features) throws MalformedURLException {
+    private static Set<String> featuresRepositoryToCoords(final Features features) throws MalformedURLException {
         return mvnUrlsToCoord(features.getRepository());
-    }
-
-    /**
-     * Converts all the given features' repositories to artifact coordinates.
-     *
-     * @param features The features.
-     * @return The corresponding artifact coordinates.
-     * @throws MalformedURLException if a URL is malformed.
-     */
-    public static Set<String> featuresRepositoryToCoords(final Set<Features> features) throws MalformedURLException {
-        Set<String> result = new LinkedHashSet<>();
-        for (Features feature : features) {
-            result.addAll(featuresRepositoryToCoords(feature));
-        }
-        LOG.trace("featuresRepositoryToCoords({}) returns {}", features, result);
-        return result;
     }
 
     /**
@@ -137,23 +102,26 @@ public final class FeatureUtil {
      * @return The corresponding coordinates.
      * @throws MalformedURLException if a URL is malformed.
      */
-    public static Set<String> featureToCoords(final Feature feature) throws MalformedURLException {
-        Set<String> result = new LinkedHashSet<>();
+    private static Set<String> featureToCoords(final Feature feature) throws MalformedURLException {
+        final var result = new LinkedHashSet<String>();
         if (feature.getBundle() != null) {
             result.addAll(bundlesToCoords(feature.getBundle()));
         }
-        if (feature.getConditional() != null) {
-            for (Conditional conditional : feature.getConditional()) {
-                if (conditional.getBundles() != null) {
-                    for (BundleInfo bundleInfo : conditional.getBundles()) {
+        final var conditionals = feature.getConditional();
+        if (conditionals != null) {
+            for (var conditional : conditionals) {
+                final var bundles = conditional.getBundles();
+                if (bundles != null) {
+                    for (var bundleInfo : bundles) {
                         result.add(toCoord(new URL(bundleInfo.getLocation())));
                     }
                 }
             }
             // TODO Dependencies
         }
-        if (feature.getConfigfile() != null) {
-            result.addAll(configFilesToCoords(feature.getConfigfile()));
+        final var configFile = feature.getConfigfile();
+        if (configFile != null) {
+            result.addAll(configFilesToCoords(configFile));
         }
         LOG.trace("featureToCoords({}) returns {}", feature.getName(), result);
         return result;
@@ -166,9 +134,9 @@ public final class FeatureUtil {
      * @return The corresponding coordinates.
      * @throws MalformedURLException if a URL is malformed.
      */
-    public static Set<String> configFilesToCoords(final List<ConfigFile> configfiles) throws MalformedURLException {
-        Set<String> result = new LinkedHashSet<>();
-        for (ConfigFile configFile : configfiles) {
+    private static Set<String> configFilesToCoords(final List<ConfigFile> configfiles) throws MalformedURLException {
+        final var result = new LinkedHashSet<String>();
+        for (var configFile : configfiles) {
             result.add(toCoord(new URL(configFile.getLocation())));
         }
         LOG.trace("configFilesToCoords({}) returns {}", configfiles, result);
@@ -182,9 +150,9 @@ public final class FeatureUtil {
      * @return The corresponding coordinates.
      * @throws MalformedURLException if a URL is malformed.
      */
-    public static Set<String> bundlesToCoords(final List<Bundle> bundles) throws MalformedURLException {
-        Set<String> result = new LinkedHashSet<>();
-        for (Bundle bundle : bundles) {
+    private static Set<String> bundlesToCoords(final List<Bundle> bundles) throws MalformedURLException {
+        final var result = new LinkedHashSet<String>();
+        for (var bundle : bundles) {
             try {
                 result.add(toCoord(new URL(bundle.getLocation())));
             } catch (MalformedURLException e) {
@@ -203,8 +171,8 @@ public final class FeatureUtil {
      * @return The artifact coordinates.
      * @throws MojoExecutionException if an error occurs during processing.
      */
-    public static Set<String> featuresToCoords(final Features features) throws MojoExecutionException {
-        Set<String> result = new LinkedHashSet<>();
+    private static Set<String> featuresToCoords(final Features features) throws MojoExecutionException {
+        final var result = new LinkedHashSet<String>();
         if (features.getRepository() != null) {
             try {
                 result.addAll(featuresRepositoryToCoords(features));
@@ -213,7 +181,7 @@ public final class FeatureUtil {
             }
         }
         if (features.getFeature() != null) {
-            for (Feature feature : features.getFeature()) {
+            for (var feature : features.getFeature()) {
                 try {
                     result.addAll(featureToCoords(feature));
                 } catch (MalformedURLException e) {
@@ -234,7 +202,7 @@ public final class FeatureUtil {
      * @return The artifact coordinates.
      * @throws MojoExecutionException if an error occurs during processing.
      */
-    public static Set<String> featuresToCoords(final Set<Features> features) throws MojoExecutionException {
+    static Set<String> featuresToCoords(final Set<Features> features) throws MojoExecutionException {
         final var result = new LinkedHashSet<String>();
         for (var feature : features) {
             result.addAll(featuresToCoords(feature));
@@ -251,25 +219,13 @@ public final class FeatureUtil {
      * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Set<Features> readFeatures(final Set<Artifact> featureArtifacts) throws IOException {
+    Set<Features> readFeatures(final Set<Artifact> featureArtifacts) throws IOException {
         final var result = new LinkedHashSet<Features>();
         for (var artifact : featureArtifacts) {
-            result.add(readFeature(artifact));
+            result.add(readFeature(artifact.getFile()));
         }
         LOG.trace("readFeatures({}) returns {}", featureArtifacts, result);
         return result;
-    }
-
-    /**
-     * Unmarshal the features in the given artifact.
-     *
-     * @param artifact The artifact.
-     * @return The features.
-     * @throws IOException if a file cannot be read
-     * @throws FileNotFoundException if a file is missing.
-     */
-    public Features readFeature(final Artifact artifact) throws IOException {
-        return readFeature(artifact.getFile());
     }
 
     /**
@@ -280,7 +236,7 @@ public final class FeatureUtil {
      * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Features readFeature(final File file) throws IOException {
+    Features readFeature(final File file) throws IOException {
         final var localFile = getFileInLocalRepo(file);
         final var stream = Files.newInputStream(localFile != null ? localFile : file.toPath());
         final var result = JaxbUtil.unmarshal(file.toURI().toString(), stream, false);
@@ -296,9 +252,8 @@ public final class FeatureUtil {
      * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Features readFeature(final String coords) throws IOException {
-        Artifact artifact = aetherUtil.resolveArtifact(coords);
-        Features result = readFeature(artifact);
+    private Features readFeature(final String coords) throws IOException {
+        final var result = readFeature(aetherUtil.resolveArtifact(coords).getFile());
         LOG.trace("readFeature({}) returns {} after resolving first", coords, result.getName());
         return result;
     }
@@ -313,17 +268,16 @@ public final class FeatureUtil {
      * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Set<Features> findAllFeaturesRecursively(final Features features, final Set<String> existingCoords)
-            throws IOException {
+    private Set<Features> findAllFeaturesRecursively(final Features features,
+            final LinkedHashSet<String> existingCoords) throws IOException {
         LOG.debug("findAllFeaturesRecursively({}) starts", features.getName());
         LOG.trace("findAllFeaturesRecursively knows about these coords: {}", existingCoords);
-        Set<Features> result = new LinkedHashSet<>();
-        Set<String> coords = FeatureUtil.featuresRepositoryToCoords(features);
-        for (String coord : coords) {
+        final var result = new LinkedHashSet<Features>();
+        for (var coord : featuresRepositoryToCoords(features)) {
             if (!existingCoords.contains(coord)) {
                 LOG.trace("findAllFeaturesRecursively() going to add {}", coord);
                 existingCoords.add(coord);
-                Features feature = readFeature(coord);
+                final var feature = readFeature(coord);
                 result.add(feature);
                 LOG.debug("findAllFeaturesRecursively() added {}", coord);
                 result.addAll(findAllFeaturesRecursively(feature, existingCoords));
@@ -344,10 +298,10 @@ public final class FeatureUtil {
      * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Set<Features> findAllFeaturesRecursively(final Set<Features> features, final Set<String> existingCoords)
-            throws IOException {
-        Set<Features> result = new LinkedHashSet<>();
-        for (Features feature : features) {
+    private Set<Features> findAllFeaturesRecursively(final Set<Features> features,
+            final LinkedHashSet<String> existingCoords) throws IOException {
+        final var result = new LinkedHashSet<Features>();
+        for (var feature : features) {
             result.addAll(findAllFeaturesRecursively(feature, existingCoords));
         }
         return result;
@@ -362,7 +316,7 @@ public final class FeatureUtil {
      * @throws IOException if a file cannot be read
      * @throws FileNotFoundException if a file is missing.
      */
-    public Set<Features> findAllFeaturesRecursively(final Set<Features> features) throws IOException {
+    Set<Features> findAllFeaturesRecursively(final Set<Features> features) throws IOException {
         return findAllFeaturesRecursively(features, new LinkedHashSet<>());
     }
 
@@ -380,8 +334,8 @@ public final class FeatureUtil {
     }
 
     private Path getFileInLocalRepo(final File file) {
-        Path filePath = file.toPath();
-        Path parent = filePath.getParent();
+        final var filePath = file.toPath();
+        var parent = filePath.getParent();
         while (parent != null) {
             final var candidate = localRepo.toPath().resolve(parent.relativize(filePath));
             if (Files.exists(candidate)) {
