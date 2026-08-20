@@ -29,6 +29,10 @@ Improvements and new features
   ``JavadocTagContinuationIndentation``, ``PreferLiteralJavadocInlineTag`` and ``RequireEmptyLineBeforeBlockTagGroup``
   checks.
 
+* The configuration of ``modernizer-maven-plugin`` has been updated to report violations around ``String.format()`` and
+  ``Joiner.join()`` methods, originally suppressed in version ``14.3.5`` due to impact on downstream users. Violations
+  around the use of ``Collectors.toList()`` and ``Collections.{empty,singleton}*()`` remain in place.
+
 Third-party dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~
 * Guava 33.6.0 → 33.7.1, release notes:
