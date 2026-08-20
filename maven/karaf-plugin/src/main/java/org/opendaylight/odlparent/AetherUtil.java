@@ -8,7 +8,6 @@
 package org.opendaylight.odlparent;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -23,32 +22,29 @@ import org.eclipse.aether.graph.DependencyFilter;
 import org.eclipse.aether.installation.InstallRequest;
 import org.eclipse.aether.installation.InstallationException;
 import org.eclipse.aether.repository.LocalRepository;
-import org.eclipse.aether.repository.LocalRepositoryManager;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.resolution.ArtifactRequest;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.eclipse.aether.resolution.ArtifactResult;
 import org.eclipse.aether.resolution.DependencyRequest;
 import org.eclipse.aether.resolution.DependencyResolutionException;
-import org.eclipse.aether.resolution.DependencyResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Utilities for resolving maven artifacts and their dependencies.
  */
-public class AetherUtil {
+final class AetherUtil {
     private static final Logger LOG = LoggerFactory.getLogger(AetherUtil.class);
-    private RepositorySystem repoSystem;
 
-    private RepositorySystemSession repoSession;
-
-    private List<RemoteRepository> remoteRepos;
+    private final RepositorySystem repoSystem;
+    private final RepositorySystemSession repoSession;
+    private final List<RemoteRepository> remoteRepos;
 
     /**
      * Local repository path.
      */
-    protected File localRepository;
+    private final File localRepository;
 
     /**
      * Create an instance for the given repositories.
@@ -58,9 +54,8 @@ public class AetherUtil {
      * @param remoteRepos The remote repositories.
      * @param localRepository The local repository.
      */
-    public AetherUtil(
-            RepositorySystem repoSystem, RepositorySystemSession repoSession, List<RemoteRepository> remoteRepos,
-            File localRepository) {
+    AetherUtil(final RepositorySystem repoSystem, final RepositorySystemSession repoSession,
+            final List<RemoteRepository> remoteRepos, final File localRepository) {
         this.repoSystem = repoSystem;
         this.repoSession = repoSession;
         this.remoteRepos = remoteRepos;
@@ -75,15 +70,15 @@ public class AetherUtil {
      * @return The corresponding artifacts.
      * @throws DependencyResolutionException if an error occurs.
      */
-    public Set<Artifact> resolveDependencies(List<Dependency> dependencies, DependencyFilter filter)
+    Set<Artifact> resolveDependencies(final List<Dependency> dependencies, final DependencyFilter filter)
             throws DependencyResolutionException {
-        Set<Artifact> artifacts = new LinkedHashSet<>();
-        CollectRequest collectRequest = new CollectRequest();
+        final var artifacts = new LinkedHashSet<Artifact>();
+        final var collectRequest = new CollectRequest();
         collectRequest.setDependencies(dependencies);
         collectRequest.setRepositories(remoteRepos);
-        DependencyRequest request = new DependencyRequest(collectRequest, filter);
-        DependencyResult results = repoSystem.resolveDependencies(repoSession, request);
-        for (ArtifactResult artifactResult : results.getArtifactResults()) {
+        final var request = new DependencyRequest(collectRequest, filter);
+        final var results = repoSystem.resolveDependencies(repoSession, request);
+        for (var artifactResult : results.getArtifactResults()) {
             artifacts.add(artifactResult.getArtifact());
         }
         LOG.trace("resolveDependencies({}) returns {}", dependencies, artifacts);
@@ -96,9 +91,9 @@ public class AetherUtil {
      * @param artifact The artifact.
      * @return The resolved artifact, or {@code null} if it can't be resolved.
      */
-    public Artifact resolveArtifact(Artifact artifact) {
-        ArtifactRequest request = new ArtifactRequest(artifact, remoteRepos, null);
-        ArtifactResult result;
+    Artifact resolveArtifact(final Artifact artifact) {
+        final var request = new ArtifactRequest(artifact, remoteRepos, null);
+        final ArtifactResult result;
         try {
             result = repoSystem.resolveArtifact(repoSession, request);
         } catch (ArtifactResolutionException e) {
@@ -115,9 +110,8 @@ public class AetherUtil {
      * @param coord The coordinates to resolve.
      * @return The resolved artifact, or {@code null} if the coordinates can't be resolved.
      */
-    public Artifact resolveArtifact(String coord) {
-        DefaultArtifact artifact = new DefaultArtifact(coord);
-        return resolveArtifact(artifact);
+    Artifact resolveArtifact(final String coord) {
+        return resolveArtifact(new DefaultArtifact(coord));
     }
 
     /**
@@ -126,10 +120,10 @@ public class AetherUtil {
      * @param coords The set of coordinates to resolve.
      * @return The resolved artifacts. Unresolvable coordinates are skipped without error.
      */
-    public Set<Artifact> resolveArtifacts(Set<String> coords) {
-        Set<Artifact> result = new LinkedHashSet<>();
-        for (String coord : coords) {
-            Artifact artifact = resolveArtifact(coord);
+    Set<Artifact> resolveArtifacts(final Set<String> coords) {
+        final var result = new LinkedHashSet<Artifact>();
+        for (var coord : coords) {
+            final var artifact = resolveArtifact(coord);
             if (artifact != null) {
                 result.add(artifact);
             }
@@ -139,44 +133,18 @@ public class AetherUtil {
     }
 
     /**
-     * Converts the given artifact coordinates to a {@link Dependency} instance.
-     *
-     * @param coord The coordinates.
-     * @return The dependency.
-     */
-    public Dependency toDependency(String coord) {
-        Artifact artifact = new DefaultArtifact(coord);
-        return new Dependency(artifact, null);
-    }
-
-    /**
-     * Converts the given list of artifact coordinates to dependencies.
-     *
-     * @param coords The list of coordinates.
-     * @return The corresponding dependencies.
-     */
-    public List<Dependency> toDependencies(List<String> coords) {
-        List<Dependency> result = new ArrayList<>();
-        for (String coord : coords) {
-            result.add(toDependency(coord));
-        }
-        LOG.trace("toDependencies({}) returns {}", coords, result);
-        return result;
-    }
-
-    /**
      * Installs the given artifacts.
      *
      * @param artifacts The artifacts to install.
      * @throws InstallationException if an error occurs.
      */
-    public void installArtifacts(Set<Artifact> artifacts) throws InstallationException {
-        LocalRepository localRepo = new LocalRepository(localRepository);
-        LocalRepositoryManager localManager = repoSystem.newLocalRepositoryManager(repoSession, localRepo);
-        DefaultRepositorySystemSession localSession = new DefaultRepositorySystemSession();
+    void installArtifacts(final Set<Artifact> artifacts) throws InstallationException {
+        final var localRepo = new LocalRepository(localRepository);
+        final var localManager = repoSystem.newLocalRepositoryManager(repoSession, localRepo);
+        final var localSession = new DefaultRepositorySystemSession();
         localSession.setLocalRepositoryManager(localManager);
-        InstallRequest installRequest = new InstallRequest();
-        for (Artifact featureArtifact : artifacts) {
+        final var installRequest = new InstallRequest();
+        for (var featureArtifact : artifacts) {
             installRequest.addArtifact(featureArtifact);
         }
         repoSystem.install(localSession, installRequest);
