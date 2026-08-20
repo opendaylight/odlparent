@@ -18,7 +18,7 @@
 
     <artifactId>odl-guava</artifactId>
     <packaging>feature</packaging>
-    <name>OpenDaylight :: Guava 33.4</name>
+    <name>OpenDaylight :: Guava 33.7</name>
 
     <properties>
         <checkDependencyChange>true</checkDependencyChange>
