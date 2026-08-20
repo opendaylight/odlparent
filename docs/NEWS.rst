@@ -2,6 +2,75 @@
 ODL Parent release notes
 ========================
 
+Version 15.0.0
+--------------
+This is a major upgrade from version 14, with breaking changes; downstream projects may need to make changes to upgrade
+to this version.
+
+Upstream version removals
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The following upstream dependencies have been removed from dependency/plugin management:
+
+* Declaration of ``checker-qual`` and its packaging in ``odl-guava``  have been removed. Downstreams are advised
+  to migrate to use replacements available in ``error_prone_annotations``  and ``odl-errorprone`` feature instead.
+  See `ODLPARENT-333 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-333>`__ for details.
+
+* Declaration of ``stax-utils`` has been removed, as there are no downstream users.
+  See `ODLPARENT-334 <https://lf-opendaylight.atlassian.net/browse/ODLPARENT-334>`__ for details.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* ``bundle-parent`` no longer updates the OBR repository, improving performance of ``mvn install`` step, especially when
+  the local repository is long-lived.
+  See `ODLPARENT-349 <https://jira.opendaylight.org/browse/ODLPARENT-349>`__ for more information.
+
+* Default CheckStyle configuration has been updated, notabling enabling ``JavadocBlockTagLocation``,
+  ``JavadocLeadingAsteriskAlign``, ``JavadocMissingLeadingAsterisk``, ``JavadocMissingWhitespaceAfterAsterisk``,
+  ``JavadocTagContinuationIndentation``, ``PreferLiteralJavadocInlineTag`` and ``RequireEmptyLineBeforeBlockTagGroup``
+  checks.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Guava 33.6.0 → 33.7.1, release notes:
+  * `33.7.0 <https://github.com/google/guava/releases/tag/v33.7.0>`__
+  * `33.7.1 <https://github.com/google/guava/releases/tag/v33.7.1>`__
+
+* Jackson `2.21.5 → 2.21.6 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.21.6>`__
+
+* JSpecify `1.0.0 → 1.0.1 <https://github.com/jspecify/jspecify/releases/tag/v1.0.1>`__
+
+* JUnit 5.14.4 → 6.1.3, release notes:
+  * `6.0.0 <https://docs.junit.org/6.1.3/release-notes.html#v6.0.0>`__
+  * `6.0.1 <https://docs.junit.org/6.1.3/release-notes.html#v6.0.1>`__
+  * `6.0.2 <https://docs.junit.org/6.1.3/release-notes.html#v6.0.2>`__
+  * `6.0.3 <https://docs.junit.org/6.1.3/release-notes.html#v6.0.3>`__
+  * `6.1.0 <https://docs.junit.org/6.1.3/release-notes.html#v6.1.0>`__
+  * `6.1.1 <https://docs.junit.org/6.1.3/release-notes.html#v6.1.1>`__
+  * `6.1.2 <https://docs.junit.org/6.1.3/release-notes.html#v6.1.2>`__
+  * `6.1.3 <https://docs.junit.org/6.1.3/release-notes.html#v6.1.3>`__
+
+* Netty `4.2.16.Final → 4.2.17.Final <https://netty.io/news/2026/08/04/4-2-17-Final.html>`__
+
+* Logback 1.5.38 → 1.6.3, release notes:
+  * `1.6.0 <https://logback.qos.ch/news.html#1.6.0>`__
+  * `1.6.1 <https://logback.qos.ch/news.html#1.6.1>`__
+  * `1.6.2 <https://logback.qos.ch/news.html#1.6.2>`__
+  * `1.6.3 <https://logback.qos.ch/news.html#1.6.3>`__
+
+* Woodstox `7.2.1 → 7.2.2 <https://github.com/FasterXML/woodstox/milestone/40?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* bnd-maven-plugin `7.3.0 → 7.4.0 <https://github.com/bndtools/bnd/wiki/Changes-in-7.4.0>`__
+
+* Checkstyle 13.8.0 → 14.0.0, release notes:
+  * `13.9.0 <https://checkstyle.org/releasenotes.html#Release_13.9.0>`__
+  * `13.10.0 <https://checkstyle.org/releasenotes.html#Release_13.10.0>`__
+  * `13.11.0 <https://checkstyle.org/releasenotes.html#Release_13.11.0>`__
+  * `14.0.0 <https://checkstyle.org/releasenotes.html#Release_14.0.0>`__
+
+* modernizer-maven-plugin `3.4.0 → 3.5.0 <https://github.com/gaul/modernizer-maven-plugin/releases/tag/modernizer-maven-plugin-3.5.0>`__
+
 Version 14.3.6
 --------------
 This is a bug-fix upgrade from version 14.3.5.
