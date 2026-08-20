@@ -487,6 +487,13 @@
         <version>1.7.2</version>
       </dependency>
 
+      <!-- JSpecify -->
+      <dependency>
+        <groupId>org.jspecify</groupId>
+        <artifactId>jspecify</artifactId>
+        <version>1.0.1</version>
+      </dependency>
+
       <!-- OSGi Release 8 artifacts we support, augmenting Karaf's BOM -->
       <dependency>
         <groupId>org.osgi</groupId>
