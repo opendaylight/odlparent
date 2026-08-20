@@ -18,7 +18,6 @@ import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.aether.artifact.DefaultArtifact;
 import org.eclipse.aether.collection.CollectRequest;
 import org.eclipse.aether.graph.Dependency;
-import org.eclipse.aether.graph.DependencyFilter;
 import org.eclipse.aether.installation.InstallRequest;
 import org.eclipse.aether.installation.InstallationException;
 import org.eclipse.aether.repository.LocalRepository;
@@ -66,17 +65,15 @@ final class AetherUtil {
      * Resolves the given dependencies.
      *
      * @param dependencies The dependencies.
-     * @param filter The dependency filter.
      * @return The corresponding artifacts.
      * @throws DependencyResolutionException if an error occurs.
      */
-    Set<Artifact> resolveDependencies(final List<Dependency> dependencies, final DependencyFilter filter)
-            throws DependencyResolutionException {
+    Set<Artifact> resolveDependencies(final List<Dependency> dependencies) throws DependencyResolutionException {
         final var artifacts = new LinkedHashSet<Artifact>();
         final var collectRequest = new CollectRequest();
         collectRequest.setDependencies(dependencies);
         collectRequest.setRepositories(remoteRepos);
-        final var request = new DependencyRequest(collectRequest, filter);
+        final var request = new DependencyRequest(collectRequest, KarafFeaturesDependencyFilter.INSTANCE);
         final var results = repoSystem.resolveDependencies(repoSession, request);
         for (var artifactResult : results.getArtifactResults()) {
             artifacts.add(artifactResult.getArtifact());

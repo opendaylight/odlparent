@@ -116,8 +116,7 @@ public class PopulateLocalRepoMojo extends AbstractMojo {
             final var featureRepos = new LinkedHashSet<Features>();
             readFeatureCfg(aetherUtil, featureUtil, featureArtifacts, featureRepos);
             featureArtifacts.addAll(
-                aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies()),
-                    new KarafFeaturesDependencyFilter()));
+                aetherUtil.resolveDependencies(MvnToAetherMapper.toAether(project.getDependencies())));
             featureRepos.addAll(featureUtil.readFeatures(featureArtifacts));
             // Do not provide FeatureUtil.featuresRepositoryToCoords(features)) as existingCoords
             // to findAllFeaturesRecursively, as those coords are not resolved yet, and it would lead to Bug 6187.

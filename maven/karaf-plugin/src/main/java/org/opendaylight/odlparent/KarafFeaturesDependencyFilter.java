@@ -5,14 +5,18 @@
  * terms of the Eclipse Public License v1.0 which accompanies this distribution,
  * and is available at http://www.eclipse.org/legal/epl-v10.html
  */
-
 package org.opendaylight.odlparent;
 
 import java.util.List;
 import org.eclipse.aether.graph.DependencyFilter;
 import org.eclipse.aether.graph.DependencyNode;
 
-public class KarafFeaturesDependencyFilter implements DependencyFilter {
+final class KarafFeaturesDependencyFilter implements DependencyFilter {
+    static final KarafFeaturesDependencyFilter INSTANCE = new KarafFeaturesDependencyFilter();
+
+    private KarafFeaturesDependencyFilter() {
+        // hidden on purpose
+    }
 
     /**
      * Accepts only Karaf features.
@@ -22,13 +26,16 @@ public class KarafFeaturesDependencyFilter implements DependencyFilter {
      * @return {@code true} if the dependency is a Karaf feature, {@code false} otherwise.
      */
     @Override
-    public boolean accept(DependencyNode node, List<DependencyNode> parents) {
-        return node != null
-                && node.getArtifact() != null
-                && node.getDependency() != null
-                && node.getDependency().getScope() != null
-                && node.getArtifact().getClassifier().equals("features")
-                && node.getArtifact().getExtension().equals("xml");
-    }
+    public boolean accept(final DependencyNode node, final List<DependencyNode> parents) {
+        if (node == null) {
+            return false;
+        }
+        final var artifact = node.getArtifact();
+        final var dependency = node.getDependency();
 
+        return artifact != null
+            && artifact.getClassifier().equals("features")
+            && artifact.getExtension().equals("xml")
+            && dependency != null && dependency.getScope() != null;
+    }
 }
