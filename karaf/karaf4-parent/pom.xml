@@ -212,7 +212,7 @@
                                     <directory>src/main/assembly</directory>
                                 </resource>
                             </resources>
-                            <overwrite>true</overwrite>
+                            <changeDetection>always</changeDetection>
                         </configuration>
                     </execution>
                     <execution>
