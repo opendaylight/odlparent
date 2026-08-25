@@ -96,6 +96,11 @@
          desires to not check the consistency of its dependencies. -->
     <odlparent.dependency.skip>false</odlparent.dependency.skip>
 
+    <!-- Property-based activation of Error Prone: if this property is set to 'true', Error Prone profile
+         activates. This is useful for setting per-pom.xml or project-global policy, which can be overridden
+         from CLI -->
+    <odl.ep.enable>false</odl.ep.enable>
+
     <!-- Control over whether we instruct maven-compiler-plugin to use forked mode.
          The default is safe for any deployment, leading to a less efficient build, as each invocation of javac
          needs to be warmed up.
@@ -1566,6 +1571,12 @@
   <profiles>
     <profile>
       <id>ep</id>
+      <activation>
+        <property>
+          <name>odl.ep.enable</name>
+          <value>true</value>
+        </property>
+      </activation>
 
       <build>
         <plugins>
