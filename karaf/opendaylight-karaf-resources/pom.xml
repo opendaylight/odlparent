@@ -178,7 +178,7 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
                     <artifactId>bcprov-jdk18on</artifactId>
                     <version>${bouncycastle.version}</version>
                     <outputDirectory>target/classes/lib/boot</outputDirectory>
-                    <destFileName>bcprov-jdk18on-${bouncycastle.version}.jar</destFileName>
+                    <destFileName>bcprov-jdk18on-${bouncycastle.version}.2.jar</destFileName>
                 </artifactItem>
                 <artifactItem>
                     <groupId>org.bouncycastle</groupId>
