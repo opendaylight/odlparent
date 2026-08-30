@@ -2,6 +2,25 @@
 ODL Parent release notes
 ========================
 
+Version 15.0.1
+--------------
+This is a bug-fix upgrade from version 14.3.5.
+
+Bug fixes
+~~~~~~~~~
+* ``maven-resources-plugin`` version ``3.5.0`` has deprecated the ``overwrite`` option, causing Karaf distribution
+  builds to emit a warning. This has been fixed.
+* ``commons-codec`` packaging from Karaf and downstream users has drifted, causing duplicate artifact to be packaged.
+  The packaged version has been updated to ``1.22.1``.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.85 → 1.85.2 <https://www.bouncycastle.org/download/bouncy-castle-java/?filter=java%3Drelease-1-85-2>`__
+
+* Dropwizard Metrics `4.2.39 → 4.2.40 <https://github.com/dropwizard/metrics/releases/tag/v4.2.40>`__
+
+* Javassist `3.32.0-GA → 3.33.0-GA <https://github.com/jboss-javassist/javassist/releases/tag/rel_3_33_0_ga>`__
+
 Version 15.0.0
 --------------
 This is a major upgrade from version 14, with breaking changes; downstream projects may need to make changes to upgrade
