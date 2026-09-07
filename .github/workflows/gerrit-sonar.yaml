@@ -83,7 +83,7 @@ jobs:
         clean
         install
       mvn_params: >-
-        -Dskip.karaf.featureTest=true
+        -Psonar-only
       sonar_project_key: "opendaylight_odlparent"
       sonar_organization: "opendaylight"
     secrets:
