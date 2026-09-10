@@ -6,6 +6,12 @@ name: Gerrit Composed Maven Merge
 
 # yamllint disable-line rule:truthy
 on:
+  # Daily SNAPSHOT rebuild, replacing the @daily cron on the Jenkins job
+  # this supersedes. That job kept SNAPSHOTs fresh against upstream
+  # dependency updates even when nothing merged here, so the rebuild is
+  # restored on a slot staggered from the other migrated projects.
+  schedule:
+    - cron: "19 5 * * *"
   workflow_dispatch:
     inputs:
       GERRIT_BRANCH:
@@ -64,6 +70,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Clear votes
+        # A scheduled rebuild has no change to clear votes on. Guarding
+        # the step rather than the job keeps this job succeeding, so the
+        # needs: chain below is unaffected.
+        if: github.event_name != 'schedule'
         # yamllint disable-line rule:line-length
         uses: lfit/gerrit-review-action@a1c036a59b94c8ab89de26d378f6a28cc7378b13 # v1.1.2
         with:
@@ -88,7 +98,9 @@ jobs:
       NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
     with:
-      GERRIT_BRANCH: ${{ inputs.GERRIT_BRANCH }}
+      # Empty on a scheduled run, where master is the only branch a
+      # schedule can fire on.
+      GERRIT_BRANCH: ${{ inputs.GERRIT_BRANCH || 'master' }}
       JDK_VERSION: "21"
       MVN_VERSION: "3.9.5"
       MVN_PHASES: "clean deploy"
@@ -108,7 +120,8 @@ jobs:
       PUSH_NEXUS: true
 
   vote:
-    if: ${{ always() }}
+    # A scheduled rebuild has no change to vote on.
+    if: ${{ always() && github.event_name != 'schedule' }}
     needs: [prepare, maven-merge]
     runs-on: ubuntu-latest
     timeout-minutes: 5
