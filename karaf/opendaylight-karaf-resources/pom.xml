@@ -158,6 +158,11 @@ mvn\:org.apache.aries.blueprint/org.apache.aries.blueprint.core.compatibility/1.
                       tofile="${project.build.directory}/classes/etc/users.properties"/>
                 <fixcrlf srcdir="${project.build.directory}/classes/bin"
                          includes="*.bat" eol="crlf"/>
+                <!-- The Karaf assembly resolves the ssh boot feature, staging bcprov, bcpkix and bcutil 1.84
+                     into system/ before karaf-remove-bc.patch strips them from that feature, so drop the 1.84 copies. -->
+                <delete includeemptydirs="true" failonerror="true">
+                  <fileset dir="${project.build.directory}/assembly/system/org/bouncycastle" includes="*/1.84/**"/>
+                </delete>
               </target>
             </configuration>
           </execution>
