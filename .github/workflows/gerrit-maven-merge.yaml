@@ -102,7 +102,7 @@ jobs:
       # schedule can fire on.
       GERRIT_BRANCH: ${{ inputs.GERRIT_BRANCH || 'master' }}
       JDK_VERSION: "21"
-      MVN_VERSION: "3.9.5"
+      MVN_VERSION: "3.9.16"
       MVN_PHASES: "clean deploy"
       MVN_PARAMS: "-Dmerge"
       MVN_PROFILES: "docker"
