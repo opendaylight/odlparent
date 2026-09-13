@@ -2,9 +2,41 @@
 ODL Parent release notes
 ========================
 
+Version 15.0.2
+--------------
+This is a bug-fix upgrade from version 15.0.1.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.85.2 → 1.86 <https://github.com/bcgit/bc-java/blob/r1rv86/docs/releasenotes.md#211-version>`__
+
+* Checkstyle `14.0.0 → 14.1.0 <https://checkstyle.org/releasenotes.html#Release_14.1.0>`__
+
+* Netty `4.2.17.Final → 4.2.18.Final <https://netty.io/news/2026/09/09/4-2-18-Final.html>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* build-helper-maven-plugin `3.6.1 → 3.6.2 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/3.6.2>`__
+
+* exec-maven-plugin `3.6.3 → 3.6.4 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.6.4>`__
+
+* git-commit-id-maven-plugin `10.0.0 → 10.0.1 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v10.0.1>`__
+
+* jdepend-maven-plugin `2.2.0 → 2.2.1 <https://github.com/mojohaus/jdepend-maven-plugin/releases/tag/jdepend-maven-plugin-2.2.1>`__
+
+* maven-bundle-plugin `6.1.0 → 6.1.2 <https://github.com/apache/felix-dev/blob/master/tools/maven-bundle-plugin/changelog.txt>`__
+
+* maven-surefire-plugin `3.5.6 → 3.6.0 <https://github.com/apache/maven-surefire/releases/tag/maven-surefire-3.6.0>`__
+
+* maven-compiler-plugin `3.15 → 3.16.0 <https://github.com/apache/maven-compiler-plugin/releases/tag/maven-compiler-plugin-3.16.0>`__
+
+* properties-maven-plugin `1.3.0 → 1.3.1 <https://github.com/mojohaus/properties-maven-plugin/releases/tag/properties-maven-plugin-1.3.1>`__
+
+* versions-maven-plugin, `2.21.0 → 2.22.0 <https://github.com/mojohaus/versions/releases/tag/2.22.0>`__
+
 Version 15.0.1
 --------------
-This is a bug-fix upgrade from version 14.3.5.
+This is a bug-fix upgrade from version 15.0.0.
 
 Bug fixes
 ~~~~~~~~~
