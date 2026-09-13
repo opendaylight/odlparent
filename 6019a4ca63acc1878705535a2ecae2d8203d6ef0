@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "343809ce_e5404367",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2026-09-13T09:01:24Z",
+      "side": 1,
+      "message": "This is superfluous as Bouncy Castle is removed prior to building distribution here: https://github.com/opendaylight/odlparent/blob/master/karaf/karaf4-parent/pom.xml#L263-L275",
+      "revId": "6019a4ca63acc1878705535a2ecae2d8203d6ef0",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
