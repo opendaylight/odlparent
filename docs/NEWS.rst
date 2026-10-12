@@ -2,6 +2,65 @@
 ODL Parent release notes
 ========================
 
+Version 15.1.0
+--------------
+This is a bug-fix/feature upgrade from version 15.0.2. Since this includes a minor version bump in Jackson, we get
+a new minor version as well.
+
+Improvements and new features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Karaf ships Jolokia in a version which was different with our version, causing duplicate packaging. This has now been fixed.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Checkstyle 14.1.0 → 14.3.0, release notes:
+  * `14.2.0 <https://checkstyle.org/releasenotes.html#Release_14.2.0>`__
+  * `14.2.0 <https://checkstyle.org/releasenotes.html#Release_14.3.0>`__
+
+* commons-lang3 `3.20.0 → 3.21.0 <https://commons.apache.org/proper/commons-lang/changes.html#a3.21.0>`__
+
+* Guava `33.7.1 → 33.7.2 <https://github.com/google/guava/releases/tag/v33.7.2>`__
+
+* immutables.org `2.12.2 → 2.12.3 <https://github.com/immutables/immutables/releases/tag/2.12.3>`__
+
+* Jackson 2.21.6 → 2.22.3, release notes:
+  * `2.22.0 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.22>`__
+  * `2.22.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.22.1>`__
+  * `2.22.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.22.2>`__
+  * `2.22.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.22.3>`__
+
+* Jolokia `1.7.2 → 1.7.3 <https://github.com/jolokia/jolokia/milestone/45?closed=1>`__
+
+* Karaf `4.4.11 → 4.4.12 <https://github.com/apache/karaf/releases/tag/karaf-4.4.12>`__
+
+* Logback 1.6.3 → 1.6.5, release notes:
+  * `1.6.4 <https://logback.qos.ch/news.html#1.6.4>`__
+  * `1.6.5 <https://logback.qos.ch/news.html#1.6.5>`__
+
+* Netty `4.2.18.Final → 4.2.19.Final <https://github.com/netty/netty/releases/tag/netty-4.2.19.Final>`__
+
+* slf4j 2.0.18 → 2.0.20, release notes:
+  * `2.0.19 <https://www.slf4j.org/news.html#2.0.19>`__
+  * `2.0.20 <https://www.slf4j.org/news.html#2.0.20>`__
+
+* stax2-api 4.3.0 → 4.3.2, release notes:
+  * `4.3.1 <>https://github.com/FasterXML/stax2-api/blob/stax2-api-4.3.1/release-notes/VERSION`__
+  * `4.3.2 <>https://github.com/FasterXML/stax2-api/blob/stax2-api-4.3.2/release-notes/VERSION`__
+
+* Woodstox `7.2.2 → 7.3.0 <https://github.com/FasterXML/woodstox/milestone/42?closed=1>`__
+
+* xmlunit `2.13.0 → 2.14.0 <https://github.com/xmlunit/xmlunit/releases/tag/v2.14.0>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* maven-bundle-plugin `6.1.2 → 6.2.0 <https://github.com/apache/felix-dev/blob/maven-bundle-plugin-6.2.0/tools/maven-bundle-plugin/changelog.txt>`__
+
+* maven-deploy-plugin `3.1.4 → 3.2.0 <https://github.com/apache/maven-deploy-plugin/releases/tag/maven-deploy-plugin-3.2.0>`__
+
+* maven-install-plugin `3.1.4 → 3.2.0 <https://github.com/apache/maven-install-plugin/releases/tag/maven-install-plugin-3.2.0>`__
+
+* versions-maven-plugin, `2.22.0 → 2.23.0 <https://github.com/mojohaus/versions/releases/tag/2.23.0>`__
+
 Version 15.0.2
 --------------
 This is a bug-fix upgrade from version 15.0.1.
