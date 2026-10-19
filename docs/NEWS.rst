@@ -2,6 +2,86 @@
 ODL Parent release notes
 ========================
 
+Version 14.4.0
+--------------
+This is a bug-fix/feature upgrade from version 15.0.2. Since this includes a minor version bump in Jackson, we get
+a new minor version as well.
+
+Bug fixes
+~~~~~~~~~
+* ``maven-resources-plugin`` version ``3.5.0`` has deprecated the ``overwrite`` option, causing Karaf distribution
+  builds to emit a warning. This has been fixed.
+
+* ``commons-codec`` packaging from Karaf and downstream users has drifted, causing duplicate artifact to be packaged.
+  The packaged version has been updated to ``1.22.1``.
+
+* Karaf ships Jolokia in a version which was different with our version, causing duplicate packaging. This has now been fixed.
+
+Third-party dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~
+* Bouncy Castle `1.85 → 1.86 <https://github.com/bcgit/bc-java/blob/r1rv86/docs/releasenotes.md#211-version>`__
+
+* Dropwizard Metrics `4.2.39 → 4.2.40 <https://github.com/dropwizard/metrics/releases/tag/v4.2.40>`__
+
+* immutables.org `2.12.2 → 2.12.3 <https://github.com/immutables/immutables/releases/tag/2.12.3>`__
+
+* Jackson 2.21.5 → 2.22.4, release notes:
+  * `2.21.6 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.21.6>`__
+  * `2.22.0 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.22>`__
+  * `2.22.1 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.22.1>`__
+  * `2.22.2 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.22.2>`__
+  * `2.22.3 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.22.3>`__
+  * `2.22.4 <https://github.com/FasterXML/jackson/wiki/Jackson-Release-2.22.4>`__
+
+* Javassist `3.32.0-GA → 3.33.0-GA <https://github.com/jboss-javassist/javassist/releases/tag/rel_3_33_0_ga>`__
+
+* Jolokia `1.7.2 → 1.7.3 <https://github.com/jolokia/jolokia/milestone/45?closed=1>`__
+
+* Karaf `4.4.11 → 4.4.12 <https://github.com/apache/karaf/releases/tag/karaf-4.4.12>`__
+
+* Mockito `5.23.0 → 5.24.0 <https://github.com/mockito/mockito/releases/tag/v5.24.0>`__
+
+* Netty 4.2.16.Final → 4.2.19.Final, release notes:
+  * `4.2.17.Final <https://netty.io/news/2026/08/04/4-2-17-Final.html>`__
+  * `4.2.18.Final <https://netty.io/news/2026/09/09/4-2-18-Final.html>`__
+  * `4.2.19.Final <https://github.com/netty/netty/releases/tag/netty-4.2.19.Final>`__
+
+* stax2-api 4.3.0 → 4.3.2, release notes:
+  * `4.3.1 <https://github.com/FasterXML/stax2-api/blob/stax2-api-4.3.1/release-notes/VERSION>`__
+  * `4.3.2 <https://github.com/FasterXML/stax2-api/blob/stax2-api-4.3.2/release-notes/VERSION>`__
+
+* ThreeTen `1.10.0 → 1.11.0 <https://www.threeten.org/threeten-extra/changes-report.html#a1.11.0>`__
+
+* Woodstox 7.2.1 → 7.3.0, release notes:
+  * `7.2.2 <https://github.com/FasterXML/woodstox/milestone/40?closed=1>`__
+  * `7.3.0 <https://github.com/FasterXML/woodstox/milestone/42?closed=1>`__
+
+Plugin upgrades
+~~~~~~~~~~~~~~~
+* build-helper-maven-plugin `3.6.1 → 3.6.2 <https://github.com/mojohaus/build-helper-maven-plugin/releases/tag/3.6.2>`__
+
+* exec-maven-plugin `3.6.3 → 3.6.4 <https://github.com/mojohaus/exec-maven-plugin/releases/tag/3.6.4>`__
+
+* git-commit-id-maven-plugin `10.0.0 → 10.0.1 <https://github.com/git-commit-id/git-commit-id-maven-plugin/releases/tag/v10.0.1>`__
+
+* jdepend-maven-plugin `2.2.0 → 2.2.1 <https://github.com/mojohaus/jdepend-maven-plugin/releases/tag/jdepend-maven-plugin-2.2.1>`__
+
+* maven-bundle-plugin 6.1.0 → 6.2.0, release notes:
+  * `6.1.2 <https://github.com/apache/felix-dev/blob/maven-bundle-plugin-6.1.2/tools/maven-bundle-plugin/changelog.txt>`__
+  * `6.1.2 <https://github.com/apache/felix-dev/blob/maven-bundle-plugin-6.2.0/tools/maven-bundle-plugin/changelog.txt>`__
+
+* maven-compiler-plugin `3.15 → 3.16.0 <https://github.com/apache/maven-compiler-plugin/releases/tag/maven-compiler-plugin-3.16.0>`__
+
+* maven-deploy-plugin `3.1.4 → 3.2.0 <https://github.com/apache/maven-deploy-plugin/releases/tag/maven-deploy-plugin-3.2.0>`__
+
+* maven-install-plugin `3.1.4 → 3.2.0 <https://github.com/apache/maven-install-plugin/releases/tag/maven-install-plugin-3.2.0>`__
+
+* properties-maven-plugin `1.3.0 → 1.3.1 <https://github.com/mojohaus/properties-maven-plugin/releases/tag/properties-maven-plugin-1.3.1>`__
+
+* versions-maven-plugin 2.21.0 → 2.23.0, release notes:
+  * `2.22.0 <https://github.com/mojohaus/versions/releases/tag/2.22.0>`__
+  * `2.23.0 <https://github.com/mojohaus/versions/releases/tag/2.23.0>`__
+
 Version 14.3.6
 --------------
 This is a bug-fix upgrade from version 14.3.5.
