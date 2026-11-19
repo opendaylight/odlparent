@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bfc4e3a5_6fafedcd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8144
+      },
+      "writtenOn": "2026-11-19T10:01:57Z",
+      "side": 1,
+      "message": "depends on karaf features override removal from karaf 4.4.13 bump",
+      "revId": "c51d08d60aa40587c2f422c5850f46e58917164e",
+      "serverId": "7fc14799-209e-464c-9743-7a06c2c21a81"
+    }
+  ]
+}
