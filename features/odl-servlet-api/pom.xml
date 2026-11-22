@@ -19,12 +19,12 @@
     <artifactId>odl-servlet-api</artifactId>
     <packaging>feature</packaging>
     <name>OpenDaylight :: Servlet API</name>
-    <description>Java servlet API 3.1.x</description>
+    <description>Java servlet API 6.1.x</description>
 
     <dependencies>
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
         </dependency>
     </dependencies>
 </project>

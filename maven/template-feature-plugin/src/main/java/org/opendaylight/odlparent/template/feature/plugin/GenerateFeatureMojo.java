@@ -7,6 +7,7 @@
  */
 package org.opendaylight.odlparent.template.feature.plugin;
 
+import jakarta.xml.bind.JAXBException;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +17,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-import javax.xml.bind.JAXBException;
 import org.apache.felix.utils.version.VersionCleaner;
 import org.apache.karaf.features.internal.model.Bundle;
 import org.apache.karaf.features.internal.model.Dependency;
@@ -200,13 +200,14 @@ public class GenerateFeatureMojo extends AbstractMojo {
         final String version = feature.getVersion();
         if (PROJECT_VERSION_CLEAN.equals(version)) {
             return mavenProject.getVersion();
-        } else if (SEM_VER_RANGE_CLEAN.equals(version)) {
-            return featureSemVerRange(feature.getName());
-        } else if (VERSION_AS_IN_PROJECT_CLEAN.equals(version)) {
-            return featureVersion(feature.getName());
-        } else {
-            return version;
         }
+        if (SEM_VER_RANGE_CLEAN.equals(version)) {
+            return featureSemVerRange(feature.getName());
+        }
+        if (VERSION_AS_IN_PROJECT_CLEAN.equals(version)) {
+            return featureVersion(feature.getName());
+        }
+        return version;
     }
 
     private String dependencyVersion(final String groupId, final String artifactId, final @Nullable String type,

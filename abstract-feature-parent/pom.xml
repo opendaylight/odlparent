@@ -73,9 +73,8 @@
         <profile>
             <id>disable-sft</id>
             <activation>
-                <!-- Karaf does not have jre.properties for JDK27+ just yet -->
-                <!-- FIXME: Karaf fails with Java 24+. Re-enable with Karaf-4.5.0. -->
-                <jdk>[24,)</jdk>
+                <!-- Karaf does not have jre.properties for JDK28+ just yet -->
+                <jdk>[28,)</jdk>
             </activation>
 
             <properties>
@@ -95,7 +94,7 @@
                                 </goals>
                                 <phase>test</phase>
                                 <configuration>
-                                    <message>Running on JDK newer than 21, which is not supported. Skipping feature tests.</message>
+                                    <message>Running on JDK newer than 27, which is not supported. Skipping feature tests.</message>
                                 </configuration>
                             </execution>
                         </executions>
