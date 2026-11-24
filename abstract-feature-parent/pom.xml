@@ -95,7 +95,7 @@
                                 </goals>
                                 <phase>test</phase>
                                 <configuration>
-                                    <message>Running on JDK newer than 21, which is not supported. Skipping feature tests.</message>
+                                    <message>Running on JDK newer than 23, which is not supported. Skipping feature tests.</message>
                                 </configuration>
                             </execution>
                         </executions>
